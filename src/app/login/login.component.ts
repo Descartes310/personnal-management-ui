@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.authService.isLogged() ) {
+    if (this.authService.isAuthenticated() ) {
       this.router.navigate(['/home']);
     } else {
       this.router.navigate(['/login']);
@@ -88,6 +88,7 @@ export class LoginComponent implements OnInit {
         this.authService.saveToken(resp.token);
         this.authService.saveUser(resp.user);
         this.notifService.success('La connexion a reussie')
+        this.router.navigate(['/home']);
       })
       .catch(err => {
         this.translate.get('Login.AUTH_LOGIN')

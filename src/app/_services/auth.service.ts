@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Routes from '../Routes'; 
 import { Router } from '@angular/router';
@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
+
+
+  @Output() fire: EventEmitter<any> = new EventEmitter();
 
   constructor(
       private http: HttpClient,
@@ -19,7 +22,6 @@ export class AuthService {
             'password': password,
             'remember_me': keepMeLoggedIn
         }
-        console.log(datas)
         return this.http.post<any>(Routes.LOGIN, datas).toPromise();
     }
 
@@ -35,15 +37,24 @@ export class AuthService {
         }
     }
 
-    // logout() {
-    //     if (this.isAuthenticated()) {
-    //         this.http.delete(Routes.LOGOUT).subscribe(() => { });
-    //       }
-          
-    //       localStorage.clear();
-    //       // Redirection apres deconnexion
-    //       this.router.navigate(['login']);
-    // }
+
+    setAuthenticated(value: boolean) {
+        this.fire.emit(value);
+    }
+
+    getEmittedValue() {
+        return this.fire;
+    }
+
+    logout() {
+        this.http.delete(Routes.LOGIN);  
+        localStorage.removeItem('user'); 
+        localStorage.removeItem('permissions'); 
+        localStorage.removeItem('roles'); 
+        localStorage.removeItem('token');
+        this.setAuthenticated(false);
+        this.router.navigate(['login']);
+    }
 
     /**
      * Cette fonction va sauvegarder le token du user
@@ -51,6 +62,7 @@ export class AuthService {
      */
     saveToken(token: any) {
         localStorage.setItem('token', JSON.stringify(token));
+        this.setAuthenticated(true);
     }
 
     getToken(){
@@ -97,17 +109,4 @@ export class AuthService {
             return false;
         }
     }
-
-    isLogged(): boolean{
-        let user = this.getUser();
-        let token = this.getToken();
-        let now = (new Date()).getTime();
-        if(user && token) {
-            let expires_at = (new Date(token.expires_at)).getTime();
-            return now < expires_at;
-        } else {
-            return false;
-        }
-    }
-
 }

@@ -10,7 +10,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 //const routes: Routes = [];
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  // { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   // { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

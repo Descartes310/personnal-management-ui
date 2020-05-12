@@ -11,5 +11,8 @@
         "KeepMeLoggedIn": "Keep me logged in",
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
+    },
+    "Home": {
+        "Title": "Home page"
     }
 }

@@ -11,5 +11,8 @@
         "KeepMeLoggedIn": "Rester connecté",
         "AUTH_LOGIN": "Le login ou le mot de passe est incorrect",
         "AUTH_LOGIN_FORM": "Le login et le mot sont requis"
+    },
+    "Home": {
+        "Title": "Page d'accueil"
     }
 }
