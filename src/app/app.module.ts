@@ -22,6 +22,8 @@ import { AddProSituationComponent } from './pro_situations/add-pro-situation/add
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { FindProSituationComponent } from './pro_situations/find-pro-situation/find-pro-situation.component';
+import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateProSituationComponent,
     AllProSituationComponent,
     FindProSituationComponent,
+    DocumentViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PdfViewerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
