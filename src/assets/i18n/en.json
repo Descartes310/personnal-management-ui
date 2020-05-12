@@ -1,0 +1,15 @@
+{
+    "Login": {
+        "SubmitButton": "Log in",
+        "Welcome": "Login to your account",
+        "LoginLabel": "Login",
+        "LoginField": "Your Login address here",
+        "PasswordLabel": "Password",
+        "PasswordField": "Your password here",
+        "LeftPaneTitle": "Left Pane",
+        "LeftPaneText": "Left pane text",
+        "KeepMeLoggedIn": "Keep me logged in",
+        "AUTH_LOGIN": "Login or password is invalid",
+        "AUTH_LOGIN_FORM": "Login and password are required"
+    }
+}

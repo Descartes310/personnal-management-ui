@@ -1,0 +1,15 @@
+{
+    "Login": {
+        "SubmitButton": "Me connecter",
+        "Welcome": "Connectez vous à votre compte pour continuer",
+        "LoginLabel": "Login",
+        "LoginField": "Entrez votre adresse Login",
+        "PasswordLabel": "Mot de passe",
+        "PasswordField": "Entrez votre mot de passe",
+        "LeftPaneTitle": "Gestion du personnel",
+        "LeftPaneText": "Assurer la gestion et le suivi du personnel de votre infrastructure, ceci par des interfaces simples et intuitives.",
+        "KeepMeLoggedIn": "Rester connecté",
+        "AUTH_LOGIN": "Le login ou le mot de passe est incorrect",
+        "AUTH_LOGIN_FORM": "Le login et le mot sont requis"
+    }
+}
