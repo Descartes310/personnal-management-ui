@@ -12,7 +12,53 @@
         "AUTH_LOGIN": "Le login ou le mot de passe est incorrect",
         "AUTH_LOGIN_FORM": "Le login et le mot sont requis"
     },
+    "NavBar": {
+        "Language": "Choix de Langue",
+        "Profile": "Mon compte",
+        "Message": "Messages privés",
+        "QuickAccess": "Accès rapide",
+        "Notif": "Notifications",
+        "NotifViewAll": "Voir toutes les notifications",
+        "NotifText": "Vous avez {{unread}} nouvelles notifications",
+        "QuickAccessText": "Accédez rapidement et éfficacement à toutes les fonctionnalités primaires du système"
+    },
     "Home": {
         "Title": "Page d'accueil"
+    },
+    "Form": {
+        "NameLabel": "Nom",
+        "NameField": "Veuillez entrer le nom...",
+        "DescriptionLabel": "Description",
+        "DescriptionField": "Veuillez entrer une description",
+        "WeightLabel": "Indice",
+        "WeightField": "Selectionnez un indice"
+    },
+    "SideBar": {
+        "SystemConfig": "Paramètres du système",
+        "Users": "Employés",
+        "Contracts": "Contrats de travail",
+        "PermissionEtConges": "Permissions et congés",
+        "NotesPros": "Notes proféssionnelles",
+        "Career": "Promotions et parcours",
+        "Assignment": "Affectations",
+        "Training": "Formations",
+        "Sanction": "Sanctions",
+        "Blog": "Actualités",
+        "Contact": "Contacts",
+        "ProSituation": "Situation proféssionnelle",
+        "Division": "Divisions",
+        "AssignmentType": "Type d'affectations",
+        "ProfileElement": "Element du profile",
+        "TypeConges": "Type de congés",
+        "PermissionType": "Type de permission",
+        "Template": "Modèle de document",
+        "BlogCat": "Catégorie de blog",
+        "DiscCouncil": "Conseil de discipline",
+        "NoteCriteria": "Critère de notation",
+        "Config": "Configurations",
+        "RoleAndPer": "Rôles et permissions",
+        "Personnel": "Personnels",
+        "Submission": "Demandes écrites",
+        "ProfileUpdate": "Mise à jour du profile"
     }
 }

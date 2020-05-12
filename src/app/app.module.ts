@@ -18,6 +18,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
+import { AddProSituationComponent } from './pro_situations/add-pro-situation/add-pro-situation.component';
+import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
+import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
+import { FindProSituationComponent } from './pro_situations/find-pro-situation/find-pro-situation.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,6 +38,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideBarComponent,
     NavigationDrawerComponent,
     ThemeSettingComponent,
+    AddProSituationComponent,
+    UpdateProSituationComponent,
+    AllProSituationComponent,
+    FindProSituationComponent,
   ],
   imports: [
     BrowserModule,
