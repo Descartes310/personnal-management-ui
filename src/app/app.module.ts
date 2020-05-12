@@ -15,6 +15,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +31,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     HomeComponent,
     NotfoundComponent,
+    SideBarComponent,
+    NavigationDrawerComponent,
+    ThemeSettingComponent,
   ],
   imports: [
     BrowserModule,
