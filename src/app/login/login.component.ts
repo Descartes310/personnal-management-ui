@@ -2,7 +2,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { NotifService } from '../_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 

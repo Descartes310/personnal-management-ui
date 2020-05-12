@@ -14,5 +14,11 @@
     },
     "Home": {
         "Title": "Page d'accueil"
+    },
+    "DocumentViewer": {
+        "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
+        "FILE_TYPE_ERR": "Le document que vous avez choisi n'est pas un pdf, veuillez choisir un document pdf",
+        "FILE_NAME_MSG": "Nom du fichier choisi: ",
+        "DOCUMENT_LOADING_MSG": "Chargement du document ..."
     }
 }

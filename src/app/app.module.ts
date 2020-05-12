@@ -18,6 +18,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
+import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideBarComponent,
     NavigationDrawerComponent,
     ThemeSettingComponent,
+    DocumentViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PdfViewerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

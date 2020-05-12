@@ -14,5 +14,11 @@
     },
     "Home": {
         "Title": "Home page"
+    },
+    "DocumentViewer": {
+        "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
+        "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",
+        "FILE_NAME_MSG": "Name of choosen file: ",
+        "DOCUMENT_LOADING_MSG": "Document loading ..."
     }
 }
