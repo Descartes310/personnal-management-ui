@@ -12,8 +12,21 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+    "NavBar": {
+        "Language": "Choose Language",
+        "Profile": "Mon compte",
+        "Message": "Messages privés"
+    },
     "Home": {
         "Title": "Home page"
+    },
+    "Form": {
+        "NameLabel": "Nom",
+        "NameField": "Veuillez entrer le nom...",
+        "DescriptionLabel": "Description",
+        "DescriptionField": "Veuillez entrer une description",
+        "WeightLabel": "Indice",
+        "WeightField": "Selectionnez un indice"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
