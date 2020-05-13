@@ -19,6 +19,8 @@
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
         "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",
         "FILE_NAME_MSG": "Name of choosen file: ",
-        "DOCUMENT_LOADING_MSG": "Document loading ..."
+        "DOCUMENT_LOADING_MSG": "Document loading ...",
+        "PREVIEW_TITLE": "Preview your pdf document here",
+        "BROWSER_FILE_BUTTON_LABEL": "browser your document here"
     }
 }

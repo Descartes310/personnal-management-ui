@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
- */
+*/
 export class DocumentViewerComponent implements OnInit {
 
   public file: File;
@@ -65,6 +65,7 @@ export class DocumentViewerComponent implements OnInit {
     reader.readAsDataURL(this.file);
     reader.onload = () => {
       this.pdfUrl = reader.result as string;
+      console.log(reader.error);
       this.isLoadingDocument = false;
     }
 
@@ -148,10 +149,5 @@ export class DocumentViewerComponent implements OnInit {
       .finally(() => this.isLoading = false);
 
   }
-
-  public closeAlert() {
-    this.unknowError = false;
-    this.message = '';
-  }
-
+  
 }
