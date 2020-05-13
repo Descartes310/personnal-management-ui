@@ -1,0 +1,70 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Role.Roles' | translate }}
+                <div class="page-title-subheading">{{ 'Role.RoleTitle' | translate }}
+                </div>
+            </div>
+            <div class="page-title-actions">
+                <a type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                    <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
+                    <p style="font-size: 1.2em; margin-top: 10%;">{{ 'Role.AddRole' | translate }}</p>
+                </a>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="tabs-animation">
+    <div class="main-card mb-3 card">
+        <div class="card-header">
+            <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+            {{ 'Role.Roles' | translate }}
+        </div>
+        <div class="card-body">
+            
+            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Display name</th>
+                        <th>Description</th>
+                        <th>Date de creation</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let role of roles,let i = index" id="tr{{ role.id }}">
+                        <td>{{ i+1 }}</td>
+                        <td style="width: 20%">{{ role.name }}</td>
+                        <td style="width: 20%">{{ role.display_name }}</td>
+                        <td style="width: 25%">{{ role.description }}</td>
+                        <td style="width: 10%">{{ role.created_at }}</td>
+                        <td style="width: 15%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="toggleBlocking()"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteRole(role)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot *ngIf="loading && (!roles || !roles.length)">
+                    <td colspan="7" class="text-center">
+                        <div class="spinner-border spinner-sm">
+                            <span class="sr-only">Patientez svp...</span>
+                        </div>
+                    </td>
+                </tfoot>
+                <tfoot *ngIf="!loading && (!roles || !roles.length)">
+                    <td colspan="7" class="text-center">
+                        Liste vide
+                    </td>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

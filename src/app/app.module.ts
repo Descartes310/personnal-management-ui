@@ -24,6 +24,9 @@ import { AllProSituationComponent } from './pro_situations/all-pro-situation/all
 import { FindProSituationComponent } from './pro_situations/find-pro-situation/find-pro-situation.component';
 import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AddRoleComponent } from './roles/add-role/add-role.component';
+import { AllRolesComponent } from './roles/all-roles/all-roles.component';
+import { BlockUIModule } from 'ng-block-ui';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -45,6 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllProSituationComponent,
     FindProSituationComponent,
     DocumentViewerComponent,
+    AddRoleComponent,
+    AllRolesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     ToastrModule.forRoot(),
+    BlockUIModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [

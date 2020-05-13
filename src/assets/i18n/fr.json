@@ -28,6 +28,8 @@
     "Form": {
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
+        "LabelLabel": "Label",
+        "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
         "WeightLabel": "Indice",
@@ -66,5 +68,20 @@
         "FILE_TYPE_ERR": "Le document que vous avez choisi n'est pas un pdf, veuillez choisir un document pdf",
         "FILE_NAME_MSG": "Nom du fichier choisi: ",
         "DOCUMENT_LOADING_MSG": "Chargement du document ..."
+    },
+    "Role": {
+        "Roles": "Rôles et permissions",
+        "RoleTitle": "Gestion des roles et des permissions de l'application",
+        "AddRole": "Ajouter un nouveau rôle"
+    },
+    "SweetAlert": {
+        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "Warning": "Cette action est irreversible !",
+        "Yes": "Oui, supprimer",
+        "No": "Non, annuler",
+        "Deleted": "Supprimé",
+        "DeletedMessage": "Element supprimé avec succès",
+        "Cancelled": "Annulé",
+        "CancelledMessage": "Element conservé"
     }
 }
