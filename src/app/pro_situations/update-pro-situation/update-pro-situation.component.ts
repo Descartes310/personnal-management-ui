@@ -6,7 +6,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { ProSituation } from 'src/app/_models/pro_situation.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
+/**
+ * @author Arléon Zemtsop
+ * @email arleonzemtsop@gmail.com
+*/
 @Component({
   selector: 'app-update-pro-situation',
   templateUrl: './update-pro-situation.component.html',
