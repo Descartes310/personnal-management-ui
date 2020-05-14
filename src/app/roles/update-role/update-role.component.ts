@@ -4,14 +4,14 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Role } from 'src/app/_models/role.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-add-role',
-  templateUrl: './add-role.component.html',
-  styleUrls: ['./add-role.component.scss']
+  selector: 'app-update-role',
+  templateUrl: './update-role.component.html',
+  styleUrls: ['./update-role.component.scss']
 })
-export class AddRoleComponent implements OnInit {
+export class UpdateRoleComponent implements OnInit {
 
   permissions: any[] = [];
   permissions_tmp: any[] = [];
@@ -23,23 +23,55 @@ export class AddRoleComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   role_name = '';
+  role: Role = new Role();
+
 
   constructor(
     private roleService: RoleService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
+    private route: ActivatedRoute,
     private router: Router,
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.initForm();
     this.getPermissions();
+    const role_id = +this.route.snapshot.paramMap.get("id");
+    this.roleService.find(role_id).then(
+      data => {
+        this.role = data;
+        this.initForm(true);
+        this.role.permissions.map( permission => {
+          this.selected_permissions.push(permission.id)
+        })
+      }
+    ).catch(
+      error => {
+        this.translate.get('Role.'+error.error.code)
+        .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/roles/all'])
+      }
+    )
 
-    this.roleForm = this.formBuilder.group({
-      label: ['', Validators.required],
-      name: ['', Validators.required],
-      description: ['']
-    });
+  }
+
+  initForm(withRole = false) {
+    if(withRole) {
+      console.log(this.role)
+      this.roleForm = this.formBuilder.group({
+        name: [this.role.name, [Validators.required]],
+        label: [this.role.display_name, [Validators.required]],
+        description: [this.role.description]
+      });
+    }else {
+      this.roleForm = this.formBuilder.group({
+        name: ['', [Validators.required]],
+        label: ['', [Validators.required]],
+        description: ['']
+      });
+    }
   }
 
   get form() {
@@ -107,14 +139,14 @@ export class AddRoleComponent implements OnInit {
     this.selected_permissions.forEach( elt => {
       formData.append('permissions[]', JSON.stringify(elt));
     });
-    this.roleService.add(formData)
+    this.roleService.update(formData, this.role.id)
       .then(resp => {
         this.translate.get('Role.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.roleForm.reset();
         this.selected_permissions = [];
-        //this.router.navigate(['/roles/all']);
+        this.router.navigate(['/roles/all']);
       })
       .catch(err => {
         console.log(err)
