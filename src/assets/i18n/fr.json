@@ -35,6 +35,7 @@
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
         "WeightLabel": "Indice",
+        "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche..."
@@ -94,5 +95,16 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "ProSituation": {
+        "ProSituations": "Situations professionelles",
+        "ProSituationTitle": "Gestion des situations professionelles de l'application",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la situation professionnelle a réussie...",
+        "ResponseError": "La création de la situation professionnelle a échouée, cela peut être dû au fait que vous ne soyez pas connecté à internet. Vérifier votre connexion puis réessayer",
+        "CreateProSituaton": "Créer la situation professionnelle",
+        "UpdateProSituation": "Mettre à jour",
+        "UpdateSuccess": "Mise à jour éffectuée avec succès",
+        "PRO_SITUATION_NOT_FOUND": "La situation professionelle choisie n'existe pas"
     }
 }
