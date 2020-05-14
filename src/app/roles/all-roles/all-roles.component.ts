@@ -5,6 +5,7 @@ import { NotifService } from 'src/app/_services/notif.service';
 import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-roles',
@@ -31,7 +32,8 @@ export class AllRolesComponent implements OnInit {
   constructor(
     private roleService: RoleService,
     private notifService: NotifService,
-    private translate: TranslateService) {
+    private translate: TranslateService,
+    private router: Router) {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
@@ -56,6 +58,7 @@ export class AllRolesComponent implements OnInit {
     this.loading = true;
     this.roleService.all().then(
       response => {
+        this.roles = [];
         response.data.map( role => {
           this.roles.push(new Role(role));
         });
@@ -71,6 +74,14 @@ export class AllRolesComponent implements OnInit {
     )
   }
 
+  editRole(role: Role) {
+    this.router.navigate(['/roles/update/'+role.id])
+  }
+
+  detailsRole(role: Role) {
+    this.router.navigate(['/roles/details/'+role.id])
+  }
+
   deleteRole(role: Role) {
     Swal.fire({
       title: this.areYouSure,
@@ -82,14 +93,24 @@ export class AllRolesComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        setTimeout(() => {
-          this.blockUI.stop();
-          Swal.fire(
-            this.deleted,
-            this.deletedMessage,
-            'success'
-          )
-        }, 2500);
+        this.roleService.delete(role.id).then(
+          data => {
+            this.blockUI.stop();
+            Swal.fire(
+              this.deleted,
+              this.deletedMessage,
+              'success'
+            )
+            this.getRoles();
+          }
+        ).catch(
+          error => {
+            console.log(error)
+            this.blockUI.stop();
+            this.translate.get('Role.'+error.error.code)
+            .subscribe(val => this.notifService.danger(val));
+          }
+        )
         
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(

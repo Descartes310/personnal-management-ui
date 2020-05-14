@@ -32,8 +32,12 @@
         "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
+        "CreatedAtLabel": "Date de création",
+        "CreatedAtField": "Date de création",
         "WeightLabel": "Indice",
-        "WeightField": "Selectionnez un indice"
+        "WeightField": "Selectionnez un indice",
+        "SearchLabel": "Rechercher",
+        "SearchText": "Effectuez une recherche..."
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -72,7 +76,14 @@
     "Role": {
         "Roles": "Rôles et permissions",
         "RoleTitle": "Gestion des roles et des permissions de l'application",
-        "AddRole": "Ajouter un nouveau rôle"
+        "AddRole": "Ajouter un nouveau rôle",
+        "CreateRole": "Créer le rôle",
+        "UpdateRole": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
