@@ -10,9 +10,9 @@
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a type="button" [routerLink]="['/roles/add']" data-toggle="tooltip" title="{{ 'Role.AddRole' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                    <p style="font-size: 1.2em; margin-top: 10%;">{{ 'Role.AddRole' | translate }}</p>
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Role.AddRole' | translate }}</p>
                 </a>
             </div>
         </div>   
@@ -31,10 +31,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom</th>
-                        <th>Display name</th>
-                        <th>Description</th>
-                        <th>Date de creation</th>
+                        <th>{{ 'Form.NameLabel' | translate }}</th>
+                        <th>{{ 'Form.LabelLabel' | translate }}</th>
+                        <th>{{ 'Form.DescriptionLabel' | translate }}</th>
+                        <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -46,8 +46,8 @@
                         <td style="width: 25%">{{ role.description }}</td>
                         <td style="width: 10%">{{ role.created_at }}</td>
                         <td style="width: 15%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="toggleBlocking()"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editRole(role)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsRole(role)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteRole(role)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>

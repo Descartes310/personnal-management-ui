@@ -27,6 +27,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
+import { UpdateRoleComponent } from './roles/update-role/update-role.component';
+import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,6 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DocumentViewerComponent,
     AddRoleComponent,
     AllRolesComponent,
+    UpdateRoleComponent,
+    DetailsRoleComponent,
   ],
   imports: [
     BrowserModule,

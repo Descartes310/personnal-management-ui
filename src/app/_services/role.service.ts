@@ -12,24 +12,28 @@ export class RoleService {
       private http: HttpClient,
     ) { }
 
-    add(role: Role): Promise<Role> {
-        return this.http.post<Role>(Routes.ROLE, JSON.stringify(role)).toPromise();
+    add(formData: FormData): Promise<Role> {
+        return this.http.post<Role>(Routes.ROLE, formData).toPromise();
     }
 
-    update(role: Role): Promise<Role> {
-        return this.http.put<Role>(Routes.ROLE, JSON.stringify(role)).toPromise();
+    update(formData: FormData, id: number): Promise<Role> {
+        return this.http.post<Role>(`${Routes.ROLE}/${id}`, formData).toPromise();
     }
 
     all(): Promise<any> {
         return this.http.get<any>(Routes.ROLE).toPromise();
     }
 
-    find(id: number): Promise<Role[]> {
-        return this.http.get<Role[]>(`Routes.ROLE/${id}`).toPromise();
+    permissions(): Promise<any> {
+        return this.http.get<any>(Routes.PERMISSION).toPromise();
+    }
+
+    find(id: number): Promise<Role> {
+        return this.http.get<Role>(`${Routes.ROLE}/${id}`).toPromise();
     }
 
     delete(id: number): Promise<Role[]> {
-        return this.http.delete<Role[]>(`Routes.ROLE/${id}`).toPromise();
+        return this.http.delete<Role[]>(`${Routes.ROLE}/${id}`).toPromise();
     }
 
 }
