@@ -68,6 +68,17 @@ export class AddRoleComponent implements OnInit {
     this.permissions = this.permissions_tmp.filter( permission => permission.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
+  selectAllPermission(event: any){
+    this.selected_permissions = [];
+    if(event.target.checked) {
+      this.permissions_tmp.map(
+        permission => {
+          this.selected_permissions.push(permission.id)
+        }
+      )
+    }
+  }
+
   onChecked(permission, event){
     if(event.target.checked) {
       this.selected_permissions.push(permission.id);

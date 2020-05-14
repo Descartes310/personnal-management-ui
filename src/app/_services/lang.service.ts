@@ -25,7 +25,6 @@ export class LangService {
         this.translateService.setDefaultLang(value);
         this.translateService.use(value);
         this.setLang(value);
-
     }
 
 }
