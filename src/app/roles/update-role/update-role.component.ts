@@ -36,7 +36,7 @@ export class UpdateRoleComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.initForm();
+    //this.initForm();
     this.getPermissions();
     const role_id = +this.route.snapshot.paramMap.get("id");
     this.roleService.find(role_id).then(

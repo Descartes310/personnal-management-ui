@@ -76,7 +76,15 @@
                                 <div class="card-body">
                                     <form class="">
                                         <div class="position-relative form-group">
-                                            <label class="">{{ "Form.SearchLabel" | translate }} ({{ permissions.length }})</label>
+                                            <label class="">
+                                                {{ "Form.SearchLabel" | translate }} ({{ permissions.length }})
+                                                <div class="widget-content-left mr-2">
+                                                    <div class="custom-checkbox custom-control">
+                                                        <input type="checkbox" id="selectAll" class="custom-control-input" (change)="selectAllPermission($event)">
+                                                        <label class="custom-control-label"  for="selectAll">&nbsp;</label>
+                                                    </div>
+                                                </div>
+                                            </label>
                                             <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="search($event)" class="form-control">
                                         </div>
                                         <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
