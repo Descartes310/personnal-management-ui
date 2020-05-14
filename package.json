@@ -22,9 +22,12 @@
     "@angular/router": "~8.2.14",
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "ng-block-ui": "^2.1.8",
+    "ng2-pdf-viewer": "^6.3.0",
     "ngx-toastr": "^11.3.3",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.5",
+    "sweetalert2": "^9.10.13",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

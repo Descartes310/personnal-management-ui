@@ -18,4 +18,7 @@ export class HomeComponent implements OnInit {
     this.user = this.authService.getUser();
   }
 
+  alert() {
+    alert('Bonjour le monde')
+  }
 }
