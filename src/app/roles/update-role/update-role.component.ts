@@ -36,7 +36,7 @@ export class UpdateRoleComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    //this.initForm();
+    this.initForm();
     this.getPermissions();
     const role_id = +this.route.snapshot.paramMap.get("id");
     this.roleService.find(role_id).then(
@@ -150,7 +150,7 @@ export class UpdateRoleComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('Role.'+err.error.code)
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
