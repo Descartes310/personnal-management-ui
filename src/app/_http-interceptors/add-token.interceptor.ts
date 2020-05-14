@@ -9,9 +9,13 @@ export class AddTokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const request = req.clone({ 
-      headers: req.headers.set('Authorization', `Bearer ${this.authService.getToken().access_token}`),
-    });
-    return next.handle(request);
+    if(this.authService.isAuthenticated()) {
+      const request = req.clone({ 
+        headers: req.headers.set('Authorization', `Bearer ${this.authService.getToken().access_token}`),
+      });
+      return next.handle(request);
+    } else {
+      return next.handle(req);
+    }
   }
 }

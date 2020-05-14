@@ -11,5 +11,88 @@
         "KeepMeLoggedIn": "Rester connecté",
         "AUTH_LOGIN": "Le login ou le mot de passe est incorrect",
         "AUTH_LOGIN_FORM": "Le login et le mot sont requis"
+    },
+    "NavBar": {
+        "Language": "Choix de Langue",
+        "Profile": "Mon compte",
+        "Message": "Messages privés",
+        "QuickAccess": "Accès rapide",
+        "Notif": "Notifications",
+        "NotifViewAll": "Voir toutes les notifications",
+        "NotifText": "Vous avez {{unread}} nouvelles notifications",
+        "QuickAccessText": "Accédez rapidement et éfficacement à toutes les fonctionnalités primaires du système"
+    },
+    "Home": {
+        "Title": "Page d'accueil"
+    },
+    "Form": {
+        "NameLabel": "Nom",
+        "NameField": "Veuillez entrer le nom...",
+        "LabelLabel": "Label",
+        "LabelField": "Veuillez entrer le label...",
+        "DescriptionLabel": "Description",
+        "DescriptionField": "Veuillez entrer une description",
+        "CreatedAtLabel": "Date de création",
+        "CreatedAtField": "Date de création",
+        "WeightLabel": "Indice",
+        "WeightField": "Selectionnez un indice",
+        "SearchLabel": "Rechercher",
+        "SearchText": "Effectuez une recherche..."
+    },
+    "SideBar": {
+        "SystemConfig": "Paramètres du système",
+        "Users": "Employés",
+        "Contracts": "Contrats de travail",
+        "PermissionEtConges": "Permissions et congés",
+        "NotesPros": "Notes proféssionnelles",
+        "Career": "Promotions et parcours",
+        "Assignment": "Affectations",
+        "Training": "Formations",
+        "Sanction": "Sanctions",
+        "Blog": "Actualités",
+        "Contact": "Contacts",
+        "ProSituation": "Situation proféssionnelle",
+        "Division": "Divisions",
+        "AssignmentType": "Type d'affectations",
+        "ProfileElement": "Element du profile",
+        "TypeConges": "Type de congés",
+        "PermissionType": "Type de permission",
+        "Template": "Modèle de document",
+        "BlogCat": "Catégorie de blog",
+        "DiscCouncil": "Conseil de discipline",
+        "NoteCriteria": "Critère de notation",
+        "Config": "Configurations",
+        "RoleAndPer": "Rôles et permissions",
+        "Personnel": "Personnels",
+        "Submission": "Demandes écrites",
+        "ProfileUpdate": "Mise à jour du profile"
+    },
+    "DocumentViewer": {
+        "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
+        "FILE_TYPE_ERR": "Le document que vous avez choisi n'est pas un pdf, veuillez choisir un document pdf",
+        "FILE_NAME_MSG": "Nom du fichier choisi: ",
+        "DOCUMENT_LOADING_MSG": "Chargement du document ..."
+    },
+    "Role": {
+        "Roles": "Rôles et permissions",
+        "RoleTitle": "Gestion des roles et des permissions de l'application",
+        "AddRole": "Ajouter un nouveau rôle",
+        "CreateRole": "Créer le rôle",
+        "UpdateRole": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "SweetAlert": {
+        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "Warning": "Cette action est irreversible !",
+        "Yes": "Oui, supprimer",
+        "No": "Non, annuler",
+        "Deleted": "Supprimé",
+        "DeletedMessage": "Element supprimé avec succès",
+        "Cancelled": "Annulé",
+        "CancelledMessage": "Element conservé"
     }
 }

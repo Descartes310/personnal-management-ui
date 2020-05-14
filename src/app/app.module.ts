@@ -15,6 +15,20 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
+import { AddProSituationComponent } from './pro_situations/add-pro-situation/add-pro-situation.component';
+import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
+import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
+import { FindProSituationComponent } from './pro_situations/find-pro-situation/find-pro-situation.component';
+import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AddRoleComponent } from './roles/add-role/add-role.component';
+import { AllRolesComponent } from './roles/all-roles/all-roles.component';
+import { BlockUIModule } from 'ng-block-ui';
+import { UpdateRoleComponent } from './roles/update-role/update-role.component';
+import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +42,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     HomeComponent,
     NotfoundComponent,
+    SideBarComponent,
+    NavigationDrawerComponent,
+    ThemeSettingComponent,
+    AddProSituationComponent,
+    UpdateProSituationComponent,
+    AllProSituationComponent,
+    FindProSituationComponent,
+    DocumentViewerComponent,
+    AddRoleComponent,
+    AllRolesComponent,
+    UpdateRoleComponent,
+    DetailsRoleComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PdfViewerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -43,6 +70,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     ToastrModule.forRoot(),
+    BlockUIModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [
