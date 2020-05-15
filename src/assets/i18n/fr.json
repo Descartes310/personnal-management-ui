@@ -143,7 +143,8 @@
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création du type d'affectation réussie...",
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
-        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!"
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
