@@ -13,6 +13,8 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -26,6 +28,10 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
+
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
