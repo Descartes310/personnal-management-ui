@@ -28,6 +28,7 @@
     "Form": {
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
+        "AssignmentNameField": "Veuillez remplir le champs label...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
@@ -37,7 +38,8 @@
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
+        "SearchText": "Effectuez une recherche...",
+        "AssignmentAddDescription":"veuillez faire une descrption"
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -84,6 +86,17 @@
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "AssignmentType": {
+        "AssignmentType": "Type d'affectation'",
+        "AssignmentTypeTitle": "Gestion des types d'affectation ",
+        "AddAssignmentType": "Ajouter un type d'affectation",
+        "CreateAssignmentType": "Créer le type d'affectatation",
+        "UpdateAssignmentType": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type d'affectation réussie...",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
