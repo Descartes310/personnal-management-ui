@@ -106,5 +106,18 @@
         "UpdateProSituation": "Mettre à jour",
         "UpdateSuccess": "Mise à jour éffectuée avec succès",
         "PRO_SITUATION_NOT_FOUND": "La situation professionelle choisie n'existe pas"
+    },
+    "Chat": {
+        "Title": "Chat",
+        "TitleText": "Toutes vos discussions sont traités ici, vous pouvez demarrez une nouvelle conversation",
+        "WriteAMessage": "Ecrivez un message ici pour l'envoyer...",
+        "NewDicussion": "Commencer une nouvelle discussion",
+        "MessageLength": "Nombre de message",
+        "Close": "Fermer la discussion",
+        "DeleteAll": "Supprimer tous les messages",
+        "UsersList": "Liste des utilisateurs",
+        "DiscussionList": "Fil de conversation",
+        "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message"
     }
 }

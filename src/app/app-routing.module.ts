@@ -12,11 +12,13 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
+import { ChatComponent } from './chat/chat.component'
 
 //const routes: Routes = [];
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
   { path: 'roles/add', component: AddRoleComponent },
