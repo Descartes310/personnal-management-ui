@@ -39,7 +39,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
     .then(
       data => {
         this.assign = data;
-        this.assign.name="";
+        //this.assign.slug="";
         this.initForm(true);
       }
     ).catch(
@@ -55,7 +55,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
   initForm(withRole = false) {
     if(withRole) {
       this.assignmentTypeForm = this.formBuilder.group({
-        name: [this.assign.name, [Validators.required]],
+        name: ["", [Validators.required]],
         label: [this.assign.slug, [Validators.required]],
         description: [this.assign.description]
       });
