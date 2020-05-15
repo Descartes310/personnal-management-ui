@@ -135,7 +135,7 @@
     },
        
     "AssignmentType": {
-        "AssignmentType": "Type d'affectation'",
+        "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",
         "AddAssignmentType": "Ajouter un type d'affectation",
         "CreateAssignmentType": "Créer le type d'affectatation",
