@@ -13,7 +13,7 @@ export class ContactService {
 
 
   add(formData: FormData): Promise<Contact> {
-    return this.http.post<Contact>(Routes.ROLE, formData).toPromise();
+    return this.http.post<Contact>(Routes.CONTACT, formData).toPromise();
 }
 
   update(formData: FormData, id: number): Promise<Contact> {

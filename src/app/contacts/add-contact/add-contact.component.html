@@ -1,1 +1,161 @@
-<p>add-contact works!</p>
+<div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading" style="width: 100%;">
+                <div class="page-title-icon">
+                    <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                    </i>
+                </div>
+                <div>{{ 'Role.Roles' | translate }}
+                    <div class="page-title-subheading">{{ 'Role.RoleTitle' | translate }}
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div> 
+
+<div class="main-card mb-3 card">
+        <div class="card-body">
+
+            <div id="smartwizard">
+                <ul class="forms-wizard">
+                    <li>
+                        <a  >
+                            <em>1</em><span>Account Information</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  >
+                            <em>2</em><span>Addresse Information</span>
+                        </a>
+                    </li>
+                    <li>
+                            <a  >
+                                <em>2</em><span>Social Information</span>
+                            </a>
+                        </li>
+                    <li>
+                        <a >
+                            <em>3</em><span>Finish Wizard</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="form-wizard-content">
+                        <form  [formGroup]="contactForm">
+                    <div id="step-1" class="{{ fill1Selected ? 'active' : '' }}" *ngIf="this.fill1Selected" >
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group"><label for="exampleEmail55">Name</label><input name="name_contact" type="text" formControlName="name"  class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}" placeholder="with a placeholder"  >
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                                <div class="col-md-6">
+                                        <div class="position-relative form-group"><label for="exampleSelect" class="">Type</label><select name="select" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}" >
+                                                <option>INTERNAL</option>
+                                                <option>EXTERNAL</option>
+                                            </select></div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="position-relative form-group"><label for="exampleSelect" class="">Nature</label><select name="select" formControlName="nature"  class="form-control {{ isSubmitted && form.nature.errors ? 'is-invalid' : '' }}" class="form-control">
+                                                <option>PHYSIC</option>
+                                                <option>MORAL</option>
+                                            </select></div>
+                                    </div>
+                                
+                            </div>
+                        <div class="position-relative form-group"><label for="exampleSelect" class="">Gender</label><select name="select" formControlName="gender"  class="form-control {{ isSubmitted && form.gender.errors ? 'is-invalid' : '' }}" class="form-control">
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                
+                            </select></div>
+                            <div class="position-relative form-group">
+                                    <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                    <textarea name="text" id="exampleText" formControlName="description"  class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}">
+            
+                                    </textarea>
+                                </div>
+                            <div class="position-relative form-group"><label for="exampleFile" class="">Image</label><input name="file" id="exampleFile" type="file" class="form-control-file">
+                                    <small class="form-text text-muted">Selectionner votre fichier.</small>
+                                </div>
+                        
+                    </div>
+                    <div id="step-2"  *ngIf="this.fill2Selected">
+                            <div class="form-row">
+                                    <div class="col-md-12">
+                                        <div class="position-relative form-group"><label for="exampleEmail55">Email</label><input name="email" formControlName="email"  class="form-control {{ isSubmitted && form.email.errors ? 'is-invalid' : '' }}" placeholder="with a placeholder" type="email" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="position-relative form-group"><label for="exampleAddress">Fax</label><input name="address" id="exampleAddress" formControlName="fax"  class="form-control {{ isSubmitted && form.fax.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control"></div>
+                                <div class="position-relative form-group"><label for="exampleAddress2">Bp</label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form.bp.errors ? 'is-invalid' : '' }}"  placeholder="Apartment, studio, or floor" type="text"
+                                                                                                                               class="form-control">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleCity">Phone1</label><input name="city" id="exampleCity" formControlName="phone1"  class="form-control {{ isSubmitted && form.phone1.errors ? 'is-invalid' : '' }}" type="text" class="form-control"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleState">Phone2</label><input name="state" id="exampleState" formControlName="phone2"  class="form-control {{ isSubmitted && form.phone2.errors ? 'is-invalid' : '' }}" type="text" class="form-control"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleZip">Phone3</label><input name="zip" id="exampleZip" type="text" formControlName="phone3"  class="form-control {{ isSubmitted && form.phone3.errors ? 'is-invalid' : '' }}" class="form-control"></div>
+                                    </div>
+                                </div>  
+                    </div>
+                    <div id="step-3"  *ngIf="this.fill3Selected">
+                            
+                                <div class="position-relative form-group"><label for="exampleAddress">Facebook</label><input name="address" id="exampleAddress" formControlName="facebook"  class="form-control {{ isSubmitted && form.facebook.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control"></div>
+                                
+                                <div class="position-relative form-group"><label for="exampleAddress2">twitter</label><input name="address2" id="exampleAddress2" formControlName="twitter"  class="form-control {{ isSubmitted && form.twitter.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control"></div>
+                                 
+                                <div class="position-relative form-group"><label for="exampleAddress">Whatsapp</label><input name="address" id="exampleAddress" formControlName="whatsapp"  class="form-control {{ isSubmitted && form.whatsapp.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control"></div>
+                               
+                                <div class="position-relative form-group"><label for="exampleAddress2">Linkedin</label><input name="address2" id="exampleAddress2" formControlName="linkedin"  class="form-control {{ isSubmitted && form.linkedin.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control"></div>
+                                
+                               
+                    </div>
+                    <div id="step-4" *ngIf="this.fill4Selected" >
+                            <div class="no-results">
+                                <div class="swal2-icon swal2-success swal2-animate-success-icon">
+                                    <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+                                    <span class="swal2-success-line-tip"></span>
+                                    <span class="swal2-success-line-long"></span>
+                                    <div class="swal2-success-ring"></div>
+                                    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+                                    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="results-subtitle mt-4">Finished!</div>
+                                <div class="results-title">You arrived at the last form wizard step!</div>
+                                <div class="mt-3 mb-3"></div>
+                                <div class="text-center">
+                                        <button (click)="onSubmit()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Role.CreateRole" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="clearfix">
+                <button type="button" id="reset-btn" class="btn-shadow float-left btn btn-link" (click)="reset()" >Reset</button>
+                <button type="button" id="next-btn" class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary" *ngIf="!this.fill4Selected" (click)="next()">Next</button>
+                <button type="button" id="prev-btn" class="btn-shadow float-right btn-wide btn-pill mr-3 btn btn-outline-secondary" *ngIf="!this.fill1Selected" (click)="previous()">Previous</button>
+            </div>
+        </div>
+    </div>
+
+
+
+

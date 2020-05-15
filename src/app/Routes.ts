@@ -4,3 +4,5 @@ export const LOGIN = SERVER+'auth/token';
 export const DOCUMENT = SERVER + 'documents';
 export const ROLE = SERVER + 'roles';
 export const PERMISSION = SERVER + 'permissions';
+
+export const CONTACT = SERVER + 'contacts';

@@ -30,7 +30,7 @@ import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
-import { UpdateContactComponent } from './contact/update-contact/update-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
