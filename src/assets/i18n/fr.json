@@ -25,20 +25,6 @@
     "Home": {
         "Title": "Page d'accueil"
     },
-    "Form": {
-        "NameLabel": "Nom",
-        "NameField": "Veuillez entrer le nom...",
-        "LabelLabel": "Label",
-        "LabelField": "Veuillez entrer le label...",
-        "DescriptionLabel": "Description",
-        "DescriptionField": "Veuillez entrer une description",
-        "CreatedAtLabel": "Date de création",
-        "CreatedAtField": "Date de création",
-        "WeightLabel": "Indice",
-        "WeightField": "Selectionnez un indice",
-        "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
-    },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -93,54 +79,71 @@
         "CreateContact": "Créer le contact",
         "UpdateContact": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du contact a réussie...",
+        "SubmitSuccess": "La création du contact a réussie..."
+    },        
+    "Form": {
+        "NameLabel": "Nom",
+        "NameField": "Veuillez entrer le nom...",
+        "TypeLabel": "Type",
+        "TypeField": "Veuillez entrer le type...",
+        "NatureLabel": "Nature",
+        "NaturetField": "selectionner une nature...",
+        "GenderLabel": "Sexe",
+        "GenderField": "selectionner votre sexe...",
+        "DescriptionLabel": "Description",
+
+        "ImageLabel": "Image",
+        "ImageField":"choisir une image",
+        "EmailLabel": "Email",
+        "EmailField": "Veuillez entrer  email...",
+        "FaxLabel": "Fax",
+        "FaxField": "Veuillez entrer le fax...",
+        "BpLabel": "Boite Postal",
+        "BpField": "Veuillez entrer la boite postale...",
+        "Phone1Label": "Telephone 1",
+        "Phone1Field": "premier numero...",
+        "Phone2Label": "Telephone 2",
+        "Phone2Field": "deuxieme numero...",
+        "Phone3Label": "Telephone 3",
+        "Phone3Field": "troisieme numero...",
+        "DescriptionField": "Veuillez entrer une description",
         
-        "Form": {
-            "NameLabel": "Nom",
-            "NameField": "Veuillez entrer le nom...",
-            "TypeLabel": "Type",
-            "TypeField": "Veuillez entrer le type...",
-            "NatureLabel": "Nature",
-            "NaturetField": "selectionner une nature...",
-            "GenderLabel": "Sexe",
-            "GenderField": "selectionner votre sexe...",
-            "DescriptionLabel": "Description",
+        "FacebookField": "Compte facebook...",
+        "TwitterField": "Compte twitter...",
+        "WhatsappField": "Compte whatsapp...",
+        "LinkedinField": "Compte linkedin...",
+        
+        "NextLabel":"Suivant",
+        "PreviousLabel":"Precedent",
+        "WeightLabel": "Indice",
 
-            "ImageLabel": "Image",
-            "ImageField":"choisir une image",
-            "EmailLabel": "Email",
-            "EmailField": "Veuillez entrer  email...",
-            "FaxLabel": "Fax",
-            "FaxField": "Veuillez entrer le fax...",
-            "BpLabel": "Boite Postal",
-            "BpField": "Veuillez entrer la boite postale...",
-            "Phone1Label": "Telephone 1",
-            "Phone1Field": "premier numero...",
-            "Phone2Label": "Telephone 2",
-            "Phone2Field": "deuxieme numero...",
-            "Phone3Label": "Telephone 3",
-            "Phone3Field": "troisieme numero...",
-            "DescriptionField": "Veuillez entrer une description",
-            
-            "FacebookField": "Compte facebook...",
-            "TwitterField": "Compte twitter...",
-            "WhatsappField": "Compte whatsapp...",
-            "LinkedinField": "Compte linkedin...",
-            
-            "NextLabel":"Suivant",
-            "PreviousLabel":"Precedent",
-            "WeightLabel": "Indice",
-            "WeightField": "Selectionnez un indice",
-            "SearchLabel": "Rechercher",
-            "SearchText": "Effectuez une recherche...",
+        "HeadPrincipalLabel": "Information Principale",
+        "HeadAddresLabel": "Addresse",
+        "HeadSocialLabel": "Information Sociale",
+        "HeadFinishLabel": "Termine",
+        "AssignmentNameField": "Veuillez remplir le champs label...",
+        "LabelLabel": "Label",
+        "LabelField": "Veuillez entrer le label...",
+        "CreatedAtLabel": "Date de création",
+        "CreatedAtField": "Date de création",
+        "WeightField": "Selectionnez un indice",
+        "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
+        "SearchLabel": "Rechercher",
+        "SearchText": "Effectuez une recherche...",
+        "AssignmentAddDescription":"veuillez faire une description"
 
-            "HeadPrincipalLabel": "Information Principale",
-            "HeadAddresLabel": "Addresse",
-            "HeadSocialLabel": "Information Sociale",
-            "HeadFinishLabel": "Termine"
-
-        }
+    },
        
+    "AssignmentType": {
+        "AssignmentType": "Type d'affectation",
+        "AssignmentTypeTitle": "Gestion des types d'affectation ",
+        "AddAssignmentType": "Ajouter un type d'affectation",
+        "CreateAssignmentType": "Créer le type d'affectatation",
+        "UpdateAssignmentType": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type d'affectation réussie...",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
@@ -151,5 +154,35 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "ProSituation": {
+        "ProSituations": "Situations professionelles",
+        "ProSituationTitle": "Gestion des situations professionelles de l'application",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la situation professionnelle a réussie...",
+        "ResponseError": "La création de la situation professionnelle a échouée, cela peut être dû au fait que vous ne soyez pas connecté à internet. Vérifier votre connexion puis réessayer",
+        "CreateProSituaton": "Créer la situation professionnelle",
+        "UpdateProSituation": "Mettre à jour",
+        "UpdateSuccess": "Mise à jour éffectuée avec succès",
+        "PRO_SITUATION_NOT_FOUND": "La situation professionelle choisie n'existe pas",
+        "VALIDATION_ERROR": {
+            "Name": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+            "Weight": "Le poids de la situation professionnelle est un nombre compris entre 1 et 100"
+        },
+        "UnknowError": "Une erreur inconnue s'est produite veuillez réessayer",
+        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom"
+    },
+    "Chat": {
+        "Title": "Chat",
+        "TitleText": "Toutes vos discussions sont traités ici, vous pouvez demarrez une nouvelle conversation",
+        "WriteAMessage": "Ecrivez un message ici pour l'envoyer...",
+        "NewDicussion": "Commencer une nouvelle discussion",
+        "MessageLength": "Nombre de message",
+        "Close": "Fermer la discussion",
+        "DeleteAll": "Supprimer tous les messages",
+        "UsersList": "Liste des utilisateurs",
+        "DiscussionList": "Fil de conversation",
+        "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message"
     }
 }

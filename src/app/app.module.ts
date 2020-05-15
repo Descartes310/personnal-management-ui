@@ -29,8 +29,11 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -56,8 +59,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
+    AddAssignmentTypeComponent,
+    UpdateAssignmentTypeComponent,
   ],
   imports: [
     BrowserModule,
