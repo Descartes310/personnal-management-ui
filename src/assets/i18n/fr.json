@@ -85,6 +85,17 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "Contract": {
+        "Contracts": "Contrats",
+        "ContractTitle": "Gestion des contrats de l'application",
+        "AddContract": "Ajouter un nouveau contract",
+        "CreateContract": "Créer le Contrat",
+        "UpdateContract": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du rôle a réussie...",
+        "CONTRACT_NOT_FOUND": "Le contrat n'a pas été retrouvé",
+        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà"
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "Warning": "Cette action est irreversible !",
