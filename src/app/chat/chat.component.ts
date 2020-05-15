@@ -36,6 +36,13 @@ export class ChatComponent implements OnInit {
   cancelled = '';
   cancelledMessage = '';
 
+  getDiscussionInterval = setInterval(() => {
+    console.log('Je suis les discussions')
+    this.getDiscussions();
+  }, 5000);
+
+  getMessageInterval = null;
+
   constructor(
     private chatService: ChatService,
     private authService: AuthService,
@@ -68,6 +75,15 @@ export class ChatComponent implements OnInit {
       discussion != null ? this.getDiscussion(discussion) : this.messages = [];
     });
     this.getDiscussions();
+    // setInterval(function () {
+    //   console.log('un jeu')
+    // }, 1000);
+  }
+
+  public ngOnDestroy() {
+    console.log('je pars')
+    clearInterval(this.getDiscussionInterval);
+    clearInterval(this.getMessageInterval);
   }
 
   search(event) {
@@ -88,6 +104,20 @@ export class ChatComponent implements OnInit {
   closeDiscussion() {
     this.current_user = null;
   }
+
+  deleteMessage(message: Message) {
+    this.chatService.deleteMessage(message.id).then(
+      data => {
+        console.log(data);
+        this.messages.slice(this.messages.indexOf(message), 1);
+      }
+    ).catch(
+      error => {
+
+      }
+    )
+  }
+
   deleteDiscussion() {
     let discussion = this.discussions_tmp.filter( discussion => discussion.user.id == this.current_user.id)[0];
     if(discussion != null){

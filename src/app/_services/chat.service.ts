@@ -36,6 +36,10 @@ export class ChatService {
         return this.http.delete<any>(`${Routes.CHAT}/discussion/${id}`).toPromise();
     }
 
+    deleteMessage(id: number): Promise<any> {
+        return this.http.delete<any>(`${Routes.CHAT}/${id}`).toPromise();
+    }
+
     getDiscussions(id: number): Promise<any> {
         return this.http.get<any>(`${Routes.CHAT}/discussions/${id}`).toPromise();
     }

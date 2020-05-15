@@ -183,6 +183,7 @@
         "UsersList": "Liste des utilisateurs",
         "DiscussionList": "Fil de conversation",
         "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
-        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message"
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message",
+        "Delete": "Supprimer"
     }
 }

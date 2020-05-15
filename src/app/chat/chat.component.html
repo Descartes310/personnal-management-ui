@@ -101,7 +101,10 @@
                                     <div class="chat-box" style="background-color: #82e887;">{{ message.content }}</div>
                                     <small class="opacity-6">
                                         <i class="fa fa-calendar-alt mr-1"></i>
-                                        {{ message.created_at }} <a href="#">delete</a>
+                                        {{ message.created_at }} &nbsp;&nbsp;&nbsp;
+                                        <!-- <a href="#" style="color: red;" (click)="deleteMessage(message)">
+                                            <i class="fa fa-trash-alt mr-1"></i> {{ 'Chat.Delete' | translate }}
+                                        </a> -->
                                     </small>
                                 </div>
                                 <div>
