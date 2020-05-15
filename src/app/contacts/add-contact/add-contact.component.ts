@@ -26,7 +26,6 @@ export class AddContactComponent implements OnInit {
   isError = false;
   isSuccess = false;
   isSubmitted = false;
-  role_name = '';
 
 
   constructor(private contactservice:ContactService,
@@ -50,8 +49,8 @@ export class AddContactComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: '',
-      type: '',
-      nature: '',
+      type: 'INTERNAL',
+      nature: 'PHYSIC',
       email: ['', [Validators.email]],
       phone1:['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
@@ -201,6 +200,7 @@ export class AddContactComponent implements OnInit {
   reset(){
     this.fill1Selected=true;
     this.changefill(1);
+    this.contactForm.reset();
   }
 
 

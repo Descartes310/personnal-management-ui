@@ -85,6 +85,63 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+
+    "Contact": {
+        "Contacts": "Contacts",
+        "ContactTitle": "Gestion des Contact de l'application",
+        "AddContact": "Ajouter un nouveau contact",
+        "CreateContact": "Créer le contact",
+        "UpdateContact": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du contact a réussie...",
+        
+        "Form": {
+            "NameLabel": "Nom",
+            "NameField": "Veuillez entrer le nom...",
+            "TypeLabel": "Type",
+            "TypeField": "Veuillez entrer le type...",
+            "NatureLabel": "Nature",
+            "NaturetField": "selectionner une nature...",
+            "GenderLabel": "Sexe",
+            "GenderField": "selectionner votre sexe...",
+            "DescriptionLabel": "Description",
+
+            "ImageLabel": "Image",
+            "ImageField":"choisir une image",
+            "EmailLabel": "Email",
+            "EmailField": "Veuillez entrer  email...",
+            "FaxLabel": "Fax",
+            "FaxField": "Veuillez entrer le fax...",
+            "BpLabel": "Boite Postal",
+            "BpField": "Veuillez entrer la boite postale...",
+            "Phone1Label": "Telephone 1",
+            "Phone1Field": "premier numero...",
+            "Phone2Label": "Telephone 2",
+            "Phone2Field": "deuxieme numero...",
+            "Phone3Label": "Telephone 3",
+            "Phone3Field": "troisieme numero...",
+            "DescriptionField": "Veuillez entrer une description",
+            
+            "FacebookField": "Compte facebook...",
+            "TwitterField": "Compte twitter...",
+            "WhatsappField": "Compte whatsapp...",
+            "LinkedinField": "Compte linkedin...",
+            
+            "NextLabel":"Suivant",
+            "PreviousLabel":"Precedent",
+            "WeightLabel": "Indice",
+            "WeightField": "Selectionnez un indice",
+            "SearchLabel": "Rechercher",
+            "SearchText": "Effectuez une recherche...",
+
+            "HeadPrincipalLabel": "Information Principale",
+            "HeadAddresLabel": "Addresse",
+            "HeadSocialLabel": "Information Sociale",
+            "HeadFinishLabel": "Termine"
+
+        }
+       
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "Warning": "Cette action est irreversible !",
