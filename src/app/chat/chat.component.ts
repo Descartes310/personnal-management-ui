@@ -17,6 +17,7 @@ export class ChatComponent implements OnInit {
   @BlockUI() blockUI: NgBlockUI;
 
   current_user = null;
+  current_discussion = null;
   isLoading: boolean = false;
   current_message = '';
   discussions: any[] = [];
@@ -72,12 +73,14 @@ export class ChatComponent implements OnInit {
       this.current_user = value[0].filter(user => user.id == value[1])[0] // value[0] contains a list of user and value[1] contains id of selected user from drawer
       this.users = value[0];
       let discussion = this.discussions_tmp.filter( discussion => discussion.user.id == this.current_user.id)[0];
-      discussion != null ? this.getDiscussion(discussion) : this.messages = [];
+      if(discussion != null) {
+        this.getDiscussion(discussion)
+      } else {
+        this.current_discussion = null;
+        this.messages = [];
+      }
     });
     this.getDiscussions();
-    // setInterval(function () {
-    //   console.log('un jeu')
-    // }, 1000);
   }
 
   public ngOnDestroy() {
@@ -103,6 +106,8 @@ export class ChatComponent implements OnInit {
 
   closeDiscussion() {
     this.current_user = null;
+    this.current_discussion = null;
+    clearInterval(this.getMessageInterval);
   }
 
   deleteMessage(message: Message) {
@@ -166,13 +171,18 @@ export class ChatComponent implements OnInit {
 
   getDiscussion(discussion: any) {
     this.isLoading = true;
+    this.current_discussion = discussion;
     this.current_user = discussion.user;
     this.messages = [];
     this.chatService.getDiscussion(discussion.id).then(
       data => {
         this.discussion = data;
         data.messages.map( message => this.messages.push(new Message(message)))
-        this.getDiscussions();
+        this.getMessageInterval = setInterval(() => {
+          console.log('Je suis les messages')
+          this.getDiscussion(this.current_discussion);
+        }, 3000);
+        //this.getDiscussions();
       } 
     ).catch (
       error => {
@@ -189,7 +199,7 @@ export class ChatComponent implements OnInit {
     formData.set('sender_id', this.user_id+"");
     formData.set('receiver_id', this.current_user.id);
     formData.set('message', this.current_message);
-    this.current_user.discussion_id != null ? formData.set("discussion_id", this.current_user.discussion_id+"") : null;
+    this.current_discussion != null ? formData.set("discussion_id", this.current_discussion.id+"") : null;
     this.chatService.postMessage(formData).then(
       data => {
         this.messages.push(new Message(data));
