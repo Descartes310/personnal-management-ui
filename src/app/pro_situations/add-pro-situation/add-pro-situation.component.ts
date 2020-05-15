@@ -81,10 +81,15 @@ export class AddProSituationComponent implements OnInit {
         this.isSubmitted = false;
         this.proSituationForm.reset();
       })
-      .catch(err => {
-        console.log(err)
-        this.translate.get('ProSituation.ResponseError')
-        .subscribe(val => this.notifService.danger(val));
+      .catch(error => {
+        console.log(error);
+        if(error.error.errors.name) {
+          this.translate.get('ProSituation.' + error.error.code + '.Name', { data: this.pro_situation_name })
+          .subscribe(val => this.notifService.danger(val));
+        } else if(error.error.errors.weight) {
+          this.translate.get('ProSituation.' + error.error.code + '.Weight', { data: this.form.weight })
+          .subscribe(val => this.notifService.danger(val));
+        }
       })
       .finally(() => this.isLoading = false);
   }
