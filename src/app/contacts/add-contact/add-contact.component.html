@@ -161,6 +161,16 @@
                 </div>
                 <div class="divider"></div>
                 <div class="clearfix">
+                        <button *ngIf="!this.fill4Selected" (click)="next()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 10%; justify-content: center; align-items: center; flex: 1;">
+                                <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'Contact.Form.NextLabel' | translate }}</p>
+                                <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                    <div class="ball-scale-multiple">
+                                        <div style="background-color: white;"></div>
+                                        <div style="background-color: white;"></div>
+                                        <div style="background-color: white;"></div>
+                                    </div>
+                                </div>
+                            </button>
                     <button type="button" id="reset-btn" class="btn-shadow float-left btn-wide btn-pill mr-3 btn btn-outline-secondary" (click)="reset()" >Reset</button>
                     <button type="button" id="next-btn" class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary" *ngIf="!this.fill4Selected" (click)="next()">{{ 'Contact.Form.NextLabel' | translate }}</button>
                     <button type="button" id="prev-btn" class="btn-shadow float-right btn-wide btn-pill mr-3 btn btn-outline-secondary" *ngIf="!this.fill1Selected" (click)="previous()">{{ 'Contact.Form.PreviousLabel' | translate }}</button>
