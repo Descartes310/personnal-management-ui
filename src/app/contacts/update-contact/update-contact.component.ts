@@ -3,7 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/_services/contact.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Contact } from 'src/app/_models/contact.model';
 
 @Component({
   selector: 'app-update-contact',
@@ -27,17 +28,41 @@ export class UpdateContactComponent implements OnInit {
    isSuccess = false;
    isSubmitted = false;
 
+   //variable contact
+   public contact:Contact=new Contact();
+    //variable pour la recuperation de image
+  image:File=null;
 
   constructor(private contactservice:ContactService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
-    private router: Router,) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
 
   ngOnInit() {
-    
+    //cas ou le serveur n'a pas encore renvoye le contact
+
     this.initform();
+
+    //recuperation du contact
+    const contact_id = +this.route.snapshot.paramMap.get("id");
+    this.contactservice.find(contact_id).then(
+      data => {
+        this.contact = data;
+        this.initformWithData();
+      }
+    ).catch(
+      error => {
+        this.translate.get('Role.'+error.error.code)
+        .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/roles/all'])
+      }
+    )
+
+
+    
   }
 
   get form() {
@@ -65,6 +90,33 @@ export class UpdateContactComponent implements OnInit {
       linkedin: '',
       website: '',
       gender: ['', Validators.required],
+      
+
+      
+
+    });
+  }
+
+  //remplissage du formulaire lorsque le role arrivera
+  initformWithData(){
+    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.contactForm = this.formBuilder.group({
+      name: [this.contact.name, [Validators.required]],
+      description: this.contact.description,
+      type: this.contact.type,
+      nature: this.contact.nature,
+      email: [this.contact.email, [Validators.email]],
+      phone1:[this.contact.phone1, [Validators.pattern(phone_patern)]],
+      phone2: [this.contact.phone2, [Validators.pattern(phone_patern)]],
+      phone3: [this.contact.phone3, [Validators.pattern(phone_patern)]],
+      fax: this.contact.fax,
+      bp: this.contact.bp,
+      twitter: this.contact.twitter,
+      facebook: this.contact.facebook,
+      whatsapp:this.contact.whatsapp,
+      linkedin: this.contact.linkedin,
+      website: this.contact.website,
+      gender: [this.contact.gender, Validators.required],
       
 
       
@@ -111,6 +163,8 @@ export class UpdateContactComponent implements OnInit {
     formData.append('website', '' + this.form.website.value);
     formData.append('gender', '' + this.form.gender.value);
 
+    //recuperation  de image
+    formData.append('image',this.image,this.image.name);
     
     this.contactservice.update(formData,1)
       .then(resp => {
@@ -206,6 +260,9 @@ export class UpdateContactComponent implements OnInit {
   }
 
 
-
+  detectimage(event){
+    this.image=event.target.files[0];
+    console.log(this.image)
+  }
 
 }

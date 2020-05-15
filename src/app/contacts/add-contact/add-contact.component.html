@@ -88,7 +88,7 @@
                 
                                         </textarea>
                                     </div>
-                                <div class="position-relative form-group"><label for="exampleFile" class="">{{ 'Contact.Form.ImageLabel' | translate }}</label><input name="file" id="exampleFile" type="file" class="form-control-file" >
+                                <div class="position-relative form-group"><label for="exampleFile" class="">{{ 'Contact.Form.ImageLabel' | translate }}</label><input name="file" id="exampleFile" type="file" class="form-control-file" (change)=detectimage($event) >
                                         <small class="form-text text-muted">{{'Contact.Form.ImageField' | translate}}</small>
                                     </div>
                             
@@ -102,7 +102,7 @@
                                         
                                     </div>
                                     <div class="position-relative form-group"><label for="exampleAddress">{{ 'Contact.Form.FaxLabel' | translate }}</label><input name="address" id="exampleAddress" formControlName="fax"  class="form-control {{ isSubmitted && form.fax.errors ? 'is-invalid' : '' }}" placeholder="{{'Contact.Form.FaxField' | translate}}" type="text" class="form-control"></div>
-                                    <div class="position-relative form-group"><label for="exampleAddress2"></label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form.bp.errors ? 'is-invalid' : '' }}"  placeholder="{{'Contact.Form.BpField' | translate}}" type="text"
+                                    <div class="position-relative form-group"><label for="exampleAddress2">{{ 'Contact.Form.BpLabel' | translate }}</label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form.bp.errors ? 'is-invalid' : '' }}"  placeholder="{{'Contact.Form.BpField' | translate}}" type="text"
                                                                                                                                    class="form-control">
                                     </div>
                                     <div class="form-row">

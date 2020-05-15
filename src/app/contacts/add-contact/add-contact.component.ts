@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AddContactComponent implements OnInit {
 
-  //selection des fill
+  //selection des fill: pour la gestion du wizard
   fill1Selected:boolean=true;
   fill2Selected:boolean=false;
   fill3Selected:boolean=false;
@@ -26,8 +26,8 @@ export class AddContactComponent implements OnInit {
   isError = false;
   isSuccess = false;
   isSubmitted = false;
-
-
+//variable pour la recuperation de image
+  image:File=null;
   constructor(private contactservice:ContactService,
               private notifService: NotifService,
               private formBuilder: FormBuilder,
@@ -108,6 +108,9 @@ export class AddContactComponent implements OnInit {
     formData.append('linkedin', '' + this.form.linkedin.value);
     formData.append('website', '' + this.form.website.value);
     formData.append('gender', '' + this.form.gender.value);
+
+    //recuperation  de image
+    formData.append('image',this.image,this.image.name);
 
     
     this.contactservice.add(formData)
@@ -196,6 +199,14 @@ export class AddContactComponent implements OnInit {
       this.changefill(3);
     }
   }
+
+
+  detectimage(event){
+    this.image=event.target.files[0];
+    console.log(this.image)
+  }
+
+  
 
   reset(){
     this.fill1Selected=true;

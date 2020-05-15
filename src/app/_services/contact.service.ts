@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from '../_models/contact.model';
@@ -17,6 +18,9 @@ export class ContactService {
 }
 
   update(formData: FormData, id: number): Promise<Contact> {
-    return this.http.post<Contact>(`${Routes.ROLE}/${id}`, formData).toPromise();
+    return this.http.post<Contact>(`${Routes.CONTACT}/${id}`, formData).toPromise();
+}
+  find(id: number): Promise<Contact> {
+  return this.http.get<Contact>(`${Routes.CONTACT}/${id}`).toPromise();
 }
 }
