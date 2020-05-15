@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.NameLabel" | translate }}</label>
-                                            <input placeholder="{{ 'Form.AssignmentNameField' | translate }}" disabled type="text" formControlName="name" value="{{ role_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                            <input placeholder="{{ 'Form.AssignmentNameField' | translate }}" disabled type="text" formControlName="name" value="{{ assignment_type_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
