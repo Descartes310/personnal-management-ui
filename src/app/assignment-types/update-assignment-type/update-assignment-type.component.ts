@@ -39,6 +39,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
     .then(
       data => {
         this.assign = data;
+        this.assign.name="";
         this.initForm(true);
       }
     ).catch(
