@@ -112,16 +112,22 @@ export class UpdateProSituationComponent implements OnInit {
   
     this.proSituationService.update(formData, this.pro_situation.id)
       .then(resp => {
+        console.log(resp);
         this.translate.get('ProSituation.UpdateSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.proSituationForm.reset();
         this.router.navigate(['/pro_situations/all']);
       })
-      .catch(err => {
-        console.log(err)
-        this.translate.get('ProSituation.' + err.error.code)
-        .subscribe(val => this.notifService.danger(val));
+      .catch(error => {
+        console.log(error)
+        if(error) {
+          this.translate.get('ProSituation.' + error.error.code, { data: this.pro_situation_name })
+          .subscribe(val => this.notifService.danger(val));
+        } else {
+          this.translate.get('ProSituation.UnknowError')
+          .subscribe(val => this.notifService.danger(val));
+        }
       })
       .finally(() => this.isLoading = false);
   }
