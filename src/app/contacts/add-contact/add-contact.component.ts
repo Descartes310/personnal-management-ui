@@ -12,12 +12,10 @@ import { Router } from '@angular/router';
 })
 export class AddContactComponent implements OnInit {
 
-  //selection des fill: pour la gestion du wizard
-  fill1Selected:boolean=true;
-  fill2Selected:boolean=false;
-  fill3Selected:boolean=false;
-  fill4Selected:boolean=false;
- 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup :FormGroup;
 
   contactForm: FormGroup;
   isLoading = false;
@@ -33,8 +31,12 @@ export class AddContactComponent implements OnInit {
               private router: Router,) { }
 
   ngOnInit() {
+   
+  
     
     this.initform();
+    this.initform2();
+    this.initform3();
   }
 
   get form() {
@@ -49,22 +51,37 @@ export class AddContactComponent implements OnInit {
       description: '',
       type: 'INTERNAL',
       nature: 'PHYSIC',
+     
+      
+      
+
+      
+
+    });
+  }
+  initform2(){
+    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.secondFormGroup = this.formBuilder.group({
+      
       email: ['', [Validators.email]],
       phone1:['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
       fax: '',
       bp: '',
+    });
+  }
+
+  initform3(){
+    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.thirdFormGroup = this.formBuilder.group({
+      
       twitter: '',
       facebook: '',
       whatsapp:'',
       linkedin: '',
       website: '',
       gender: ['', Validators.required],
-      
-
-      
-
     });
   }
 
@@ -128,167 +145,6 @@ export class AddContactComponent implements OnInit {
   }
 
 
-  //change fill
-  changefill(value) {
-    if (value === 1) {
-      this.fill1Selected = true;
-      this.fill2Selected = false;
-      this.fill3Selected = false;
-      this.fill4Selected = false;
-    }
-    else if (value === 2) {
-      this.fill1Selected = false;
-      this.fill2Selected = true;
-      this.fill3Selected = false;
-      this.fill4Selected = false;
-    }
-    else if (value === 3) {
-      this.fill1Selected = false;
-      this.fill2Selected = false;
-      this.fill3Selected = true;
-      this.fill4Selected = false;
-    }
-    else {
-      this.fill1Selected = false;
-      this.fill2Selected = false;
-      this.fill3Selected = false;
-      this.fill4Selected = true;
-    }
-
-  }
-
-  next1() {
-    var btn = document.getElementById('next-btn');
-     if (this.fill1Selected && !this.validStep1()) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
-        .subscribe(val => this.notifService.danger(val));
-
-      console.log(btn)
-      //btn.click();
-      
-      console.log("*************")
-      console.log(this.fill1Selected)
-      console.log(this.fill2Selected)
-      console.log(this.fill3Selected)
-      console.log(this.fill4Selected)
-    }
-
-    else if (this.fill2Selected && !this.validStep2()) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
-        .subscribe(val => this.notifService.danger(val));
-      var btn = document.getElementById('prev-btn');
-      btn.click();
-      this.changefill(2);
-
-    }
-    else if (this.fill3Selected) {
-      btn.click();
-    }
-    else if (!this.fill3Selected) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
-        .subscribe(val => this.notifService.danger(val));
-      var btn = document.getElementById('prev-btn');
-      btn.click();
-      this.changefill(3);
-
-    }
-    else if (this.fill4Selected) {
-      btn.click();
-    }
-    else if (!this.fill4Selected) {
-      
-      return
-
-    }
-
-
-
-  }
-  next(){
-    if(this.fill1Selected){
-      this.changefill(2);
-    }
-    else if(this.fill2Selected){
-      this.changefill(3);
-    }
-    else if(this.fill3Selected){
-      this.changefill(4);
-    }
-    
-    
-  }
-  previous(){
-    if(this.fill1Selected){
-      return;
-    }
-    else if(this.fill2Selected){
-      this.changefill(1);
-    }
-    else if(this.fill3Selected){
-      this.changefill(2);
-    }
-    else{
-      this.changefill(3);
-    }
-  
-  }
-  /*previous() {
-
-    if (this.fill2Selected) {
-      this.changefill(1);
-    }
-    else if (this.fill3Selected) {
-      this.changefill(2);
-
-    }
-    else if (this.fill4Selected) {
-      this.changefill(3);
-    }
- 
-  }*/
-
-  reset() {
-    this.fill1Selected = true;
-    this.changefill(1);
-    this.contactForm.reset();
-  }
-
-
-  detectimage(event) {
-    this.image = event.target.files[0];
-    console.log(this.image)
-  }
-
-  //validation de chaque block de formulaire
-
-  validStep1() {
-    if (!this.form.name.errors)
-      return true;
-    return false;
-  }
-  //step 2
-  validStep2() {
-    if (!this.form.phone1.errors && !this.form.phone2.errors && !this.form.phone2.errors && !this.form.email.errors)
-      return true;
-    return false;
-  }
-  //valid step 3
-  validStep3() {
-
-    if (!this.contactForm.invalid)
-      return true;
-    return false;
-  }
-
-  valid(){
-    if(!this.validStep1()||!this.validStep2() || !this.validStep3() )
-        return false;
-    return true;
-
-  }
 
 
 }

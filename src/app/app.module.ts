@@ -34,7 +34,7 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
-
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -66,6 +66,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateAssignmentTypeComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

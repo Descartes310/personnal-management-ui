@@ -218,13 +218,10 @@ export class UpdateContactComponent implements OnInit {
 
   next1() {
     var btn = document.getElementById('next-btn');
-     if (this.fill1Selected && !this.validStep1()) {
+   if (this.fill1Selected && !this.validStep1()) {
       this.isSubmitted = true;
       this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
-
-      console.log(btn)
-      //btn.click();
       
       console.log("*************")
       console.log(this.fill1Selected)
@@ -233,6 +230,9 @@ export class UpdateContactComponent implements OnInit {
       console.log(this.fill4Selected)
     }
 
+    else if (this.fill2Selected && this.validStep2()) {
+      
+    }
     else if (this.fill2Selected && !this.validStep2()) {
       this.isSubmitted = true;
       this.translate.get('Contact.SubmitError')
@@ -276,7 +276,6 @@ export class UpdateContactComponent implements OnInit {
     else if(this.fill3Selected){
       this.changefill(4);
     }
-    
     
   }
   previous(){
