@@ -29,6 +29,8 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,6 +56,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
   ],
   imports: [
     BrowserModule,

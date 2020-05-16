@@ -32,6 +32,8 @@
         "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
+        "DaysLabel": "Nombre de jours",
+        "DaysField": "Veuillez entrer le nombre de jours...",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
         "WeightLabel": "Indice",
@@ -84,6 +86,18 @@
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "VacationType": {
+        "VacationTypes": "Types de congés",
+        "VacationTypesAdd": " Nouveau type de congés",
+        "VacationTypesUpdate": "Mise à jour d'un type de congés",
+        "VacationTypeTitle": "Gestion des types de congés de l'application",
+        "CreateVacationType": "Enregistrer",
+        "UpdateVacationType": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
