@@ -80,10 +80,23 @@
         "CreateRole": "Créer le rôle",
         "UpdateRole": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitSuccess": "La création du role a réussie...",
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "Division": {
+        "Divisions": "Creation des divisions",
+        "Divisions1": " Update des divisions",
+        "DivisionTitle": "Gestion de création et des mises jours des divisions de l'application",
+        "AddDivision": "Ajouter une nouvelle division",
+        "CreateDivision": "Créer la divsion",
+        "UpdateDivision": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la division a réussie...",
+        "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
+        "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
+        "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
