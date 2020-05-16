@@ -108,8 +108,9 @@ export class AddContactComponent implements OnInit {
     formData.append('gender', '' + this.form.gender.value);
 
     //recuperation  de image
-    formData.append('image',this.image,this.image.name);
-
+    if(this.image != null) {
+      formData.append('picture',this.image, this.image.name);
+    }
     
     this.contactservice.add(formData)
       .then(resp => {
