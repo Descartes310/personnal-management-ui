@@ -19,10 +19,11 @@ export class AddProSituationComponent implements OnInit {
 
   proSituationForm: FormGroup;
   isLoading = false;
-  isError = false;
-  isSuccess = false;
-  isSubmitted = false;
-  pro_situation_name = '';
+  public isError: boolean = false;
+  public isSuccess: boolean = false;
+  public isSubmitted: boolean = false;
+  public proSituationName: string = '';
+  public errorMessages: any = {};
 
   constructor(
     private proSituationService: ProSituationService,
@@ -30,13 +31,13 @@ export class AddProSituationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private router: Router,
-  ) { }
+  ) {}
 
   ngOnInit() {
 
     this.proSituationForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      description: [''],
+      name: [' ', Validators.required],
+      description: [' '],
       weight: [1, 
         [ 
           Validators.required,
@@ -45,6 +46,43 @@ export class AddProSituationComponent implements OnInit {
         ]
       ],
     });
+
+    this.errorMessages = {
+      name: [
+        { type: 'required', message: '' }
+      ],
+      weight: [
+        { type: 'required', message: '' },
+        { type: 'min', message: '' },
+        { type: 'max', message: '' },
+      ]
+    }
+
+    this.getNameErrorMessages();
+    this.getWeightErrorMessages();
+
+  }
+
+  public getNameErrorMessages() {
+    this.translate.get('ProSituation.ErrorMessages.Name').subscribe(val => {
+    this.errorMessages.name[0].message = val[0];
+    });
+  }
+
+  public  getWeightErrorMessages() {
+    this.translate.get('ProSituation.ErrorMessages.Weight').subscribe(val => {
+      this.errorMessages.weight[0].message = val[0];
+      this.errorMessages.weight[1].message = val[1];
+      this.errorMessages.weight[2].message = val[2];
+    });
+  }
+
+  get name() {
+    return this.proSituationForm.get('name');
+  };
+
+  get weight() {
+    return this.proSituationForm.get('weight');
   }
 
   get form() {
@@ -52,7 +90,7 @@ export class AddProSituationComponent implements OnInit {
   }
 
   computeName(event){
-    this.pro_situation_name = event.target.value.replace(/[^A-Z0-9]/ig, "_");
+    this.proSituationName = event.target.value.replace(/[^A-Z0-9]/ig, "_");
   }
 
   onSubmit() {
@@ -61,7 +99,7 @@ export class AddProSituationComponent implements OnInit {
     this.isSuccess = false;
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.pro_situation_name);
+    this.form.name.setValue(this.proSituationName);
     if (this.proSituationForm.invalid) {
       this.translate.get('ProSituation.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -70,10 +108,10 @@ export class AddProSituationComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('name', '' + this.form.name.value);
-    formData.append('description', '' + this.form.description.value);
-    formData.append('weight', this.form.weight.value);
-   
+    formData.append('name', '' + this.form.name.value.trim());
+    formData.append('description', '' + this.form.description.value.trim());
+    formData.append('weight', '' + this.form.weight.value);
+
     this.proSituationService.add(formData)
       .then(resp => {
         this.translate.get('ProSituation.SubmitSuccess')
@@ -83,8 +121,11 @@ export class AddProSituationComponent implements OnInit {
       })
       .catch(error => {
         console.log(error);
-        if(error.error.errors.name) {
-          this.translate.get('ProSituation.' + error.error.code + '.Name', { data: this.pro_situation_name })
+        if(error.status == 0 && error.statusText == "Unknown Error" && !error.ok) {
+          this.translate.get('ProSituation.NetWorkError')
+          .subscribe(val => this.notifService.danger(val));
+        } else if(error.error.errors.name) {
+          this.translate.get('ProSituation.' + error.error.code + '.Name', { data: this.proSituationName })
           .subscribe(val => this.notifService.danger(val));
         } else if(error.error.errors.weight) {
           this.translate.get('ProSituation.' + error.error.code + '.Weight', { data: this.form.weight })

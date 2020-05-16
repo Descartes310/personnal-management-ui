@@ -12,6 +12,9 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -19,6 +22,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
+  { path: 'profiles/add', component: AddProfileComponent },
+  { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
