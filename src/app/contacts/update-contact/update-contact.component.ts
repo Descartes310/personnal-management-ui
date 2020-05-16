@@ -13,32 +13,35 @@ import { Contact } from 'src/app/_models/contact.model';
 })
 export class UpdateContactComponent implements OnInit {
 
-   //selection des fill
-   fill1Selected:boolean=true;
-   fill2Selected:boolean=false;
-   fill3Selected:boolean=false;
-   fill4Selected:boolean=false;
-   //selection des panneaux
-   panel1selected:boolean=true;
-   panel2selected:boolean
- 
-   contactForm: FormGroup;
-   isLoading = false;
-   isError = false;
-   isSuccess = false;
-   isSubmitted = false;
+  //selection des fill
+  fill1Selected: boolean = false;
+  fill2Selected: boolean = false;
+  fill3Selected: boolean = false;
+  fill4Selected: boolean = false;
 
-   //variable contact
-   public contact:Contact=new Contact();
-    //variable pour la recuperation de image
-  image:File=null;
 
-  constructor(private contactservice:ContactService,
+  contactForm: FormGroup;
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
+
+
+
+  //variable contact
+  public contact: Contact = new Contact();
+  //variable pour la recuperation de image
+  image: File = null;
+
+  constructor(private contactservice: ContactService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+
+    this.fill1Selected = true;
+  }
 
 
   ngOnInit() {
@@ -55,14 +58,14 @@ export class UpdateContactComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('Role.'+error.error.code)
-        .subscribe(val => this.notifService.danger(val));
+        this.translate.get('Role.' + error.error.code)
+          .subscribe(val => this.notifService.danger(val));
         this.router.navigate(['/roles/all'])
       }
     )
 
 
-    
+
   }
 
   get form() {
@@ -71,61 +74,61 @@ export class UpdateContactComponent implements OnInit {
 
 
   //init form
-  initform(){
-    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+  initform() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: '',
       type: 'INTERNAL',
       nature: 'PHYSIC',
       email: ['', [Validators.email]],
-      phone1:['', [Validators.pattern(phone_patern)]],
+      phone1: ['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
       fax: '',
       bp: '',
       twitter: '',
       facebook: '',
-      whatsapp:'',
+      whatsapp: '',
       linkedin: '',
       website: '',
       gender: ['', Validators.required],
-      
 
-      
+
+
 
     });
   }
 
   //remplissage du formulaire lorsque le role arrivera
-  initformWithData(){
-    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+  initformWithData() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.contactForm = this.formBuilder.group({
       name: [this.contact.name, [Validators.required]],
       description: this.contact.description,
       type: this.contact.type,
       nature: this.contact.nature,
       email: [this.contact.email, [Validators.email]],
-      phone1:[this.contact.phone1, [Validators.pattern(phone_patern)]],
+      phone1: [this.contact.phone1, [Validators.pattern(phone_patern)]],
       phone2: [this.contact.phone2, [Validators.pattern(phone_patern)]],
       phone3: [this.contact.phone3, [Validators.pattern(phone_patern)]],
       fax: this.contact.fax,
       bp: this.contact.bp,
       twitter: this.contact.twitter,
       facebook: this.contact.facebook,
-      whatsapp:this.contact.whatsapp,
+      whatsapp: this.contact.whatsapp,
       linkedin: this.contact.linkedin,
       website: this.contact.website,
       gender: [this.contact.gender, Validators.required],
-      
 
-      
+
+
 
     });
   }
 
-    
-  
+
+
   //submit the form
   onSubmit() {
     this.isSubmitted = true;
@@ -164,65 +167,105 @@ export class UpdateContactComponent implements OnInit {
     formData.append('gender', '' + this.form.gender.value);
 
     //recuperation  de image
-    formData.append('image',this.image,this.image.name);
-    
-    this.contactservice.update(formData,1)
+    formData.append('image', this.image, this.image.name);
+
+    this.contactservice.update(formData, 1)
       .then(resp => {
         this.translate.get('Role.SubmitSuccess')
-        .subscribe(val => this.notifService.success(val));
+          .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.contactForm.reset();
-        
+
       })
       .catch(err => {
         console.log(err)
         this.translate.get('Login.AUTH_LOGIN')
-        .subscribe(val => this.notifService.danger(val));
+          .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
   }
 
-  //changement des panneaux
-  public changepanel(value){
-    if(value==1){
-      this.panel1selected=true;
-      this.panel2selected=false
-    }
-    else{
-      this.panel1selected=false;
-      this.panel2selected=true;
-    }
-  }
+
 
   //change fill
-  changefill(value){
-    if(value===1){
-      this.fill1Selected=true;
-      this.fill2Selected=false;
-      this.fill3Selected=false;
-      this.fill4Selected=false;
+  changefill(value) {
+    if (value === 1) {
+      this.fill1Selected = true;
+      this.fill2Selected = false;
+      this.fill3Selected = false;
+      this.fill4Selected = false;
     }
-    else if(value===2){
-      this.fill1Selected=false;
-      this.fill2Selected=true;
-      this.fill3Selected=false;
-      this.fill4Selected=false;
+    else if (value === 2) {
+      this.fill1Selected = false;
+      this.fill2Selected = true;
+      this.fill3Selected = false;
+      this.fill4Selected = false;
     }
-    else if(value===3){
-      this.fill1Selected=false;
-      this.fill2Selected=false;
-      this.fill3Selected=true;
-      this.fill4Selected=false;
+    else if (value === 3) {
+      this.fill1Selected = false;
+      this.fill2Selected = false;
+      this.fill3Selected = true;
+      this.fill4Selected = false;
     }
-    else{
-      this.fill1Selected=false;
-      this.fill2Selected=false;
-      this.fill3Selected=false;
-      this.fill4Selected=true;
+    else {
+      this.fill1Selected = false;
+      this.fill2Selected = false;
+      this.fill3Selected = false;
+      this.fill4Selected = true;
     }
 
   }
 
+  next1() {
+    var btn = document.getElementById('next-btn');
+     if (this.fill1Selected && !this.validStep1()) {
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+
+      console.log(btn)
+      //btn.click();
+      
+      console.log("*************")
+      console.log(this.fill1Selected)
+      console.log(this.fill2Selected)
+      console.log(this.fill3Selected)
+      console.log(this.fill4Selected)
+    }
+
+    else if (this.fill2Selected && !this.validStep2()) {
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+      var btn = document.getElementById('prev-btn');
+      btn.click();
+      this.changefill(2);
+
+    }
+    else if (this.fill3Selected) {
+      btn.click();
+    }
+    else if (!this.fill3Selected) {
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+      var btn = document.getElementById('prev-btn');
+      btn.click();
+      this.changefill(3);
+
+    }
+    else if (this.fill4Selected) {
+      btn.click();
+    }
+    else if (!this.fill4Selected) {
+      
+      return
+
+    }
+
+
+
+  }
   next(){
     if(this.fill1Selected){
       this.changefill(2);
@@ -233,11 +276,9 @@ export class UpdateContactComponent implements OnInit {
     else if(this.fill3Selected){
       this.changefill(4);
     }
-    else{
-      this.changefill(1);
-    }
+    
+    
   }
-
   previous(){
     if(this.fill1Selected){
       return;
@@ -251,18 +292,69 @@ export class UpdateContactComponent implements OnInit {
     else{
       this.changefill(3);
     }
+    console.log("*************")
+    console.log(this.fill1Selected)
+    console.log(this.fill2Selected)
+    console.log(this.fill3Selected)
+    console.log(this.fill4Selected)
   }
+  /*previous() {
 
-  reset(){
-    this.fill1Selected=true;
+    if (this.fill2Selected) {
+      this.changefill(1);
+    }
+    else if (this.fill3Selected) {
+      this.changefill(2);
+
+    }
+    else if (this.fill4Selected) {
+      this.changefill(3);
+    }
+ 
+  }*/
+
+  reset() {
+    this.fill1Selected = true;
     this.changefill(1);
     this.contactForm.reset();
   }
 
 
-  detectimage(event){
-    this.image=event.target.files[0];
+  detectimage(event) {
+    this.image = event.target.files[0];
     console.log(this.image)
   }
+
+  //validation de chaque block de formulaire
+
+  validStep1() {
+    if (!this.form.name.errors)
+      return true;
+    return false;
+  }
+  //step 2
+  validStep2() {
+    if (!this.form.phone1.errors && !this.form.phone2.errors && !this.form.phone2.errors && !this.form.email.errors)
+      return true;
+    return false;
+  }
+  //valid step 3
+  validStep3() {
+
+    if (!this.contactForm.invalid)
+      return true;
+    return false;
+  }
+
+  valid(){
+    if(!this.validStep1()||!this.validStep2() || !this.validStep3() )
+        return false;
+    return true;
+
+  }
+
+
+
+
 
 }

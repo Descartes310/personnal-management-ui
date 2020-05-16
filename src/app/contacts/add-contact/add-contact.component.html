@@ -1,171 +1,211 @@
 <div class="app-page-title">
-        <div class="page-title-wrapper">
-            <div class="page-title-heading" style="width: 100%;">
-                <div class="page-title-icon">
-                    <i class="pe-7s-shield icon-gradient bg-ripe-malin">
-                    </i>
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Contact.Contacts' | translate }}
+                <div class="page-title-subheading">{{ 'Contact.ContactTitle' | translate }}
                 </div>
-                <div>{{ 'Contact.Contacts' | translate }}
-                    <div class="page-title-subheading">{{ 'Contact.ContactTitle' | translate }}
+            </div>
+        </div>   
+    </div>
+</div> 
+
+
+<div class="row">
+        <div class="col-md-12">
+            <div class="tabs-animation">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                        {{ 'Contact.CreateContact' | translate }}
                     </div>
-                </div>
-            </div>   
-        </div>
-    </div> 
-
-
-    <div class="row">
-            <div class="col-md-12">
-                <div class="tabs-animation">
-                    <div class="main-card mb-3 card">
-                        <div class="card-header">
-                            <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-                            {{ 'Contact.AddContact' | translate }}
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="main-card mb-3 card">
-                                        <div class="card-body">
-                                            
-            <div id="smartwizard">
-                    <ul class="forms-wizard">
-                        <li>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body">
+                                        
+        <div id="smartwizard">
+                <ul class="forms-wizard">
+                    <li>
+                        <a  >
+                            <em>1</em><span>{{ 'Form.HeadPrincipalLabel' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  >
+                            <em>2</em><span>{{ 'Form.HeadAddresLabel' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
                             <a  >
-                                <em>1</em><span>{{ 'Contact.Form.HeadPrincipalLabel' | translate }}</span>
+                                <em>2</em><span>{{ 'Form.HeadSocialLabel' | translate }}</span>
                             </a>
                         </li>
-                        <li>
-                            <a  >
-                                <em>2</em><span>{{ 'Contact.Form.HeadAddresLabel' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                                <a  >
-                                    <em>2</em><span>{{ 'Contact.Form.HeadSocialLabel' | translate }}</span>
-                                </a>
-                            </li>
-                        <li>
-                            <a >
-                                <em>3</em><span>{{ 'Contact.Form.HeadFinishLabel' | translate }}</span>
-                            </a>
-                        </li>
-                    </ul>
-    
-                    <div class="form-wizard-content">
-                            <form  [formGroup]="contactForm">
-                        <div id="step-1" class="{{ fill1Selected ? 'active' : '' }}" *ngIf="this.fill1Selected" >
-                            <div class="form-row">
-                                <div class="col-md-12">
-                                    <div class="position-relative form-group"><label for="exampleEmail55">{{ 'Contact.Form.NameLabel' | translate }}</label><input name="name_contact" type="text" formControlName="name"  class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}" placeholder="{{'Contact.Form.NameField' | translate}}"  >
-                                    </div>
+                    <li>
+                        <a >
+                            <em>3</em><span>{{ 'Form.HeadFinishLabel' | translate }}</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="form-wizard-content">
+                        <form  [formGroup]="contactForm">
+                    <div id="step-1" class="{{ fill1Selected ? 'active' : '' }}" *ngIf="this.fill1Selected" >
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group"><label for="exampleEmail55">{{ 'Form.NameLabel' | translate }}</label><input name="name_contact" type="text" formControlName="name"  class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.NameField' | translate}}"  >
                                 </div>
-                                
                             </div>
-                            <div class="form-row">
-                                    <div class="col-md-6">
-                                            <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Contact.Form.TypeLabel' | translate }}</label><select name="select" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}" >
-                                                    <option>INTERNAL</option>
-                                                    <option>EXTERNAL</option>
-                                                </select></div>
-                                    </div>
-                                    <div class="col-md-6">
-                                            <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Contact.Form.NatureLabel' | translate }}</label><select name="select" formControlName="nature"  class="form-control {{ isSubmitted && form.nature.errors ? 'is-invalid' : '' }}" class="form-control">
-                                                    <option>PHYSIC</option>
-                                                    <option>MORAL</option>
-                                                </select></div>
-                                        </div>
-                                    
-                                </div>
-                            <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Contact.Form.GenderLabel' | translate }}</label><select name="select" formControlName="gender"  class="form-control {{ isSubmitted && form.gender.errors ? 'is-invalid' : '' }}" class="form-control">
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
-                                    
-                                </select></div>
-                                <div class="position-relative form-group">
-                                        <label for="exampleText" class="">{{ 'Contact.Form.DescriptionLabel' | translate }}</label>
-                                        <textarea name="text" id="exampleText" formControlName="description"  class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}" placeholder="{{'Contact.Form.DescriptionField' | translate}}">
-                
-                                        </textarea>
-                                    </div>
-                                <div class="position-relative form-group"><label for="exampleFile" class="">{{ 'Contact.Form.ImageLabel' | translate }}</label><input name="file" id="exampleFile" type="file" class="form-control-file" (change)=detectimage($event) >
-                                        <small class="form-text text-muted">{{'Contact.Form.ImageField' | translate}}</small>
-                                    </div>
                             
                         </div>
-                        <div id="step-2"  *ngIf="this.fill2Selected">
-                                <div class="form-row">
-                                        <div class="col-md-12">
-                                            <div class="position-relative form-group"><label for="exampleEmail55">{{ 'Contact.Form.EmailLabel' | translate }}</label><input name="email" formControlName="email"  class="form-control {{ isSubmitted && form.email.errors ? 'is-invalid' : '' }}" placeholder="with a placeholder" type="email" class="form-control">
-                                            </div>
-                                        </div>
-                                        
+                        <div class="form-row">
+                                <div class="col-md-6">
+                                        <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.TypeLabel' | translate }}</label><select name="select" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}" >
+                                                <option>INTERNAL</option>
+                                                <option>EXTERNAL</option>
+                                            </select></div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.NatureLabel' | translate }}</label><select name="select" formControlName="nature"  class="form-control {{ isSubmitted && form.nature.errors ? 'is-invalid' : '' }}" class="form-control">
+                                                <option>PHYSIC</option>
+                                                <option>MORAL</option>
+                                            </select></div>
                                     </div>
-                                    <div class="position-relative form-group"><label for="exampleAddress">{{ 'Contact.Form.FaxLabel' | translate }}</label><input name="address" id="exampleAddress" formControlName="fax"  class="form-control {{ isSubmitted && form.fax.errors ? 'is-invalid' : '' }}" placeholder="{{'Contact.Form.FaxField' | translate}}" type="text" class="form-control"></div>
-                                    <div class="position-relative form-group"><label for="exampleAddress2">{{ 'Contact.Form.BpLabel' | translate }}</label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form.bp.errors ? 'is-invalid' : '' }}"  placeholder="{{'Contact.Form.BpField' | translate}}" type="text"
-                                                                                                                                   class="form-control">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-4">
-                                            <div class="position-relative form-group"><label for="exampleCity">{{ 'Contact.Form.Phone1Label' | translate }}</label><input name="city" id="exampleCity" formControlName="phone1"  class="form-control {{ isSubmitted && form.phone1.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Contact.Form.Phone1Field' | translate}}"></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="position-relative form-group"><label for="exampleState">{{ 'Contact.Form.Phone2Label' | translate }}</label><input name="state" id="exampleState" formControlName="phone2"  class="form-control {{ isSubmitted && form.phone2.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Contact.Form.Phone2Field' | translate}}"></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="position-relative form-group"><label for="exampleZip">{{ 'Contact.Form.Phone3Label' | translate }}</label><input name="zip" id="exampleZip" type="text" formControlName="phone3"  class="form-control {{ isSubmitted && form.phone3.errors ? 'is-invalid' : '' }}" class="form-control" placeholder="{{'Contact.Form.Phone1Field' | translate}}"></div>
-                                        </div>
-                                    </div>  
-                        </div>
-                        <div id="step-3"  *ngIf="this.fill3Selected">
                                 
-                                    <div class="position-relative form-group"><label for="exampleAddress">Facebook</label><input name="address" id="exampleAddress" formControlName="facebook"  class="form-control {{ isSubmitted && form.facebook.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Contact.Form.FacebookField' | translate}}"></div>
-                                    
-                                    <div class="position-relative form-group"><label for="exampleAddress2">twitter</label><input name="address2" id="exampleAddress2" formControlName="twitter"  class="form-control {{ isSubmitted && form.twitter.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Contact.Form.TwitterField' | translate}}"></div>
-                                     
-                                    <div class="position-relative form-group"><label for="exampleAddress">Whatsapp</label><input name="address" id="exampleAddress" formControlName="whatsapp"  class="form-control {{ isSubmitted && form.whatsapp.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Contact.Form.WhatsappField' | translate}}"></div>
-                                   
-                                    <div class="position-relative form-group"><label for="exampleAddress2">Linkedin</label><input name="address2" id="exampleAddress2" formControlName="linkedin"  class="form-control {{ isSubmitted && form.linkedin.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Contact.Form.LinkedinField' | translate}}"></div>
-                                    
-                                   
-                        </div>
-                        <div id="step-4" *ngIf="this.fill4Selected" >
-                                <div class="no-results">
-                                    <div class="swal2-icon swal2-success swal2-animate-success-icon">
-                                        <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
-                                        <span class="swal2-success-line-tip"></span>
-                                        <span class="swal2-success-line-long"></span>
-                                        <div class="swal2-success-ring"></div>
-                                        <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
-                                        <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+                            </div>
+                        <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.GenderLabel' | translate }}</label><select name="select" formControlName="gender"  class="form-control {{ isSubmitted && form.gender.errors ? 'is-invalid' : '' }}" class="form-control">
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                
+                            </select></div>
+                            <div class="position-relative form-group">
+                                    <label for="exampleText" class="">{{ 'Form.DescriptionLabel' | translate }}</label>
+                                    <textarea name="text" id="exampleText" formControlName="description"  class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.DescriptionField' | translate}}">
+            
+                                    </textarea>
+                                </div>
+                            <div class="position-relative form-group"><label for="exampleFile" class="">{{ 'Form.ImageLabel' | translate }}</label><input name="file" id="exampleFile" type="file" class="form-control-file" (change)=detectimage($event) >
+                                    <small class="form-text text-muted">{{'Form.ImageField' | translate}}</small>
+                                </div>
+                        
+                    </div>
+                    <div class="{{ fill2Selected ? 'active' : '' }}" *ngIf="this.fill2Selected">
+                            <div class="form-row">
+                                    <div class="col-md-12">
+                                        <div class="position-relative form-group"><label for="exampleEmail55">{{ 'Form.EmailLabel' | translate }}</label><input name="email" formControlName="email"  class="form-control {{ isSubmitted && form.email.errors ? 'is-invalid' : '' }}" placeholder="with a placeholder" type="email" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="results-subtitle mt-4">{{ "Contact.Form.HeadFinishLabel" | translate }}</div>
-                                    <div class="results-title">Veuillez Sauvegarder</div>
-                                    <div class="mt-3 mb-3"></div>
-                                    <div class="text-center">
-                                            <button (click)="onSubmit()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contact.CreateContact" | translate }}</p>
-                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
-                                                        <div class="ball-scale-multiple">
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                        </div>
+                                    
+                                </div>
+                                <div class="position-relative form-group"><label for="exampleAddress">{{ 'Form.FaxLabel' | translate }}</label><input name="address" id="exampleAddress" formControlName="fax"  class="form-control {{ isSubmitted && form.fax.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.FaxField' | translate}}" type="text" class="form-control"></div>
+                                <div class="position-relative form-group"><label for="exampleAddress2">{{ 'Form.BpLabel' | translate }}</label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form.bp.errors ? 'is-invalid' : '' }}"  placeholder="{{'Form.BpField' | translate}}" type="text"
+                                                                                                                               class="form-control">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleCity">{{ 'Form.Phone1Label' | translate }}</label><input name="city" id="exampleCity" formControlName="phone1"  class="form-control {{ isSubmitted && form.phone1.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Form.Phone1Field' | translate}}"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleState">{{ 'Form.Phone2Label' | translate }}</label><input name="state" id="exampleState" formControlName="phone2"  class="form-control {{ isSubmitted && form.phone2.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Form.Phone2Field' | translate}}"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="position-relative form-group"><label for="exampleZip">{{ 'Form.Phone3Label' | translate }}</label><input name="zip" id="exampleZip" type="text" formControlName="phone3"  class="form-control {{ isSubmitted && form.phone3.errors ? 'is-invalid' : '' }}" class="form-control" placeholder="{{'Form.Phone1Field' | translate}}"></div>
+                                    </div>
+                                </div>  
+                    </div>
+                    <div class="{{ fill3Selected ? 'active' : '' }}" *ngIf="this.fill3Selected">
+                            
+                                <div class="position-relative form-group"><label for="exampleAddress">Facebook</label><input name="address" id="exampleAddress" formControlName="facebook"  class="form-control {{ isSubmitted && form.facebook.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Form.FacebookField' | translate}}"></div>
+                                
+                                <div class="position-relative form-group"><label for="exampleAddress2">twitter</label><input name="address2" id="exampleAddress2" formControlName="twitter"  class="form-control {{ isSubmitted && form.twitter.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Form.TwitterField' | translate}}"></div>
+                                 
+                                <div class="position-relative form-group"><label for="exampleAddress">Whatsapp</label><input name="address" id="exampleAddress" formControlName="whatsapp"  class="form-control {{ isSubmitted && form.whatsapp.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Form.WhatsappField' | translate}}"></div>
+                               
+                                <div class="position-relative form-group"><label for="exampleAddress2">Linkedin</label><input name="address2" id="exampleAddress2" formControlName="linkedin"  class="form-control {{ isSubmitted && form.linkedin.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Form.LinkedinField' | translate}}"></div>
+                                
+                               
+                    </div>
+                    <div id="step-4" class="{{ fill4Selected ? 'active' : '' }}" *ngIf="this.fill4Selected" >
+                            <div class="no-results">
+                                <div class="swal2-icon swal2-success swal2-animate-success-icon">
+                                    <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+                                    <span class="swal2-success-line-tip"></span>
+                                    <span class="swal2-success-line-long"></span>
+                                    <div class="swal2-success-ring"></div>
+                                    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+                                    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+                                </div>
+                                <div class="results-subtitle mt-4">{{ "Contact.Form.HeadFinishLabel" | translate }}</div>
+                                <div class="results-title">Veuillez Sauvegarder</div>
+                                <div class="mt-3 mb-3"></div>
+                                <div class="text-center">
+                                        <button (click)="onSubmit()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contact.CreateContact" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
                                                     </div>
-                                                </button>
-                                    </div>
+                                                </div>
+                                            </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="divider"></div>
-                <div class="clearfix">
-                    <button type="button" id="reset-btn" class="btn-shadow float-left btn-wide btn-pill mr-3 btn btn-outline-secondary" (click)="reset()" >Reset</button>
-                    <button type="button" id="next-btn" class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary" *ngIf="!this.fill4Selected" (click)="next()">{{ 'Contact.Form.NextLabel' | translate }}</button>
-                    <button type="button" id="prev-btn" class="btn-shadow float-right btn-wide btn-pill mr-3 btn btn-outline-secondary" *ngIf="!this.fill1Selected" (click)="previous()">{{ 'Contact.Form.PreviousLabel' | translate }}</button>
-                </div>
-                                        </div>
+            </div>
+            <div class="divider"></div>
+            <div class="clearfix">
+                   
+                         <button type="button" *ngIf="!this.fill4Selected && this.valid()" id="next-btn" (click)="next()"  class="btn btn-primary btn-sm" style="width:11%; justify-content: center; align-items: center; flex: 1;float: right;">
+                            <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.NextLabel' | translate }}</p>
+                            <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                <div class="ball-scale-multiple">
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" *ngIf="!this.fill4Selected && !this.valid()"   (click)="next1()"  class="btn btn-primary btn-sm" style="width:11%; justify-content: center; align-items: center; flex: 1;float: right;">
+                            <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.NextLabel' | translate }}</p>
+                            <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                <div class="ball-scale-multiple">
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" id="prev-btn" (click)="previous()" class="btn btn-primary btn-sm mr-3" style="width:11%; justify-content: center; align-items: center; flex: 1;float: right;">
+
+                            <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.PreviousLabel' | translate }}</p>
+                            <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                <div class="ball-scale-multiple">
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                </div>
+                            </div>                            
+                        </button>
+
+                        <button type="button"  (click)="reset()" id="reset-btn" [disabled]="isLoading" class="btn btn-primary btn-sm" style="width:10%; justify-content: center; align-items: center; flex: 1;float: left;">
+                            <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">Reset</p>
+                            <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                <div class="ball-scale-multiple">
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                    <div style="background-color: white;"></div>
+                                </div>
+                            </div>
+                        </button>
+
+            </div>
                                     </div>
                                 </div>
                             </div>
@@ -173,6 +213,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
