@@ -32,6 +32,10 @@ export class ChatService {
         return this.http.get<any>(`${Routes.CHAT}/discussion/${id}`).toPromise();
     }
 
+    getNewMessage(id: number): Promise<any> {
+        return this.http.get<any>(`${Routes.CHAT}/discussion/${id}/newmessages`).toPromise();
+    }
+
     deleteDiscussion(id: number): Promise<any> {
         return this.http.delete<any>(`${Routes.CHAT}/discussion/${id}`).toPromise();
     }

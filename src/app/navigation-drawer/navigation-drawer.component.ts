@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../_services/chat.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-navigation-drawer',
@@ -12,7 +13,8 @@ export class NavigationDrawerComponent implements OnInit {
   users_tmp: any[] = [];
 
   constructor(
-    private chatService: ChatService
+    private chatService: ChatService,
+    private authService: AuthService
   ) { }
 
   closeButton: HTMLElement;
@@ -25,8 +27,9 @@ export class NavigationDrawerComponent implements OnInit {
   getUsers() {
     this.chatService.getUsers().then(
       data => {
-        this.users = data;
-        this.users_tmp = data;
+        let user_id = this.authService.getUser().id;
+        this.users = data.filter(user => user.id != user_id);
+        this.users_tmp = this.users;
       }
     )
   }

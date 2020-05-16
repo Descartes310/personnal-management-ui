@@ -185,6 +185,11 @@
         "DiscussionList": "Fil de conversation",
         "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
         "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message",
-        "Delete": "Supprimer"
+        "Delete": "Supprimer",
+        "MessageSent": "Le message a bien été envoyé",
+        "MessageDeleteError": "Erreur lors de la suppression du message",
+        "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
+        "MessageSendError": "Erreur lors de l'envoi' du message",
+        "MessageDeleteSuccess": "Le message a été supprimé avec succès"
     }
 }

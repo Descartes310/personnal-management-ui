@@ -92,19 +92,19 @@
                 <img src="assets/images/nonemessage.png" width="60%">
                 <p style="font-size: 1.5em;">{{ 'Chat.EmptypDiscussion' | translate }}</p>
             </div>
-            <div class="table-responsive chat-block" *ngIf="current_user && !isLoading && messages.length > 0">
-                <div class="chat-wrapper">
+            <div class="table-responsive chat-block" #myScroll [scrollTop]="myScroll.scrollHeight" *ngIf="current_user && !isLoading && messages.length > 0">
+                <div class="chat-wrapper" >
                     <ng-container *ngFor="let message of messages" class="chat-wrapper-container">
-                        <div *ngIf="isMyMessage(message)" style="width: 100%">
+                        <div *ngIf="isMyMessage(message) && toShow(message)" style="width: 100%">
                             <div class="chat-box-wrapper chat-box-wrapper-right float-right">
                                 <div>
                                     <div class="chat-box" style="background-color: #82e887;">{{ message.content }}</div>
                                     <small class="opacity-6">
                                         <i class="fa fa-calendar-alt mr-1"></i>
                                         {{ message.created_at }} &nbsp;&nbsp;&nbsp;
-                                        <!-- <a href="#" style="color: red;" (click)="deleteMessage(message)">
+                                        <a style="color: red; cursor: pointer;" (click)="deleteMessage(message)">
                                             <i class="fa fa-trash-alt mr-1"></i> {{ 'Chat.Delete' | translate }}
-                                        </a> -->
+                                        </a>
                                     </small>
                                 </div>
                                 <div>
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-box-wrapper" *ngIf="!isMyMessage(message)">
+                        <div class="chat-box-wrapper" *ngIf="!isMyMessage(message)  && toShow(message)">
                             <div>
                                 <div class="avatar-icon-wrapper mr-1">
                                     <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
@@ -130,7 +130,10 @@
                                 <div class="chat-box">{{ message.content }}</div>
                                 <small class="opacity-6">
                                     <i class="fa fa-calendar-alt mr-1"></i>
-                                    {{ message.created_at }} <a href="#">delete</a>
+                                    {{ message.created_at }}
+                                    <a style="color: red; cursor: pointer;" (click)="deleteMessage(message)">
+                                        <i class="fa fa-trash-alt mr-1"></i> {{ 'Chat.Delete' | translate }}
+                                    </a>
                                 </small>
                             </div>
                         </div>
@@ -178,7 +181,7 @@
                                 <div class="widget-content-left">
                                     <div class="widget-heading">
                                         {{ discussion.user.first_name }} {{ discussion.user.last_name }}
-                                        <div *ngIf="discussion.unread > 0" class="ml-auto badge badge-success" style="right: 0; position: absolute;">12</div>
+                                        <div *ngIf="discussion.unread > 0" class="ml-auto badge badge-success" style="right: 0; position: absolute;">{{ discussion.unread }}</div>
                                     </div>
                                     <div class="widget-subheading">{{ discussion.last_message }}</div>
                                 </div>
