@@ -24,6 +24,9 @@ import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -34,6 +37,8 @@ const routes: Routes = [
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
   { path: 'profiles/add', component: AddProfileComponent },
   { path: 'profiles/update/:id', component: UpdateProfileComponent },
+  { path: 'licensetypes/add', component: AddLicensetypesComponent },
+  { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },

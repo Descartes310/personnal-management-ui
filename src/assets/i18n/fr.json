@@ -168,6 +168,18 @@
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
+    "Licensetype":{
+        "Licensetypes":" type de permission",
+        "LicensetypesTitle":"Gestion des types de permission",
+        "CreateLicense": "Créer la permission",
+        "UpdateLicensetype": "Mettre à jour de la permission",
+        "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrortype": "aumoins un des champs en rouge doit etre",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "LICENSETYPE_ALREADY_EXISTS": "le type de permission existe déjà"
+
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "Warning": "Cette action est irreversible !",

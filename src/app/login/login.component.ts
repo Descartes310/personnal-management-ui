@@ -90,6 +90,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       })
       .catch(err => {
+        console.log(err)
         this.translate.get('Login.AUTH_LOGIN')
         .subscribe(val => this.notifService.danger(val));
       })
