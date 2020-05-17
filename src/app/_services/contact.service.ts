@@ -18,7 +18,7 @@ export class ContactService {
 }
 
   update(formData: FormData, id: number): Promise<Contact> {
-    return this.http.post<Contact>(`${Routes.CONTACT}/${id}`, formData).toPromise();
+    return this.http.put<Contact>(`${Routes.CONTACT}/${id}`, formData).toPromise();
 }
   find(id: number): Promise<Contact> {
   return this.http.get<Contact>(`${Routes.CONTACT}/${id}`).toPromise();
