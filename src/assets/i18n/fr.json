@@ -171,7 +171,18 @@
             "Weight": "Le poids de la situation professionnelle est un nombre compris entre 1 et 100"
         },
         "UnknowError": "Une erreur inconnue s'est produite veuillez réessayer",
-        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom"
+        "NetWorkError": "Erreur réseau veuillez vérifier votre connexion à internet puis réessayer",
+        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+        "ErrorMessages": {
+            "Name": [
+                "le nom est obligatoire"
+            ],
+            "Weight": [
+                "l'indice est obligatoire et doit être un nombre compris entre 1 et 100",
+                "l'indice doit être strictement supérieur à 0",
+                "l'indice doit être inférieur ou égal à 100"
+            ]
+        }
     },
     "Chat": {
         "Title": "Chat",
