@@ -43,6 +43,8 @@ import { UpdateLicenseComponent } from './licenses/update-license/update-license
 //import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 export function HttpLoaderFactory(http: HttpClient) {
@@ -82,6 +84,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AddDivisionComponent,
+    UpdateDivisionComponent,
   ],
   imports: [
     MatStepperModule,
