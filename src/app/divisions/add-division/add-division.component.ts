@@ -19,7 +19,7 @@ export class AddDivisionComponent implements OnInit {
     RechDivisions: any[] = [];
     RechDivisions_tmp: any[] = [];
     selected_divisions: number[] = [];
-  
+    divisions:Division[];
     divisionForm: FormGroup;
     isLoading = false;
     isError = false;
@@ -36,11 +36,12 @@ export class AddDivisionComponent implements OnInit {
     ) { }
   
     ngOnInit() {
-     // this.getDivisions();
+      this.getDivions();
   
       this.divisionForm = this.formBuilder.group({
         label: ['', Validators.required],
         name: ['', Validators.required],
+        parent_id:'',
         description: ['']
       });
     }
@@ -99,16 +100,20 @@ export class AddDivisionComponent implements OnInit {
       formData.append('display_name', '' + this.form.label.value);
       formData.append('name', '' + this.form.name.value);
       formData.append('description', '' + this.form.description.value);
-      this.selected_divisions.forEach( elt => {
+      formData.append('parent_id', '' + this.form.parent_id.value);
+
+      /* this.selected_divisions.forEach( elt => {
         formData.append('divisions[]', JSON.stringify(elt));
-      });
+      }); */
+      console.log("parent id:"+this.form.parent_id.value)
       this.divisionService.add(formData)
         .then(resp => {
+          console.log(resp)
           this.translate.get('Division.SubmitSuccess')
           .subscribe(val => this.notifService.success(val));
           this.isSubmitted = false;
           this.divisionForm.reset();
-          this.selected_divisions = [];
+        //  this.selected_divisions = [];
           
         })
         .catch(err => {
@@ -118,6 +123,21 @@ export class AddDivisionComponent implements OnInit {
         })
         .finally(() => this.isLoading = false);
     }
+
+    
+  getDivions() {
+    this.divisionService.divisions().then(
+      response => {
+        this.divisions = response;
+        console.log(response)
+       
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("Une erreur s'est produite");
+      }
+    )
+  }
   
   }
   

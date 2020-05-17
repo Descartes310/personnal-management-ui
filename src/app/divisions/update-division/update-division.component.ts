@@ -23,6 +23,7 @@ export class UpdateDivisionComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   division_name = '';
+  divisions:Division [];
   division: Division = new Division();
 
 
@@ -37,7 +38,7 @@ export class UpdateDivisionComponent implements OnInit {
 
   async ngOnInit() {
     this.initForm();
-    //this.getDivision();
+    this.getDivions();
     const division_id = +this.route.snapshot.paramMap.get("id");
     this.divisionService.find(division_id).then(
       data => {
@@ -61,12 +62,14 @@ export class UpdateDivisionComponent implements OnInit {
       this.divisionForm = this.formBuilder.group({
         name: [this.division.name, [Validators.required]],
         label: [this.division.display_name, [Validators.required]],
+        parent_id: '',
         description: [this.division.description]
       });
     }else {
       this.divisionForm = this.formBuilder.group({
         name: ['', [Validators.required]],
         label: ['', [Validators.required]],
+        parent_id: '',
         description: ['']
       });
     }
@@ -85,7 +88,7 @@ export class UpdateDivisionComponent implements OnInit {
     this.Division = this.Division_tmp.filter( Division => this.division.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
-  onChecked(division, event){
+ /*  onChecked(division, event){
     if(event.target.checked) {
       this.selected_divisions.push(division.id);
     } else {
@@ -96,7 +99,7 @@ export class UpdateDivisionComponent implements OnInit {
   isChecked(id: number){
     return this.selected_divisions.includes(id);
   }
-
+ */
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
@@ -115,12 +118,13 @@ export class UpdateDivisionComponent implements OnInit {
     formData.append('display_name', '' + this.form.label.value);
     formData.append('name', '' + this.form.name.value);
     formData.append('description', '' + this.form.description.value);
-    this.selected_divisions.forEach( elt => {
+    formData.append('parent_id', '' + this.form.parent_id.value);
+    /* this.selected_divisions.forEach( elt => {
       formData.append('divisions[]', JSON.stringify(elt));
-    });
+    }); */
     this.divisionService.update(formData, this.division.id)
       .then(resp => {
-        this.translate.get('Division.SubmitSuccess')
+        this.translate.get('Division.SubmitSuccess1')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.divisionForm.reset();
@@ -134,5 +138,17 @@ export class UpdateDivisionComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
   }
-
+  getDivions() {
+    this.divisionService.divisions().then(
+      response => {
+        this.divisions = response;
+        console.log(response)
+       
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("Une erreur s'est produite");
+      }
+    )
+  }
 }

@@ -5,7 +5,7 @@ export class Division extends Super<Division> {
     public name: string;
     public display_name: string;
     public description: string;
-    public division : any;
+    public parent_id : number;
 
     
 }

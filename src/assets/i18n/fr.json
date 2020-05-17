@@ -94,6 +94,8 @@
         "UpdateDivision": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création de la division a réussie...",
+        "SubmitSuccess1": "La mise à jour de la division a réussie...",
+
         "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
