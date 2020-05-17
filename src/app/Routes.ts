@@ -10,3 +10,5 @@ export const PERMISSION = SERVER + 'permissions';
 export const PRO_SITUATION = SERVER + 'pro_situations';
 export const CONTACT = SERVER + 'contacts';
 export const VACATIONTYPE = SERVER + 'vacation_types';
+export const LICENSE = SERVER + 'licenses';
+export const LICENSE_TYPE = SERVER + 'license_types';

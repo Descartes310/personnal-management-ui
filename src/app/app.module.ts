@@ -38,6 +38,8 @@ import { AddProfileComponent } from './profiles/add-profile/add-profile.componen
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -72,6 +74,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateProfileComponent,
     AddVacationTypeComponent,
     UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
   ],
   imports: [
     BrowserModule,

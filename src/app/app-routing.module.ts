@@ -22,6 +22,8 @@ import { UpdateProfileComponent } from './profiles/update-profile/update-profile
 
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -38,6 +40,8 @@ const routes: Routes = [
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+  { path: 'licenses/add', component: AddLicenseComponent },
+  { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},

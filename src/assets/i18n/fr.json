@@ -131,7 +131,16 @@
         "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
-        "AssignmentAddDescription":"veuillez faire une description"
+        "AssignmentAddDescription":"veuillez faire une description",
+
+        "ReasonLabel": "Raison",
+        "ReasonField":"Veuillez entre la raison de votre demande",
+        "StartDateLabel":"Debut de la permission",
+        "StartDateField":"Debut de la permission",
+        "LicenseTypeLabel":"Type de Permission",
+        "LicenseTypeField":"Choisir un type de permission",
+        "FileLabel":"Demande manuscrit",
+        "FileField":"Parcourir"
 
     },
        
@@ -215,5 +224,17 @@
         "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
         "MessageSendError": "Erreur lors de l'envoi' du message",
         "MessageDeleteSuccess": "Le message a été supprimé avec succès"
+    },
+    "License": {
+        "Licenses": "permissions",
+        "LicenseTitle": "Gestion des Demandes des permissions de l'application",
+        "AddLicense": "demande d'une permission",
+        "CreateLicense": "Soumettre",
+        "UpdateLicense": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
 }
