@@ -52,9 +52,9 @@ export class UpdateLicensetypesComponent implements OnInit {
     if(withLicensetype) {
       console.log(this.licensetype)
       this.licensetypeForm = this.formBuilder.group({
-        name: [this.licensetype.name, [Validators.required]],
-        label: [this.licensetype.slug, [Validators.required]],
-        days: [this.licensetype.days],
+        name: [this.licensetype.slug, [Validators.required]],
+        label: [this.licensetype.name, [Validators.required]],
+        days: [this.licensetype.days, [Validators.required]],
         description: [this.licensetype.description]
         
       });
@@ -101,8 +101,8 @@ export class UpdateLicensetypesComponent implements OnInit {
       .then(resp => {
         this.translate.get('Licensetype.UpdateLicensetype')
         .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.licensetypeForm.reset();
+        this.router.navigate(['/licensetypes'])
+
       })
       .catch(err => {
         console.log(err)
