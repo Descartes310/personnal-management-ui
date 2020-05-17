@@ -55,7 +55,7 @@ export class UpdateVacationTypeComponent implements OnInit {
   initForm(withVacation = false) {
     if (withVacation) {
       this.vacationTypeForm = this.formBuilder.group({
-        label: ["", [Validators.required]],
+        label: [this.vacation.name, [Validators.required]],
         name: [this.vacation.slug, [Validators.required]],
         description: [this.vacation.description],
         days: [this.vacation.days, [Validators.min(1)]],
@@ -96,6 +96,7 @@ export class UpdateVacationTypeComponent implements OnInit {
     formData.append('name', '' + this.form.label.value);
     formData.append('', '' + this.form.name.value);
     formData.append('description', '' + this.form.description.value);
+    formData.append('days', '' + this.form.days.value);
     this.vacationTypeService.update(formData, this.vacation.id)
       .then(resp => {
         this.translate.get('VacationType.UpdateSuccess')

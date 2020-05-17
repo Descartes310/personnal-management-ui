@@ -57,7 +57,7 @@ export class AddVacationTypeComponent implements OnInit {
     // Si la validation a echoué, on arrete l'execution de la fonction
     this.form.name.setValue(this.vacation_name);
     if (this.vacationTypeForm.invalid) {
-      this.translate.get('validationType.SubmitError')
+      this.translate.get('VacationType.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
