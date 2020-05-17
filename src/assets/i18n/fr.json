@@ -246,7 +246,9 @@
         "UpdateLicense": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_VALIDATOR":"donnees invalide",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }

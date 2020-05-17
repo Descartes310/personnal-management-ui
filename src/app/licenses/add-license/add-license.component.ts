@@ -101,7 +101,7 @@ export class AddLicenseComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('License.LICENSE_VALIDATOR')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
