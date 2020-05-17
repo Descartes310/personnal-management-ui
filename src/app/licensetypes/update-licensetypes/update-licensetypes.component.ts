@@ -62,7 +62,7 @@ export class UpdateLicensetypesComponent implements OnInit {
       this.licensetypeForm = this.formBuilder.group({
         name: ['', [Validators.required]],
         label: ['', [Validators.required]],
-        days: [''],
+        days: ['',[Validators.required]],
         description: [''],
       });
     }

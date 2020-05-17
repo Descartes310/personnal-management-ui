@@ -19,7 +19,7 @@
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-                    {{ 'Licensetype.Licenses' | translate }}
+                    {{ 'Licensetype.Licensetypes' | translate }}
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -32,7 +32,7 @@
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="examplePassword" class="">{{ "Form.NameLabel" | translate }}</label>
+                                            <label for="examplePassword" class="">{{ "Form.NamesLabel" | translate }}</label>
                                             <input placeholder="" disabled type="text" formControlName="name" value="{{ licensetype_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
@@ -40,7 +40,7 @@
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Form.daysField' | translate }}" type="number" min="1" formControlName="days" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                            <label for="exampleText" class="">{{ "Form.DescriptionsLabel" | translate }}</label>
                                             <textarea name="text" id="exampleText" class="form-control" formControlName="description">
 
                                             </textarea>
@@ -48,7 +48,7 @@
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 30%; justify-content: center; align-items: center; flex: 1;">
                                                 <p *ngIf="!isLoading" style="font-size: 1.3em; padding: 0px; margin: 5px;">{{ "Licensetype.CreateLicense" | translate }}</p>
-                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 40%;">
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 45%;">
                                                     <div class="ball-scale-multiple">
                                                         <div style="background-color: white;"></div>
                                                         <div style="background-color: white;"></div>
