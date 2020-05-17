@@ -91,7 +91,8 @@
         "GenderLabel": "Sexe",
         "GenderField": "selectionner votre sexe...",
         "DescriptionLabel": "Description",
-
+        "DaysLabel": "Nombre de jours",
+        "DaysField": "Veuillez entrer le nombre de jours...",
         "ImageLabel": "Image",
         "ImageField":"choisir une image",
         "EmailLabel": "Email",
@@ -145,6 +146,18 @@
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
         "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+    },
+    "VacationType": {
+        "VacationTypes": "Types de congés",
+        "VacationTypesAdd": " Nouveau type de congés",
+        "VacationTypesUpdate": "Mise à jour d'un type de congés",
+        "VacationTypeTitle": "Gestion des types de congés de l'application",
+        "CreateVacationType": "Enregistrer",
+        "UpdateVacationType": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

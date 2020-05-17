@@ -20,6 +20,8 @@ import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignm
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'vacation-types/add', component: AddVacationTypeComponent },
+  { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},

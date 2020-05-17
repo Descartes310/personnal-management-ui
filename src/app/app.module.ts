@@ -36,6 +36,8 @@ import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-ty
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -68,6 +70,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateAssignmentTypeComponent,
     AddProfileComponent,
     UpdateProfileComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
   ],
   imports: [
     BrowserModule,
