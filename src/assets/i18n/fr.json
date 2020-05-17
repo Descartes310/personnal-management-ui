@@ -37,7 +37,18 @@
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
+        "SearchText": "Effectuez une recherche...",
+        "ReasonLabel": "Raison",
+        "ReasonField":"Veuillez entre la raison de votre demande",
+        "StartDateLabel":"Debut de la permission",
+        "StartDateField":"Debut de la permission",
+        "DaysLabel":"Nombre de jours",
+        "DaysField":"Veuillez entrer la duree de votre demande",
+        "LicenseTypeLabel":"Type de Permission",
+        "LicenseTypeField":"Choisir un type de permission",
+        "FileLabel":"Demande manuscrit",
+        "FileField":"Parcourir"
+
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -94,5 +105,17 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "License": {
+        "Licenses": "permissions",
+        "LicenseTitle": "Gestion des Demandes des permissions de l'application",
+        "AddLicense": "demande d'une permission",
+        "CreateLicense": "Soumettre",
+        "UpdateLicense": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
 }

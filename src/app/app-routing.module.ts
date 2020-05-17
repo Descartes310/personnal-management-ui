@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'licenses/add', component: AddLicenseComponent },
+  { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
