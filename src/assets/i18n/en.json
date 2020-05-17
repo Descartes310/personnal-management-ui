@@ -24,7 +24,6 @@
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "DescriptionLabel": "Description",
-        "DaysLabel": "nombre de jour",
         "DescriptionField": "Veuillez entrer une description",
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice"

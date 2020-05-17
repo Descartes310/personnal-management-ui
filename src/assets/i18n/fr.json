@@ -26,13 +26,13 @@
         "Title": "Page d'accueil"
     },
     "Form": {
-        "NameLabel": "Nom",
+        "NamesLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
-        "daysField": "Veuillez entrer le nombre de jour...",
+        "DaysField": "Veuillez entrer le nombre de jour...",
         "DaysLabel": "days",
-        "DescriptionLabel": "Description",
+        "DescriptionsLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
@@ -88,15 +88,15 @@
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
     "Licensetype":{
-        "Licensetypes":" type de permission",
+        "Licensetypes":" Type de permission",
         "LicensetypesTitle":"Gestion des types de permission",
         "CreateLicense": "Créer la permission",
         "UpdateLicensetype": "Mettre à jour de la permission",
         "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitErrortype": "aumoins un des champs en rouge doit etre",
+        "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
         "SubmitSuccess": "La création de la permission a réussie...",
-        "LICENSETYPE_ALREADY_EXISTS": "le type de permission existe déjà"
+        "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
 
     },
     "SweetAlert": {
