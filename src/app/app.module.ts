@@ -44,6 +44,7 @@ import { UpdateLicenseComponent } from './licenses/update-license/update-license
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -83,6 +84,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicensetypesComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
