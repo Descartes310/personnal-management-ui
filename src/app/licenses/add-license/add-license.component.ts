@@ -35,7 +35,6 @@ export class AddLicenseComponent implements OnInit {
   ngOnInit() {
     this.getLicense_Type();
     this.user = this.authService.getUser();
-    console.log(this.user);
     this.licenseForm = this.formBuilder.group({
       license_type_id:['',[Validators.required]],
       reason:[''],
@@ -61,7 +60,6 @@ export class AddLicenseComponent implements OnInit {
     ).catch(
       error => {
         this.notifService.danger("Une erreur s'est produite");
-        console.log('erreur');
       }
     )
   }
@@ -84,15 +82,14 @@ export class AddLicenseComponent implements OnInit {
     const formData = new FormData();
     formData.append('user_id', this.user.id);
     formData.append('license_type_id', ''+this.form.license_type_id.value);
-    formData.append('reason', '' + this.form.reason.value);
+    formData.append('raison', '' + this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
     formData.append('requested_start_date', '' + this.form.requested_start_date.value);
     formData.append('requested_days', '' + this.form.requested_days.value);
     formData.append('is_active', '1');
     formData.append('status', 'PENDING');
-    formData.append('file',this.file,this.file.name);
-
-    
+    if(this.file != null)
+      formData.append('file',this.file,this.file.name);
 
       this.licenseService.add(formData)
       .then(resp => {
@@ -112,7 +109,6 @@ export class AddLicenseComponent implements OnInit {
 
   detectfile(event){
     this.file=event.target.files[0];
-    console.log(this.file)
   }
 
 }

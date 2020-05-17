@@ -55,11 +55,10 @@ export class UpdateLicenseComponent implements OnInit {
 
   initForm(withLicense = false) {
     if(withLicense) {
-      console.log(this.license)
       this.licenseForm = this.formBuilder.group({
         user_id: [this.license.user_id, [Validators.required]],
         license_type_id: [this.license.license_type_id, [Validators.required]],
-        reason:[this.license.reason],
+        reason:[this.license.raison],
         description: [this.license.description],
         requested_start_date:[this.license.requested_start_date,[Validators.required]],
         requested_days:[this.license.requested_days,[Validators.required]]
@@ -101,7 +100,6 @@ export class UpdateLicenseComponent implements OnInit {
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
-    alert('rien');
     if (this.licenseForm.invalid) {
       this.translate.get('License.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -112,15 +110,15 @@ export class UpdateLicenseComponent implements OnInit {
     const formData = new FormData();
     formData.append('user_id', '' + this.form.user_id.value);
     formData.append('license_type_id', '' + this.form.license_type_id.value);
-    formData.append('reason',''+this.form.reason.value);
+    formData.append('raison',''+this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
     formData.append('requested_start_date',''+this.form.requested_start_date.value);
     formData.append('requested_days',''+this.form.requested_days.value);
     formData.append('is_active',''+this.form.is_active.value);
     formData.append('status',''+this.form.status.value);
 
-    formData.append('file',this.file,this.file.name);
-    console.log(this.file.name);
+    if(this.file != null)
+      formData.append('file',this.file,this.file.name);
 
     this.licenseService.update(formData, this.license.id)
       .then(resp => {
@@ -140,6 +138,5 @@ export class UpdateLicenseComponent implements OnInit {
   
   detectfile(event){
     this.file=event.target.files[0];
-    console.log(this.file)
   }
 }
