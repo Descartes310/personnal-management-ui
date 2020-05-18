@@ -110,6 +110,7 @@
         "TemplateTitle": "Gestion des Templates ",
         "AddTemplate": "Ajouter un Template",
         "UpdateTemplate": "Mettre à jour",
+        "contentError":"Veuillez remplir le champ contenu",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création du template réussie...",
         "UpdateSuccess":"Le template a ete mis a jour",

@@ -84,6 +84,11 @@ export class TemplateUpdateComponent implements OnInit {
         this.desc=true;
     }
     if (this.assignmentTypeForm.invalid) {
+      if(this.form.description.value.trim().length==0 && this.form.label.value.trim().length!=0&&this.form.name.value.trim().length!=0){
+          this.translate.get('Templates.contentError')
+        .subscribe(val => this.notifService.danger(val));
+        return;
+      }
       this.translate.get('Templates.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
