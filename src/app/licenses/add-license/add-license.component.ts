@@ -97,11 +97,11 @@ export class AddLicenseComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
-        this.router.navigate(['/roles/all']);
+        this.router.navigate(['/home']);
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('License.LICENSE_VALIDATOR')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

@@ -5,6 +5,7 @@ import { LicenseService } from 'src/app/_services/license.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-update-license',
@@ -15,7 +16,8 @@ export class UpdateLicenseComponent implements OnInit {
 
   license_types: any[] = [];
   license_types_tmp: any[] = [];
-
+  
+  user;
   licenseForm: FormGroup;
   isLoading = false;
   isError = false;
@@ -24,9 +26,9 @@ export class UpdateLicenseComponent implements OnInit {
   license : License = new License();
   file:File=null;
 
-
   constructor(
     private licenseService: LicenseService,
+    private authService:AuthService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
@@ -35,6 +37,8 @@ export class UpdateLicenseComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
+    this.user = this.authService.getUser();
+    console.log(this.user);
     this.initForm();
     this.getLicense_Type();
     const license_id = +this.route.snapshot.paramMap.get("id");
@@ -45,7 +49,7 @@ export class UpdateLicenseComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('Role.'+error.error.code)
+        this.translate.get('License.'+error.error.code)
         .subscribe(val => this.notifService.danger(val));
         this.router.navigate(['/roles/all'])
       }
@@ -60,6 +64,7 @@ export class UpdateLicenseComponent implements OnInit {
         license_type_id: [this.license.license_type_id, [Validators.required]],
         reason:[this.license.raison],
         description: [this.license.description],
+        file:[this.license.file],
         requested_start_date:[this.license.requested_start_date,[Validators.required]],
         requested_days:[this.license.requested_days,[Validators.required]]
 
@@ -95,11 +100,15 @@ export class UpdateLicenseComponent implements OnInit {
     return this.licenseForm.controls;
   }
 
+ 
+ 
   onSubmit(){
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+   
     if (this.licenseForm.invalid) {
       this.translate.get('License.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -108,29 +117,29 @@ export class UpdateLicenseComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('user_id', '' + this.form.user_id.value);
-    formData.append('license_type_id', '' + this.form.license_type_id.value);
-    formData.append('raison',''+this.form.reason.value);
+    formData.append('user_id', this.user.id);
+    formData.append('license_type_id', ''+this.form.license_type_id.value);
+    formData.append('raison', '' + this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
-    formData.append('requested_start_date',''+this.form.requested_start_date.value);
-    formData.append('requested_days',''+this.form.requested_days.value);
-    formData.append('is_active',''+this.form.is_active.value);
-    formData.append('status',''+this.form.status.value);
-
-    if(this.file != null)
+    formData.append('requested_start_date', '' + this.form.requested_start_date.value);
+    formData.append('requested_days', '' + this.form.requested_days.value);
+    formData.append('is_active', '1');
+    formData.append('status', 'PENDING');
+     if(this.file != null)
       formData.append('file',this.file,this.file.name);
+      console.log(this.file);
 
-    this.licenseService.update(formData, this.license.id)
+      this.licenseService.update(formData, this.license.id)
       .then(resp => {
-        this.translate.get('License.SubmitSuccess')
+        this.translate.get('License.SubmitUpdateSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
-        this.router.navigate(['/roles/all']);
+        this.router.navigate(['/home']);
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('License.'+err.error.code)
+        this.translate.get('License.LICENSE_VALIDATOR')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
