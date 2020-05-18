@@ -63,7 +63,10 @@ export class AllProSituationComponent implements OnInit {
       response => {
         console.log(response)
         this.pro_situations = [];
-        this.pro_situations=response
+        //this.pro_situations=response
+        response.map( pros => {
+          this.pro_situations.push(new ProSituation(pros));
+        });
       }
     ).catch(
       error => {
