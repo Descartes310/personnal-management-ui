@@ -135,7 +135,7 @@ export class UpdateLicenseComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
-        this.router.navigate(['/roles/all']);
+        this.router.navigate(['/home']);
       })
       .catch(err => {
         console.log(err)
