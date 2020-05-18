@@ -34,7 +34,18 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -64,6 +75,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateContactComponent,
     AddAssignmentTypeComponent,
     UpdateAssignmentTypeComponent,
+    AddProfileComponent,
+    UpdateProfileComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
+    AddLicensetypesComponent,
+    UpdateLicensetypesComponent,
+    DetailsProSituationComponent,
   ],
   imports: [
     MatStepperModule,

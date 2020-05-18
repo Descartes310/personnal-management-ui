@@ -25,6 +25,7 @@
     "Home": {
         "Title": "Page d'accueil"
     },
+
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -93,7 +94,8 @@
         "GenderLabel": "Sexe",
         "GenderField": "selectionner votre sexe...",
         "DescriptionLabel": "Description",
-
+        "DaysLabel": "Nombre de jours",
+        "DaysField": "Veuillez entrer le nombre de jours...",
         "ImageLabel": "Image",
         "ImageField":"choisir une image",
         "EmailLabel": "Email",
@@ -132,7 +134,16 @@
         "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
-        "AssignmentAddDescription":"veuillez faire une description"
+        "AssignmentAddDescription":"veuillez faire une description",
+
+        "ReasonLabel": "Raison",
+        "ReasonField":"Veuillez entre la raison de votre demande",
+        "StartDateLabel":"Debut de la permission",
+        "StartDateField":"Debut de la permission",
+        "LicenseTypeLabel":"Type de Permission",
+        "LicenseTypeField":"Choisir un type de permission",
+        "FileLabel":"Demande manuscrit",
+        "FileField":"Parcourir"
 
     },
        
@@ -145,7 +156,32 @@
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création du type d'affectation réussie...",
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
-        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!"
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+    },
+    "VacationType": {
+        "VacationTypes": "Types de congés",
+        "VacationTypesAdd": " Nouveau type de congés",
+        "VacationTypesUpdate": "Mise à jour d'un type de congés",
+        "VacationTypeTitle": "Gestion des types de congés de l'application",
+        "CreateVacationType": "Enregistrer",
+        "UpdateVacationType": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+    "Licensetype":{
+        "Licensetypes":" Type de permission",
+        "LicensetypesTitle":"Gestion des types de permission",
+        "CreateLicense": "Créer la permission",
+        "UpdateLicensetype": "Mettre à jour de la permission",
+        "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
+
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
@@ -172,7 +208,18 @@
             "Weight": "Le poids de la situation professionnelle est un nombre compris entre 1 et 100"
         },
         "UnknowError": "Une erreur inconnue s'est produite veuillez réessayer",
-        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom"
+        "NetWorkError": "Erreur réseau veuillez vérifier votre connexion à internet puis réessayer",
+        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+        "ErrorMessages": {
+            "Name": [
+                "le nom est obligatoire"
+            ],
+            "Weight": [
+                "l'indice est obligatoire et doit être un nombre compris entre 1 et 100",
+                "l'indice doit être strictement supérieur à 0",
+                "l'indice doit être inférieur ou égal à 100"
+            ]
+        }
     },
     "Chat": {
         "Title": "Chat",
@@ -185,6 +232,24 @@
         "UsersList": "Liste des utilisateurs",
         "DiscussionList": "Fil de conversation",
         "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
-        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message"
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message",
+        "Delete": "Supprimer",
+        "MessageSent": "Le message a bien été envoyé",
+        "MessageDeleteError": "Erreur lors de la suppression du message",
+        "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
+        "MessageSendError": "Erreur lors de l'envoi' du message",
+        "MessageDeleteSuccess": "Le message a été supprimé avec succès"
+    },
+    "License": {
+        "Licenses": "permissions",
+        "LicenseTitle": "Gestion des Demandes des permissions de l'application",
+        "AddLicense": "demande d'une permission",
+        "CreateLicense": "Soumettre",
+        "UpdateLicense": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
 }

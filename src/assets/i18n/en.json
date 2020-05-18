@@ -27,7 +27,11 @@
         "DescriptionField": "Please type a description",
         "WeightLabel": "Index",
         "WeightField": "Select an index",
-        "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)"
+        "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
+        "DaysLabel": "nombre de jour",
+        "DescriptionField": "Veuillez entrer une description",
+        "WeightLabel": "Indice",
+        "WeightField": "Selectionnez un indice"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",

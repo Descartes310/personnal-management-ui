@@ -39,6 +39,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
     .then(
       data => {
         this.assign = data;
+        //this.assign.slug="";
         this.initForm(true);
       }
     ).catch(
@@ -58,6 +59,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
         label: [this.assign.slug, [Validators.required]],
         description: [this.assign.description]
       });
+      this.assignment_type_name = this.assign.name;
     }else {
       this.assignmentTypeForm = this.formBuilder.group({
         name: ['', [Validators.required]],
@@ -82,6 +84,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
     this.form.name.setValue(this.assignment_type_name);
+    console.log(this.form.name.value)
     if (this.assignmentTypeForm.invalid) {
       this.translate.get('AssignmentType.SubmitError')
         .subscribe(val => this.notifService.danger(val));

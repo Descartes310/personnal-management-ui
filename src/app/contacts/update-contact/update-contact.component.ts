@@ -100,18 +100,13 @@ export class UpdateContactComponent implements OnInit {
       type: 'INTERNAL',
       nature: 'PHYSIC',
       gender: ['', Validators.required]
-      
-      
-
-      
-
     });
   }
   initform2(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.secondFormGroup = this.formBuilder.group({
       
-      email: ['', [Validators.email]],
+      email: ['', [Validators.email, Validators.required]],
       phone1:['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
@@ -233,6 +228,7 @@ export class UpdateContactComponent implements OnInit {
          this.secondFormGroup.reset();
          this.thirdFormGroup.reset();
          this.stepIndexSelected=0;
+         this.router.navigate(['/contacts'])
 
       })
       .catch(err => {
