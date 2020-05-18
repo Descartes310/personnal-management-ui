@@ -15,6 +15,8 @@ import { UpdateProSituationComponent } from './pro_situations/update-pro-situati
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
@@ -26,6 +28,9 @@ import { AddLicenseComponent } from './licenses/add-license/add-license.componen
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 
@@ -46,11 +51,15 @@ const routes: Routes = [
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'templates/create', component: TemplateCreateComponent },
+  { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'divisions/add', component: AddDivisionComponent },
+  { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
