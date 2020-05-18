@@ -99,11 +99,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
-  ],
-  imports: [
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
     AddContractComponent,
     AllContractComponent,
     UpdateContractComponent,
@@ -111,6 +106,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     CKEditorModule,
     BrowserModule,
     AppRoutingModule,
