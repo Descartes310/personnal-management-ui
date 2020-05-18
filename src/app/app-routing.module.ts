@@ -26,6 +26,8 @@ import { AddLicenseComponent } from './licenses/add-license/add-license.componen
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 
 
 //const routes: Routes = [];
@@ -48,6 +50,8 @@ const routes: Routes = [
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'divisions/all', component: AllDivisionComponent },
+  { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

@@ -73,6 +73,14 @@
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
 
+    "Division": {
+        "Divisions": "Divisions",
+        "DivisionTitle": "Gestion des divisions de l'application",
+        "AddDivision": "Ajouter une nouvelle division",
+        "DetailsDivision": "Détails de la Division"
+
+    },
+
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -94,6 +102,7 @@
         "GenderLabel": "Sexe",
         "GenderField": "selectionner votre sexe...",
         "DescriptionLabel": "Description",
+        "Parent_idLabel":"Hiérarchie supérieure",
         "DaysLabel": "Nombre de jours",
         "DaysField": "Veuillez entrer le nombre de jours...",
         "ImageLabel": "Image",
@@ -129,6 +138,7 @@
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
         "CreatedAtLabel": "Date de création",
+        "UpdatedAtLabel": "Date de mise à jour",
         "CreatedAtField": "Date de création",
         "WeightField": "Selectionnez un indice",
         "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
