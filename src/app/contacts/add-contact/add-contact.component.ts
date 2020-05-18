@@ -12,24 +12,21 @@ import { Router } from '@angular/router';
 })
 export class AddContactComponent implements OnInit {
 
+  //gestion des steppers
   step1Selected: boolean = true;
   step2Selected: boolean = false;
   step3Selected: boolean = false;
-
   stepIndexSelected=0;
-
   isLinear = false;
+  //gestion des formgroup
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup :FormGroup;
-
-  contactForm: FormGroup;
+  //
   isLoading = false;
   isError = false;
   isSuccess = false;
   isSubmitted = false;
-
-
 //variable pour la recuperation de image
   image:File=null;
   constructor(private contactservice:ContactService,
@@ -39,9 +36,6 @@ export class AddContactComponent implements OnInit {
               private router: Router,) { }
 
   ngOnInit() {
-   
-  
-    
     this.initform();
     this.initform2();
     this.initform3();
@@ -71,8 +65,7 @@ export class AddContactComponent implements OnInit {
   initform2(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.secondFormGroup = this.formBuilder.group({
-      
-      email: ['', [Validators.email, Validators.required]],
+      email: ['', [Validators.email]],
       phone1:['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
@@ -84,7 +77,6 @@ export class AddContactComponent implements OnInit {
   initform3(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.thirdFormGroup = this.formBuilder.group({
-      
       twitter: '',
       facebook: '',
       whatsapp:'',
@@ -94,8 +86,6 @@ export class AddContactComponent implements OnInit {
     });
   }
 
-    
-  
   //submit the form
   onSubmit() {
     this.isSubmitted = true;
@@ -109,9 +99,7 @@ export class AddContactComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
     //si tout ce passe bien
-
     this.isLoading = true;
     const formData = new FormData();
     //ajout des donnees dans le form date
@@ -119,7 +107,6 @@ export class AddContactComponent implements OnInit {
     formData.append('type', '' + this.form.type.value);
     formData.append('nature', '' + this.form.nature.value);
     formData.append('description', '' + this.form.description.value);
-
     formData.append('email', '' + this.form1.email.value);
     formData.append('phone1', '' + this.form1.phone1.value);
     formData.append('phone2', '' + this.form1.phone2.value);
@@ -132,12 +119,8 @@ export class AddContactComponent implements OnInit {
     formData.append('linkedin', '' + this.form2.linkedin.value);
     formData.append('website', '' + this.form2.website.value);
     formData.append('gender', '' + this.form.gender.value);
-
     //recuperation  de image
-    if(this.image != null) {
-      formData.append('picture',this.image);
-    }
-    
+    formData.append('picture',this.image);
     this.contactservice.add(formData)
       .then(resp => {
         this.translate.get('Contact.SubmitSuccess')
@@ -158,63 +141,59 @@ export class AddContactComponent implements OnInit {
       .finally(() => this.isLoading = false);
   }
 
-
   detectimage(event) {
-    this.image = event.target.files[0];
-    console.log(this.image)
+      this.image = event.target.files[0];
+      console.log(this.image)
   }
 //validation de chaque etape
-
   validStep1() {
     if(this.firstFormGroup.invalid){
-      this.stepIndexSelected=0; 
-      this.isSubmitted=true;
-      this.translate.get('Contact.SubmitError')
-      .subscribe(val => this.notifService.danger(val));
+        this.stepIndexSelected=0; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
     }
     else{
-      this.isSubmitted=false;
-      this.stepIndexSelected=1;
+        this.isSubmitted=false;
+        this.stepIndexSelected=1;
     }
-        
-     
-    
+
   }
 
   previous1(){
-    this.stepIndexSelected=0;
+      this.stepIndexSelected=0;
   }
   previous2(){
-    this.stepIndexSelected=1;
+      this.stepIndexSelected=1;
   }
   previous3(){
-    this.stepIndexSelected=2;
+      this.stepIndexSelected=2;
   }
   //step 2
   validStep2() {
     if(this.secondFormGroup.invalid){
-      this.stepIndexSelected=1; 
-      this.isSubmitted=true;
-      this.translate.get('Contact.SubmitError')
-      .subscribe(val => this.notifService.danger(val));
+        this.stepIndexSelected=1; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
     }
     else{
-      this.isSubmitted=false;
-      this.stepIndexSelected=2;
+        this.isSubmitted=false;
+        this.stepIndexSelected=2;
     }
   }
   //valid step 3
   validStep3() {
     
     if(this.secondFormGroup.invalid){
-      this.stepIndexSelected=2; 
-      this.isSubmitted=true;
-      this.translate.get('Contact.SubmitError')
-      .subscribe(val => this.notifService.danger(val));
+        this.stepIndexSelected=2; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
     }
     else{
-      this.isSubmitted=false;
-      this.stepIndexSelected=3;
+        this.isSubmitted=false;
+        this.stepIndexSelected=3;
     }
 }
 

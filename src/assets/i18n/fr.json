@@ -25,7 +25,6 @@
     "Home": {
         "Title": "Page d'accueil"
     },
-
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -67,18 +66,10 @@
         "CreateRole": "Créer le rôle",
         "UpdateRole": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitSuccess": "La création du role a réussie...",
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
-    },
-
-    "Division": {
-        "Divisions": "Divisions",
-        "DivisionTitle": "Gestion des divisions de l'application",
-        "AddDivision": "Ajouter une nouvelle division",
-        "DetailsDivision": "Détails de la Division"
-
     },
 
     "Contact": {
@@ -153,7 +144,13 @@
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
         "FileLabel":"Demande manuscrit",
-        "FileField":"Parcourir"
+        "FileField":"Parcourir",
+        "templateTitle":"titre",
+        "templateTypeHolder":"Veuillez entrer le type de la maquette",
+        "templateTitleHolder":"Veuillez entrer le titre de la maquette",
+        "templateContentHolder":"Veuillez entrer le contenu de la maquette",
+        "templateType":"type",
+        "templateContent":"contenu"
 
     },
        
@@ -167,7 +164,20 @@
         "SubmitSuccess": "La création du type d'affectation réussie...",
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
+    },
+    "Templates": {
+        "Templates": "Templates",
+        "TemplateTitle": "Gestion des Templates ",
+        "AddTemplate": "Ajouter un Template",
+        "UpdateTemplate": "Mettre à jour",
+        "contentError":"Veuillez remplir le champ contenu",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du template réussie...",
+        "UpdateSuccess":"Le template a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",
@@ -191,10 +201,25 @@
         "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
         "SubmitSuccess": "La création de la permission a réussie...",
         "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
-
+    },
+    "Division": {
+        "Divisions1": " Update des divisions",
+        "AddDivision": "Ajouter une nouvelle division",
+        "CreateDivision": "Créer la divsion",
+        "UpdateDivision": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la division a réussie...",
+        "SubmitSuccess1": "La mise à jour de la division a réussie...",
+        "Divisions": "Divisions",
+        "DivisionTitle": "Gestion des divisions de l'application",
+        "DetailsDivision": "Détails de la Division",
+        "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
+        "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
+        "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
         "No": "Non, annuler",
@@ -204,6 +229,15 @@
         "CancelledMessage": "Element conservé"
     },
     "ProSituation": {
+        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation ?",
+        "RoleTitle": "Gestion des situations professionnelles de l'application",
+        "AddProSituations": "Ajouter une nouvelle situation Professionnelles",
+        "CreateRole": "Créer une situations Professionnelles",
+        "UpdateRole": "Mettre à jour",
+        "SubmitErrorPermissios": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà",
+
         "ProSituations": "Situations professionelles",
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires",
@@ -258,7 +292,9 @@
         "UpdateLicense": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_VALIDATOR":"donnees invalide",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }

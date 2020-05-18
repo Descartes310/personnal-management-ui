@@ -37,7 +37,7 @@ export class AddProSituationComponent implements OnInit {
 
     this.proSituationForm = this.formBuilder.group({
       name: [' ', Validators.required],
-      description: [' '],
+      description: [''],
       weight: [1, 
         [ 
           Validators.required,
@@ -89,17 +89,24 @@ export class AddProSituationComponent implements OnInit {
     return this.proSituationForm.controls;
   }
 
-  computeName(event){
-    this.proSituationName = event.target.value.replace(/[^A-Z0-9]/ig, "_");
+  // computeName(event) {
+  //   let name = event.target.value.trim();
+  //   this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
+  // }
+
+  checkWeight(event) {
+    let value = parseInt(event.target.value);
+    if(value > 100)
+      this.form.weight.setValue(100);
   }
 
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.proSituationName);
+    //this.form.name.setValue(this.proSituationName);
     if (this.proSituationForm.invalid) {
       this.translate.get('ProSituation.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -108,7 +115,7 @@ export class AddProSituationComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('name', '' + this.form.name.value.trim());
+    formData.append('name', '' + this.form.name.value);
     formData.append('description', '' + this.form.description.value.trim());
     formData.append('weight', '' + this.form.weight.value);
 
