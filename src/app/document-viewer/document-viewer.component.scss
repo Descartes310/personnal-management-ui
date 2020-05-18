@@ -1,0 +1,39 @@
+#my_file {
+    display: none;
+}
+#get_file {
+    cursor: pointer;
+}
+
+pdf-viewer {
+  display: block;
+  height: 90vh;
+}
+
+.main-slider {
+  background-color: white;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-overlay {
+  background: rgba(255, 255, 255, 1);
+  text-align: center;
+  //opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.main-slider div.dark-overlay:hover {
+  //background: rgba(0, 0, 0, .5);
+}
+
+.dark-overlay {
+  padding: 15px;
+}

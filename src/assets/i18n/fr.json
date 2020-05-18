@@ -1,0 +1,255 @@
+{
+    "Login": {
+        "SubmitButton": "Me connecter",
+        "Welcome": "Connectez vous à votre compte pour continuer",
+        "LoginLabel": "Login",
+        "LoginField": "Entrez votre adresse Login",
+        "PasswordLabel": "Mot de passe",
+        "PasswordField": "Entrez votre mot de passe",
+        "LeftPaneTitle": "Gestion du personnel",
+        "LeftPaneText": "Assurer la gestion et le suivi du personnel de votre infrastructure, ceci par des interfaces simples et intuitives.",
+        "KeepMeLoggedIn": "Rester connecté",
+        "AUTH_LOGIN": "Le login ou le mot de passe est incorrect",
+        "AUTH_LOGIN_FORM": "Le login et le mot sont requis"
+    },
+    "NavBar": {
+        "Language": "Choix de Langue",
+        "Profile": "Mon compte",
+        "Message": "Messages privés",
+        "QuickAccess": "Accès rapide",
+        "Notif": "Notifications",
+        "NotifViewAll": "Voir toutes les notifications",
+        "NotifText": "Vous avez {{unread}} nouvelles notifications",
+        "QuickAccessText": "Accédez rapidement et éfficacement à toutes les fonctionnalités primaires du système"
+    },
+    "Home": {
+        "Title": "Page d'accueil"
+    },
+
+    "SideBar": {
+        "SystemConfig": "Paramètres du système",
+        "Users": "Employés",
+        "Contracts": "Contrats de travail",
+        "PermissionEtConges": "Permissions et congés",
+        "NotesPros": "Notes proféssionnelles",
+        "Career": "Promotions et parcours",
+        "Assignment": "Affectations",
+        "Training": "Formations",
+        "Sanction": "Sanctions",
+        "Blog": "Actualités",
+        "Contact": "Contacts",
+        "ProSituation": "Situation proféssionnelle",
+        "Division": "Divisions",
+        "AssignmentType": "Type d'affectations",
+        "ProfileElement": "Element du profile",
+        "TypeConges": "Type de congés",
+        "PermissionType": "Type de permission",
+        "Template": "Modèle de document",
+        "BlogCat": "Catégorie de blog",
+        "DiscCouncil": "Conseil de discipline",
+        "NoteCriteria": "Critère de notation",
+        "Config": "Configurations",
+        "RoleAndPer": "Rôles et permissions",
+        "Personnel": "Personnels",
+        "Submission": "Demandes écrites",
+        "ProfileUpdate": "Mise à jour du profile"
+    },
+    "DocumentViewer": {
+        "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
+        "FILE_TYPE_ERR": "Le document que vous avez choisi n'est pas un pdf, veuillez choisir un document pdf",
+        "FILE_NAME_MSG": "Nom du fichier choisi: ",
+        "DOCUMENT_LOADING_MSG": "Chargement du document ..."
+    },
+    "Role": {
+        "Roles": "Rôles et permissions",
+        "RoleTitle": "Gestion des roles et des permissions de l'application",
+        "AddRole": "Ajouter un nouveau rôle",
+        "CreateRole": "Créer le rôle",
+        "UpdateRole": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+
+    "Contact": {
+        "Contacts": "Contacts",
+        "ContactTitle": "Gestion des Contact de l'application",
+        "AddContact": "Ajouter un nouveau contact",
+        "CreateContact": "Créer le contact",
+        "UpdateContact": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du contact a réussie...",
+        "ErrorSubmit": "echec d'ajout du contact",
+        "UpdateErrorSubmit": "echec de modification du contact"
+    },        
+    "Form": {
+        "NameLabel": "Nom",
+        "NameField": "Veuillez entrer le nom...",
+        "TypeLabel": "Type",
+        "TypeField": "Veuillez entrer le type...",
+        "NatureLabel": "Nature",
+        "NaturetField": "selectionner une nature...",
+        "GenderLabel": "Sexe",
+        "GenderField": "selectionner votre sexe...",
+        "DescriptionLabel": "Description",
+        "DaysLabel": "Nombre de jours",
+        "DaysField": "Veuillez entrer le nombre de jours...",
+        "ImageLabel": "Image",
+        "ImageField":"choisir une image",
+        "EmailLabel": "Email",
+        "EmailField": "Veuillez entrer  email...",
+        "FaxLabel": "Fax",
+        "FaxField": "Veuillez entrer le fax...",
+        "BpLabel": "Boite Postal",
+        "BpField": "Veuillez entrer la boite postale...",
+        "Phone1Label": "Telephone 1",
+        "Phone1Field": "premier numero...",
+        "Phone2Label": "Telephone 2",
+        "Phone2Field": "deuxieme numero...",
+        "Phone3Label": "Telephone 3",
+        "Phone3Field": "troisieme numero...",
+        "DescriptionField": "Veuillez entrer une description",
+        
+        "FacebookField": "Compte facebook...",
+        "TwitterField": "Compte twitter...",
+        "WhatsappField": "Compte whatsapp...",
+        "LinkedinField": "Compte linkedin...",
+        
+        "NextLabel":"Suivant",
+        "PreviousLabel":"Precedent",
+        "WeightLabel": "Indice",
+
+        "HeadPrincipalLabel": "Information Principale",
+        "HeadAddresLabel": "Addresse",
+        "HeadSocialLabel": "Information Sociale",
+        "HeadFinishLabel": "Termine",
+        "AssignmentNameField": "Veuillez remplir le champs label...",
+        "LabelLabel": "Label",
+        "LabelField": "Veuillez entrer le label...",
+        "CreatedAtLabel": "Date de création",
+        "CreatedAtField": "Date de création",
+        "WeightField": "Selectionnez un indice",
+        "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
+        "SearchLabel": "Rechercher",
+        "SearchText": "Effectuez une recherche...",
+        "AssignmentAddDescription":"veuillez faire une description",
+
+        "ReasonLabel": "Raison",
+        "ReasonField":"Veuillez entre la raison de votre demande",
+        "StartDateLabel":"Debut de la permission",
+        "StartDateField":"Debut de la permission",
+        "LicenseTypeLabel":"Type de Permission",
+        "LicenseTypeField":"Choisir un type de permission",
+        "FileLabel":"Demande manuscrit",
+        "FileField":"Parcourir"
+
+    },
+       
+    "AssignmentType": {
+        "AssignmentType": "Type d'affectation",
+        "AssignmentTypeTitle": "Gestion des types d'affectation ",
+        "AddAssignmentType": "Ajouter un type d'affectation",
+        "CreateAssignmentType": "Créer le type d'affectatation",
+        "UpdateAssignmentType": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type d'affectation réussie...",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+    },
+    "VacationType": {
+        "VacationTypes": "Types de congés",
+        "VacationTypesAdd": " Nouveau type de congés",
+        "VacationTypesUpdate": "Mise à jour d'un type de congés",
+        "VacationTypeTitle": "Gestion des types de congés de l'application",
+        "CreateVacationType": "Enregistrer",
+        "UpdateVacationType": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+    "Licensetype":{
+        "Licensetypes":" Type de permission",
+        "LicensetypesTitle":"Gestion des types de permission",
+        "CreateLicense": "Créer la permission",
+        "UpdateLicensetype": "Mettre à jour de la permission",
+        "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
+
+    },
+    "SweetAlert": {
+        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "Warning": "Cette action est irreversible !",
+        "Yes": "Oui, supprimer",
+        "No": "Non, annuler",
+        "Deleted": "Supprimé",
+        "DeletedMessage": "Element supprimé avec succès",
+        "Cancelled": "Annulé",
+        "CancelledMessage": "Element conservé"
+    },
+    "ProSituation": {
+        "ProSituations": "Situations professionelles",
+        "ProSituationTitle": "Gestion des situations professionelles de l'application",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la situation professionnelle a réussie...",
+        "ResponseError": "La création de la situation professionnelle a échouée, cela peut être dû au fait que vous ne soyez pas connecté à internet. Vérifier votre connexion puis réessayer",
+        "CreateProSituaton": "Créer la situation professionnelle",
+        "UpdateProSituation": "Mettre à jour",
+        "UpdateSuccess": "Mise à jour éffectuée avec succès",
+        "PRO_SITUATION_NOT_FOUND": "La situation professionelle choisie n'existe pas",
+        "VALIDATION_ERROR": {
+            "Name": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+            "Weight": "Le poids de la situation professionnelle est un nombre compris entre 1 et 100"
+        },
+        "UnknowError": "Une erreur inconnue s'est produite veuillez réessayer",
+        "NetWorkError": "Erreur réseau veuillez vérifier votre connexion à internet puis réessayer",
+        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+        "ErrorMessages": {
+            "Name": [
+                "le nom est obligatoire"
+            ],
+            "Weight": [
+                "l'indice est obligatoire et doit être un nombre compris entre 1 et 100",
+                "l'indice doit être strictement supérieur à 0",
+                "l'indice doit être inférieur ou égal à 100"
+            ]
+        }
+    },
+    "Chat": {
+        "Title": "Chat",
+        "TitleText": "Toutes vos discussions sont traités ici, vous pouvez demarrez une nouvelle conversation",
+        "WriteAMessage": "Ecrivez un message ici pour l'envoyer...",
+        "NewDicussion": "Commencer une nouvelle discussion",
+        "MessageLength": "Nombre de message",
+        "Close": "Fermer la discussion",
+        "DeleteAll": "Supprimer tous les messages",
+        "UsersList": "Liste des utilisateurs",
+        "DiscussionList": "Fil de conversation",
+        "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message",
+        "Delete": "Supprimer",
+        "MessageSent": "Le message a bien été envoyé",
+        "MessageDeleteError": "Erreur lors de la suppression du message",
+        "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
+        "MessageSendError": "Erreur lors de l'envoi' du message",
+        "MessageDeleteSuccess": "Le message a été supprimé avec succès"
+    },
+    "License": {
+        "Licenses": "permissions",
+        "LicenseTitle": "Gestion des Demandes des permissions de l'application",
+        "AddLicense": "demande d'une permission",
+        "CreateLicense": "Soumettre",
+        "UpdateLicense": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    }
+}

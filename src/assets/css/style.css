@@ -1,0 +1,31 @@
+.form-title {
+    margin-bottom:  60px;
+}
+
+table > * {
+    text-align: center;
+}
+
+.chat-wrapper {
+    height: 850px;
+    min-height: 850px;
+    max-height: 850px;
+}
+
+.chat-wrapper-container {
+    flex: 1;
+    flex-direction: column;
+}
+
+.chat-block {
+    height: 850px;
+    min-height: 850px;
+    max-height: 850px;
+    overflow-y: auto;
+}
+
+#header-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }

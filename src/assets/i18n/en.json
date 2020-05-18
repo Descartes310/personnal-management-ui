@@ -1,0 +1,52 @@
+{
+    "Login": {
+        "SubmitButton": "Log in",
+        "Welcome": "Login to your account",
+        "LoginLabel": "Login",
+        "LoginField": "Your Login address here",
+        "PasswordLabel": "Password",
+        "PasswordField": "Your password here",
+        "LeftPaneTitle": "Left Pane",
+        "LeftPaneText": "Left pane text",
+        "KeepMeLoggedIn": "Keep me logged in",
+        "AUTH_LOGIN": "Login or password is invalid",
+        "AUTH_LOGIN_FORM": "Login and password are required"
+    },
+    "NavBar": {
+        "Language": "Choose Language",
+        "Profile": "Mon compte",
+        "Message": "Messages privés"
+    },
+    "Home": {
+        "Title": "Home page"
+    },
+    "Form": {
+        "NameLabel": "Name",
+        "NameField": "Please type a name...",
+        "DescriptionLabel": "Description",
+        "DescriptionField": "Please type a description",
+        "WeightLabel": "Index",
+        "WeightField": "Select an index",
+        "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
+        "DaysLabel": "nombre de jour",
+        "DescriptionField": "Veuillez entrer une description",
+        "WeightLabel": "Indice",
+        "WeightField": "Selectionnez un indice"
+    },
+    "DocumentViewer": {
+        "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
+        "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",
+        "FILE_NAME_MSG": "Name of choosen file: ",
+        "DOCUMENT_LOADING_MSG": "Document loading ...",
+        "PREVIEW_TITLE": "Preview your pdf document here",
+        "BROWSER_FILE_BUTTON_LABEL": "browser your document here"
+    },
+    "ProSituation": {
+        "CreateProSituaton": "Create a pro situation",
+        "VALIDATION_ERROR": {
+            "Name": "The pro situation with name {{ data }} already exist please change the name",
+            "Weight": "The index of a pro situation must be a number between 1 and 100"
+        },
+        "UpdateProSituation": "Update"
+    }
+}

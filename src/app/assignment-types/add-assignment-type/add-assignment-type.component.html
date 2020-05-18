@@ -1,0 +1,65 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'AssignmentType.AssignmentType' | translate }}
+                <div class="page-title-subheading">{{ 'AssignmentType.AssignmentTypeTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12" id="from">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'AssignmentType.AssignmentType' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="assignmentTypeForm">
+                                        <div class="position-relative form-group">
+                                            <label for="label" class="">{{ "Form.LabelLabel" | translate }} </label>
+                                            <input name="assignment_type_label" id="assignment_type_label" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="name" class="">{{ "Form.NameLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.AssignmentNameField' | translate }}" disabled type="text" formControlName="name" value="{{ role_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="description" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                            <textarea name="text" placeholder="{{ 'Form.AssignmentAddDescription' | translate }}" id="assignment_type_description" class="form-control" formControlName="description">
+
+                                            </textarea>
+                                        </div>
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "AssignmentType.CreateAssignmentType" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

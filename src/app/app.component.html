@@ -1,0 +1,27 @@
+<block-ui>
+    <ng-container *ngIf="isAuthenticated">
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+
+            <app-nav-bar></app-nav-bar>
+
+            <div class="app-main">
+
+                <app-side-bar></app-side-bar>
+
+                <div class="app-main__outer">
+                    <div class="app-main__inner">
+                        <router-outlet></router-outlet>
+                    </div>
+                    <app-footer></app-footer>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!isAuthenticated">
+        <router-outlet></router-outlet>
+    </ng-container>
+
+    <app-navigation-drawer></app-navigation-drawer>
+</block-ui>
