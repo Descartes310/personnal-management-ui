@@ -29,7 +29,7 @@
 
                                     <div class="position-relative form-group">
                                         <label for="exampleName" class="">{{ "Form.NameLabel" | translate }} </label>
-                                        <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="name" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                        <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="name" (keyup)="computeName($event)" class="form-control {{ form.name.errors ? 'is-invalid' : '' }}">
                                         <div *ngFor="let error of errorMessages.name" class="ng-container text-right">
                                             <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
                                                 <small class="error-message">{{ error.message }}</small>
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="position-relative form-group">
                                         <label for="exampleWeight" class="">{{ "Form.WeightLabelProSituation" | translate }} </label>
-                                        <input name="weight" id="exampleWeight" placeholder="{{ 'Form.WeightField' | translate }}" type="number" formControlName="weight" class="form-control {{ isSubmitted && form.weight.errors ? 'is-invalid' : '' }}">
+                                        <input name="weight" id="exampleWeight" placeholder="{{ 'Form.WeightField' | translate }}" type="number" min="1" max="100" formControlName="weight" class="form-control {{ form.weight.errors ? 'is-invalid' : '' }}">
                                         <div *ngFor="let error of errorMessages.weight" class="ng-container text-right">
                                             <ng-container *ngIf="weight.hasError(error.type) && (weight.dirty || weight.touched)">
                                                 <small class="error-message">{{ error.message }}</small>
