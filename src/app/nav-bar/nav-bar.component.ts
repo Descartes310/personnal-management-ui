@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LangService } from '../_services/lang.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +16,8 @@ export class NavBarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private translateService: TranslateService,
-    private langService: LangService
+    private langService: LangService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,10 @@ export class NavBarComponent implements OnInit {
   changeLanguage(value) {
     this.langService.setLang(value);
     this.lan = value;
+  }
+
+  goToChat() {
+    this.router.navigate(['/chat']);
   }
 
 }

@@ -13,11 +13,11 @@ import { TranslateService } from '@ngx-translate/core';
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
- */
+*/
 export class DocumentViewerComponent implements OnInit {
 
   public file: File;
-  public MAX_FILE_SIZE: number = 2096155; //Set the max file size to 2MO
+  public MAX_FILE_SIZE: number = 5000000; //Set the max file size to 2MO 2096155
   public LIMIT: number = 1048576;
   public unknowError: boolean = false;
   public message: string = '';
@@ -67,6 +67,7 @@ export class DocumentViewerComponent implements OnInit {
       this.pdfUrl = reader.result as string;
       this.isLoadingDocument = false;
     }
+    console.log(reader.error);
 
   }
 
@@ -148,10 +149,5 @@ export class DocumentViewerComponent implements OnInit {
       .finally(() => this.isLoading = false);
 
   }
-
-  public closeAlert() {
-    this.unknowError = false;
-    this.message = '';
-  }
-
+  
 }
