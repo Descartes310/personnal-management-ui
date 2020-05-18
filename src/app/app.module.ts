@@ -49,7 +49,7 @@ import { TemplateCreateComponent } from './templates/template-create/template-cr
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
-import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+//import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -93,9 +93,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateUpdateComponent,
   ],
   imports: [
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
+    //MatStepperModule,
+    //MatFormFieldModule,
+    //MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
