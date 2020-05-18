@@ -141,7 +141,8 @@
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
         "FileLabel":"Demande manuscrit",
-        "FileField":"Parcourir"
+        "FileField":"Parcourir",
+        "StartDateError":"veuillez entrez une date valide"
 
     },
        
@@ -248,7 +249,7 @@
         "SubmitSuccess": "La création de la permission a réussie...",
         "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "LICENSE_VALIDATOR":"donnees invalide",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
