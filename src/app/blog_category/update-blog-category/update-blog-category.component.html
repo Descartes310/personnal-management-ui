@@ -21,10 +21,10 @@
                     <h5 class="card-title form-title">
                         <div> {{ 'BlogCat.BC_Title' | translate }}</div>
                     </h5>
-                    <form (submit)="onSubmit()" [formGroup]="blogCatForm">
+                    <form (submit)="onSubmit()" [formGroup]="blogcatForm">
                         <div class="position-relative form-group">
                             <label for="exampleTitle" class="">{{ 'Form.TitleLabel' | translate }} </label>
-                            <input name="title" id="exampleTitle" placeholder="{{ 'Form.TitleField' | translate }}" type="text" (keyup)="computeName($event)"  formControlName="title" value="{{ blogcat_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                            <input name="title" id="exampleTitle" placeholder="{{ 'Form.TitleField' | translate }}" type="text"  formControlName="title" value="{{ blogcat.title }}" class="form-control {{ isSubmitted && form.title.errors ? 'is-invalid' : '' }}">
                         </div>
                         
                         <div class="position-relative form-group">

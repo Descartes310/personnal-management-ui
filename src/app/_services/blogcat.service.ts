@@ -19,4 +19,8 @@ export class BlogcatService {
   update(formData: FormData, id: number): Promise<BlogCat> {
     return this.http.post<BlogCat>(`${Routes.BLOG_CATEGORY}/${id}`, formData).toPromise();
   }
+
+  find(id: number): Promise<BlogCat> {
+    return this.http.get<BlogCat>(`${Routes.BLOG_CATEGORY}/${id}`).toPromise();
+}
 }

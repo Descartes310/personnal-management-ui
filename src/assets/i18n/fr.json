@@ -104,6 +104,7 @@
         "CreateBC": "Créer la catégorie de blog",
         "UpdateBC": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour de la catégorie de blog a été un succès",
         "SubmitSuccess": "La création de la catégorie de blog a réussie...",
         "BC_NOT_FOUND": "La catégorie de blog n'a pas été retrouvée"
     }

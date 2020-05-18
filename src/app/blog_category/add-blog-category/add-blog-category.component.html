@@ -24,7 +24,7 @@
                     <form (submit)="onSubmit()" [formGroup]="blogCatForm">
                         <div class="position-relative form-group">
                             <label for="exampleTitle" class="">{{ 'Form.TitleLabel' | translate }} </label>
-                            <input name="title" id="exampleTitle" required="required" placeholder="{{ 'Form.TitleField' | translate }}" type="text" (keyup)="computeName($event)"  formControlName="title" value="{{ blogcat_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                            <input name="title" id="exampleTitle" required="required" placeholder="{{ 'Form.TitleField' | translate }}" type="text" formControlName="title" class="form-control {{ isSubmitted && form.title.errors ? 'is-invalid' : '' }}">
                         </div>
                         
                         <div class="position-relative form-group">
