@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { DatePipe } from '@angular/common';
+import { LicensetypeService } from 'src/app/_services/licensetype.service';
 
 @Component({
   selector: 'app-add-license',
@@ -36,6 +37,7 @@ export class AddLicenseComponent implements OnInit {
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private authService:AuthService,
+    private licensetypeService:LicensetypeService,
     private router: Router,
   ) {
     
@@ -61,7 +63,7 @@ export class AddLicenseComponent implements OnInit {
   }
 
   getLicense_Type() {
-    this.licenseService.license_type().then(
+    this.licensetypeService.all().then(
       response => {
         this.license_types = response;
         this.license_types_tmp = response;

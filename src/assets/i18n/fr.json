@@ -170,10 +170,12 @@
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
+    
     "Licensetype":{
         "Licensetypes":" Type de permission",
         "LicensetypesTitle":"Gestion des types de permission",
         "CreateLicense": "Créer la permission",
+        "AddLicenseType":"Ajouter un type de permission",
         "UpdateLicensetype": "Mettre à jour de la permission",
         "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
         "SubmitError": "Les champs en rouges sont obligatoires",

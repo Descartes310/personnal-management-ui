@@ -26,6 +26,8 @@ import { AddLicenseComponent } from './licenses/add-license/add-license.componen
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 
 
 //const routes: Routes = [];
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
+  { path: 'licensetypes/all', component: AllLicensetypesComponent },
+  { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
