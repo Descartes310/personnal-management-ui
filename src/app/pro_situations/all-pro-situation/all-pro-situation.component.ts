@@ -55,7 +55,6 @@ export class AllProSituationComponent implements OnInit {
 
   ngOnInit() {
     this.getProsituations();
-    console.log(this.pro_situations)
   }
 
   getProsituations() {
@@ -68,6 +67,7 @@ export class AllProSituationComponent implements OnInit {
       }
     ).catch(
       error => {
+        console.log(error)
         this.notifService.danger(error.error.message)
       }
     ).finally(
