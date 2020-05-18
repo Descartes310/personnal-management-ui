@@ -46,7 +46,8 @@ export class TemplateUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('AssignmentType.'+error.error.code)
+        console.log(error)
+        this.translate.get('NOT_FOUND_ASSIGNMENT_ID')
         .subscribe(val => this.notifService.danger(val));
         //this.router.navigate([''])
       }

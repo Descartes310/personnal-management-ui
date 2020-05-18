@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Routes from '../Routes'; 
-import { Template } from '../_models/Template.model';
+import { Template } from '../_models/template.model';
 
 @Injectable({
   providedIn: 'root',
