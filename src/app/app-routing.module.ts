@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'blog-category/add', component: AddBlogCategoryComponent },
+  { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

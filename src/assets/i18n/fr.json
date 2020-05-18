@@ -37,7 +37,9 @@
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
+        "SearchText": "Effectuez une recherche...",
+        "TitleLabel": "Titre",
+        "TitleField": "Veuillez entrer un titre"
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -94,5 +96,15 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "BlogCat": {
+        "BC_Title": "Catégories de blog",
+        "BC_Name": "Gestion des catégories de role de l'application",
+        "Add_BC": "Ajouter une nouvelle catégorie de blog",
+        "CreateBC": "Créer la catégorie de blog",
+        "UpdateBC": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la catégorie de blog a réussie...",
+        "BC_NOT_FOUND": "La catégorie de blog n'a pas été retrouvée"
     }
 }
