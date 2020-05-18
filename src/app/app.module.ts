@@ -50,6 +50,7 @@ import { TemplateUpdateComponent } from './templates/template-update/template-up
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -91,6 +92,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateDivisionComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
+    DetailsProSituationComponent,
   ],
   imports: [
     MatStepperModule,
