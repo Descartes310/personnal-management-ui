@@ -27,6 +27,7 @@
     },
     "Form": {
         "NameLabel": "Nom",
+        "NameSelect":"Choisir votre structure",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
@@ -92,7 +93,7 @@
         "AddDivision": "Ajouter une nouvelle division",
         "CreateDivision": "Créer la divsion",
         "UpdateDivision": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitError": "Les champs en rouges sont obligatoires ils faut remplir votre nom",
         "SubmitSuccess": "La création de la division a réussie...",
         "SubmitSuccess1": "La mise à jour de la division a réussie...",
 

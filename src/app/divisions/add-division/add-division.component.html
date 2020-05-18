@@ -14,7 +14,7 @@
 </div>   
 
 <div class="row">
-    <div class="col-md-8" style="margin-left:auto ; margin-right: auto; ">
+    <div class="col-md-12" style="margin-left:auto ; margin-right: auto; ">
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
@@ -33,7 +33,7 @@
                                         </div>
                                         
                                         <div class="position-relative form-group">
-                                            <label for="exampleName" class="">{{ "Form.NameLabel" | translate }}</label>
+                                            <label for="name" class="">{{ "Form.NameLabel" | translate }}</label>
                                             <input placeholder="{{ 'Form.NameField' | translate }}" disabled type="text" formControlName="name" value="{{ division_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
@@ -43,8 +43,8 @@
                                             </textarea>
                                         </div>
                                         <div class="position-relative form-group">
-                                            
-                                                <select name="divisions" formControlName="parent_id">
+                                                <label for ="select" class="">{{"Form.NameSelect" | translate }}</label>
+                                                <select name="divisions" formControlName="parent_id" class="form-control">
                                                     <option *ngFor="let division of divisions" [value]="division.id">{{division.name}}</option>
                                                 </select>
                                         </div>

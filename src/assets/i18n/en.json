@@ -22,6 +22,7 @@
     },
     "Form": {
         "NameLabel": "Nom",
+        "NameSelect": "Choisir votre structure parent ",
         "NameField": "Veuillez entrer le nom...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
