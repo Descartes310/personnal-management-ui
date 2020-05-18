@@ -80,7 +80,9 @@
         "CreateContact": "Créer le contact",
         "UpdateContact": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du contact a réussie..."
+        "SubmitSuccess": "La création du contact a réussie...",
+        "ErrorSubmit": "echec d'ajout du contact",
+        "UpdateErrorSubmit": "echec de modification du contact"
     },        
     "Form": {
         "NameLabel": "Nom",
