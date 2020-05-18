@@ -155,7 +155,7 @@ export class UpdateProSituationComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.proSituationForm.reset();
-        this.router.navigate(['/pro_situations/all']);
+        this.router.navigate(['/pro-situations/all']);
       })
       .catch(error => {
         console.log(error)
