@@ -15,6 +15,8 @@ import { UpdateProSituationComponent } from './pro_situations/update-pro-situati
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
@@ -45,6 +47,8 @@ const routes: Routes = [
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'templates/create', component: TemplateCreateComponent },
+  { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },

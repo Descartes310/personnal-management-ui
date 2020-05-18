@@ -25,7 +25,6 @@
     "Home": {
         "Title": "Page d'accueil"
     },
-
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -143,7 +142,13 @@
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
         "FileLabel":"Demande manuscrit",
-        "FileField":"Parcourir"
+        "FileField":"Parcourir",
+        "templateTitle":"titre",
+        "templateTypeHolder":"Veuillez entrer le type de la maquette",
+        "templateTitleHolder":"Veuillez entrer le titre de la maquette",
+        "templateContentHolder":"Veuillez entrer le contenu de la maquette",
+        "templateType":"type",
+        "templateContent":"contenu"
 
     },
        
@@ -157,7 +162,20 @@
         "SubmitSuccess": "La création du type d'affectation réussie...",
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
+    },
+    "Templates": {
+        "Templates": "Templates",
+        "TemplateTitle": "Gestion des Templates ",
+        "AddTemplate": "Ajouter un Template",
+        "UpdateTemplate": "Mettre à jour",
+        "contentError":"Veuillez remplir le champ contenu",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du template réussie...",
+        "UpdateSuccess":"Le template a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",
