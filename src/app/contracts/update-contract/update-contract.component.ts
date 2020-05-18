@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ContractService } from 'src/app/_services/contract.service';
+import { NotifService } from 'src/app/_services/notif.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { Contract } from 'src/app/_models/contract.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { User } from 'src/app/_models/user.model';
+import { UserService } from 'src/app/_services/user.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-update-contract',
@@ -7,9 +17,174 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateContractComponent implements OnInit {
 
-  constructor() { }
+  
+  selected_users: number[] = [];
+  users_tmp: any[] = [];
+  loading: boolean = true;
+  headers=new HttpHeaders();
+  users: User[] = [];
+  contractForm: FormGroup;
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
+  contract: Contract = new Contract();
+  public Editor = ClassicEditor;
+  myfile:File=null;
+  contract_name = '';
+  
 
-  ngOnInit() {
+  constructor(
+    private userService: UserService,
+    private contractService: ContractService,
+    private notifService: NotifService,
+    private formBuilder: FormBuilder,
+    private translate: TranslateService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
+
+  async ngOnInit() {
+    
+    this.initForm();
+    this.getUsers();
+    const contract_id = +this.route.snapshot.paramMap.get("id");
+    this.contractService.find(contract_id).then(
+      data => {
+        this.contract = data;
+        this.initForm(true);
+        }
+     ).catch(
+      error => {
+        this.translate.get('Contract.'+error.error.code)
+        .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/contract/all'])
+      }
+    )
   }
+
+  initForm(withContract = false) {
+    if(withContract) {
+      console.log(this.contract)
+      this.contractForm = this.formBuilder.group({
+        user_id: [this.contract.user_id, [Validators.required]],
+        type: [this.contract.type, [Validators.required]],
+        names: [this.contract.name],
+        title: [this.contract.title],
+        terms: [this.contract.terms],
+        free_days: [this.contract.free_days],
+        start_date: [this.contract.start_date],
+        end_date: [this.contract.end_date],
+        file: [this.contract.file, [Validators.required]]
+      });
+    }else {
+      this.contractForm = this.formBuilder.group({
+        user_id: ['',Validators.required],
+        type: ['CDD – Contrat à durée déterminée',Validators.required],
+        names: [''],
+        title: [''],
+        terms: [''], 
+        free_days: [''],
+        start_date: [''],  
+        end_date: [''] ,
+        file: ['',Validators.required]    
+      });
+    }
+  }
+
+  public get form() {
+    return this.contractForm.controls;
+  }
+  
+  
+  public onReady( editor ) {
+    editor.ui.getEditableElement().parentElement.insertBefore(
+        editor.ui.view.toolbar.element,
+        editor.ui.getEditableElement()
+    );
+  }
+
+  
+  
+
+  onSubmit() {
+
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    let debut = (new Date(this.form.start_date.value)).getTime();
+    let end = (new Date(this.form.end_date.value)).getTime();
+    let now = (new Date()).getTime();
+
+    
+    if (this.contractForm.invalid){
+      this.translate.get('Contract.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+    console.log("date debut "+debut);
+    console.log("date now "+now);
+    console.log("date fin "+end);
+    if( debut > end || now > end){
+      this.translate.get('Contract.SubmitErrordate')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+
+    this.isLoading = true;
+    const formData = new FormData();
+    formData.append('user_id', this.form.user_id.value);
+    formData.append('type', '' + this.form.type.value);
+    formData.append('name', '' + this.form.names.value);
+    formData.append('title', '' + this.form.title.value);
+    formData.append('terms', '' + this.form.terms.value);
+    formData.append('free_days', this.form.free_days.value);
+    formData.append('start_date', '' + this.form.start_date.value);
+    formData.append('end_date', '' + this.form.end_date.value);
+    formData.append('file', this.myfile);
+    this.contractService.add(formData)
+      .then(resp => {
+        this.translate.get('Contract.SubmitSuccess')
+        .subscribe(val => this.notifService.success(val));
+        this.isSubmitted = false;
+        this.contractForm.reset();
+        this.router.navigate(['/contracts/all']);
+      })
+      .catch(err => {
+        console.log(err)
+        this.translate.get('Contract.CONTRACT_ERROR')
+        .subscribe(val => this.notifService.danger(val));
+      })
+      .finally(() => this.isLoading = false);
+  }
+
+  detectfile(event){
+    this.myfile=event.target.files[0];
+  }
+
+  search(event) {
+    this.users = this.users_tmp;
+    this.users = this.users_tmp.filter( user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+  }
+
+  public getUsers() {
+
+    this.loading = true;
+    this.userService.all().then(
+      response => {
+        this.users = [];
+        this.users = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger(error.error.message);
+      }
+    ).finally(
+      () => {
+        this.loading = false;
+      }
+    )
+  } 
 
 }

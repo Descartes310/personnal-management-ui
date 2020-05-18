@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },
   { path: 'contracts/update/:id', component: UpdateContractComponent },
-  { path: 'contracts/details/:id', component: DetailsContractComponent },
+  { path: 'contracts/details', component: DetailsContractComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

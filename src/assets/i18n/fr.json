@@ -26,10 +26,18 @@
         "Title": "Page d'accueil"
     },
     "Form": {
+        "TypeLabel": "Type",
         "NameLabel": "Nom",
+        "TitleLabel": "Title",
+        "start_dateLabel": "Date de debut",
+        "end_dateLabel": "Date de fin",
+        "free_daysLabel": "Jours libres",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
+        "LabelType": "Veuillez entrer le type...",
+        "LabelTitle": "Veuillez entrer le titre...",
+        "LabelDays": "Veuillez entrer le nombre de jours...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
         "CreatedAtLabel": "Date de création",
@@ -92,9 +100,11 @@
         "CreateContract": "Créer le Contrat",
         "UpdateContract": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du rôle a réussie...",
+        "SubmitErrordate": "les dates entrées sont incorrectes",
+        "SubmitSuccess": "La création du contrat a réussie...",
         "CONTRACT_NOT_FOUND": "Le contrat n'a pas été retrouvé",
-        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà"
+        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà",
+        "CONTRACT_ERROR":"echec de la creation du contrat"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

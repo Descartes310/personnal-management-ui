@@ -34,7 +34,7 @@ import { AllContractComponent } from './contracts/all-contract/all-contract.comp
 import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
 import { FindContractComponent } from './contracts/find-contract/find-contract.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
-import { CKEditorModule } from 'ng2-ckeditor';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

@@ -5,4 +5,5 @@ export const DOCUMENT = SERVER + 'documents';
 export const ROLE = SERVER + 'roles';
 export const PERMISSION = SERVER + 'permissions';
 export const CONTRACT = SERVER + 'contracts';
+export const USER = SERVER + 'users';
 

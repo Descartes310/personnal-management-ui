@@ -12,5 +12,7 @@ export class Contract extends Super<Contract> {
     public end_date: Date;
     public is_active: boolean;
     public file: File;
+    public created_at: Date;
+    public updated_at: Date;
     
 }
