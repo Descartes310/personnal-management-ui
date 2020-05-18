@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'templates/create', component: TemplateCreateComponent },
+  { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },

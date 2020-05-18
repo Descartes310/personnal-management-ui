@@ -31,6 +31,9 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -58,12 +61,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddAssignmentTypeComponent,
     UpdateAssignmentTypeComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({

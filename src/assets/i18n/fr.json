@@ -39,7 +39,13 @@
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
-        "AssignmentAddDescription":"veuillez faire une descrption"
+        "AssignmentAddDescription":"veuillez faire une descrption",
+        "templateTitle":"titre",
+        "templateTypeHolder":"Veuillez entrer le type de la maquette",
+        "templateTitleHolder":"Veuillez entrer le titre de la maquette",
+        "templateContentHolder":"Veuillez entrer le contenu de la maquette",
+        "templateType":"type",
+        "templateContent":"contenu"
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -97,7 +103,19 @@
         "SubmitSuccess": "La création du type d'affectation réussie...",
         "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte!!!"
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
+    },
+    "Templates": {
+        "Templates": "Templates",
+        "TemplateTitle": "Gestion des Templates ",
+        "AddTemplate": "Ajouter un Template",
+        "UpdateTemplate": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du template réussie...",
+        "UpdateSuccess":"Le template a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
