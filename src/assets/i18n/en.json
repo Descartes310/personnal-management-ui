@@ -28,11 +28,8 @@
         "WeightLabel": "Index",
         "WeightField": "Select an index",
         "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
-        "DaysLabel": "nombre de jour",
-        "DescriptionField": "Veuillez entrer une description",
-        "WeightLabel": "Indice",
-        "WeightField": "Selectionnez un indice"
-    },
+        "DaysLabel": "Number of Days"
+  },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
         "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",

@@ -38,7 +38,7 @@ export class AllLicensetypesComponent implements OnInit {
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: 'role' })
+        { data: 'Licensetypes' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -113,7 +113,7 @@ export class AllLicensetypesComponent implements OnInit {
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('LicenseType.'+error.error.code)
+            this.translate.get('Licensetypes.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
