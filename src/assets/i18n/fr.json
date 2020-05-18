@@ -214,6 +214,19 @@
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
+    "Contract": {
+        "Contracts": "Contrats",
+        "ContractTitle": "Gestion des contrats de l'application",
+        "AddContract": "Ajouter un nouveau contract",
+        "CreateContract": "Créer le Contrat",
+        "UpdateContract": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrordate": "les dates entrées sont incorrectes",
+        "SubmitSuccess": "La création du contrat a réussie...",
+        "CONTRACT_NOT_FOUND": "Le contrat n'a pas été retrouvé",
+        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà",
+        "CONTRACT_ERROR":"echec de la creation du contrat"
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",

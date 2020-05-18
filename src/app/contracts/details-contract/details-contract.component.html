@@ -1,0 +1,6 @@
+<div>
+    <ckeditor formControlName="content"
+        (change)="contentChanged()"
+        [ngClass]="{'has-error':myForm.controls.content.invalid}">
+    </ckeditor>
+</div>
