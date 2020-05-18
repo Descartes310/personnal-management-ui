@@ -37,7 +37,17 @@
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
+        "SearchText": "Effectuez une recherche...",
+        "DestinationLabel": "Destination",
+        "DestinationField": "Destination",
+        "RaisonField": "Raison",
+        "RaisonLabel" : "Raison",
+        "UserLabel" : "Nom employé",
+        "TypeAssignmentLabel" : "Type d'affectation ",
+        "SignatureDateLabel" : "Date de signature",
+        "SignatureDateField" : "Date de signature ",
+        "InstallationDateLabel" : "Date d'intallation" ,
+        "InstallationDateField" : "Date d'installation"
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -84,6 +94,16 @@
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "Assignment": {
+        "Assignments": "Affectations",
+        "AssignmentTitle": "Gestion des affectations de l'application",
+        "AddAssignment": "Ajouter une affectation",
+        "CreateAssignment": "Créer une affectation",
+        "UpdateAssignment": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie..."
+       
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

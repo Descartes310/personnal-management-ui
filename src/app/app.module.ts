@@ -29,6 +29,9 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
+import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,6 +57,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddAssignmentComponent,
+    UpdateAssignmentComponent,
+    AllAssignmentsComponent,
+   
   ],
   imports: [
     BrowserModule,
