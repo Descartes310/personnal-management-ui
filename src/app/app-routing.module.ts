@@ -12,7 +12,10 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
 
 
 //const routes: Routes = [];
@@ -26,6 +29,9 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },

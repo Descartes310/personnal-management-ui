@@ -32,6 +32,10 @@ import { DetailsRoleComponent } from './roles/details-role/details-role.componen
 //import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+//import { NotecriteriasComponent } from './notecriterias/notecriterias.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -59,6 +63,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,8 @@
     },
     "Form": {
         "NamesLabel": "Nom",
+        "MaxsLabel":"max-rate",
+        "MinsLabel":"min-rate",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
@@ -36,6 +38,8 @@
         "DescriptionField": "Veuillez entrer une description",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
+        "Notemax":"note maximale",
+        "Notemin":"note minimale",
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
@@ -99,8 +103,15 @@
         "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
 
     },
+    "Notecriterias":{
+        "Notecriteria":" Type de Critère de notation",
+        "NotecriteriaTitle":"Gestion des types de criteres de notations",
+        "Addnoteciteria": "Ajouter un critere de notation "
+
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
         "No": "Non, annuler",
