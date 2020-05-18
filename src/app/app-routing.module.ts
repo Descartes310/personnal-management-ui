@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { AuthGuardService as AuthGuard } from './_guards/auth.guard'
 
@@ -26,6 +26,8 @@ import { AddLicenseComponent } from './licenses/add-license/add-license.componen
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 
 
 //const routes: Routes = [];
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
+  { path: 'pro-situations/all',  component: AllProSituationComponent},
+  { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
   { path: 'profiles/add', component: AddProfileComponent },
   { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },

@@ -45,6 +45,7 @@ import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-li
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -82,6 +83,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    DetailsProSituationComponent,
   ],
   imports: [
     MatStepperModule,
