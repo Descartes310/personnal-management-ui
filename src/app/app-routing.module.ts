@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
-  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
+  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
   { path: 'pro-situations/all',  component: AllProSituationComponent},
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
   { path: 'profiles/add', component: AddProfileComponent },

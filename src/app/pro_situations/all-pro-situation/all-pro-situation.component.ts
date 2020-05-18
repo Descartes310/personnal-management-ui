@@ -47,24 +47,24 @@ export class AllProSituationComponent implements OnInit {
           this.yes = val['SweetAlert.Yes'];
           this.no = val['SweetAlert.No'];
           this.deleted = val['SweetAlert.Deleted'];
-          this.deletedMessage = val['SweetAlert.DeletedMessage'];
+          this.deletedMessage = val['SweetAlert.DeletedMessagePro'];
           this.cancelled = val['SweetAlert.Cancelled'];
           this.cancelledMessage = val['SweetAlert.CancelledMessage'];
         });
    }
 
   ngOnInit() {
-    this.getRoles();
+    this.getProsituations();
+    console.log(this.pro_situations)
   }
 
-  getRoles() {
+  getProsituations() {
     this.loading = true;
     this.prosituation_service.all().then(
       response => {
+        console.log(response)
         this.pro_situations = [];
-        response.data.map( role => {
-          this.pro_situations.push(new ProSituation());
-        });
+        this.pro_situations=response
       }
     ).catch(
       error => {
@@ -77,15 +77,15 @@ export class AllProSituationComponent implements OnInit {
     )
   }
 
-  editRole(role: Role) {
-    this.router.navigate(['/roles/update/'+role.id])
+  editProSituations(pro_situation:ProSituation) {
+    this.router.navigate(['/pro-situations/update/'+pro_situation.id])
   }
 
-  detailsRole(role: Role) {
-    this.router.navigate(['/roles/details/'+role.id])
+  detailsProsituations(pro_situation: ProSituation) {
+    this.router.navigate(['/pro-situations/details/'+pro_situation.id])
   }
 
-  deleteRole(role: Role) {
+  deleteProsituations(pro_situation:ProSituation) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -96,7 +96,7 @@ export class AllProSituationComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.prosituation_service.delete(role.id).then(
+        this.prosituation_service.delete(pro_situation.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -104,7 +104,7 @@ export class AllProSituationComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getRoles();
+            this.getProsituations();
           }
         ).catch(
           error => {

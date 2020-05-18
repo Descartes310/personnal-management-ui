@@ -5,14 +5,14 @@
                 <i class="pe-7s-shield icon-gradient bg-ripe-malin">
                 </i>
             </div>
-            <div>{{ 'Role.Roles' | translate }}
-                <div class="page-title-subheading">{{ 'Role.RoleTitle' | translate }}
+            <div>{{ 'ProSituation.ProSituations' | translate }}
+                <div class="page-title-subheading">{{ 'ProSituation.ProSituationTitle' | translate }}
                 </div>
             </div>
             <div class="page-title-actions">
                 <a type="button" [routerLink]="['/roles/add']" data-toggle="tooltip" title="{{ 'Role.AddRole' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Role.AddRole' | translate }}</p>
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'ProSituation.AddProSituations' | translate }}</p>
                 </a>
             </div>
         </div>   
@@ -23,7 +23,7 @@
     <div class="main-card mb-3 card">
         <div class="card-header">
             <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-            {{ 'Role.Roles' | translate }}
+            {{ 'ProSituation.ProSituations' | translate }}
         </div>
         <div class="card-body">
             
@@ -32,23 +32,23 @@
                     <tr>
                         <th>#</th>
                         <th>{{ 'Form.NameLabel' | translate }}</th>
-                        <th>{{ 'Form.LabelLabel' | translate }}</th>
                         <th>{{ 'Form.DescriptionLabel' | translate }}</th>
+                        <th>weight</th>
                         <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let role of roles,let i = index" id="tr{{ role.id }}">
-                        <td>{{ i+1 }}</td>
-                        <td style="width: 19%">{{ role.name }}</td>
-                        <td style="width: 19%">{{ role.display_name }}</td>
-                        <td style="width: 25%">{{ role.description }}</td>
-                        <td style="width: 12%">{{ role.created_at }}</td>
-                        <td style="width: 15%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editRole(role)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsRole(role)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteRole(role)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    <tr *ngFor="let pro_situation of pro_situations,let i = index" id="tr{{ pro_situation.id }}">
+                        <td style="width: 5%">{{ i+1 }}</td>
+                        <td style="width: 19%">{{ pro_situation.name }}</td>
+                        <td style="width: 19%">{{ pro_situation.description }}</td>
+                        <td style="width: 25%">{{ pro_situation.weight }}</td>
+                        <td style="width: 12%">{{ pro_situation.created_at }}</td>
+                        <td style="width: 20%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editProSituations(pro_situation)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)=" detailsProsituations(pro_situation)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteProsituations(pro_situation)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -59,7 +59,7 @@
                         </div>
                     </td>
                 </tfoot>
-                <tfoot *ngIf="!loading && (!roles || !roles.length)">
+                <tfoot *ngIf="!loading && (!pro_situations || !pro_situations.length)">
                     <td colspan="7" class="text-center">
                         Liste vide
                     </td>
