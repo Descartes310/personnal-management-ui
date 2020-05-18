@@ -124,8 +124,9 @@ export class UpdateProSituationComponent implements OnInit {
     return this.proSituationForm.controls;
   }
 
-  computeName(event){
-    this.proSituationName = event.target.value.replace(/[^A-Z0-9]/ig, "_");
+  computeName(event) {
+    let name = event.target.value.trim();
+    this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
   }
 
   onSubmit() {
@@ -141,7 +142,7 @@ export class UpdateProSituationComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
+  
     this.isLoading = true;
     const formData = new FormData();
     formData.append('name', '' + this.form.name.value.trim());
