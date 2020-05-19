@@ -58,7 +58,7 @@ export class AllDivisionComponent implements OnInit {
     this.divisionService.all().then(
       response => {
         this.divisions = [];
-        console.log(response);
+        //console.log(response);
         response.map( division => {
           this.divisions.push(new Division(division));
         });

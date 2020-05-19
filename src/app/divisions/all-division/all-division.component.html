@@ -39,8 +39,8 @@
                 <tbody>
                     <tr *ngFor="let division of divisions,let i = index" id="tr{{ division.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 22%">{{ division.name }}</td>
-                        <td style="width: 22%">{{ division.division.name}}</td>
+                        <td style="width: 22%">{{ division?.name }}</td>
+                        <td style="width: 22%">{{ division.division?.name}}</td>
                         <td style="width: 26%">{{ division.description }}</td>
                         <td style="width: 15%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDivision(division)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>

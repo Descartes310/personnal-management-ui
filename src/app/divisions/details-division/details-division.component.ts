@@ -24,7 +24,7 @@ export class DetailsDivisionComponent implements OnInit {
       this.divisionService.find(division_id).then(
         data => {
           this.division = new Division(data);
-          console.log(data);
+          console.log(this.division);
   
         }
       ).catch(
@@ -36,5 +36,11 @@ export class DetailsDivisionComponent implements OnInit {
       )
   
     }
+
+    public checkIfParentExist() : string {
+      
+      return (this.division.division ? this.division.division.name : '' );
+    }
+    
 
 }
