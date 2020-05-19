@@ -91,7 +91,6 @@ export class UpdateTrainingComponent implements OnInit {
     this.isSuccess = false;
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.training_name);
     if (this.trainingForm.invalid) {
       this.translate.get('Training.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -109,7 +108,7 @@ export class UpdateTrainingComponent implements OnInit {
     
     this.trainingService.update(formData, this.training.id)
       .then(resp => {
-        this.translate.get('Training.SubmitSuccess')
+        this.translate.get('Training.SubmitSuccess1')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.trainingForm.reset();

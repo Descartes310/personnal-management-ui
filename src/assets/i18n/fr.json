@@ -29,10 +29,11 @@
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
+        "SlugLabel": "Slug",
         "NameTrainer": "Nom du formateur",
         "StartDate": "Date de bebut",
         "LocationName": "Lieu",
-        "Duration": "duree",
+        "Duration": "Duree[1-100]",
         "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
@@ -105,7 +106,11 @@
         "AddTraining": "Ajouter une formation",
         "CreateTraining": "Créer la formation",
         "UpdateTraining": "Mettre à jour",
-        "Error": "Erreur quelques cose à mal tourner"
+        "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
+        "Error": "donnees inalide",
+        "SubmitError": "Les champs en rouge sont obligatoire",
+        "SubmitSuccess":"Ajout de la formation effectuer avec succes",
+        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes"
 
     }
 }

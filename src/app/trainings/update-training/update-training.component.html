@@ -2,7 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                <i class="pe-7s-study icon-gradient bg-ripe-malin">
                 </i>
             </div>
             <div>{{ 'Training.Trainings' | translate }}
@@ -18,7 +18,7 @@
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
-                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    <i class="header-icon pe-7s-study icon-gradient bg-love-kiss"> </i>
                     {{ 'Training.Trainings' | translate }}
                 </div>
                 <div class="card-body">
@@ -34,8 +34,8 @@
                                                     <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="name" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                                 </div>
                                                 <div class="position-relative form-group">
-                                                    <label for="exampleSlug" class="">{{ "Form.NameLabel" | translate }}</label>
-                                                    <input name="slug" placeholder="{{ 'Form.NameField' | translate }}" disabled type="text" value="{{ training_name }}" class="form-control">
+                                                    <label for="exampleSlug" class="">{{ "Form.SlugLabel" | translate }}</label>
+                                                    <input name="slug"  disabled type="text" value="{{ training_name }}" class="form-control">
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label for="exampleTrainer" class="">{{ "Form.NameTrainer" | translate }} </label>
