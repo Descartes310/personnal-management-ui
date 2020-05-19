@@ -12,4 +12,5 @@ export const CONTACT = SERVER + 'contacts';
 export const VACATIONTYPE = SERVER + 'vacation_types';
 export const LICENSE = SERVER + 'licenses';
 export const LICENSE_TYPE = SERVER + 'license_types';
-export const LICENSETYPE = SERVER +'license_types';
+export const LICENSETYPE = SERVER + 'license_types';
+export const PROFILES = SERVER + 'profiles';

@@ -32,16 +32,16 @@ export class AddContactComponent implements OnInit {
 
 //variable pour la recuperation de image
   image:File=null;
-  constructor(private contactservice:ContactService,
-              private notifService: NotifService,
-              private formBuilder: FormBuilder,
-              private translate: TranslateService,
-              private router: Router,) { }
+  constructor(
+    private contactservice:ContactService,
+    private notifService: NotifService,
+    private formBuilder: FormBuilder,
+    private translate: TranslateService,
+    private router: Router)
+  { }
 
   ngOnInit() {
-   
-  
-    
+
     this.initform();
     this.initform2();
     this.initform3();
@@ -172,7 +172,7 @@ export class AddContactComponent implements OnInit {
       this.translate.get('Contact.SubmitError')
       .subscribe(val => this.notifService.danger(val));
     }
-    else{
+    else {
       this.isSubmitted=false;
       this.stepIndexSelected=1;
     }

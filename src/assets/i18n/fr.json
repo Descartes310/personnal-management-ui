@@ -251,5 +251,15 @@
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "User": {
+        "Users": "Création des employés",
+        "UserTitle": "Créer un nouvel employé",
+        "UserFormFirstStepName": "Informations personnelles",
+        "UserFormSecondStepName": "Informations professionnelles",
+        "SubmitError": "Veuillez remplir les champs obligatoires du formulaire",
+        "LoadingError": "Erreur veuillez vérifier votre connexion à internet",
+        "FinishTitle": "Dernière étape",
+        "FinishSubtitle": "cliquer sur le button pour terminer la création"
     }
 }

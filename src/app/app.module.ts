@@ -34,8 +34,8 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
-import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
@@ -74,8 +74,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateContactComponent,
     AddAssignmentTypeComponent,
     UpdateAssignmentTypeComponent,
-    AddProfileComponent,
-    UpdateProfileComponent,
+    AddUserComponent,
+    UpdateUserComponent,
     AddVacationTypeComponent,
     UpdateVacationTypeComponent,
     AddLicenseComponent,
