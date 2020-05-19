@@ -163,7 +163,8 @@
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
         "templateType":"type",
-        "templateContent":"contenu"
+        "templateContent":"contenu",
+        "StartDateError":"veuillez entrez une date valide"
 
     },
        
@@ -242,6 +243,7 @@
         "CancelledMessage": "Element conservé"
     },
     "ProSituation": {
+        "WeightLabel":"Poids",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation ?",
         "RoleTitle": "Gestion des situations professionnelles de l'application",
         "AddProSituations": "Ajouter une nouvelle situation Professionnelles",
@@ -307,7 +309,7 @@
         "SubmitSuccess": "La création de la permission a réussie...",
         "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "LICENSE_VALIDATOR":"donnees invalide",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
