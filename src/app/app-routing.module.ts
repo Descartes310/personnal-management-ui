@@ -45,6 +45,9 @@ import { DetailsProSituationComponent } from './pro_situations/details-pro-situa
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -81,6 +84,10 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+
+  { path: 'sanction/all', component: AllSanctionsComponent },
+  { path: 'sanction/details/:id', component: DetailsSanctionComponent },
+
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

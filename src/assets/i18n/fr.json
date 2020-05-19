@@ -105,6 +105,11 @@
         "WeightLabel": "Indice",
         "MinsLabel":"min_rate",
         "NameLabel": "Nom",
+        "SubjectLabel":"Objet",
+        "DecisionLabel":"Decision",
+        "SubjectidLabel": "Identifiant de l'objet",
+        "RaisonLabel":"Raison",
+        "StartDateLabel": "Date de debut",
         "NameField": "Veuillez entrer le nom...",
         "TypeLabel": "Type",
         "TypeField": "Veuillez entrer le type...",
@@ -223,6 +228,13 @@
         "SubmitSuccess": "La création de la permission a réussie...",
         "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
     },
+    "Sanction":{
+        "Sanctions":" Sanctions",
+        "SanctionsTitle":"Gestion des sanctions",
+        "AddSanction": "Ajouter une nouvelle sanction"
+    },
+
+
     "Division": {
         "Divisions": "Creation des divisions",
         "Divisions1": " Update des divisions",
@@ -254,6 +266,7 @@
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
+        "AreYouSureSanction": "Etes-vous sure de vouloir supprimer {{ data }} ?",
         "AreYouSureAssigmenttype":"Etes-vous sure de vouloir supprimer  ce type d'affectation{{ data }} ?",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",

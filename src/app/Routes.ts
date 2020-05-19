@@ -19,4 +19,5 @@ export const NOTECRITERIAS = SERVER +'note_criterias';
 export const ASSIGNMENTTYPE = SERVER +'assignment_types';
 
 export const DIVISION = SERVER + 'divisions';
+export const SANCTION = SERVER + 'sanctions';
 
