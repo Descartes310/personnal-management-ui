@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/_models/user.model';
 import { UserService } from 'src/app/_services/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class AddContractComponent implements OnInit {
   public Editor = ClassicEditor;
   myfile:File=null;
 
-  TypeContracts = ['CDI – Contrat à durée indéterminée', 
+  TypeContracts = ['CDI – Contrat à durée indéterminée',
                   'CDD – Contrat à durée déterminée',
                   'CTT – Contrat de travail temporaire ou Intérim',
                   'Contrat d’apprentissage (alternance)',
@@ -48,7 +49,7 @@ export class AddContractComponent implements OnInit {
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private router: Router,
-  ) { 
+  ) {
       this.headers.append('enctype','multipart/form-data');
       this.headers.append('Content-type','application/json');
     }
@@ -60,11 +61,11 @@ export class AddContractComponent implements OnInit {
       type: ['CDD – Contrat à durée déterminée',Validators.required],
       names: [''],
       title: [''],
-      terms: [''], 
+      terms: [''],
       free_days: [0],
-      start_date: [],  
+      start_date: [],
       end_date: [] ,
-      file: ['',Validators.required]    
+      file: ['',Validators.required]
     });
   }
 
@@ -78,25 +79,30 @@ export class AddContractComponent implements OnInit {
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false;
-    let now = (new Date());
-    let debut = (new Date(this.form.start_date.value));
-    let end = (new Date(this.form.end_date.value));
-    
-    
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
+
+
+    // let now = (new Date());
+    // let debut = (new Date(this.form.start_date.value));
+    // let end = (new Date(this.form.end_date.value));
+
+
     if (this.contractForm.invalid){
       this.translate.get('Contract.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
- 
-    if(this.form.end_date.value && this.form.start_date.value){
 
-      if( debut > end || now > end){
-        this.translate.get('Contract.SubmitErrordate')
-          .subscribe(val => this.notifService.danger(val));
-        return;
-      }
+    // if(this.form.end_date.value && this.form.start_date.value){
+
+    //   if( debut > end || now > end){
+    //     this.translate.get('Contract.SubmitErrordate')
+    //       .subscribe(val => this.notifService.danger(val));
+    //     return;
+    //   }
 
       this.isLoading = true;
       const formData = new FormData();
@@ -106,8 +112,20 @@ export class AddContractComponent implements OnInit {
       formData.append('title', '' + this.form.title.value);
       formData.append('terms', '' + this.form.terms.value);
       formData.append('free_days', this.form.free_days.value);
-      formData.append('start_date', '' + this.form.start_date.value);
-      formData.append('end_date', '' + this.form.end_date.value);
+      if (currentDate > this.form.start_date.value) {
+        this.translate.get('Form.StartDateError')
+        .subscribe(val => this.notifService.danger(val));
+        this.isLoading = false;
+        return;
+      }
+      this.form.start_date.value ? formData.append('start_date', '' + this.form.start_date.value) : null;
+      if (this.form.start_date.value >= this.form.end_date.value) {
+        this.translate.get('Form.StartDateError')
+        .subscribe(val => this.notifService.danger(val));
+        this.isLoading = false;
+        return;
+      }
+      this.form.start_date.value ? formData.append('end_date', '' + this.form.end_date.value) : null;
       formData.append('file', this.myfile);
       this.contractService.add(formData)
         .then(resp => {
@@ -135,48 +153,8 @@ export class AddContractComponent implements OnInit {
         })
         .finally(() => this.isLoading = false);
       }
-       
 
-      this.isLoading = true;
-      const formData = new FormData();
-      formData.append('user_id', this.form.user_id.value);
-      formData.append('type', '' + this.form.type.value);
-      formData.append('name', '' + this.form.names.value);
-      formData.append('title', '' + this.form.title.value);
-      formData.append('terms', '' + this.form.terms.value);
-      formData.append('free_days', this.form.free_days.value);
-      formData.append('start_date', '' + this.form.start_date.value);
-      formData.append('end_date', '' + this.form.end_date.value);
-      formData.append('file', this.myfile);
-      this.contractService.add(formData)
-        .then(resp => {
-          this.translate.get('Contract.SubmitSuccess')
-          .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.contractForm.reset();
-         this.contractForm = this.formBuilder.group({
-          user_id: [''],
-          type: ['CDD – Contrat à durée déterminée'],
-          names: [''],
-          title: [''],
-          terms: [''],
-          free_days: [0],
-          start_date: [''],
-          end_date: [''],
-          file: []
-        });
-        //this.router.navigate(['/contracts/all']);
-        this.isSubmitted = false;
-      })
-      .catch(err => {
-        console.log(err)
-        this.translate.get('Contract.CONTRACT_ERROR')
-        .subscribe(val => this.notifService.danger(val));
-      })
-      .finally(() => this.isLoading = false);
-    
-  }   
-  
+
 
   public onReady( editor ) {
     editor.ui.getEditableElement().parentElement.insertBefore(
@@ -203,7 +181,7 @@ export class AddContractComponent implements OnInit {
         this.loading = false;
       }
     )
-  } 
+  }
 
 
 
@@ -215,7 +193,7 @@ export class AddContractComponent implements OnInit {
     this.users = this.users_tmp;
     this.users = this.users_tmp.filter( user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
   }
-   
+
 }
 
 
