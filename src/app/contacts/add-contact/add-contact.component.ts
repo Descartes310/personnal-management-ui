@@ -12,14 +12,17 @@ import { Router } from '@angular/router';
 })
 export class AddContactComponent implements OnInit {
 
-  //selection des fill: pour la gestion du wizard
-  fill1Selected:boolean=true;
-  fill2Selected:boolean=false;
-  fill3Selected:boolean=false;
-  fill4Selected:boolean=false;
- 
-
-  contactForm: FormGroup;
+  //gestion des steppers
+  step1Selected: boolean = true;
+  step2Selected: boolean = false;
+  step3Selected: boolean = false;
+  stepIndexSelected=0;
+  isLinear = false;
+  //gestion des formgroup
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup :FormGroup;
+  //
   isLoading = false;
   isError = false;
   isSuccess = false;
@@ -33,43 +36,56 @@ export class AddContactComponent implements OnInit {
               private router: Router,) { }
 
   ngOnInit() {
-    
     this.initform();
+    this.initform2();
+    this.initform3();
   }
 
   get form() {
-    return this.contactForm.controls;
+    return this.firstFormGroup.controls;
+  }
+  get form1() {
+    return this.secondFormGroup.controls;
+  }
+  get form2() {
+    return this.thirdFormGroup.controls;
   }
 
   //init form
   initform(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
-    this.contactForm = this.formBuilder.group({
+    this.firstFormGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: '',
       type: 'INTERNAL',
       nature: 'PHYSIC',
+      gender: ['', Validators.required]
+    });
+  }
+  initform2(){
+    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.secondFormGroup = this.formBuilder.group({
       email: ['', [Validators.email]],
       phone1:['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
       fax: '',
       bp: '',
+    });
+  }
+
+  initform3(){
+    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.thirdFormGroup = this.formBuilder.group({
       twitter: '',
       facebook: '',
       whatsapp:'',
       linkedin: '',
       website: '',
-      gender: ['', Validators.required],
       
-
-      
-
     });
   }
 
-    
-  
   //submit the form
   onSubmit() {
     this.isSubmitted = true;
@@ -78,14 +94,12 @@ export class AddContactComponent implements OnInit {
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
     //this.form.name.setValue(this.role_name);
-    if (this.contactForm.invalid) {
+    if (this.firstFormGroup.invalid || this.secondFormGroup.invalid || this.thirdFormGroup.invalid) {
       this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
     //si tout ce passe bien
-
     this.isLoading = true;
     const formData = new FormData();
     //ajout des donnees dans le form date
@@ -93,203 +107,94 @@ export class AddContactComponent implements OnInit {
     formData.append('type', '' + this.form.type.value);
     formData.append('nature', '' + this.form.nature.value);
     formData.append('description', '' + this.form.description.value);
-
-    formData.append('email', '' + this.form.email.value);
-    formData.append('phone1', '' + this.form.phone1.value);
-    formData.append('phone2', '' + this.form.phone2.value);
-    formData.append('phone3', '' + this.form.phone3.value);
-    formData.append('fax', '' + this.form.fax.value);
-    formData.append('bp', '' + this.form.bp.value);
-    formData.append('twitter', '' + this.form.twitter.value);
-    formData.append('facebook', '' + this.form.facebook.value);
-    formData.append('whatsapp', '' + this.form.whatsapp.value);
-    formData.append('linkedin', '' + this.form.linkedin.value);
-    formData.append('website', '' + this.form.website.value);
+    formData.append('email', '' + this.form1.email.value);
+    formData.append('phone1', '' + this.form1.phone1.value);
+    formData.append('phone2', '' + this.form1.phone2.value);
+    formData.append('phone3', '' + this.form1.phone3.value);
+    formData.append('fax', '' + this.form1.fax.value);
+    formData.append('bp', '' + this.form1.bp.value);
+    formData.append('twitter', '' + this.form2.twitter.value);
+    formData.append('facebook', '' + this.form2.facebook.value);
+    formData.append('whatsapp', '' + this.form2.whatsapp.value);
+    formData.append('linkedin', '' + this.form2.linkedin.value);
+    formData.append('website', '' + this.form2.website.value);
     formData.append('gender', '' + this.form.gender.value);
-
     //recuperation  de image
-    if(this.image != null) {
-      formData.append('picture',this.image, this.image.name);
-    }
-    
+    formData.append('picture',this.image);
     this.contactservice.add(formData)
       .then(resp => {
-        this.translate.get('Role.SubmitSuccess')
+        this.translate.get('Contact.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
-        this.contactForm.reset();
+        //reinitialisation
+        this.firstFormGroup.reset();
+        this.secondFormGroup.reset();
+        this.thirdFormGroup.reset();
+        this.stepIndexSelected=0;
         
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('Contact.ErrorSubmit')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
   }
 
-
-  //change fill
-  changefill(value) {
-    if (value === 1) {
-      this.fill1Selected = true;
-      this.fill2Selected = false;
-      this.fill3Selected = false;
-      this.fill4Selected = false;
-    }
-    else if (value === 2) {
-      this.fill1Selected = false;
-      this.fill2Selected = true;
-      this.fill3Selected = false;
-      this.fill4Selected = false;
-    }
-    else if (value === 3) {
-      this.fill1Selected = false;
-      this.fill2Selected = false;
-      this.fill3Selected = true;
-      this.fill4Selected = false;
-    }
-    else {
-      this.fill1Selected = false;
-      this.fill2Selected = false;
-      this.fill3Selected = false;
-      this.fill4Selected = true;
-    }
-
+  detectimage(event) {
+      this.image = event.target.files[0];
+      console.log(this.image)
   }
-
-  next1() {
-    var btn = document.getElementById('next-btn');
-     if (this.fill1Selected && !this.validStep1()) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
+//validation de chaque etape
+  validStep1() {
+    if(this.firstFormGroup.invalid){
+        this.stepIndexSelected=0; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
-
-      console.log(btn)
-      //btn.click();
-      
-      console.log("*************")
-      console.log(this.fill1Selected)
-      console.log(this.fill2Selected)
-      console.log(this.fill3Selected)
-      console.log(this.fill4Selected)
-    }
-
-    else if (this.fill2Selected && !this.validStep2()) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
-        .subscribe(val => this.notifService.danger(val));
-      var btn = document.getElementById('prev-btn');
-      btn.click();
-      this.changefill(2);
-
-    }
-    else if (this.fill3Selected) {
-      btn.click();
-    }
-    else if (!this.fill3Selected) {
-      this.isSubmitted = true;
-      this.translate.get('Contact.SubmitError')
-        .subscribe(val => this.notifService.danger(val));
-      var btn = document.getElementById('prev-btn');
-      btn.click();
-      this.changefill(3);
-
-    }
-    else if (this.fill4Selected) {
-      btn.click();
-    }
-    else if (!this.fill4Selected) {
-      
-      return
-
-    }
-
-
-
-  }
-  next(){
-    if(this.fill1Selected){
-      this.changefill(2);
-    }
-    else if(this.fill2Selected){
-      this.changefill(3);
-    }
-    else if(this.fill3Selected){
-      this.changefill(4);
-    }
-    
-    
-  }
-  previous(){
-    if(this.fill1Selected){
-      return;
-    }
-    else if(this.fill2Selected){
-      this.changefill(1);
-    }
-    else if(this.fill3Selected){
-      this.changefill(2);
     }
     else{
-      this.changefill(3);
+        this.isSubmitted=false;
+        this.stepIndexSelected=1;
     }
-  
-  }
-  /*previous() {
 
-    if (this.fill2Selected) {
-      this.changefill(1);
-    }
-    else if (this.fill3Selected) {
-      this.changefill(2);
-
-    }
-    else if (this.fill4Selected) {
-      this.changefill(3);
-    }
- 
-  }*/
-
-  reset() {
-    this.fill1Selected = true;
-    this.changefill(1);
-    this.contactForm.reset();
   }
 
-
-  detectimage(event) {
-    this.image = event.target.files[0];
-    console.log(this.image)
+  previous1(){
+      this.stepIndexSelected=0;
   }
-
-  //validation de chaque block de formulaire
-
-  validStep1() {
-    if (!this.form.name.errors)
-      return true;
-    return false;
+  previous2(){
+      this.stepIndexSelected=1;
+  }
+  previous3(){
+      this.stepIndexSelected=2;
   }
   //step 2
   validStep2() {
-    if (!this.form.phone1.errors && !this.form.phone2.errors && !this.form.phone2.errors && !this.form.email.errors)
-      return true;
-    return false;
+    if(this.secondFormGroup.invalid){
+        this.stepIndexSelected=1; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+    }
+    else{
+        this.isSubmitted=false;
+        this.stepIndexSelected=2;
+    }
   }
   //valid step 3
   validStep3() {
-
-    if (!this.contactForm.invalid)
-      return true;
-    return false;
-  }
-
-  valid(){
-    if(!this.validStep1()||!this.validStep2() || !this.validStep3() )
-        return false;
-    return true;
-
-  }
-
+    
+    if(this.secondFormGroup.invalid){
+        this.stepIndexSelected=2; 
+        this.isSubmitted=true;
+        this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+    }
+    else{
+        this.isSubmitted=false;
+        this.stepIndexSelected=3;
+    }
+}
 
 }

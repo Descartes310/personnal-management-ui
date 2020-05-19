@@ -45,7 +45,14 @@ import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-li
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -85,12 +92,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicensetypesComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
+    AddDivisionComponent,
+    UpdateDivisionComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
+    DetailsProSituationComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({

@@ -70,7 +70,7 @@ export class UpdateLicenseComponent implements OnInit {
         license_type_id: [this.license.license_type_id, [Validators.required]],
         reason:[this.license.raison],
         description: [this.license.description],
-        file:[this.license.file.name],
+        file:[],
         requested_start_date:[this.license.requested_start_date,[Validators.required]],
         requested_days:[this.license.requested_days,[Validators.required]]
 
