@@ -142,13 +142,20 @@
         "LicenseTypeField":"Choisir un type de permission",
         "FileLabel":"Demande manuscrit",
         "FileField":"Parcourir",
-        "templateTitle":"titre",
+        "templateTitle":"Titre",
         "templateTypeHolder":"Veuillez entrer le type de la maquette",
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
-        "templateType":"type",
-        "templateContent":"contenu"
+        "templateType":"Type",
+        "templateContent":"Contenu",
 
+        "TitleLabel": "Titre",
+        "TitleField": "Veuillez entrer un titre",
+
+        "Trainer": "Formateur",
+        "duration": "Durée (en heures)",
+        "start_date": "Date de début",
+        "location": "Localisation"
     },
        
     "AssignmentType": {
@@ -164,17 +171,17 @@
         "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
     },
     "Templates": {
-        "Templates": "Templates",
-        "TemplateTitle": "Gestion des Templates ",
-        "AddTemplate": "Ajouter un Template",
+        "Templates": "Modèles de document",
+        "TemplateTitle": "Gestion des modèles de document ",
+        "AddTemplate": "Ajouter un modèle de document",
         "UpdateTemplate": "Mettre à jour",
         "contentError":"Veuillez remplir le champ contenu",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du template réussie...",
-        "UpdateSuccess":"Le template a ete mis a jour",
-        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
-        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
+        "SubmitSuccess": "La création du modèle de document réussie...",
+        "UpdateSuccess":"Le modèle de document a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le modèle de document n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du modèle de documet existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le modèle de document n'exixte pas!!!"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",
@@ -215,7 +222,7 @@
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
     "SweetAlert": {
-        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
@@ -227,7 +234,7 @@
     },
     "BlogCat": {
         "BC_Title": "Catégories de blog",
-        "BC_Name": "Gestion des catégories de role de l'application",
+        "BC_Name": "Gestion des catégories de blog de l'application",
         "Add_BC": "Ajouter une nouvelle catégorie de blog",
         "CreateBC": "Créer la catégorie de blog",
         "UpdateBC": "Mettre à jour",
@@ -235,5 +242,17 @@
         "UpdateSuccess": "La mise à jour de la catégorie de blog a été un succès",
         "SubmitSuccess": "La création de la catégorie de blog a réussie...",
         "BC_NOT_FOUND": "La catégorie de blog n'a pas été retrouvée"
+    },
+
+    "Training": {
+        "Training_Title": "Formations",
+        "Training_Name": "Gestion des formations de l'application",
+        "Add_Training": "Ajouter une nouvelle formation",
+        "CreateTraing": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour de la formation a été un succès",
+        "SubmitSuccess": "La création de la formation a réussie...",
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     }
 }

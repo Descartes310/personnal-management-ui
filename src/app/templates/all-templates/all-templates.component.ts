@@ -4,36 +4,37 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2';
-import { TrainingService } from 'src/app/_services/training.service';
-import { Training } from 'src/app/_models/training.model';
+import { TemplateService } from 'src/app/_services/template.service';
+import { Template } from 'src/app/_models/template.model';
+
 
 @Component({
-  selector: 'app-all-trainings',
-  templateUrl: './all-trainings.component.html',
-  styleUrls: ['./all-trainings.component.scss']
+  selector: 'app-all-templates',
+  templateUrl: './all-templates.component.html',
+  styleUrls: ['./all-templates.component.scss']
 })
-export class AllTrainingsComponent implements OnInit {
+export class AllTemplatesComponent implements OnInit {
 
-  trainings: Training[] = [];
+  templates: Template[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
-  areYouSure = '';
-  warning = ''
-  yes = '';
-  no = '';
-  deleted = '';
-  deletedMessage = '';
-  cancelled = '';
-  cancelledMessage = '';
-
+    //SweetAlert Text
+    areYouSure = '';
+    warning = ''
+    yes = '';
+    no = '';
+    deleted = '';
+    deletedMessage = '';
+    cancelled = '';
+    cancelledMessage = '';
+  
   constructor(
-    private training_service:TrainingService,
+    private template_service:TemplateService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
-  ) {
+  ) { 
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
       'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
@@ -49,18 +50,18 @@ export class AllTrainingsComponent implements OnInit {
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
    }
-
+  
   ngOnInit() {
-    this.getTrainings();
+    this.getTemplates();
   }
 
-  getTrainings() {
+  getTemplates() {
     this.loading = true;
-    this.training_service.all().then(
+    this.template_service.all().then(
       response => {
         console.log(response)
-        this.trainings = [];
-        this.trainings=response
+        this.templates = [];
+        this.templates=response
       }
     ).catch(
       error => {
@@ -74,15 +75,15 @@ export class AllTrainingsComponent implements OnInit {
     )
   }
 
-  editTrainings(training:Training) {
-    this.router.navigate(['/trainings/update/'+training.id])
+  editTemplates(template:Template) {
+    this.router.navigate(['/templates/update/'+template.id])
   }
 
-  detailsTrainings(training: Training) {
-    this.router.navigate(['/trainings/details/'+training.id])
+  detailsTemplates(template: Template) {
+    this.router.navigate(['/templates/details/'+template.id])
   }
 
-  deleteTrainings(training:Training) {
+  deleteTemplates(template:Template) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -93,7 +94,7 @@ export class AllTrainingsComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.training_service.delete(training.id).then(
+        this.template_service.delete(template.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -101,7 +102,7 @@ export class AllTrainingsComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getTrainings();
+            this.getTemplates();
           }
         ).catch(
           error => {
@@ -121,4 +122,6 @@ export class AllTrainingsComponent implements OnInit {
       }
     })
   }
+
+
 }

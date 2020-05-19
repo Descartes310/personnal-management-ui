@@ -43,7 +43,6 @@ export class AddBlogCategoryComponent implements OnInit {
       this.isSuccess = false;
       this.isLoading = false
       // Si la validation a echoué, on arrete l'execution de la fonction
-      //this.form.name.setValue(this.blogcat_name);
       if (this.blogCatForm.invalid) {
         this.translate.get('BlogCat.SubmitError')
           .subscribe(val => this.notifService.danger(val));
@@ -64,12 +63,10 @@ export class AddBlogCategoryComponent implements OnInit {
         })
         .catch(err => {
           console.log(err)
-          alert("incorrect");
           this.translate.get('BlogCat.SubmitError')
           .subscribe(val => this.notifService.danger(val));
         })
         .finally(() => this.isLoading = false);
-        alert("fin");
     }
   
   }

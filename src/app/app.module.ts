@@ -49,13 +49,17 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
-//import { AngularEditorModule } from '@kolkov/angular-editor';
+
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
-import { DetaisTrainingsComponent } from './trainings/detais-trainings/detais-trainings.component';
 import { FindTrainingsComponent } from './trainings/find-trainings/find-trainings.component';
+import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
+import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -83,7 +87,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddBlogCategoryComponent,
     UpdateBlogCategoryComponent,
     AllTrainingsComponent,
-    DetaisTrainingsComponent,
     FindTrainingsComponent,
     ChatComponent,
     AddContactComponent,
@@ -103,6 +106,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    DetailsTrainingsComponent,
+    AllTemplatesComponent,
+    DetailsTemplatesComponent,
+    FindTemplatesComponent,
   ],
   imports: [
     MatStepperModule,
@@ -112,7 +119,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    //AngularEditorModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({
