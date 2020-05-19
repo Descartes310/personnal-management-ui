@@ -31,6 +31,7 @@
         "MinsLabel":"min-rate",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
+        "LabelsLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
         "DaysField": "Veuillez entrer le nombre de jour...",
         "DaysLabel": "days",
@@ -109,9 +110,17 @@
         "Addnoteciteria": "Ajouter un critere de notation "
 
     },
+    "Assignmenttype":{
+        "Assignmenttypes":" Type d'affectation",
+        "AssignmenttypesTitle":"Gestion des types d'affectation'",
+        "AddAssignmenttypes": "Ajouter un type d'affectation "
+
+    },
+
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
+        "AreYouSureAssigmenttype":"Etes-vous sure de vouloir supprimer  ce type d'affectation{{ data }} ?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
         "No": "Non, annuler",

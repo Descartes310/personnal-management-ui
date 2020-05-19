@@ -6,3 +6,4 @@ export const ROLE = SERVER + 'roles';
 export const PERMISSION = SERVER + 'permissions';
 export const LICENSETYPE = SERVER +'license_types';
 export const NOTECRITERIAS = SERVER +'note_criterias';
+export const ASSIGNMENTTYPE = SERVER +'assignment_types';

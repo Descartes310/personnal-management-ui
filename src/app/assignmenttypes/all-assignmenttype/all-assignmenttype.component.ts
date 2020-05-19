@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Notecriterias } from 'src/app/_models/notecriterias.model';
-import { NotecriteriasService } from 'src/app/_services/notecriterias.service';
+import { Assignmenttype } from 'src/app/_models/assignmenttype.model';
+import { AssignmenttypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
@@ -9,14 +9,13 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-all-notecriterias',
-  templateUrl: './all-notecriterias.component.html',
-  styleUrls: ['./all-notecriterias.component.scss']
+  selector: 'app-all-assignmenttype',
+  templateUrl: './all-assignmenttype.component.html',
+  styleUrls: ['./all-assignmenttype.component.scss']
 })
-export class AllNotecriteriasComponent implements OnInit {
-  
+export class AllAssignmenttypeComponent implements OnInit {
 
-  notecriterias: Notecriterias[] = [];
+  assignmenttypes: Assignmenttype[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
@@ -32,17 +31,17 @@ export class AllNotecriteriasComponent implements OnInit {
 
 
   constructor(
-    private notecriteriasService: NotecriteriasService,
+    private assignmenttypeService: AssignmenttypeService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
 
       this.translate.get(
-        ['SweetAlert.AreYouSureNotecriterias', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+        ['SweetAlert.AreYouSureAssigmenttype', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: ' ce critère de notation' })
+        { data: '' })
         .subscribe(val => {
-          this.areYouSure = val['SweetAlert.AreYouSureNotecriterias'];
+          this.areYouSure = val['SweetAlert.AreYouSureAssigmenttype'];
           this.warning = val['SweetAlert.Warning'];
           this.yes = val['SweetAlert.Yes'];
           this.no = val['SweetAlert.No'];
@@ -54,16 +53,16 @@ export class AllNotecriteriasComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getNotecriterias();
+    this.getAssignmenttypes();
   }
 
-  getNotecriterias() {
+  getAssignmenttypes() {
     this.loading = true;
-    this.notecriteriasService.all().then(
+    this.assignmenttypeService.all().then(
       response => {
-        this.notecriterias = [];
-        response.map( notecriterias => {
-          this.notecriterias.push(new Notecriterias(notecriterias));
+        this.assignmenttypes = [];
+        response.map( assignmenttype => {
+          this.assignmenttypes.push(new Assignmenttype(assignmenttype));
         });
       }
     ).catch(
@@ -76,15 +75,16 @@ export class AllNotecriteriasComponent implements OnInit {
       }
     )
   }
-  editNotecriterias(notecriterias: Notecriterias) {
-    this.router.navigate(['/notecriterias/update/'+notecriterias.id])
+
+  editAssignmenttype(assignmenttype: Assignmenttype) {
+    this.router.navigate(['/assignmenttype/update/'+assignmenttype.id])
   }
 
-  detailsNotecriterias(notecriterias: Notecriterias) {
-    this.router.navigate(['/notecriterias/details/'+notecriterias.id])
+  detailsAssignmenttype(assignmenttype: Assignmenttype) {
+    this.router.navigate(['/assignmenttype/details/'+assignmenttype.id])
   }
 
-  deleteNotecriterias(notecriterias: Notecriterias) {
+  deleteAssignmenttype(assignmenttype: Assignmenttype) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -95,7 +95,7 @@ export class AllNotecriteriasComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.notecriteriasService.delete(notecriterias.id).then(
+        this.assignmenttypeService.delete(assignmenttype.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -103,13 +103,13 @@ export class AllNotecriteriasComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getNotecriterias();
+            this.getAssignmenttypes();
           }
         ).catch(
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Notecriterias.'+error.error.code)
+            this.translate.get('Assignmenttype.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
@@ -124,3 +124,4 @@ export class AllNotecriteriasComponent implements OnInit {
     })
   }
 }
+

@@ -17,7 +17,8 @@ import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all
 import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
 import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
 
-
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 //const routes: Routes = [];
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,6 +34,8 @@ const routes: Routes = [
   { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
   { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

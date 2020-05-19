@@ -29,13 +29,13 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
-//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
-//import { NotecriteriasComponent } from './notecriterias/notecriterias.component';
 import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
 import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
 import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -66,6 +66,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllNotecriteriasComponent,
     DetailsNotecriteriasComponent,
     DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
   ],
   imports: [
     BrowserModule,
