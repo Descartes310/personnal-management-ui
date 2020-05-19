@@ -232,6 +232,7 @@
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
     },
+
     "BlogCat": {
         "BC_Title": "Catégories de blog",
         "BC_Name": "Gestion des catégories de blog de l'application",
@@ -242,6 +243,20 @@
         "UpdateSuccess": "La mise à jour de la catégorie de blog a été un succès",
         "SubmitSuccess": "La création de la catégorie de blog a réussie...",
         "BC_NOT_FOUND": "La catégorie de blog n'a pas été retrouvée"
+    },
+    "ProSituation": {
+        "WeightLabel":"Poids",
+        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation ?",
+        "RoleTitle": "Gestion des situations professionnelles de l'application",
+        "AddProSituations": "Ajouter une nouvelle situation Professionnelles",
+        "CreateRole": "Créer une situations Professionnelles",
+        "UpdateRole": "Mettre à jour",
+        "SubmitErrorPermissios": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà",
+        "ProSituations": "Situations professionelles",
+        "ProSituationTitle": "Gestion des situations professionelles de l'application",
+        "SubmitError": "Les champs en rouges sont obligatoires"
     },
 
     "Training": {

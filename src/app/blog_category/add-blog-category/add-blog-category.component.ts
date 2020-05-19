@@ -44,6 +44,7 @@ export class AddBlogCategoryComponent implements OnInit {
       this.isLoading = false
       // Si la validation a echoué, on arrete l'execution de la fonction
       if (this.blogCatForm.invalid) {
+        alert("helo");
         this.translate.get('BlogCat.SubmitError')
           .subscribe(val => this.notifService.danger(val));
         return;
