@@ -72,6 +72,15 @@
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
 
+    "Submission": {
+        "Submissions": "Les demandes",
+        "SubmissionTitle": "Gestion des demandes de l'application",
+        "AddSubmission": "Ajouter une nouvelle Demande",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la demande a réussie",
+        "DetailsSubmission": "Détails de la Demande"
+    },
+
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -86,6 +95,10 @@
     "Form": {
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
+        "UserLabel": "Utilisateur",
+        "Dest_userLabel": "Destinataire",
+        "SubjectLabel": "Objet",
+        "MessageLabel": "Objet",
         "TypeLabel": "Type",
         "TypeField": "Veuillez entrer le type...",
         "NatureLabel": "Nature",
@@ -143,7 +156,7 @@
         "StartDateField":"Debut de la permission",
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
-        "FileLabel":"Demande manuscrit",
+        "FileLabel":"Demande manuscrite",
         "FileField":"Parcourir",
         "templateTitle":"titre",
         "templateTypeHolder":"Veuillez entrer le type de la maquette",

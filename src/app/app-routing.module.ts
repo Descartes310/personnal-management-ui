@@ -35,6 +35,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 
 
 //const routes: Routes = [];
@@ -62,9 +64,11 @@ const routes: Routes = [
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
-  { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
+  { path: 'submissions/all', component: AllSubmissionComponent },
+  { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

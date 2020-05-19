@@ -61,7 +61,7 @@ export class UpdateDivisionComponent implements OnInit {
       console.log(this.division)
       this.divisionForm = this.formBuilder.group({
         name: [this.division.name, [Validators.required]],
-        label: [this.division.display_name, [Validators.required]],
+        label: [this.division.slug, [Validators.required]],
         parent_id: '',
         description: [this.division.description]
       });
@@ -85,7 +85,7 @@ export class UpdateDivisionComponent implements OnInit {
 
   search(event) {
     this.Division = this.Division_tmp;
-    this.Division = this.Division_tmp.filter( Division => this.division.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.Division = this.Division_tmp.filter( Division => this.division.slug.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
  /*  onChecked(division, event){
@@ -115,7 +115,7 @@ export class UpdateDivisionComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('display_name', '' + this.form.label.value);
+    formData.append('slug', '' + this.form.label.value);
     formData.append('name', '' + this.form.name.value);
     formData.append('description', '' + this.form.description.value);
     formData.append('parent_id', '' + this.form.parent_id.value);

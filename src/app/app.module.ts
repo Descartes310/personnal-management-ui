@@ -53,6 +53,8 @@ import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/mate
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -97,6 +99,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AllSubmissionComponent,
+    DetailsSubmissionComponent,
   ],
   imports: [
     MatStepperModule,
