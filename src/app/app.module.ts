@@ -29,6 +29,25 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { ChatComponent } from './chat/chat.component';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AddContractComponent } from './contracts/add-contract/add-contract.component';
 import { AllContractComponent } from './contracts/all-contract/all-contract.component';
 import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
@@ -38,6 +57,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { UpdateBlogCategoryComponent } from './BlogCategory/update-blog-category/update-blog-category.component';
 
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -62,6 +83,24 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    ChatComponent,
+    AddContactComponent,
+    UpdateContactComponent,
+    AddAssignmentTypeComponent,
+    UpdateAssignmentTypeComponent,
+    AddProfileComponent,
+    UpdateProfileComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
+    AddLicensetypesComponent,
+    UpdateLicensetypesComponent,
+    AddDivisionComponent,
+    UpdateDivisionComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
+    DetailsProSituationComponent,
     AddContractComponent,
     AllContractComponent,
     UpdateContractComponent,
@@ -71,11 +110,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateBlogCategoryComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     CKEditorModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({

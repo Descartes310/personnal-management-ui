@@ -1,0 +1,252 @@
+
+
+        <div class="app-page-title">
+          <div class="page-title-wrapper">
+              <div class="page-title-heading" style="width: 100%;">
+                  <div class="page-title-icon">
+                      <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                      </i>
+                  </div>
+                  <div>{{ 'Contact.Contacts' | translate }}
+                      <div class="page-title-subheading">{{ 'Contact.ContactTitle' | translate }}
+                      </div>
+                  </div>
+              </div>   
+          </div>
+      </div> 
+      
+      
+      <div class="row">
+              <div class="col-md-12">
+                  <div class="tabs-animation">
+                      <div class="main-card mb-3 card">
+                          <div class="card-header">
+                              <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                              {{ 'Contact.CreateContact' | translate }}
+                          </div>
+                          <div class="card-body">
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="main-card mb-3 card">
+                                          <div class="card-body">
+                                            
+                                            <mat-horizontal-stepper [linear]="isLinear" [selectedIndex]="this.stepIndexSelected" #stepper>
+                                              <mat-step >
+                                                <form [formGroup]="firstFormGroup">
+                                                    <ng-template matStepLabel>{{ 'Form.HeadPrincipalLabel' | translate }}</ng-template>
+                                                    
+                                                    
+                                                      <div class="form-row">
+                                                        <div class="col-md-12">
+                                                            <div class="position-relative form-group"><label for="exampleEmail55">{{ 'Form.NameLabel' | translate }}</label><input name="name_contact" type="text" formControlName="name"  class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.NameField' | translate}}"  >
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="form-row">
+                                                            <div class="col-md-6">
+                                                                    <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.TypeLabel' | translate }}</label><select name="select" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}" >
+                                                                            <option>INTERNAL</option>
+                                                                            <option>EXTERNAL</option>
+                                                                        </select></div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                    <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.NatureLabel' | translate }}</label><select name="select" formControlName="nature"  class="form-control {{ isSubmitted && form.nature.errors ? 'is-invalid' : '' }}" class="form-control">
+                                                                            <option>PHYSIC</option>
+                                                                            <option>MORAL</option>
+                                                                        </select></div>
+                                                                </div>
+                                                            
+                                                        </div>
+                                                    <div class="position-relative form-group"><label for="exampleSelect" class="">{{ 'Form.GenderLabel' | translate }}</label><select name="select" formControlName="gender"  class="form-control {{ isSubmitted && form.gender.errors ? 'is-invalid' : '' }}" class="form-control">
+                                                            <option value="M">Male</option>
+                                                            <option value="F">Female</option>
+                                                            
+                                                        </select></div>
+                                                        <div class="position-relative form-group">
+                                                                <label for="exampleText" class="">{{ 'Form.DescriptionLabel' | translate }}</label>
+                                                                <textarea name="text" id="exampleText" formControlName="description"  class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.DescriptionField' | translate}}">
+                                        
+                                                                </textarea>
+                                                            </div>
+                                                        <div class="position-relative form-group"><label for="exampleFile" class="">{{ 'Form.ImageLabel' | translate }}</label><input name="file" id="exampleFile" type="file" class="form-control-file" (change)=detectimage($event) >
+                                                                <small class="form-text text-muted">{{'Form.ImageField' | translate}}</small>
+                                                            </div>
+                                                        <div>
+                                                            <button type="button" (click)="validStep1()"  mat-button    class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                                <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.NextLabel' | translate }}</p>
+                                                                <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                                    <div class="ball-scale-multiple">
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            </div>
+                                                    </form>
+
+                                                    
+                                                
+                                              </mat-step>
+                                              <mat-step [stepControl]="secondFormGroup">
+                                                <form [formGroup]="secondFormGroup">
+                                                        <ng-template matStepLabel>{{ 'Form.HeadAddresLabel' | translate }}</ng-template>
+                                                        <div class="form-row">
+                                                          <div class="col-md-12">
+                                                              <div class="position-relative form-group">
+                                                                  <label for="exampleEmail55">{{ 'Form.EmailLabel' | translate }}</label>
+                                                                  <input name="email" formControlName="email"  class="form-control {{ isSubmitted && form1.email.errors ? 'is-invalid' : '' }}" placeholder="with a placeholder" type="email" class="form-control">
+                                                              </div>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                      <div class="position-relative form-group"><label for="exampleAddress">{{ 'Form.FaxLabel' | translate }}</label><input name="address" id="exampleAddress" formControlName="fax"  class="form-control {{ isSubmitted && form1.fax.errors ? 'is-invalid' : '' }}" placeholder="{{'Form.FaxField' | translate}}" type="text" class="form-control"></div>
+                                                      <div class="position-relative form-group"><label for="exampleAddress2">{{ 'Form.BpLabel' | translate }}</label><input name="address2" id="exampleAddress2"formControlName="bp"  class="form-control {{ isSubmitted && form1.bp.errors ? 'is-invalid' : '' }}"  placeholder="{{'Form.BpField' | translate}}" type="text"
+                                                                                                                                                    class="form-control">
+                                                      </div>
+                                                      <div class="form-row">
+                                                          <div class="col-md-4">
+                                                              <div class="position-relative form-group"><label for="exampleCity">{{ 'Form.Phone1Label' | translate }}</label><input name="city" id="exampleCity" formControlName="phone1"  class="form-control {{ isSubmitted && form1.phone1.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Form.Phone1Field' | translate}}"></div>
+                                                          </div>
+                                                          <div class="col-md-4">
+                                                              <div class="position-relative form-group"><label for="exampleState">{{ 'Form.Phone2Label' | translate }}</label><input name="state" id="exampleState" formControlName="phone2"  class="form-control {{ isSubmitted && form1.phone2.errors ? 'is-invalid' : '' }}" type="text" class="form-control" placeholder="{{'Form.Phone2Field' | translate}}"></div>
+                                                          </div>
+                                                          <div class="col-md-4">
+                                                              <div class="position-relative form-group"><label for="exampleZip">{{ 'Form.Phone3Label' | translate }}</label><input name="zip" id="exampleZip" type="text" formControlName="phone3"  class="form-control {{ isSubmitted && form1.phone3.errors ? 'is-invalid' : '' }}" class="form-control" placeholder="{{'Form.Phone1Field' | translate}}"></div>
+                                                          </div>
+                                                      </div>  
+                                                        <div>
+                                                            
+                                                            <button type="button" mat-button matStepperPrevious (click)="previous1()"    class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                                <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.PreviousLabel' | translate }}</p>
+                                                                <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                                    <div class="ball-scale-multiple">
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+
+                                                            <button type="button"  mat-button (click)="validStep2()"   class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                                <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.NextLabel' | translate }}</p>
+                                                                <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                                    <div class="ball-scale-multiple">
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                        <div style="background-color: white;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                         
+                                                        </div>
+                                                </form>
+                                              </mat-step>
+
+                                              <mat-step [stepControl]="thirdFormGroup">
+                                                  <form [formGroup]="thirdFormGroup">
+                                                          <ng-template matStepLabel>{{ 'Form.HeadSocialLabel' | translate }}</ng-template>
+                                                          <div class="position-relative form-group"><label for="exampleAddress">Facebook</label><input name="address" id="exampleAddress" formControlName="facebook"  class="form-control {{ isSubmitted && form2.facebook.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Form.FacebookField' | translate}}"></div>
+                                
+                                                          <div class="position-relative form-group"><label for="exampleAddress2">twitter</label><input name="address2" id="exampleAddress2" formControlName="twitter"  class="form-control {{ isSubmitted && form2.twitter.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Form.TwitterField' | translate}}"></div>
+                                                           
+                                                          <div class="position-relative form-group"><label for="exampleAddress">Whatsapp</label><input name="address" id="exampleAddress" formControlName="whatsapp"  class="form-control {{ isSubmitted && form2.whatsapp.errors ? 'is-invalid' : '' }}" placeholder="1234 Main St" type="text" class="form-control" placeholder="{{'Form.WhatsappField' | translate}}"></div>
+                                                         
+                                                          <div class="position-relative form-group"><label for="exampleAddress2">Linkedin</label><input name="address2" id="exampleAddress2" formControlName="linkedin"  class="form-control {{ isSubmitted && form2.linkedin.errors ? 'is-invalid' : '' }}" placeholder="Apartment, studio, or floor" type="text" class="form-control" placeholder="{{'Form.LinkedinField' | translate}}"></div>
+                                                              
+                                                          <div>
+                                                            
+                                                              <button type="button" mat-button (click)="previous2()"    class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                                  <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.PreviousLabel' | translate }}</p>
+                                                                  <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                                      <div class="ball-scale-multiple">
+                                                                          <div style="background-color: white;"></div>
+                                                                          <div style="background-color: white;"></div>
+                                                                          <div style="background-color: white;"></div>
+                                                                      </div>
+                                                                  </div>
+                                                              </button>
+
+                                                              <button type="button"  mat-button (click)="validStep3()"   class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                                  <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.NextLabel' | translate }}</p>
+                                                                  <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                                      <div class="ball-scale-multiple">
+                                                                          <div style="background-color: white;"></div>
+                                                                          <div style="background-color: white;"></div>
+                                                                          <div style="background-color: white;"></div>
+                                                                      </div>
+                                                                  </div>
+                                                              </button>
+                                                           
+                                                          </div>
+                                                  </form>
+                                                </mat-step>
+                                              
+                                              <mat-step>
+                                                <ng-template matStepLabel>{{ "Form.HeadFinishLabel" | translate }}</ng-template>
+                                                    
+                                                <div class="no-results">
+                                                    <div class="swal2-icon swal2-success swal2-animate-success-icon">
+                                                        <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+                                                        <span class="swal2-success-line-tip"></span>
+                                                        <span class="swal2-success-line-long"></span>
+                                                        <div class="swal2-success-ring"></div>
+                                                        <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+                                                        <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+                                                    </div>
+                                                    <div class="results-subtitle mt-4">{{ "Form.HeadFinishLabel" | translate }}</div>
+                                                    <div class="results-title">Veuillez Sauvegarder</div>
+                                                    <div class="mt-3 mb-3"></div>
+                                                    <div class="text-center">
+                                                            <button (click)="onSubmit()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contact.CreateContact" | translate }}</p>
+                                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                                        <div class="ball-scale-multiple">
+                                                                            <div style="background-color: white;"></div>
+                                                                            <div style="background-color: white;"></div>
+                                                                            <div style="background-color: white;"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </button>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <button type="button" mat-button (click)="previous3()"     class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                        <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.PreviousLabel' | translate }}</p>
+                                                        <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                            <div class="ball-scale-multiple">
+                                                                <div style="background-color: white;"></div>
+                                                                <div style="background-color: white;"></div>
+                                                                <div style="background-color: white;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <button type="button" mat-button (click)="stepper.reset()"    class="btn btn-info btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
+                                                        <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">Reset</p>
+                                                        <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
+                                                            <div class="ball-scale-multiple">
+                                                                <div style="background-color: white;"></div>
+                                                                <div style="background-color: white;"></div>
+                                                                <div style="background-color: white;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                              </mat-step>
+                                            </mat-horizontal-stepper>
+                                          </div>
+                                          <div class="card-footer">
+                                                
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      
+      
+      
