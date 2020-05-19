@@ -25,21 +25,6 @@
     "Home": {
         "Title": "Page d'accueil"
     },
-    "Form": {
-        "NameLabel": "Nom",
-        "NameSelect":"Choisir votre structure",
-        "NameField": "Veuillez entrer le nom...",
-        "LabelLabel": "Label",
-        "LabelField": "Veuillez entrer le label...",
-        "DescriptionLabel": "Description",
-        "DescriptionField": "Veuillez entrer une description",
-        "CreatedAtLabel": "Date de création",
-        "CreatedAtField": "Date de création",
-        "WeightLabel": "Indice",
-        "WeightField": "Selectionnez un indice",
-        "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
-    },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -86,6 +71,153 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "Contact": {
+        "Contacts": "Contacts",
+        "ContactTitle": "Gestion des Contact de l'application",
+        "AddContact": "Ajouter un nouveau contact",
+        "CreateContact": "Créer le contact",
+        "UpdateContact": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du contact a réussie...",
+        "ErrorSubmit": "echec d'ajout du contact",
+        "UpdateErrorSubmit": "echec de modification du contact"
+    },        
+    "Form": {
+        "NameLabel": "Nom",
+        "NameSelect":"Choisir votre structure",
+        "NameField": "Veuillez entrer le nom...",
+        "TypeLabel": "Type",
+        "TypeField": "Veuillez entrer le type...",
+        "NatureLabel": "Nature",
+        "NaturetField": "selectionner une nature...",
+        "GenderLabel": "Sexe",
+        "GenderField": "selectionner votre sexe...",
+        "DescriptionLabel": "Description",
+        "DaysLabel": "Nombre de jours",
+        "DaysField": "Veuillez entrer le nombre de jours...",
+        "ImageLabel": "Image",
+        "ImageField":"choisir une image",
+        "EmailLabel": "Email",
+        "EmailField": "Veuillez entrer  email...",
+        "FaxLabel": "Fax",
+        "FaxField": "Veuillez entrer le fax...",
+        "BpLabel": "Boite Postal",
+        "BpField": "Veuillez entrer la boite postale...",
+        "Phone1Label": "Telephone 1",
+        "Phone1Field": "premier numero...",
+        "Phone2Label": "Telephone 2",
+        "Phone2Field": "deuxieme numero...",
+        "Phone3Label": "Telephone 3",
+        "Phone3Field": "troisieme numero...",
+        "DescriptionField": "Veuillez entrer une description",
+        
+        "FacebookField": "Compte facebook...",
+        "TwitterField": "Compte twitter...",
+        "WhatsappField": "Compte whatsapp...",
+        "LinkedinField": "Compte linkedin...",
+        
+        "NextLabel":"Suivant",
+        "PreviousLabel":"Precedent",
+        "WeightLabel": "Indice",
+
+        "HeadPrincipalLabel": "Information Principale",
+        "HeadAddresLabel": "Addresse",
+        "HeadSocialLabel": "Information Sociale",
+        "HeadFinishLabel": "Termine",
+        "AssignmentNameField": "Veuillez remplir le champs label...",
+        "LabelLabel": "Label",
+        "LabelField": "Veuillez entrer le label...",
+        "CreatedAtLabel": "Date de création",
+        "CreatedAtField": "Date de création",
+        "WeightField": "Selectionnez un indice",
+        "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
+        "SearchLabel": "Rechercher",
+        "SearchText": "Effectuez une recherche...",
+        "AssignmentAddDescription":"veuillez faire une description",
+        "StatusMention":" le status de la demande",
+        "StartDateProposal":" date de début souhaitée",
+        "StartDateAccord":" date de début accordée",
+        "RequireDays":" nombre de jours de congés souhaités",
+        "AccordDays": " nombre de jours accordés",
+
+        "ReasonLabel": "Raison",
+        "ReasonField":"Veuillez entre la raison de votre demande",
+        "StartDateLabel":"Debut de la permission",
+        "StartDateField":"Debut de la permission",
+        "LicenseTypeLabel":"Type de Permission",
+        "LicenseTypeField":"Choisir un type de permission",
+        "FileLabel":"Demande manuscrit",
+        "FileField":"Parcourir",
+        "templateTitle":"titre",
+        "templateTypeHolder":"Veuillez entrer le type de la maquette",
+        "templateTitleHolder":"Veuillez entrer le titre de la maquette",
+        "templateContentHolder":"Veuillez entrer le contenu de la maquette",
+        "templateType":"type",
+        "templateContent":"contenu",
+        "StartDateError":"veuillez entrez une date valide"
+
+    },
+       
+    "AssignmentType": {
+        "AssignmentType": "Type d'affectation",
+        "AssignmentTypeTitle": "Gestion des types d'affectation ",
+        "AddAssignmentType": "Ajouter un type d'affectation",
+        "CreateAssignmentType": "Créer le type d'affectatation",
+        "UpdateAssignmentType": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type d'affectation réussie...",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le type d'affectation n'a pas été retrouvé",
+        "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
+    },
+    "Templates": {
+        "Templates": "Templates",
+        "TemplateTitle": "Gestion des Templates ",
+        "AddTemplate": "Ajouter un Template",
+        "UpdateTemplate": "Mettre à jour",
+        "contentError":"Veuillez remplir le champ contenu",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du template réussie...",
+        "UpdateSuccess":"Le template a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
+    },
+    "VacationType": {
+        "VacationTypes": "Types de congés",
+        "VacationTypesAdd": " Nouveau type de congés",
+        "VacationTypesUpdate": "Mise à jour d'un type de congés",
+        "VacationTypeTitle": "Gestion des types de congés de l'application",
+        "CreateVacationType": "Enregistrer",
+        "UpdateVacationType": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+    "Vacation": {
+        "Vacations": "Listes des congés",
+        "VacationAdd": " Nouveau type de congés",
+        "VacationUpdate": "Mise à jour d'un type de congés",
+        "VacationTitle": "Gestion des types de congés de l'application",
+        "CreateVacation": "Enregistrer",
+        "UpdateVacation": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+    "Licensetype":{
+        "Licensetypes":" Type de permission",
+        "LicensetypesTitle":"Gestion des types de permission",
+        "CreateLicense": "Créer la permission",
+        "UpdateLicensetype": "Mettre à jour de la permission",
+        "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
+    },
     "Division": {
         "Divisions": "Creation des divisions",
         "Divisions1": " Update des divisions",
@@ -101,7 +233,7 @@
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
-    "CONGE":{
+    "Conge":{
         "Conges": "Creation des conges",
         "CongeTitle": "Gestion des conges des employer",
         "AddConge":"Ajouter un congé",
@@ -109,6 +241,7 @@
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
         "No": "Non, annuler",
@@ -116,5 +249,76 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "ProSituation": {
+        "WeightLabel":"Poids",
+        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation ?",
+        "RoleTitle": "Gestion des situations professionnelles de l'application",
+        "AddProSituations": "Ajouter une nouvelle situation Professionnelles",
+        "CreateRole": "Créer une situations Professionnelles",
+        "UpdateRole": "Mettre à jour",
+        "SubmitErrorPermissios": "Veuillez selectionner au moins une permission",
+        "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
+        "ROLE_ALREADY_EXISTS": "Le rôle existe déjà",
+
+        "ProSituations": "Situations professionelles",
+        "ProSituationTitle": "Gestion des situations professionelles de l'application",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la situation professionnelle a réussie...",
+        "ResponseError": "La création de la situation professionnelle a échouée, cela peut être dû au fait que vous ne soyez pas connecté à internet. Vérifier votre connexion puis réessayer",
+        "CreateProSituaton": "Créer la situation professionnelle",
+        "UpdateProSituation": "Mettre à jour",
+        "UpdateSuccess": "Mise à jour éffectuée avec succès",
+        "PRO_SITUATION_NOT_FOUND": "La situation professionelle choisie n'existe pas",
+        "VALIDATION_ERROR": {
+            "Name": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+            "Weight": "Le poids de la situation professionnelle est un nombre compris entre 1 et 100"
+        },
+        "UnknowError": "Une erreur inconnue s'est produite veuillez réessayer",
+        "NetWorkError": "Erreur réseau veuillez vérifier votre connexion à internet puis réessayer",
+        "PROSITUATION_NAME_ALREADY_EXIST": "La situation professionnelle de nom {{ data }} existe déjà veuillez changer de nom",
+        "ErrorMessages": {
+            "Name": [
+                "le nom est obligatoire"
+            ],
+            "Weight": [
+                "l'indice est obligatoire et doit être un nombre compris entre 1 et 100",
+                "l'indice doit être strictement supérieur à 0",
+                "l'indice doit être inférieur ou égal à 100"
+            ]
+        }
+    },
+    "Chat": {
+        "Title": "Chat",
+        "TitleText": "Toutes vos discussions sont traités ici, vous pouvez demarrez une nouvelle conversation",
+        "WriteAMessage": "Ecrivez un message ici pour l'envoyer...",
+        "NewDicussion": "Commencer une nouvelle discussion",
+        "MessageLength": "Nombre de message",
+        "Close": "Fermer la discussion",
+        "DeleteAll": "Supprimer tous les messages",
+        "UsersList": "Liste des utilisateurs",
+        "DiscussionList": "Fil de conversation",
+        "PickUpDiscussion": "Sélectionnez une conversation ou commencez une nouvelle discussion",
+        "EmptypDiscussion": "Aucun message dans cette discussion, envoyez le premier message",
+        "Delete": "Supprimer",
+        "MessageSent": "Le message a bien été envoyé",
+        "MessageDeleteError": "Erreur lors de la suppression du message",
+        "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
+        "MessageSendError": "Erreur lors de l'envoi' du message",
+        "MessageDeleteSuccess": "Le message a été supprimé avec succès"
+    },
+    "License": {
+        "Licenses": "permissions",
+        "LicenseTitle": "Gestion des Demandes des permissions de l'application",
+        "AddLicense": "demande d'une permission",
+        "CreateLicense": "Soumettre",
+        "UpdateLicense": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
 }

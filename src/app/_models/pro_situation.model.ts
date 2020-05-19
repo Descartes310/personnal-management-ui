@@ -1,10 +1,9 @@
 import { Super } from './super.model';
 
-export class Conge extends Super<Conge> {
+export class ProSituation extends Super<ProSituation> {
 
     public name: string;
-    public display_name: string;
     public description: string;
-    public reason: string;
+    public weight: number;
     
 }

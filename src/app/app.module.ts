@@ -29,11 +29,34 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { ChatComponent } from './chat/chat.component';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
-import { AllCongeComponent } from './conges/all-conge/all-conge.component';
-import { DetailsCongeComponent } from './conges/details-conge/details-conge.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AddCongeComponent } from './conges/add-conge/add-conge.component';
+import { UpdateCongeComponent } from './conges/update-conge/update-conge.component';
+import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
+import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -58,16 +81,40 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    ChatComponent,
+    AddContactComponent,
+    UpdateContactComponent,
+    AddAssignmentTypeComponent,
+    UpdateAssignmentTypeComponent,
+    AddProfileComponent,
+    UpdateProfileComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
+    AddLicensetypesComponent,
+    UpdateLicensetypesComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
-    AllCongeComponent,
-    DetailsCongeComponent,
+    AddCongeComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
+    DetailsProSituationComponent,
+    UpdateCongeComponent,
+    AllVacationComponent,
+    DetailVacationComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({

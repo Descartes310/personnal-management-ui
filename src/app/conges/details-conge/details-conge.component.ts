@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+/* /* import { Component, OnInit } from '@angular/core';
 import { RoleService } from 'src/app/_services/role.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Conge } from 'src/app/_models/conges.model';
+import { Conge } from 'src/app/_models/vacation.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CongeService } from 'src/app/_services/conges.service';
+import { CongeService } from 'src/app/_services/vacation.service';
 
 @Component({
   selector: 'app-details-conge',
@@ -33,7 +33,7 @@ export class DetailsCongeComponent implements OnInit {
       data => {
         this.conge = new Conge(data);
         /* this.permissions = this.conge.permissions;
-        this.permissions_tmp = this.conge.permissions; */
+        this.permissions_tmp = this.conge.permissions; 
       }
     ).catch(
       error => {
@@ -51,3 +51,4 @@ export class DetailsCongeComponent implements OnInit {
   }
 
 }
+  */

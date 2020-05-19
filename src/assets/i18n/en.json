@@ -21,10 +21,20 @@
         "Title": "Home page"
     },
     "Form": {
+<<<<<<< HEAD
         "NameLabel": "Nom",
         "NameSelect": "Choisir votre structure parent ",
         "NameField": "Veuillez entrer le nom...",
+=======
+        "NameLabel": "Name",
+        "NameField": "Please type a name...",
+>>>>>>> 2219e905ec68d6a25d7805681eba07b3c18ae597
         "DescriptionLabel": "Description",
+        "DescriptionField": "Please type a description",
+        "WeightLabel": "Index",
+        "WeightField": "Select an index",
+        "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
+        "DaysLabel": "nombre de jour",
         "DescriptionField": "Veuillez entrer une description",
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice"
@@ -33,6 +43,16 @@
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
         "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",
         "FILE_NAME_MSG": "Name of choosen file: ",
-        "DOCUMENT_LOADING_MSG": "Document loading ..."
+        "DOCUMENT_LOADING_MSG": "Document loading ...",
+        "PREVIEW_TITLE": "Preview your pdf document here",
+        "BROWSER_FILE_BUTTON_LABEL": "browser your document here"
+    },
+    "ProSituation": {
+        "CreateProSituaton": "Create a pro situation",
+        "VALIDATION_ERROR": {
+            "Name": "The pro situation with name {{ data }} already exist please change the name",
+            "Weight": "The index of a pro situation must be a number between 1 and 100"
+        },
+        "UpdateProSituation": "Update"
     }
 }

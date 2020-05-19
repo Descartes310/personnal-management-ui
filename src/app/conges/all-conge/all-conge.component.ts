@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Conge } from 'src/app/_models/conges.model';
-import { CongeService } from 'src/app/_services/conges.service';
+/* import { Component, OnInit } from '@angular/core';
+import { Conge } from 'src/app/_models/vacation.model';
+import { CongeService } from 'src/app/_services/vacation.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
@@ -59,8 +59,9 @@ export class AllCongeComponent implements OnInit {
     this.loading = true;
     this.CongeService.all().then(
       response => {
+        console.log(response);
         this.Conges = [];
-        response.data.map( Conge => {
+        response.map( Conge => {
           this.Conges.push(new Conge(Conge));
         });
       }
@@ -124,3 +125,4 @@ export class AllCongeComponent implements OnInit {
   }
 
 }
+ */
