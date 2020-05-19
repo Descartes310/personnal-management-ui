@@ -1,0 +1,87 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Training.Trainings' | translate }}
+                <div class="page-title-subheading">{{ 'Training.TrainingTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'Training.Trainings' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="trainingForm">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleName" class="">{{ "Form.LabelLabel" | translate }} </label>
+                                                    <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="name" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                                </div>
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleSlug" class="">{{ "Form.NameLabel" | translate }}</label>
+                                                    <input name="slug" placeholder="{{ 'Form.NameField' | translate }}" disabled type="text" value="{{ training_name }}" class="form-control">
+                                                </div>
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleTrainer" class="">{{ "Form.NameTrainer" | translate }} </label>
+                                                    <input name="trainer" id="exampleTrainer" class="m-2" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="trainer" class="form-control {{ isSubmitted && form.trainer.errors ? 'is-invalid' : '' }}">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="position-relative form-group">
+                                                        <label for="exampleDate" class="">{{ "Form.StartDate" | translate }}</label>
+                                                        <input name="start_date" type="date" id="exampleDate" formControlName="start_date" class="form-control {{ isSubmitted && form.start_date.errors ? 'is-invalid' : '' }}" data-toggle="datepicker-button"/>                                                    
+                                                </div>
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleLocation" class="">{{ "Form.LocationName" | translate }} </label>
+                                                    <input name="location" id="exampleLocation" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="location" class="form-control {{ isSubmitted && form.location.errors ? 'is-invalid' : '' }}">
+                                                </div>
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleDuration" class="">{{ "Form.Duration" | translate }}</label>
+                                                    <input name="durartion" type="number" id="exampleDuration" formControlName="duration" placeholder="{{'Form.Duration'}}" class="form-control {{ isSubmitted && form.duration.errors ? 'is-invalid' : '' }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                            <textarea name="text" id="exampleText" class="form-control" formControlName="description">
+
+                                            </textarea>
+                                        </div>
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Training.CreateTraining" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
