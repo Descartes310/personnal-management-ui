@@ -43,6 +43,8 @@ import { UpdateLicenseComponent } from './licenses/update-license/update-license
 //import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
@@ -96,6 +98,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllLicensetypesComponent,
+    DetailsLycensetypeComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     TemplateCreateComponent,

@@ -5,6 +5,8 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
+import { DatePipe } from '@angular/common';
+import { LicensetypeService } from 'src/app/_services/licensetype.service';
 
 @Component({
   selector: 'app-add-license',
@@ -15,6 +17,8 @@ export class AddLicenseComponent implements OnInit {
 
   license_types: any[] = [];
   license_types_tmp: any[] = [];
+
+  
   user;
   licenseForm: FormGroup;
   isLoading = false;
@@ -22,6 +26,10 @@ export class AddLicenseComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   file:File=null;
+  pipe = new DatePipe('en-US');
+  Date = new Date();
+  currentDate = this.pipe.transform(this.Date, 'yyyy-MM-dd');
+
 
   constructor(
     private licenseService: LicenseService,
@@ -29,8 +37,11 @@ export class AddLicenseComponent implements OnInit {
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private authService:AuthService,
+    private licensetypeService:LicensetypeService,
     private router: Router,
-  ) { }
+  ) {
+    
+   }
 
   ngOnInit() {
     this.getLicense_Type();
@@ -52,7 +63,7 @@ export class AddLicenseComponent implements OnInit {
   }
 
   getLicense_Type() {
-    this.licenseService.license_type().then(
+    this.licensetypeService.all().then(
       response => {
         this.license_types = response;
         this.license_types_tmp = response;
@@ -84,6 +95,10 @@ export class AddLicenseComponent implements OnInit {
     formData.append('license_type_id', ''+this.form.license_type_id.value);
     formData.append('raison', '' + this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
+    if (this.currentDate >= this.form.requested_start_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+    }
     formData.append('requested_start_date', '' + this.form.requested_start_date.value);
     formData.append('requested_days', '' + this.form.requested_days.value);
     formData.append('is_active', '1');
@@ -97,11 +112,10 @@ export class AddLicenseComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
-        this.router.navigate(['/home']);
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('License.LICENSE_VALIDATOR')
+        this.translate.get('License.SubmitErrorLicense')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
