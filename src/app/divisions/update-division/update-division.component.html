@@ -1,0 +1,119 @@
+<div   class="app-page-title" style="width: 100%;">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Division.Divisions1' | translate }}
+                <div class="page-title-subheading">{{ 'Division.DivisionTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row" style="width: 100%;">
+    <div class="col-md-8" style="margin-left:auto ; margin-right :auto;">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'Division.Divisions1' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="divisionForm">
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class="">{{ "Form.LabelLabel" | translate }} </label>
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="name" class="">{{ "Form.NameLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.NameField' | translate }}"  disabled type="text" formControlName="name" value="{{ division_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                            <textarea name="text" id="exampleText" class="form-control" formControlName="description">
+
+                                            </textarea>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            
+                                            <select name="divisions" formControlName="parent_id">
+                                                <option selected>choisir le division parent </option>
+                                                <option *ngFor="let division of divisions" [value]="division.id">{{division.name}}</option>
+                                            </select>
+                                    </div>
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Division.UpdateDivision" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-4">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+              <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'Division.Divisions1' | translate }}
+                </div> --> 
+                <!-- <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form class="">
+                                        <div class="position-relative form-group">
+                                            <label class="">{{ "Form.SearchLabel" | translate }} ({{ divisions.length }})</label>
+                                            <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="search($event)" class="form-control">
+                                        </div>
+                                        <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+                                            <li class="list-group-item" *ngFor="let permission of permissions">
+                                                <div class="todo-indicator bg-warning"></div>
+                                                <div class="widget-content p-0">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left mr-2">
+                                                            <div class="custom-checkbox custom-control">
+                                                                <input type="checkbox" id="{{ division.id }}" [checked]="isChecked(division.id)" class="custom-control-input" (change)="onChecked(division, $event)">
+                                                                <label class="custom-control-label" for="{{ division.id }}">&nbsp;</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">{{ division.display_name }}
+                                                            </div>
+                                                            <div class="widget-subheading"><i>{{ division.description }}</i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div> 
+    </div> --> 
+
+</div>

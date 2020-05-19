@@ -89,9 +89,15 @@ export class AddProSituationComponent implements OnInit {
     return this.proSituationForm.controls;
   }
 
-  computeName(event) {
-    let name = event.target.value.trim();
-    this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
+  // computeName(event) {
+  //   let name = event.target.value.trim();
+  //   this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
+  // }
+
+  checkWeight(event) {
+    let value = parseInt(event.target.value);
+    if(value > 100)
+      this.form.weight.setValue(100);
   }
 
   onSubmit() {
@@ -100,7 +106,7 @@ export class AddProSituationComponent implements OnInit {
     this.isSuccess = false;
     this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.proSituationName);
+    //this.form.name.setValue(this.proSituationName);
     if (this.proSituationForm.invalid) {
       this.translate.get('ProSituation.SubmitError')
         .subscribe(val => this.notifService.danger(val));

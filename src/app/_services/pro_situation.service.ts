@@ -40,4 +40,11 @@ export class ProSituationService {
     return this.http.get<ProSituation>(`${Routes.PRO_SITUATION}/${id}`).toPromise();
   }
 
+  all(): Promise<any> {
+    return this.http.get<any>(Routes.PRO_SITUATION).toPromise();
+  }
+  delete(id: number): Promise<ProSituation[]> {
+    return this.http.delete<ProSituation[]>(`${Routes.PRO_SITUATION}/${id}`).toPromise();
+  }
+
 }

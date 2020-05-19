@@ -76,6 +76,12 @@ export class UpdateProSituationComponent implements OnInit {
     return this.proSituationForm.get('weight');
   }
 
+  checkWeight(event) {
+    let value = parseInt(event.target.value);
+    if(value > 100)
+      this.form.weight.setValue(100);
+  }
+
 
   public getNameErrorMessages() {
     this.translate.get('ProSituation.ErrorMessages.Name').subscribe(val => {
@@ -124,10 +130,10 @@ export class UpdateProSituationComponent implements OnInit {
     return this.proSituationForm.controls;
   }
 
-  computeName(event) {
-    let name = event.target.value.trim();
-    this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
-  }
+  // computeName(event) {
+  //   let name = event.target.value.trim();
+  //   this.proSituationName = name.replace(/[^A-Z0-9]/ig, "_");
+  // }
 
   onSubmit() {
     this.isSubmitted = true;
@@ -136,7 +142,7 @@ export class UpdateProSituationComponent implements OnInit {
     this.isLoading = false;
     
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.proSituationName);
+    //this.form.name.setValue(this.proSituationName);
     if (this.proSituationForm.invalid) {
       this.translate.get('ProSituation.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -156,7 +162,7 @@ export class UpdateProSituationComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.proSituationForm.reset();
-        this.router.navigate(['/pro_situations/all']);
+        this.router.navigate(['/pro-situations/all']);
       })
       .catch(error => {
         console.log(error)
