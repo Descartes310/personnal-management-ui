@@ -155,6 +155,10 @@ export class AddUserComponent implements OnInit {
     return (option.value === input.default);
   }
 
+  public checkIfInputIsAFile(input) {
+    
+  }
+
   public validatePersonnalInfoForm() {
 
     this.isSubmitted = true;

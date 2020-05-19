@@ -44,6 +44,8 @@
                                                         
                                                         <input *ngIf="!checkIfInputIsASelect(input)" [formControlName]="input.name" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : '' }}" [required]="input.is_required">
 
+                                                        <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.name" type="{{ input.type }}" class="form-control {{ isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : '' }}" [required]="input.is_required">
+
                                                         <select *ngIf="checkIfInputIsASelect(input)" matInput [formControlName]="input.name" class="form-control isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : ''">
                                                             <option *ngFor='let option of input.options' value=" {{ option.value }}"> {{ option.key }}</option>
                                                         </select>
