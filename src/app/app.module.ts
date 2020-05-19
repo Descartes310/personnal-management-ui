@@ -35,6 +35,8 @@ import { UpdateContractComponent } from './contracts/update-contract/update-cont
 import { FindContractComponent } from './contracts/find-contract/find-contract.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { UpdateBlogCategoryComponent } from './BlogCategory/update-blog-category/update-blog-category.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -65,6 +67,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateContractComponent,
     FindContractComponent,
     DetailsContractComponent,
+    AllBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
   ],
   imports: [
     CKEditorModule,

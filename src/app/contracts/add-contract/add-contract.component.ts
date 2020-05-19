@@ -111,7 +111,6 @@ export class AddContractComponent implements OnInit {
       .then(resp => {
         this.translate.get('Contract.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
         this.contractForm.reset();
          this.contractForm = this.formBuilder.group({
           user_id: [''],
@@ -125,6 +124,7 @@ export class AddContractComponent implements OnInit {
           file: []
         });
         //this.router.navigate(['/contracts/all']);
+        this.isSubmitted = false;
       })
       .catch(err => {
         console.log(err)
