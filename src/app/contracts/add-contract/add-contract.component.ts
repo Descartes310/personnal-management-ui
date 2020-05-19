@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/_models/user.model';
 import { UserService } from 'src/app/_services/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -78,10 +79,11 @@ export class AddContractComponent implements OnInit {
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false;
-    let now = (new Date());
-    let debut = (new Date(this.form.start_date.value));
-    let end = (new Date(this.form.end_date.value));
+
     
+    let pipe = new DatePipe ('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
     
     if (this.contractForm.invalid){
       this.translate.get('Contract.SubmitError')
@@ -89,84 +91,43 @@ export class AddContractComponent implements OnInit {
       return;
     }
 
- 
-    if(this.form.end_date.value && this.form.start_date.value){
+    if (this.form.start_date.value > this.form.end_date.value && this.form.start_date.value > currentDate){
+      this.translate.get('Contract.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
 
-      if( debut > end || now > end){
-        this.translate.get('Contract.SubmitErrordate')
-          .subscribe(val => this.notifService.danger(val));
-        return;
-      }
+    this.isLoading = true;
+    console.log(currentDate);
+    const formData = new FormData();
+    formData.append('user_id', this.form.user_id.value);
+    formData.append('type', '' + this.form.type.value);
+    formData.append('name', '' + this.form.names.value);
+    formData.append('title', '' + this.form.title.value);
+    formData.append('terms', '' + this.form.terms.value);
+    formData.append('free_days', this.form.free_days.value);
 
-      this.isLoading = true;
-      const formData = new FormData();
-      formData.append('user_id', this.form.user_id.value);
-      formData.append('type', '' + this.form.type.value);
-      formData.append('name', '' + this.form.names.value);
-      formData.append('title', '' + this.form.title.value);
-      formData.append('terms', '' + this.form.terms.value);
-      formData.append('free_days', this.form.free_days.value);
-      formData.append('start_date', '' + this.form.start_date.value);
-      formData.append('end_date', '' + this.form.end_date.value);
-      formData.append('file', this.myfile);
-      this.contractService.add(formData)
-        .then(resp => {
-          this.translate.get('Contract.SubmitSuccess')
-          .subscribe(val => this.notifService.success(val));
-          this.isSubmitted = false;
-          this.contractForm.reset();
-          this.contractForm = this.formBuilder.group({
-            user_id: [''],
-            type: ['CDD – Contrat à durée déterminée'],
-            names: [''],
-            title: [''],
-            terms: [''],
-            free_days: [0],
-            start_date: [],
-            end_date: [],
-            file: []
-          });
-          //this.router.navigate(['/contracts/all']);
-        })
-        .catch(err => {
-          console.log(err)
-          this.translate.get('Contract.CONTRACT_ERROR')
-          .subscribe(val => this.notifService.danger(val));
-        })
-        .finally(() => this.isLoading = false);
-      }
-       
-
-      this.isLoading = true;
-      const formData = new FormData();
-      formData.append('user_id', this.form.user_id.value);
-      formData.append('type', '' + this.form.type.value);
-      formData.append('name', '' + this.form.names.value);
-      formData.append('title', '' + this.form.title.value);
-      formData.append('terms', '' + this.form.terms.value);
-      formData.append('free_days', this.form.free_days.value);
-      formData.append('start_date', '' + this.form.start_date.value);
-      formData.append('end_date', '' + this.form.end_date.value);
-      formData.append('file', this.myfile);
-      this.contractService.add(formData)
-        .then(resp => {
-          this.translate.get('Contract.SubmitSuccess')
-          .subscribe(val => this.notifService.success(val));
+    this.form.start_date.value ? formData.append('start_date', '' + this.form.start_date.value) : null;
+    this.form.start_date.value ? formData.append('end_date', '' + this.form.end_date.value) : null;
+    formData.append('file', this.myfile);
+    this.contractService.add(formData)
+      .then(resp => {
+        this.translate.get('Contract.SubmitSuccess')
+        .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.contractForm.reset();
-         this.contractForm = this.formBuilder.group({
+        this.contractForm = this.formBuilder.group({
           user_id: [''],
           type: ['CDD – Contrat à durée déterminée'],
           names: [''],
           title: [''],
           terms: [''],
           free_days: [0],
-          start_date: [''],
-          end_date: [''],
+          start_date: [],
+          end_date: [],
           file: []
         });
         //this.router.navigate(['/contracts/all']);
-        this.isSubmitted = false;
       })
       .catch(err => {
         console.log(err)
@@ -174,7 +135,7 @@ export class AddContractComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
-    
+  
   }   
   
 
