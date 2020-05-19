@@ -40,7 +40,7 @@ export class AddLicensetypesComponent implements OnInit {
       label: ['', Validators.required],
       name: ['', Validators.required],
       description: [''],
-      days: ['']
+      days: ['', Validators.required]
     });
   }
 

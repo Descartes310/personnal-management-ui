@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Routes from '../Routes'; 
-import { Licensetype } from '../_models/Licensetype.model';
+import { Licensetype } from '../_models/licensetype.model';
 
 @Injectable({
   providedIn: 'root',

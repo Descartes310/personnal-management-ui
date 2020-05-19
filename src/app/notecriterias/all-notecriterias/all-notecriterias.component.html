@@ -31,23 +31,23 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ 'Form.NamesLabel' | translate }}</th>
+                        <th>{{ 'Form.NameLabel' | translate }}</th>
                         <th>{{ 'Form.LabelLabel' | translate }}</th>
                         <th>{{ 'Form.MaxsLabel' | translate }}</th>
                         <th>{{ 'Form.MinsLabel' | translate }}</th>
-                        <th>{{ 'Form.eightLabel' | translate }}</th>
-                        <th>{{ 'Form.DescriptionsLabel' | translate }}</th>
+                        <th>{{ 'Form.WeightLabel' | translate }}</th>
+                        <th>{{ 'Form.DescriptionLabel' | translate }}</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let notecriteria of notecriterias,let i = index" id="tr{{ notecriteria.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 10%">{{ notecriteria.name }}</td>
-                        <td style="width: 10%">{{ notecriteria.slug }}</td>
-                        <td style="width: 15%">{{ notecriteria.max_rate }}</td>
-                        <td style="width: 10%">{{ notecriteria.min_rate }}</td>
-                        <td style="width: 10%">{{ notecriteria.weight }}</td>
+                        <td style="width: 7%">{{ notecriteria.name }}</td>
+                        <td style="width: 7%">{{ notecriteria.slug }}</td>
+                        <td style="width: 12%">{{ notecriteria.max_rate }}</td>
+                        <td style="width: 8%">{{ notecriteria.min_rate }}</td>
+                        <td style="width: 7%">{{ notecriteria.weight }}</td>
                         <td style="width: 15%">{{ notecriteria.description }}</td>
                         <td style="width: 15%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editNotecriterias(notecriteria)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>

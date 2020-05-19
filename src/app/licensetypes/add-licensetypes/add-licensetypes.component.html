@@ -14,7 +14,7 @@
 </div>   
 
 <div class="row">
-    <div class="col-md-8" id="form">
+    <div class="col-md-12" id="form">
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
@@ -32,15 +32,15 @@
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="examplePassword" class="">{{ "Form.NamesLabel" | translate }}</label>
+                                            <label for="examplePassword" class="">{{ "Form.NameLabel" | translate }}</label>
                                             <input placeholder="" disabled type="text" formControlName="name" value="{{ licensetype_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="exampleText" class="">{{ "Form.DaysLabel" | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="{{ 'Form.daysField' | translate }}" type="number" min="1" formControlName="days" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Form.DaysField' | translate }}" type="number" min="1" formControlName="days" class="form-control {{ isSubmitted && form.days.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="exampleText" class="">{{ "Form.DescriptionsLabel" | translate }}</label>
+                                            <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
                                             <textarea name="text" id="exampleText" class="form-control" formControlName="description">
 
                                             </textarea>
