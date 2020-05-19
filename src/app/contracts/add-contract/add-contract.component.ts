@@ -61,9 +61,9 @@ export class AddContractComponent implements OnInit {
       names: [''],
       title: [''],
       terms: [''], 
-      free_days: [''],
-      start_date: [''],  
-      end_date: [''] ,
+      free_days: [0],
+      start_date: [],  
+      end_date: [] ,
       file: ['',Validators.required]    
     });
   }
@@ -92,10 +92,13 @@ export class AddContractComponent implements OnInit {
  
     if(this.form.end_date.value && this.form.start_date.value){
 
+      if( debut > end || now > end){
+        this.translate.get('Contract.SubmitErrordate')
+          .subscribe(val => this.notifService.danger(val));
+        return;
+      }
+
       this.isLoading = true;
-      console.log("date debut "+debut);
-      console.log("date now "+now);
-      console.log("date fin "+end);
       const formData = new FormData();
       formData.append('user_id', this.form.user_id.value);
       formData.append('type', '' + this.form.type.value);
@@ -119,8 +122,8 @@ export class AddContractComponent implements OnInit {
             title: [''],
             terms: [''],
             free_days: [0],
-            start_date: [''],
-            end_date: [''],
+            start_date: [],
+            end_date: [],
             file: []
           });
           //this.router.navigate(['/contracts/all']);
@@ -131,16 +134,9 @@ export class AddContractComponent implements OnInit {
           .subscribe(val => this.notifService.danger(val));
         })
         .finally(() => this.isLoading = false);
-      }else{
-        if( debut > end || now > end){
-          this.translate.get('Contract.SubmitErrordate')
-            .subscribe(val => this.notifService.danger(val));
-          return;
-    }
+      }
+       
 
-    console.log("date debut "+debut);
-    console.log("date now "+now);
-    console.log("date fin "+end);
       this.isLoading = true;
       const formData = new FormData();
       formData.append('user_id', this.form.user_id.value);
@@ -179,8 +175,8 @@ export class AddContractComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
     
-    }   
-  }
+  }   
+  
 
   public onReady( editor ) {
     editor.ui.getEditableElement().parentElement.insertBefore(

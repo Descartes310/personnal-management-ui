@@ -36,16 +36,16 @@
                                             <div class="position-relative form-group">
                                                 <label for="exampleType" class="">{{ "Form.TypeLabel" | translate }} </label>
                                                 <select name="type" id="exampleType" formControlName="type" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}">
-                                                    <option [value]="typecontract" *ngFor="let typecontract of TypeContracts"> {{typecontract}}</option>
+                                                    <option [value]="typecontract" value="{{contract.type}}"  *ngFor="let typecontract of TypeContracts"> {{typecontract}}</option>
                                                 </select>
                                             </div>
                                             <div class="position-relative form-group">
                                                 <label for="exampleTitle" class="">{{ "Form.TitleLabel" | translate }} </label>
-                                                <input name="titre" id="exampleTitle" placeholder="{{ 'Form.LabelTitle' | translate }}" type="text" formControlName="title" value="{{contract.title}}" class="form-control {{ isSubmitted && form.title.errors ? 'is-invalid' : '' }}">
+                                                <input name="titre" id="exampleTitle" placeholder="{{ 'Form.LabelTitle' | translate }}" type="text" value="{{contract.title}}" formControlName="title" class="form-control {{ isSubmitted && form.title.errors ? 'is-invalid' : '' }}">
                                             </div>
                                             <div class="position-relative form-group">
                                                 <label for="exampleName" class="">{{ "Form.NameLabel" | translate }} </label>
-                                                <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="names" value="{{contract.names}}" class="form-control {{ isSubmitted && form.nameserrors ? 'is-invalid' : '' }}">
+                                                <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" value="{{contract.name}}" formControlName="names"  class="form-control {{ isSubmitted && form.nameserrors ? 'is-invalid' : '' }}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -59,7 +59,7 @@
                                             </div> 
                                                <div class="position-relative form-group">
                                                 <label for="exampleDays" class="">{{ "Form.free_daysLabel" | translate }} </label>
-                                                <input name="days" id="exampleDays" placeholder="{{ 'Form.LabelDays' | translate }}" type="number" formControlName="free_days"  class="form-control {{ isSubmitted && form.free_days.errors ? 'is-invalid' : '' }}">
+                                                <input name="days" id="exampleDays" placeholder="{{ 'Form.LabelDays' | translate }}" type="number" formControlName="free_days" value="{{contract.free_days}}" class="form-control {{ isSubmitted && form.free_days.errors ? 'is-invalid' : '' }}">
                                             </div>         
                                         </div>
                                         <div class="col-md-4" style="overflow-y: auto; max-height: 240px;">
@@ -111,7 +111,7 @@
                             <div class="card-body">
                                 <div class="row">   
                                     <div class="col-md-12"> 
-                                        <input name="file" id="examplefile" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" value="{{contract.file}}" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
+                                        <input name="file" id="examplefile" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
                                     </div>  
                                 </div> 
                             </div>             

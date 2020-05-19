@@ -138,10 +138,13 @@ export class UpdateContractComponent implements OnInit {
  
     if(this.form.end_date.value && this.form.start_date.value){
 
+      if( debut > end || now > end){
+        this.translate.get('Contract.SubmitErrordate')
+          .subscribe(val => this.notifService.danger(val));
+        return;
+      }
+
       this.isLoading = true;
-      console.log("date debut "+debut);
-      console.log("date now "+now);
-      console.log("date fin "+end);
       const formData = new FormData();
       formData.append('user_id', this.form.user_id.value);
       formData.append('type', '' + this.form.type.value);
@@ -152,7 +155,7 @@ export class UpdateContractComponent implements OnInit {
       formData.append('start_date', '' + this.form.start_date.value);
       formData.append('end_date', '' + this.form.end_date.value);
       formData.append('file', this.myfile);
-      this.contractService.add(formData)
+      this.contractService.update(formData,this.contract.id)
         .then(resp => {
           this.translate.get('Contract.SubmitSuccess')
           .subscribe(val => this.notifService.success(val));
@@ -165,8 +168,8 @@ export class UpdateContractComponent implements OnInit {
             title: [''],
             terms: [''],
             free_days: [0],
-            start_date: [''],
-            end_date: [''],
+            start_date: [],
+            end_date: [],
             file: []
           });
           //this.router.navigate(['/contracts/all']);
@@ -177,17 +180,11 @@ export class UpdateContractComponent implements OnInit {
           .subscribe(val => this.notifService.danger(val));
         })
         .finally(() => this.isLoading = false);
-      }else{
-        if( debut > end || now > end){
-          this.translate.get('Contract.SubmitErrordate')
-            .subscribe(val => this.notifService.danger(val));
-          return;
-    }
+      }
+       
+      if(!this.form.end_date.value && !this.form.start_date.value){
 
-    console.log("date debut "+debut);
-    console.log("date now "+now);
-    console.log("date fin "+end);
-      this.isLoading = true;
+        this.isLoading = true;
       const formData = new FormData();
       formData.append('user_id', this.form.user_id.value);
       formData.append('type', '' + this.form.type.value);
@@ -204,7 +201,19 @@ export class UpdateContractComponent implements OnInit {
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.contractForm.reset();
-        this.router.navigate(['/contracts/all']);
+         this.contractForm = this.formBuilder.group({
+          user_id: [''],
+          type: ['CDD – Contrat à durée déterminée'],
+          names: [''],
+          title: [''],
+          terms: [''],
+          free_days: [0],
+          start_date: [''],
+          end_date: [''],
+          file: []
+        });
+        //this.router.navigate(['/contracts/all']);
+        this.isSubmitted = false;
       })
       .catch(err => {
         console.log(err)
@@ -212,9 +221,12 @@ export class UpdateContractComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
+      }
+      
     
-    }   
-  }
+  }   
+  
+
   detectfile(event){
     this.myfile=event.target.files[0];
   }
