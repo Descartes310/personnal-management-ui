@@ -50,6 +50,14 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { FindContractComponent } from './contracts/find-contract/find-contract.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { UpdateBlogCategoryComponent } from './BlogCategory/update-blog-category/update-blog-category.component';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
@@ -97,11 +105,19 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AddContractComponent,
+    AllContractComponent,
+    UpdateContractComponent,
+    FindContractComponent,
+    DetailsContractComponent,
+    AllBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
   ],
   imports: [
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
+    CKEditorModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

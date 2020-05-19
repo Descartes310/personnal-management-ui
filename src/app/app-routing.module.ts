@@ -35,6 +35,11 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 
 
 //const routes: Routes = [];
@@ -70,6 +75,11 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+  { path: 'contracts/add', component: AddContractComponent },
+  { path: 'contracts/all', component: AllContractComponent },
+  { path: 'BlogCategory/all', component: AllBlogCategoryComponent },
+  { path: 'contracts/update/:id', component: UpdateContractComponent },
+  { path: 'contracts/details', component: DetailsContractComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
