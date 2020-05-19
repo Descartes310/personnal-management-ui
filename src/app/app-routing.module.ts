@@ -17,6 +17,9 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -35,6 +38,9 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+
+  { path: 'vacations/update/:id', component: UpdateVacationComponent },
+  { path: 'vacations/add', component: AddVacationComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

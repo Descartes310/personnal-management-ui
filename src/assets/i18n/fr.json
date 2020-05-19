@@ -130,7 +130,18 @@
         "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
-        "AssignmentAddDescription":"veuillez faire une description"
+        "AssignmentAddDescription":"veuillez faire une description",
+     
+        "RaisonLabel": "Raison",
+        "RaisonField":"Veuillez entre la raison de votre demande",
+        "RequestedStartDateLabel":"Date debut du congé",
+        "RequestedStartDateField":"Debut du congé",
+        "RequestedDaysLabel":"Nombre de jour du congé",
+        "RequestedDaysField":"Veuillez entrer le nombre de jour",
+        "VacationTypeLabel":"Type de congé",
+        "VacationTypeField":"Choisir un type de congé",
+        "FileLabel":"Piece jointe",
+        "FileField":"Parcourir"
 
     },
        
@@ -191,5 +202,23 @@
         "DiscussionDeleteError": "Erreur lors de la suppression de la discussion",
         "MessageSendError": "Erreur lors de l'envoi' du message",
         "MessageDeleteSuccess": "Le message a été supprimé avec succès"
-    }
+    },
+    "vacation":{
+        "CreateVacation": "Creer le congé",
+        "VACATION": "CONGE"
+    },
+    "Vacation": {
+        "Vacations": "congés",
+        "VacationTitle": "Gestion des Demandes des congés de l'application",
+        "AddVacation": "demande d'un congé",
+        "CreateVacation": "Envoyer",
+        "UpdateVacation": "Modifier",
+        "SubmitError": "Veuillez remplir tous les champs obligatoires",
+        "SubmitSuccess": "La création de demande de congé a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorVacation_type": "Veuillez selectionner un type de congé",
+        "SubmitErrorVacation":"erreur de la creation!! veuillez verifier vos donnees ",
+        "VACATION_NOT_FOUND": "ce congé n'a pas été retrouvé",
+        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà"
+    }   
 }

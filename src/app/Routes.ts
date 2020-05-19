@@ -9,3 +9,5 @@ export const assignment_type = SERVER + 'assignment_types';
 export const PERMISSION = SERVER + 'permissions';
 export const PRO_SITUATION = SERVER + 'pro_situations';
 export const CONTACT = SERVER + 'contacts';
+export const VACATION = SERVER + 'vacations';
+export const VACATION_TYPE = SERVER + 'vacation_types';
