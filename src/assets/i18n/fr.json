@@ -101,6 +101,12 @@
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
     },
+    "CONGE":{
+        "Conges": "Creation des conges",
+        "CongeTitle": "Gestion des conges des employer",
+        "AddConge":"Ajouter un congé",
+        "CONGE_NOT_FOUND": "le demande n'existe pas "
+    },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
         "Warning": "Cette action est irreversible !",

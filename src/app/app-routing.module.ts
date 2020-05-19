@@ -13,6 +13,8 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { DetailsCongeComponent } from './conges/details-conge/details-conge.component';
+import { AllCongeComponent } from './conges/all-conge/all-conge.component';
 
 
 
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'conges/all', component: AllCongeComponent },
+  { path: 'conges/details/:id', component: DetailsCongeComponent },
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },

@@ -31,6 +31,8 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { AllCongeComponent } from './conges/all-conge/all-conge.component';
+import { DetailsCongeComponent } from './conges/details-conge/details-conge.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -58,6 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
+    AllCongeComponent,
+    DetailsCongeComponent,
   ],
   imports: [
     BrowserModule,
