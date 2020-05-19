@@ -37,8 +37,8 @@ export class AllLicensetypesComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: 'Licensetypes' })
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+        { data: 'type de permission' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -117,7 +117,7 @@ export class AllLicensetypesComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
