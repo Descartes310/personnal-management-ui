@@ -1,0 +1,114 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Assignement.Assignements' | translate }}
+                <div class="page-title-subheading">{{ 'Assignement.AssignementTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'Assignement.Assignements' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.RaisonLabel' | translate }}</div>
+                                                        <div>{{ assignment.raison }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.SignatureDateLabel' | translate }}</div>
+                                                        <div>{{ assignment.signature_date }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.InstallationDateLabel' | translate }}</div>
+                                                        <div>{{ assignment.installation_date }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.DescriptionLabel' | translate }}</div>
+                                                        <div>{{ assignment.description }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.CreatedAtLabel' | translate }}</div>
+                                                        <div>{{ assignment.created_at }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

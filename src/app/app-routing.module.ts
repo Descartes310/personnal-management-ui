@@ -35,6 +35,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
 
 
 //const routes: Routes = [];
@@ -56,8 +58,10 @@ const routes: Routes = [
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
-  { path: 'assignment/all', component: AllAssignmentsComponent },
-  { path: 'assignment/add', component: AddAssignmentComponent },
+  { path: 'assignments/all', component: AllAssignmentsComponent },
+  { path: 'assignments/add', component: AddAssignmentComponent },
+  { path: 'assignments/update/:id', component: UpdateAssignment },
+  { path: 'assignments/details/:id', component: DetailsAssignmentComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'licenses/add', component: AddLicenseComponent },

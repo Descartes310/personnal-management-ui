@@ -35,6 +35,7 @@ export class AddAssignmentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getUsers();
     this.getTypeAssignment();
 
     this.assignmentForm = this.formBuilder.group({

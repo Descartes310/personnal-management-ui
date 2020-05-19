@@ -30,7 +30,6 @@ import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
-import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
@@ -54,6 +53,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -79,9 +80,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateRoleComponent,
     DetailsRoleComponent,
     AddAssignmentComponent,
-    UpdateAssignmentComponent,
     AllAssignmentsComponent,
-   
+    UpdateAssignment,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -100,6 +100,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    DetailsAssignmentComponent,
   ],
   imports: [
     MatStepperModule,

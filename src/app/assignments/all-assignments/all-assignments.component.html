@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" [routerLink]="['/assignment/add']" data-toggle="tooltip" title="{{ 'Assignment.AddAssignment' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a type="button" [routerLink]="['/assignments/add']" data-toggle="tooltip" title="{{ 'Assignment.AddAssignment' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Assignment.AddAssignment' | translate }}</p>
                 </a>
@@ -31,17 +31,47 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ 'Form.NameLabel' | translate }}</th>
-                        <th>{{ 'Form.LabelLabel' | translate }}</th>
+                        <th>{{ 'Form.UserLabel' | translate }}</th>
+                        <th>{{ 'Form.TypeAssignmentLabel' | translate }}</th>
+                        <th>{{ 'Form.DestinationLabel' | translate }}</th>
+                        <th>{{ 'Form.SignatureDateLabel' | translate }}</th>
+                        <th>{{ 'Form.InstallationDateLabel' | translate }}</th>
+                        <th>{{ 'Form.RaisonLabel' | translate }}</th>
                         <th>{{ 'Form.DescriptionLabel' | translate }}</th>
                         <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <tr *ngFor="let assignment of assignments,let i = index" id="tr{{ assignment.id }}">
+                        <td>{{ i+1 }}</td>
+                        <td style="width: 10%">{{ assignment.user_id }}</td>
+                        <td style="width: 10%">{{ assignment.assignment_type_id }}</td>
+                        <td style="width: 10%">{{ assignment.destination }}</td>
+                        <td style="width: 10%">{{ assignment.signature_date}}</td>
+                        <td style="width: 10%">{{ assignment.installation_date}}</td>
+                        <td style="width: 10%">{{ assignment.raison }}</td>
+                        <td style="width: 10%">{{ assignment.description }}</td>
+                        <td style="width: 10%">{{ assignment.created_at }}</td>
+                        <td style="width: 15%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editAssignment(assignment)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsAssignment(assignment)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteAssignment(assignment)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        </td>
+                    </tr>
                 </tbody>
-            
+                <tfoot *ngIf="loading && (!assignments || !assignments.length)">
+                    <td colspan="7" class="text-center">
+                        <div class="spinner-border spinner-sm">
+                            <span class="sr-only">Patientez svp...</span>
+                        </div>
+                    </td>
+                </tfoot>
+                <tfoot *ngIf="!loading && (!assignments || !assignments.length)">
+                    <td colspan="7" class="text-center">
+                        Liste vide
+                    </td>
+                </tfoot>
             </table>
         </div>
     </div>

@@ -29,15 +29,15 @@
                                     <form (submit)="onSubmit()" [formGroup]="assignmentForm">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ "Form.UserLabel" | translate }} </label>
-                                            <!--<select class="multiselect-dropdown form-control" formControlName="user_assignment" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
-                                                <option value="" ></option>
-                                            </select>-->
-                                            <input formControlName="user_assignment" class="form-control {{ isSubmitted && form.user_assignment.errors ? 'is-invalid' : '' }}">
+                                            <select class="multiselect-dropdown form-control" formControlName="user_assignment" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
+                                                <option [value]="user.id" *ngFor="let user of users">{{user.login}}</option>
+                                            </select>
+                                            <!-- <input formControlName="user_assignment" class="form-control {{ isSubmitted && form.user_assignment.errors ? 'is-invalid' : '' }}"> -->
                                         </div> 
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ "Form.TypeAssignmentLabel" | translate }} </label>
                                             <select class="multiselect-dropdown form-control" formControlName="type_assignment" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
-                                                <option [value]="type" *ngFor="let type of type_assignment">{{type.name}}</option>
+                                                <option [value]="type.id" *ngFor="let type of type_assignment">{{type.name}}</option>
                                             </select>
                                             <!--<input formControlName="type_assignment" class="form-control {{ isSubmitted && form.type_assignment.errors ? 'is-invalid' : '' }}">-->
                                         </div>
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
-                                            <textarea name="text" id="exampleText" class="form-control" formControlName="description">
+                                            <textarea name="text" id="exampleText" class="form-control" formControlName="description" class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}">
 
                                             </textarea>
                                         </div>
