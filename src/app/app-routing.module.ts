@@ -41,21 +41,15 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
-<<<<<<< HEAD
-  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
-  { path: 'users/add', component: AddUserComponent },
-  { path: 'users/update/:id', component: UpdateUserComponent },
-=======
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
   { path: 'pro-situations/all',  component: AllProSituationComponent},
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
-  { path: 'profiles/add', component: AddProfileComponent },
-  { path: 'profiles/update/:id', component: UpdateProfileComponent },
->>>>>>> 2219e905ec68d6a25d7805681eba07b3c18ae597
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
+  { path: 'users/add', component: AddUserComponent },
+  { path: 'users/update/:id', component: UpdateUserComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },

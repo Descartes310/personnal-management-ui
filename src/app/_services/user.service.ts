@@ -33,6 +33,10 @@ export class UserService {
     return this.http.post<User>(`${Routes.USERS}/${id}`, formData).toPromise();
   }
 
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
   allProfiles(): Promise<any> {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }

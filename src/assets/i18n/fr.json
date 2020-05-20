@@ -302,9 +302,26 @@
         "UserTitle": "Créer un nouvel employé",
         "UserFormFirstStepName": "Informations personnelles",
         "UserFormSecondStepName": "Informations professionnelles",
-        "SubmitError": "Veuillez remplir les champs obligatoires du formulaire",
+        "SubmitError": "Veuillez bien remplir les champs du formulaire (remplissez les champs obligatoires)",
         "LoadingError": "Erreur veuillez vérifier votre connexion à internet",
         "FinishTitle": "Dernière étape",
-        "FinishSubtitle": "cliquer sur le button pour terminer la création"
+        "FinishSubtitle": "cliquer sur le button pour terminer la création",
+        "CreateUser": "Créer l'utilisateur",
+        "CreateUserError": "Echec de lacréation de l'utilisateur veuillez réessayer plutard",
+        "UserLogin": "login",
+        "UserPassword": "mot de passe",
+        "UserLoginPlaceHolder": "veuillez entrer un login",
+        "UserPasswordPlaceHolder": "****************",
+        "ErrorMessages": {
+            "Login": [
+                "le login est obligatoire",
+                "le login ne doit pas être inférieur à {{ data }} caractères"
+            ],
+            "Password": [
+                "le mot de passe est obligatoire",
+                "le mot de passe ne doit pas être inférieur à {{ data }} caractères"
+            ]
+        },
+        "UserFormThirdStepName": "Roles et permissions"
     }
 }
