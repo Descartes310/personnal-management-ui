@@ -83,26 +83,12 @@ export class AddContractComponent implements OnInit {
     let date = new Date();
     let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
-
-    // let now = (new Date());
-    // let debut = (new Date(this.form.start_date.value));
-    // let end = (new Date(this.form.end_date.value));
-
-
     if (this.contractForm.invalid){
       this.translate.get('Contract.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-
-    // if(this.form.end_date.value && this.form.start_date.value){
-
-    //   if( debut > end || now > end){
-    //     this.translate.get('Contract.SubmitErrordate')
-    //       .subscribe(val => this.notifService.danger(val));
-    //     return;
-    //   }
 
       this.isLoading = true;
       const formData = new FormData();
