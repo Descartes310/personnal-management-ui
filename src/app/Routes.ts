@@ -16,3 +16,4 @@ export const LICENSE_TYPE = SERVER + 'license_types';
 export const LICENSETYPE = SERVER +'license_types';
 export const DIVISION = SERVER + 'divisions';
 export const SUBMISSION = SERVER + 'submissions';
+export const PROFILE = SERVER + 'profiles';

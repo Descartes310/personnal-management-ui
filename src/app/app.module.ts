@@ -55,6 +55,8 @@ import { DetailsDivisionComponent } from './divisions/details-division/details-d
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
+import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
+import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -101,6 +103,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsProSituationComponent,
     AllSubmissionComponent,
     DetailsSubmissionComponent,
+    AllProfileComponent,
+    DetailsProfileComponent,
   ],
   imports: [
     MatStepperModule,

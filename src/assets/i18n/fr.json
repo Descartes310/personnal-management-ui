@@ -164,7 +164,17 @@
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
         "templateType":"type",
         "templateContent":"contenu",
-        "StartDateError":"veuillez entrez une date valide"
+        "StartDateError":"veuillez entrez une date valide",
+        "Yes":"Oui",
+        "No":"Non",
+        "PlaceholderLabel":"Placeholder",
+        "Is_requiredLabel":"Obligatoire",
+        "Is_updatableLabel":"Modifiable",
+        "Is_uniqueLabel":"Unique",
+        "MinLabel":"Min",
+        "MaxLabel":"Max",
+        "StepLabel":"Etapes",
+        "DefaultLabel":"Valeur par défaut"
 
     },
        
@@ -230,6 +240,13 @@
         "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
+    },
+    "Profile": {
+        "AddProfile": "Ajouter un nouveau profil",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "Profiles": "Profils",
+        "ProfileTitle": "Gestion des profils de l'application",
+        "DetailsProfile": "Détails du profil"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
