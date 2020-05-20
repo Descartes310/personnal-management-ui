@@ -176,10 +176,17 @@ export class AddUserComponent implements OnInit {
           validationRules.push(Validators.max(input.max));
         }
        
-        parametter[input.slug] = [
-          input.default,
-          validationRules
-        ];
+        if(input.type === 'file') {
+          parametter[input.slug] = [
+            null,
+            validationRules
+          ];
+        } else {
+          parametter[input.slug] = [
+            input.default,
+            validationRules
+          ];
+        }
 
       })
       this.personnalInfoForm = this.formBuilder.group(parametter);
@@ -205,16 +212,16 @@ export class AddUserComponent implements OnInit {
   }
 
   public getLoginErrorMessages() {
-    this.translate.get('User.ErrorMessages.Login', { data: this.loginMinLength + '' }).subscribe(val => {
-    this.errorMessages.login[0].message = val[0];
-    this.errorMessages.login[1].message = val[1];
+    this.translate.get('User.ErrorMessages.Login', { data: this.loginMinLength }).subscribe(val => {
+      this.errorMessages.login[0].message = val[0];
+      this.errorMessages.login[1].message = val[1];
     });
   }
 
   public  getPasswordErrorMessages() {
-    this.translate.get('User.ErrorMessages.Password', { data: this.passwordMinLength + '' }).subscribe(val => {
-    this.errorMessages.password[0].message = val[0];
-    this.errorMessages.password[1].message = val[1];
+    this.translate.get('User.ErrorMessages.Password', { data: this.passwordMinLength }).subscribe(val => {
+      this.errorMessages.password[0].message = val[0];
+      this.errorMessages.password[1].message = val[1];
     });
   }
 
@@ -238,10 +245,17 @@ export class AddUserComponent implements OnInit {
           validationRules.push(Validators.max(input.max));
         }
 
-        parametter[input.slug] = [
-          input.default,
-          validationRules
-        ];
+        if(input.type === 'file') {
+          parametter[input.slug] = [
+            null,
+            validationRules
+          ];
+        } else {
+          parametter[input.slug] = [
+            input.default,
+            validationRules
+          ];
+        }
 
       })
       this.publicInfoForm = this.formBuilder.group(parametter);
@@ -333,24 +347,155 @@ export class AddUserComponent implements OnInit {
   public validatePersonnalInfoForm() {
 
     this.isSubmitted = true;
-    if(this.personnalInfoForm.invalid) {
-      this.translate.get('User.SubmitError')
+
+    let login: string = this.personnalInfo.login.value;
+    let password: string = this.personnalInfo.password.value;
+
+    this.firstStepInputList.map(input => {
+
+      let value;
+      if(this.personnalInfo[input.slug]) {
+        value = this.personnalInfo[input.slug].value;
+      } else {
+        return;
+      }
+
+
+      if(input.is_required) {
+        if(!value) {
+          this.translate.get('User.InputRequiredError', { data: input.name })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.minlength) {
+        if(value.length < input.minlength) {
+          this.translate.get('User.InputMinLengthError', { data1: input.name, data2: input.minlength })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.maxlength) {
+        if(value.length > input.maxlength) {
+          this.translate.get('User.InputMaxLengthError', { data1: input.name, data2: input.maxlength })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.max) {
+        value = parseInt(value);
+        if(value > input.max) {
+          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.min) {
+        value = parseInt(value);
+        if(value < input.min) {
+          this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+    })
+
+    if(!login) {
+      this.translate.get('User.InputRequiredError', { data: 'login' })
         .subscribe(val => this.notifService.danger(val));
-    } else {
-      this.isSubmitted = false;
+      return;
+    }
+    if(login.length < this.loginMinLength) {
+      this.translate.get('User.InputMinLengthError', { data1: 'login', data2: this.loginMinLength })
+        .subscribe(val => this.notifService.danger(val));
+      return;
     }
 
+    if(!password) {
+      this.translate.get('User.InputRequiredError', { data: 'password' })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+    if(password.length < this.passwordMinLength) {
+      this.translate.get('User.InputMinLengthError', { data1: 'password', data2: this.passwordMinLength })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+
+
+    if(this.personnalInfoForm.valid) {
+      this.isSubmitted = false;
+    }
+      
   }
 
   public validatePublicInfoForm() {
 
     this.isSubmitted = true;
-    if(this.publicInfoForm.invalid) {
-      this.translate.get('User.SubmitError')
-      .subscribe(val => this.notifService.danger(val));
-    } else {
+
+    this.secondStepInputList.map(input => {
+      
+      let value;
+      if(this.publicInfoForm[input.slug]) {
+        value = this.publicInfoForm[input.slug].value;
+      } else {
+        return;
+      }
+        
+
+      if(input.is_required) {
+        if(!value) {
+          this.translate.get('User.InputRequiredError', { data: input.name })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.minlength) {
+        if(value.length < input.minlength) {
+          this.translate.get('User.InputMinLengthError', { data1: input.name, data2: input.minlength })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.maxlength) {
+        if(value.length > input.maxlength) {
+          this.translate.get('User.InputMaxLengthError', { data1: input.name, data2: input.maxlength })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.max) {
+        value = parseInt(value);
+        if(value > input.max) {
+          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+      if(input.min) {
+        value = parseInt(value);
+        if(value > input.min) {
+          this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
+            .subscribe(val => this.notifService.danger(val));
+          return;
+        }
+      }
+
+    })
+
+    if(this.publicInfoForm.valid) {
       this.isSubmitted = false;
     }
+    
   }
 
   public computeDataToSend() {
@@ -387,7 +532,6 @@ export class AddUserComponent implements OnInit {
     result.personnalInfo = this.data_tmp1;
     result.publicInfo = this.data_tmp2;
 
-    console.log(result);
   }
 
   public onSubmit() {
@@ -397,9 +541,29 @@ export class AddUserComponent implements OnInit {
     this.userService.add(this.data).then(
       response => {
         console.log(response);
+        this.translate.get('User.CreateUserSuccess')
+          .subscribe(val => this.notifService.success(val));
       }
     ).catch(
       error => {
+        if(error.error) {
+          if(error.error.status == 400 && error.error.code == 'VALIDATION_ERROR') {
+            this.firstStepInputList.map(input => {
+              if(error.error.errors[input.slug]) {
+                error.error.errors[input.slug].map(errorMessage => {
+                  this.notifService.danger(errorMessage);
+                })   
+              }
+            });
+            this.secondStepInputList.map(input => {
+              if(error.error.errors[input.slug]) {
+                error.error.errors[input.slug].map(errorMessage => {
+                  this.notifService.danger(errorMessage);
+                })   
+              }
+            });
+          }
+        }
         console.log(error);
         this.translate.get('User.CreateUserError')
           .subscribe(val => this.notifService.danger(val));
@@ -451,7 +615,8 @@ export class AddUserComponent implements OnInit {
 
       this.selected_roles.push(role.id);
       permissions.map(permission => {
-        this.selected_permissions.push(permission.id);
+        if(!this.selected_permissions.includes(permission.id))
+          this.selected_permissions.push(permission.id);
       });
 
     } else {
@@ -465,7 +630,8 @@ export class AddUserComponent implements OnInit {
 
   onCheckedPermission(permission, event){
     if(event.target.checked) {
-      this.selected_permissions.push(permission.id);
+      if(!this.selected_permissions.includes(permission.id))
+        this.selected_permissions.push(permission.id);
     } else {
       this.selected_permissions.splice(this.selected_permissions.indexOf(permission.id), 1);
     }

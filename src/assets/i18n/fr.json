@@ -309,7 +309,7 @@
         "FinishTitle": "Dernière étape",
         "FinishSubtitle": "cliquer sur le button pour terminer la création",
         "CreateUser": "Créer l'utilisateur",
-        "CreateUserError": "Echec de lacréation de l'utilisateur veuillez réessayer plutard",
+        "CreateUserError": "Echec de lacréation de l'utilisateur veuillez bien remplir le formulaire puis réessayer",
         "UserLogin": "login",
         "UserPassword": "mot de passe",
         "UserLoginPlaceHolder": "veuillez entrer un login",
@@ -317,13 +317,19 @@
         "ErrorMessages": {
             "Login": [
                 "le login est obligatoire",
-                "le login ne doit pas être inférieur à {{ data }} caractères"
+                "le login ne doit pas être inférieur à 6 caractères"
             ],
             "Password": [
                 "le mot de passe est obligatoire",
-                "le mot de passe ne doit pas être inférieur à {{ data }} caractères"
+                "le mot de passe ne doit pas être inférieur à 6 caractères"
             ]
         },
-        "UserFormThirdStepName": "Roles et permissions"
+        "UserFormThirdStepName": "Roles et permissions",
+        "InputRequiredError": "Le champ {{ data }} est obligatoire",
+        "InputMaxError": "La valeur du champ {{ data1 }} doit être inférieure à {{ data2 }}",
+        "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure à {{ data2 }}",
+        "InputMinLengthError": "La valeur du champ {{ data1 }} ne doit pas être inférieure à {{ data2 }} caractères",
+        "InputMaxLengthError": "La valeur du champ {{ data1 }} ne doit pas être supérieur à {{ data2 }} caractères",
+        "CreateUserSuccess": "L'utilisateur a été créé  avec succès"
     }
 }

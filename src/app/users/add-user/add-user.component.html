@@ -71,7 +71,7 @@
 
                                                     <label>{{ 'User.UserLogin' | translate }} <span style="color: red;"> *</span></label>
                                                     
-                                                    <input formControlName="login" type="text" placeholder="{{ 'User.UserLoginPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.login.errors ? 'is-invalid' : '' }}">
+                                                    <input formControlName="login" type="text" placeholder="{{ 'User.UserLoginPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.login.errors ? 'is-invalid' : '' }}" id="login">
 
                                                     <div *ngFor="let error of errorMessages.login" class="ng-container text-right">
                                                         <ng-container *ngIf="login.hasError(error.type) && (login.dirty || login.touched)">
@@ -85,7 +85,7 @@
 
                                                     <label>{{ 'User.UserPassword' | translate }} <span style="color: red;"> *</span></label>
                                                     
-                                                    <input formControlName="password" type="password" placeholder="{{ 'User.UserPasswordPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}">
+                                                    <input formControlName="password" type="password" placeholder="{{ 'User.UserPasswordPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}" id="password">
 
                                                     <div *ngFor="let error of errorMessages.password" class="ng-container text-right">
                                                         <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
