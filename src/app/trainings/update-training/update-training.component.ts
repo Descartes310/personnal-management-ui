@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Training } from 'src/app/_models/training.model';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-update-training',
   templateUrl: './update-training.component.html',
@@ -13,15 +13,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UpdateTrainingComponent implements OnInit {
 
-  /* trainings: any[] = [];
-  training_tmp: any[] = []; */
-
   trainingForm: FormGroup;
   isLoading = false;
   isError = false;
   isSuccess = false;
   isSubmitted = false;
   training_name = '';
+  is_online = false;
   training: Training = new Training();
   constructor(
     private trainingService: TrainingService,
@@ -85,11 +83,32 @@ export class UpdateTrainingComponent implements OnInit {
     this.training_name = event.target.value.replace(/[^A-Z0-9]/ig, "_");
   }
 
+  get duration() {
+    return this.trainingForm.get('duration');
+  }
+  public checkDuration(event) {
+    let duration = parseInt(event.target.value);
+
+    if(duration < 1) {
+      this.duration.setValue(1);
+    }
+    if(duration > 100) {
+      this.duration.setValue(100);
+    }
+  }
+
+  onChecked(event){
+    this.is_online = event.target.checked;    
+  }
+
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.trainingForm.invalid) {
       this.translate.get('Training.SubmitError')
@@ -101,10 +120,17 @@ export class UpdateTrainingComponent implements OnInit {
     const formData = new FormData();
     formData.append('name', '' + this.form.name.value);
     formData.append('trainer', '' + this.form.trainer.value);
+    if (currentDate >= this.form.start_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
     formData.append('start_date', '' + this.form.start_date.value);
     formData.append('location', '' + this.form.location.value);
     formData.append('duration', '' + this.form.duration.value);
     formData.append('description', '' + this.form.description.value);
+    formData.append('is_online', this.is_online ? '1' : '0');
     
     this.trainingService.update(formData, this.training.id)
       .then(resp => {

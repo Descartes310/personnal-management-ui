@@ -153,7 +153,8 @@
         "NameTrainer": "Nom du formateur",
         "StartDate": "Date de bebut",
         "LocationName": "Lieu",
-        "Duration": "Duree[1-100] heure(s)"
+        "Duration": "Durée[1-100] heure(s)",
+        "DurationField": "Durée"
 
     },
        
@@ -241,7 +242,15 @@
         "Error": "donnees inalide",
         "SubmitError": "Les champs en rouge sont obligatoire",
         "SubmitSuccess":"Ajout de la formation effectuer avec succes",
-        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes"
+        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
+        "ErrorMessages": {
+            "Duration": [
+                "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
+                "la durée doit être strictement supérieur à 0",
+                "la durée doit être inférieur ou égal à 100"
+            ]
+        },
+        "IsOnline": "Cette formation est elle en ligne?"
     },
     "ProSituation": {
         "WeightLabel":"Poids",

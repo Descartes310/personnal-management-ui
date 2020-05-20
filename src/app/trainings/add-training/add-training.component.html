@@ -45,7 +45,10 @@
                                             <div class="col">
                                                 <div class="position-relative form-group">
                                                         <label for="exampleDate" class="">{{ "Form.StartDate" | translate }}</label>
-                                                        <input name="start_date" type="date" id="exampleDate" formControlName="start_date" class="form-control {{ isSubmitted && form.start_date.errors ? 'is-invalid' : '' }}" data-toggle="datepicker-button"/>                                                    
+                                                        <input name="start_date" type="date" id="exampleDate" formControlName="start_date" class="form-control {{ isSubmitted && form.start_date.errors ? 'is-invalid' : ''  }}" 
+                                                            data-toggle="datepicker-button" (change)="VerifyDate()"
+                                                            
+                                                            />                                                    
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label for="exampleLocation" class="">{{ "Form.LocationName" | translate }} </label>
@@ -53,7 +56,7 @@
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label for="exampleDuration" class="">{{ "Form.Duration" | translate }}</label>
-                                                    <input name="durartion" type="number" min="1" max="100" id="exampleDuration" formControlName="duration" placeholder="{{'Form.Duration'}}" class="form-control {{ isSubmitted && form.duration.errors ? 'is-invalid' : '' }}">
+                                                    <input name="durartion" type="number" min="1" max="100" id="exampleDuration" formControlName="duration" placeholder="{{'Form.DurationField' | translate}}" class="form-control {{ isSubmitted && form.duration.errors ? 'is-invalid' : '' }}" (change)="checkDuration($event)" (keyup)="checkDuration($event)">
                                                 </div>
                                             </div>
                                         </div>
@@ -62,6 +65,12 @@
                                             <textarea name="text" id="exampleText" class="form-control" formControlName="description">
 
                                             </textarea>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <div class="custom-checkbox custom-control">
+                                                <input type="checkbox" name="is_online" id="is_online"  class="custom-control-input" (change)="onChecked($event)">
+                                                <label class="custom-control-label" for="is_online">&nbsp;{{"Training.IsOnline" | translate}}</label>
+                                            </div>
                                         </div>
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
