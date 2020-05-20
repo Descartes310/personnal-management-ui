@@ -33,6 +33,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
+import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 
 
 //const routes: Routes = [];
@@ -66,6 +68,8 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+  { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

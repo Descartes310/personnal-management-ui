@@ -51,6 +51,10 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
+import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -93,8 +97,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AllBlogPostComponent,
+    DetailBlogPostComponent,
   ],
   imports: [
+    MatTabsModule,
+    MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,

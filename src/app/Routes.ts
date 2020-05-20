@@ -15,3 +15,7 @@ export const LICENSE = SERVER + 'licenses';
 export const LICENSE_TYPE = SERVER + 'license_types';
 export const LICENSETYPE = SERVER +'license_types';
 export const DIVISION = SERVER + 'divisions';
+export const BlogPost = SERVER + 'blog_posts';
+export const BlogCategorie = SERVER + 'blog_categories';
+export const User = SERVER + 'users';
+export const blogComment = SERVER + 'blog_comments';
