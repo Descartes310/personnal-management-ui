@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor'
+import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './_guards/auth.guard'
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
@@ -34,8 +35,8 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
-import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
@@ -48,6 +49,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
@@ -86,8 +89,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateContactComponent,
     AddAssignmentTypeComponent,
     UpdateAssignmentTypeComponent,
-    AddProfileComponent,
-    UpdateProfileComponent,
+    AddUserComponent,
+    UpdateUserComponent,
     AddVacationTypeComponent,
     UpdateVacationTypeComponent,
     AddLicenseComponent,
@@ -105,6 +108,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsSubmissionComponent,
     AllProfileComponent,
     DetailsProfileComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
   ],
   imports: [
     MatStepperModule,
@@ -130,7 +135,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     AuthGuardService,
-    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

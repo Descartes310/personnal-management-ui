@@ -91,7 +91,7 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },        
+    },
     "Form": {
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
@@ -124,12 +124,12 @@
         "Phone3Label": "Telephone 3",
         "Phone3Field": "troisieme numero...",
         "DescriptionField": "Veuillez entrer une description",
-        
+
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
         "WhatsappField": "Compte whatsapp...",
         "LinkedinField": "Compte linkedin...",
-        
+
         "NextLabel":"Suivant",
         "PreviousLabel":"Precedent",
         "WeightLabel": "Indice",
@@ -156,8 +156,6 @@
         "StartDateField":"Debut de la permission",
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
-        "FileLabel":"Demande manuscrite",
-        "FileField":"Parcourir",
         "templateTitle":"titre",
         "templateTypeHolder":"Veuillez entrer le type de la maquette",
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
@@ -174,10 +172,20 @@
         "MinLabel":"Min",
         "MaxLabel":"Max",
         "StepLabel":"Etapes",
-        "DefaultLabel":"Valeur par défaut"
+        "DefaultLabel":"Valeur par défaut",
 
+        "RaisonLabel": "Raison",
+        "RaisonField": "Veuillez entre la raison de votre demande",
+        "RequestedStartDateLabel": "Date debut du congé",
+        "RequestedStartDateField": "Debut du congé",
+        "RequestedDaysLabel": "Nombre de jour du congé",
+        "RequestedDaysField": "Veuillez entrer le nombre de jour",
+        "VacationTypeLabel": "Type de congé",
+        "VacationTypeField": "Choisir un type de congé",
+        "FileLabel": "Piece jointe",
+        "FileField": "Parcourir"
     },
-       
+
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",
@@ -329,5 +337,30 @@
         "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "User": {
+        "Users": "Création des employés",
+        "UserTitle": "Créer un nouvel employé",
+        "UserFormFirstStepName": "Informations personnelles",
+        "UserFormSecondStepName": "Informations professionnelles",
+        "SubmitError": "Veuillez remplir les champs obligatoires du formulaire",
+        "LoadingError": "Erreur veuillez vérifier votre connexion à internet",
+        "FinishTitle": "Dernière étape",
+        "FinishSubtitle": "cliquer sur le button pour terminer la création"
+    },
+    "Vacation": {
+        "VACATION": "CONGE",
+        "Vacations": "congés",
+        "VacationTitle": "Gestion des Demandes des congés de l'application",
+        "AddVacation": "demande d'un congé",
+        "CreateVacation": "Envoyer",
+        "UpdateVacation": "Modifier",
+        "SubmitError": "Veuillez remplir tous les champs obligatoires",
+        "SubmitSuccess": "La création de demande de congé a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorVacation_type": "Veuillez selectionner un type de congé",
+        "SubmitErrorVacation":"erreur de la creation!! veuillez verifier vos donnees ",
+        "VACATION_NOT_FOUND": "ce congé n'a pas été retrouvé",
+        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà"
     }
 }

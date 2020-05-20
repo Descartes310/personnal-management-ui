@@ -29,11 +29,13 @@ export class AddContactComponent implements OnInit {
   isSubmitted = false;
 //variable pour la recuperation de image
   image:File=null;
-  constructor(private contactservice:ContactService,
-              private notifService: NotifService,
-              private formBuilder: FormBuilder,
-              private translate: TranslateService,
-              private router: Router,) { }
+  constructor(
+    private contactservice:ContactService,
+    private notifService: NotifService,
+    private formBuilder: FormBuilder,
+    private translate: TranslateService,
+    private router: Router)
+  { }
 
   ngOnInit() {
     this.initform();
