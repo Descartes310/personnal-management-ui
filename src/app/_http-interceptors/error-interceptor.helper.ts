@@ -1,10 +1,8 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AuthService } from '../_services/auth.service';
-import * as URL from '../Routes';
 import { APIError } from '../_models/api-error.model';
 import { NotifService } from '../_services/notif.service';
 
