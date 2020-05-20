@@ -121,10 +121,10 @@ export class AddUserComponent implements OnInit {
   }
 
   getRoles() {
-    this.roleService.all().then(
+    this.roleService.getRolesWithPermissions().then(
       response => {
-        this.roles = response.data;
-        this.roles_tmp = response.data;
+        this.roles = response;
+        this.roles_tmp = response;
         this.getPermissions();
       }
     ).catch(
@@ -371,7 +371,23 @@ export class AddUserComponent implements OnInit {
         this.data_tmp2[key] = this.publicInfo[key].value;
       }
     });
-    console.log(this.data_tmp1, this.data_tmp2);
+
+    this.selected_permissions.forEach( elt => {
+      this.data.append('permissions[]', JSON.stringify(elt));
+    });
+
+    this.selected_roles.forEach( elt => {
+      this.data.append('roles[]', JSON.stringify(elt));
+    });
+
+    this.data_tmp1.roles = this.selected_roles;
+    this.data_tmp1.permissions = this.selected_permissions;
+
+    let result: any = {};
+    result.personnalInfo = this.data_tmp1;
+    result.publicInfo = this.data_tmp2;
+
+    console.log(result);
   }
 
   public onSubmit() {
@@ -428,12 +444,23 @@ export class AddUserComponent implements OnInit {
     this.permissions = this.permissions_tmp.filter( permission => permission.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
-  onCheckedRole(role, event){
+  onCheckedRole(role, event) {
+    let permissions = role.permissions;
+    
     if(event.target.checked) {
+
       this.selected_roles.push(role.id);
+      permissions.map(permission => {
+        this.selected_permissions.push(permission.id);
+      });
+
     } else {
       this.selected_roles.splice(this.selected_roles.indexOf(role.id), 1);
+      permissions.map(permission => {
+        this.selected_permissions.splice(this.selected_permissions.indexOf(permission.id), 1);
+      });
     }
+
   }
 
   onCheckedPermission(permission, event){
@@ -444,8 +471,12 @@ export class AddUserComponent implements OnInit {
     }
   }
 
-  isChecked(id: number){
+  isCheckedPermission(id: number){
     return this.selected_permissions.includes(id);
+  }
+
+  isCheckedRole(id: number){
+    return this.selected_roles.includes(id);
   }
 
 }

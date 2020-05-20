@@ -60,6 +60,8 @@
         "DOCUMENT_LOADING_MSG": "Chargement du document ..."
     },
     "Role": {
+        "RoleName": "Rôles",
+        "PermissionName": "Permissions",
         "Roles": "Rôles et permissions",
         "RoleTitle": "Gestion des roles et des permissions de l'application",
         "AddRole": "Ajouter un nouveau rôle",
