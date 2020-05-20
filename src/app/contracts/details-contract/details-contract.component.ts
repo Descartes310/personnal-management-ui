@@ -52,12 +52,6 @@ export class DetailsContractComponent implements OnInit {
   contentChanged(){
     console.log('content is '+ this.myForm.get("content").value);
   }
-
-  download(){
-    
-    return;
-
-  }
   
  
 }
