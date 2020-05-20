@@ -48,6 +48,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
@@ -93,6 +95,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
   ],
   imports: [
     MatStepperModule,
