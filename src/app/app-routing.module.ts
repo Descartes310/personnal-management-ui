@@ -15,6 +15,7 @@ import { UpdateProSituationComponent } from './pro_situations/update-pro-situati
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
@@ -39,7 +40,6 @@ import { AddContractComponent } from './contracts/add-contract/add-contract.comp
 import { AllContractComponent } from './contracts/all-contract/all-contract.component';
 import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
-import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 
 
 //const routes: Routes = [];
@@ -79,6 +79,7 @@ const routes: Routes = [
   { path: 'contracts/all', component: AllContractComponent },
   { path: 'BlogCategory/all', component: AllBlogCategoryComponent },
   { path: 'contracts/update/:id', component: UpdateContractComponent },
+  { path: 'contracts/details/:id', component: DetailsContractComponent },
   { path: 'contracts/details', component: DetailsContractComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },

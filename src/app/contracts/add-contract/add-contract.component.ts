@@ -9,6 +9,8 @@ import { User } from 'src/app/_models/user.model';
 import { UserService } from 'src/app/_services/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import * as jsPDF from 'jspdf';
+import { ViewChild, ElementRef } from '@angular/core';
 
 
 @Component({
@@ -17,6 +19,8 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./add-contract.component.scss']
 })
 export class AddContractComponent implements OnInit {
+  
+   htmlData: ElementRef;
 
   selected_users: number[] = [];
   users_tmp: User[] = [];
@@ -40,6 +44,48 @@ export class AddContractComponent implements OnInit {
                   'CAE – Contrat d’accompagnement dans l’emploi',
                   'CIE – Contrat initiative emploi'
                 ]
+
+               
+
+                USERS = [
+                  {
+                    "id": 1,
+                    "name": "Leanne Graham",
+                    "email": "sincere@april.biz",
+                    "phone": "1-770-736-8031 x56442"
+                  },
+                  {
+                    "id": 2,
+                    "name": "Ervin Howell",
+                    "email": "shanna@melissa.tv",
+                    "phone": "010-692-6593 x09125"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Clementine Bauch",
+                    "email": "nathan@yesenia.net",
+                    "phone": "1-463-123-4447",
+                  },
+                  {
+                    "id": 4,
+                    "name": "Patricia Lebsack",
+                    "email": "julianne@kory.org",
+                    "phone": "493-170-9623 x156"
+                  },
+                  {
+                    "id": 5,
+                    "name": "Chelsey Dietrich",
+                    "email": "lucio@annie.ca",
+                    "phone": "(254)954-1289"
+                  },
+                  {
+                    "id": 6,
+                    "name": "Mrs. Dennis",
+                    "email": "karley@jasper.info",
+                    "phone": "1-477-935-8478 x6430"
+                  }
+                ];
+              
 
   constructor(
     private http:HttpClient,
@@ -120,7 +166,7 @@ export class AddContractComponent implements OnInit {
       }
       this.form.start_date.value ? formData.append('start_date', '' + this.form.start_date.value) : null;
       if (this.form.start_date.value >= this.form.end_date.value) {
-        this.translate.get('Form.StartDateError')
+        this.translate.get('Form.EndDateError')
         .subscribe(val => this.notifService.danger(val));
         this.isLoading = false;
         return;
@@ -144,7 +190,6 @@ export class AddContractComponent implements OnInit {
             end_date: [],
             file: []
           });
-          //this.router.navigate(['/contracts/all']);
         })
         .catch(err => {
           console.log(err)
