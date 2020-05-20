@@ -140,16 +140,24 @@
         "StartDateField":"Debut de la permission",
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
-        "FileLabel":"Demande manuscrit",
-        "FileField":"Parcourir",
         "templateTitle":"titre",
         "templateTypeHolder":"Veuillez entrer le type de la maquette",
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
         "templateType":"type",
         "templateContent":"contenu",
-        "StartDateError":"veuillez entrez une date valide"
+        "StartDateError":"veuillez entrez une date valide",
 
+        "RaisonLabel": "Raison",
+        "RaisonField": "Veuillez entre la raison de votre demande",
+        "RequestedStartDateLabel": "Date debut du congé",
+        "RequestedStartDateField": "Debut du congé",
+        "RequestedDaysLabel": "Nombre de jour du congé",
+        "RequestedDaysField": "Veuillez entrer le nombre de jour",
+        "VacationTypeLabel": "Type de congé",
+        "VacationTypeField": "Choisir un type de congé",
+        "FileLabel": "Piece jointe",
+        "FileField": "Parcourir"
     },
 
     "AssignmentType": {
