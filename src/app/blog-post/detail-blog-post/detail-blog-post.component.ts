@@ -130,16 +130,20 @@ export class DetailBlogPostComponent implements OnInit {
         blogComment.blog_post_id=blog_post_id;
         blogComment.comment=this.newCommentValue;
         blogComment.created_at=new Date();
+        blogComment.updated_at=new Date();
+        console.log(blogComment)
         this.listBlogComment.push(blogComment)
         this.newCommentValue="";
+
         this.blogservice.addComment(blogComment).then(
 
           response=>{
-            this.translate.get('Role.SubmitSuccess')
+            this.translate.get('BlogPost.SubmitSuccess')
             .subscribe(val => this.notifService.success(val));
           }
         ).catch(
           error => {
+            console.log(error)
             this.notifService.danger(error.error.message)
           }
         )
@@ -166,12 +170,19 @@ export class DetailBlogPostComponent implements OnInit {
               'success'
             )
             //on enleve le commentaire du tableau
+            const index=this.listBlogComment.findIndex(
+              (commentObject) => {
+                return commentObject.id==blogComment.id;
+              }
+            )
+            console.log("index"+index)
+            this.listBlogComment.splice(index,1);
           }
         ).catch(
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Role.' + error.error.code)
+            this.translate.get('BlogPost.' + error.error.code)
               .subscribe(val => this.notifService.danger(val));
           }
         )

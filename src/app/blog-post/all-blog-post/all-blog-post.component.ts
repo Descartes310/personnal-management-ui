@@ -19,10 +19,11 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class AllBlogPostComponent implements OnInit {
 
   listBlogCategories = [];
+  listBlogCategories_tmp = [];
   listBlog_posts = [];
   UserPost: User;
-  UserAuth:User;
-  UserBlogPosts:User[]=[];
+  UserAuth: User;
+  UserBlogPosts: User[] = [];
   panelOpenState = false;
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
@@ -42,7 +43,7 @@ export class AllBlogPostComponent implements OnInit {
     private formBuilder: FormBuilder,
     private translate: TranslateService,
     private router: Router,
-    private authService:AuthService
+    private authService: AuthService
 
   ) {
 
@@ -61,20 +62,20 @@ export class AllBlogPostComponent implements OnInit {
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
 
-      //recuperation de utilisateur authentifié
-      this.UserAuth=this.authService.getUser();
+    //recuperation de utilisateur authentifié
+    this.UserAuth = this.authService.getUser();
   }
 
 
   ngOnInit() {
-    this.getallBlogCategories();
-    this.getAllPostWithCategorie(2);
-   this.getUsersPost(1);
-  
-   this.getAllUsers();
 
-   console.log("user::::")
-   console.log(this.getOneUserPost(1))
+    this.getAllBlogPost()
+    this.getallBlogCategories();
+    //this.getAllPostWithCategorie(1);
+    this.getUsersPost(1);
+
+    this.getAllUsers();
+  
 
 
   }
@@ -87,9 +88,7 @@ export class AllBlogPostComponent implements OnInit {
         this.listBlogCategories = response;
       }
     ).catch(
-      error => {
-        this.notifService.danger(error.error.message)
-      }
+      
     ).finally(
       () => {
         //this.loading = false;
@@ -102,13 +101,8 @@ export class AllBlogPostComponent implements OnInit {
       response => {
         this.listBlog_posts = [];
         this.listBlog_posts = response.blog_categorie.blog_posts;
-        console.log(this.listBlog_posts)
-        /*response.map( blog_cat => {
-          console.log(blog_cat)
-          this.listBlogCategories.push(new BlogCategorie(blog_cat));
-          console.log(this.listBlogCategories)
-        });*/
-
+        this.listBlogCategories_tmp = response.blog_categorie.blog_posts;
+        //console.log(this.listBlog_posts)
       }
     ).catch(
       error => {
@@ -120,8 +114,27 @@ export class AllBlogPostComponent implements OnInit {
       }
     )
   }
-  //recuperation de utilisateur
-    //recuperation de utilisateur
+
+  //recuperatio de tous les blogs post de la page 
+  getAllBlogPost(){
+    this.blogpostservice.all_posts().then(
+      response => {
+        this.listBlog_posts = [];
+        this.listBlog_posts = response;
+        this.listBlogCategories_tmp=response;
+        console.log(this.listBlog_posts)
+        
+      }
+    ).catch(
+      error => {
+        this.notifService.danger(error.error.message)
+      }
+    ).finally(
+      () => {
+        //this.loading = false;
+      }
+    )
+  }
   //recuperation de utilisateur qui a commente un post donnee 
 
   getAllUsers() {
@@ -141,7 +154,6 @@ export class AllBlogPostComponent implements OnInit {
     )
   }
   getOneUserPost(user_id: number): User {
-    console.log(this.UserBlogPosts)
     const userblogPost: User = this.UserBlogPosts.find(
       (userObject) => {
         return userObject.id === user_id;
@@ -150,7 +162,7 @@ export class AllBlogPostComponent implements OnInit {
 
     return userblogPost;
   }
-  
+
   getUsersPost(user_id: number) {
     this.blogpostservice.findUser(user_id).then(
       response => {
@@ -213,4 +225,38 @@ export class AllBlogPostComponent implements OnInit {
       }
     })
   }
+  //changement de la categorie
+  changeBlogCategorie(event) {
+    const titleSelected = event.tab.textLabel;
+    if(titleSelected=="tous"){
+      this.getAllBlogPost()
+    }
+    else{
+      const blogCategorie: BlogCategorie = this.getOneBlogCategorie(titleSelected);
+      this.getAllPostWithCategorie(blogCategorie.id)
+    }
+    
+  }
+  //recuperation d'un Blogcategorie
+  getOneBlogCategorie(title: string) {
+    const blogCat: BlogCategorie = this.listBlogCategories.find(
+      (blogCatObject) => {
+        return blogCatObject.title == title;
+      }
+    )
+    return blogCat;
+  }
+
+  getPartOfcontent(content:string){
+    return content.substring(1,250)+"...";
+  }
+
+  //function de rech erche d'un blog
+  search(event){
+   
+   this.listBlog_posts = this.listBlogCategories_tmp;
+    this.listBlog_posts = this.listBlog_posts.filter( blogPost => blogPost.title.toLowerCase().includes(event.target.value.toLowerCase()));
+    console.log(this.listBlog_posts)
+  }
+
 }

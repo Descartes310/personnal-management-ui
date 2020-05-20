@@ -14,7 +14,7 @@ export class BlogPostService {
   constructor(private http:HttpClient) { }
 
 
-  all_post(): Promise<any> {
+  all_posts(): Promise<any> {
     return this.http.get<any>(Routes.BlogPost).toPromise();
   }
 
