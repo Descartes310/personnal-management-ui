@@ -40,6 +40,8 @@
         "LabelDays": "Veuillez entrer le nombre de jours...",
         "DescriptionLabel": "Description",
         "DescriptionField": "Veuillez entrer une description",
+        "EndDateError": "veuillez entrer une date de fin valide",
+        "StartDateError": "veuillez entrer une date de debut valide",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
         "WeightLabel": "Indice",
