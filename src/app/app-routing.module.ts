@@ -21,7 +21,8 @@ import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-ty
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
-
+import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
+import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
@@ -38,18 +39,19 @@ import { DetailsProSituationComponent } from './pro_situations/details-pro-situa
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 
-
 //const routes: Routes = [];
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
-  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
-  { path: 'pro-situations/all',  component: AllProSituationComponent},
+  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
+  { path: 'pro-situations/all', component: AllProSituationComponent },
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
   { path: 'profiles/add', component: AddProfileComponent },
   { path: 'profiles/update/:id', component: UpdateProfileComponent },
+  { path: 'profiles/all', component: AllProfileComponent },
+  { path: 'profiles/details/:id', component: DetailsProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
@@ -70,8 +72,8 @@ const routes: Routes = [
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts
-  { path: 'contacts/update/:id', component:UpdateContactComponent},
-  { path: 'contacts/add',component:AddContactComponent},
+  { path: 'contacts/update/:id', component: UpdateContactComponent },
+  { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
   //{ path: '404', component: NotfoundComponent },
