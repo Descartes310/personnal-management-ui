@@ -61,6 +61,8 @@ import { UpdateBlogCategoryComponent } from './BlogCategory/update-blog-category
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
+import { AllVacationComponent } from './vacation/all-vacation/all-vacation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -112,6 +114,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
     AllBlogCategoryComponent,
     UpdateBlogCategoryComponent,
+    DecisionVacationComponent,
+    AllVacationComponent,
   ],
   imports: [
     MatStepperModule,

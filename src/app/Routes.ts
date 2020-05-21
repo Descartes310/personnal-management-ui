@@ -18,3 +18,4 @@ export const DIVISION = SERVER + 'divisions';
 export const CONTRACT = SERVER + 'contracts';
 export const USER = SERVER + 'users';
 export const BLOGCATEGORY = SERVER + 'blog_categories';
+export const VACATION = SERVER + 'vacations';
