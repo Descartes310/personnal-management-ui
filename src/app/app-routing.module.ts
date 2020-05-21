@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
@@ -37,6 +39,13 @@ import { DetailsProSituationComponent } from './pro_situations/details-pro-situa
 import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 
+import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
+import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+
+import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
+import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -58,6 +67,8 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
+  { path: 'templates/all', component: AllTemplatesComponent },
+  { path: 'templates/details/:id', component: DetailsTemplatesComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
@@ -66,6 +77,11 @@ const routes: Routes = [
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'blog-category/add', component: AddBlogCategoryComponent },
+  { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
+  //routes pour l'affichage des formations
+  { path: 'trainings/all',  component: AllTrainingsComponent},
+  { path: 'trainings/details/:id', component: DetailsTrainingsComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

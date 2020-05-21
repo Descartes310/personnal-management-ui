@@ -30,6 +30,8 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -48,6 +50,7 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
@@ -55,6 +58,12 @@ import { UpdateVacationComponent } from './vacation/update-vacation/update-vacat
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
+import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
+import { FindTrainingsComponent } from './trainings/find-trainings/find-trainings.component';
+import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
+import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -79,6 +88,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
+    AllTrainingsComponent,
+    FindTrainingsComponent,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -100,6 +113,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllSubmissionsComponent,
     AddVacationComponent,
     UpdateVacationComponent,
+    DetailsTrainingsComponent,
+    AllTemplatesComponent,
+    DetailsTemplatesComponent,
+    FindTemplatesComponent,
   ],
   imports: [
     MatStepperModule,
