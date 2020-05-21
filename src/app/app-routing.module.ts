@@ -44,7 +44,6 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
-import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 
 
 //const routes: Routes = [];
