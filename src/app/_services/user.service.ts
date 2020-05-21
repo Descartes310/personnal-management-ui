@@ -40,5 +40,5 @@ export class UserService {
   allProfiles(): Promise<any> {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
-
+  
 }

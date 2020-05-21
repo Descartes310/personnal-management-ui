@@ -7,6 +7,10 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
+/**
+ * @author Arléon Zemtsop
+ * @email arleonzemtsop@gmail.com
+*/
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
