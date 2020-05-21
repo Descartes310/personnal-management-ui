@@ -345,7 +345,7 @@ export class AddUserComponent implements OnInit {
   public processFile2(event, inputSlug) {
     let file: File = event.target.files[0];
     this.data.append(inputSlug, file);
-    this.data_tmp2[inputSlug] = file;
+    this.data_tmp2[inputSlug] = file;    
   }
 
   public validatePersonnalInfoForm() {
