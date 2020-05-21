@@ -27,7 +27,9 @@
     },
     "Form": {
         "NameLabel": "Nom",
+        "SlugLabel": "Slug",
         "NameField": "Veuillez entrer le nom...",
+        "SlugField": "Slug...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
         "DescriptionLabel": "Description",
@@ -37,7 +39,11 @@
         "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
-        "SearchText": "Effectuez une recherche..."
+        "SearchText": "Effectuez une recherche...",
+        "MinRateLabel":"Note Minimale",
+        "MaxRateLabel":"Note Maximale",
+        "MaxRateField":"Veuillez entrer la note maximale",
+        "MinRateField":"Veuillez entrer la note minimale"
     },
     "SideBar": {
         "SystemConfig": "Paramètres du système",
@@ -84,6 +90,20 @@
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "NoteCriteria": {
+        "NoteCriterias": "Critère de notation",
+        "NoteCriteriasAdd": " Nouveau critère de notation",
+        "NoteCriteriasUpdate": "Mise à jour d'un critère de notation",
+        "NoteCriteriaTitle": "Gestion des critères de notation de l'application",
+        "CreateNoteCriteria": "Enregistrer",
+        "UpdateNoteCriteria": "Mettre à jour le critère de notation",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "NOTECRITERIA_NOT_FOUND":"ce critere n'existe pas",
+        "noteMinsup":"La note minimale doit etre inferieur à la note maximale",
+        "SubmitSuccess": "La création du critère de notation a réussie...",
+        "UpdateSuccess": "La mise à jour du critère de notation a réussie...",
+        "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

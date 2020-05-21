@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
+import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -22,6 +24,9 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'note-criterias/add', component: AddNoteCriteriasComponent },
+  { path: 'note-criterias/update/:id', component: UpdateNoteCriteriasComponent },
+  
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
