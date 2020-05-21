@@ -36,7 +36,6 @@ import { AllSubmissionsComponent } from './submissions/all-submissions/all-submi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
@@ -73,7 +72,6 @@ const routes: Routes = [
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
-  { path: 'submissions/all', component: AllSubmissionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   //routes pour ajout et update des contacts

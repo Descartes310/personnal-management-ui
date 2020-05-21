@@ -96,6 +96,7 @@
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "UserLabel": "Utilisateur",
+        "SenderLabel": "Emetteur",
         "Dest_userLabel": "Destinataire",
         "SubjectLabel": "Objet",
         "MessageLabel": "Objet",

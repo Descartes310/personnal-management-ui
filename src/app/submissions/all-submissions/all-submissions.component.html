@@ -62,8 +62,8 @@
                                         {{ getDate(submission.created_at) }}
                                     </td>
                                     <td class="text-right">
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsSubmission(submission)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteSubmission(submission)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                                     </td>
                                 </tr>
                             </tbody>
