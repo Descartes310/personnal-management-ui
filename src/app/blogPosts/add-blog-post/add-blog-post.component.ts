@@ -44,11 +44,7 @@ export class AddBlogPostComponent implements OnInit {
     private translate: TranslateService,
     private router: Router,
 
-  ) {
-    // this.headers.append('enctype','multipart/form-data');
-    // this.headers.append('Content-type','application/json');
-
-  }
+  ) {}
 
   ngOnInit() {
     this.blog = this.getBlogCategories();
@@ -88,7 +84,7 @@ export class AddBlogPostComponent implements OnInit {
     this.isLoading = false;
 
     if (this.blogPostForm.invalid){
-      this.translate.get('Contract.SubmitError')
+      this.translate.get('BlogPost.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
@@ -107,14 +103,14 @@ export class AddBlogPostComponent implements OnInit {
       console.log(this.form.blog_category_id.value);
       this.blogPostService.add(formData)
       .then(resp => {
-        this.translate.get('License.SubmitSuccess')
+        this.translate.get('BlogPost.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.blogPostForm.reset();
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('License.SubmitErrorLicense')
+        this.translate.get('BlogPost.ErrorSubmit')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(

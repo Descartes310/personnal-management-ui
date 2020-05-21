@@ -62,6 +62,9 @@ import { AllTemplatesComponent } from './templates/all-templates/all-templates.c
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 
 
 //const routes: Routes = [];
@@ -128,7 +131,10 @@ const routes: Routes = [
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-posts/add', component: AddBlogPostComponent },
+  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'profile-user', component:UserProfileComponent},
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

@@ -24,7 +24,8 @@ export class UpdateBlogPostComponent implements OnInit {
 
   blog_categories: any[] = [];
   blog_categories_tmp: any[] = [];
-  blogPost : BlogPost = new BlogPost();
+ // blogPost : BlogPost = new BlogPost();
+  blogPost : any = {};
 
 
   blogPostForm: FormGroup;
@@ -53,24 +54,26 @@ export class UpdateBlogPostComponent implements OnInit {
     this.user = this.authService.getUser();
     console.log(this.user);
     this.initForm();
+    
     this.getBlogCategories();
     const blog_post_id = +this.route.snapshot.paramMap.get("id");
     this.blogPostService.find(blog_post_id).then(
       data => {
-        this.blogPost = data;
+        this.blogPost = data.blog_post;
         this.initForm(true);
+        console.log(data.blog_post);
       }
     ).catch(
       error => {
-        this.translate.get('License.'+error.error.code)
+        this.translate.get('BlogPost.'+error.error.code)
         .subscribe(val => this.notifService.danger(val));
-       // this.router.navigate(['/roles/all'])
+        this.router.navigate(['/blog_posts/all'])
       }
     )
 
   }
 
-  initForm(withBlog = false) {
+  initForm(withBlog = false) {  
     if(withBlog) {
       this.blogPostForm = this.formBuilder.group({
         user_id: [this.blogPost.user_id, [Validators.required]],
@@ -114,7 +117,7 @@ export class UpdateBlogPostComponent implements OnInit {
     this.isLoading = false;
 
     if (this.blogPostForm.invalid){
-      this.translate.get('Contract.SubmitError')
+      this.translate.get('BlogPost.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
@@ -133,14 +136,14 @@ export class UpdateBlogPostComponent implements OnInit {
       console.log(this.form.blog_category_id.value);
       this.blogPostService.update(formData, this.blogPost.id)
       .then(resp => {
-        this.translate.get('License.SubmitSuccess')
+        this.translate.get('BlogPost.UpdateSubmitSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.blogPostForm.reset();
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('License.SubmitErrorLicense')
+        this.translate.get('BlogPost.UpdateErrorSubmit')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(

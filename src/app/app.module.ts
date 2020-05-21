@@ -91,6 +91,8 @@ import { UpdateContractComponent } from './contracts/update-contract/update-cont
 import { FindContractComponent } from './contracts/find-contract/find-contract.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -173,6 +175,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
+    UserProfileComponent,
   ],
   imports: [
     MatTabsModule,
@@ -181,6 +184,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatInputModule,
     BrowserModule,
+    CKEditorModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

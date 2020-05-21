@@ -75,11 +75,15 @@
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
     "BlogPost": {
-        "BlogPosts": "blogs Articles",
-        "BlogPostTitle": "Gestion des articles de l'application",
-        "SubmitSuccess": "La création du role a réussie...",
-        "AddBlogPost": "Ajouter un article"
-     
+        "BlogPosts": "Actualites",
+        "BlogPostTitle": "Gestion des Actualites de l'application",
+        "AddBlogPost": "Ajouter un article",
+        "UpdateBlogPost":"Mettre a jour un article",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'article a réussie...",
+        "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
+        "ErrorSubmit": "echec d'ajout de l'article",
+        "UpdateErrorSubmit": "echec de la mise a jour de l'article"
     },
     "BlogComment": {
         "BlogPosts": "blogs Articles",
@@ -227,7 +231,14 @@
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
         "start_date": "Date de début",
-        "location": "Localisation"
+        "location": "Localisation",
+        "imageLabel":"Ajouter une image",
+        "imageField":"Veuillez choisir une image",
+        "BlogCategoryLabel":"Categorie du blog",
+        "BlogCategoryField":"Choisir une categorie de blog",
+        "ContentLabel":"Contenu",
+        "ContentField":"Veuillez entrez un contenu"
+        
     },
 
     "AssignmentType": {
@@ -306,7 +317,9 @@
         "SubmitError": "Les champs en rouges sont obligatoires",
         "Profiles": "Profils",
         "ProfileTitle": "Gestion des profils de l'application",
-        "DetailsProfile": "Détails du profil"
+        "DetailsProfile": "Détails du profil",
+        "ProfileInfos":"INFORMATIONS PERSONNELLES",
+        "ProfilePermissions":"VOS PERMISSIONS"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",

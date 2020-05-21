@@ -22,12 +22,17 @@ export class BlogPostService {
     }
 
     update(formData: FormData, id: number): Promise<BlogPost> {
+      console.log(id);
         return this.http.post<BlogPost>(`${Routes.BLOGPOST}/${id}`, formData).toPromise();
     }
 
-    find(id: number): Promise<BlogPost> {
+    findblog(id: number): Promise<BlogPost> {
         return this.http.get<BlogPost>(`${Routes.BLOGPOST}/${id}`).toPromise();
     }
+
+    find(id: number): Promise<any> {
+      return this.http.get<BlogPost>(`${Routes.BLOGPOST}/${id}`).toPromise();
+  }
 
     blogCategories(): Promise<any> {
       return this.http.get<any>(Routes.BLOGCATEGORY).toPromise();
