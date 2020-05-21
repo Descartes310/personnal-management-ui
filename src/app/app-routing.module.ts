@@ -35,6 +35,9 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { DisciplinaryTeam } from './_models/disciplinary-team.model';
+import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
+import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
 
 
 //const routes: Routes = [];
@@ -65,6 +68,8 @@ const routes: Routes = [
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
+  { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
+  { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

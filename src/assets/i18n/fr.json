@@ -322,5 +322,11 @@
         "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "DisciplinaryTeam": {
+        "DisciplinaryTeams": "Conseil de décision",
+        "DisciplinaryTeamTitle": "Gestion du Conseil de décision de l'application"
+
+        
     }
 }
