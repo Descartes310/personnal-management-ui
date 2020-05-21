@@ -60,9 +60,9 @@ export class UpdateDivisionComponent implements OnInit {
     if(withDivision) {
       console.log(this.division)
       this.divisionForm = this.formBuilder.group({
-        name: [this.division.name, [Validators.required]],
-        label: [this.division.display_name, [Validators.required]],
-        parent_id: '',
+        name: [this.division.slug, [Validators.required]],
+        label: [this.division.name, [Validators.required]],
+        parent_id: [this.division.parent_id],
         description: [this.division.description]
       });
     }else {
@@ -85,7 +85,7 @@ export class UpdateDivisionComponent implements OnInit {
 
   search(event) {
     this.Division = this.Division_tmp;
-    this.Division = this.Division_tmp.filter( Division => this.division.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.Division = this.Division_tmp.filter( division => this.division.slug.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
  /*  onChecked(division, event){
@@ -106,7 +106,7 @@ export class UpdateDivisionComponent implements OnInit {
     this.isSuccess = false;
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.division_name);
+    this.division_name != null ? this.form.name.setValue(this.division_name) : null;
     if (this.divisionForm.invalid) {
       this.translate.get('Division.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -124,6 +124,7 @@ export class UpdateDivisionComponent implements OnInit {
     }); */
     this.divisionService.update(formData, this.division.id)
       .then(resp => {
+        console.log(resp)
         this.translate.get('Division.SubmitSuccess1')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;

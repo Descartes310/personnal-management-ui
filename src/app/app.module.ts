@@ -51,9 +51,6 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
-import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
-
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
@@ -63,6 +60,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { AddCongeComponent } from './conges/add-conge/add-conge.component';
+import { UpdateCongeComponent } from './conges/update-conge/update-conge.component';
+import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
+import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -104,6 +107,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicensetypesComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
+    AddCongeComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
@@ -114,6 +118,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailBlogPostComponent,
     AllContactComponent,
     DetailContactComponent,
+    UpdateCongeComponent,
+    AllVacationComponent,
+    DetailVacationComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
   ],
   imports: [
     MatTabsModule,

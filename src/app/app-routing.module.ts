@@ -33,15 +33,16 @@ import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
-
-import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
-import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
-import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 
 
 //const routes: Routes = [];
@@ -65,6 +66,10 @@ const routes: Routes = [
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'vacations/all', component: AllVacationComponent },
+  { path: 'vacations/add', component: AddVacationComponent },
+  { path: 'vacations/update/:id', component: UpdateVacationComponent },
+  { path: 'vacations/details/:id', component: DetailVacationComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'licenses/add', component: AddLicenseComponent },

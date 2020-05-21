@@ -98,6 +98,7 @@
     },  
     "Form": {
         "NameLabel": "Nom",
+        "NameSelect":"Choisir votre structure",
         "NameField": "Veuillez entrer le nom...",
         "TypeLabel": "Type",
         "TypeField": "Veuillez entrer le type...",
@@ -147,6 +148,11 @@
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
         "AssignmentAddDescription":"veuillez faire une description",
+        "StatusMention":" le status de la demande",
+        "StartDateProposal":" date de début souhaitée",
+        "StartDateAccord":" date de début accordée",
+        "RequireDays":" nombre de jours de congés souhaités",
+        "AccordDays": " nombre de jours accordés",
 
         "ReasonLabel": "Raison",
         "ReasonField":"Veuillez entre la raison de votre demande",
@@ -216,6 +222,18 @@
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
+    "Vacation": {
+        "Vacations": "Listes des congés",
+        "VacationAdd": " Nouveau type de congés",
+        "VacationUpdate": "Mise à jour d'un type de congés",
+        "VacationTitle": "Gestion des types de congés de l'application",
+        "CreateVacation": "Enregistrer",
+        "UpdateVacation": "Mettre à jour le type",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du type de congés a réussie...",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
     "Licensetype":{
         "Licensetypes":" Type de permission",
         "LicensetypesTitle":"Gestion des types de permission",
@@ -234,13 +252,19 @@
         "AddDivision": "Ajouter une nouvelle division",
         "CreateDivision": "Créer la divsion",
         "UpdateDivision": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitError": "Les champs en rouges sont obligatoires ils faut remplir votre nom",
         "SubmitSuccess": "La création de la division a réussie...",
         "SubmitSuccess1": "La mise à jour de la division a réussie...",
 
         "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
+    },
+    "Conge":{
+        "Conges": "Creation des conges",
+        "CongeTitle": "Gestion des conges des employer",
+        "AddConge":"Ajouter un congé",
+        "CONGE_NOT_FOUND": "le demande n'existe pas "
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

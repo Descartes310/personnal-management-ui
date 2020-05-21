@@ -21,8 +21,14 @@
         "Title": "Home page"
     },
     "Form": {
+<<<<<<< HEAD
+        "NameLabel": "Nom",
+        "NameSelect": "Choisir votre structure parent ",
+        "NameField": "Veuillez entrer le nom...",
+=======
         "NameLabel": "Name",
         "NameField": "Please type a name...",
+>>>>>>> 2219e905ec68d6a25d7805681eba07b3c18ae597
         "DescriptionLabel": "Description",
         "DescriptionField": "Please type a description",
         "WeightLabel": "Index",
