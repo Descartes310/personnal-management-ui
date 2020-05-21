@@ -33,4 +33,15 @@ export class TrainingService {
   find(id: number): Promise<Training> {
         return this.http.get<Training>(`${Routes.TRAINING}/${id}`).toPromise();
     }
+
+    all(): Promise<any> {
+        return this.http.get<any>(Routes.TRAINING).toPromise();
+    } 
+
+    delete(id: number): Promise<Training[]> {
+        return this.http.delete<Training[]>(`${Routes.TRAINING}/${id}`).toPromise();
+    }
+
+    
+
 }
