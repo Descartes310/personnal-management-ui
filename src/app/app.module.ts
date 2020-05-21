@@ -65,8 +65,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
-import { AddCongeComponent } from './conges/add-conge/add-conge.component';
-import { UpdateCongeComponent } from './conges/update-conge/update-conge.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
@@ -81,6 +79,8 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -128,7 +128,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsDivisionComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
-    AddCongeComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
@@ -139,7 +138,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailBlogPostComponent,
     AllContactComponent,
     DetailContactComponent,
-    UpdateCongeComponent,
     AllVacationComponent,
     DetailVacationComponent,
     AddVacationComponent,
@@ -152,6 +150,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
+    AddCareerComponent,
+    UpdateCareerComponent,
   ],
   imports: [
     MatTabsModule,

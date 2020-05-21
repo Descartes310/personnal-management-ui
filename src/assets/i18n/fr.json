@@ -219,7 +219,14 @@
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
         "start_date": "Date de début",
-        "location": "Localisation"
+        "location": "Localisation",
+
+        "EffectiveDateLabel": "Date Effective",
+        "EffectiveDateField": "veuillez entrer une date",
+        "UsersLabel": "Les utilisateurs",
+        "UsersField": "Veuillez choisir un utilisateur",
+        "Pro_situationsLabel": "Les situations professionnels",
+        "Pro_situationsField": "Veuillez choisir une situations"
     },
 
     "AssignmentType": {
@@ -422,5 +429,23 @@
         "SubmitError": "Les champs en rouges sont obligatoires",
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+    "Career": {
+        "CAREER": "PROMOTION",
+        "Careers": "Promotions",
+        "CareerTitle": "Gestion des promotions de l'application",
+        "AddCareer": "Promotion",
+        "UpdateCareer": "Modifier",
+        "SubmitSuccess": "La création de la promotion a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorUsers": "Veuillez selectionner un utilisateur",
+        "SubmitErrorPro_situation": "Veuillez selectionner une situation professionelle",
+        "SubmitErrorCareer":"erreur de la creation!! veuillez verifier vos donnees ",
+        "CAREER_NOT_FOUND": "cette promotion n'a pas été retrouvé",
+        "CAREER_ALREADY_EXISTS": "Cette promotion existe déjà",
+        "CreateCareer": "Enregistrer",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour a réussie...",
+        "PRO_SITUATION_ALREADY_EXISTS": "Le type de congés existe déjà"
     }
 }

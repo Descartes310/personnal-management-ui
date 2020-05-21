@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllCongeComponent } from './all-conge.component';
+import { AddCareerComponent } from './add-career.component';
 
-describe('AllCongeComponent', () => {
-  let component: AllCongeComponent;
-  let fixture: ComponentFixture<AllCongeComponent>;
+describe('AddCareerComponent', () => {
+  let component: AddCareerComponent;
+  let fixture: ComponentFixture<AddCareerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllCongeComponent ]
+      declarations: [ AddCareerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllCongeComponent);
+    fixture = TestBed.createComponent(AddCareerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

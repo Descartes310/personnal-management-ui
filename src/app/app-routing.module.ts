@@ -59,7 +59,8 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
-
+import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -119,11 +120,12 @@ const routes: Routes = [
   { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
-
-  { path: 'vacations/update/:id', component: UpdateVacationComponent },
-  { path: 'vacations/add', component: AddVacationComponent },
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+
+  { path: 'career/add', component: AddCareerComponent },
+  { path: 'career/update/:id', component:UpdateCareerComponent},
+
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
