@@ -27,7 +27,17 @@
 
                     <div class="row">
                         <div class="col-md-12">
+
+                            <div *ngIf="loading && !isBuild">
+                                <div class="text-center">
+                                    <div class="spinner-border spinner-sm">
+                                        <span class="sr-only">Patientez svp...</span>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="main-card mb-3 card">
+                               
                                 <div *ngIf="isBuild" class="card-body">
 
                                     <mat-horizontal-stepper linear #stepper>
@@ -42,19 +52,51 @@
 
                                                         <label>{{ input.name }} <span *ngIf="input.is_required" style="color: red;"> *</span></label>
                                                         
-                                                        <input *ngIf="!checkIfInputIsASelect(input)" [formControlName]="input.name" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : '' }}" [required]="input.is_required">
+                                                        <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}">
 
-                                                        <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.name" type="{{ input.type }}" class="form-control {{ isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : '' }}" [required]="input.is_required">
+                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberFisrtForm($event, input)" (keyup)="checkInputNumberFisrtForm($event, input)">
 
-                                                        <select *ngIf="checkIfInputIsASelect(input)" matInput [formControlName]="input.name" class="form-control isSubmitted && personnalInfo[input.name].errors ? 'is-invalid' : ''">
+                                                        <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.slug" type="{{ input.type }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="processFile1($event, input.slug)">
+
+                                                        <input *ngIf="checkIfHasOderType(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}">
+
+                                                        <select *ngIf="checkIfInputIsASelect(input)" matInput [formControlName]="input.slug" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}">
                                                             <option *ngFor='let option of input.options' value=" {{ option.value }}"> {{ option.key }}</option>
                                                         </select>
 
                                                     </div>
                                                 </div>
 
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserLogin' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <input formControlName="login" type="text" placeholder="{{ 'User.UserLoginPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.login.errors ? 'is-invalid' : '' }}" id="login">
+
+                                                    <div *ngFor="let error of errorMessages.login" class="ng-container text-right">
+                                                        <ng-container *ngIf="login.hasError(error.type) && (login.dirty || login.touched)">
+                                                            <small class="error-message">{{ error.message }}</small>
+                                                        </ng-container> 
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserPassword' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <input formControlName="password" type="password" placeholder="{{ 'User.UserPasswordPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}" id="password">
+
+                                                    <div *ngFor="let error of errorMessages.password" class="ng-container text-right">
+                                                        <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+                                                            <small class="error-message">{{ error.message }}</small>
+                                                        </ng-container> 
+                                                    </div>
+
+                                                </div>
+
                                                 <div>
-                                                    <button class="btn btn-primary btn-md m-2" mat-button matStepperNext (click)="validatePersonnalInfoForm()">Next</button>
+                                                    <button class="btn btn-primary btn-lg m-2" mat-button matStepperNext (click)="validatePersonnalInfoForm()">Next</button>
                                                 </div>
                                             </form>
 
@@ -70,20 +112,154 @@
 
                                                         <label>{{ input.name }}: <span *ngIf="input.is_required" style="color: red;"> *</span></label>
                                                         
-                                                        <input *ngIf="!checkIfInputIsASelect(input)" [formControlName]=" input.name" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.name].errors ? 'is-invalid' : '' }} " [required]="input.is_required">
- 
-                                                        <select *ngIf="checkIfInputIsASelect(input)" matInput [formControlName]="input.name" class="form-control isSubmitted && publicInfo[input.name].errors ? 'is-invalid' : ''">
-                                                            <option *ngFor='let option of input.options' value="{{ option.value }}" [selected]="checkIfSelected(input, option)"> {{ option.key }}</option>
+                                                        <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}">
+
+                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberSecondForm($event, input)" (keyup)="checkInputNumberSecondForm($event, input)">
+
+                                                        <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.slug" type="{{ input.type }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="processFile2($event, input.slug)">
+
+                                                        <input *ngIf="checkIfHasOderType(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}">
+
+                                                        <select *ngIf="checkIfInputIsASelect(input)" matInput [formControlName]="input.slug" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}">
+                                                            <option *ngFor='let option of input.options' value=" {{ option.value }}"> {{ option.key }}</option>
                                                         </select>
 
                                                     </div>
                                                 </div>
 
                                                 <div>
-                                                    <button class="btn btn-primary btn-md m-2" mat-button matStepperPrevious>Back</button>
-                                                    <button class="btn btn-primary btn-md m-2" mat-button matStepperNext (click)="validatePublicInfoForm()">Next</button>
+                                                    <button class="btn btn-primary btn-lg m-2" mat-button matStepperPrevious>Back</button>
+                                                    <button class="btn btn-primary btn-lg m-2" mat-button matStepperNext (click)="validatePublicInfoForm()">Next</button>
                                                 </div>
                                             </form>
+
+                                        </mat-step>
+
+                                        <mat-step [stepControl]="roleAndPermissionsForm" [optional]="isOptional">
+
+                                            <form [formGroup]="roleAndPermissionsForm">
+                                                <ng-template matStepLabel>{{ 'User.UserFormThirdStepName' | translate}}</ng-template>
+
+                                                <div class="row">
+
+                                                    <div class="col-md-8">
+                                                        <div class="tabs-animation">
+                                                            <div class="main-card mb-3 card">
+                                                                <div class="card-header">
+                                                                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                                                                    {{ 'Role.RoleName' | translate }}
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="main-card mb-3 card">
+                                                                                <div class="card-body">
+                                                                                    <form class="">
+                                                                                        <div class="position-relative form-group">
+                                                                                            <label class="">
+                                                                                                {{ "Form.SearchLabel" | translate }} ({{ roles.length }})
+                                                                                                <div class="widget-content-left mr-2">
+                                                                                                    <div class="custom-checkbox custom-control">
+                                                                                                        <input type="checkbox" id="selectAllRoles" class="custom-control-input" (change)="selectAllRole($event)">
+                                                                                                        <label class="custom-control-label"  for="selectAllRoles">&nbsp;</label>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </label>
+                                                                                            <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="searchRole($event)" class="form-control">
+                                                                                        </div>
+                                                                                        <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+                                                                                            <li class="list-group-item" *ngFor="let role of roles">
+                                                                                                <div class="todo-indicator bg-warning"></div>
+                                                                                                <div class="widget-content p-0">
+                                                                                                    <div class="widget-content-wrapper">
+                                                                                                        <div class="widget-content-left mr-2">
+                                                                                                            <div class="custom-checkbox custom-control">
+                                                                                                                <input type="checkbox" id="{{ 'role' + role.id }}" [checked]="isCheckedRole(role.id)" class="custom-control-input" (change)="onCheckedRole(role, $event)">
+                                                                                                                <label class="custom-control-label" for="{{
+                                                                                                                'role' +  role.id }}">&nbsp;</label>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="widget-content-left">
+                                                                                                            <div class="widget-heading">{{ role.display_name }}
+                                                                                                            </div>
+                                                                                                            <div class="widget-subheading"><i>{{ role.description }}</i></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="tabs-animation">
+                                                            <div class="main-card mb-3 card">
+                                                                <div class="card-header">
+                                                                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                                                                    {{ 'Role.PermissionName' | translate }}
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="main-card mb-3 card">
+                                                                                <div class="card-body">
+                                                                                    <form class="">
+                                                                                        <div class="position-relative form-group">
+                                                                                            <label class="">
+                                                                                                {{ "Form.SearchLabel" | translate }} ({{ permissions.length }})
+                                                                                                <div class="widget-content-left mr-2">
+                                                                                                    <div class="custom-checkbox custom-control">
+                                                                                                        <input type="checkbox" id="selectAllPermission" class="custom-control-input" (change)="selectAllPermission($event)">
+                                                                                                        <label class="custom-control-label"  for="selectAllPermission">&nbsp;</label>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </label>
+                                                                                            <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="searchPermission($event)" class="form-control">
+                                                                                        </div>
+                                                                                        <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+                                                                                            <li class="list-group-item" *ngFor="let permission of permissions">
+                                                                                                <div class="todo-indicator bg-warning"></div>
+                                                                                                <div class="widget-content p-0">
+                                                                                                    <div class="widget-content-wrapper">
+                                                                                                        <div class="widget-content-left mr-2">
+                                                                                                            <div class="custom-checkbox custom-control">
+                                                                                                                <input type="checkbox" id="{{ 'permission' + permission.id }}" [checked]="isCheckedPermission(permission.id)" class="custom-control-input" (change)="onCheckedPermission(permission, $event)">
+                                                                                                                <label class="custom-control-label" for="{{ 'permission' + permission.id }}">&nbsp;</label>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="widget-content-left">
+                                                                                                            <div class="widget-heading">{{ permission.display_name }}
+                                                                                                            </div>
+                                                                                                            <div class="widget-subheading"><i>{{ permission.description }}</i></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                            <div>
+                                                <button class="btn btn-primary btn-lg m-2" mat-button matStepperPrevious>Back</button>
+                                                <button class="btn btn-primary btn-lg m-2" mat-button matStepperNext>Next</button>
+                                            </div>
 
                                         </mat-step>
 
@@ -105,9 +281,9 @@
                                                 <div class="results-title">Veuillez Sauvegarder</div>
                                                 <div class="mt-3 mb-3"></div>
                                                 <div class="text-center">
-                                                    <button (click)="onSubmit()" [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                            <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contact.CreateContact" | translate }}</p>
-                                                            <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary btn-md" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                            <p *ngIf="!loading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'User.CreateUser' | translate }}</p>
+                                                            <div *ngIf="loading" style="padding: 15px; margin-left: 50%;">
                                                                 <div class="ball-scale-multiple">
                                                                     <div style="background-color: white;"></div>
                                                                     <div style="background-color: white;"></div>
@@ -119,8 +295,8 @@
                                             </div>
 
                                             <div>
-                                                <button class="btn btn-primary btn-md m-2" mat-button matStepperPrevious>Back</button>
-                                                <button class="btn btn-primary btn-md m-2" mat-button (click)="stepper.reset()">Reset</button>
+                                                <button class="btn btn-primary btn-lg m-2" mat-button matStepperPrevious>Back</button>
+                                                <button class="btn btn-primary btn-lg m-2" mat-button (click)="stepper.reset()">Reset</button>
                                             </div>
 
                                         </mat-step>
