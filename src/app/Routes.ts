@@ -8,6 +8,7 @@ export const ROLE = SERVER + 'roles';
 export const Template = SERVER + 'templates';
 export const assignment_type = SERVER + 'assignment_types';
 export const PERMISSION = SERVER + 'permissions';
+export const TRAINING = SERVER + 'trainings';
 export const PRO_SITUATION = SERVER + 'pro_situations';
 export const CONTACT = SERVER + 'contacts';
 export const VACATIONTYPE = SERVER + 'vacation_types';

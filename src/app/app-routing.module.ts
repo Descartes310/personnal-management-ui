@@ -11,6 +11,8 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddTrainingComponent } from './trainings/add-training/add-training.component';
+import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
@@ -66,6 +68,8 @@ const routes: Routes = [
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'trainings/add', component: AddTrainingComponent},
+  { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

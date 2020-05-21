@@ -147,7 +147,12 @@
         "templateType":"type",
         "templateContent":"contenu",
         "StartDateError":"veuillez entrez une date valide",
-
+        "SlugLabel": "Slug",
+        "NameTrainer": "Nom du formateur",
+        "StartDate": "Date de bebut",
+        "LocationName": "Lieu",
+        "Duration": "Durée[1-100] heure(s)",
+        "DurationField": "Durée",
         "RaisonLabel": "Raison",
         "RaisonField": "Veuillez entre la raison de votre demande",
         "RequestedStartDateLabel": "Date debut du congé",
@@ -233,6 +238,26 @@
         "DeletedMessage": "Element supprimé avec succès",
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
+    },
+    "Training": {
+        "Trainings": "Formations",
+        "TrainingTitle": "Gestion des formations de l'application",
+        "AddTraining": "Ajouter une formation",
+        "CreateTraining": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
+        "Error": "donnees inalide",
+        "SubmitError": "Les champs en rouge sont obligatoire",
+        "SubmitSuccess":"Ajout de la formation effectuer avec succes",
+        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
+        "ErrorMessages": {
+            "Duration": [
+                "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
+                "la durée doit être strictement supérieur à 0",
+                "la durée doit être inférieur ou égal à 100"
+            ]
+        },
+        "IsOnline": "Cette formation est elle en ligne?"
     },
     "ProSituation": {
         "WeightLabel":"Poids",
