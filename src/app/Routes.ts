@@ -19,3 +19,4 @@ export const DIVISION = SERVER + 'divisions';
 export const SUBMISSION = SERVER + 'submissions';
 export const VACATION = SERVER + 'vacations';
 export const VACATION_TYPE = SERVER + 'vacation_types';
+export const CITIES = SERVER + 'cities';

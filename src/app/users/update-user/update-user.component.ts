@@ -4,6 +4,7 @@ import { Profile } from 'src/app/_models/profile.model';
 import { UserService } from 'src/app/_services/user.service';
 import { RoleService } from 'src/app/_services/role.service';
 import { NotifService } from 'src/app/_services/notif.service';
+import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -28,6 +29,9 @@ export class UpdateUserComponent implements OnInit {
   public roles_tmp: any[] = [];
   public selected_roles: number[] = [];
   public profileUpdateList: any[] = [];
+  public userInputKeys: any[] = [];
+  public cities: any[] = [];
+  public proSituations: any[] = [];
 
 	public personnalInfoForm: FormGroup;
   public publicInfoForm: FormGroup;
@@ -37,12 +41,15 @@ export class UpdateUserComponent implements OnInit {
   public loading: boolean = false;
   public isBuild: boolean = false;
   public isSubmitted: boolean = false;
+  public loadingPermissions: boolean = false;
+  public loadingRoles: boolean = false;
 
   public data: FormData = new FormData();
 
   public data_tmp1: any = {};
   public data_tmp2: any = {};
   public errorMessages: any = {};
+  public user: any = {};
 
   public loginMinLength: number = 6;
   public passwordMinLength: number = 6;
@@ -52,6 +59,7 @@ export class UpdateUserComponent implements OnInit {
   	private formBuilder: FormBuilder,
     private userService: UserService,
     private roleService: RoleService,
+    private proSituationService: ProSituationService,
     private notifService: NotifService,
     private translate: TranslateService,
     private route: ActivatedRoute,
@@ -63,7 +71,7 @@ export class UpdateUserComponent implements OnInit {
 
     this.initPersonnalInfoForm();
   	this.initPubicInfoForm();
-    this.getFormInput();
+    this.getUserProfile();
 
   }
 
@@ -84,28 +92,37 @@ export class UpdateUserComponent implements OnInit {
     return this.publicInfoForm.controls;
   }
 
-  // public getUserProfile() {
-  //   const user_id = +this.route.snapshot.paramMap.get("id");
-  //   this.roleService.find(role_id).then(
-  //     data => {
-  //       this.role = data;
-  //       this.initForm(true);
-  //       this.role.permissions.map( permission => {
-  //         this.selected_permissions.push(permission.id)
-  //       })
-  //     }
-  //   ).catch(
-  //     error => {
-  //       this.translate.get('Role.'+error.error.code)
-  //       .subscribe(val => this.notifService.danger(val));
-  //       this.router.navigate(['/roles/all'])
-  //     }
-  //   )
-  // }
+  public getUserProfile() {
+
+    const user_id = +this.route.snapshot.paramMap.get("id");
+    this.loading = true;
+    this.userService.getUserInfo(user_id).then(
+      data => {
+        this.user = data;
+        this.getFormInput();
+        this.initCities();
+        this.initProSituations();
+        this.userInputKeys = Object.keys(this.user);
+      }
+    ).catch(
+      error => {
+        if(error.error) {
+          this.translate.get('User.' + error.error.code)
+            .subscribe(val => this.notifService.danger(val));
+          this.router.navigate(['/users/all']);
+        } 
+        if(error) {
+          this.translate.get('User.LoadingProfileError')
+            .subscribe(val => this.notifService.danger(val));
+          this.router.navigate(['/users/all'])
+        }
+      }
+    )
+    
+  }
 
   public getFormInput() {
 
-    this.loading = true;
     this.userService.allProfiles().then(
       response => {
         this.formInputList = [];
@@ -132,20 +149,8 @@ export class UpdateUserComponent implements OnInit {
 
   }
 
-  getPermissions() {
-    this.roleService.permissions().then(
-      response => {
-        this.permissions = response;
-        this.permissions_tmp = response;
-      }
-    ).catch(
-      error => {
-        this.notifService.danger("Une erreur s'est produite");
-      }
-    )
-  }
-
-  getRoles() {
+  public getRoles() {
+    this.loadingRoles = true;
     this.roleService.getRolesWithPermissions().then(
       response => {
         this.roles = response;
@@ -154,35 +159,69 @@ export class UpdateUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
       }
-    )
+    ).finally(() => {
+      this.loadingRoles = false;
+    })
   }
 
+  public getPermissions() {
+    this.loadingPermissions = true;
+    this.roleService.permissions().then(
+      response => {
+        this.permissions = response;
+        this.permissions_tmp = response;
+        this.initSelectedRolesAndSelectedPermissions();
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    ).finally(() => {
+      this.loadingPermissions = false;
+    })
+  }
+
+  public initSelectedRolesAndSelectedPermissions() {
+
+    this.user.roles.map(role => {
+      this.selected_roles.push(role.id);
+    });
+
+    this.user.permissions.map(permissions => {
+      this.selected_permissions.push(permissions.id);
+    });
+
+  }
+
+  public getCurrentValue(slug: string) {
+    return this.user[slug];
+  }
 
   public initPersonnalInfoForm(withProfile = false): void {
 
     if(withProfile) {
-      
+    
       this.initErrorMessages();
       this.getLoginErrorMessages();
-      this.getPasswordErrorMessages();
 
       let parametter: any = {}; 
 
       parametter['login'] = [
-        '',
+        this.user['login'],
         [
           Validators.required,
           Validators.minLength(this.loginMinLength)
         ]
       ];
 
-      parametter['password'] = [
+      parametter['cities'] = [
         '',
         [
           Validators.required,
-          Validators.minLength(this.passwordMinLength)
         ]
       ];
 
@@ -208,7 +247,7 @@ export class UpdateUserComponent implements OnInit {
           ];
         } else {
           parametter[input.slug] = [
-            input.default,
+            this.user[input.slug],
             validationRules
           ];
         }
@@ -221,14 +260,40 @@ export class UpdateUserComponent implements OnInit {
 
   }
 
+  public initCities() {
+
+    this.userService.cities().then(
+      response => {
+        this.cities = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    )
+
+  }
+
+  public initProSituations() {
+
+    this.proSituationService.all().then(
+      response => {
+        this.proSituations = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    )
+
+  }
+
   public initErrorMessages() {
 
     this.errorMessages = {
       login: [
-        { type: 'required', message: '' },
-        { type: 'minlength', message: '' }
-      ],
-      password: [
         { type: 'required', message: '' },
         { type: 'minlength', message: '' }
       ]
@@ -243,18 +308,19 @@ export class UpdateUserComponent implements OnInit {
     });
   }
 
-  public  getPasswordErrorMessages() {
-    this.translate.get('User.ErrorMessages.Password', { data: this.passwordMinLength }).subscribe(val => {
-      this.errorMessages.password[0].message = val[0];
-      this.errorMessages.password[1].message = val[1];
-    });
-  }
 
   public initPubicInfoForm(withProfile = false): void {
 
     if(withProfile) {
       let parametter: any = {}; 
       
+      parametter['proSituations'] = [
+        '',
+        [
+          Validators.required,
+        ]
+      ];
+
       this.secondStepInputList.map(input => {
         let validationRules: any[] = [];
 
@@ -277,7 +343,7 @@ export class UpdateUserComponent implements OnInit {
           ];
         } else {
           parametter[input.slug] = [
-            input.default,
+            this.user[input.slug],
             validationRules
           ];
         }
@@ -297,6 +363,10 @@ export class UpdateUserComponent implements OnInit {
   public getInputListPerStep() {
     this.firstStepInputList = this.formInputList.filter(input => input.is_private);
     this.secondStepInputList = this.formInputList.filter(input => !input.is_private);
+  }
+
+  public checkIfIsAnCurrentUserInfo(slug: string) {
+    return this.userInputKeys.includes(slug);
   }
 
   public checkIfInputIsASelect(input: Profile): boolean {
@@ -374,7 +444,6 @@ export class UpdateUserComponent implements OnInit {
     this.isSubmitted = true;
 
     let login: string = this.personnalInfo.login.value;
-    let password: string = this.personnalInfo.password.value;
 
     this.firstStepInputList.map(input => {
 
@@ -384,7 +453,6 @@ export class UpdateUserComponent implements OnInit {
       } else {
         return;
       }
-
 
       if(input.is_required) {
         if(!value) {
@@ -441,18 +509,6 @@ export class UpdateUserComponent implements OnInit {
       return;
     }
 
-    if(!password) {
-      this.translate.get('User.InputRequiredError', { data: 'password' })
-        .subscribe(val => this.notifService.danger(val));
-      return;
-    }
-    if(password.length < this.passwordMinLength) {
-      this.translate.get('User.InputMinLengthError', { data1: 'password', data2: this.passwordMinLength })
-        .subscribe(val => this.notifService.danger(val));
-      return;
-    }
-
-
     if(this.personnalInfoForm.valid) {
       this.isSubmitted = false;
     }
@@ -470,8 +526,7 @@ export class UpdateUserComponent implements OnInit {
         value = this.publicInfoForm[input.slug].value;
       } else {
         return;
-      }
-        
+      } 
 
       if(input.is_required) {
         if(!value) {
@@ -563,10 +618,10 @@ export class UpdateUserComponent implements OnInit {
     this.computeDataToSend();
 
     this.loading = true
-    this.userService.add(this.data).then(
+    this.userService.update(this.data, this.user.id).then(
       response => {
         console.log(response);
-        this.translate.get('User.CreateUserSuccess')
+        this.translate.get('User.UpdateUserSuccess')
           .subscribe(val => this.notifService.success(val));
       }
     ).catch(
@@ -589,11 +644,6 @@ export class UpdateUserComponent implements OnInit {
             });
             if(error.error.errors.login) {
               error.error.errors.login.map(errorMessage => {
-                this.notifService.danger(errorMessage);
-              })   
-            }
-            if(error.error.errors.password) {
-              error.error.errors.password.map(errorMessage => {
                 this.notifService.danger(errorMessage);
               })   
             }

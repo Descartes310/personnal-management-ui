@@ -321,7 +321,6 @@
         "UserLogin": "login",
         "UserPassword": "mot de passe",
         "UserLoginPlaceHolder": "veuillez entrer un login",
-        "UserPasswordPlaceHolder": "****************",
         "ErrorMessages": {
             "Login": [
                 "le login est obligatoire",
@@ -338,7 +337,13 @@
         "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure à {{ data2 }}",
         "InputMinLengthError": "La valeur du champ {{ data1 }} ne doit pas être inférieure à {{ data2 }} caractères",
         "InputMaxLengthError": "La valeur du champ {{ data1 }} ne doit pas être supérieur à {{ data2 }} caractères",
-        "CreateUserSuccess": "L'utilisateur a été créé  avec succès"
+        "CreateUserSuccess": "L'utilisateur a été créé  avec succès",
+        "UpdateUserSuccess": "Les données de l'utilisateur ont été mis à jour avec succès",
+        "UpdateUsers": "Mettre à jour les informations de l'utilisateur",
+        "UpdateUserTitle": "Modifiez les informations de l'utilisateur, certaines informations ne sont pas modifiables",
+        "LoadingProfileError": "Echec du chargement du profil de l'utilisateur",
+        "UserCities": "Choisir votre ville",
+        "UserProsituations": "Choisir votre situation professionnelle"
     },
     "Vacation": {
         "VACATION": "CONGE",

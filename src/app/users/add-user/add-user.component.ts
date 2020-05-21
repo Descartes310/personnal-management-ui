@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from 'src/app/_models/profile.model';
 import { UserService } from 'src/app/_services/user.service';
 import { RoleService } from 'src/app/_services/role.service';
+import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
@@ -27,6 +28,8 @@ export class AddUserComponent implements OnInit {
   public roles: any[] = [];
   public roles_tmp: any[] = [];
   public selected_roles: number[] = [];
+  public cities: any[] = [];
+  public proSituations: any[] = [];
 
 	public personnalInfoForm: FormGroup;
   public publicInfoForm: FormGroup;
@@ -36,6 +39,8 @@ export class AddUserComponent implements OnInit {
   public loading: boolean = false;
   public isBuild: boolean = false;
   public isSubmitted: boolean = false;
+  public loadingPermissions: boolean = false;
+  public loadingRoles: boolean = false;
 
   public data: FormData = new FormData();
 
@@ -51,6 +56,7 @@ export class AddUserComponent implements OnInit {
   	private formBuilder: FormBuilder,
     private userService: UserService,
     private roleService: RoleService,
+    private proSituationService: ProSituationService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
@@ -92,6 +98,8 @@ export class AddUserComponent implements OnInit {
           this.formInputList.push(new Profile(input));
         });
         this.getInputListPerStep();
+        this.initCities();
+        this.initProSituations();
         this.initPersonnalInfoForm(true);
         this.initPubicInfoForm(true);
         this.initRoleAndPermissionsForm();
@@ -112,6 +120,7 @@ export class AddUserComponent implements OnInit {
   }
 
   getPermissions() {
+    this.loadingPermissions = true;
     this.roleService.permissions().then(
       response => {
         this.permissions = response;
@@ -121,10 +130,13 @@ export class AddUserComponent implements OnInit {
       error => {
         this.notifService.danger("Une erreur s'est produite");
       }
-    )
+    ).finally(() => {
+      this.loadingPermissions = false;
+    })
   }
 
   getRoles() {
+    this.loadingRoles = true;
     this.roleService.getRolesWithPermissions().then(
       response => {
         this.roles = response;
@@ -135,7 +147,9 @@ export class AddUserComponent implements OnInit {
       error => {
         this.notifService.danger("Une erreur s'est produite");
       }
-    )
+    ).finally(() => {
+      this.loadingRoles = false;
+    })
   }
 
 
@@ -162,6 +176,13 @@ export class AddUserComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(this.passwordMinLength)
+        ]
+      ];
+
+      parametter['cities'] = [
+        '',
+        [
+          Validators.required,
         ]
       ];
 
@@ -200,6 +221,36 @@ export class AddUserComponent implements OnInit {
 
   }
 
+  public initCities() {
+
+    this.userService.cities().then(
+      response => {
+        this.cities = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    )
+
+  }
+
+  public initProSituations() {
+
+    this.proSituationService.all().then(
+      response => {
+        this.proSituations = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    )
+
+  }
+
   public initErrorMessages() {
 
     this.errorMessages = {
@@ -233,6 +284,13 @@ export class AddUserComponent implements OnInit {
 
     if(withProfile) {
       let parametter: any = {}; 
+
+      parametter['proSituations'] = [
+        '',
+        [
+          Validators.required,
+        ]
+      ];
       
       this.secondStepInputList.map(input => {
         let validationRules: any[] = [];
@@ -310,7 +368,9 @@ export class AddUserComponent implements OnInit {
         this.personnalInfo[input.slug].setValue(input.min);
       }
 
-    } else if(input.max) {
+    } 
+
+    if(input.max) {
 
       if(value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
@@ -327,7 +387,9 @@ export class AddUserComponent implements OnInit {
         this.publicInfo[input.slug].setValue(input.min);
       }
 
-    } else if(input.max) {
+    }
+
+    if(input.max) {
 
       if(value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
@@ -547,6 +609,11 @@ export class AddUserComponent implements OnInit {
         console.log(response);
         this.translate.get('User.CreateUserSuccess')
           .subscribe(val => this.notifService.success(val));
+        this.isSubmitted = false;
+        this.personnalInfoForm.reset();
+        this.publicInfoForm.reset();
+        this.selected_permissions = [];
+        this.selected_roles = [];
       }
     ).catch(
       error => {
