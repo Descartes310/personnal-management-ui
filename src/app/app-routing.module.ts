@@ -40,6 +40,8 @@ import { AddContractComponent } from './contracts/add-contract/add-contract.comp
 import { AllContractComponent } from './contracts/all-contract/all-contract.component';
 import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 
 
 //const routes: Routes = [];
@@ -78,6 +80,8 @@ const routes: Routes = [
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },
   { path: 'BlogCategory/all', component: AllBlogCategoryComponent },
+  { path: 'blog-posts/add', component: AddBlogPostComponent },
+  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
   { path: 'contracts/update/:id', component: UpdateContractComponent },
   { path: 'contracts/details/:id', component: DetailsContractComponent },
   { path: 'contracts/details', component: DetailsContractComponent },

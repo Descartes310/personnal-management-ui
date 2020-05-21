@@ -9,8 +9,7 @@ import { User } from 'src/app/_models/user.model';
 import { UserService } from 'src/app/_services/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import * as jsPDF from 'jspdf';
-import { ViewChild, ElementRef } from '@angular/core';
+
 
 
 @Component({
@@ -19,8 +18,7 @@ import { ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./add-contract.component.scss']
 })
 export class AddContractComponent implements OnInit {
-  
-   htmlData: ElementRef;
+
 
   selected_users: number[] = [];
   users_tmp: User[] = [];
@@ -45,7 +43,7 @@ export class AddContractComponent implements OnInit {
                   'CIE – Contrat initiative emploi'
                 ]
 
-               
+
 
                 USERS = [
                   {
@@ -85,7 +83,7 @@ export class AddContractComponent implements OnInit {
                     "phone": "1-477-935-8478 x6430"
                   }
                 ];
-              
+
 
   constructor(
     private http:HttpClient,
@@ -187,12 +185,12 @@ export class AddContractComponent implements OnInit {
 
 
 
-  public onReady( editor ) {
-    editor.ui.getEditableElement().parentElement.insertBefore(
+    public onReady( editor ) {
+        editor.ui.getEditableElement().parentElement.insertBefore(
         editor.ui.view.toolbar.element,
         editor.ui.getEditableElement()
-    );
-  }
+      );
+    }
 
   public getUsers() {
 

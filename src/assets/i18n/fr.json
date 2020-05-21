@@ -28,7 +28,7 @@
     "Form": {
         "TypeLabel": "Type",
         "NameLabel": "Nom",
-        "TitleLabel": "Title",
+        "TitleLabel": "Titre",
         "start_dateLabel": "Date de debut",
         "end_dateLabel": "Date de fin",
         "free_daysLabel": "Jours libres",

@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'Contract.ContractTitle' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="row">
     <div class="col">
@@ -24,18 +24,18 @@
                 <div class="card-body">
                     <form>
                         <div class="row" >
-                              
+
                         </div>
                     </form>
-                       
+
                     <form [formGroup]="contractForm" (submit)="onSubmit()" >
                         <div class="main-card mb-3 card">
                             <div class="card-body">
-                                    <div class="row">                                   
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="position-relative form-group">
                                                 <label for="exampleType" class="">{{ "Form.TypeLabel" | translate }} </label>
-                                                <select name="type" id="exampleType" formControlName="type" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}">
+                                                <select name="type" id="exampleType" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}">
                                                     <option [value]="typecontract" *ngFor="let typecontract of TypeContracts"> {{typecontract}}</option>
                                                 </select>
                                             </div>
@@ -56,11 +56,11 @@
                                             <div class="position-relative form-group">
                                                 <label for="exampleEndDate" class="">{{ "Form.end_dateLabel" | translate }}</label>
                                                 <input name="edate" id="exampleEndDate" placeholder="{{ 'Form.LabelField' | translate }}" type="date" formControlName="end_date"  class="form-control  {{ isSubmitted && form.end_date.errors ? 'is-invalid' : '' }}">
-                                            </div> 
+                                            </div>
                                                <div class="position-relative form-group">
                                                 <label for="exampleDays" class="">{{ "Form.free_daysLabel" | translate }} </label>
                                                 <input name="days" id="exampleDays" placeholder="{{ 'Form.LabelDays' | translate }}" type="number" formControlName="free_days"  class="form-control {{ isSubmitted && form.free_days.errors ? 'is-invalid' : '' }}">
-                                            </div>         
+                                            </div>
                                         </div>
                                         <div class="col-md-4" style="overflow-y: auto; max-height: 240px;">
                                             <div class="position-relative form-group">
@@ -97,27 +97,27 @@
                                                     </td>
                                                 </tfoot>
                                             </table>
-                                        </div> 
-                                    </div> 
+                                        </div>
+                                    </div>
                                 </div>
                             <div class="card-body">
-                                <div class="row">   
-                                    <div class="col-md-12" >                                      
+                                <div class="row">
+                                    <div class="col-md-12" >
                                         <ckeditor [editor]="Editor" data="" formControlName="terms" name="content" id="editor">
                                         </ckeditor>
-                                    </div>  
-                                </div> 
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
-                                <div class="row">   
-                                    <div class="col-md-12"> 
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <input name="file" id="examplefile" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
-                                    </div>  
-                                </div> 
-                            </div>             
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <div class="row">        
-                                    <div class="col-md-12">                                      
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
                                                 <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contract.CreateContract" | translate }}</p>
@@ -130,10 +130,10 @@
                                                 </div>
                                             </button>
                                       </div>
-                                    </div>  
-                                </div> 
+                                    </div>
+                                </div>
                             </div>
-                        </div>   
+                        </div>
                     </form>
                 </div>
             </div>
@@ -141,4 +141,3 @@
     </div>
 </div>
 
-  
