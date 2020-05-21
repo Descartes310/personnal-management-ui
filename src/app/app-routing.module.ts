@@ -24,12 +24,18 @@ import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignm
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
+import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
@@ -44,6 +50,8 @@ import { AddVacationComponent } from './vacations/add-vacation/add-vacation.comp
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 
+import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -57,6 +65,12 @@ const routes: Routes = [
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
   { path: 'pro-situations/all',  component: AllProSituationComponent},
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
+  { path: 'pro-situations/all', component: AllProSituationComponent },
+  { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
+  { path: 'profiles/add', component: AddProfileComponent },
+  { path: 'profiles/update/:id', component: UpdateProfileComponent },
+  { path: 'profiles/all', component: AllProfileComponent },
+  { path: 'profiles/details/:id', component: DetailsProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
@@ -76,6 +90,10 @@ const routes: Routes = [
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
+  { path: 'divisions/all', component: AllDivisionComponent },
+  { path: 'divisions/details/:id', component: DetailsDivisionComponent },
+  { path: 'submissions/all', component: AllSubmissionComponent },
+  { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
@@ -84,6 +102,8 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'contacts/all', component: AllContactComponent },
   { path: 'contacts/details/:id', component:DetailContactComponent},
+  { path: 'contacts/update/:id', component: UpdateContactComponent },
+  { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
 

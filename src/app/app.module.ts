@@ -52,6 +52,8 @@ import { TemplateCreateComponent } from './templates/template-create/template-cr
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
@@ -66,6 +68,10 @@ import { AllVacationComponent } from './vacations/all-vacation/all-vacation.comp
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
+import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
+import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -105,6 +111,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllDivisionComponent,
+    DetailsDivisionComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     AddCongeComponent,
@@ -123,6 +131,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailVacationComponent,
     AddVacationComponent,
     UpdateVacationComponent,
+    AllSubmissionComponent,
+    DetailsSubmissionComponent,
+    AllProfileComponent,
+    DetailsProfileComponent,
   ],
   imports: [
     MatTabsModule,

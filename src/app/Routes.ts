@@ -24,3 +24,4 @@ export const BlogPost = SERVER + 'blog_posts';
 export const BlogCategorie = SERVER + 'blog_categories';
 export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
+export const PROFILE = SERVER + 'profiles';

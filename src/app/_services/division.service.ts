@@ -36,7 +36,4 @@ export class DivisionService {
     delete(id: number): Promise<Division[]> {
         return this.http.delete<Division[]>(`${Routes.DIVISION}/${id}`).toPromise();
     }
-
-    
-
 }
