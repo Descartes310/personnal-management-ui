@@ -71,6 +71,20 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "BlogPost": {
+        "BlogPosts": "blogs Articles",
+        "BlogPostTitle": "Gestion des articles de l'application",
+        "SubmitSuccess": "La création du role a réussie...",
+        "AddBlogPost": "Ajouter un article"
+     
+    },
+    "BlogComment": {
+        "BlogPosts": "blogs Articles",
+        "blogPostTitle": "Gestion des articles de l'application",
+        "AddBlogComment": "Ajouter un nouveau rôle",       
+        "SubmitSuccess": "La création du commentaire a réussie..."
+     
+    },
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -81,7 +95,7 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },
+    },  
     "Form": {
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",

@@ -38,6 +38,10 @@ import { AllProSituationComponent } from './pro_situations/all-pro-situation/all
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
+import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
+import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
+import { AllContactComponent } from './contacts/all-contact/all-contact.component';
+import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 
 
 //const routes: Routes = [];
@@ -73,11 +77,15 @@ const routes: Routes = [
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
+  { path: 'contacts/all', component: AllContactComponent },
+  { path: 'contacts/details/:id', component:DetailContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
 
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
+  { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

@@ -57,6 +57,12 @@ import { UpdateVacationComponent } from './vacation/update-vacation/update-vacat
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
+import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
+import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AllContactComponent } from './contacts/all-contact/all-contact.component';
+import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -104,8 +110,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllSubmissionsComponent,
     AddVacationComponent,
     UpdateVacationComponent,
+    AllBlogPostComponent,
+    DetailBlogPostComponent,
+    AllContactComponent,
+    DetailContactComponent,
   ],
   imports: [
+    MatTabsModule,
+    MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
