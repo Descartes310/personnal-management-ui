@@ -50,7 +50,7 @@
                         <td style="width: 25%">{{ license.raison }}</td>
                         <td style="width: 12%">{{ license.description | slice:0:15}}...</td>
                         <td style="width: 25%" *ngIf="!file_existing"> </td>
-                        <td style="width: 25%" *ngIf="file_existing"> <a href='{{ server + license.file}}' target="_blank">{{ server + license.file}}</a></td>
+                        <td style="width: 25%" *ngIf="file_existing"> <a href='{{ server + license.file}}' target="_blank"><img src="/assets/images/doc.png" alt="Télécharger..."></a></td>
                         <td style="width: 12%">{{ license.requested_start_date }}</td>
                         <td style="width: 12%">{{ license.requested_days }}</td>
                         <td style="width: 25%">{{ license.status }}</td>
