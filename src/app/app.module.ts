@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor'
+import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './_guards/auth.guard'
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
@@ -29,10 +30,37 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+<<<<<<< HEAD
 import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
 import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
+=======
+import { ChatComponent } from './chat/chat.component';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
+>>>>>>> 2bd4843f1c93c5b04afee04827fff120c283ef07
 
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -57,15 +85,43 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+<<<<<<< HEAD
     AddNoteCriteriasComponent,
     UpdateNoteCriteriasComponent,
 
+=======
+    ChatComponent,
+    AddContactComponent,
+    UpdateContactComponent,
+    AddAssignmentTypeComponent,
+    UpdateAssignmentTypeComponent,
+    AddUserComponent,
+    UpdateUserComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
+    AddLicensetypesComponent,
+    UpdateLicensetypesComponent,
+    AddDivisionComponent,
+    UpdateDivisionComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
+    DetailsProSituationComponent,
+    AllSubmissionsComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
+>>>>>>> 2bd4843f1c93c5b04afee04827fff120c283ef07
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({
@@ -81,7 +137,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     AuthGuardService,
-    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

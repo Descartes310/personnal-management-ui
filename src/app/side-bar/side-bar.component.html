@@ -64,11 +64,37 @@
                 </li>
                 <li class="">
                     <a href="index.html#">
+                        <i class="metismenu-icon pe-7s-folder"></i>
+                        {{ "SideBar.typedepermission" | translate }}
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="">
+                                <i class="metismenu-icon">
+                                </i> {{ "Licensetype" | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="index.html#">
                         <i class="metismenu-icon pe-7s-plane"></i>
                         {{ "SideBar.PermissionEtConges" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
+                        
+                        <li>
+                            <a  [routerLink]="['/vacations/add']"  class="">
+                                <i class="metismenu-icon">
+                                </i>Add Conge
+                            </a>
+                            <a  [routerLink]="['/vacations/update/1']"  class="">
+                                <i class="metismenu-icon">
+                                </i>Update Conge
+                            </a>
+                        </li>
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">
@@ -92,6 +118,24 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="" [routerLink]="['/divisions/all']" class="">
+                        <i class="metismenu-icon">
+                        </i>{{ "SideBar.Division" | translate }}
+                    </a>
+                    <ul>
+                        <li>
+                            <a href=""  [routerLink]="['/divisions/add']" class="">
+                                <i class="metismenu-icon">
+                                </i>creer une division
+                            </a>
+                            <a href=""  [routerLink]="['/divisions/update/{$id}']" class="">
+                                <i class="metismenu-icon">
+                                </i>mettre a jour un division
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="">
                     <a href="index.html#">
                         <i class="metismenu-icon pe-7s-display1"></i>
@@ -107,6 +151,7 @@
                         </li>
                     </ul>
                 </li>
+                
                 <li class="">
                     <a href="index.html#">
                         <i class="metismenu-icon pe-7s-refresh-2"></i>
@@ -174,6 +219,16 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
+                            <li>
+                                    <a    class="">
+                                        <i class="metismenu-icon">
+                                        </i>Add Contact
+                                    </a>
+                                    <a    class="">
+                                        <i class="metismenu-icon">
+                                        </i>Update Contact
+                                    </a>
+                                </li>
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">
@@ -182,6 +237,7 @@
                         </li>
                     </ul>
                 </li>
+               
                 <li class="">
                     <a href="index.html#">
                         <i class="metismenu-icon pe-7s-config"></i>
@@ -195,12 +251,7 @@
                                 </i>{{ "SideBar.ProSituation" | translate }}
                             </a>
                         </li>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="metismenu-icon">
-                                </i>{{ "SideBar.Division" | translate }}
-                            </a>
-                        </li>
+                       
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">

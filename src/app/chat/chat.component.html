@@ -1,0 +1,195 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-graph icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Chat.Title' | translate }}
+                <div class="page-title-subheading">{{ 'Chat.TitleText' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="app-inner-layout chat-layout">
+    <div class="app-inner-layout__header text-white bg-premium-dark">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-actions">
+                    <div class="d-inline-block">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info --elastic open-right-drawer">
+                            {{ 'Chat.NewDicussion' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-inner-layout__wrapper">
+        <div class="app-inner-layout__content card">
+            <div class="app-inner-layout__top-pane" *ngIf="current_user">
+                <div class="pane-left">
+                    <div class="mobile-app-menu-btn">
+                        <button type="button" class="hamburger hamburger--elastic">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                        </button>
+                    </div>
+                    <div class="avatar-icon-wrapper mr-2">
+                        <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
+                        <div class="avatar-icon avatar-icon-xl rounded"><img width="82" src="{{ current_user.avatar }}" alt=""></div>
+                    </div>
+                    <h4 class="mb-0 text-nowrap">{{ current_user.first_name }} {{ current_user.last_name }}</h4>
+                </div>
+                <div class="pane-right">
+                    <div class="btn-group dropdown">
+                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="ml-2 dropdown-toggle btn btn-primary">
+                    <span class="opacity-7 mr-1">
+                        <i class="fa fa-cog"></i>
+                    </span>
+                            Actions
+                        </button>
+                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0);" class="nav-link">
+                                        {{ 'Chat.MessageLength' |  translate}}
+                                        <div class="ml-auto badge badge-success">{{ messages.length }}</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0);" class="nav-link" (click)="deleteDiscussion(current_user)">
+                                        {{ 'Chat.DeleteAll' |  translate}}
+                                    </a>
+                                </li>
+                                <li class="nav-item" (click)="closeDiscussion()">
+                                    <a href="javascript:void(0);" class="nav-link">
+                                        {{ 'Chat.Close' |  translate}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-inner-layout__top-pane" *ngIf="current_user && isLoading" style="flex: 1; align-items: center; justify-content: center;">
+                <div style="padding: 15px;">
+                    <div class="ball-scale-multiple">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-inner-layout__top-pane" *ngIf="!current_user" style="flex-direction: column; flex: 1; align-items: center; justify-content: center;">
+                <img src="assets/images/emptymessage.jpg" width="50%">
+                <p style="font-size: 1.5em;">{{ 'Chat.PickUpDiscussion' | translate }}</p>
+            </div>
+            <div class="app-inner-layout__top-pane" *ngIf="current_user && !isLoading && messages.length == 0" style="flex-direction: column; flex: 1; align-items: center; justify-content: center;">
+                <img src="assets/images/nonemessage.png" width="60%">
+                <p style="font-size: 1.5em;">{{ 'Chat.EmptypDiscussion' | translate }}</p>
+            </div>
+            <div class="table-responsive chat-block" #myScroll [scrollTop]="myScroll.scrollHeight" *ngIf="current_user && !isLoading && messages.length > 0">
+                <div class="chat-wrapper" >
+                    <ng-container *ngFor="let message of messages" class="chat-wrapper-container">
+                        <div *ngIf="isMyMessage(message) && toShow(message)" style="width: 100%">
+                            <div class="chat-box-wrapper chat-box-wrapper-right float-right">
+                                <div>
+                                    <div class="chat-box" style="background-color: #82e887;">{{ message.content }}</div>
+                                    <small class="opacity-6">
+                                        <i class="fa fa-calendar-alt mr-1"></i>
+                                        {{ message.created_at }} &nbsp;&nbsp;&nbsp;
+                                        <a style="color: red; cursor: pointer;" (click)="deleteMessage(message)">
+                                            <i class="fa fa-trash-alt mr-1"></i> {{ 'Chat.Delete' | translate }}
+                                        </a>
+                                    </small>
+                                </div>
+                                <div>
+                                    <div class="avatar-icon-wrapper ml-1">
+                                        <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
+                                        <div class="avatar-icon avatar-icon-lg rounded"><img
+                                                src="assets/images/avatars/2.jpg"
+                                                alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box-wrapper" *ngIf="!isMyMessage(message)  && toShow(message)">
+                            <div>
+                                <div class="avatar-icon-wrapper mr-1">
+                                    <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
+                                    <div class="avatar-icon avatar-icon-lg rounded">
+                                        <img src="{{ current_user.avatar }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="chat-box">{{ message.content }}</div>
+                                <small class="opacity-6">
+                                    <i class="fa fa-calendar-alt mr-1"></i>
+                                    {{ message.created_at }}
+                                    <a style="color: red; cursor: pointer;" (click)="deleteMessage(message)">
+                                        <i class="fa fa-trash-alt mr-1"></i> {{ 'Chat.Delete' | translate }}
+                                    </a>
+                                </small>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+                </div>
+            </div>
+
+            <div class="app-inner-layout__bottom-pane d-block text-center" *ngIf="current_user && !isLoading">
+                <div class="mb-0 position-relative row form-group">
+                    <div class="col-sm-12">
+                        <input placeholder="{{ 'Chat.WriteAMessage' | translate }}" type="text" (keyup.enter)="sendMessage($event)" value="{{ current_message }}" class="form-control-lg form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-inner-layout__sidebar card">
+            <div class="app-inner-layout__sidebar-header">
+                <ul class="nav flex-column">
+                    <li class="pt-4 pl-3 pr-3 pb-3 nav-item">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <input placeholder="Search..." type="text" class="form-control" (keyup)="search($event)"></div>
+                    </li>
+                    <li class="nav-item-header nav-item">{{ 'Chat.DiscussionList' | translate }}</li>
+                </ul>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item" *ngFor="let discussion of discussions">
+                    <button type="button" tabindex="0" class="dropdown-item" (click)="getDiscussion(discussion)">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                    <div class="avatar-icon-wrapper">
+                                        <div class="badge badge-bottom badge-success badge-dot badge-dot-lg"></div>
+                                        <div class="avatar-icon"><img
+                                                src="{{ discussion.user.avatar }}"
+                                                alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">
+                                        {{ discussion.user.first_name }} {{ discussion.user.last_name }}
+                                        <div *ngIf="discussion.unread > 0" class="ml-auto badge badge-success" style="right: 0; position: absolute;">{{ discussion.unread }}</div>
+                                    </div>
+                                    <div class="widget-subheading">{{ discussion.last_message }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
