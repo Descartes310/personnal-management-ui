@@ -84,24 +84,24 @@ export class UpdateUserComponent implements OnInit {
     return this.publicInfoForm.controls;
   }
 
-  public getUserProfile() {
-    const user_id = +this.route.snapshot.paramMap.get("id");
-    this.userService.find(role_id).then(
-      data => {
-        this.role = data;
-        this.initForm(true);
-        this.role.permissions.map( permission => {
-          this.selected_permissions.push(permission.id)
-        })
-      }
-    ).catch(
-      error => {
-        this.translate.get('Role.'+error.error.code)
-        .subscribe(val => this.notifService.danger(val));
-        this.router.navigate(['/roles/all'])
-      }
-    )
-  }
+  // public getUserProfile() {
+  //   const user_id = +this.route.snapshot.paramMap.get("id");
+  //   this.roleService.find(role_id).then(
+  //     data => {
+  //       this.role = data;
+  //       this.initForm(true);
+  //       this.role.permissions.map( permission => {
+  //         this.selected_permissions.push(permission.id)
+  //       })
+  //     }
+  //   ).catch(
+  //     error => {
+  //       this.translate.get('Role.'+error.error.code)
+  //       .subscribe(val => this.notifService.danger(val));
+  //       this.router.navigate(['/roles/all'])
+  //     }
+  //   )
+  // }
 
   public getFormInput() {
 
