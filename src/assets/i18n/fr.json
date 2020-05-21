@@ -65,7 +65,7 @@
         "Config": "Configurations",
         "RoleAndPer": "Rôles et permissions",
         "Personnel": "Personnels",
-        "Submissions": "Requêtes",
+        "Submissions": "Courriels",
         "ProfileUpdate": "Mise à jour du profile"
     },
     "DocumentViewer": {
@@ -88,12 +88,15 @@
     },
 
     "Submission": {
-        "Submissions": "Les demandes",
-        "SubmissionTitle": "Gestion des demandes de l'application",
-        "AddSubmission": "Ajouter une nouvelle Demande",
+        "Mailbox": "Courriels",
+        "SubmissionSubtitle": "Gestion des courriers de l'application",
+        "addSubmission": "Ecrire un courriel",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitSuccess": "La création de la demande a réussie",
-        "DetailsSubmission": "Détails de la Demande"
+        "DetailsSubmission": "Détails du courriel",
+        "myAccount":"Mon compte",
+        "inbox":"Reçu(s)",
+        "sent":"Envoyés(s)"
     },
 
     "Contact": {

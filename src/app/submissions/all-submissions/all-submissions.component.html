@@ -4,11 +4,11 @@
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
                     <div class="page-title-icon">
-                        <i class="pe-7s-power icon-gradient bg-mixed-hopes">
+                        <i class="pe-7s-mail icon-gradient bg-mixed-hopes">
                         </i>
                     </div>
-                    <div>Mailbox
-                        <div class="page-title-subheading">Create stunning UIs for your pages with these layout components.
+                    <div>{{ "Submission.Mailbox" | translate }}
+                        <div class="page-title-subheading">{{ "Submission.SubmissionSubtitle" | translate }}
                         </div>
                     </div>
                 </div>  
@@ -75,19 +75,19 @@
         <div class="app-inner-layout__sidebar card">
             <ul class="nav flex-column">
                 <li class="pt-4 pl-3 pr-3 pb-3 nav-item">
-                    <button class="btn-pill btn-shadow btn btn-primary btn-block">Write New Email</button>
+                    <button class="btn-pill btn-shadow btn btn-primary btn-block">{{ "Submission.addSubmission" | translate }}</button>
                 </li>
-                <li class="nav-item-header nav-item">My Account</li>
+                <li class="nav-item-header nav-item">{{ "Submission.myAccount" | translate }}</li>
                 <li class="nav-item">
                     <a (click)="showMySubmission(false)" class="nav-link">
                         <i class="nav-link-icon pe-7s-chat"> </i>
-                        <span>Inbox</span>
+                        <span>{{ "Submission.inbox" | translate }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a (click)="showMySubmission(true)" class="nav-link">
                         <i class="nav-link-icon pe-7s-wallet"> </i>
-                        <span>Sent Items</span>
+                        <span>{{ "Submission.sent" | translate }}</span>
                     </a>
                 </li>
                 
