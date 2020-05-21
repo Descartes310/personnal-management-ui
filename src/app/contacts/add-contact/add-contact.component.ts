@@ -11,29 +11,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
-
   //gestion des steppers
   step1Selected: boolean = true;
   step2Selected: boolean = false;
   step3Selected: boolean = false;
-  stepIndexSelected=0;
+  stepIndexSelected = 0;
   isLinear = false;
   //gestion des formgroup
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  thirdFormGroup :FormGroup;
+  thirdFormGroup: FormGroup;
   //
   isLoading = false;
   isError = false;
   isSuccess = false;
   isSubmitted = false;
-//variable pour la recuperation de image
-  image:File=null;
-  constructor(private contactservice:ContactService,
-              private notifService: NotifService,
-              private formBuilder: FormBuilder,
-              private translate: TranslateService,
-              private router: Router,) { }
+  //variable pour la recuperation de image
+  image: File = null;
+  constructor(private contactservice: ContactService,
+    private notifService: NotifService,
+    private formBuilder: FormBuilder,
+    private translate: TranslateService,
+    private router: Router, ) { }
 
   ngOnInit() {
     this.initform();
@@ -52,8 +51,8 @@ export class AddContactComponent implements OnInit {
   }
 
   //init form
-  initform(){
-    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+  initform() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.firstFormGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: '',
@@ -62,30 +61,27 @@ export class AddContactComponent implements OnInit {
       gender: ['', Validators.required]
     });
   }
-  initform2(){
-    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+  initform2() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.secondFormGroup = this.formBuilder.group({
-      email: ['', [Validators.email]],
-      phone1:['', [Validators.pattern(phone_patern)]],
+      email: ['', [Validators.email,Validators.required]],
+      phone1: ['', [Validators.pattern(phone_patern)]],
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
       fax: '',
       bp: '',
     });
   }
-
-  initform3(){
-    let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+  initform3() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.thirdFormGroup = this.formBuilder.group({
       twitter: '',
       facebook: '',
-      whatsapp:'',
+      whatsapp: '',
       linkedin: '',
       website: '',
-      
     });
   }
-
   //submit the form
   onSubmit() {
     this.isSubmitted = true;
@@ -120,81 +116,78 @@ export class AddContactComponent implements OnInit {
     formData.append('website', '' + this.form2.website.value);
     formData.append('gender', '' + this.form.gender.value);
     //recuperation  de image
-    formData.append('picture',this.image);
+    formData.append('picture', this.image);
     this.contactservice.add(formData)
       .then(resp => {
         this.translate.get('Contact.SubmitSuccess')
-        .subscribe(val => this.notifService.success(val));
+          .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         //reinitialisation
         this.firstFormGroup.reset();
         this.secondFormGroup.reset();
         this.thirdFormGroup.reset();
-        this.stepIndexSelected=0;
-        
+        this.stepIndexSelected = 0;
+        this.router.navigate(['/contacts/all']);
       })
       .catch(err => {
         console.log(err)
         this.translate.get('Contact.ErrorSubmit')
-        .subscribe(val => this.notifService.danger(val));
+          .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
   }
 
   detectimage(event) {
-      this.image = event.target.files[0];
-      console.log(this.image)
+    this.image = event.target.files[0];
+    console.log(this.image)
   }
-//validation de chaque etape
+  //validation de chaque etape
   validStep1() {
-    if(this.firstFormGroup.invalid){
-        this.stepIndexSelected=0; 
-        this.isSubmitted=true;
-        this.translate.get('Contact.SubmitError')
+    if (this.firstFormGroup.invalid) {
+      this.stepIndexSelected = 0;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
     }
-    else{
-        this.isSubmitted=false;
-        this.stepIndexSelected=1;
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 1;
     }
-
   }
 
-  previous1(){
-      this.stepIndexSelected=0;
+  previous1() {
+    this.stepIndexSelected = 0;
   }
-  previous2(){
-      this.stepIndexSelected=1;
+  previous2() {
+    this.stepIndexSelected = 1;
   }
-  previous3(){
-      this.stepIndexSelected=2;
+  previous3() {
+    this.stepIndexSelected = 2;
   }
   //step 2
   validStep2() {
-    if(this.secondFormGroup.invalid){
-        this.stepIndexSelected=1; 
-        this.isSubmitted=true;
-        this.translate.get('Contact.SubmitError')
+    if (this.secondFormGroup.invalid) {
+      this.stepIndexSelected = 1;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
     }
-    else{
-        this.isSubmitted=false;
-        this.stepIndexSelected=2;
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 2;
     }
   }
   //valid step 3
   validStep3() {
-    
-    if(this.secondFormGroup.invalid){
-        this.stepIndexSelected=2; 
-        this.isSubmitted=true;
-        this.translate.get('Contact.SubmitError')
+    if (this.secondFormGroup.invalid) {
+      this.stepIndexSelected = 2;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
         .subscribe(val => this.notifService.danger(val));
     }
-    else{
-        this.isSubmitted=false;
-        this.stepIndexSelected=3;
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 3;
     }
-}
-
+  }
 }

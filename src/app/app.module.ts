@@ -55,6 +55,8 @@ import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.co
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AllContactComponent } from './contacts/all-contact/all-contact.component';
+import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -99,6 +101,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsProSituationComponent,
     AllBlogPostComponent,
     DetailBlogPostComponent,
+    AllContactComponent,
+    DetailContactComponent,
   ],
   imports: [
     MatTabsModule,
