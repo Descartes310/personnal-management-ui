@@ -547,7 +547,7 @@ export class AddUserComponent implements OnInit {
     ).catch(
       error => {
         if(error.error) {
-          if(error.error.status == 400 && error.error.code == 'VALIDATION_ERROR') {
+          if(error.error.status === '400' && error.error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
               if(error.error.errors[input.slug]) {
                 error.error.errors[input.slug].map(errorMessage => {
@@ -562,6 +562,16 @@ export class AddUserComponent implements OnInit {
                 })   
               }
             });
+            if(error.error.errors.login) {
+              error.error.errors.login.map(errorMessage => {
+                this.notifService.danger(errorMessage);
+              })   
+            }
+            if(error.error.errors.password) {
+              error.error.errors.password.map(errorMessage => {
+                this.notifService.danger(errorMessage);
+              })   
+            }
           }
         }
         console.log(error);
@@ -589,10 +599,16 @@ export class AddUserComponent implements OnInit {
 
   selectAllRole(event: any){
     this.selected_roles = [];
+    this.selected_permissions = [];
     if(event.target.checked) {
       this.roles_tmp.map(
         role => {
           this.selected_roles.push(role.id)
+        }
+      )
+      this.permissions_tmp.map(
+        permission => {
+          this.selected_permissions.push(permission.id)
         }
       )
     }

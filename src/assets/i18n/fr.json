@@ -309,7 +309,7 @@
         "FinishTitle": "Dernière étape",
         "FinishSubtitle": "cliquer sur le button pour terminer la création",
         "CreateUser": "Créer l'utilisateur",
-        "CreateUserError": "Echec de lacréation de l'utilisateur veuillez bien remplir le formulaire puis réessayer",
+        "CreateUserError": "Echec de la création de l'utilisateur veuillez bien remplir le formulaire puis réessayer",
         "UserLogin": "login",
         "UserPassword": "mot de passe",
         "UserLoginPlaceHolder": "veuillez entrer un login",
