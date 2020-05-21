@@ -15,3 +15,4 @@ export const LICENSE = SERVER + 'licenses';
 export const LICENSE_TYPE = SERVER + 'license_types';
 export const LICENSETYPE = SERVER +'license_types';
 export const DIVISION = SERVER + 'divisions';
+export const dISCIPLINARYBOARD = SERVER + 'disciplinary_boards';

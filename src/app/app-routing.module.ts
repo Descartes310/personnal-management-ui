@@ -33,6 +33,8 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 
 
 //const routes: Routes = [];
@@ -48,6 +50,8 @@ const routes: Routes = [
   { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
+  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
+  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },

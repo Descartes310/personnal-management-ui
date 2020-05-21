@@ -49,6 +49,7 @@
         "NoteCriteria": "Critère de notation",
         "Config": "Configurations",
         "RoleAndPer": "Rôles et permissions",
+        "DisciplinaryBoard": "Conseils de discipline",
         "Personnel": "Personnels",
         "Submission": "Demandes écrites",
         "ProfileUpdate": "Mise à jour du profile"
@@ -71,6 +72,15 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Conseils de discipline",
+      "DisciplinaryBoardTitle": "Status disciplinaire",
+      "AddDisciplinaryBoard": "Ajouter un nouveau status disciplinaire",
+      "CreateDisciplinaryBoard": "Créer le status disciplinaire",
+      "UpdateDisciplinaryBoard": "Mettre à jour",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "le status disciplinaire n'a pas ete retrouvé"
+    },
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -81,8 +91,13 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },        
+    },
     "Form": {
+        "Reason": "Motif",
+        "Team": "Equipe disciplinaire",
+        "Date": "Effectif le",
+        "Location": "Localisation",
+        "Decision": "Decision",
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "TypeLabel": "Type",
@@ -109,12 +124,12 @@
         "Phone3Label": "Telephone 3",
         "Phone3Field": "troisieme numero...",
         "DescriptionField": "Veuillez entrer une description",
-        
+
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
         "WhatsappField": "Compte whatsapp...",
         "LinkedinField": "Compte linkedin...",
-        
+
         "NextLabel":"Suivant",
         "PreviousLabel":"Precedent",
         "WeightLabel": "Indice",
@@ -151,7 +166,7 @@
         "StartDateError":"veuillez entrez une date valide"
 
     },
-       
+
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",

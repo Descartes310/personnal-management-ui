@@ -12,6 +12,18 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+    "SideBar": {
+      "DisciplinaryBoard": "Disciplinary Board"
+    },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Disciplinary Board",
+      "DisciplinaryBoardTitle": "Disciplinary Statuts",
+      "AddDisciplinaryBoard": "Add a new disciplinary status",
+      "CreateDisciplinaryBoard": "Create the disciplinary status",
+      "UpdateDisciplinaryBoard": "Update",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "the disciplinary status not found"
+    },
     "NavBar": {
         "Language": "Choose Language",
         "Profile": "Mon compte",
@@ -21,6 +33,11 @@
         "Title": "Home page"
     },
     "Form": {
+        "Reason": "Reason",
+        "Team": "disciplinary team",
+        "Date": "Effective date",
+        "Location": "Location",
+        "Decision": "Decision",
         "NameLabel": "Name",
         "NameField": "Please type a name...",
         "DescriptionLabel": "Description",
