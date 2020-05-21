@@ -26,12 +26,16 @@
         "Title": "Page d'accueil"
     },
     "Form": {
-        "NameLabel": "Nom",
-        "NameField": "Veuillez entrer le nom...",
+        "NameLabel": "effective_date",
+        "NameField": "Veuillez entrer la date effective...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
-        "DescriptionLabel": "Description",
-        "DescriptionField": "Veuillez entrer une description",
+        "RaisonLabel": " raison",
+        "RaisonField": "Veuillez entrer la raison",
+        "LocationLabel": "location",
+        "LocationField": "Veuillez entrer la location",
+        "DecisionLabel": " decision",
+        "DecisionField": "Veuillez entrer la decision",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
         "WeightLabel": "Indice",
@@ -84,6 +88,22 @@
         "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
+    },
+    "DisciplinaryBoards": {
+        "Disciplinary_boards": "Conseils de Discipine",
+        "DisciplinaryBoardsTitle": "Gestion des Conseils de Discipines de l'application",
+        "AddRole": "Ajouter un nouveau Conseil",
+        "CreateDisciplinaryBoards": "Créer le Conseil de Discipine",
+        "UpdateDisciplinaryBoards": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du conseil a réussie...",
+        "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
+        "Disciplinary_Boards_NOT_FOUND": "Le conseil n'a pas été retrouvé",
+        "Disciplinary_Boards_ALREADY_EXISTS": "Le conseil existe déjà",
+        "Select_Team": "Choix de l'équipe",
+        "Name": "Nom de l'employe",
+        "SelectMember": "Veuillez selectionner un membre",
+        "Created_Error": "Echec de cretion dy conseil"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",

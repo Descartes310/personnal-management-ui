@@ -29,6 +29,9 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
+import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,6 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddDisciplinaryBoardsComponent,
+    UpdateDisciplinaryBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastrModule.forRoot(),
     BlockUIModule.forRoot(),
     BrowserAnimationsModule
-  ],
+  ], 
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
