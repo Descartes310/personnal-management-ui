@@ -42,6 +42,8 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
 
 
 //const routes: Routes = [];
@@ -67,8 +69,13 @@ const routes: Routes = [
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'licenses/all', component: AllLicensesComponent },
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+
+
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },

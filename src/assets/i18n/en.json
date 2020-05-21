@@ -36,7 +36,15 @@
         "start_date": "Start date",
         "location": "Location",
         "templateType":"Type",
-        "templateContent":"Content"
+        "templateContent":"Content",
+
+        "UserName": "User's name",
+        "LicenseType": "License's type",
+        "Raison": "Reason",
+        "File": "File",
+        "Requested_start_date": "Requested start date",
+        "Requested_days": "Requested_days",
+        "Status": "Status"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
@@ -101,5 +109,42 @@
         "SubmitSuccess": "The template has been created successfully",
         "NOT_FOUND_ASSIGNMENT_ID": "Template not found",
         "TEMPLATE_ALREADY_EXIST": "Template already existing !!!"
+    },
+
+    "SideBar": {
+        "SystemConfig": "System's Setting",
+        "Users": "Employees",
+        "Contracts": "Contrats de travail",
+        "PermissionEtConges": "Licenses and Vacations",
+        "NotesPros": "Notes proféssionnelles",
+        "Career": "Promotions et parcours",
+        "Assignment": "Affectations",
+        "Training": "Formations",
+        "Sanction": "Sanctions",
+        "Blog": "Actualités",
+        "Contact": "Contacts",
+        "ProSituation": "Situation proféssionnelle",
+        "Division": "Divisions",
+        "AssignmentType": "Type d'affectations",
+        "ProfileElement": "Element du profile",
+        "TypeConges": "Type de congés",
+        "PermissionType": "Type de permission",
+        "Template": "Modèle de document",
+        "BlogCat": "Blog Category",
+        "DiscCouncil": "Conseil de discipline",
+        "NoteCriteria": "Critère de notation",
+        "Config": "Configurations",
+        "RoleAndPer": "Rôles et permissions",
+        "Personnel": "Personnels",
+        "Submission": "Demandes écrites",
+        "ProfileUpdate": "Update profile",
+        "Permissions":"Licenses",
+        "Conges":"Vacations"
+    },
+
+    "Licenses":{
+        "Licenses_Title": "Licenses",
+        "Licenses_Name": "Licenses's management",
+        "Add_Licenses": "Add a new license"
     }
 }

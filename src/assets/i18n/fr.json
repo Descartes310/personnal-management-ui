@@ -25,6 +25,7 @@
     "Home": {
         "Title": "Page d'accueil"
     },
+
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -51,7 +52,9 @@
         "RoleAndPer": "Rôles et permissions",
         "Personnel": "Personnels",
         "Submission": "Demandes écrites",
-        "ProfileUpdate": "Mise à jour du profile"
+        "ProfileUpdate": "Mise à jour du profile",
+        "Permissions":"Permissions",
+        "Conges":"Congés"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
@@ -155,7 +158,15 @@
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
         "start_date": "Date de début",
-        "location": "Localisation"
+        "location": "Localisation",
+
+        "UserName": "Utilisateur",
+        "LicenseType": "Type de Permission",
+        "Raison": "Raison",
+        "File": "Fichier associé",
+        "Requested_start_date": "Date de début requis",
+        "Requested_days": "Nombre de jours requis",
+        "Status": "Status"
     },
        
     "AssignmentType": {
@@ -269,5 +280,14 @@
         "UpdateSuccess": "La mise à jour de la formation a été un succès",
         "SubmitSuccess": "La création de la formation a réussie...",
         "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
+    },
+
+    "Licenses":{
+        "Licenses_Title": "Permissions",
+        "Licenses_Name": "Gestion des permissions de l'application",
+        "Add_Licenses": "Ajouter une nouvelle permission"
+       
     }
+
+
 }
