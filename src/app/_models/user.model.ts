@@ -6,5 +6,7 @@ export class User extends Super<User> {
     public last_login: string;
     public created_at: Date;
     public updated_at: Date;
+    public password:String;
+
     
 }
