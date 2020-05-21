@@ -42,14 +42,11 @@ export class AddCareerComponent implements OnInit {
   ngOnInit() {
     this.getUsers();
     this.getPro_situations();
-    this.user = this.authService.getUser();
-
+  
     this.careersForm = this.formBuilder.group({
       user_id:['',[Validators.required]],
       pro_situation_id:['',[Validators.required]],
-      effective_date:[''],
-      
-      
+      effective_date:[''],      
     });
 
   }
@@ -113,7 +110,7 @@ export class AddCareerComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Career.SubmitErrorVacation')
+        this.translate.get('Career.SubmitErrorCareer')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
