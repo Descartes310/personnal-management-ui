@@ -13,6 +13,8 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
+import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
@@ -52,6 +54,12 @@ import { DetailVacationComponent } from './vacations/detail-vacation/detail-vaca
 
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
+import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
+import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+
+import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
+import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -77,6 +85,8 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
+  { path: 'templates/all', component: AllTemplatesComponent },
+  { path: 'templates/details/:id', component: DetailsTemplatesComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacations/all', component: AllVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
@@ -95,6 +105,11 @@ const routes: Routes = [
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
+  { path: 'blog-category/add', component: AddBlogCategoryComponent },
+  { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
+  //routes pour l'affichage des formations
+  { path: 'trainings/all',  component: AllTrainingsComponent},
+  { path: 'trainings/details/:id', component: DetailsTrainingsComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

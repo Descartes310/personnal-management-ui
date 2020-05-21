@@ -32,6 +32,8 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
+import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -50,6 +52,7 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
@@ -72,6 +75,12 @@ import { AllSubmissionComponent } from './submissions/all-submission/all-submiss
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
+import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
+import { FindTrainingsComponent } from './trainings/find-trainings/find-trainings.component';
+import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
+import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -98,6 +107,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddTrainingComponent,
     UpdateTrainingComponent,
+    AddBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
+    AllTrainingsComponent,
+    FindTrainingsComponent,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -135,6 +148,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsSubmissionComponent,
     AllProfileComponent,
     DetailsProfileComponent,
+    DetailsTrainingsComponent,
+    AllTemplatesComponent,
+    DetailsTemplatesComponent,
+    FindTemplatesComponent,
   ],
   imports: [
     MatTabsModule,
