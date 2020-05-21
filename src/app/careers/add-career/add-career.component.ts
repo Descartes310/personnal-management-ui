@@ -46,7 +46,7 @@ export class AddCareerComponent implements OnInit {
     this.careersForm = this.formBuilder.group({
       user_id:['',[Validators.required]],
       pro_situation_id:['',[Validators.required]],
-      effective_date:[''],      
+      effective_date:['']      
     });
 
   }
@@ -97,9 +97,9 @@ export class AddCareerComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('user_id', ''+this.form.user_id.value);
+    formData.append('user_id', '' +this.form.user_id.value);
     formData.append('pro_situation_id', '' + this.form.pro_situation_id.value);
-    formData.append('effective_date', ''+this.form.effective_date.value);
+    formData.append('effective_date', '' +this.form.effective_date.value);
 
       this.careersService.add(formData)
       .then(resp => {

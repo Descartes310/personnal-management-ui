@@ -23,20 +23,12 @@ export class CareersService {
     find(id: number): Promise<Careers> {
         return this.http.get<Careers>(`${Routes.CAREER}/${id}`).toPromise();
     }
-    
     users():  Promise<any> {
         return this.http.get<any>(Routes.USERS).toPromise();
     }
 
     pro_situations():  Promise<any> {
         return this.http.get<any>(Routes.PRO_SITUATION).toPromise();
-    }
-    all(): Promise<any> {
-        return this.http.get<any>(Routes.CAREER).toPromise();
-    }
-
-    delete(id: number): Promise<Careers[]> {
-        return this.http.delete<Careers[]>(`${Routes.CAREER}/${id}`).toPromise();
     }
 
 }
