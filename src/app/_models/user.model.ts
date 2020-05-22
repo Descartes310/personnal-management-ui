@@ -4,5 +4,6 @@ export class User extends Super<User> {
 
     public login: string;
     public password: string;
+    public city: string;
     
 }

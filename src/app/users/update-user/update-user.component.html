@@ -73,7 +73,7 @@
 
                                                     <label>{{ 'User.UserCities' | translate }} <span style="color: red;"> *</span></label>
                                                     
-                                                    <select matInput formControlName="cities" class="form-control {{ isSubmitted && personnalInfo.cities.errors ? 'is-invalid' : '' }}">
+                                                    <select matInput formControlName="city" class="form-control {{ isSubmitted && personnalInfo.city.errors ? 'is-invalid' : '' }}">
                                                         <option *ngFor='let option of cities' value="{{ option.name }}"> {{ option.name }}</option>
                                                     </select>
 
@@ -131,7 +131,7 @@
 
                                                     <label>{{ 'User.UserProsituations' | translate }} <span style="color: red;"> *</span></label>
                                                     
-                                                    <select matInput formControlName="cities" class="form-control {{ isSubmitted && personnalInfo.proSituations.errors ? 'is-invalid' : '' }}">
+                                                    <select matInput formControlName="pro_situation" class="form-control {{ isSubmitted && publicInfo.pro_situation.errors ? 'is-invalid' : '' }}">
                                                         <option *ngFor='let option of proSituations' value="{{ option.name }}"> {{ option.name }}</option>
                                                     </select>
 
@@ -312,7 +312,7 @@
                                                 <div class="mt-3 mb-3"></div>
                                                 <div class="text-center">
                                                     <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary btn-md" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                            <p *ngIf="!loading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'User.CreateUser' | translate }}</p>
+                                                            <p *ngIf="!loading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'User.UpdateUsers' | translate }}</p>
                                                             <div *ngIf="loading" style="padding: 15px; margin-left: 50%;">
                                                                 <div class="ball-scale-multiple">
                                                                     <div style="background-color: white;"></div>

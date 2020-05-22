@@ -98,12 +98,10 @@ export class AddUserComponent implements OnInit {
           this.formInputList.push(new Profile(input));
         });
         this.getInputListPerStep();
-        this.initCities();
-        this.initProSituations();
         this.initPersonnalInfoForm(true);
         this.initPubicInfoForm(true);
         this.initRoleAndPermissionsForm();
-        this.getRoles();
+        this.initCities();
         this.isBuild = true;
       }
     ).catch(
@@ -111,12 +109,9 @@ export class AddUserComponent implements OnInit {
         this.translate.get('User.LoadingError')
           .subscribe(val => this.notifService.danger(val));
       }
-    ).finally(
-      () => {
-        this.loading = false;
-      }
-    )
-
+    ).finally(() => {
+      this.getRoles();
+    })
   }
 
   getPermissions() {
@@ -128,7 +123,8 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
       }
     ).finally(() => {
       this.loadingPermissions = false;
@@ -141,14 +137,15 @@ export class AddUserComponent implements OnInit {
       response => {
         this.roles = response;
         this.roles_tmp = response;
-        this.getPermissions();
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
       }
     ).finally(() => {
       this.loadingRoles = false;
+      this.getPermissions();
     })
   }
 
@@ -179,7 +176,7 @@ export class AddUserComponent implements OnInit {
         ]
       ];
 
-      parametter['cities'] = [
+      parametter['city'] = [
         '',
         [
           Validators.required,
@@ -232,6 +229,10 @@ export class AddUserComponent implements OnInit {
         this.translate.get('User.LoadingError')
           .subscribe(val => this.notifService.danger(val));
       }
+    ).finally(
+      () => {
+        this.initProSituations();
+      }
     )
 
   }
@@ -246,6 +247,10 @@ export class AddUserComponent implements OnInit {
       error => {
         this.translate.get('User.LoadingError')
           .subscribe(val => this.notifService.danger(val));
+      }
+    ).finally(
+      () => {
+        this.loading = false;
       }
     )
 
@@ -285,7 +290,7 @@ export class AddUserComponent implements OnInit {
     if(withProfile) {
       let parametter: any = {}; 
 
-      parametter['proSituations'] = [
+      parametter['pro_situation'] = [
         '',
         [
           Validators.required,
@@ -366,6 +371,7 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.personnalInfo[input.slug].setValue(input.min);
+        return;
       }
 
     } 
@@ -374,6 +380,7 @@ export class AddUserComponent implements OnInit {
 
       if(value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
+        return;
       }
 
     }
@@ -385,6 +392,7 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.publicInfo[input.slug].setValue(input.min);
+        return;
       }
 
     }
@@ -393,6 +401,7 @@ export class AddUserComponent implements OnInit {
 
       if(value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
+        return;
       }
 
     }
@@ -416,6 +425,7 @@ export class AddUserComponent implements OnInit {
 
     let login: string = this.personnalInfo.login.value;
     let password: string = this.personnalInfo.password.value;
+    let ville: string = this.personnalInfo.city.value;
 
     this.firstStepInputList.map(input => {
 
@@ -451,23 +461,27 @@ export class AddUserComponent implements OnInit {
         }
       }
 
-      if(input.max) {
+      if(input.max || input.min) {
         value = parseInt(value);
-        if(value > input.max) {
-          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+
+        if(value !== NaN) {
+
+          if(value > input.max) {
+            this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+          if(value < input.min) {
+            this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+        } else {
+          this.translate.get('User.InputNaNError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
-          return;
         }
       }
 
-      if(input.min) {
-        value = parseInt(value);
-        if(value < input.min) {
-          this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
-            .subscribe(val => this.notifService.danger(val));
-          return;
-        }
-      }
 
     })
 
@@ -493,6 +507,11 @@ export class AddUserComponent implements OnInit {
       return;
     }
 
+    if(!ville) {
+      this.translate.get('User.InputRequiredError', { data: 'ville' })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
 
     if(this.personnalInfoForm.valid) {
       this.isSubmitted = false;
@@ -503,6 +522,8 @@ export class AddUserComponent implements OnInit {
   public validatePublicInfoForm() {
 
     this.isSubmitted = true;
+
+    let proSituation: string = this.publicInfo.pro_situation.value;
 
     this.secondStepInputList.map(input => {
       
@@ -538,25 +559,36 @@ export class AddUserComponent implements OnInit {
         }
       }
 
-      if(input.max) {
+
+      if(input.max || input.min) {
         value = parseInt(value);
-        if(value > input.max) {
-          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+
+        if(value !== NaN) {
+
+          if(value > input.max) {
+            this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+          if(value < input.min) {
+            this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+        } else {
+          this.translate.get('User.InputNaNError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
-          return;
         }
       }
 
-      if(input.min) {
-        value = parseInt(value);
-        if(value > input.min) {
-          this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
-            .subscribe(val => this.notifService.danger(val));
-          return;
-        }
-      }
 
     })
+
+    if(!proSituation) {
+      this.translate.get('User.InputRequiredError', { data: 'situation professionnelle' })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
 
     if(this.publicInfoForm.valid) {
       this.isSubmitted = false;
@@ -597,6 +629,7 @@ export class AddUserComponent implements OnInit {
     let result: any = {};
     result.personnalInfo = this.data_tmp1;
     result.publicInfo = this.data_tmp2;
+    console.log(result);
 
   }
 
@@ -617,29 +650,29 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        if(error.error) {
-          if(error.error.status === '400' && error.error.code === 'VALIDATION_ERROR') {
+        if(error.status && error.code) {
+          if(error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
-              if(error.error.errors[input.slug]) {
-                error.error.errors[input.slug].map(errorMessage => {
+              if(error.errors[input.slug]) {
+                error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
                 })   
               }
             });
             this.secondStepInputList.map(input => {
-              if(error.error.errors[input.slug]) {
-                error.error.errors[input.slug].map(errorMessage => {
+              if(error.errors[input.slug]) {
+                error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
                 })   
               }
             });
-            if(error.error.errors.login) {
-              error.error.errors.login.map(errorMessage => {
+            if(error.errors.login) {
+              error.errors.login.map(errorMessage => {
                 this.notifService.danger(errorMessage);
               })   
             }
-            if(error.error.errors.password) {
-              error.error.errors.password.map(errorMessage => {
+            if(error.errors.password) {
+              error.errors.password.map(errorMessage => {
                 this.notifService.danger(errorMessage);
               })   
             }
