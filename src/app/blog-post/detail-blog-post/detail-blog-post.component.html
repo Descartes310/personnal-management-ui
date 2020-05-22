@@ -1,0 +1,81 @@
+
+                    <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="media flex-wrap w-100 align-items-center">
+                                    <img style="width: 40px; height: auto;" src="assets/images/avatars/3.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+                                    <div class="media-body ml-3">
+                                        <a href="javascript:void(0)">{{userPost.login}}</a>
+                                        <div class="text-muted small">publié le :{{BlogPost.updated_at|date:'dd/MMM/yyy'}}</div>
+                                    </div>
+                                    <div class="text-muted small ml-3">
+                                        <div>Membre depuis le  <strong>{{this.userPost.updated_at|date:'dd/MMM/yyy'}}</strong></div>
+                                        <div><strong>1,234</strong> posts</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                        <img *ngIf="BlogPost.image==null"style="width: 400px; height: auto;" style="float: left;" src="assets/images/avatars/7.jpg" alt="" class="d-block ui-w-40 rounded-circle">
+                                        <p [innerHTML]="BlogPost.content">le
+                                            
+                                         </p>
+                                </div>
+                                    
+                            </div>
+                            <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                <div class="px-4 pt-3">
+                                    
+                                    <span class="text-muted d-inline-flex align-items-center align-middle ml-4">
+                                            <i class="ion ion-ios-eye text-muted fsize-3"></i>&nbsp;
+                                            <span class="align-middle">{{BlogPost.views}} </span>
+                                        </span>
+                                    <span class="text-muted d-inline-flex align-items-center align-middle ml-4">
+                                            <i class="pe-7s-comment fsize-3"></i>&nbsp;
+                                            <span class="align-middle">{{BlogPost.bog_comments.length}} </span>
+                                        </span>
+    
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>
+                      
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                                <h5 class="card-title">Nouveau Commentaire</h5>
+                                <textarea rows="1" class="form-control" style="max-height: 200px; height: 60px;" [(ngModel)]="newCommentValue"></textarea>
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" (click)="addNewComment(BlogPost.id)"  class=" btn btn-sm btn-primary " style="float: right;">
+                                    Nouveau Commentaire  
+                                </button>
+                            </div>
+                        </div>
+            
+                        <div class="card mb-3" *ngFor="let blogComment of listBlogComment">
+                            <div class="card-body">
+                                <div class="media">
+                                    <img style="width: 40px; height: auto;" src="assets/images/avatars/7.jpg" alt="" class="d-block ui-w-40 rounded-circle">
+                                    <div class="media-body ml-4">
+                                        <div class="float-right text-muted small"><em *ngIf="blogComment.updated_at"style="color: blue;">Publié le: </em>{{blogComment.updated_at|date:'dd/MMM/yyy'}}</div>
+                                        <a href="javascript:void(0)">{{getOneUserComment(blogComment.user_id).login}}</a>
+                                        <div class="text-muted small">Membre depuis le {{getOneUserComment(blogComment.user_id).created_at|date:'dd/MMM/yyy'}} &nbsp;·&nbsp; 345 posts</div>
+                                        <div class="mt-2">
+                                            
+                                            <p>
+                                                {{blogComment.comment}}
+                                            </p>
+                                        </div>
+                                        <div class="small mt-2">
+                                            <a *ngIf="this.UserAuth.id==blogComment.user_id" href="javascript:void(0)" (click)="deleteBlogComment(blogComment)" class="text-muted" style="font-size:small;">Supprimer</a>
+                                            <a href="javascript:void(0)" class="text-muted ml-3">
+                                                <i class="lnr-thumbs-up"></i> 15</a>
+                                            <a href="javascript:void(0)" class="text-muted ml-3">
+                                                <i class="lnr-thumbs-down"></i> 3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+            
