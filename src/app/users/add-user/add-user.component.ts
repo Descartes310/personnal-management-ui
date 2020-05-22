@@ -683,9 +683,6 @@ export class AddUserComponent implements OnInit {
         this.publicInfoForm.reset();
         this.selected_permissions = [];
         this.selected_roles = [];
-        this.data = new FormData();
-        this.data_tmp1 = {};
-         this.data_tmp2 = {};
       }
     ).catch(
       error => {
@@ -724,6 +721,9 @@ export class AddUserComponent implements OnInit {
     ).finally(
       () => {
         this.loading = false;
+        this.data = new FormData();
+        this.data_tmp1 = {};
+        this.data_tmp2 = {};
       }
     )
 

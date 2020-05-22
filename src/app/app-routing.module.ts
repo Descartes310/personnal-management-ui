@@ -82,7 +82,7 @@ const routes: Routes = [
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
-  { path: 'users/add', component: AddUserComponent },
+  { path: 'users/update/:id', component: UpdateUserComponent },
   { path: 'users/all', component: AllUsersComponent }, 
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },

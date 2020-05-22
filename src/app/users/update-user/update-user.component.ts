@@ -388,8 +388,8 @@ export class UpdateUserComponent implements OnInit {
   }
 
   public getInputListPerStep() {
-    this.firstStepInputList = this.formInputList.filter(input => input.is_private && input.is_updatable);
-    this.secondStepInputList = this.formInputList.filter(input => !input.is_private && input.is_updatable);
+    this.firstStepInputList = this.formInputList.filter(input => input.is_private);
+    this.secondStepInputList = this.formInputList.filter(input => !input.is_private);
   }
 
   public checkIfIsAnCurrentUserInfo(slug: string) {
