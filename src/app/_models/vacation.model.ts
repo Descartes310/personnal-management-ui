@@ -11,4 +11,8 @@ export class Vacation extends Super<Vacation> {
     public is_active: boolean;
     public status:string;
     public file: File;
+    public accorded_start_date: number;
+    public accorded_days: Date ;
+    public vacations: any[];
+    
 }

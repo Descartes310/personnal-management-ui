@@ -19,6 +19,7 @@ export class VacationService {
     update(formData: FormData, id: number): Promise<Vacation> {
         return this.http.post<Vacation>(`${Routes.VACATION}/${id}`, formData).toPromise();
     }
+
     find(id: number): Promise<Vacation> {
         return this.http.get<Vacation>(`${Routes.VACATION}/${id}`).toPromise();
     }
@@ -26,4 +27,17 @@ export class VacationService {
     vacation_type():  Promise<any> {
         return this.http.get<any>(Routes.VACATION_TYPE).toPromise();
     }
+
+    all(): Promise<any> {
+        return this.http.get<any>(Routes.VACATION).toPromise();
+    }
+
+    permissions(): Promise<any> {
+        return this.http.get<any>(Routes.PERMISSION).toPromise();
+    }
+
+    delete(id: number): Promise<Vacation[]> {
+        return this.http.delete<Vacation[]>(`${Routes.VACATION}/${id}`).toPromise();
+    }
+
 }
