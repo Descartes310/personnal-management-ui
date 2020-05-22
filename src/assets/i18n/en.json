@@ -21,6 +21,7 @@
         "Title": "Home page"
     },
     "Form": {
+        "NameSelect": "Choisir votre structure parent ",
         "NameLabel": "Name",
         "NameField": "Please type a name...",
         "DescriptionLabel": "Description",

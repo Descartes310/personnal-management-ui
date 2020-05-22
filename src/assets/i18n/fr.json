@@ -63,6 +63,8 @@
         "DOCUMENT_LOADING_MSG": "Chargement du document ..."
     },
     "Role": {
+        "RoleName": "Rôles",
+        "PermissionName": "Permissions",
         "Roles": "Rôles et permissions",
         "RoleTitle": "Gestion des roles et des permissions de l'application",
         "AddRole": "Ajouter un nouveau rôle",
@@ -74,6 +76,30 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "BlogPost": {
+        "BlogPosts": "blogs Articles",
+        "BlogPostTitle": "Gestion des articles de l'application",
+        "SubmitSuccess": "La création du role a réussie...",
+        "AddBlogPost": "Ajouter un article"
+     
+    },
+    "BlogComment": {
+        "BlogPosts": "blogs Articles",
+        "blogPostTitle": "Gestion des articles de l'application",
+        "AddBlogComment": "Ajouter un nouveau rôle",       
+        "SubmitSuccess": "La création du commentaire a réussie..."
+     
+    },
+
+    "Submission": {
+        "Submissions": "Les demandes",
+        "SubmissionTitle": "Gestion des demandes de l'application",
+        "AddSubmission": "Ajouter une nouvelle Demande",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la demande a réussie",
+        "DetailsSubmission": "Détails de la Demande"
+    },
+
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -84,10 +110,15 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },        
+    },  
     "Form": {
         "NameLabel": "Nom",
+        "NameSelect":"Choisir votre structure",
         "NameField": "Veuillez entrer le nom...",
+        "UserLabel": "Utilisateur",
+        "Dest_userLabel": "Destinataire",
+        "SubjectLabel": "Objet",
+        "MessageLabel": "Objet",
         "TypeLabel": "Type",
         "TypeField": "Veuillez entrer le type...",
         "NatureLabel": "Nature",
@@ -95,6 +126,7 @@
         "GenderLabel": "Sexe",
         "GenderField": "selectionner votre sexe...",
         "DescriptionLabel": "Description",
+        "Parent_idLabel":"Hiérarchie supérieure",
         "DaysLabel": "Nombre de jours",
         "DaysField": "Veuillez entrer le nombre de jours...",
         "ImageLabel": "Image",
@@ -112,12 +144,12 @@
         "Phone3Label": "Telephone 3",
         "Phone3Field": "troisieme numero...",
         "DescriptionField": "Veuillez entrer une description",
-        
+
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
         "WhatsappField": "Compte whatsapp...",
         "LinkedinField": "Compte linkedin...",
-        
+
         "NextLabel":"Suivant",
         "PreviousLabel":"Precedent",
         "WeightLabel": "Indice",
@@ -130,12 +162,18 @@
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
         "CreatedAtLabel": "Date de création",
+        "UpdatedAtLabel": "Date de mise à jour",
         "CreatedAtField": "Date de création",
         "WeightField": "Selectionnez un indice",
         "WeightLabelProSituation": "Indice (veuillez saisir un nombre entre 1 et 100)",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
         "AssignmentAddDescription":"veuillez faire une description",
+        "StatusMention":" le status de la demande",
+        "StartDateProposal":" date de début souhaitée",
+        "StartDateAccord":" date de début accordée",
+        "RequireDays":" nombre de jours de congés souhaités",
+        "AccordDays": " nombre de jours accordés",
 
         "ReasonLabel": "Raison",
         "ReasonField":"Veuillez entre la raison de votre demande",
@@ -143,8 +181,34 @@
         "StartDateField":"Debut de la permission",
         "LicenseTypeLabel":"Type de Permission",
         "LicenseTypeField":"Choisir un type de permission",
-        "FileLabel":"Demande manuscrit",
-        "FileField":"Parcourir",
+        "StartDateError":"veuillez entrez une date valide",
+        "SlugLabel": "Slug",
+        "NameTrainer": "Nom du formateur",
+        "StartDate": "Date de bebut",
+        "LocationName": "Lieu",
+        "Duration": "Durée[1-100] heure(s)",
+        "DurationField": "Durée",
+        "RaisonLabel": "Raison",
+        "RaisonField": "Veuillez entre la raison de votre demande",
+        "RequestedStartDateLabel": "Date debut du congé",
+        "RequestedStartDateField": "Debut du congé",
+        "RequestedDaysLabel": "Nombre de jour du congé",
+        "RequestedDaysField": "Veuillez entrer le nombre de jour",
+        "VacationTypeLabel": "Type de congé",
+        "VacationTypeField": "Choisir un type de congé",
+        "FileLabel": "Piece jointe",
+        "FileField": "Parcourir",
+        "Yes":"Oui",
+        "No":"Non",
+        "PlaceholderLabel":"Placeholder",
+        "Is_requiredLabel":"Obligatoire",
+        "Is_updatableLabel":"Modifiable",
+        "Is_uniqueLabel":"Unique",
+        "MinLabel":"Min",
+        "MaxLabel":"Max",
+        "StepLabel":"Etapes",
+        "DefaultLabel":"Valeur par défaut",
+
         "templateTitle":"Titre",
         "templateTypeHolder":"Veuillez entrer le type de la maquette",
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
@@ -172,7 +236,7 @@
         "KeyField": "Entrer une clé",
         "ValueField": "Entrer une valeur"
     },
-       
+
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",
@@ -222,19 +286,32 @@
         "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
     },
     "Division": {
-        "Divisions": "Creation des divisions",
         "Divisions1": " Update des divisions",
-        "DivisionTitle": "Gestion de création et des mises jours des divisions de l'application",
         "AddDivision": "Ajouter une nouvelle division",
         "CreateDivision": "Créer la divsion",
         "UpdateDivision": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitError": "Les champs en rouges sont obligatoires ils faut remplir votre nom",
         "SubmitSuccess": "La création de la division a réussie...",
         "SubmitSuccess1": "La mise à jour de la division a réussie...",
-
+        "Divisions": "Divisions",
+        "DivisionTitle": "Gestion des divisions de l'application",
+        "DetailsDivision": "Détails de la Division",
         "SubmitErrorDivisions": "Veuillez selectionner au moins une division",
         "DIVISION_NOT_FOUND": "La division  n'a pas été retrouvé",
         "DIVISION_ALREADY_EXISTS": "La division  existe déjà"
+    },
+    "Conge":{
+        "Conges": "Creation des conges",
+        "CongeTitle": "Gestion des conges des employer",
+        "AddConge":"Ajouter un congé",
+        "CONGE_NOT_FOUND": "le demande n'existe pas "
+    },
+    "Profile": {
+        "AddProfile": "Ajouter un nouveau profil",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "Profiles": "Profils",
+        "ProfileTitle": "Gestion des profils de l'application",
+        "DetailsProfile": "Détails du profil"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
@@ -247,7 +324,26 @@
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
     },
-
+    "Training": {
+        "Trainings": "Formations",
+        "TrainingTitle": "Gestion des formations de l'application",
+        "AddTraining": "Ajouter une formation",
+        "CreateTraining": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
+        "Error": "donnees inalide",
+        "SubmitError": "Les champs en rouge sont obligatoire",
+        "SubmitSuccess":"Ajout de la formation effectuer avec succes",
+        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
+        "ErrorMessages": {
+            "Duration": [
+                "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
+                "la durée doit être strictement supérieur à 0",
+                "la durée doit être inférieur ou égal à 100"
+            ]
+        },
+        "IsOnline": "Cette formation est elle en ligne?"
+    },
     "BlogCat": {
         "BC_Title": "Catégories de blog",
         "BC_Name": "Gestion des catégories de blog de l'application",
@@ -281,8 +377,13 @@
         "CreateTraing": "Créer la formation",
         "UpdateTraining": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
         "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "SubmitSuccess": "La création de la formation a réussie...",
         "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
 
@@ -303,6 +404,58 @@
         "SubmitSuccess": "La création de la configuration a réussie...",
         "NotFound": "la configuration n'a pas été trouvée",
         "undefined": "Le champ clé existe déja; bien vouloir le changer"
+    },
+    "User": {
+        "Users": "Création des employés",
+        "UserTitle": "Créer un nouvel employé",
+        "UserFormFirstStepName": "Informations personnelles",
+        "UserFormSecondStepName": "Informations professionnelles",
+        "SubmitError": "Veuillez bien remplir les champs du formulaire (remplissez les champs obligatoires)",
+        "LoadingError": "Erreur veuillez vérifier votre connexion à internet",
+        "FinishTitle": "Dernière étape",
+        "FinishSubtitle": "cliquer sur le button pour terminer la création",
+        "CreateUser": "Créer l'utilisateur",
+        "CreateUserError": "Echec de la création de l'utilisateur veuillez bien remplir le formulaire puis réessayer",
+        "UserLogin": "login",
+        "UserPassword": "mot de passe",
+        "UserLoginPlaceHolder": "veuillez entrer un login",
+        "UserPasswordPlaceHolder": "****************",
+        "ErrorMessages": {
+            "Login": [
+                "le login est obligatoire",
+                "le login ne doit pas être inférieur à 6 caractères"
+            ],
+            "Password": [
+                "le mot de passe est obligatoire",
+                "le mot de passe ne doit pas être inférieur à 6 caractères"
+            ]
+        },
+        "UserFormThirdStepName": "Roles et permissions",
+        "InputRequiredError": "Le champ {{ data }} est obligatoire",
+        "InputMaxError": "La valeur du champ {{ data1 }} doit être inférieure à {{ data2 }}",
+        "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure à {{ data2 }}",
+        "InputMinLengthError": "La valeur du champ {{ data1 }} ne doit pas être inférieure à {{ data2 }} caractères",
+        "InputMaxLengthError": "La valeur du champ {{ data1 }} ne doit pas être supérieur à {{ data2 }} caractères",
+        "CreateUserSuccess": "L'utilisateur a été créé  avec succès"
+    },
+    "Vacation": {
+        "VACATION": "CONGE",
+        "Vacations": "congés",
+        "VacationTitle": "Gestion des Demandes des congés de l'application",
+        "AddVacation": "demande d'un congé",
+        "UpdateVacation": "Modifier",
+        "SubmitSuccess": "La création de demande de congé a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorVacation_type": "Veuillez selectionner un type de congé",
+        "SubmitErrorVacation":"erreur de la creation!! veuillez verifier vos donnees ",
+        "VACATION_NOT_FOUND": "ce congé n'a pas été retrouvé",
+        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà",
+        "VacationAdd": " Nouveau type de congés",
+        "VacationUpdate": "Mise à jour d'un type de congés",
+        "CreateVacation": "Enregistrer",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     }
 
 

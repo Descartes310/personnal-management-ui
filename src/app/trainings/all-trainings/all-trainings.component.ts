@@ -29,14 +29,14 @@ export class AllTrainingsComponent implements OnInit {
   cancelledMessage = '';
 
   constructor(
-    private training_service:TrainingService,
+    private trainingService:TrainingService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
   ) {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: 'role' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -56,7 +56,7 @@ export class AllTrainingsComponent implements OnInit {
 
   getTrainings() {
     this.loading = true;
-    this.training_service.all().then(
+    this.trainingService.all().then(
       response => {
         console.log(response)
         this.trainings = [];
@@ -93,7 +93,7 @@ export class AllTrainingsComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.training_service.delete(training.id).then(
+        this.trainingService.delete(training.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -111,7 +111,7 @@ export class AllTrainingsComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
