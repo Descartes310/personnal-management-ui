@@ -30,5 +30,11 @@ export class CareersService {
     pro_situations():  Promise<any> {
         return this.http.get<any>(Routes.PRO_SITUATION).toPromise();
     }
+    divisions():  Promise<any> {
+        return this.http.get<any>(Routes.DIVISION).toPromise();
+    }
+    careers():  Promise<any> {
+        return this.http.get<any>(Routes.CAREER).toPromise();
+    }
 
 }

@@ -226,7 +226,9 @@
         "UsersLabel": "Les utilisateurs",
         "UsersField": "Veuillez choisir un utilisateur",
         "Pro_situationsLabel": "Les situations professionnels",
-        "Pro_situationsField": "Veuillez choisir une situations"
+        "Pro_situationsField": "Veuillez choisir une situations",
+        "DivisionsLabel": "Les divisions",
+        "DivisionsField": "Veuillez choisir une division"
     },
 
     "AssignmentType": {
@@ -441,11 +443,9 @@
         "SubmitErrorUsers": "Veuillez selectionner un utilisateur",
         "SubmitErrorPro_situation": "Veuillez selectionner une situation professionelle",
         "SubmitErrorCareer":"erreur de la creation!! veuillez verifier vos donnees ",
-        "CAREER_NOT_FOUND": "cette promotion n'a pas été retrouvé",
-        "CAREER_ALREADY_EXISTS": "Cette promotion existe déjà",
         "CreateCareer": "Enregistrer",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "UpdateSuccess": "La mise à jour a réussie...",
-        "PRO_SITUATION_ALREADY_EXISTS": "Le type de congés existe déjà"
+        "USER_CONSUME_PROSITUATION": "cet utilisateur a déjà cette situation professionnel ou bien cet utilisateur appartient déjà à cette division"
     }
 }

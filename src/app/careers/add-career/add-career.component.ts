@@ -17,8 +17,13 @@ export class AddCareerComponent implements OnInit {
   users: any[] = [];
   users_tmp: any[] = [];
 
+  divisions: any[] = [];
+  divisions_tmp: any[] = [];
+
+
   pro_situations: any[] = [];
   pro_situations_tmp: any[] = [];
+
   
   user;  
   careersForm: FormGroup;
@@ -26,6 +31,7 @@ export class AddCareerComponent implements OnInit {
   isError = false;
   isSuccess = false;
   isSubmitted = false;
+  career : Careers = new Careers();
  
 
   constructor(
@@ -35,17 +41,17 @@ export class AddCareerComponent implements OnInit {
     private translate: TranslateService,
     private authService:AuthService,
     private router: Router,
-  ) {
-    
-   }
+  ) { }
 
   ngOnInit() {
     this.getUsers();
     this.getPro_situations();
-  
+    this.getDivisions();
+
     this.careersForm = this.formBuilder.group({
       user_id:['',[Validators.required]],
       pro_situation_id:['',[Validators.required]],
+      division_id:['',[Validators.required]],
       effective_date:['']      
     });
 
@@ -80,8 +86,18 @@ export class AddCareerComponent implements OnInit {
       }
     )
   }
-
-
+  getDivisions() {
+    this.careersService.divisions().then(
+      response => {
+        this.divisions = response;
+        this.divisions_tmp = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("Une erreur s'est produite");
+      }
+    )
+  }
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
@@ -96,10 +112,12 @@ export class AddCareerComponent implements OnInit {
     }
 
     this.isLoading = true;
-    const formData = new FormData();
-    formData.append('user_id', '' +this.form.user_id.value);
-    formData.append('pro_situation_id', '' + this.form.pro_situation_id.value);
-    formData.append('effective_date', '' +this.form.effective_date.value);
+    const formData = new FormData(); 
+      formData.append('user_id', '' +this.form.user_id.value);  
+      formData.append('pro_situation_id', '' +this.form.pro_situation_id.value);
+      formData.append('division_id', '' +this.form.division_id.value);
+      formData.append('effective_date', '' +this.form.effective_date.value);
+      
 
       this.careersService.add(formData)
       .then(resp => {
@@ -110,7 +128,7 @@ export class AddCareerComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Career.SubmitErrorCareer')
+        this.translate.get('Career.USER_CONSUME_PROSITUATION')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

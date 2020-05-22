@@ -81,6 +81,8 @@ import { DetailsTemplatesComponent } from './templates/details-templates/details
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
+//import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+//import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -152,6 +154,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FindTemplatesComponent,
     AddCareerComponent,
     UpdateCareerComponent,
+  //  AddProfileComponent,
+    //UpdateProfileComponent,
   ],
   imports: [
     MatTabsModule,

@@ -26,6 +26,7 @@
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
+                                    <!-- jiozangtheophane@gmail.com -->
                                     <form (submit)="onSubmit()" [formGroup]="careersForm">
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.UsersLabel" | translate }}</label>
@@ -34,12 +35,18 @@
                                                 <option *ngFor="let user of users"  value="{{user.id}}">{{user.login}} </option>
                                             </select>
                                         </div>
-                                        <!-- jiozangtheophane@gmail.com -->
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.Pro_situationsLabel" | translate }}</label>
                                             <select formControlName="pro_situation_id" class="form-control {{ isSubmitted && form.pro_situation_id.errors ? 'is-invalid' : '' }}">
                                                 <option value="" disabled selected hidden>{{ 'Form.Pro_situationsField'| translate }}</option>
                                                 <option *ngFor="let pro_situation of pro_situations"  value="{{pro_situation.id}}">{{pro_situation.name}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.DivisionsLabel" | translate }}</label>
+                                            <select formControlName="division_id" class="form-control {{ isSubmitted && form.division_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.DivisionsField'| translate }}</option>
+                                                <option *ngFor="let division of divisions"  value="{{division.id}}">{{division.name}} </option>
                                             </select>
                                         </div>
                                         <div class="position-relative form-group">

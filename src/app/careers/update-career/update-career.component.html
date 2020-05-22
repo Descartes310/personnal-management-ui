@@ -42,6 +42,13 @@
                                             </select>
                                         </div>
                                         <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.DivisionsLabel" | translate }}</label>
+                                            <select formControlName="division_id" class="form-control {{ isSubmitted && form.division_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.DivisionsField'| translate }}</option>
+                                                <option *ngFor="let division of divisions"  value="{{division.id}}">{{division.name}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
                                             <label for="exampleText" class="">{{ "Form.EffectiveDateLabel" | translate }} </label>
                                             <input name="dateeffective" id="exampleText" placeholder="{{ 'Form.EffectiveDateField' | translate }}" type="date" formControlName="effective_date"  class="form-control">
                                         </div>

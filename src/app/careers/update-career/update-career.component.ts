@@ -18,6 +18,9 @@ export class UpdateCareerComponent implements OnInit {
   users: any[] = [];
   users_tmp: any[] = [];
 
+  divisions: any[] = [];
+  divisions_tmp: any[] = [];
+
   pro_situations: any[] = [];
   pro_situations_tmp: any[] = [];
   
@@ -28,7 +31,8 @@ export class UpdateCareerComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   career : Careers = new Careers();
-
+  //userDivision: UserDivision = new this.userDivision();
+  
   constructor(
     private careersService: CareersService,
     private authService:AuthService,
@@ -45,6 +49,7 @@ export class UpdateCareerComponent implements OnInit {
     this.initForm();
     this.getUsers();
     this.getPro_situations();
+    this.getDivisions();
 
     const careers_id = +this.route.snapshot.paramMap.get("id");
     this.careersService.find(careers_id).then(
@@ -70,6 +75,7 @@ export class UpdateCareerComponent implements OnInit {
        this.careersForm = this.formBuilder.group({
           user_id: [this.career.user_id, [Validators.required]],
           pro_situation_id: [this.career.pro_situation_id, [Validators.required]],  
+          division_id: [this.career.division_id, [Validators.required]],  
           effective_date:[this.career.effective_date,[Validators.required]]
 
         });
@@ -77,6 +83,7 @@ export class UpdateCareerComponent implements OnInit {
       this.careersForm = this.formBuilder.group({
         user_id:['',[Validators.required]],
         pro_situation_id:['',[Validators.required]],
+        division_id:['',[Validators.required]],
         effective_date:[''],
         
       });
@@ -107,6 +114,18 @@ export class UpdateCareerComponent implements OnInit {
       }
     )
   }
+  getDivisions() {
+    this.careersService.divisions().then(
+      response => {
+        this.divisions = response;
+        this.divisions_tmp = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("Une erreur s'est produite");
+      }
+    )
+  }
 
   get form() {
     return this.careersForm.controls;
@@ -129,6 +148,7 @@ export class UpdateCareerComponent implements OnInit {
     const formData = new FormData();
     formData.append('user_id', ''+this.form.user_id.value);
     formData.append('pro_situation_id', '' + this.form.pro_situation_id.value);
+    formData.append('division_id', '' + this.form.division_id.value);
     formData.append('effective_date', ''+this.form.effective_date.value);
    
       this.careersService.update(formData, this.career.id)
