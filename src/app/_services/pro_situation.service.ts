@@ -1,6 +1,6 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes'; 
+import * as Routes from '../Routes';
 import { ProSituation } from '../_models/pro_situation.model';
 
 /**
@@ -43,8 +43,8 @@ export class ProSituationService {
   all(): Promise<any> {
     return this.http.get<any>(Routes.PRO_SITUATION).toPromise();
   }
-  delete(id: number): Promise<ProSituation[]> {
-    return this.http.delete<ProSituation[]>(`${Routes.PRO_SITUATION}/${id}`).toPromise();
+  delete(id: number) {
+    return this.http.delete(`${Routes.PRO_SITUATION}/${id}`).toPromise();
   }
 
 }

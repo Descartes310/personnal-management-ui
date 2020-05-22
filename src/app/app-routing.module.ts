@@ -37,6 +37,7 @@ import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.co
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
 
 
 //const routes: Routes = [];
@@ -65,6 +66,7 @@ const routes: Routes = [
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'statistiques/view', component:ViewUserStatComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

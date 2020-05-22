@@ -1,0 +1,63 @@
+
+
+<div class="tabs-animation">
+    <div class="main-card mb-3 card">
+        <div class="card-header">
+            <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                Courbe Du Parcours
+        </div>
+        <div class="card-body">
+
+            <div class="chart-wrapper" style="width: 100%;">
+                <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                    [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="tabs-animation">
+    <div class="main-card mb-3 card">
+        <div class="card-header">
+            <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+            Tableau Du Parcours 
+        </div>
+        <div class="card-body">
+
+            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date Debut</th>
+                        <th>Date Fin</th>
+                        <th>Situation Professionnelle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let career of usersCareers,let i = index" id="tr{{ career.id }}">
+                        <td>{{ i+1 }}</td>
+                        <td style="width: 30%">{{ career.effective_date | date: 'dd-MMM-yyy'}}</td>
+                        <td style="width: 30%">{{ career.effective_date | date: 'dd-MMM-yyy'}}</td>
+                        <td style="width: 50%">{{ getOneProSituation(career.pro_situation_id).name }}</td>
+
+                    </tr>
+                </tbody>
+                <tfoot *ngIf="loading && (!usersCareers || !usersCareers.length)">
+                    <td colspan="7" class="text-center">
+                        <div class="spinner-border spinner-sm">
+                            <span class="sr-only">Patientez svp...</span>
+                        </div>
+                    </td>
+                </tfoot>
+                <tfoot *ngIf="!loading && (!usersCareers || !usersCareers.length)">
+                    <td colspan="7" class="text-center">
+                        Liste vide
+                    </td>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

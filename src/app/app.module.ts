@@ -49,14 +49,19 @@ import { TemplateCreateComponent } from './templates/template-create/template-cr
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
-import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
+
+//statistiques
+import { ChartsModule } from 'ng2-charts';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -103,8 +108,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailBlogPostComponent,
     AllContactComponent,
     DetailContactComponent,
+    ViewUserStatComponent,
   ],
   imports: [
+    ChartsModule,
     MatTabsModule,
     MatExpansionModule,
     MatStepperModule,
