@@ -166,6 +166,8 @@
         "start_dateLabel": "Date de debut",
         "end_dateLabel": "Date de fin",
         "free_daysLabel": "Jours libres",
+        "AvatarLabel": "Avatar",
+        "Options": "Options",
         "NameField": "Veuillez entrer le nom...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
@@ -300,7 +302,9 @@
         "Key": "Clé",
         "Value": "Valeur",
         "KeyField": "Entrer une clé",
-        "ValueField": "Entrer une valeur"
+        "ValueField": "Entrer une valeur",
+
+        "ProSituation": "Situation professionnelle"
     },
 
     "AssignmentType": {
@@ -506,13 +510,12 @@
         "SubmitError": "Veuillez bien remplir les champs du formulaire (remplissez les champs obligatoires)",
         "LoadingError": "Erreur veuillez vérifier votre connexion à internet",
         "FinishTitle": "Dernière étape",
-        "FinishSubtitle": "cliquer sur le button pour terminer la création",
+        "FinishSubtitle": "cliquer sur le button pour terminer l'opération",
         "CreateUser": "Créer l'utilisateur",
         "CreateUserError": "Echec de la création de l'utilisateur veuillez bien remplir le formulaire puis réessayer",
         "UserLogin": "login",
         "UserPassword": "mot de passe",
         "UserLoginPlaceHolder": "veuillez entrer un login",
-        "UserPasswordPlaceHolder": "****************",
         "ErrorMessages": {
             "Login": [
                 "le login est obligatoire",
@@ -525,11 +528,23 @@
         },
         "UserFormThirdStepName": "Roles et permissions",
         "InputRequiredError": "Le champ {{ data }} est obligatoire",
-        "InputMaxError": "La valeur du champ {{ data1 }} doit être inférieure à {{ data2 }}",
-        "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure à {{ data2 }}",
+        "InputMaxError": "La valeur du champ {{ data1 }} doit être inférieure ou égale à {{ data2 }}",
+        "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure ou égale à {{ data2 }}",
         "InputMinLengthError": "La valeur du champ {{ data1 }} ne doit pas être inférieure à {{ data2 }} caractères",
         "InputMaxLengthError": "La valeur du champ {{ data1 }} ne doit pas être supérieur à {{ data2 }} caractères",
-        "CreateUserSuccess": "L'utilisateur a été créé  avec succès"
+        "InputNaNError": "Le champ {{ data }} doit contenir un nombre",
+        "CreateUserSuccess": "L'utilisateur a été créé  avec succès",
+        "UpdateUserSuccess": "Les données de l'utilisateur ont été mis à jour avec succès",
+        "UpdateUsers": "Mettre à jour les informations de l'utilisateur",
+        "UpdateUserTitle": "Modifiez les informations de l'utilisateur, certaines informations ne sont pas modifiables",
+        "LoadingProfileError": "Echec du chargement du profil de l'utilisateur",
+        "UserCities": "Choisir votre ville",
+        "UserProsituations": "Choisir votre situation professionnelle",
+        "Save": "Veuillez sauvegarder",
+        "UsersList": "Liste de membres du personnel",
+        "UserListTiltle": "Gestion du personnel et des utilisateurs",
+        "AddUser": "Ajouter membre du personnel",
+        "UserDivisions": "Division de travail"
     },
     "Vacation": {
         "VACATION": "CONGE",

@@ -46,7 +46,21 @@ export class UserService {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
 
-  getUserInfo(id: number): Promise<any> {
-    return this.http.get<any>(`${Routes.USERS}/${id}`).toPromise();
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  cities(): Promise<any> {
+    return this.http.get<any>(Routes.CITIES).toPromise();
   }
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  getUserInfo(id: number): Promise<any> {
+    return this.http.get<any>(Routes.USERS + '/' + id).toPromise();
+  }
+  
 }
