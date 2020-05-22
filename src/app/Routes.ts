@@ -32,3 +32,4 @@ export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
 export const PROFILE = SERVER + 'profiles';
 export const SANCTION = SERVER + 'sanctions';
+export const DiciplinaryTeam = SERVER + 'disciplinary_teams';
