@@ -68,6 +68,8 @@ import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/
 import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
 import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
 import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
@@ -101,6 +103,8 @@ const routes: Routes = [
   //{ path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'profiles/all', component: AllProfileComponent },
   { path: 'profiles/details/:id', component: DetailsProfileComponent },
+  { path: 'profiles/add', component: AddProfileComponent },
+  { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'licensetypes/all', component: AllLicensetypesComponent },

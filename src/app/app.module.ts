@@ -92,6 +92,8 @@ import { DetailsContractComponent } from './contracts/details-contract/details-c
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
 import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
 import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
@@ -191,6 +193,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsTemplatesComponent,
     FindTemplatesComponent,
     UserProfileComponent,
+    AddProfileComponent,
+    UpdateProfileComponent,
     ValeursClefsComponent,
     AllLicensesComponent,
     DetailsLicensesComponent,
