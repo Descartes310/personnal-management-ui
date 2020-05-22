@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmentTypeService } from 'src/app/_services/assignment-type.service';
+import { AssignmenttypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { AssignmentType } from 'src/app/_models/assignment-type.model';
+import { Assignmenttype } from 'src/app/_models/assignmenttype.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,11 +19,11 @@ export class UpdateAssignmentTypeComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   assignment_type_name = '';
-  assign: AssignmentType = new AssignmentType();
+  assign: Assignmenttype = new Assignmenttype();
 
 
   constructor(
-    private assignmentTypeService: AssignmentTypeService,
+    private assignmentTypeService: AssignmenttypeService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,

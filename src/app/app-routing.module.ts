@@ -19,8 +19,8 @@ import { TemplateUpdateComponent } from './templates/template-update/template-up
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
-import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
@@ -36,9 +36,12 @@ import { DetailsNotecriteriasComponent } from './notecriterias/details-notecrite
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 
 
 
@@ -53,15 +56,17 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'pro-situations/add', component: AddProSituationComponent },
+  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
+  { path: 'users/add', component: AddUserComponent },
+  { path: 'users/update/:id', component: UpdateUserComponent },
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
   { path: 'pro-situations/all',  component: AllProSituationComponent},
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
-  { path: 'profiles/add', component: AddProfileComponent },
-  { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
+  { path: 'submissions/all', component: AllSubmissionsComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
@@ -88,6 +93,8 @@ const routes: Routes = [
   { path: 'sanction/all', component: AllSanctionsComponent },
   { path: 'sanction/details/:id', component: DetailsSanctionComponent },
 
+  { path: 'vacations/update/:id', component: UpdateVacationComponent },
+  { path: 'vacations/add', component: AddVacationComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
