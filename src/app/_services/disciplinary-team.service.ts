@@ -16,6 +16,10 @@ export class DisciplinaryTeamService {
     return this.http.get<DisciplinaryTeam[]>(Routes.DISCIPLINARYTEAM).toPromise();
   }
 
+  getDisciplinaryTeamWithUsers(): Promise<any> {
+    return this.http.get<any>(Routes.DISCIPLINARYTEAM + '/' + 'getDisciplinaryTeamsWithUsers').toPromise();
+}
+
   find(id: number): Promise<DisciplinaryTeam> {
     return this.http.get<DisciplinaryTeam>(`${Routes.DISCIPLINARYTEAM}/${id}`).toPromise();
 }

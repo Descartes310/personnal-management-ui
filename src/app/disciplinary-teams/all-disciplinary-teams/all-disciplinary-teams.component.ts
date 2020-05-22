@@ -56,11 +56,11 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
 
   getDisciplinaryTeams() {
     this.loading = true;
-    this.disciplinaryteamService.all().then(response => {
-        this.disciplinaryteams = [];
-        response.map( disciplinaryteam => {
+    this.disciplinaryteamService.getDisciplinaryTeamWithUsers().then(response => {
+        this.disciplinaryteams= response;
+        /*response.map( disciplinaryteam => {
           this.disciplinaryteams.push(new DisciplinaryTeam(disciplinaryteam));
-        });
+        });*/
         console.log(response);
     }).catch(error => {
         this.notifService.danger(error.error.message)
