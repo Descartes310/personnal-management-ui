@@ -25,6 +25,7 @@
     "Home": {
         "Title": "Page d'accueil"
     },
+    
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -44,7 +45,7 @@
         "TypeConges": "Type de congés",
         "PermissionType": "Type de permission",
         "Template": "Modèle de document",
-        "BlogCat": "Catégorie de blog",
+        "BlogCategory": "Catégorie de blog",
         "DiscCouncil": "Conseil de discipline",
         "NoteCriteria": "Critère de notation",
         "Config": "Configurations",
@@ -219,7 +220,18 @@
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
         "start_date": "Date de début",
-        "location": "Localisation"
+        "location": "Localisation",
+        "start_dateLabel": "Date de debut",
+        "end_dateLabel": "Date de fin",
+        "free_daysLabel": "Jours libres",
+       
+        "LabelType": "Veuillez entrer le type...",
+        "LabelTitle": "Veuillez entrer le titre...",
+        "LabelDays": "Veuillez entrer le nombre de jours...",
+       
+        "EndDateError": "veuillez entrer une date de fin valide",
+       
+        "RequestedStartDate": "Debut du congé "
     },
 
     "AssignmentType": {
@@ -266,9 +278,11 @@
         "UpdateLicensetype": "Mettre à jour de la permission",
         "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitErrortype": "Aumoins un des champs en rouge doit etre",
-        "SubmitSuccess": "La création de la permission a réussie...",
-        "LICENSETYPE_ALREADY_EXISTS": "Le type de permission existe déjà"
+        "SubmitErrordate": "les dates entrées sont incorrectes",
+        "SubmitSuccess": "La création du contrat a réussie...",
+        "CONTRACT_NOT_FOUND": "Le contrat n'a pas été retrouvé",
+        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà",
+        "CONTRACT_ERROR":"echec de la creation du contrat"
     },
     "Division": {
         "Divisions1": " Update des divisions",
@@ -327,8 +341,73 @@
                 "la durée doit être inférieur ou égal à 100"
             ]
         },
-        "IsOnline": "Cette formation est elle en ligne?"
+        "IsOnline": "Cette formation est elle en ligne?",
+        "Training_Title": "Formations",
+        "Training_Name": "Gestion des formations de l'application",
+        "Add_Training": "Ajouter une nouvelle formation",
+        "CreateTraing": "Créer la formation",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
+        "UpdateSuccess": "La mise à jour de la formation a été un succès",
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
+
+    "Demande_V": {
+        "VacationAsk": "Demandes de congés",
+        "VacationAttent": "Gestion des demandes de congés en attente",
+        "Vacations": "Liste des demandes de congés",
+        "VacationTitle": "Gestion des demandes de congés de l'application",
+        "AcceptVacation": "Accepter",
+        "CancelVacation": "Annuler",
+        "RefuseVacation": "Refuser",
+        "AcceptVacationNotif": "Vous avez accepté la demande",
+        "CancelVacationNotif": "Vous avez annulé la demande",
+        "RefuseVacationNotif": "Vous avez refusé la demande",
+        "SubmitError": " Ne retrouve pas la demande",
+        "SubmitSuccess": "La création du vacation a réussie...",
+        "DEMANDE_V_NOT_FOUND": "La demande n'a pas été retrouvé",
+        "DEMANDE_V_ALREADY_EXISTS": "La demande a déjà été traité",
+        "raison": "Raison de la demande",
+        "description": "Description de la demande",
+        "requested_start_date" : "Date de depart proposée",
+        "accorded_start_date" : "Voulez vous modifier la date proposée ?",
+        "requested_days" : "Nombre de jours poposés",
+        "accorded_days" : "Voulez vous modifier le nombre de jours ?",
+        "created_at" : "Creer le ",
+        "CreatedAtLabel" : "Date de dépôt"
+    },
+
+    "Contract": {
+        "Contracts": "Contrats",
+        "ContractTitle": "Gestion des contrats de l'application",
+        "AddContract": "Ajouter un nouveau contract",
+        "CreateContract": "Créer le Contrat",
+        "UpdateContract": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrordate": "les dates entrées sont incorrectes",
+        "SubmitSuccess": "La création du contrat a réussie...",
+        "SubmitSuccessUpdate": "La mise à jour du contrat a réussie...",
+        "CONTRACT_NOT_FOUND": "Le contrat n'a pas été retrouvé",
+        "CONTRACT_ALREADY_EXISTS": "Le contrat existe déjà",
+        "CONTRACT_ERROR":"echec de la creation du contrat"
+    },
+    "BlogCategory": {
+        "BlogCategories": "Categories",
+        "BlogCategoryTitle": "Gestion des categories de l'application",
+        "AddBlogCategory": "Ajouter un nouvelle Categorie",
+        "CreateBlogCategory": "Créer le categorie",
+        "UpdateBlogCategory": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrordate": "les dates entrées sont incorrectes",
+        "SubmitSuccess": "La création de la categorie a réussie...",
+        "BLOGCATEGORIE_NOT_FOUND": "La categorie n'a pas été retrouvé",
+        "BLOGCATEGORIE_ALREADY_EXISTS": "La categorie existe déjà",
+        "BLOGCATEGORIE_ERROR":"echec de la creation de la categorie"
+    },
+
     "BlogCat": {
         "BC_Title": "Catégories de blog",
         "BC_Name": "Gestion des catégories de blog de l'application",
@@ -353,23 +432,6 @@
         "ProSituations": "Situations professionelles",
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires"
-    },
-
-    "Training": {
-        "Training_Title": "Formations",
-        "Training_Name": "Gestion des formations de l'application",
-        "Add_Training": "Ajouter une nouvelle formation",
-        "CreateTraing": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création de la permission a réussie...",
-        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
-        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
-        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
-        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
-        "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
     "User": {
         "Users": "Création des employés",

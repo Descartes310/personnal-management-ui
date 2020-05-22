@@ -18,7 +18,10 @@ import { UpdateBlogCategoryComponent } from './blog_category/update-blog-categor
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
+import { DecisionVacationComponent } from './vacations/decision-vacation/decision-vacation.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
@@ -38,6 +41,8 @@ import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-li
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
@@ -48,8 +53,6 @@ import { DetailContactComponent } from './contacts/detail-contact/detail-contact
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
-import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
-import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
@@ -59,6 +62,10 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 
 
 //const routes: Routes = [];
@@ -78,19 +85,22 @@ const routes: Routes = [
   { path: 'profiles/details/:id', component: DetailsProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
+  { path: 'licensetypes/all', component: AllLicensetypesComponent },
+  { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'vacation/demandes', component: AllDemandesVacationComponent },
+
+  { path: 'vacation/demandes/:id', component: DecisionVacationComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'templates/all', component: AllTemplatesComponent },
   { path: 'templates/details/:id', component: DetailsTemplatesComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacations/all', component: AllVacationComponent },
-  { path: 'vacations/add', component: AddVacationComponent },
-  { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/details/:id', component: DetailVacationComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
@@ -120,10 +130,15 @@ const routes: Routes = [
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
 
-  { path: 'vacations/update/:id', component: UpdateVacationComponent },
-  { path: 'vacations/add', component: AddVacationComponent },
+
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'contracts/add', component: AddContractComponent },
+  { path: 'contracts/all', component: AllContractComponent },
+  { path: 'BlogCategory/all', component: AllBlogCategoryComponent },
+  { path: 'contracts/update/:id', component: UpdateContractComponent },
+  { path: 'contracts/details/:id', component: DetailsContractComponent },
+  { path: 'contracts/details', component: DetailsContractComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

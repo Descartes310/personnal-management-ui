@@ -21,20 +21,14 @@
         "Title": "Home page"
     },
     "Form": {
-<<<<<<< HEAD
-        "NameLabel": "Nom",
         "NameSelect": "Choisir votre structure parent ",
-        "NameField": "Veuillez entrer le nom...",
-=======
         "NameLabel": "Name",
         "NameField": "Please type a name...",
->>>>>>> 2219e905ec68d6a25d7805681eba07b3c18ae597
         "DescriptionLabel": "Description",
         "DescriptionField": "Please type a description",
         "WeightLabel": "Index",
         "WeightField": "Select an index",
         "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
-        "DaysLabel": "nombre de jour",
         "TitleLabel": "Title",
         "TitleField": "Please type a title...",
         "Trainer": "Trainer",
@@ -42,7 +36,8 @@
         "start_date": "Start date",
         "location": "Location",
         "templateType":"Type",
-        "templateContent":"Content"
+        "templateContent":"Content",   
+        "DaysLabel": "Number of Days"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",

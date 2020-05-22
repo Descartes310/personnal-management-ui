@@ -2,17 +2,15 @@ import { Super } from './super.model';
 
 export class Vacation extends Super<Vacation> {
 
-    public user_id: number;
-    public vacation_type_id: number 
-    public raison: string;
-    public description: string;
+    public user_id: Number;
+    public vacation_type_id: Number;
+    public raison: String;
+    public description: String;
     public requested_start_date: Date;
-    public requested_days: number;
-    public is_active: boolean;
-    public status:string;
-    public file: File;
-    public accorded_start_date: number;
-    public accorded_days: Date ;
-    public vacations: any[];
+    public accorded_start_date: Date;
+    public requested_days: Number;
+    public accorded_days: Number;
+    public created_at: Date;
+    public status: String;
     
 }
