@@ -27,4 +27,12 @@ export class LicenseService {
     license_type(): Promise<any> {
       return this.http.get<any>(Routes.LICENSE_TYPE).toPromise();
   }
+
+  all(): Promise<any> {
+    return this.http.get<any>(Routes.LICENSE).toPromise();
+  }
+  
+  delete(id: number): Promise<License[]> {
+    return this.http.delete<License[]>(`${Routes.LICENSE}/${id}`).toPromise();
+  }
 }

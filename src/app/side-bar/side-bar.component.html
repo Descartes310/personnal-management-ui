@@ -96,9 +96,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href=""  [routerLink]="['/licenses/all']" class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>{{ "SideBar.Permissions" | translate }}
+                            </a>
+                            <a href=""  [routerLink]="['/home']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Conges" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -307,7 +311,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/settings/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Config" | translate }}
                             </a>

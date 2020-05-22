@@ -25,7 +25,6 @@
     "Home": {
         "Title": "Page d'accueil"
     },
-  
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -52,7 +51,9 @@
         "RoleAndPer": "Rôles et permissions",
         "Personnel": "Personnels",
         "Submission": "Demandes écrites",
-        "ProfileUpdate": "Mise à jour du profile"
+        "ProfileUpdate": "Mise à jour du profile",
+        "Permissions":"Permissions",
+        "Conges":"Congés"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
@@ -237,8 +238,20 @@
         "BlogCategoryLabel":"Categorie du blog",
         "BlogCategoryField":"Choisir une categorie de blog",
         "ContentLabel":"Contenu",
-        "ContentField":"Veuillez entrez un contenu"
+        "ContentField":"Veuillez entrez un contenu",
         
+
+        "UserName": "Utilisateur",
+        "LicenseType": "Type de Permission",
+        "Raison": "Raison",
+        "File": "Fichier associé",
+        "Requested_start_date": "Date de début requis",
+        "Requested_days": "Nombre de jours requis",
+        "Status": "Status",
+        "Key": "Clé",
+        "Value": "Valeur",
+        "KeyField": "Entrer une clé",
+        "ValueField": "Entrer une valeur"
     },
 
     "AssignmentType": {
@@ -396,6 +409,25 @@
         "UpdateSuccess": "La mise à jour de la formation a été un succès",
         "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
+
+    "Licenses":{
+        "Licenses_Title": "Permissions",
+        "Licenses_Name": "Gestion des permissions de l'application",
+        "Add_Licenses": "Ajouter une nouvelle permission"
+       
+    },
+
+    "Settings":{
+        "Settings_Title": "Configurations du système",
+        "Settings_Name": "Gestion des configurations du système",
+        "Add_Settings": "Ajouter une nouvelle configuration",
+        "Update": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour de la configuration a été un succès",
+        "SubmitSuccess": "La création de la configuration a réussie...",
+        "NotFound": "la configuration n'a pas été trouvée",
+        "undefined": "Le champ clé existe déja; bien vouloir le changer"
+    },
     "User": {
         "Users": "Création des employés",
         "UserTitle": "Créer un nouvel employé",
@@ -448,4 +480,6 @@
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     }
+
+
 }

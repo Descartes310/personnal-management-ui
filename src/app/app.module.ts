@@ -45,7 +45,6 @@ import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
-//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
@@ -54,6 +53,7 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
@@ -94,6 +94,14 @@ import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-b
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -178,6 +186,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     FindTemplatesComponent,
     UserProfileComponent,
     ValeursClefsComponent,
+    AllLicensesComponent,
+    DetailsLicensesComponent,
+    AllSettingsComponent,
+    AddSettingsComponent,
+    DetailsSettingsComponent,
+    FindSettingsComponent,
+    UpdateSettingsComponent,
   ],
   imports: [
     MatTabsModule,

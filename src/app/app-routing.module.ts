@@ -65,6 +65,14 @@ import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/
 import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
 import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 
 //const routes: Routes = [];
@@ -102,8 +110,18 @@ const routes: Routes = [
   { path: 'vacations/details/:id', component: DetailVacationComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'licenses/all', component: AllLicensesComponent },
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+//path to settings
+  { path: 'settings/add', component: AddSettingsComponent},
+  { path: 'settings/update/:id', component: UpdateSettingsComponent },
+  { path: 'settings/all', component: AllSettingsComponent },
+  { path: 'settings/details/:id', component: DetailsSettingsComponent },
+
+
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
