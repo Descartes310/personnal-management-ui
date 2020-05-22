@@ -52,6 +52,8 @@ import { AllVacationComponent } from './vacations/all-vacation/all-vacation.comp
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
@@ -67,6 +69,14 @@ import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blo
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 
 //const routes: Routes = [];
@@ -106,8 +116,18 @@ const routes: Routes = [
   { path: 'vacations/details/:id', component: DetailVacationComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'licenses/all', component: AllLicensesComponent },
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+//path to settings
+  { path: 'settings/add', component: AddSettingsComponent},
+  { path: 'settings/update/:id', component: UpdateSettingsComponent },
+  { path: 'settings/all', component: AllSettingsComponent },
+  { path: 'settings/details/:id', component: DetailsSettingsComponent },
+
+
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
@@ -139,6 +159,8 @@ const routes: Routes = [
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
   { path: 'profile', component:UserProfileComponent},
+  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
+  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
