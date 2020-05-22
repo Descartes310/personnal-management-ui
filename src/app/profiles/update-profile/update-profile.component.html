@@ -77,38 +77,38 @@
                                         <div >
                                             <ng-container *ngIf="showTable" >
                                              
-                                              <div class="form-row">
-                                                 <div class="form-group col-md-12" >
-                                                    <table id="example" class="table table-hover table-striped table-bordered">
-                                                        <tr>
-                                                            <th>#</th>
-                                                            <th>Noms des options</th>
-                                                            <th>Actions</th>           
-                                                        </tr>
-                                                        <tr *ngFor="let option of options,let i = index">
-                                                            <td>{{i+1}}</td>
-                                                            <td>                                                    
-                                                                <input type="text" placeholder="entrer les options" class="form-control" value="{{ option.value }}" (keyup)="updateOption(option.id, $event)" (change)="updateOption(option.id, $event)">
-                                                            </td>
-                                                            <td>
-                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-success" *ngIf="i == options.length-1" (click)="addOption()">Ajouter une option</button>
-                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger" *ngIf="option.value" (click)="removeOption(option.id)">Supprimer</button>                             
-                                                                
-                                                            </td>
-                                                        </tr>
-                                                        <tr *ngIf="options.length == 0">
-                                                            <td colspan="2">0</td>
-                                                            <td>
-                                                                <button class="btn btn-primary" (click)="addOption()">Ajouter une option</button>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12" >
+                                                       <table id="example" class="table table-hover table-striped table-bordered">
+                                                           <tr>
+                                                               <th>#</th>
+                                                               <th>Noms des options</th>
+                                                               <th>Actions</th>           
+                                                           </tr>
+                                                           <tr *ngFor="let option of options,let i = index">
+                                                               <td>{{i+1}}</td>
+                                                               <td>                                                    
+                                                                   <input type="text" placeholder="entrer les options" class="form-control" value="{{ option.value }}" (keyup)="updateOption(option.id, $event)" (change)="updateOption(option.id, $event)">
+                                                               </td>
+                                                               <td>
+                                                                   <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-success" *ngIf="i == options.length-1" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
+                                                                   <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger" *ngIf="option.value" (click)="removeOption(option.id)">{{ "Profile.deleteOption" | translate }}</button>                             
+                                                                   
+                                                               </td>
+                                                           </tr>
+                                                           <tr *ngIf="options.length == 0">
+                                                               <td colspan="2">0</td>
+                                                               <td>
+                                                                   <button class="btn btn-primary" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
+                                                               </td>
+                                                           </tr>
+                                                       </table>
+                                                    </div>
+                                                     <div class="form-group col-md-5">    
+                                                     </div>
+                                                     <div class="form-group col-md-3">
+                                                     </div>
                                                  </div>
-                                                  <div class="form-group col-md-5">    
-                                                  </div>
-                                                  <div class="form-group col-md-3">
-                                                  </div>
-                                              </div>
                                              
                                             </ng-container>
                                         </div>                

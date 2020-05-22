@@ -91,15 +91,15 @@
                                                                 <input type="text" placeholder="entrer les options" class="form-control" value="{{ option.value }}" (keyup)="updateOption(option.id, $event)" (change)="updateOption(option.id, $event)">
                                                             </td>
                                                             <td>
-                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-success" *ngIf="i == options.length-1" (click)="addOption()">Ajouter une option</button>
-                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger" *ngIf="option.value" (click)="removeOption(option.id)">Supprimer</button>                             
+                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-success" *ngIf="i == options.length-1" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
+                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger" *ngIf="option.value" (click)="removeOption(option.id)">{{ "Profile.deleteOption" | translate }}</button>                             
                                                                 
                                                             </td>
                                                         </tr>
                                                         <tr *ngIf="options.length == 0">
                                                             <td colspan="2">0</td>
                                                             <td>
-                                                                <button class="btn btn-primary" (click)="addOption()">Ajouter une option</button>
+                                                                <button class="btn btn-primary" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
                                                             </td>
                                                         </tr>
                                                     </table>

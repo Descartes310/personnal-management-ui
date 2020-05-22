@@ -352,7 +352,9 @@
         "PROFILE_ALREADY_EXISTS": "Le profile existe déjà",
         "Update": "Mise a jour du profile",
         "UpdateTitle": "Modifier des profiles de l'application",
-        "Profil": "nouveau profil"
+        "Profil": "nouveau profil",
+        "addOption":"Ajouter une option",
+        "deleteOption":"Supprimer"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
