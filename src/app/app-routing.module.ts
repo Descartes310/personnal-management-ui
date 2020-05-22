@@ -51,6 +51,8 @@ import { AllVacationComponent } from './vacations/all-vacation/all-vacation.comp
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
@@ -124,6 +126,8 @@ const routes: Routes = [
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
+  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

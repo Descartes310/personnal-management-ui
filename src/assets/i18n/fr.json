@@ -78,14 +78,14 @@
         "BlogPostTitle": "Gestion des articles de l'application",
         "SubmitSuccess": "La création du role a réussie...",
         "AddBlogPost": "Ajouter un article"
-     
+
     },
     "BlogComment": {
         "BlogPosts": "blogs Articles",
         "blogPostTitle": "Gestion des articles de l'application",
-        "AddBlogComment": "Ajouter un nouveau rôle",       
+        "AddBlogComment": "Ajouter un nouveau rôle",
         "SubmitSuccess": "La création du commentaire a réussie..."
-     
+
     },
 
     "Submission": {
@@ -107,7 +107,7 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },  
+    },
     "Form": {
         "NameLabel": "Nom",
         "NameSelect":"Choisir votre structure",
@@ -215,6 +215,8 @@
 
         "TitleLabel": "Titre",
         "TitleField": "Veuillez entrer un titre",
+        "dtTitleHolder":"Entrez le nom",
+        "dtTitle":"nom",
 
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
@@ -241,11 +243,23 @@
         "UpdateTemplate": "Mettre à jour",
         "contentError":"Veuillez remplir le champ contenu",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création du modèle de document réussie...",
-        "UpdateSuccess":"Le modèle de document a ete mis a jour",
-        "NOT_FOUND_ASSIGNMENT_ID": "Le modèle de document n'a pas été trouvé",
-        "TEMPLATE_ALREADY_EXIST": "Le nom du modèle de documet existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le modèle de document n'exixte pas!!!"
+        "SubmitSuccess": "La création du template réussie...",
+        "UpdateSuccess":"Le template a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du template existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
+    },
+    "diciplinaryTeam": {
+        "dt": "Conseil de decision",
+        "dtTitle": "Gestion des sonseils de decision ",
+        "Adddt": "Ajouter un conseil de decision",
+        "Update": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du conseil de decision réussie...",
+        "UpdateSuccess":"Le conseil de decision a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le conseil de decision n'a pas été trouvé",
+        "DT_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le conseil de decision n'exixte pas!!!"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",
@@ -314,11 +328,8 @@
         "TrainingTitle": "Gestion des formations de l'application",
         "AddTraining": "Ajouter une formation",
         "CreateTraining": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
         "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
         "Error": "donnees inalide",
-        "SubmitError": "Les champs en rouge sont obligatoire",
-        "SubmitSuccess":"Ajout de la formation effectuer avec succes",
         "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
         "ErrorMessages": {
             "Duration": [
@@ -327,7 +338,21 @@
                 "la durée doit être inférieur ou égal à 100"
             ]
         },
-        "IsOnline": "Cette formation est elle en ligne?"
+        "IsOnline": "Cette formation est elle en ligne?",
+        "Training_Title": "Formations",
+        "Training_Name": "Gestion des formations de l'application",
+        "Add_Training": "Ajouter une nouvelle formation",
+        "CreateTraing": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la formation a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense": "echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
+        "UpdateSuccess": "La mise à jour de la formation a été un succès",
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
     "BlogCat": {
         "BC_Title": "Catégories de blog",
@@ -353,23 +378,6 @@
         "ProSituations": "Situations professionelles",
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires"
-    },
-
-    "Training": {
-        "Training_Title": "Formations",
-        "Training_Name": "Gestion des formations de l'application",
-        "Add_Training": "Ajouter une nouvelle formation",
-        "CreateTraing": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création de la permission a réussie...",
-        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
-        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
-        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
-        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
-        "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
     "User": {
         "Users": "Création des employés",
