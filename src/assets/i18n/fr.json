@@ -84,14 +84,19 @@
         "SubmitSuccess": "La création de l'article a réussie...",
         "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
         "ErrorSubmit": "echec d'ajout de l'article",
-        "UpdateErrorSubmit": "echec de la mise a jour de l'article"
+        "UpdateErrorSubmit": "echec de la mise a jour de l'article",
+        "BlogPosts": "blogs Articles",
+        "BlogPostTitle": "Gestion des articles de l'application",
+        "SubmitSuccess": "La création du role a réussie...",
+        "AddBlogPost": "Ajouter un article"
+
     },
     "BlogComment": {
         "BlogPosts": "blogs Articles",
         "blogPostTitle": "Gestion des articles de l'application",
-        "AddBlogComment": "Ajouter un nouveau rôle",       
+        "AddBlogComment": "Ajouter un nouveau rôle",
         "SubmitSuccess": "La création du commentaire a réussie..."
-     
+
     },
 
     "Submission": {
@@ -113,7 +118,7 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },  
+    },
     "Form": {
         "TypeLabel": "Type",
         "NameLabel": "Nom",
@@ -230,6 +235,13 @@
         "dtTitle":"nom",
 
         "TitleField": "Veuillez entrer un titre",
+        "templateType":"Type",
+        "templateContent":"Contenu",
+
+        "TitleLabel": "Titre",
+        "TitleField": "Veuillez entrer un titre",
+        "dtTitleHolder":"Entrez le nom",
+        "dtTitle":"nom",
 
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
@@ -362,6 +374,37 @@
         "Cancelled": "Annulé",
         "CancelledMessage": "Element conservé"
     },
+    "Training": {
+        "Trainings": "Formations",
+        "TrainingTitle": "Gestion des formations de l'application",
+        "AddTraining": "Ajouter une formation",
+        "CreateTraining": "Créer la formation",
+        "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
+        "Error": "donnees inalide",
+        "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
+        "ErrorMessages": {
+            "Duration": [
+                "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
+                "la durée doit être strictement supérieur à 0",
+                "la durée doit être inférieur ou égal à 100"
+            ]
+        },
+        "IsOnline": "Cette formation est elle en ligne?",
+        "Training_Title": "Formations",
+        "Training_Name": "Gestion des formations de l'application",
+        "Add_Training": "Ajouter une nouvelle formation",
+        "CreateTraing": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la formation a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense": "echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
+        "UpdateSuccess": "La mise à jour de la formation a été un succès",
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
+    },
     "BlogCat": {
         "BC_Title": "Catégories de blog",
         "BC_Name": "Gestion des catégories de blog de l'application",
@@ -387,9 +430,6 @@
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires"
     },
-
-   
-   
    
    "Training": {
     "Trainings": "Formations",
