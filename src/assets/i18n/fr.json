@@ -148,7 +148,9 @@
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
         "templateType":"type",
-        "templateContent":"contenu"
+        "templateContent":"contenu",
+        "dtTitleHolder":"Entrez le nom",
+        "dtTitle":"nom"
 
     },
        
@@ -174,8 +176,20 @@
         "SubmitSuccess": "La création du template réussie...",
         "UpdateSuccess":"Le template a ete mis a jour",
         "NOT_FOUND_ASSIGNMENT_ID": "Le template n'a pas été trouvé",
-        "TEMPLATE_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "TEMPLATE_ALREADY_EXIST": "Le nom du template existe déjà !!!",
         "ASSIGNMENT_NOT_EXIST": "le template n'exixte pas!!!"
+    },
+    "diciplinaryTeam": {
+        "dt": "Conseil de decision",
+        "dtTitle": "Gestion des sonseils de decision ",
+        "Adddt": "Ajouter un conseil de decision",
+        "Update": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du conseil de decision réussie...",
+        "UpdateSuccess":"Le conseil de decision a ete mis a jour",
+        "NOT_FOUND_ASSIGNMENT_ID": "Le conseil de decision n'a pas été trouvé",
+        "DT_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
+        "ASSIGNMENT_NOT_EXIST": "le conseil de decision n'exixte pas!!!"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",

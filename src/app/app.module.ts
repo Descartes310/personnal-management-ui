@@ -40,7 +40,6 @@ import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
-//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
@@ -50,6 +49,8 @@ import { TemplateUpdateComponent } from './templates/template-update/template-up
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -91,7 +92,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateDivisionComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
+    CreateDiciplinaryTeamComponent,
+    UpdateDiciplinaryTeamComponent,
   ],
+
   imports: [
     MatStepperModule,
     MatFormFieldModule,
