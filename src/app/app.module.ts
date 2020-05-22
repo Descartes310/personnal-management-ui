@@ -81,6 +81,7 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -152,6 +153,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
+    ValeursClefsComponent,
   ],
   imports: [
     MatTabsModule,
