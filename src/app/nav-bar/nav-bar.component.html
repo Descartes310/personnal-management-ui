@@ -70,8 +70,20 @@
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
                                     <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                        <i class="pe-7s-note2 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
+                                        {{ "SideBar.Contracts" | translate }}
+                                    </button>
+                                </div>
+                                <div class="col-sm-6 col-xl-4">
+                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-plane icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                         {{ "SideBar.PermissionEtConges" | translate }}
+                                    </button>
+                                </div>
+                                <div class="col-sm-6 col-xl-4">
+                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                        <i class="pe-7s-note2 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
+                                        {{ "SideBar.NotesPros" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
@@ -235,7 +247,7 @@
                                     <div class="grid-menu grid-menu-2col">
                                         <div class="no-gutters row">
                                             <div class="col-sm-6">
-                                                <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                                                <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning" [routerLink]="['/profile']">
                                                     <i class="pe-7s-user icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
                                                     {{ 'NavBar.Profile' | translate }}
                                                 </button>
@@ -263,6 +275,6 @@
                     </div>
                 </div>
             </div>     
-        </div> 
+        </div>
     </div>
 </div>
