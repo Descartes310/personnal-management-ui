@@ -110,6 +110,8 @@
     },  
     "Form": {
         "NameLabel": "Nom",
+        "AvatarLabel": "Avatar",
+        "Options": "Options",
         "NameSelect":"Choisir votre structure",
         "NameField": "Veuillez entrer le nom...",
         "UserLabel": "Utilisateur",
@@ -219,7 +221,9 @@
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
         "start_date": "Date de début",
-        "location": "Localisation"
+        "location": "Localisation",
+
+        "ProSituation": "Situation professionnelle"
     },
 
     "AssignmentType": {
@@ -409,7 +413,10 @@
         "LoadingProfileError": "Echec du chargement du profil de l'utilisateur",
         "UserCities": "Choisir votre ville",
         "UserProsituations": "Choisir votre situation professionnelle",
-        "Save": "Veuillez sauvegarder"
+        "Save": "Veuillez sauvegarder",
+        "UsersList": "Liste de membres du personnel",
+        "UserListTiltle": "Gestion du personnel et des utilisateurs",
+        "AddUser": "Ajouter membre du personnel"
     },
     "Vacation": {
         "VACATION": "CONGE",
