@@ -70,8 +70,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
-import { AddCongeComponent } from './conges/add-conge/add-conge.component';
-import { UpdateCongeComponent } from './conges/update-conge/update-conge.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
@@ -107,6 +105,10 @@ import { UpdateSettingsComponent } from './settings/update-settings/update-setti
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
 import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { UpdateCareerComponent } from './careers/update-career/update-career.component';
+//import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+//import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -156,7 +158,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsDivisionComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
-    AddCongeComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
@@ -180,7 +181,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailBlogPostComponent,
     AllContactComponent,
     DetailContactComponent,
-    UpdateCongeComponent,
     AllVacationComponent,
     DetailVacationComponent,
     AddVacationComponent,
@@ -204,6 +204,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateSettingsComponent,
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
+    AddCareerComponent,
+    UpdateCareerComponent,
+  //  AddProfileComponent,
+    //UpdateProfileComponent,
   ],
 
   imports: [

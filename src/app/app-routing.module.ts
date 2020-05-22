@@ -50,8 +50,6 @@ import { DetailContactComponent } from './contacts/detail-contact/detail-contact
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
-import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
-import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
@@ -78,6 +76,10 @@ import { DetailsSettingsComponent } from './settings/details-settings/details-se
 import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
+import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { UpdateCareerComponent } from './careers/update-career/update-career.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -168,6 +170,10 @@ const routes: Routes = [
   { path: 'profile', component:UserProfileComponent},
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
+
+  { path: 'career/add', component: AddCareerComponent },
+  { path: 'career/update/:id', component:UpdateCareerComponent},
+
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
