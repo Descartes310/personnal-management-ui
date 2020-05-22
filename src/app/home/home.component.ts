@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
   }
 
   getcountUsers() {
-    this.userService.allUser().then(
+    this.userService.all().then(
       response => {
         const listUsers: User[] = response;
         this.nbAllUsers=listUsers.length;

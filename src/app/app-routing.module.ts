@@ -54,8 +54,6 @@ import { AddVacationComponent } from './vacation/add-vacation/add-vacation.compo
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
-// import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
-// import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
 import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
@@ -163,8 +161,6 @@ const routes: Routes = [
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
   { path: 'update-password', component: UpdatePasswordComponent },
 
-  { path: 'vacations/update/:id', component: UpdateVacationComponent },
-  { path: 'vacations/add', component: AddVacationComponent },
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/add', component: AddBlogPostComponent },
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
