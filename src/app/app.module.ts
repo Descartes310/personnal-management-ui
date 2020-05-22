@@ -93,6 +93,7 @@ import { DetailsContractComponent } from './contracts/details-contract/details-c
 import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -176,6 +177,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsTemplatesComponent,
     FindTemplatesComponent,
     UserProfileComponent,
+    ValeursClefsComponent,
   ],
   imports: [
     MatTabsModule,
