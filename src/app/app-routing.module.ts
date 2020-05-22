@@ -134,7 +134,7 @@ const routes: Routes = [
   { path: 'blog-posts/add', component: AddBlogPostComponent },
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
-  { path: 'profile-user', component:UserProfileComponent},
+  { path: 'profile', component:UserProfileComponent},
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

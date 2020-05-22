@@ -5,7 +5,7 @@
                 <div class="menu-header-content">
                     <div class="avatar-icon-wrapper mb-3 avatar-icon-xl">
                         <div class="avatar-icon" style="width: 100px;height: 100px;">
-                            <img *ngIf="profile" src="{{profile.avatar}}" alt="Avatar 5" >
+                            <img src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="pic" >
                         </div>
                     </div>
                     <div>
@@ -15,13 +15,13 @@
                     <div class="menu-header-btn-pane pt-2">
                         <div role="group" class="btn-group text-center">
                             <div class="nav">
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">Modifier le profile
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileUpdate' | translate }}
                                 </button>                            
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">Changer le mot de passe
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.PasswordUpdate' | translate }}
                                 </button>
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">voir les statistiques
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileStatistique' | translate }}
                                 </button> 
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">faire une promotion
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfilePromotion' | translate }}
                                 </button> 
                             </div>
                         </div>
@@ -101,9 +101,8 @@
             </div>
         </div>
     </div>
-
-</div>          
-</div>
-</div>
+   </div>          
+  </div>
+ </div>
 </div>
 

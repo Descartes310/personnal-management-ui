@@ -28,13 +28,9 @@ export class UserProfileComponent implements OnInit {
     this.roles = this.authService.getRoles();
     this.permissions = this.authService.getPermissions();
     this.permissions_tmp = this.authService.getPermissions();
-    console.log(this.roles);
-    console.log(this.user);
-    console.log(this.permissions);
     this.userService.find(this.user.id).then(
       response => {
         this.profile = response;
-        console.log(this.profile); 
       }
     );
   }

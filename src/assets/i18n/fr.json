@@ -319,7 +319,11 @@
         "ProfileTitle": "Gestion des profils de l'application",
         "DetailsProfile": "Détails du profil",
         "ProfileInfos":"INFORMATIONS PERSONNELLES",
-        "ProfilePermissions":"VOS PERMISSIONS"
+        "ProfilePermissions":"VOS PERMISSIONS",
+        "ProfileUpdate":"Modifier le profile",
+        "PasswordUpdate":"Changer le mot de passe",
+        "ProfileStatistique":"Voir les statistiques",
+        "ProfilePromotion":"Faire une promotion"
     },
     "SweetAlert": {
         "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
