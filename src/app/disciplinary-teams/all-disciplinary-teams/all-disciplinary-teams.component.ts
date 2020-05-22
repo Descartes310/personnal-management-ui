@@ -85,7 +85,8 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
       showCancelButton: true,
       confirmButtonText: this.yes,
       cancelButtonText: this.no
-    }).then((result) => {
+    }
+    ).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
         this.disciplinaryteamService.delete(disciplinaryteam.id).then(

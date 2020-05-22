@@ -47,11 +47,9 @@ import { AllContactComponent } from './contacts/all-contact/all-contact.componen
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-<<<<<<< HEAD
 import { DisciplinaryTeam } from './_models/disciplinary-team.model';
 import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
 import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
-=======
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
@@ -64,7 +62,6 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
 
 
 //const routes: Routes = [];
@@ -111,16 +108,13 @@ const routes: Routes = [
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
-<<<<<<< HEAD
   { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
   { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
-=======
   { path: 'blog-category/add', component: AddBlogCategoryComponent },
   { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
   //routes pour l'affichage des formations
   { path: 'trainings/all',  component: AllTrainingsComponent},
   { path: 'trainings/details/:id', component: DetailsTrainingsComponent },
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},

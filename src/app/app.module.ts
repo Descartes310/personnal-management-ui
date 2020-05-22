@@ -58,10 +58,8 @@ import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/mate
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-<<<<<<< HEAD
 import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
 import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
-=======
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
@@ -85,7 +83,6 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -137,10 +134,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
-<<<<<<< HEAD
     AllDisciplinaryTeamsComponent,
     DetailsDisciplinaryTeamComponent,
-=======
     AllSubmissionsComponent,
     AddVacationComponent,
     UpdateVacationComponent,
@@ -161,7 +156,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
   ],
   imports: [
     MatTabsModule,
