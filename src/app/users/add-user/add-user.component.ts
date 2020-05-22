@@ -3,10 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from 'src/app/_models/profile.model';
 import { UserService } from 'src/app/_services/user.service';
 import { RoleService } from 'src/app/_services/role.service';
+import { DivisionService } from 'src/app/_services/division.service';
 import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { Division } from 'src/app/_models/division.model';
 
 /**
  * @author Arléon Zemtsop
@@ -29,6 +31,7 @@ export class AddUserComponent implements OnInit {
   public roles_tmp: any[] = [];
   public selected_roles: number[] = [];
   public cities: any[] = [];
+  public divisions: any[] = [];
   public proSituations: any[] = [];
 
 	public personnalInfoForm: FormGroup;
@@ -56,6 +59,7 @@ export class AddUserComponent implements OnInit {
   	private formBuilder: FormBuilder,
     private userService: UserService,
     private roleService: RoleService,
+    private divisionService: DivisionService,
     private proSituationService: ProSituationService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -102,6 +106,7 @@ export class AddUserComponent implements OnInit {
         this.initPubicInfoForm(true);
         this.initRoleAndPermissionsForm();
         this.initCities();
+        this.getDivision();
         this.isBuild = true;
       }
     ).catch(
@@ -114,7 +119,7 @@ export class AddUserComponent implements OnInit {
     })
   }
 
-  getPermissions() {
+  public getPermissions() {
     this.loadingPermissions = true;
     this.roleService.permissions().then(
       response => {
@@ -131,7 +136,7 @@ export class AddUserComponent implements OnInit {
     })
   }
 
-  getRoles() {
+  public getRoles() {
     this.loadingRoles = true;
     this.roleService.getRolesWithPermissions().then(
       response => {
@@ -147,6 +152,19 @@ export class AddUserComponent implements OnInit {
       this.loadingRoles = false;
       this.getPermissions();
     })
+  }
+
+  public getDivision() {
+    this.divisionService.all().then(
+      response => {
+        this.divisions = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    )
   }
 
 
@@ -296,6 +314,13 @@ export class AddUserComponent implements OnInit {
           Validators.required,
         ]
       ];
+
+      parametter['division_id'] = [
+        '',
+        [
+          Validators.required,
+        ]
+      ];
       
       this.secondStepInputList.map(input => {
         let validationRules: any[] = [];
@@ -371,6 +396,8 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.personnalInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -380,6 +407,8 @@ export class AddUserComponent implements OnInit {
 
       if(value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -392,6 +421,8 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.publicInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -401,6 +432,8 @@ export class AddUserComponent implements OnInit {
 
       if(value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -597,13 +630,16 @@ export class AddUserComponent implements OnInit {
   }
 
   public computeDataToSend() {
+
     Object.keys(this.personnalInfo).map(key => {
+
       if(this.data_tmp1[key]) {
         this.data.append(key, this.data_tmp1[key]);
       } else {
         this.data.append(key, this.personnalInfo[key].value);
         this.data_tmp1[key] = this.personnalInfo[key].value;
       }
+
     });
 
     Object.keys(this.publicInfo).map(key => {
@@ -647,6 +683,9 @@ export class AddUserComponent implements OnInit {
         this.publicInfoForm.reset();
         this.selected_permissions = [];
         this.selected_roles = [];
+        this.data = new FormData();
+        this.data_tmp1 = {};
+         this.data_tmp2 = {};
       }
     ).catch(
       error => {

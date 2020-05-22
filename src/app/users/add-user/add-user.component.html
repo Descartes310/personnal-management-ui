@@ -147,6 +147,16 @@
 
                                                 </div>
 
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserDivisions' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <select matInput formControlName="division_id" class="form-control {{ isSubmitted && publicInfo.division_id.errors ? 'is-invalid' : '' }}">
+                                                        <option *ngFor='let option of divisions' value="{{ option.id }}"> {{ option.name }}</option>
+                                                    </select>
+
+                                                </div>
+
                                                 <div>
                                                     <button class="btn btn-primary btn-lg m-2" mat-button matStepperPrevious>Back</button>
                                                     <button class="btn btn-primary btn-lg m-2" mat-button matStepperNext (click)="validatePublicInfoForm()">Next</button>

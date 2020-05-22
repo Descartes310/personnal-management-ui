@@ -416,7 +416,8 @@
         "Save": "Veuillez sauvegarder",
         "UsersList": "Liste de membres du personnel",
         "UserListTiltle": "Gestion du personnel et des utilisateurs",
-        "AddUser": "Ajouter membre du personnel"
+        "AddUser": "Ajouter membre du personnel",
+        "UserDivisions": "Division de travail"
     },
     "Vacation": {
         "VACATION": "CONGE",

@@ -426,6 +426,8 @@ export class UpdateUserComponent implements OnInit {
 
       if(value < input.min) {
         this.personnalInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -435,6 +437,8 @@ export class UpdateUserComponent implements OnInit {
 
       if(value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -447,6 +451,8 @@ export class UpdateUserComponent implements OnInit {
 
       if(value < input.min) {
         this.publicInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 
@@ -456,6 +462,8 @@ export class UpdateUserComponent implements OnInit {
 
       if(value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
         return;
       }
 

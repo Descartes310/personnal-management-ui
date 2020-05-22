@@ -60,26 +60,6 @@ export class AllUsersComponent implements OnInit {
 		this.getUsers();
 	}
 
-	// public getProfiles() {
-
-	//     this.loading = true;
-	//     this.userService.allProfiles().then(
-	//       response => {
-	//         this.profiles = [];
-	//         response.map( input => {
-	//           this.profiles.push(new Profile(input));
-	//         });
-	//         console.log(this.profiles);
-	//         this.getUsers();
-	//       }
-	//     ).catch(
-	//       error => {
-	//         this.translate.get('User.LoadingError')
-	//           .subscribe(val => this.notifService.danger(val));
-	//       }
-	//     )
-	//  }
-
 	public getUsers() {
 
 	    this.userService.all().then(
