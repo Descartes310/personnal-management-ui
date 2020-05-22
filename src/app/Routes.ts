@@ -1,6 +1,7 @@
 export const SERVER = 'http://localhost:8000/api/';
 
 export const LOGIN = SERVER+'auth/token';
+export const UPDATE_PASSWORD = SERVER+'auth/updatepassword';
 export const USERS = SERVER+'users';
 export const CHAT = SERVER+'chats';
 export const DOCUMENT = SERVER + 'documents';

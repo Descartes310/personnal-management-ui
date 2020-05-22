@@ -99,6 +99,16 @@
         "sent":"Envoyés(s)"
     },
 
+    "UpdatePassword":{
+        "UpdatePassword": "Changer le mot de passe",
+        "UpdatePasswordTitle": "Modifiez votre mot de passe de connexion à l'application",
+        "UpdatePasswordAdd" : "Nouveau mot de passe",
+        "CreateUpdatePassword": "Enregistrer",
+        "SubmitSuccess" : "Nouveau mot de passe enregistré avec succès",
+        "ERROR_TRY_AGAIN": "L'ancien mot de passe est incorrect. Veuillez reéssayer",
+        "ERROR_NOT_MATCH": "Le mot de passe de confirmation ne correspond pas au nouveau mot de passe"
+    },
+
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -202,7 +212,14 @@
         "VacationTypeLabel": "Type de congé",
         "VacationTypeField": "Choisir un type de congé",
         "FileLabel": "Piece jointe",
-        "FileField": "Parcourir"
+        "FileField": "Parcourir",
+
+        "OldPasswordLabel": "Mot de passe actuel",
+        "OldPasswordField": "Veuillez entrer votre mot de passe courant...",
+        "NewPasswordLabel": "Nouveau mot de passe",
+        "NewPasswordField": "Veuillez entrer votre nouveau mot de passe...",
+        "ConfirmPasswordLabel": "Confirmation du mot de passe",
+        "ConfirmPasswordField": "Veuillez confirmer votre mot de passe..."
     },
 
     "AssignmentType": {

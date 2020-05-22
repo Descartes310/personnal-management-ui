@@ -60,7 +60,8 @@ import { AllSubmissionsComponent } from './submissions/all-submissions/all-submi
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
-export function HttpLoaderFactory(http: HttpClient) {
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
 
@@ -110,6 +111,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsProfileComponent,
     AddVacationComponent,
     UpdateVacationComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     MatStepperModule,

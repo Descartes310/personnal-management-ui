@@ -39,6 +39,7 @@ import { DetailsProSituationComponent } from './pro_situations/details-pro-situa
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 
 //const routes: Routes = [];
@@ -79,6 +80,7 @@ const routes: Routes = [
   { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+  { path: 'update-password', component: UpdatePasswordComponent },
 
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
