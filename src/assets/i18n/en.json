@@ -44,7 +44,11 @@
         "File": "File",
         "Requested_start_date": "Requested start date",
         "Requested_days": "Requested_days",
-        "Status": "Status"
+        "Status": "Status",
+        "Key": "Key",
+        "Value": "Value",
+        "KeyField": "Enter a key",
+        "ValueField": "Enter a value"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
@@ -146,5 +150,17 @@
         "Licenses_Title": "Licenses",
         "Licenses_Name": "Licenses's management",
         "Add_Licenses": "Add a new license"
+    },
+
+    "Settings":{
+        "Settings_Title": "Settings",
+        "Settings_Name": "Settings's management",
+        "Add_Settings": "Add a new Setting",
+        "Update": "Update",
+        "SubmitError": "Entries are necessary",
+        "UpdateSuccess": "The settings's update has been made successfully",
+        "SubmitSuccess": "The settings has been created successfully",
+        "NotFound": "Undefined settings",
+        "undefined": "the key is already existing"
     }
 }

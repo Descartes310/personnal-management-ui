@@ -166,7 +166,11 @@
         "File": "Fichier associé",
         "Requested_start_date": "Date de début requis",
         "Requested_days": "Nombre de jours requis",
-        "Status": "Status"
+        "Status": "Status",
+        "Key": "Clé",
+        "Value": "Valeur",
+        "KeyField": "Entrer une clé",
+        "ValueField": "Entrer une valeur"
     },
        
     "AssignmentType": {
@@ -287,6 +291,18 @@
         "Licenses_Name": "Gestion des permissions de l'application",
         "Add_Licenses": "Ajouter une nouvelle permission"
        
+    },
+
+    "Settings":{
+        "Settings_Title": "Configurations du système",
+        "Settings_Name": "Gestion des configurations du système",
+        "Add_Settings": "Ajouter une nouvelle configuration",
+        "Update": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour de la configuration a été un succès",
+        "SubmitSuccess": "La création de la configuration a réussie...",
+        "NotFound": "la configuration n'a pas été trouvée",
+        "undefined": "Le champ clé existe déja; bien vouloir le changer"
     }
 
 

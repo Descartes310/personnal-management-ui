@@ -62,6 +62,11 @@ import { DetailsTemplatesComponent } from './templates/details-templates/details
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
 import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -115,6 +120,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     FindTemplatesComponent,
     AllLicensesComponent,
     DetailsLicensesComponent,
+    AllSettingsComponent,
+    AddSettingsComponent,
+    DetailsSettingsComponent,
+    FindSettingsComponent,
+    UpdateSettingsComponent,
   ],
   imports: [
     MatStepperModule,
