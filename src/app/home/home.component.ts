@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { ChartDataSets } from 'chart.js';
+import { Label, Color } from 'ng2-charts';
+import { StatisticService } from '../_services/statistic.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +12,98 @@ import { AuthService } from '../_services/auth.service';
 export class HomeComponent implements OnInit {
 
   user;
-
+  smallNumber = 0;
+  bigNumber = 0;
+  smallDate = "";
+  bigDate = "";
+  listOfMonth: string[] = [];
+  listofAssignmentnumber: number[] = [];
+  listOfAssignment: any[] = [];
   constructor(
-    private authService: AuthService
-  ) { }
+    private authService: AuthService,
+    private statistiqueServive: StatisticService
+  ) {
+    this.lineChartData = [
+      { data: this.listofAssignmentnumber, label: "Nombre de demande de Conge par mois" }
+    ];
+    this.lineChartLabels = this.listOfMonth;
+  }
+
+  lineChartData: ChartDataSets[] = [{
+    data: [{ x: 15, y: 15, r: 15 },
+    { x: 25, y: 15, r: 25 },
+    { x: 36, y: 12, r: 33 },
+    { x: 10, y: 18, r: 18 }], label: 'DEMANDE DE CONGE PAR MOIS'
+  }];
+
+  lineChartLabels: Label[] = [];
+
+  lineChartOptions = {
+    responsive: true,
+  };
+
+  lineChartColors: Color[] = [
+    {
+      borderColor: 'blue',
+      backgroundColor: 'rgba(255,255,0,0.28)',
+    },
+  ];
+  labels:string[] = ['Jan','Fev','Mai','Avr','Mai','Juin','Juillet','Aout','Sept','Oct','Nov','Dec'];
+  lineChartLegend = false;
+  lineChartPlugins = [];
+  lineChartType = 'line';
 
   ngOnInit() {
     this.user = this.authService.getUser();
+    this.getAssignmentByMonth();
   }
 
   alert() {
     alert('Bonjour le monde')
   }
+
+  //recuperation des affectations groupes par mois
+  getAssignmentByMonth() {
+    this.statistiqueServive.getAssignmentByMonth().then(
+      response => {
+        this.listOfAssignment = response;
+        console.log(this.listOfAssignment)
+        for (const key in this.listOfAssignment) {
+          if (this.listOfAssignment.hasOwnProperty(key)) {
+            console.log('un numero de mois est ', key);
+            console.log('son total est ', this.listOfAssignment[key].length);
+            this.listofAssignmentnumber.push(this.listOfAssignment[key].length);
+            this.listOfMonth.push(this.getLabelOfMonth(key));
+            this.listofAssignmentnumber.sort(
+              
+            )
+            
+
+          }
+        }
+        //recuperation des mois
+    
+      }
+    )
+    console.log(this.listOfMonth)
+  }
+
+  getLabelOfMonth(month:string) {
+    switch (month) {
+      case '01': return 'Jan';
+      case '02': return 'Fev';
+      case '03': return 'Mar';
+      case '04': return 'Avr';
+      case '05': return 'Mai';
+      case '06': return 'Juin';
+      case '07': return 'Juil';
+      case '08': return 'Aout';
+      case '09': return 'Sept';
+      case '10': return 'Oct';
+      case '11': return 'Nov';
+      case '12': return 'Dec';
+    }
+  }
+
+  
 }

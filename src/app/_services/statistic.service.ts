@@ -17,4 +17,7 @@ export class StatisticService {
   getDatasetUserCareer(user_id:number): Promise<any>{
     return this.http.get<Career>(`${Routes.StatCareer}/${user_id}`).toPromise();
   }
+  getAssignmentByMonth(): Promise<any>{
+    return this.http.get<any>(`${Routes.StatAssignment}`).toPromise();
+  }
 }

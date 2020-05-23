@@ -41,13 +41,9 @@ export class ViewUserStatComponent implements OnInit {
 
   }
 
-  lineChartData: ChartDataSets[] = [
+  lineChartData: ChartDataSets[] = [];
 
-    { data: [85, 72, 78, 82, 75, 71], label: 'PARCOURS DE EMPLOYE' },
-
-  ];
-
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June'];
+  lineChartLabels: Label[] = [];
 
   lineChartOptions = {
     responsive: true,
@@ -100,7 +96,7 @@ export class ViewUserStatComponent implements OnInit {
     this.statService.getDatasetUserCareer(user_id).then(
       response => {
         this.usersCareers = response;
-        console.log(this.usersCareers)
+        console.log(this.usersCareers)  
         this.usersCareers.forEach(element => {
         this.effectiveDate.push(element.effective_date);
           //recuperation des situations pro
