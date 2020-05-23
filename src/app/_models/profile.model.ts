@@ -11,7 +11,9 @@ export class Profile extends Super<Profile> {
     public max: number;
     public step: number;
     public is_unique: boolean;
+    public is_private:boolean;
     public default: string;
     public description: string;
+    public options: any[];
     
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogcatService } from 'src/app/_services/blogcat.service';
+import { BlogCategoryService } from 'src/app/_services/blog-category.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,7 +20,7 @@ export class UpdateBlogCategoryComponent implements OnInit {
   blogcat: BlogCat = new BlogCat();
 
   constructor(
-    private blogcatService: BlogcatService,
+    private blogcatService: BlogCategoryService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
