@@ -36,6 +36,12 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
+import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
+
+
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -108,9 +114,18 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+<<<<<<< HEAD
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { FindContractComponent } from './contracts/find-contract/find-contract.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
+import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+=======
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 
 //import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -166,7 +181,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+<<<<<<< HEAD
+    AddDisciplinaryBoardsComponent,
+    UpdateDisciplinaryBoardComponent,
+    AddUserNoteCriteriasComponent,
+=======
 
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     AddTrainingComponent,
     UpdateTrainingComponent,
     AddBlogCategoryComponent,
@@ -291,7 +312,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatInputModule,
     BrowserModule,
-    CKEditorModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -309,7 +329,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastrModule.forRoot(),
     BlockUIModule.forRoot(),
     BrowserAnimationsModule
-  ],
+  ], 
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },

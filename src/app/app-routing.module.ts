@@ -11,6 +11,11 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
+import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
+
+
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -131,6 +136,8 @@ const routes: Routes = [
   { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
   { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
+  { path: 'disciplinary_boards/add', component: AddDisciplinaryBoardsComponent },
+  { path: 'disciplinary_boards/update/:id', component: UpdateDisciplinaryBoardComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
@@ -176,6 +183,10 @@ const routes: Routes = [
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'user_note_criterias', component: AddUserNoteCriteriasComponent },
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},

@@ -4,7 +4,6 @@ import * as Routes from '../Routes';
 import { User } from '../_models/user.model';
 
 
-
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
@@ -19,6 +18,23 @@ export class UserService {
   ) { }
 
   add(formData: FormData): Promise<User> {
+<<<<<<< HEAD
+    return this.http.post<User>(Routes.USERS, formData).toPromise();
+  }
+
+  update(formData: FormData, id: number): Promise<User> {
+    return this.http.post<User>(`${Routes.USERS}/${id}`, formData).toPromise();
+  }
+
+  allUsers(): Promise<any> {
+    return this.http.get<any>(Routes.USERS).toPromise();
+  }
+
+  findUser(id: number): Promise<any> {
+    return this.http.get<any>(Routes.FIND_USSER+'/'+id).toPromise();
+  }
+
+=======
     return this.http.post<User>(Routes.USER, formData).toPromise();
   }
 
@@ -71,4 +87,5 @@ export class UserService {
     return this.http.get<any>(Routes.USERS + '/' + id).toPromise();
   }
 
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 }

@@ -88,6 +88,22 @@
         "ROLE_NOT_FOUND": "Le rôle n'a pas été retrouvé",
         "ROLE_ALREADY_EXISTS": "Le rôle existe déjà"
     },
+    "DisciplinaryBoards": {
+        "Disciplinary_boards": "Conseils de Discipine",
+        "DisciplinaryBoardsTitle": "Gestion des Conseils de Discipines de l'application",
+        "AddRole": "Ajouter un nouveau Conseil",
+        "CreateDisciplinaryBoards": "Créer le Conseil de Discipine",
+        "UpdateDisciplinaryBoards": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création du conseil a réussie...",
+        "SubmitErrorPermissions": "Veuillez selectionner au moins une permission",
+        "Disciplinary_Boards_NOT_FOUND": "Le conseil n'a pas été retrouvé",
+        "Disciplinary_Boards_ALREADY_EXISTS": "Le conseil existe déjà",
+        "Select_Team": "Choix de l'équipe",
+        "Name": "Nom de l'employe",
+        "SelectMember": "Veuillez selectionner un membre",
+        "Created_Error": "Echec de cretion dy conseil"
+    },
     "BlogPost": {
         "BlogPosts": "Actualites",
         "BlogPostTitle": "Gestion des Actualites de l'application",
@@ -168,6 +184,49 @@
             "ErrorSubmit": "echec d'ajout du contact",
             "UpdateErrorSubmit": "echec de modification du contact"
         },
+<<<<<<< HEAD
+        "UserFormThirdStepName": "Roles et permissions",
+        "InputRequiredError": "Le champ {{ data }} est obligatoire",
+        "InputMaxError": "La valeur du champ {{ data1 }} doit être inférieure à {{ data2 }}",
+        "InputMinError": "La valeur du champ {{ data1 }} doit être supérieure à {{ data2 }}",
+        "InputMinLengthError": "La valeur du champ {{ data1 }} ne doit pas être inférieure à {{ data2 }} caractères",
+        "InputMaxLengthError": "La valeur du champ {{ data1 }} ne doit pas être supérieur à {{ data2 }} caractères",
+        "CreateUserSuccess": "L'utilisateur a été créé  avec succès"
+    },
+    "Vacation": {
+        "VACATION": "CONGE",
+        "Vacations": "congés",
+        "VacationTitle": "Gestion des Demandes des congés de l'application",
+        "AddVacation": "demande d'un congé",
+        "UpdateVacation": "Modifier",
+        "SubmitSuccess": "La création de demande de congé a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorVacation_type": "Veuillez selectionner un type de congé",
+        "SubmitErrorVacation":"erreur de la creation!! veuillez verifier vos donnees ",
+        "VACATION_NOT_FOUND": "ce congé n'a pas été retrouvé",
+        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà",
+        "VacationAdd": " Nouveau type de congés",
+        "VacationUpdate": "Mise à jour d'un type de congés",
+        "CreateVacation": "Enregistrer",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "UserNoteCriteria": {
+        "Title" : "Gestion des Criteres de notation",
+        "Error" : "Echec de l'action",
+        "Success" : "Action effectué avec success",
+        "Select_note" : "Selectionner un critaire de note",
+        "Label" : "Appreciation",
+        "AddForm" : "Ajouter cette nouvelle note",
+        "UpForm": "Modifier Cette Note",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+=======
         "Form": {
             "NamesLabel": "Nom",
             "LabelsLabel": "Label",
@@ -686,5 +745,6 @@
             "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
             "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
         }
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     }
 }
