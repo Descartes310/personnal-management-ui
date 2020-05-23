@@ -30,7 +30,7 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
-<<<<<<< HEAD
+
 //import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
@@ -38,12 +38,12 @@ import { DetailsNotecriteriasComponent } from './notecriterias/details-notecrite
 import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
-=======
+
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
+
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -61,18 +61,16 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
-<<<<<<< HEAD
-import { AngularEditorModule } from '@kolkov/angular-editor';
+
+//import { AngularEditorModule } from '@kolkov/angular-editor';
 
 //import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 //import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
 import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
 
-import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
-import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
-=======
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
+//import { AddVacationComponent } from './vacation/add-vacation/add-vacation.component';
+//import { UpdateVacationComponent } from './vacation/update-vacation/update-vacation.component';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
@@ -80,9 +78,7 @@ import { AllDivisionComponent } from './divisions/all-division/all-division.comp
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
-<<<<<<< HEAD
 
-=======
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -105,7 +101,6 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -149,16 +144,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
-<<<<<<< HEAD
     AllNotecriteriasComponent,
     DetailsNotecriteriasComponent,
     DeleteNotecriteriasComponent,
     AllAssignmenttypeComponent,
     DetailsAssignmenttypeComponent,
-=======
     AllDivisionComponent,
     DetailsDivisionComponent,
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
     AddDivisionComponent,
     UpdateDivisionComponent,
     AddCongeComponent,
@@ -169,9 +161,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsSanctionComponent,
     AllSubmissionsComponent,
     AddVacationComponent,
-<<<<<<< HEAD
-    UpdateVacationComponent
-=======
     UpdateVacationComponent,
     AllBlogPostComponent,
     DetailBlogPostComponent,
@@ -190,7 +179,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
   ],
   imports: [
     MatTabsModule,

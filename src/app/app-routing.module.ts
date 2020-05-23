@@ -100,19 +100,18 @@ const routes: Routes = [
   { path: 'templates/all', component: AllTemplatesComponent },
   { path: 'templates/details/:id', component: DetailsTemplatesComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
-<<<<<<< HEAD
+
   { path: 'notecriterias/all', component: AllNotecriteriasComponent },
   { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
   { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
   { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
-=======
   { path: 'vacations/all', component: AllVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/details/:id', component: DetailVacationComponent },
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
+
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'licenses/add', component: AddLicenseComponent },

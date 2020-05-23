@@ -24,9 +24,7 @@ export class VacationService {
         return this.http.get<Vacation>(`${Routes.VACATION}/${id}`).toPromise();
     }
     
-<<<<<<< HEAD
-    
-=======
+
     vacation_type():  Promise<any> {
         return this.http.get<any>(Routes.VACATION_TYPE).toPromise();
     }
@@ -43,5 +41,5 @@ export class VacationService {
         return this.http.delete<Vacation[]>(`${Routes.VACATION}/${id}`).toPromise();
     }
 
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
+
 }

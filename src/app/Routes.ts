@@ -22,13 +22,12 @@ export const PROFILES = SERVER + 'profiles';
 export const DIVISION = SERVER + 'divisions';
 export const SUBMISSION = SERVER + 'submissions';
 export const VACATION = SERVER + 'vacations';
-<<<<<<< HEAD
 
-=======
 export const VACATION_TYPE = SERVER + 'vacation_types';
 export const BlogPost = SERVER + 'blog_posts';
 export const BlogCategorie = SERVER + 'blog_categories';
 export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
 export const PROFILE = SERVER + 'profiles';
->>>>>>> a182a9af15602592ce79b6ec1220a67080adcbc3
+
+export const DISCIPLINARYBOARD = SERVER + 'disciplinary_board';
