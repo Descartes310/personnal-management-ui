@@ -6,6 +6,10 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
+<<<<<<< HEAD
+=======
+import { DatePipe } from '@angular/common';
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 
 @Component({
   selector: 'app-update-license',
@@ -26,6 +30,14 @@ export class UpdateLicenseComponent implements OnInit {
   license : License = new License();
   file:File=null;
 
+<<<<<<< HEAD
+=======
+  pipe = new DatePipe('en-US');
+  Date = new Date();
+  currentDate = this.pipe.transform(this.Date, 'yyyy-MM-dd');
+
+
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   constructor(
     private licenseService: LicenseService,
     private authService:AuthService,
@@ -64,7 +76,11 @@ export class UpdateLicenseComponent implements OnInit {
         license_type_id: [this.license.license_type_id, [Validators.required]],
         reason:[this.license.raison],
         description: [this.license.description],
+<<<<<<< HEAD
         file:[this.license.file],
+=======
+        file:[],
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         requested_start_date:[this.license.requested_start_date,[Validators.required]],
         requested_days:[this.license.requested_days,[Validators.required]]
 
@@ -121,25 +137,43 @@ export class UpdateLicenseComponent implements OnInit {
     formData.append('license_type_id', ''+this.form.license_type_id.value);
     formData.append('raison', '' + this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
+<<<<<<< HEAD
+=======
+    if (this.currentDate >= this.form.requested_start_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+    }
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     formData.append('requested_start_date', '' + this.form.requested_start_date.value);
     formData.append('requested_days', '' + this.form.requested_days.value);
     formData.append('is_active', '1');
     formData.append('status', 'PENDING');
      if(this.file != null)
       formData.append('file',this.file,this.file.name);
+<<<<<<< HEAD
       console.log(this.file);
 
+=======
+      
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
       this.licenseService.update(formData, this.license.id)
       .then(resp => {
         this.translate.get('License.SubmitUpdateSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
+<<<<<<< HEAD
         this.router.navigate(['/home']);
       })
       .catch(err => {
         console.log(err)
         this.translate.get('License.LICENSE_VALIDATOR')
+=======
+      })
+      .catch(err => {
+        console.log(err)
+        this.translate.get('License.SubmitErrorLicense')
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

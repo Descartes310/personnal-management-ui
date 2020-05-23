@@ -43,6 +43,10 @@ export class ProSituationService {
   all(): Promise<any> {
     return this.http.get<any>(Routes.PRO_SITUATION).toPromise();
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   delete(id: number): Promise<ProSituation[]> {
     return this.http.delete<ProSituation[]>(`${Routes.PRO_SITUATION}/${id}`).toPromise();
   }

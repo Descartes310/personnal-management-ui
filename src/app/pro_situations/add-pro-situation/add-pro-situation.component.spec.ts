@@ -23,3 +23,7 @@ describe('AddProSituationComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d

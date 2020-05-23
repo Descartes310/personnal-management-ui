@@ -11,17 +11,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
+<<<<<<< HEAD
 
+=======
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   //gestion des steppers
   step1Selected: boolean = true;
   step2Selected: boolean = false;
   step3Selected: boolean = false;
+<<<<<<< HEAD
   stepIndexSelected=0;
+=======
+  stepIndexSelected = 0;
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   isLinear = false;
   //gestion des formgroup
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+<<<<<<< HEAD
   thirdFormGroup :FormGroup;
+=======
+  thirdFormGroup: FormGroup;
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   //
   isLoading = false;
   isError = false;
@@ -29,11 +40,21 @@ export class AddContactComponent implements OnInit {
   isSubmitted = false;
 //variable pour la recuperation de image
   image:File=null;
+<<<<<<< HEAD
   constructor(private contactservice:ContactService,
               private notifService: NotifService,
               private formBuilder: FormBuilder,
               private translate: TranslateService,
               private router: Router,) { }
+=======
+  constructor(
+    private contactservice:ContactService,
+    private notifService: NotifService,
+    private formBuilder: FormBuilder,
+    private translate: TranslateService,
+    private router: Router)
+  { }
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 
   ngOnInit() {
     this.initform();
@@ -52,8 +73,13 @@ export class AddContactComponent implements OnInit {
   }
 
   //init form
+<<<<<<< HEAD
   initform(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
+=======
+  initform() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     this.firstFormGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: '',
@@ -62,17 +88,26 @@ export class AddContactComponent implements OnInit {
       gender: ['', Validators.required]
     });
   }
+<<<<<<< HEAD
   initform2(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
     this.secondFormGroup = this.formBuilder.group({
       email: ['', [Validators.email]],
       phone1:['', [Validators.pattern(phone_patern)]],
+=======
+  initform2() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.secondFormGroup = this.formBuilder.group({
+      email: ['', [Validators.email,Validators.required]],
+      phone1: ['', [Validators.pattern(phone_patern)]],
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
       phone2: ['', [Validators.pattern(phone_patern)]],
       phone3: ['', [Validators.pattern(phone_patern)]],
       fax: '',
       bp: '',
     });
   }
+<<<<<<< HEAD
 
   initform3(){
     let phone_patern="^((\\+[0-9]{3}-?))?[0-9]{8}$";
@@ -86,6 +121,18 @@ export class AddContactComponent implements OnInit {
     });
   }
 
+=======
+  initform3() {
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    this.thirdFormGroup = this.formBuilder.group({
+      twitter: '',
+      facebook: '',
+      whatsapp: '',
+      linkedin: '',
+      website: '',
+    });
+  }
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   //submit the form
   onSubmit() {
     this.isSubmitted = true;
@@ -120,28 +167,46 @@ export class AddContactComponent implements OnInit {
     formData.append('website', '' + this.form2.website.value);
     formData.append('gender', '' + this.form.gender.value);
     //recuperation  de image
+<<<<<<< HEAD
     formData.append('picture',this.image);
     this.contactservice.add(formData)
       .then(resp => {
         this.translate.get('Contact.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
+=======
+    formData.append('picture', this.image);
+    this.contactservice.add(formData)
+      .then(resp => {
+        this.translate.get('Contact.SubmitSuccess')
+          .subscribe(val => this.notifService.success(val));
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         this.isSubmitted = false;
         //reinitialisation
         this.firstFormGroup.reset();
         this.secondFormGroup.reset();
         this.thirdFormGroup.reset();
+<<<<<<< HEAD
         this.stepIndexSelected=0;
         
+=======
+        this.stepIndexSelected = 0;
+        this.router.navigate(['/contacts/all']);
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
       })
       .catch(err => {
         console.log(err)
         this.translate.get('Contact.ErrorSubmit')
+<<<<<<< HEAD
         .subscribe(val => this.notifService.danger(val));
+=======
+          .subscribe(val => this.notifService.danger(val));
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
       })
       .finally(() => this.isLoading = false);
   }
 
   detectimage(event) {
+<<<<<<< HEAD
       this.image = event.target.files[0];
       console.log(this.image)
   }
@@ -180,10 +245,50 @@ export class AddContactComponent implements OnInit {
     else{
         this.isSubmitted=false;
         this.stepIndexSelected=2;
+=======
+    this.image = event.target.files[0];
+    console.log(this.image)
+  }
+  //validation de chaque etape
+  validStep1() {
+    if (this.firstFormGroup.invalid) {
+      this.stepIndexSelected = 0;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+    }
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 1;
+    }
+  }
+
+  previous1() {
+    this.stepIndexSelected = 0;
+  }
+  previous2() {
+    this.stepIndexSelected = 1;
+  }
+  previous3() {
+    this.stepIndexSelected = 2;
+  }
+  //step 2
+  validStep2() {
+    if (this.secondFormGroup.invalid) {
+      this.stepIndexSelected = 1;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+    }
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 2;
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     }
   }
   //valid step 3
   validStep3() {
+<<<<<<< HEAD
     
     if(this.secondFormGroup.invalid){
         this.stepIndexSelected=2; 
@@ -197,4 +302,17 @@ export class AddContactComponent implements OnInit {
     }
 }
 
+=======
+    if (this.secondFormGroup.invalid) {
+      this.stepIndexSelected = 2;
+      this.isSubmitted = true;
+      this.translate.get('Contact.SubmitError')
+        .subscribe(val => this.notifService.danger(val));
+    }
+    else {
+      this.isSubmitted = false;
+      this.stepIndexSelected = 3;
+    }
+  }
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 }

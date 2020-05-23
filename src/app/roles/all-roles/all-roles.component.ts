@@ -37,7 +37,11 @@ export class AllRolesComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+<<<<<<< HEAD
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+=======
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         { data: 'role' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -59,9 +63,17 @@ export class AllRolesComponent implements OnInit {
     this.loading = true;
     this.roleService.all().then(
       response => {
+<<<<<<< HEAD
         this.roles = [];
         response.data.map( role => {
           this.roles.push(new Role(role));
+=======
+        console.log(response);
+        this.roles = [];
+        response.data.map( role => {
+          this.roles.push(new Role(role));
+          console.log('ok\n\nok' + response.data + 'rte\n\n');
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         });
       }
     ).catch(
@@ -112,7 +124,11 @@ export class AllRolesComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

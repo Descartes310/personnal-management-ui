@@ -3,7 +3,11 @@ import { VacationTypeService } from 'src/app/_services/vacation-type.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+<<<<<<< HEAD
 import { VacationType } from 'src/app/_models/vacation-type.model';
+=======
+import { Role } from 'src/app/_models/role.model';
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 import { Router } from '@angular/router';
 
 

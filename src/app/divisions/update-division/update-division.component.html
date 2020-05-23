@@ -14,7 +14,11 @@
 </div>   
 
 <div class="row" style="width: 100%;">
+<<<<<<< HEAD
     <div class="col-md-8" style="margin-left:auto ; margin-right :auto;">
+=======
+    <div class="col-md-12" style="margin-left:auto ; margin-right :auto;">
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
@@ -33,7 +37,11 @@
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="name" class="">{{ "Form.NameLabel" | translate }}</label>
+<<<<<<< HEAD
                                             <input placeholder="{{ 'Form.NameField' | translate }}"  disabled type="text" formControlName="name" value="{{ division_name }}" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+=======
+                                            <input placeholder="{{ 'Form.NameField' | translate }}"  disabled type="text" formControlName="name" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
@@ -42,9 +50,15 @@
                                             </textarea>
                                         </div>
                                         <div class="position-relative form-group">
+<<<<<<< HEAD
                                             
                                             <select name="divisions" formControlName="parent_id">
                                                 <option selected>choisir le division parent </option>
+=======
+                                            <label for ="select" class="">{{"Form.NameSelect" | translate }}</label>
+                                            <select name="divisions" formControlName="parent_id" class="form-control" >
+                                                
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
                                                 <option *ngFor="let division of divisions" [value]="division.id">{{division.name}}</option>
                                             </select>
                                     </div>

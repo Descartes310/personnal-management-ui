@@ -20,7 +20,11 @@
                 <div class="card-header">
                     <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
                     {{ 'License.Licenses' | translate }}               
+<<<<<<< HEAD
                     </div>
+=======
+                </div>
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
@@ -48,9 +52,16 @@
                                             <label for="exampleText" class="">{{ "Form.FileLabel" | translate }}</label>
                                             <input name="File" id="File" placeholder="{{ 'Form.FileField' | translate }}" type="file" formControlName="file" (change)=detectfile($event) class="form-control">
                                         </div>
+<<<<<<< HEAD
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.StartDateLabel" | translate }}</label>
                                             <input placeholder="{{ 'Form.StartDateField' | translate }}"  type="date" formControlName="requested_start_date"  class="form-control {{ isSubmitted && form.requested_start_date.errors ? 'is-invalid' : '' }}">
+=======
+
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.StartDateLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.StartDateField' | translate }}"  type="date" formControlName="requested_start_date" class="form-control {{ isSubmitted && form.requested_start_date.errors ? 'is-invalid' : '' }}">
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.DaysLabel" | translate }}</label>

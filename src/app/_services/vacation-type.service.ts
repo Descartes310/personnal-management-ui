@@ -21,11 +21,14 @@ export class VacationTypeService {
   find(id: number): Promise<VacationType> {
     return this.http.get<VacationType>(`${Routes.VACATIONTYPE}/${id}`).toPromise();
   }
+<<<<<<< HEAD
   all(): Promise<any> {
     return this.http.get<any>(Routes.VACATIONTYPE).toPromise();
 }
 delete(id: number): Promise<VacationType[]> {
   return this.http.delete<VacationType[]>(`${Routes.VACATIONTYPE}/${id}`).toPromise();
 }
+=======
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 
 }

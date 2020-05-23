@@ -20,7 +20,12 @@ export class DivisionService {
     }
 
     update(formData: FormData, id: number): Promise<Division> {
+<<<<<<< HEAD
         return this.http.put<Division>(`${Routes.DIVISION}/${id}`, formData).toPromise();
+=======
+      console.log(formData.get('name'));
+        return this.http.post<Division>(`${Routes.DIVISION}/${id}`, formData).toPromise();
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
     }
 
     all(): Promise<any> {
@@ -35,7 +40,11 @@ export class DivisionService {
     delete(id: number): Promise<Division[]> {
         return this.http.delete<Division[]>(`${Routes.DIVISION}/${id}`).toPromise();
     }
+<<<<<<< HEAD
 
     
 
 }
+=======
+}
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
