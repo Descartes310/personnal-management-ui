@@ -88,6 +88,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule, MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
+
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AddBlogPostComponent } from './blog-post/add-blog-post/add-blog-post.component';
@@ -97,10 +98,14 @@ import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-d
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
+
+//statistiques
+import { ChartsModule } from 'ng2-charts';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
@@ -206,12 +211,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicensetypesComponent,
     AllDivisionComponent,
     DetailsDivisionComponent,
+    
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
-    AllDivisionComponent,
-    DetailsDivisionComponent,
+   
     AllNotecriteriasComponent,
     DetailsNotecriteriasComponent,
     DeleteNotecriteriasComponent,
@@ -244,6 +249,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailBlogPostComponent,
     AllContactComponent,
     DetailContactComponent,
+    ViewUserStatComponent,
     AllVacationComponent,
     DetailVacationComponent,
     UpdateVacationComponent,
@@ -294,16 +300,19 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
 
   imports: [
+    ChartsModule,
     MatTabsModule,
     MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserModule,
+    CKEditorModule,
+    AngularEditorModule,
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     CKEditorModule,
