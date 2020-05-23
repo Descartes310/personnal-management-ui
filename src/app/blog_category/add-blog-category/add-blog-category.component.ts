@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogcatService } from 'src/app/_services/blogcat.service';
+import {BlogCategoryService } from 'src/app/_services/blog-category.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,7 +19,7 @@ export class AddBlogCategoryComponent implements OnInit {
   //blogcat_name = '';
 
   constructor(
-      private blogcatService: BlogcatService,
+      private blogCategoryService: BlogCategoryService,
       private notifService: NotifService,
       private formBuilder: FormBuilder,
       private translate: TranslateService,
@@ -54,7 +54,7 @@ export class AddBlogCategoryComponent implements OnInit {
       formData.append('title', '' + this.form.title.value);
       formData.append('description', '' + this.form.description.value);
 
-      this.blogcatService.add(formData)
+      this.blogCategoryService.add(formData)
         .then(resp => {
           this.translate.get('BlogCat.SubmitSuccess')
           .subscribe(val => this.notifService.success(val));

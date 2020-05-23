@@ -55,6 +55,10 @@ export class AuthService {
         this.setAuthenticated(false);
         this.router.navigate(['login']);
     }
+    updatePassword(formData:FormData): Promise<any> {
+        
+        return this.http.post<any>(Routes.UPDATE_PASSWORD, formData).toPromise();
+    }
 
     /**
      * Cette fonction va sauvegarder le token du user
