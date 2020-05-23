@@ -360,7 +360,9 @@
         "DisciplinaryTeamTitle": "Gestion du Conseil de décision de l'application",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
         "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée",
+        "Description": "Conseil de decision lié à :",
+        "DisciplinaryTeamList": "Liste des memres du conseil"
     },
     "User": {
         "Users": "Création des employés",
