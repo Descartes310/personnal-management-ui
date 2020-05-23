@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor'
+import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './_guards/auth.guard'
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
@@ -29,6 +30,8 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddTrainingComponent } from './trainings/add-training/add-training.component';
+import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { ChatComponent } from './chat/chat.component';
@@ -36,13 +39,12 @@ import { AddContactComponent } from './contacts/add-contact/add-contact.componen
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
-import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
-//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
@@ -50,16 +52,43 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 
-import { AngularEditorModule } from '@kolkov/angular-editor';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
+import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
+import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AllContactComponent } from './contacts/all-contact/all-contact.component';
+import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { AddCongeComponent } from './conges/add-conge/add-conge.component';
+import { UpdateCongeComponent } from './conges/update-conge/update-conge.component';
+import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
+import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
+import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
+import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
 import { FindTrainingsComponent } from './trainings/find-trainings/find-trainings.component';
 import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -84,6 +113,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddTrainingComponent,
+    UpdateTrainingComponent,
     AddBlogCategoryComponent,
     UpdateBlogCategoryComponent,
     AllTrainingsComponent,
@@ -93,25 +124,53 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateContactComponent,
     AddAssignmentTypeComponent,
     UpdateAssignmentTypeComponent,
-    AddProfileComponent,
-    UpdateProfileComponent,
+    AddUserComponent,
+    UpdateUserComponent,
     AddVacationTypeComponent,
     UpdateVacationTypeComponent,
     AddLicenseComponent,
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllDivisionComponent,
+    DetailsDivisionComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
+    AddCongeComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AllSubmissionsComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
+    AllBlogPostComponent,
+    DetailBlogPostComponent,
+    AllContactComponent,
+    DetailContactComponent,
+    UpdateCongeComponent,
+    AllVacationComponent,
+    DetailVacationComponent,
+    AddVacationComponent,
+    UpdateVacationComponent,
+    AllSubmissionComponent,
+    DetailsSubmissionComponent,
+    AllProfileComponent,
+    DetailsProfileComponent,
     DetailsTrainingsComponent,
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
+    AllLicensesComponent,
+    DetailsLicensesComponent,
+    AllSettingsComponent,
+    AddSettingsComponent,
+    DetailsSettingsComponent,
+    FindSettingsComponent,
+    UpdateSettingsComponent,
   ],
   imports: [
+    MatTabsModule,
+    MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
@@ -135,7 +194,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     AuthGuardService,
-    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

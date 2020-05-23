@@ -1,11 +1,9 @@
-import { Super } from  './super.model';
+import { Super } from './super.model';
 
 export class Division extends Super<Division> {
-
+    public division: Division;
+    public parent_id: number;
     public name: string;
-    public display_name: string;
-    public description: string;
-    public parent_id : number;
-
-    
+    public slug: string;
+    public description: string;  
 }

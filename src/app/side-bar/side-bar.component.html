@@ -84,10 +84,25 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
+                        
                         <li>
-                            <a href="index.html" class="">
+                            <a  [routerLink]="['/vacations/add']"  class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>Add Conge
+                            </a>
+                            <a  [routerLink]="['/vacations/update/1']"  class="">
+                                <i class="metismenu-icon">
+                                </i>Update Conge
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""  [routerLink]="['/licenses/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Permissions" | translate }}
+                            </a>
+                            <a href=""  [routerLink]="['/home']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Conges" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -164,9 +179,9 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/trainings/add']" class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>{{ "SideBar.Training" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -240,7 +255,12 @@
                                 </i>{{ "SideBar.ProSituation" | translate }}
                             </a>
                         </li>
-                       
+                        <li>
+                            <a href="" [routerLink]="['/divisions/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Division" | translate }}
+                            </a>
+                        </li>
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">
@@ -291,7 +311,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/settings/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Config" | translate }}
                             </a>

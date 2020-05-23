@@ -24,6 +24,10 @@ export class RoleService {
         return this.http.get<any>(Routes.ROLE).toPromise();
     }
 
+    getRolesWithPermissions(): Promise<any> {
+        return this.http.get<any>(Routes.ROLE + '/' + 'getRolesWithPermissions').toPromise();
+    }
+
     permissions(): Promise<any> {
         return this.http.get<any>(Routes.PERMISSION).toPromise();
     }
