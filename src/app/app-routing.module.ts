@@ -18,7 +18,6 @@ import { UpdateBlogCategoryComponent } from './blog_category/update-blog-categor
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
-import { AllVacationComponent } from './vacation/all-vacation/all-vacation.component';
 import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
