@@ -329,11 +329,8 @@
         "TrainingTitle": "Gestion des formations de l'application",
         "AddTraining": "Ajouter une formation",
         "CreateTraining": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
         "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
         "Error": "donnees inalide",
-        "SubmitError": "Les champs en rouge sont obligatoire",
-        "SubmitSuccess":"Ajout de la formation effectuer avec succes",
         "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
         "ErrorMessages": {
             "Duration": [
@@ -342,7 +339,21 @@
                 "la durée doit être inférieur ou égal à 100"
             ]
         },
-        "IsOnline": "Cette formation est elle en ligne?"
+        "IsOnline": "Cette formation est elle en ligne?",
+        "Training_Title": "Formations",
+        "Training_Name": "Gestion des formations de l'application",
+        "Add_Training": "Ajouter une nouvelle formation",
+        "CreateTraing": "Créer la formation",
+        "UpdateTraining": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
+        "UpdateSuccess": "La mise à jour de la formation a été un succès",
+        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
     "BlogCat": {
         "BC_Title": "Catégories de blog",
@@ -368,23 +379,6 @@
         "ProSituations": "Situations professionelles",
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires"
-    },
-
-    "Training": {
-        "Training_Title": "Formations",
-        "Training_Name": "Gestion des formations de l'application",
-        "Add_Training": "Ajouter une nouvelle formation",
-        "CreateTraing": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création de la permission a réussie...",
-        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
-        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
-        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
-        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
-        "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
     },
 
     "Licenses":{
