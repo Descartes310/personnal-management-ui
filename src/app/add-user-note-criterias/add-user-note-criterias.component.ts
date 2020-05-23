@@ -3,9 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NotifService } from 'src/app/_services/notif.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { DisciplinaryBoardsService } from 'src/app/_services/disciplinary_boards.service';
 import { UserService } from 'src/app/_services/user.service';
-import { DisciplinaryTeamsService } from 'src/app/_services/disciplinary_teams.service';
+import { NotecriteriasService } from '../_services/notecriterias.service';
+import { UserNoteCriteriasService } from '../_services/user-note-criterias.service';
 
 @Component({
   selector: 'app-add-user-note-criterias',
@@ -17,16 +17,17 @@ export class AddUserNoteCriteriasComponent implements OnInit {
   formGroup: FormGroup;
   user: any[] = [];
   user_tmp: any[] = [];
-  list_team: any[] = [];
+  list_note: any[] = [];
+  selected_user_note: any;
 
   isLoading = false;
-  isError = false;
-  isSuccess = false;
   isSubmitted = false;
-  selected_user:any;
-  selected_team : any;
+
+  selected_user: any;
+  selected_note: any;
   isCheck = false;
-  setlected : any;
+  score_error = false;
+  isUpdate = false;
 
   /**
    * Constructor
@@ -36,41 +37,40 @@ export class AddUserNoteCriteriasComponent implements OnInit {
     private userService: UserService,
     private notifService: NotifService,
     private translate: TranslateService,
+    private noteService: NotecriteriasService,
     private router: Router,
-    private addBoardService: DisciplinaryBoardsService,
-    private teamService: DisciplinaryTeamsService) {
+    private addUserNoteCriterias: UserNoteCriteriasService) {
 
   }
 
   ngOnInit(): void {
     this.getUsers();
-    this.getListTeam();
+    this.getNoteCriterias();
     this.formGroup = this.formBuilder.group({
-      effective_date: ['', Validators.required],
-      raison: ['', Validators.required],
-      decision: ['', Validators.required],
-      location: ['', Validators.required],
-      team: ['', Validators.required]
+      appreciation: ['', Validators.required],
+      description: ['', Validators.required],
+      score: ['', Validators.required],
+      note_criteria_id: ['', Validators.required]
     });
   }
 
+  getNoteCriterias() {
+    this.noteService.all().then(
+      response => {
+        this.list_note = response;
+      }
+    )
+      .catch(
+        error => {
+          this.notifService.danger("Une erreur s'est produite");
+        }
+      )
+  }
 
   get form() {
     return this.formGroup.controls;
   }
 
-  getListTeam(){
-    this.teamService.all().then(
-      response =>{
-        console.log(response);
-        this.list_team = response;
-        console.log(response);
-      }
-    )
-    .catch(error =>{
-      this.notifService.danger("Une erreur s'est produite");
-    });
-  }
 
   getUsers() {
     this.userService.allUsers().then(
@@ -85,39 +85,49 @@ export class AddUserNoteCriteriasComponent implements OnInit {
     )
   }
 
-  add() {
+  add(){
+    if(this.isUpdate){
+      this.updateUser();
+    }else{
+      this.addUser();
+    }
+  }
+
+  addUser() {
     this.isSubmitted = true;
-    this.isError = false;
-    this.isSuccess = false;
     this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.formGroup.invalid) {
-      this.translate.get('DisciplinaryBoards.SubmitError')
+      this.translate.get('UserNoteCriteria.Error')
         .subscribe(val => this.notifService.danger(val));
-        console.log("testeffge");
+      return;
+    }
+
+    if (this.selected_note.max_rate < this.form.score.value || this.selected_note.min_rate > this.form.score.value) {
+      this.translate.get('UserNoteCriteria.Error')
+        .subscribe(val => this.notifService.danger(val));
       return;
     }
 
     this.isLoading = true;
     const formData = new FormData();
-    console.log(this.form.effective_date.value);
-    console.log(this.form.team.value);
-    if(!this.isCheck){
+    if (!this.isCheck) {
       this.translate.get('DisciplinaryBoards.SelectMember')
-      .subscribe(val => this.notifService.danger(val));
+        .subscribe(val => this.notifService.danger(val));
       this.isLoading = false;
-    return;
+      return;
     }
-    formData.append('effective_date', '' + this.form.effective_date.value);
-    formData.append('decision', '' + this.form.decision.value);
-    formData.append('location', '' + this.form.location.value);
-    formData.append('raison', '' + this.form.raison.value);
-    formData.append('disciplinary_team_id', '' + this.form.team.value);
-    formData.append('user_id', '' + this.selected_user.id);
 
-    this.addBoardService.add(formData)
+
+    formData.append('user_id', '' + this.selected_user.id);
+    formData.append('note_criteria_id', '' + this.form.note_criteria_id.value);
+    formData.append('score', '' + this.form.score.value);
+    formData.append('appreciation', '' + this.form.appreciation.value);
+    formData.append('description', '' + this.form.description.value);
+
+    this.addUserNoteCriterias.add(formData)
       .then(resp => {
-        this.translate.get('DisciplinaryBoards.SubmitSuccess')
+        this.translate.get('UserNoteCriteria.Success')
           .subscribe(val => this.notifService.success(val));
         this.formGroup.reset();
         this.isSubmitted = false;
@@ -125,8 +135,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
         // this.router.navigate(['/roles/all']);
       })
       .catch(error => {
-        console.log(error)
-        this.translate.get('DisciplinaryBoards.Created_Error')
+        this.translate.get('UserNoteCriteria.Error')
           .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
@@ -137,15 +146,126 @@ export class AddUserNoteCriteriasComponent implements OnInit {
     this.user = this.user_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
-  onChecked(user, event){
-      this.selected_user = user;
-      this.isCheck= true;
+  onChecked(user, event) {
+    this.selected_user = user;
+    this.isCheck = true;
+
+    if (this.selected_note != null) {
+      this.update();
+    }else{
+      this.vider();
+    }
   }
 
- getTeam(team){
-  this.selected_team = team;
-  console.log(team);
- } 
+  updateUser(){
+    this.isUpdate = false;
+    this.isSubmitted = true;
+    this.isLoading = false;
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.formGroup.invalid) {
+      this.translate.get('UserNoteCriteria.Error')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+    if (this.selected_note.max_rate < this.form.score.value || this.selected_note.min_rate > this.form.score.value) {
+      this.notifService.danger(`Le score doit etre compris entre ${this.selected_note.min_rate} et ${this.selected_note.max_rate}`);
+    }
+
+    this.isLoading = true;
+    const formData = new FormData();
+    formData.append('user_id', '' + this.selected_user.id);
+    formData.append('note_criteria_id', '' + this.form.note_criteria_id.value);
+    formData.append('score', '' + this.form.score.value);
+    formData.append('appreciation', '' + this.form.appreciation.value);
+    formData.append('description', '' + this.form.description.value);
+    this.addUserNoteCriterias.update(formData, this.selected_user_note.id)
+      .then(resp => {
+        this.translate.get('UserNoteCriteria.Success')
+          .subscribe(val => this.notifService.success(val));
+        this.formGroup.reset();
+        this.isSubmitted = false;
+        this.isLoading = false;
+        // this.router.navigate(['/roles/all']);
+      })
+      .catch(error => {
+        this.translate.get('UserNoteCriteria.Error')
+          .subscribe(val => this.notifService.danger(val));
+      })
+      .finally(() => this.isLoading = false);
+  }
+
+  setNote(event) {
+    for (let not of this.list_note) {
+      if (not.id == event.target.value) {
+        this.selected_note = not;
+      }
+    }
+    if (this.form.score.value != "")
+      this.verify();
+    
+    if (this.selected_user != null) {
+      this.update();
+    }else{
+      this.vider();
+    }
+  }
+
+  verify() {
+    let value = this.form.score.value;
+    if (this.selected_note != null) {
+      if (this.selected_note.max_rate < value || this.selected_note.min_rate > value) {
+        this.score_error = true;
+        this.notifService.danger(`Le score doit etre compris entre ${this.selected_note.min_rate} et ${this.selected_note.max_rate}`);
+      } else {
+        this.score_error = false;
+      }
+    }
+    
+  }
+
+  update() {
+    this.initForm();
+  }
+
+  initForm() {
+    this.isLoading = true;
+    this.addUserNoteCriterias.all().then(
+      response => {
+        for (let not of response) {
+          if (not.note_criteria_id == this.selected_note.id && not.user_id == this.selected_user.id) {
+            this.formGroup = this.formBuilder.group({
+              appreciation: [not.appreciation, Validators.required],
+              description: [not.description, Validators.required],
+              score: [not.score, Validators.required],
+              note_criteria_id: [not.note_criteria_id, Validators.required]
+            });
+            this.isUpdate = true;
+            this.selected_user_note = not;
+            this.isLoading = false;
+            return;
+          }else{
+            this.vider();
+          }
+          this.isLoading = false;
+        }
+        this.isLoading = false;
+      }
+    )
+    .catch(
+      error => {
+        this.vider();
+        this.isLoading = false;
+      }
+    );
+    
+  }
+
+  vider(){
+    this.isUpdate = false;
+    this.form.score.setValue(0);
+    this.form.appreciation.setValue('');
+    this.form.description.setValue('');
+  }
 
 
 }

@@ -331,5 +331,14 @@
         "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "UserNoteCriteria": {
+        "Title" : "Gestion des Criteres de notation",
+        "Error" : "Echec de l'action",
+        "Success" : "Action effectué avec success",
+        "Select_note" : "Selectionner un critaire de note",
+        "Label" : "Appreciation",
+        "AddForm" : "Ajouter cette nouvelle note",
+        "UpForm": "Modifier Cette Note"
     }
 }
