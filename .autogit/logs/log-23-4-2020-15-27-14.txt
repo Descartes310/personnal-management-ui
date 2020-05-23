@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Sat May 23 2020 15:27:14 GMT+0200 (heure d’été d’Europe centrale)
+------------------------------------------------------
+
+Modified files:
+* src/app/app-routing.module.ts
+* src/app/notfound/notfound.component.html
+* src/assets/i18n/fr.json
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
