@@ -17,8 +17,8 @@ export class AllLicensesComponent implements OnInit {
 
   licenses: License[] = [];
   loading: boolean = true;
-  file_existing: boolean = true;
-  server:string = Routes.SERVER; 
+  file_existing: boolean[] = [];
+  server:string = Routes.SERVER;
   @BlockUI() blockUI: NgBlockUI;
 
   //SweetAlert Text
@@ -36,10 +36,10 @@ export class AllLicensesComponent implements OnInit {
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
-  ) { 
+  ) {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: 'role' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -59,16 +59,12 @@ export class AllLicensesComponent implements OnInit {
 
   getLicenses() {
     this.loading = true;
-    this.file_existing = false;
     this.license_service.all().then(
       response => {
-        console.log(response)
-        this.licenses = [];
         this.licenses=response;
         this.licenses.forEach(license => {
-          console.log(license['file'])
           if(license['file'] != null ){
-            this.file_existing=true;
+            this.file_existing[license.id] = true;
           }
         });
       }
@@ -83,7 +79,7 @@ export class AllLicensesComponent implements OnInit {
       }
     )
   }
-  
+
   editLicenses(license:License) {
     this.router.navigate(['/licenses/update/'+license.id])
   }
@@ -121,7 +117,7 @@ export class AllLicensesComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
