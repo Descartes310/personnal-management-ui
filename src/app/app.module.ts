@@ -34,6 +34,13 @@ import { AddTrainingComponent } from './trainings/add-training/add-training.comp
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -46,7 +53,7 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
@@ -127,6 +134,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicensetypesComponent,
     AllDivisionComponent,
     DetailsDivisionComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     AddCongeComponent,

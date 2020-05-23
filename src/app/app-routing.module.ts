@@ -35,6 +35,12 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
@@ -63,7 +69,10 @@ import { AllTemplatesComponent } from './templates/all-templates/all-templates.c
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 
 
-//const routes: Routes = [];
+
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -94,6 +103,12 @@ const routes: Routes = [
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/details/:id', component: DetailVacationComponent },
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
   { path: 'licenses/add', component: AddLicenseComponent },

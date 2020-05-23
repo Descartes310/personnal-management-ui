@@ -27,3 +27,5 @@ export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
 export const PROFILE = SERVER + 'profiles';
 export const DiciplinaryTeam = SERVER + 'disciplinary_teams';
+export const NOTECRITERIAS = SERVER +'note_criterias';
+export const ASSIGNMENTTYPE = SERVER +'assignment_types';

@@ -109,6 +109,14 @@
         "UpdateErrorSubmit": "echec de modification du contact"
     },
     "Form": {
+
+        "NamesLabel": "Nom",
+        "LabelsLabel": "Label",
+        "DescriptionsLabel": "Description",
+
+        "MaxsLabel":"Note maximale",
+        "WeightLabel": "Indice",
+        "MinsLabel":"Note minimale",
         "NameLabel": "Nom",
         "NameSelect":"Choisir votre structure",
         "NameField": "Veuillez entrer le nom...",
@@ -149,7 +157,6 @@
 
         "NextLabel":"Suivant",
         "PreviousLabel":"Precedent",
-        "WeightLabel": "Indice",
 
         "HeadPrincipalLabel": "Information Principale",
         "HeadAddresLabel": "Addresse",
@@ -217,6 +224,8 @@
         "TitleField": "Veuillez entrer un titre",
         "dtTitleHolder":"Entrez le nom",
         "dtTitle":"nom",
+        "Notemax":"note maximale",
+        "Notemin":"note minimale",
 
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
@@ -312,8 +321,20 @@
         "ProfileTitle": "Gestion des profils de l'application",
         "DetailsProfile": "Détails du profil"
     },
+    "Notecriterias":{
+        "Notecriteria":" Type de Critère de notation",
+        "NotecriteriaTitle":"Gestion des types de criteres de notations",
+        "Addnoteciteria": "Ajouter un critere de notation "
+    },
+    "Assignmenttype":{
+        "Assignmenttypes":" Type d'affectation",
+        "AssignmenttypesTitle":"Gestion des types d'affectation'",
+        "AddAssignmenttypes": "Ajouter un type d'affectation "
+    },
     "SweetAlert": {
-        "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
+        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
+        "AreYouSureAssigmenttype":"Etes-vous sure de vouloir supprimer  ce type d'affectation{{ data }} ?",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
