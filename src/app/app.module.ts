@@ -41,6 +41,7 @@ import { UpdateTrainingComponent } from './trainings/update-training/update-trai
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
+import { DetailsComponent } from './blog_category/details/details.component';
 // import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
@@ -83,8 +84,8 @@ import { AllDivisionComponent } from './divisions/all-division/all-division.comp
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
-import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
-import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { AddBlogPostComponent } from './blog-post/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blog-post/update-blog-post/update-blog-post.component';
 import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
 import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
@@ -97,6 +98,7 @@ import { DetailContactComponent } from './contacts/detail-contact/detail-contact
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { DecisionVacationComponent } from './vacations/decision-vacation/decision-vacation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
@@ -134,6 +136,7 @@ import { AddSubmissionComponent } from './submissions/add-submission/add-submiss
 import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -164,6 +167,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddBlogCategoryComponent,
     UpdateBlogCategoryComponent,
     AllBlogCategoryComponent,
+    DetailsComponent ,
     AllTrainingsComponent,
     FindTrainingsComponent,
     AddAssignmentComponent,
@@ -252,8 +256,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateCareerComponent,
   //  AddProfileComponent,
     //UpdateProfileComponent,
-   // DecisionVacationComponent,
+    DecisionVacationComponent,
     AllVacationComponent,
+    AddVacationComponent,
     AddContractComponent,
     AllContractComponent,
     UpdateContractComponent,

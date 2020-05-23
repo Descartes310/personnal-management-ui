@@ -25,4 +25,11 @@ export class SubmissionService {
   find(id: number) : Promise<Submission> {
     return this.http.get<Submission>(`${Routes.SUBMISSION}/${id}`).toPromise();
   }
+
+  delete(id: number): Promise<Submission[]> {
+    return this.http.delete<Submission[]>(`${Routes.SUBMISSION}/${id}`).toPromise();
+}
+all(): Promise<any> {
+    return this.http.get<any>(Routes.SUBMISSION).toPromise();
+}
 }

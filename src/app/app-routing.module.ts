@@ -14,6 +14,7 @@ import { DetailsRoleComponent } from './roles/details-role/details-role.componen
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { DetailsComponent } from './blog_category/details/details.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
@@ -80,8 +81,8 @@ import { UpdateContractComponent } from './contracts/update-contract/update-cont
 import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
-import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
-import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { AddBlogPostComponent } from './blog-post/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blog-post/update-blog-post/update-blog-post.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -197,10 +198,10 @@ const routes: Routes = [
   //{ path: '404', component: NotfoundComponent },
 
   { path: 'blog-posts/all', component: AllBlogPostComponent },
-  { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'blog-category/details/:id', component:DetailsComponent},
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },
-  { path: 'BlogCategory/all', component: AllBlogCategoryComponent },
+  { path: 'blog-category/all', component: AllBlogCategoryComponent },
   { path: 'contracts/update/:id', component: UpdateContractComponent },
   { path: 'contracts/details/:id', component: DetailsContractComponent },
   { path: 'contracts/details', component: DetailsContractComponent },

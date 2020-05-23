@@ -33,7 +33,6 @@ export class VacationService {
         return this.http.delete<Vacation[]>(`${Routes.VACATION}/${id}`).toPromise();
     }
     all(): Promise<any> {
-      console.log("je suis dans all");
         return this.http.get<any>(Routes.VACATION).toPromise();
     }
 
