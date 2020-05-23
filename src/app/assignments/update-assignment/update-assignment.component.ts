@@ -12,13 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-assignment.component.scss']
 })
 
-export class UpdateAssignment implements OnInit {
+export class UpdateAssignmentComponent implements OnInit {
 
   type_assignment: any[] = [];
-  type_assignment_tmp: any[] = [];
-
   users: any[] = [];
-  users_tmp: any[] = [];
 
   assignmentForm: FormGroup;
   isLoading = false;
@@ -88,7 +85,6 @@ export class UpdateAssignment implements OnInit {
     this.assignmentService.typeAssignment().then(
       response => {
         this.type_assignment = response;
-        this.type_assignment_tmp = response;
       }
     ).catch(
       error => {
@@ -100,7 +96,6 @@ export class UpdateAssignment implements OnInit {
     this.assignmentService.users().then(
       response => {
         this.users = response;
-        this.users_tmp = response;
       }
     ).catch(
       error => {

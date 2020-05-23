@@ -3,9 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from 'src/app/_models/profile.model';
 import { UserService } from 'src/app/_services/user.service';
 import { RoleService } from 'src/app/_services/role.service';
+import { DivisionService } from 'src/app/_services/division.service';
+import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { Division } from 'src/app/_models/division.model';
 
 /**
  * @author Arléon Zemtsop
@@ -27,6 +30,9 @@ export class AddUserComponent implements OnInit {
   public roles: any[] = [];
   public roles_tmp: any[] = [];
   public selected_roles: number[] = [];
+  public cities: any[] = [];
+  public divisions: any[] = [];
+  public proSituations: any[] = [];
 
 	public personnalInfoForm: FormGroup;
   public publicInfoForm: FormGroup;
@@ -36,6 +42,8 @@ export class AddUserComponent implements OnInit {
   public loading: boolean = false;
   public isBuild: boolean = false;
   public isSubmitted: boolean = false;
+  public loadingPermissions: boolean = false;
+  public loadingRoles: boolean = false;
 
   public data: FormData = new FormData();
 
@@ -51,6 +59,8 @@ export class AddUserComponent implements OnInit {
   	private formBuilder: FormBuilder,
     private userService: UserService,
     private roleService: RoleService,
+    private divisionService: DivisionService,
+    private proSituationService: ProSituationService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
@@ -95,23 +105,23 @@ export class AddUserComponent implements OnInit {
         this.initPersonnalInfoForm(true);
         this.initPubicInfoForm(true);
         this.initRoleAndPermissionsForm();
-        this.getRoles();
+        this.initCities();
+        this.getDivision();
         this.isBuild = true;
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
-    ).finally(
-      () => {
-        this.loading = false;
-      }
-    )
-
+    ).finally(() => {
+      this.getRoles();
+    })
   }
 
-  getPermissions() {
+  public getPermissions() {
+    this.loadingPermissions = true;
     this.roleService.permissions().then(
       response => {
         this.permissions = response;
@@ -119,21 +129,43 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.translate.get('User.LoadingFormError')
+          .subscribe(val => this.notifService.danger(val));
+          this.router.navigate(['/users/all']);
       }
-    )
+    ).finally(() => {
+      this.loadingPermissions = false;
+    })
   }
 
-  getRoles() {
+  public getRoles() {
+    this.loadingRoles = true;
     this.roleService.getRolesWithPermissions().then(
       response => {
         this.roles = response;
         this.roles_tmp = response;
-        this.getPermissions();
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.translate.get('User.LoadingFormError')
+          .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
+      }
+    ).finally(() => {
+      this.loadingRoles = false;
+      this.getPermissions();
+    })
+  }
+
+  public getDivision() {
+    this.divisionService.all().then(
+      response => {
+        this.divisions = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
       }
     )
   }
@@ -162,6 +194,13 @@ export class AddUserComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(this.passwordMinLength)
+        ]
+      ];
+
+      parametter['city'] = [
+        '',
+        [
+          Validators.required,
         ]
       ];
 
@@ -200,6 +239,46 @@ export class AddUserComponent implements OnInit {
 
   }
 
+  public initCities() {
+
+    this.userService.cities().then(
+      response => {
+        this.cities = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingFormError')
+          .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
+      }
+    ).finally(
+      () => {
+        this.initProSituations();
+      }
+    )
+
+  }
+
+  public initProSituations() {
+
+    this.proSituationService.all().then(
+      response => {
+        this.proSituations = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingFormError')
+          .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
+      }
+    ).finally(
+      () => {
+        this.loading = false;
+      }
+    )
+
+  }
+
   public initErrorMessages() {
 
     this.errorMessages = {
@@ -233,6 +312,20 @@ export class AddUserComponent implements OnInit {
 
     if(withProfile) {
       let parametter: any = {}; 
+
+      parametter['pro_situation'] = [
+        '',
+        [
+          Validators.required,
+        ]
+      ];
+
+      parametter['division_id'] = [
+        '',
+        [
+          Validators.required,
+        ]
+      ];
       
       this.secondStepInputList.map(input => {
         let validationRules: any[] = [];
@@ -308,12 +401,20 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.personnalInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
+        return;
       }
 
-    } else if(input.max) {
+    } 
+
+    if(input.max) {
 
       if(value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
+        return;
       }
 
     }
@@ -325,12 +426,20 @@ export class AddUserComponent implements OnInit {
 
       if(value < input.min) {
         this.publicInfo[input.slug].setValue(input.min);
+        this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
+          .subscribe(val => this.notifService.danger(val));
+        return;
       }
 
-    } else if(input.max) {
+    }
+
+    if(input.max) {
 
       if(value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
+        this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+          .subscribe(val => this.notifService.danger(val));
+        return;
       }
 
     }
@@ -354,6 +463,7 @@ export class AddUserComponent implements OnInit {
 
     let login: string = this.personnalInfo.login.value;
     let password: string = this.personnalInfo.password.value;
+    let ville: string = this.personnalInfo.city.value;
 
     this.firstStepInputList.map(input => {
 
@@ -389,23 +499,27 @@ export class AddUserComponent implements OnInit {
         }
       }
 
-      if(input.max) {
+      if(input.max || input.min) {
         value = parseInt(value);
-        if(value > input.max) {
-          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+
+        if(value !== NaN) {
+
+          if(value > input.max) {
+            this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+          if(value < input.min) {
+            this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+        } else {
+          this.translate.get('User.InputNaNError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
-          return;
         }
       }
 
-      if(input.min) {
-        value = parseInt(value);
-        if(value < input.min) {
-          this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
-            .subscribe(val => this.notifService.danger(val));
-          return;
-        }
-      }
 
     })
 
@@ -431,6 +545,11 @@ export class AddUserComponent implements OnInit {
       return;
     }
 
+    if(!ville) {
+      this.translate.get('User.InputRequiredError', { data: 'ville' })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
 
     if(this.personnalInfoForm.valid) {
       this.isSubmitted = false;
@@ -441,6 +560,8 @@ export class AddUserComponent implements OnInit {
   public validatePublicInfoForm() {
 
     this.isSubmitted = true;
+
+    let proSituation: string = this.publicInfo.pro_situation.value;
 
     this.secondStepInputList.map(input => {
       
@@ -476,25 +597,36 @@ export class AddUserComponent implements OnInit {
         }
       }
 
-      if(input.max) {
+
+      if(input.max || input.min) {
         value = parseInt(value);
-        if(value > input.max) {
-          this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+
+        if(value !== NaN) {
+
+          if(value > input.max) {
+            this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+          if(value < input.min) {
+            this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
+              .subscribe(val => this.notifService.danger(val));
+            return;
+          }
+        } else {
+          this.translate.get('User.InputNaNError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
-          return;
         }
       }
 
-      if(input.min) {
-        value = parseInt(value);
-        if(value > input.min) {
-          this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
-            .subscribe(val => this.notifService.danger(val));
-          return;
-        }
-      }
 
     })
+
+    if(!proSituation) {
+      this.translate.get('User.InputRequiredError', { data: 'situation professionnelle' })
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
 
     if(this.publicInfoForm.valid) {
       this.isSubmitted = false;
@@ -503,13 +635,16 @@ export class AddUserComponent implements OnInit {
   }
 
   public computeDataToSend() {
+
     Object.keys(this.personnalInfo).map(key => {
+
       if(this.data_tmp1[key]) {
         this.data.append(key, this.data_tmp1[key]);
       } else {
         this.data.append(key, this.personnalInfo[key].value);
         this.data_tmp1[key] = this.personnalInfo[key].value;
       }
+
     });
 
     Object.keys(this.publicInfo).map(key => {
@@ -521,20 +656,24 @@ export class AddUserComponent implements OnInit {
       }
     });
 
-    this.selected_permissions.forEach( elt => {
-      this.data.append('permissions[]', JSON.stringify(elt));
-    });
+    // this.selected_permissions.forEach( elt => {
+    //   this.data.append('permissions[]', JSON.stringify(elt));
+    // });
 
-    this.selected_roles.forEach( elt => {
-      this.data.append('roles[]', JSON.stringify(elt));
-    });
-
+    // this.selected_roles.forEach( elt => {
+    //   this.data.append('roles[]', JSON.stringify(elt));
+    // });
+    // armel
+    this.data.append('permissions', JSON.stringify(this.selected_permissions));
+    this.data.append('roles', JSON.stringify(this.roles));
+    //armel
     this.data_tmp1.roles = this.selected_roles;
     this.data_tmp1.permissions = this.selected_permissions;
 
     let result: any = {};
     result.personnalInfo = this.data_tmp1;
     result.publicInfo = this.data_tmp2;
+    console.log(result);
 
   }
 
@@ -547,32 +686,37 @@ export class AddUserComponent implements OnInit {
         console.log(response);
         this.translate.get('User.CreateUserSuccess')
           .subscribe(val => this.notifService.success(val));
+        this.isSubmitted = false;
+        this.personnalInfoForm.reset();
+        this.publicInfoForm.reset();
+        this.selected_permissions = [];
+        this.selected_roles = [];
       }
     ).catch(
       error => {
-        if(error.error) {
-          if(error.error.status === '400' && error.error.code === 'VALIDATION_ERROR') {
+        if(error.status && error.code) {
+          if(error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
-              if(error.error.errors[input.slug]) {
-                error.error.errors[input.slug].map(errorMessage => {
+              if(error.errors[input.slug]) {
+                error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
                 })   
               }
             });
             this.secondStepInputList.map(input => {
-              if(error.error.errors[input.slug]) {
-                error.error.errors[input.slug].map(errorMessage => {
+              if(error.errors[input.slug]) {
+                error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
                 })   
               }
             });
-            if(error.error.errors.login) {
-              error.error.errors.login.map(errorMessage => {
+            if(error.errors.login) {
+              error.errors.login.map(errorMessage => {
                 this.notifService.danger(errorMessage);
               })   
             }
-            if(error.error.errors.password) {
-              error.error.errors.password.map(errorMessage => {
+            if(error.errors.password) {
+              error.errors.password.map(errorMessage => {
                 this.notifService.danger(errorMessage);
               })   
             }
@@ -585,6 +729,9 @@ export class AddUserComponent implements OnInit {
     ).finally(
       () => {
         this.loading = false;
+        this.data = new FormData();
+        this.data_tmp1 = {};
+        this.data_tmp2 = {};
       }
     )
 

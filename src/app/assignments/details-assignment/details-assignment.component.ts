@@ -30,7 +30,6 @@ export class DetailsAssignmentComponent implements OnInit {
     this.assignmentService.find(assignment_id).then(
       data => {
         this.assignment = new Assignment(data);
-        this.users = this.assignment.users;
       }
     ).catch(
       error => {

@@ -21,8 +21,13 @@ export class AssignmentService {
   typeAssignment() : Promise<any> {
     return this.http.get<any>(Routes.ASSIGNMENT_TYPE).toPromise();
   }
+
   users() : Promise<any> {
     return this.http.get<any>(Routes.USERS).toPromise();
+  }
+
+  cities() : Promise<any> {
+    return this.http.get<any>(Routes.CITY).toPromise();
   }
 
   update(formData: FormData, id: number): Promise<Assignment> {
