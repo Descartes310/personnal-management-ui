@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Routes from '../Routes'; 
@@ -29,3 +30,24 @@ export class SanctionService {
         return this.http.get<any>(Routes.SANCTION).toPromise();
     }
 }
+=======
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Sanction } from '../_models/sanction.model';
+import * as Routes from '../Routes'; 
+@Injectable({
+  providedIn: 'root'
+})
+export class SanctionService {
+
+  constructor(private http : HttpClient) { }
+
+  add(formData: FormData): Promise<Sanction> {
+    return this.http.post<Sanction>(Routes.SANCTION, formData).toPromise();
+  }
+
+ users() : Promise<any> {
+    return this.http.get<any>(Routes.USERS).toPromise();
+  }
+}
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d

@@ -78,7 +78,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr *ngFor="let user of users,let i = index" id="tr{{ user.id }}">
+                                                    <tr *ngFor="let user of users,let i = index" id="{{ user.id }}">
                                                         <td>{{ i+1 }}</td>
                                                         <td>{{ user.login }}</td>
                                                         <td><input type="radio" [value]="user.id"  formControlName="user_id"></td>
@@ -103,7 +103,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12" >
-                                        <ckeditor [editor]="Editor" data="{{contract.terms}}" formControlName="terms" name="content" id="editor">
+                                        <ckeditor [editor]="Editor" data="{{ contract.terms == null ? contract.terms : '' }}" formControlName="terms" name="content" id="editor">
                                         </ckeditor>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input name="file" id="file" value="{{contract.file}}" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
+                                        <input name="file" value="{{contract.file}}" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                                     <div class="col-md-12">
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contract.CreateContract" | translate }}</p>
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contract.UpdateContract" | translate }}</p>
                                                 <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                                     <div class="ball-scale-multiple">
                                                         <div style="background-color: white;"></div>

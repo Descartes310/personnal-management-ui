@@ -16,13 +16,9 @@ export class AddAssignmentComponent implements OnInit {
   pipe = new DatePipe('en-US');
   Date = new Date();
   currentDate = this.pipe.transform(this.Date, 'yyyy-MM-dd');
-
   type_assignment: any[] = [];
-  type_assignment_tmp: any[] = [];
-
   users: any[] = [];
-  users_tmp: any[] = [];
-  // selected_type_assignment: number;
+  cities: any[] = [];
 
   assignmentForm: FormGroup;
   isLoading = false;
@@ -41,7 +37,8 @@ export class AddAssignmentComponent implements OnInit {
   ngOnInit() {
     this.getUsers();
     this.getTypeAssignment();
-
+    this.getCities();
+   
     this.assignmentForm = this.formBuilder.group({
       user_assignment : ['', Validators.required],
       type_assignment : ['', Validators.required],
@@ -61,7 +58,6 @@ export class AddAssignmentComponent implements OnInit {
     this.assignmentService.typeAssignment().then(
       response => {
         this.type_assignment = response;
-        this.type_assignment_tmp = response;
       }
     ).catch(
       error => {
@@ -72,31 +68,29 @@ export class AddAssignmentComponent implements OnInit {
   getUsers() {
     this.assignmentService.users().then(
       response => {
-        this.users = response;
-        this.users_tmp = response;
+        console.log(response);
+        response.map(user => {
+          this.users.push(user);
+        });
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.notifService.danger("Aucun utilisateur existant");
       }
     )
   }
-
-  // search(event) {
-  //   this.type_assignment = this.type_assignment_tmp;
-  //   this.type_assignment = this.type_assignment_tmp.filter(type_assignment => type_assignment_tmp.assignment_type.toLowerCase().includes(event.target.value.toLowerCase()));
-  // }
+  getCities(){
+    this.assignmentService.cities().then(
+      response => {
+        this.cities = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("aucune ville existante");
+      }
+    )
+  }
   
-  // selectTypePermission(event: any) {
-  //   //this.selected_type_assignment = null;
-  //   if (event.target.checked) {
-  //     this.type_assignment_tmp.map(
-  //       permission => {
-  //         this.selected_type_assignment = this.type_assignment_tmp.id
-  //       }
-  //     )
-  //   }
-  // }
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
@@ -132,7 +126,6 @@ export class AddAssignmentComponent implements OnInit {
         this.assignmentForm.reset();
       })
       .catch(err => {
-        console.log(err)
         this.translate.get('Login.AUTH_LOGIN')
           .subscribe(val => this.notifService.danger(val));
       })

@@ -124,6 +124,15 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Disciplinary Board",
+      "DisciplinaryBoardTitle": "Disciplinary Statuts",
+      "AddDisciplinaryBoard": "Add a new disciplinary status",
+      "CreateDisciplinaryBoard": "Create the disciplinary status",
+      "UpdateDisciplinaryBoard": "Update",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "the disciplinary status not found"
+    },
     "NavBar": {
         "Language": "Choose Language",
         "Profile": "Mon compte",
@@ -134,6 +143,11 @@
     },
     "Form": {
         "NameSelect": "Choisir votre structure parent ",
+        "Reason": "Reason",
+        "Team": "disciplinary team",
+        "Date": "Effective date",
+        "Location": "Location",
+        "Decision": "Decision",
         "NameLabel": "Name",
         "NameField": "Please type a name...",
         "DescriptionLabel": "Description",
@@ -276,5 +290,9 @@
         "NotFound": "Undefined settings",
         "undefined": "the key is already existing"
     }
+<<<<<<< HEAD
 >>>>>>> cc1a41d96a434b90b49af843ecabca751037be02
 }
+=======
+}
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d

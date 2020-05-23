@@ -14,12 +14,15 @@ import { DetailsRoleComponent } from './roles/details-role/details-role.componen
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { DetailsComponent } from './blog_category/details/details.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
+import { DecisionVacationComponent } from './vacations/decision-vacation/decision-vacation.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
@@ -28,6 +31,13 @@ import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-ty
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+<<<<<<< HEAD
+=======
+import { AllUsersComponent } from './users/all-users/all-users.component';
+
+// import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+// import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
@@ -51,19 +61,36 @@ import { AllContactComponent } from './contacts/all-contact/all-contact.componen
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { DisciplinaryTeam } from './_models/disciplinary-team.model';
+import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
+import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
+import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+<<<<<<< HEAD
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
 import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
+=======
+import { CreateDiciplinaryTeamComponent } from './disciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
 import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
-import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
-import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { AddBlogPostComponent } from './blog-post/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blog-post/update-blog-post/update-blog-post.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -76,10 +103,25 @@ import { DetailsSettingsComponent } from './settings/details-settings/details-se
 import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
+<<<<<<< HEAD
+=======
+import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { UpdateCareerComponent } from './careers/update-career/update-career.component';
+
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
+import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
+import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
+import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
 
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+<<<<<<< HEAD
+=======
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -98,15 +140,25 @@ const routes: Routes = [
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'licensetypes/all', component: AllLicensetypesComponent },
   { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
+  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
+  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
+<<<<<<< HEAD
   //{ path: 'users/all', component: AllUsersComponent }, 
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   //{ path: 'vacation/demandes', component: AllDemandesVacationComponent },
 
   //{ path: 'vacation/demandes/:id', component: DecisionVacationComponent },
+=======
+  { path: 'users/all', component: AllUsersComponent }, 
+  { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'vacation/demandes', component: AllDemandesVacationComponent },
+
+  { path: 'vacation/demandes/:id', component: DecisionVacationComponent },
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'templates/all', component: AllTemplatesComponent },
@@ -122,7 +174,11 @@ const routes: Routes = [
   { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
   { path: 'assignments/all', component: AllAssignmentsComponent },
   { path: 'assignments/add', component: AddAssignmentComponent },
+<<<<<<< HEAD
   //{ path: 'assignments/update/:id', component: UpdateAssignmentComponent },
+=======
+  { path: 'assignments/update/:id', component: UpdateAssignmentComponent },
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   { path: 'assignments/details/:id', component: DetailsAssignmentComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
@@ -142,12 +198,21 @@ const routes: Routes = [
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
+<<<<<<< HEAD
  // { path: 'submissions/details/:id', component: DetailsubmissionsComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   //{ path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
   //{ path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
+=======
+  { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'trainings/add', component: AddTrainingComponent},
+  { path: 'trainings/update/:id', component: UpdateTrainingComponent},
+  { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
+  { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   { path: 'blog-category/add', component: AddBlogCategoryComponent },
   { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
   // routes pour l'affichage des formations
@@ -162,6 +227,7 @@ const routes: Routes = [
   { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+<<<<<<< HEAD
   //{ path: 'update-password', component: UpdatePasswordComponent },
 
   //{ path: 'submissions/add', component: AddSubmissionComponent },
@@ -179,6 +245,25 @@ const routes: Routes = [
   { path: 'contracts/details', component: DetailsContractComponent },
   //{ path: 'vacations/update/:id', component: UpdateVacationComponent },
  // { path: 'vacations/add', component: AddVacationComponent },
+=======
+  { path: 'update-password', component: UpdatePasswordComponent },
+
+  { path: 'submissions/add', component: AddSubmissionComponent },
+  { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
+  { path: 'sanctions/add', component: AddSanctionComponent },
+  //{ path: '404', component: NotfoundComponent },
+
+  { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-category/details/:id', component:DetailsComponent},
+  { path: 'contracts/add', component: AddContractComponent },
+  { path: 'contracts/all', component: AllContractComponent },
+  { path: 'blog-category/all', component: AllBlogCategoryComponent },
+  { path: 'contracts/update/:id', component: UpdateContractComponent },
+  { path: 'contracts/details/:id', component: DetailsContractComponent },
+  { path: 'contracts/details', component: DetailsContractComponent },
+  { path: 'vacations/update/:id', component: UpdateVacationComponent },
+  { path: 'vacations/add', component: AddVacationComponent },
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/add', component: AddBlogPostComponent },
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
@@ -187,8 +272,13 @@ const routes: Routes = [
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
 
+<<<<<<< HEAD
   //{ path: 'career/add', component: AddCareerComponent },
   //{ path: 'career/update/:id', component:UpdateCareerComponent},
+=======
+  { path: 'career/add', component: AddCareerComponent },
+  { path: 'career/update/:id', component:UpdateCareerComponent},
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
 
   //{ path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },

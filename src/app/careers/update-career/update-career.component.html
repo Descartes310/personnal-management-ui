@@ -1,0 +1,160 @@
+<<<<<<< HEAD:src/app/vacation/update-vacation/update-vacation.component.html
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="metismenu-icon pe-7s-plane">
+                </i>
+            </div>
+            <div>{{ 'Vacation.Vacations' | translate }}
+                <div class="page-title-subheading">{{ 'Vacation.VacationTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="metismenu-icon pe-7s-plane"> </i>
+                    {{ 'Vacation.Vacations' | translate }}               
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="vacationForm">
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.VacationTypeLabel" | translate }}</label>
+                                            <select formControlName="vacation_type_id" class="form-control {{ isSubmitted && form.vacation_type_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.VacationTypeField'| translate }}</option>
+                                                <option *ngFor="let vacation_type of vacation_types"  value="{{vacation_type.id}}">{{vacation_type.name}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.RaisonLabel" | translate }} </label>
+                                            <input name="text" id="exampleText" placeholder="{{ 'Form.RaisonField' | translate }}" type="text" formControlName="raison"  class="form-control">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
+                                            <textarea name="text" id="description" class="form-control"  formControlName="description" placeholder="{{ 'Form.DescriptionField' | translate }}">
+
+                                            </textarea>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.RequestedStartDateLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.RequestedStartDateField' | translate }}"  type="date" formControlName="requested_start_date" class="form-control {{ isSubmitted && form.requested_start_date.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.RequestedDaysLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.RequestedDaysField' | translate }}"  type="number" formControlName="requested_days"  class="form-control {{ isSubmitted && form.requested_days.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.FileLabel" | translate }}</label>
+                                            <input name="file" id="file" placeholder="{{ 'Form.FileField' | translate }}" type="file" formControlName="file" (change)=onSelectfile($event) class="form-control">
+                                        </div>
+
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Vacation.UpdateVacation" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+=======
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="metismenu-icon pe-7s-display1">
+                </i>
+            </div>
+            <div>{{ 'Career.Careers' | translate }}
+                <div class="page-title-subheading">{{ 'Career.CareerTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="metismenu-icon pe-7s-display1"> </i>
+                    {{ 'Career.Careers' | translate }}               
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="careersForm">
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.UsersLabel" | translate }}</label>
+                                            <select formControlName="user_id" class="form-control {{ isSubmitted && form.user_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.UsersField'| translate }}</option>
+                                                <option *ngFor="let user of users"  value="{{user.id}}">{{user.login}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.Pro_situationsLabel" | translate }}</label>
+                                            <select formControlName="pro_situation_id" class="form-control {{ isSubmitted && form.pro_situation_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.Pro_situationsField'| translate }}</option>
+                                                <option *ngFor="let pro_situation of pro_situations"  value="{{pro_situation.id}}">{{pro_situation.name}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="examplePassword" class="">{{ "Form.DivisionsLabel" | translate }}</label>
+                                            <select formControlName="division_id" class="form-control {{ isSubmitted && form.division_id.errors ? 'is-invalid' : '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Form.DivisionsField'| translate }}</option>
+                                                <option *ngFor="let division of divisions"  value="{{division.id}}">{{division.name}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.EffectiveDateLabel" | translate }} </label>
+                                            <input name="dateeffective" id="exampleText" placeholder="{{ 'Form.EffectiveDateField' | translate }}" type="date" formControlName="effective_date"  class="form-control">
+                                        </div>
+
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Career.UpdateCareer" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d:src/app/careers/update-career/update-career.component.html
+</div>

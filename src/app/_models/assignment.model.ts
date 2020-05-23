@@ -12,5 +12,4 @@ export class Assignment extends Super<Assignment> {
     public installation_date: Date;
     public raison: string;
     public description: string;
-    public users: any[];
 }
