@@ -111,8 +111,9 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
     ).finally(() => {
       this.getRoles();
@@ -128,8 +129,9 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+          this.router.navigate(['/users/all']);
       }
     ).finally(() => {
       this.loadingPermissions = false;
@@ -145,8 +147,9 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
     ).finally(() => {
       this.loadingRoles = false;
@@ -244,8 +247,9 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
     ).finally(
       () => {
@@ -263,8 +267,9 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingError')
+        this.translate.get('User.LoadingFormError')
           .subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
     ).finally(
       () => {

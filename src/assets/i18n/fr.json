@@ -411,6 +411,7 @@
         "UpdateUsers": "Mettre à jour les informations de l'utilisateur",
         "UpdateUserTitle": "Modifiez les informations de l'utilisateur, certaines informations ne sont pas modifiables",
         "LoadingProfileError": "Echec du chargement du profil de l'utilisateur",
+        "LoadingFormError": "Echec du chargement du profil de l'utilisateur",
         "UserCities": "Choisir votre ville",
         "UserProsituations": "Choisir votre situation professionnelle",
         "Save": "Veuillez sauvegarder",

@@ -67,13 +67,12 @@ export class DocumentViewerComponent implements OnInit {
       this.pdfUrl = reader.result as string;
       this.isLoadingDocument = false;
     }
-    console.log(reader.error);
 
   }
 
   public validate() {
 
-    if(this.file.type != 'application/pdf') {
+    if(this.file.type !== 'application/pdf') {
 
       this.translate.get('DocumentViewer.FILE_TYPE_ERR')
                     .subscribe(val => {
