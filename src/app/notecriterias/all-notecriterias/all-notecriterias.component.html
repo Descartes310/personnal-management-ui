@@ -15,9 +15,9 @@
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Notecriterias.Addnoteciteria' | translate }}</p>
                 </a>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="tabs-animation">
     <div class="main-card mb-3 card">
@@ -26,13 +26,12 @@
             {{ 'Notecriterias.Notecriteria' | translate }}
         </div>
         <div class="card-body">
-            
+
             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>{{ 'Form.NameLabel' | translate }}</th>
-                        <th>{{ 'Form.LabelLabel' | translate }}</th>
                         <th>{{ 'Form.MaxsLabel' | translate }}</th>
                         <th>{{ 'Form.MinsLabel' | translate }}</th>
                         <th>{{ 'Form.WeightLabel' | translate }}</th>
@@ -43,13 +42,12 @@
                 <tbody>
                     <tr *ngFor="let notecriteria of notecriterias,let i = index" id="tr{{ notecriteria.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 7%">{{ notecriteria.name }}</td>
-                        <td style="width: 7%">{{ notecriteria.slug }}</td>
-                        <td style="width: 12%">{{ notecriteria.max_rate }}</td>
-                        <td style="width: 8%">{{ notecriteria.min_rate }}</td>
+                        <td style="width: 15%">{{ notecriteria.name }}</td>
+                        <td style="width: 7%">{{ notecriteria.max_rate }}</td>
+                        <td style="width: 7%">{{ notecriteria.min_rate }}</td>
                         <td style="width: 7%">{{ notecriteria.weight }}</td>
-                        <td style="width: 15%">{{ notecriteria.description }}</td>
-                        <td style="width: 15%">
+                        <td style="width: 25%">{{ notecriteria.description }}</td>
+                        <td style="width: 25%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editNotecriterias(notecriteria)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsNotecriterias(notecriteria)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteNotecriterias(notecriteria)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>

@@ -48,16 +48,16 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="index.html#">
-                        <i class="metismenu-icon pe-7s-folder"></i>
+                    <a href="" [routerLink]="['/contracts/all']" class="">
+                        <i class="metismenu-icon pe-7s-note2"></i>
                         {{ "SideBar.Contracts" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/contracts/all']" class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>{{ "SideBar.Contracts" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -84,10 +84,25 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
+
                         <li>
-                            <a href="index.html" class="">
+                            <a  [routerLink]="['/vacations/add']"  class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>Add Conge
+                            </a>
+                            <a  [routerLink]="['/vacations/update/1']"  class="">
+                                <i class="metismenu-icon">
+                                </i>Update Conge
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""  [routerLink]="['/licenses/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Permissions" | translate }}
+                            </a>
+                            <a href=""  [routerLink]="['/home']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Conges" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -140,18 +155,33 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li class="">
-                    <a href="index.html#">
-                        <i class="metismenu-icon pe-7s-refresh-2"></i>
-                        {{ "SideBar.Assignment" | translate }}
+                    <a href="" >
+                        <i class="metismenu-icon pe-7s-news-paper"></i>
+                        {{ "SideBar.BlogCategory" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/BlogCategory/all']" class="">
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>{{ "SideBar.BlogCategory" | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="" [routerLink]="['/trainings/all']" class="">
+                        <i class="metismenu-icon pe-7s-study"></i>
+                        {{ "SideBar.Training" | translate }}
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="" [routerLink]="['/trainings/add']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Training" | translate }}
                             </a>
                         </li>
                     </ul>
@@ -188,21 +218,6 @@
                 </li>
                 <li class="">
                     <a href="index.html#">
-                        <i class="metismenu-icon pe-7s-news-paper"></i>
-                        {{ "SideBar.Blog" | translate }}
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="metismenu-icon">
-                                </i>Analytics
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="index.html#">
                         <i class="metismenu-icon pe-7s-call"></i>
                         {{ "SideBar.Contact" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -226,7 +241,7 @@
                         </li>
                     </ul>
                 </li>
-               
+
                 <li class="">
                     <a href="index.html#">
                         <i class="metismenu-icon pe-7s-config"></i>
@@ -240,7 +255,12 @@
                                 </i>{{ "SideBar.ProSituation" | translate }}
                             </a>
                         </li>
-                       
+                        <li>
+                            <a href="" [routerLink]="['/divisions/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.Division" | translate }}
+                            </a>
+                        </li>
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">
@@ -266,7 +286,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/templates/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Template" | translate }}
                             </a>
@@ -277,6 +297,7 @@
                                 </i>{{ "SideBar.BlogCat" | translate }}
                             </a>
                         </li>
+
                         <li>
                             <a href="index.html" class="">
                                 <i class="metismenu-icon">
@@ -290,15 +311,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/settings/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Config" | translate }}
                             </a>
                         </li>
                     </ul>
                 </li>
-                
+
             </ul>
         </div>
     </div>
-</div>  
+</div>
