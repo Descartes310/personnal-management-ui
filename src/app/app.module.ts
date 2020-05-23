@@ -138,6 +138,8 @@ import { UpdateSubmissionComponent } from './submissions/update-submission/updat
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -188,6 +190,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllDivisionComponent,
+    DetailsDivisionComponent,
     
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
@@ -283,10 +287,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     BrowserModule,
     CKEditorModule,
+    AngularEditorModule,
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     CKEditorModule,

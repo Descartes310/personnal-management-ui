@@ -6,6 +6,7 @@ import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { ProSituation } from 'src/app/_models/pro_situation.model';
 import { NotifService } from 'src/app/_services/notif.service';
 import { Career } from 'src/app/_models/career.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-user-stat',
@@ -23,13 +24,13 @@ export class ViewUserStatComponent implements OnInit {
   constructor(
     private statService: StatisticService,
     private prosituationService: ProSituationService,
-    private notifiService: NotifService
+    private notifiService: NotifService,
+    private route:ActivatedRoute
   ) { }
 
  ngOnInit() {
-    
-    this.getuserCareers(2);
-   
+    const user_id = +this.route.snapshot.paramMap.get("id");
+    this.getuserCareers(user_id);
     //his.getWeightProSituation()
     console.log(this.weights)
     //this.lineChartLabels=this.getLabelSituationPro()

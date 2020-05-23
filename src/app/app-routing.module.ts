@@ -173,7 +173,7 @@ const routes: Routes = [
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
-  { path: 'statistiques/view', component:ViewUserStatComponent },
+  { path: 'statistiques/view/:id', component:ViewUserStatComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
