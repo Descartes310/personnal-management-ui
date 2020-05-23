@@ -135,6 +135,20 @@
         "ERROR_TRY_AGAIN": "L'ancien mot de passe est incorrect. Veuillez reéssayer",
         "ERROR_NOT_MATCH": "Le mot de passe de confirmation ne correspond pas au nouveau mot de passe"
     },
+    "NoteCriteria": {
+        "NoteCriterias": "Critère de notation",
+        "NoteCriteriasAdd": " Nouveau critère de notation",
+        "NoteCriteriasUpdate": "Mise à jour d'un critère de notation",
+        "NoteCriteriaTitle": "Gestion des critères de notation de l'application",
+        "CreateNoteCriteria": "Enregistrer",
+        "UpdateNoteCriteria": "Mettre à jour le critère de notation",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "NOTECRITERIA_NOT_FOUND":"ce critere n'existe pas",
+        "noteMinsup":"La note minimale doit etre inferieur à la note maximale",
+        "SubmitSuccess": "La création du critère de notation a réussie...",
+        "UpdateSuccess": "La mise à jour du critère de notation a réussie...",
+        "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
+        ,    
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -673,4 +687,5 @@
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
+}
 }

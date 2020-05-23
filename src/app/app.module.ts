@@ -51,6 +51,7 @@ import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
+
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -76,7 +77,6 @@ import { UpdateContractComponent } from './contracts/update-contract/update-cont
 import { FindContractComponent } from './contracts/find-contract/find-contract.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule, MatFormFieldModule} from '@angular/material';
@@ -137,6 +137,8 @@ import { UpdateSubmissionComponent } from './submissions/update-submission/updat
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
+import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -162,6 +164,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+
     AddTrainingComponent,
     UpdateTrainingComponent,
     AddBlogCategoryComponent,
@@ -173,6 +176,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddAssignmentComponent,
     AllAssignmentsComponent,
     UpdateAssignmentComponent,
+
+    AddNoteCriteriasComponent,
+    UpdateNoteCriteriasComponent,
+
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,

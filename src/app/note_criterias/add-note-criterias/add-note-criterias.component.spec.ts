@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddProSituationComponent } from './add-pro-situation.component';
+import { AddNoteCriteriasComponent } from './add-note-criterias.component';
 
-describe('AddProSituationComponent', () => {
-  let component: AddProSituationComponent;
-  let fixture: ComponentFixture<AddProSituationComponent>;
+describe('AddNoteCriteriasComponent', () => {
+  let component: AddNoteCriteriasComponent;
+  let fixture: ComponentFixture<AddNoteCriteriasComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddProSituationComponent ]
+      declarations: [ AddNoteCriteriasComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddProSituationComponent);
+    fixture = TestBed.createComponent(AddNoteCriteriasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,4 +23,3 @@ describe('AddProSituationComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

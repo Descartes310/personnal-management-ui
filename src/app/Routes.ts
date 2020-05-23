@@ -12,6 +12,7 @@ export const PERMISSION = SERVER + 'permissions';
 export const BLOG_CATEGORY = SERVER + 'blog_categories';
 export const ASSIGNMENT = SERVER + 'assignments';
 export const ASSIGNMENT_TYPE = SERVER + 'assignment_types';
+export const NOTECRITERIA = SERVER + 'note_criterias';
 export const PRO_SITUATION = SERVER + 'pro_situations';
 export const CONTACT = SERVER + 'contacts';
 export const VACATIONTYPE = SERVER + 'vacation_types';
