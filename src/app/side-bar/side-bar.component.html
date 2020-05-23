@@ -268,15 +268,21 @@
                         </li>
 
                         <li>
-                            <a href="index.html" class="">
+                            <a [routerLink]="['notecriterias/all']" href="" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.NoteCriteria" | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/settings/all']" class="">
+                            <a href="" [routerLink]="['/templates/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Template" | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" [routerLink]="['/settings/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.settings" | translate }}
                             </a>
                         </li>
                        
