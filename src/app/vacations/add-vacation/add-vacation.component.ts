@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-add-vacation',
-  templateUrl: './add-vacation.component.html',
-  styleUrls: ['./add-vacation.component.scss']
-})
-export class AddVacationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-=======
 import { Component, OnInit } from '@angular/core';
 import { VacationService } from 'src/app/_services/vacation.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -132,4 +115,3 @@ export class AddVacationComponent implements OnInit {
   }
 
 }
->>>>>>> d6ba1dc53e32f0a134509460cb2dfc9823f7a00d
