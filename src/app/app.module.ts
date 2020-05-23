@@ -7,33 +7,48 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './_guards/auth.guard'
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { BlockUIModule } from 'ng-block-ui';
+
 import { AppComponent } from './app.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
+
+
 import { AddProSituationComponent } from './pro_situations/add-pro-situation/add-pro-situation.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { FindProSituationComponent } from './pro_situations/find-pro-situation/find-pro-situation.component';
+
 import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
-import { BlockUIModule } from 'ng-block-ui';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
+import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
+
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -47,13 +62,18 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { FindContractComponent } from './contracts/find-contract/find-contract.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -71,9 +91,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
-import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
-import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
@@ -83,13 +102,9 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
-import { AddContractComponent } from './contracts/add-contract/add-contract.component';
-import { AllContractComponent } from './contracts/all-contract/all-contract.component';
-import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
-import { FindContractComponent } from './contracts/find-contract/find-contract.component';
-import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
-import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
+
+
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -109,7 +124,7 @@ import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 //import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 //import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
-import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
+//import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -138,6 +153,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateTrainingComponent,
     AddBlogCategoryComponent,
     UpdateBlogCategoryComponent,
+    AllBlogCategoryComponent,
     AllTrainingsComponent,
     FindTrainingsComponent,
     ChatComponent,
@@ -153,10 +169,19 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllDivisionComponent,
+    DetailsDivisionComponent,
+    AllLicensetypesComponent,
+    DetailsLycensetypeComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllDivisionComponent,
     DetailsDivisionComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     TemplateCreateComponent,
@@ -184,8 +209,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailContactComponent,
     AllVacationComponent,
     DetailVacationComponent,
-    AddVacationComponent,
     UpdateVacationComponent,
+    UpdateVacationComponent,
+    AllVacationComponent,
+    DetailVacationComponent,
+    DetailsSubmissionComponent,
     AllProfileComponent,
     DetailsProfileComponent,
     DetailsTrainingsComponent,
@@ -209,8 +237,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateCareerComponent,
   //  AddProfileComponent,
     //UpdateProfileComponent,
-    DecisionVacationComponent,
+   // DecisionVacationComponent,
     AllVacationComponent,
+    AddContractComponent,
+    AllContractComponent,
+    UpdateContractComponent,
+    FindContractComponent,
+    DetailsContractComponent,
+    AllBlogCategoryComponent,
+    AllDemandesVacationComponent,
+
   ],
 
   imports: [

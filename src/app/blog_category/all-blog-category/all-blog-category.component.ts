@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Division } from 'src/app/_models/division.model';
-import Swal from 'sweetalert2';
-import { BlockUI, NgBlockUI } from 'ng-block-ui';
-import { DivisionService } from 'src/app/_services/division.service';
+import { BlogCategory } from 'src/app/_models/blog.category.model';
+import { BlogCategoryService } from 'src/app/_services/blog-category.service';
 import { NotifService } from 'src/app/_services/notif.service';
+import Swal from 'sweetalert2'
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-all-division',
-  templateUrl: './all-division.component.html',
-  styleUrls: ['./all-division.component.scss']
+  selector: 'app-all-blog-category',
+  templateUrl: './all-blog-category.component.html',
+  styleUrls: ['./all-blog-category.component.scss']
 })
-export class AllDivisionComponent implements OnInit {
-  divisions: Division[] = [];
+export class AllBlogCategoryComponent implements OnInit {
+
+  blogcats: BlogCategory[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
+
 
   //SweetAlert Text
   areYouSure = '';
@@ -25,18 +27,18 @@ export class AllDivisionComponent implements OnInit {
   deleted = '';
   deletedMessage = '';
   cancelled = '';
-  cancelledMessage = ''
+  cancelledMessage = '';
 
   constructor(
-    private divisionService: DivisionService,
+    private blogCategoryService: BlogCategoryService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-        { data: 'division' })
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        { data: 'role' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -50,52 +52,35 @@ export class AllDivisionComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.getDivisions();
+    this.getBlogCategories();
   }
 
-  getDivisions() {
+  getBlogCategories() {
     this.loading = true;
-    this.divisionService.all().then(
+    this.blogCategoryService.all().then(
       response => {
-        this.divisions = [];
-        //console.log(response);
-        response.map( division => {
-          this.divisions.push(new Division(division));
+        this.blogcats = [];
+        response.data.map( blogcat => {
+          this.blogcats.push(new BlogCategory(blogcat));
         });
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message);
+        this.notifService.danger(error.error.message)
       }
     ).finally(
       () => {
-        if (this.divisions && this.divisions.length) {
-          this.divisions.forEach(div => {
-            if (div.parent_id != null) {
-              this.divisions.forEach(parent => {
-                if (parent.id == div.parent_id) {
-                  div.division = parent;
-                }
-              });
-            } else {
-              div.division = null;
-            }
-          });
-        }
         this.loading = false;
       }
     )
   }
 
-  editDivision(division: Division) {
-    this.router.navigate(['/divisions/update/'+division.id])
+  
+  detailsblogcat(blogcat: BlogCategory) {
+    this.router.navigate(['BlogCategory/details/'+blogcat.id])
   }
 
-  detailsDivision(division: Division) {
-    this.router.navigate(['/divisions/details/'+division.id])
-  }
-
-  deleteDivision(division: Division) {
+  deleteblogcat(blogcat: BlogCategory) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -106,7 +91,7 @@ export class AllDivisionComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.divisionService.delete(division.id).then(
+        this.blogCategoryService.delete(blogcat.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -114,17 +99,17 @@ export class AllDivisionComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getDivisions();
+            this.getBlogCategories();
           }
         ).catch(
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Division.'+error.error.code)
+            this.translate.get('BlogCategory.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
-
+        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
@@ -136,3 +121,5 @@ export class AllDivisionComponent implements OnInit {
   }
 
 }
+
+

@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogCategory } from 'src/app/_models/blog.category.model';
-import { BlogCategoryService } from 'src/app/_services/blog-category.service';
+import { Notecriterias } from 'src/app/_models/notecriterias.model';
+import { NotecriteriasService } from 'src/app/_services/notecriterias.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-all-blog-category',
-  templateUrl: './all-blog-category.component.html',
-  styleUrls: ['./all-blog-category.component.scss']
-})
-export class AllBlogCategoryComponent implements OnInit {
 
-  blogcats: BlogCategory[] = [];
+@Component({
+  selector: 'app-all-notecriterias',
+  templateUrl: './all-notecriterias.component.html',
+  styleUrls: ['./all-notecriterias.component.scss']
+})
+export class AllNotecriteriasComponent implements OnInit {
+  
+
+  notecriterias: Notecriterias[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
-
 
   //SweetAlert Text
   areYouSure = '';
@@ -29,18 +30,19 @@ export class AllBlogCategoryComponent implements OnInit {
   cancelled = '';
   cancelledMessage = '';
 
+
   constructor(
-    private blogCategoryService: BlogCategoryService,
+    private notecriteriasService: NotecriteriasService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
 
       this.translate.get(
-        ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+        ['SweetAlert.AreYouSureNotecriterias', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: 'role' })
+        { data: ' ce critère de notation' })
         .subscribe(val => {
-          this.areYouSure = val['SweetAlert.AreYouSure'];
+          this.areYouSure = val['SweetAlert.AreYouSureNotecriterias'];
           this.warning = val['SweetAlert.Warning'];
           this.yes = val['SweetAlert.Yes'];
           this.no = val['SweetAlert.No'];
@@ -51,17 +53,17 @@ export class AllBlogCategoryComponent implements OnInit {
         });
    }
 
-   ngOnInit() {
-    this.getBlogCategories();
+  ngOnInit() {
+    this.getNotecriterias();
   }
 
-  getBlogCategories() {
+  getNotecriterias() {
     this.loading = true;
-    this.blogCategoryService.all().then(
+    this.notecriteriasService.all().then(
       response => {
-        this.blogcats = [];
-        response.data.map( blogcat => {
-          this.blogcats.push(new BlogCategory(blogcat));
+        this.notecriterias = [];
+        response.map( notecriterias => {
+          this.notecriterias.push(new Notecriterias(notecriterias));
         });
       }
     ).catch(
@@ -74,10 +76,15 @@ export class AllBlogCategoryComponent implements OnInit {
       }
     )
   }
+  editNotecriterias(notecriterias: Notecriterias) {
+    this.router.navigate(['/notecriterias/update/'+notecriterias.id])
+  }
 
-  
+  detailsNotecriterias(notecriterias: Notecriterias) {
+    this.router.navigate(['/notecriterias/details/'+notecriterias.id])
+  }
 
-  deleteblogcat(blogcat: BlogCategory) {
+  deleteNotecriterias(notecriterias: Notecriterias) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -88,7 +95,7 @@ export class AllBlogCategoryComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.blogCategoryService.delete(blogcat.id).then(
+        this.notecriteriasService.delete(notecriterias.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -96,13 +103,13 @@ export class AllBlogCategoryComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getBlogCategories();
+            this.getNotecriterias();
           }
         ).catch(
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('BlogCategory.'+error.error.code)
+            this.translate.get('Notecriterias.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
@@ -116,7 +123,4 @@ export class AllBlogCategoryComponent implements OnInit {
       }
     })
   }
-
 }
-
-

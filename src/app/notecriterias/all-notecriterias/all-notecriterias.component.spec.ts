@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllVacationComponent } from './all-vacation.component';
+import { AllNotecriteriasComponent } from './all-notecriterias.component';
 
-describe('AllVacationComponent', () => {
-  let component: AllVacationComponent;
-  let fixture: ComponentFixture<AllVacationComponent>;
+describe('AllNotecriteriasComponent', () => {
+  let component: AllNotecriteriasComponent;
+  let fixture: ComponentFixture<AllNotecriteriasComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllVacationComponent ]
+      declarations: [ AllNotecriteriasComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllVacationComponent);
+    fixture = TestBed.createComponent(AllNotecriteriasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

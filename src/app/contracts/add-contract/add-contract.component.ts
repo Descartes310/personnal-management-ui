@@ -22,7 +22,7 @@ export class AddContractComponent implements OnInit {
 
   selected_users: number[] = [];
   users_tmp: User[] = [];
-  headers=new HttpHeaders();
+  headers = new HttpHeaders();
   users: User[] = [];
   loading: boolean = true;
   contractForm: FormGroup;
@@ -31,20 +31,20 @@ export class AddContractComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   public Editor = ClassicEditor;
-  myfile:File=null;
+  myfile: File = null;
 
   TypeContracts = ['CDI – Contrat à durée indéterminée',
-                  'CDD – Contrat à durée déterminée',
-                  'CTT – Contrat de travail temporaire ou Intérim',
-                  'Contrat d’apprentissage (alternance)',
-                  'Contrat de professionnalisation (alternance)',
-                  'CUI – Contrat unique d’insertion',
-                  'CAE – Contrat d’accompagnement dans l’emploi',
-                  'CIE – Contrat initiative emploi'
-                ]
+    'CDD – Contrat à durée déterminée',
+    'CTT – Contrat de travail temporaire ou Intérim',
+    'Contrat d’apprentissage (alternance)',
+    'Contrat de professionnalisation (alternance)',
+    'CUI – Contrat unique d’insertion',
+    'CAE – Contrat d’accompagnement dans l’emploi',
+    'CIE – Contrat initiative emploi'
+  ]
 
   constructor(
-    private http:HttpClient,
+    private http: HttpClient,
     private userService: UserService,
     private contractService: ContractService,
     private notifService: NotifService,
@@ -52,22 +52,22 @@ export class AddContractComponent implements OnInit {
     private translate: TranslateService,
     private router: Router,
   ) {
-      this.headers.append('enctype','multipart/form-data');
-      this.headers.append('Content-type','application/json');
-    }
+    this.headers.append('enctype', 'multipart/form-data');
+    this.headers.append('Content-type', 'application/json');
+  }
 
   ngOnInit() {
     this.getUsers();
     this.contractForm = this.formBuilder.group({
-      user_id: ['',Validators.required],
-      type: ['CDD – Contrat à durée déterminée',Validators.required],
+      user_id: ['', Validators.required],
+      type: ['CDD – Contrat à durée déterminée', Validators.required],
       names: [''],
       title: [''],
       terms: [''],
       free_days: [0],
       start_date: [],
-      end_date: [] ,
-      file: ['',Validators.required]
+      end_date: [],
+      file: ['', Validators.required]
     });
   }
 
@@ -85,8 +85,7 @@ export class AddContractComponent implements OnInit {
     let date = new Date();
     let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
-    
-    if (this.contractForm.invalid){
+    if (this.contractForm.invalid) {
       this.translate.get('Contract.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
@@ -102,14 +101,14 @@ export class AddContractComponent implements OnInit {
     formData.append('free_days', this.form.free_days.value);
     if (currentDate > this.form.start_date.value) {
       this.translate.get('Form.StartDateError')
-      .subscribe(val => this.notifService.danger(val));
+        .subscribe(val => this.notifService.danger(val));
       this.isLoading = false;
       return;
     }
     this.form.start_date.value ? formData.append('start_date', '' + this.form.start_date.value) : null;
     if (this.form.start_date.value >= this.form.end_date.value) {
       this.translate.get('Form.EndDateError')
-      .subscribe(val => this.notifService.danger(val));
+        .subscribe(val => this.notifService.danger(val));
       this.isLoading = false;
       return;
     }
@@ -118,7 +117,7 @@ export class AddContractComponent implements OnInit {
     this.contractService.add(formData)
       .then(resp => {
         this.translate.get('Contract.SubmitSuccess')
-        .subscribe(val => this.notifService.success(val));
+          .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.contractForm.reset();
         this.contractForm = this.formBuilder.group({
@@ -136,26 +135,26 @@ export class AddContractComponent implements OnInit {
       .catch(err => {
         console.log(err)
         this.translate.get('Contract.CONTRACT_ERROR')
-        .subscribe(val => this.notifService.danger(val));
+          .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
   }
 
 
 
-    public onReady( editor ) {
-        editor.ui.getEditableElement().parentElement.insertBefore(
-        editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
-      );
-    }
+  public onReady(editor) {
+    editor.ui.getEditableElement().parentElement.insertBefore(
+      editor.ui.view.toolbar.element,
+      editor.ui.getEditableElement()
+    );
+  }
 
   public getUsers() {
 
     this.loading = true;
     this.userService.all().then(
       response => {
-       // this.users = [];
+        // this.users = [];
         this.users_tmp = response;
         this.users = response;
       }
@@ -172,13 +171,13 @@ export class AddContractComponent implements OnInit {
 
 
 
-  detectfile(event){
-    this.myfile=event.target.files[0];
+  detectfile(event) {
+    this.myfile = event.target.files[0];
   }
 
   search(event) {
     this.users = this.users_tmp;
-    this.users = this.users_tmp.filter( user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.users = this.users_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
 }

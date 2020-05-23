@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Training } from 'src/app/_models/training.model';
-import { TrainingService } from 'src/app/_services/training.service';
 import { Template } from 'src/app/_models/template.model';
 import { TemplateService } from 'src/app/_services/template.service';
 

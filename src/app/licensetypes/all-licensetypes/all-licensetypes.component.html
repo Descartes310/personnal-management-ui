@@ -2,7 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-plane"></i>             
+                <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-plane"></i>
             </div>
             <div>{{ 'Licensetype.Licensetypes' | translate }}
                 <div class="page-title-subheading">{{ 'Licensetype.LicensetypesTitle' | translate }}
@@ -14,24 +14,23 @@
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Licensetype.AddLicenseType' | translate }}</p>
                 </a>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="tabs-animation">
     <div class="main-card mb-3 card">
         <div class="card-header">
-            <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-plane"></i>             
+            <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-plane"></i>
             {{ 'Licensetype.Licensetypes' | translate }}
         </div>
         <div class="card-body">
-            
+
             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>{{ 'Form.NameLabel' | translate }}</th>
-                        <th>{{ 'Form.LabelLabel' | translate }}</th>
                         <th>{{ 'Form.DaysLabel' | translate }}</th>
                         <th>{{ 'Form.DescriptionLabel' | translate }}</th>
                         <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
@@ -41,12 +40,11 @@
                 <tbody>
                     <tr *ngFor="let licensetype of licensetypes,let i = index" id="tr{{ licensetype.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 19%">{{ licensetype.name }}</td>                      
-                        <td style="width: 19%">{{ licensetype.slug  }}</td>
-                        <td style="width: 10%">{{ licensetype.days }}</td>
+                        <td style="width: 20%">{{ licensetype.name }}</td>
+                        <td style="width: 15%">{{ licensetype.days }}</td>
                         <td style="width: 25%">{{ computeDescription(licensetype.description)}}</td>
-                        <td style="width: 10%">{{ licensetype.created_at }}</td>
-                        <td style="width: 25%">
+                        <td style="width: 15%">{{ licensetype.created_at }}</td>
+                        <td style="width: 20%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editLicensetype(licensetype)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsLicensetype(licensetype)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteLicensetype(licensetype)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
@@ -65,7 +63,7 @@
                         Liste vide
                     </td>
                 </tfoot>
-                
+
             </table>
         </div>
     </div>

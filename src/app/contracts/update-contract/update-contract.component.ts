@@ -76,7 +76,6 @@ export class UpdateContractComponent implements OnInit {
 
   initForm(withContract = false) {
     if(withContract) {
-      console.log(this.contract)
       this.contractForm = this.formBuilder.group({
         user_id: [this.contract.user_id, [Validators.required]],
         type: [this.contract.type, [Validators.required]],
@@ -86,7 +85,7 @@ export class UpdateContractComponent implements OnInit {
         free_days: [this.contract.free_days],
         start_date: [this.contract.start_date],
         end_date: [this.contract.end_date],
-        file: ['Multi-hop clustering.pdf', [Validators.required]]
+        file: ['', [Validators.required]]
       });
     }else {
       this.contractForm = this.formBuilder.group({
@@ -157,16 +156,17 @@ export class UpdateContractComponent implements OnInit {
     formData.append('file', this.myfile);
     this.contractService.update(formData,this.contract.id)
       .then(resp => {
-        this.translate.get('Contract.SubmitSuccess')
+        this.translate.get('Contract.SubmitSuccessUpdate')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.contractForm.reset();
+        this.router.navigate(['/contracts/all'])
         this.contractForm = this.formBuilder.group({
-          user_id: [''],
+          user_id: [],
           type: ['CDD – Contrat à durée déterminée'],
-          names: [''],
-          title: [''],
-          terms: [''],
+          names: [],
+          title: [],
+          terms: [],
           free_days: [0],
           start_date: [],
           end_date: [],

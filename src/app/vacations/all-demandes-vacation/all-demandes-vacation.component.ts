@@ -9,13 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-all-vacation',
-  templateUrl: './all-vacation.component.html',
-  styleUrls: ['./all-vacation.component.scss']
+  selector: 'app-all-demandes-vacation',
+  templateUrl: './all-demandes-vacation.component.html',
+  styleUrls: ['./all-demandes-vacation.component.scss']
 })
-export class AllVacationComponent implements OnInit {
-
-
+export class AllDemandesVacationComponent implements OnInit {
   vacations: Vacation[] = [];
   loading: Boolean = true;
   @BlockUI() blockUI: NgBlockUI;
@@ -90,4 +88,10 @@ export class AllVacationComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
 
