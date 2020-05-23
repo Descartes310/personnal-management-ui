@@ -42,6 +42,13 @@ import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-
 import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
 
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -53,9 +60,7 @@ import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
-//import { LicensetypesComponent } from './licensetypes/licensetypes.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
@@ -75,6 +80,8 @@ import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/mate
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
@@ -100,6 +107,18 @@ import { DecisionVacationComponent } from './vacations/decision-vacation/decisio
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 
 
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
+
+import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -148,12 +167,30 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsDivisionComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
+    AllLicensetypesComponent,
+    DetailsLycensetypeComponent,
+    AllDivisionComponent,
+    DetailsDivisionComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     AddCongeComponent,
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AddContractComponent,
+    AllContractComponent,
+    UpdateContractComponent,
+    FindContractComponent,
+    DetailsContractComponent,
+    AllBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
+    AddBlogPostComponent,
+    UpdateBlogPostComponent,
     AllSubmissionsComponent,
     AllBlogPostComponent,
     DetailBlogPostComponent,
@@ -180,14 +217,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllDemandesVacationComponent,
 
   ],
+
   imports: [
     MatTabsModule,
     MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    CKEditorModule,
     BrowserModule,
+    CKEditorModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

@@ -1,6 +1,6 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes'; 
+import * as Routes from '../Routes';
 import { Contract } from '../_models/contract.model';
 
 @Injectable({
@@ -24,9 +24,6 @@ export class ContractService {
         return this.http.get<any>(Routes.CONTRACT).toPromise();
     }
 
-    permissions(): Promise<any> {
-        return this.http.get<any>(Routes.PERMISSION).toPromise();
-    }
 
     find(id: number): Promise<Contract> {
         return this.http.get<Contract>(`${Routes.CONTRACT}/${id}`).toPromise();
@@ -35,5 +32,9 @@ export class ContractService {
     delete(id: number): Promise<Contract[]> {
         return this.http.delete<Contract[]>(`${Routes.CONTRACT}/${id}`).toPromise();
     }
+
+    downloadFile(id: number): Promise<any> {
+      return this.http.get<any>(`${Routes.CONTRACT}/print-pdf/${id}`).toPromise();
+  }
 
 }

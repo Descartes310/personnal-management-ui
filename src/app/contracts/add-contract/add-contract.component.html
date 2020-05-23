@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'Contract.ContractTitle' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="row">
     <div class="col">
@@ -95,23 +95,23 @@
                                 </div> 
                             </div>
                             <div class="card-body">
-                                <div class="row">   
-                                    <div class="col-md-12" >                                      
+                                <div class="row">
+                                    <div class="col-md-12" >
                                         <ckeditor [editor]="Editor" data="" formControlName="terms" name="content" id="editor">
                                         </ckeditor>
-                                    </div>  
-                                </div> 
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
-                                <div class="row">   
-                                    <div class="col-md-12"> 
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <input name="file" id="examplefile" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
-                                    </div>  
-                                </div> 
-                            </div>             
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <div class="row">        
-                                    <div class="col-md-12">                                      
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
                                                 <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Contract.CreateContract" | translate }}</p>
@@ -124,10 +124,10 @@
                                                 </div>
                                             </button>
                                       </div>
-                                    </div>  
-                                </div> 
+                                    </div>
+                                </div>
                             </div>
-                        </div>   
+                        </div>
                     </form>
                 </div>
             </div>
@@ -135,4 +135,3 @@
     </div>
 </div>
 
-  

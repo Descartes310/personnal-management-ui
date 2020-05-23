@@ -1,15 +1,14 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes';
+import * as Routes from '../Routes'; 
 import { User } from '../_models/user.model';
+
 
 
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
 */
-
-
 @Injectable({
   providedIn: 'root',
 })

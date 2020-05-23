@@ -29,6 +29,7 @@
         "WeightLabel": "Index",
         "WeightField": "Select an index",
         "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
+        "DaysLabel": "Number of Days",
         "TitleLabel": "Title",
         "TitleField": "Please type a title...",
         "Trainer": "Trainer",
@@ -36,8 +37,19 @@
         "start_date": "Start date",
         "location": "Location",
         "templateType":"Type",
-        "templateContent":"Content",   
-        "DaysLabel": "Number of Days"
+        "templateContent":"Content",
+
+        "UserName": "User's name",
+        "LicenseType": "License's type",
+        "Raison": "Reason",
+        "File": "File",
+        "Requested_start_date": "Requested start date",
+        "Requested_days": "Requested_days",
+        "Status": "Status",
+        "Key": "Key",
+        "Value": "Value",
+        "KeyField": "Enter a key",
+        "ValueField": "Enter a value"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
@@ -102,5 +114,54 @@
         "SubmitSuccess": "The template has been created successfully",
         "NOT_FOUND_ASSIGNMENT_ID": "Template not found",
         "TEMPLATE_ALREADY_EXIST": "Template already existing !!!"
+    },
+
+    "SideBar": {
+        "SystemConfig": "System's Setting",
+        "Users": "Employees",
+        "Contracts": "Contrats de travail",
+        "PermissionEtConges": "Licenses and Vacations",
+        "NotesPros": "Notes proféssionnelles",
+        "Career": "Promotions et parcours",
+        "Assignment": "Affectations",
+        "Training": "Formations",
+        "Sanction": "Sanctions",
+        "Blog": "Actualités",
+        "Contact": "Contacts",
+        "ProSituation": "Situation proféssionnelle",
+        "Division": "Divisions",
+        "AssignmentType": "Type d'affectations",
+        "ProfileElement": "Element du profile",
+        "TypeConges": "Type de congés",
+        "PermissionType": "Type de permission",
+        "Template": "Modèle de document",
+        "BlogCat": "Blog Category",
+        "DiscCouncil": "Conseil de discipline",
+        "NoteCriteria": "Critère de notation",
+        "Config": "Configurations",
+        "RoleAndPer": "Rôles et permissions",
+        "Personnel": "Personnels",
+        "Submission": "Demandes écrites",
+        "ProfileUpdate": "Update profile",
+        "Permissions":"Licenses",
+        "Conges":"Vacations"
+    },
+
+    "Licenses":{
+        "Licenses_Title": "Licenses",
+        "Licenses_Name": "Licenses's management",
+        "Add_Licenses": "Add a new license"
+    },
+
+    "Settings":{
+        "Settings_Title": "Settings",
+        "Settings_Name": "Settings's management",
+        "Add_Settings": "Add a new Setting",
+        "Update": "Update",
+        "SubmitError": "Entries are necessary",
+        "UpdateSuccess": "The settings's update has been made successfully",
+        "SubmitSuccess": "The settings has been created successfully",
+        "NotFound": "Undefined settings",
+        "undefined": "the key is already existing"
     }
 }

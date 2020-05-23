@@ -38,11 +38,15 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
-import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
-import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
@@ -54,6 +58,8 @@ import { AllProSituationComponent } from './pro_situations/all-pro-situation/all
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
+import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 
 import { AllSubmissionComponent } from './submissions/all-submission/all-submission.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
@@ -66,9 +72,27 @@ import { AddContractComponent } from './contracts/add-contract/add-contract.comp
 import { AllContractComponent } from './contracts/all-contract/all-contract.component';
 import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
 import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 
-//const routes: Routes = [];
+
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
+import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -102,10 +126,26 @@ const routes: Routes = [
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'vacations/all', component: AllVacationComponent },
   { path: 'vacations/details/:id', component: DetailVacationComponent },
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'licenses/all', component: AllLicensesComponent },
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+//path to settings
+  { path: 'settings/add', component: AddSettingsComponent},
+  { path: 'settings/update/:id', component: UpdateSettingsComponent },
+  { path: 'settings/all', component: AllSettingsComponent },
+  { path: 'settings/details/:id', component: DetailsSettingsComponent },
+
+
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
@@ -139,6 +179,15 @@ const routes: Routes = [
   { path: 'contracts/update/:id', component: UpdateContractComponent },
   { path: 'contracts/details/:id', component: DetailsContractComponent },
   { path: 'contracts/details', component: DetailsContractComponent },
+  { path: 'vacations/update/:id', component: UpdateVacationComponent },
+  { path: 'vacations/add', component: AddVacationComponent },
+  { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-posts/add', component: AddBlogPostComponent },
+  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
+  { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'profile', component:UserProfileComponent},
+  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
+  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

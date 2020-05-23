@@ -35,7 +35,7 @@ export class AllDivisionComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'division' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -62,14 +62,26 @@ export class AllDivisionComponent implements OnInit {
         response.map( division => {
           this.divisions.push(new Division(division));
         });
-        console.log(this.divisions);
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
+        if (this.divisions && this.divisions.length) {
+          this.divisions.forEach(div => {
+            if (div.parent_id != null) {
+              this.divisions.forEach(parent => {
+                if (parent.id == div.parent_id) {
+                  div.division = parent;
+                }
+              });
+            } else {
+              div.division = null;
+            }
+          });
+        }
         this.loading = false;
       }
     )
@@ -112,7 +124,7 @@ export class AllDivisionComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

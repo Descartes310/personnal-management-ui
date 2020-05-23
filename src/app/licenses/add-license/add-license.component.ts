@@ -18,7 +18,7 @@ export class AddLicenseComponent implements OnInit {
   license_types: any[] = [];
   license_types_tmp: any[] = [];
 
-  
+
   user;
   licenseForm: FormGroup;
   isLoading = false;
@@ -26,9 +26,6 @@ export class AddLicenseComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   file:File=null;
-  pipe = new DatePipe('en-US');
-  Date = new Date();
-  currentDate = this.pipe.transform(this.Date, 'yyyy-MM-dd');
 
 
   constructor(
@@ -40,7 +37,7 @@ export class AddLicenseComponent implements OnInit {
     private licensetypeService:LicensetypeService,
     private router: Router,
   ) {
-    
+
    }
 
   ngOnInit() {
@@ -53,7 +50,7 @@ export class AddLicenseComponent implements OnInit {
       file:[''],
       requested_start_date:['',[Validators.required]],
       requested_days:['',[Validators.required]]
-      
+
     });
 
   }
@@ -75,14 +72,19 @@ export class AddLicenseComponent implements OnInit {
     )
   }
 
-  
+
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
+
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
+
     // Si la validation a echoué, on arrete l'execution de la fonction
-   
+
     if (this.licenseForm.invalid) {
       this.translate.get('License.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -95,7 +97,7 @@ export class AddLicenseComponent implements OnInit {
     formData.append('license_type_id', ''+this.form.license_type_id.value);
     formData.append('raison', '' + this.form.reason.value);
     formData.append('description', '' + this.form.description.value);
-    if (this.currentDate >= this.form.requested_start_date.value) {
+    if (currentDate >= this.form.requested_start_date.value) {
       this.translate.get('Form.StartDateError')
       .subscribe(val => this.notifService.danger(val));
     }

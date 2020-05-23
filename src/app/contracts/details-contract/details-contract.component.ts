@@ -16,6 +16,7 @@ export class DetailsContractComponent implements OnInit {
   contract: Contract = new Contract();
 
   myForm: FormGroup;
+  downloadFile: any;
   constructor(
           public formBuilder:FormBuilder,
           private contractService: ContractService,
@@ -30,12 +31,14 @@ export class DetailsContractComponent implements OnInit {
   });
 
   }
+  contract_id = +this.route.snapshot.paramMap.get("id");
   async ngOnInit() {
-    const contract_id = +this.route.snapshot.paramMap.get("id");
-    this.contractService.find(contract_id).then(
+    this.download();
+    this.contractService.find(this.contract_id).then(
       data => {
         this.contract = new Contract(data);
       }
+
     ).catch(
       error => {
         this.translate.get('Contract.'+error.error.code)
@@ -49,11 +52,24 @@ export class DetailsContractComponent implements OnInit {
   /**
   * Function that detect changes on content
   */
-  contentChanged(){
-    console.log('content is '+ this.myForm.get("content").value);
+
+
+  download(){
+
+    this.contractService.downloadFile(this.contract_id).then(
+      response => {
+        this.downloadFile = response;
+        console.log(this.downloadFile);
+      }
+    ).catch(
+      error => {
+        this.notifService.danger(error.error.message)
+      }
+    ).finally()
+
   }
-  
- 
+
+
 }
 
 

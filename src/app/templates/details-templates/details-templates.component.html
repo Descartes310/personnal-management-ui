@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'Templates.TemplateTitle' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="row">
     <div class="col-md-12">
@@ -52,12 +52,13 @@
                                                             <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
                                                     </div>
                                                     <div class="widget-content-left">
-                                                        <div class="widget-heading">{{ 'Form.templateContent' | translate }}</div>
-                                                        <div>{{ template.content }}</div>
+                                                        <div class="widget-heading">{{ 'Form.templateType' | translate }}</div>
+                                                        <div>{{ template.type }}</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
+
                                         <li class="list-group-item">
                                             <div class="widget-content p-0">
                                                 <div class="widget-content-wrapper">
@@ -67,13 +68,12 @@
                                                             <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
                                                     </div>
                                                     <div class="widget-content-left">
-                                                        <div class="widget-heading">{{ 'Form.templateType' | translate }}</div>
-                                                        <div>{{ template.type }}</div>
+                                                        <div class="widget-heading">{{ 'Form.templateContent' | translate }}</div>
+                                                        <div [innerHTML]="template.content"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-
 
                                     </ul>
                                 </div>
