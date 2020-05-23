@@ -13,14 +13,14 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
   styleUrls: ['./all-assignments.component.scss']
 })
 export class AllAssignmentsComponent implements OnInit {
-  
+
   assignments: Assignment[] = [];
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
@@ -55,36 +55,19 @@ export class AllAssignmentsComponent implements OnInit {
     this.getAssignments();
   }
 
-  getAssignments() {
+  async getAssignments() {
     this.loading = true;
-    this.assignmentService.all().then(
-      response => {
-        console.log(response);
-        
-        this.assignments = [];
-        this.assignments = response
-        // response.data.map(assignment => {
-        //   this.assignments.push(new Assignment(assignment));
-        // });
-      }
-      
-    ).catch(
-      error => {
-        this.notifService.danger(error.error.message)
-      }
-    ).finally(
-      () => {
-        this.loading = false;
-      }
-    )
+    this.assignmentService.all().then(resp => this.assignments = resp)
+    .catch(error => this.notifService.danger(error.error.message))
+    .finally(() => this.loading = false);
   }
 
   editAssignment(assignment: Assignment) {
-    this.router.navigate(['/assignments/update/' + assignment.id])
+    this.router.navigate(['/assignments/update/' + assignment.id]);
   }
 
   detailsAssignment(assignment: Assignment) {
-    this.router.navigate(['/assignments/details/' + assignment.id])
+    this.router.navigate(['/assignments/details/' + assignment.id]);
   }
 
   deleteAssignment(assignment: Assignment) {
@@ -105,24 +88,24 @@ export class AllAssignmentsComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            )
+            );
             this.getAssignments();
           }
         ).catch(
           error => {
-            console.log(error)
+            console.log(error);
             this.blockUI.stop();
             this.translate.get('Assignment.' + error.error.code)
               .subscribe(val => this.notifService.danger(val));
           }
-        )
+        );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
 }
