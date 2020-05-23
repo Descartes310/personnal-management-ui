@@ -13,7 +13,7 @@ import { Division } from 'src/app/_models/division.model';
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
-*/
+ */
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -21,42 +21,42 @@ import { Division } from 'src/app/_models/division.model';
 })
 export class AddUserComponent implements OnInit {
 
-  public formInputList: any[] = [];
-  public firstStepInputList:any[] = []; 
-  public secondStepInputList:any[] = []; 
-  public permissions: any[] = [];
-  public permissions_tmp: any[] = [];
-  public selected_permissions: number[] = [];
-  public roles: any[] = [];
-  public roles_tmp: any[] = [];
-  public selected_roles: number[] = [];
-  public cities: any[] = [];
-  public divisions: any[] = [];
-  public proSituations: any[] = [];
+  formInputList: any[] = [];
+  firstStepInputList: any[] = [];
+  secondStepInputList: any[] = [];
+  permissions: any[] = [];
+  permissions_tmp: any[] = [];
+  selected_permissions: number[] = [];
+  roles: any[] = [];
+  roles_tmp: any[] = [];
+  selected_roles: number[] = [];
+  cities: any[] = [];
+  divisions: any[] = [];
+  proSituations: any[] = [];
 
-	public personnalInfoForm: FormGroup;
-  public publicInfoForm: FormGroup;
-  public roleAndPermissionsForm: FormGroup;
-  
-	public isOptional: boolean = false;
-  public loading: boolean = false;
-  public isBuild: boolean = false;
-  public isSubmitted: boolean = false;
-  public loadingPermissions: boolean = false;
-  public loadingRoles: boolean = false;
+  personnalInfoForm: FormGroup;
+  publicInfoForm: FormGroup;
+  roleAndPermissionsForm: FormGroup;
 
-  public data: FormData = new FormData();
+  isOptional = false;
+  loading = false;
+  isBuild = false;
+  isSubmitted = false;
+  loadingPermissions = false;
+  loadingRoles = false;
 
-  public data_tmp1: any = {};
-  public data_tmp2: any = {};
-  public errorMessages: any = {};
+  data: FormData = new FormData();
 
-  public loginMinLength: number = 6;
-  public passwordMinLength: number = 6;
-  
+  data_tmp1: any = {};
+  data_tmp2: any = {};
+  errorMessages: any = {};
+
+  loginMinLength = 6;
+  passwordMinLength = 6;
+
 
   constructor(
-  	private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private userService: UserService,
     private roleService: RoleService,
     private divisionService: DivisionService,
@@ -64,20 +64,17 @@ export class AddUserComponent implements OnInit {
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
-  ) 
-  { }
+  ){}
 
   ngOnInit() {
-
     this.initPersonnalInfoForm();
-  	this.initPubicInfoForm();
+    this.initPubicInfoForm();
     this.getFormInput();
-
   }
 
   get login() {
     return this.personnalInfoForm.get('login');
-  };
+  }
 
   get password() {
     return this.personnalInfoForm.get('password');
@@ -98,7 +95,7 @@ export class AddUserComponent implements OnInit {
     this.userService.allProfiles().then(
       response => {
         this.formInputList = [];
-        response.map( input => {
+        response.map(input => {
           this.formInputList.push(new Profile(input));
         });
         this.getInputListPerStep();
@@ -111,13 +108,12 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingFormError')
-          .subscribe(val => this.notifService.danger(val));
+        this.translate.get('User.LoadingFormError').subscribe(val => this.notifService.danger(val));
         this.router.navigate(['/users/all']);
       }
     ).finally(() => {
       this.getRoles();
-    })
+    });
   }
 
   public getPermissions() {
@@ -129,13 +125,12 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('User.LoadingFormError')
-          .subscribe(val => this.notifService.danger(val));
-          this.router.navigate(['/users/all']);
+        this.translate.get('User.LoadingFormError').subscribe(val => this.notifService.danger(val));
+        this.router.navigate(['/users/all']);
       }
     ).finally(() => {
       this.loadingPermissions = false;
-    })
+    });
   }
 
   public getRoles() {
@@ -154,7 +149,7 @@ export class AddUserComponent implements OnInit {
     ).finally(() => {
       this.loadingRoles = false;
       this.getPermissions();
-    })
+    });
   }
 
   public getDivision() {
@@ -167,19 +162,19 @@ export class AddUserComponent implements OnInit {
         this.translate.get('User.LoadingError')
           .subscribe(val => this.notifService.danger(val));
       }
-    )
+    );
   }
 
 
   public initPersonnalInfoForm(withProfile = false): void {
 
-    if(withProfile) {
-      
+    if (withProfile) {
+
       this.initErrorMessages();
       this.getLoginErrorMessages();
       this.getPasswordErrorMessages();
 
-      let parametter: any = {}; 
+      const parametter: any = {};
 
       parametter['login'] = [
         '',
@@ -205,21 +200,21 @@ export class AddUserComponent implements OnInit {
       ];
 
       this.firstStepInputList.map(input => {
-        let validationRules: any[] = [];
+        const validationRules: any[] = [];
 
-        if(input.is_required) {
+        if (input.is_required) {
           validationRules.push(Validators.required);
-        } 
-        
-        if(input.min) {
-          validationRules.push(Validators.min(input.min));
-        } 
+        }
 
-        if(input.max) {
+        if (input.min) {
+          validationRules.push(Validators.min(input.min));
+        }
+
+        if (input.max) {
           validationRules.push(Validators.max(input.max));
         }
-       
-        if(input.type === 'file') {
+
+        if (input.type === 'file') {
           parametter[input.slug] = [
             null,
             validationRules
@@ -231,7 +226,7 @@ export class AddUserComponent implements OnInit {
           ];
         }
 
-      })
+      });
       this.personnalInfoForm = this.formBuilder.group(parametter);
     } else {
       this.personnalInfoForm = this.formBuilder.group({});
@@ -255,7 +250,7 @@ export class AddUserComponent implements OnInit {
       () => {
         this.initProSituations();
       }
-    )
+    );
 
   }
 
@@ -275,7 +270,7 @@ export class AddUserComponent implements OnInit {
       () => {
         this.loading = false;
       }
-    )
+    );
 
   }
 
@@ -290,7 +285,7 @@ export class AddUserComponent implements OnInit {
         { type: 'required', message: '' },
         { type: 'minlength', message: '' }
       ]
-    }
+    };
 
   }
 
@@ -310,8 +305,8 @@ export class AddUserComponent implements OnInit {
 
   public initPubicInfoForm(withProfile = false): void {
 
-    if(withProfile) {
-      let parametter: any = {}; 
+    if (withProfile) {
+      const parametter: any = {};
 
       parametter['pro_situation'] = [
         '',
@@ -326,23 +321,23 @@ export class AddUserComponent implements OnInit {
           Validators.required,
         ]
       ];
-      
+
       this.secondStepInputList.map(input => {
-        let validationRules: any[] = [];
+        const validationRules: any[] = [];
 
-        if(input.is_required) {
+        if (input.is_required) {
           validationRules.push(Validators.required);
-        } 
-        
-        if(input.min) {
-          validationRules.push(Validators.min(input.min));
-        } 
+        }
 
-        if(input.max) {
+        if (input.min) {
+          validationRules.push(Validators.min(input.min));
+        }
+
+        if (input.max) {
           validationRules.push(Validators.max(input.max));
         }
 
-        if(input.type === 'file') {
+        if (input.type === 'file') {
           parametter[input.slug] = [
             null,
             validationRules
@@ -354,12 +349,12 @@ export class AddUserComponent implements OnInit {
           ];
         }
 
-      })
+      });
       this.publicInfoForm = this.formBuilder.group(parametter);
     } else {
       this.publicInfoForm = this.formBuilder.group({});
     }
-      
+
   }
 
   public initRoleAndPermissionsForm() {
@@ -396,21 +391,21 @@ export class AddUserComponent implements OnInit {
   }
 
   public checkInputNumberFisrtForm(event, input: Profile) {
-    let value = parseInt(event.target.value);
+    const value = parseInt(event.target.value);
     if (input.min) {
 
-      if(value < input.min) {
+      if (value < input.min) {
         this.personnalInfo[input.slug].setValue(input.min);
         this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
           .subscribe(val => this.notifService.danger(val));
         return;
       }
 
-    } 
+    }
 
-    if(input.max) {
+    if (input.max) {
 
-      if(value > input.max) {
+      if (value > input.max) {
         this.personnalInfo[input.slug].setValue(input.max);
         this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
           .subscribe(val => this.notifService.danger(val));
@@ -421,10 +416,10 @@ export class AddUserComponent implements OnInit {
   }
 
   public checkInputNumberSecondForm(event, input: Profile) {
-    let value = parseInt(event.target.value);
+    const value = parseInt(event.target.value);
     if (input.min) {
 
-      if(value < input.min) {
+      if (value < input.min) {
         this.publicInfo[input.slug].setValue(input.min);
         this.translate.get('User.InputMinError', { data1: input.name, data2: input.min })
           .subscribe(val => this.notifService.danger(val));
@@ -433,9 +428,9 @@ export class AddUserComponent implements OnInit {
 
     }
 
-    if(input.max) {
+    if (input.max) {
 
-      if(value > input.max) {
+      if (value > input.max) {
         this.publicInfo[input.slug].setValue(input.max);
         this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
           .subscribe(val => this.notifService.danger(val));
@@ -446,70 +441,70 @@ export class AddUserComponent implements OnInit {
   }
 
   public processFile1(event, inputSlug) {
-    let file: File = event.target.files[0];
+    const file: File = event.target.files[0];
     this.data.append(inputSlug, file);
     this.data_tmp1[inputSlug] = file;
   }
 
   public processFile2(event, inputSlug) {
-    let file: File = event.target.files[0];
+    const file: File = event.target.files[0];
     this.data.append(inputSlug, file);
-    this.data_tmp2[inputSlug] = file;    
+    this.data_tmp2[inputSlug] = file;
   }
 
   public validatePersonnalInfoForm() {
 
     this.isSubmitted = true;
 
-    let login: string = this.personnalInfo.login.value;
-    let password: string = this.personnalInfo.password.value;
-    let ville: string = this.personnalInfo.city.value;
+    const login: string = this.personnalInfo.login.value;
+    const password: string = this.personnalInfo.password.value;
+    const ville: string = this.personnalInfo.city.value;
 
     this.firstStepInputList.map(input => {
 
       let value;
-      if(this.personnalInfo[input.slug]) {
+      if (this.personnalInfo[input.slug]) {
         value = this.personnalInfo[input.slug].value;
       } else {
         return;
       }
 
 
-      if(input.is_required) {
-        if(!value) {
+      if (input.is_required) {
+        if (!value) {
           this.translate.get('User.InputRequiredError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
           return;
         }
       }
 
-      if(input.minlength) {
-        if(value.length < input.minlength) {
+      if (input.minlength) {
+        if (value.length < input.minlength) {
           this.translate.get('User.InputMinLengthError', { data1: input.name, data2: input.minlength })
             .subscribe(val => this.notifService.danger(val));
           return;
         }
       }
 
-      if(input.maxlength) {
-        if(value.length > input.maxlength) {
+      if (input.maxlength) {
+        if (value.length > input.maxlength) {
           this.translate.get('User.InputMaxLengthError', { data1: input.name, data2: input.maxlength })
             .subscribe(val => this.notifService.danger(val));
           return;
         }
       }
 
-      if(input.max || input.min) {
+      if (input.max || input.min) {
         value = parseInt(value);
 
-        if(value !== NaN) {
+        if (value !== NaN) {
 
-          if(value > input.max) {
+          if (value > input.max) {
             this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
               .subscribe(val => this.notifService.danger(val));
             return;
           }
-          if(value < input.min) {
+          if (value < input.min) {
             this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
               .subscribe(val => this.notifService.danger(val));
             return;
@@ -521,76 +516,76 @@ export class AddUserComponent implements OnInit {
       }
 
 
-    })
+    });
 
-    if(!login) {
+    if (!login) {
       this.translate.get('User.InputRequiredError', { data: 'login' })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-    if(login.length < this.loginMinLength) {
+    if (login.length < this.loginMinLength) {
       this.translate.get('User.InputMinLengthError', { data1: 'login', data2: this.loginMinLength })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-    if(!password) {
+    if (!password) {
       this.translate.get('User.InputRequiredError', { data: 'password' })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-    if(password.length < this.passwordMinLength) {
+    if (password.length < this.passwordMinLength) {
       this.translate.get('User.InputMinLengthError', { data1: 'password', data2: this.passwordMinLength })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-    if(!ville) {
+    if (!ville) {
       this.translate.get('User.InputRequiredError', { data: 'ville' })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-    if(this.personnalInfoForm.valid) {
+    if (this.personnalInfoForm.valid) {
       this.isSubmitted = false;
     }
-      
+
   }
 
   public validatePublicInfoForm() {
 
     this.isSubmitted = true;
 
-    let proSituation: string = this.publicInfo.pro_situation.value;
+    const proSituation: string = this.publicInfo.pro_situation.value;
 
     this.secondStepInputList.map(input => {
-      
+
       let value;
-      if(this.publicInfoForm[input.slug]) {
+      if (this.publicInfoForm[input.slug]) {
         value = this.publicInfoForm[input.slug].value;
       } else {
         return;
       }
-        
 
-      if(input.is_required) {
-        if(!value) {
+
+      if (input.is_required) {
+        if (!value) {
           this.translate.get('User.InputRequiredError', { data: input.name })
             .subscribe(val => this.notifService.danger(val));
           return;
         }
       }
 
-      if(input.minlength) {
-        if(value.length < input.minlength) {
+      if (input.minlength) {
+        if (value.length < input.minlength) {
           this.translate.get('User.InputMinLengthError', { data1: input.name, data2: input.minlength })
             .subscribe(val => this.notifService.danger(val));
           return;
         }
       }
 
-      if(input.maxlength) {
-        if(value.length > input.maxlength) {
+      if (input.maxlength) {
+        if (value.length > input.maxlength) {
           this.translate.get('User.InputMaxLengthError', { data1: input.name, data2: input.maxlength })
             .subscribe(val => this.notifService.danger(val));
           return;
@@ -598,17 +593,17 @@ export class AddUserComponent implements OnInit {
       }
 
 
-      if(input.max || input.min) {
+      if (input.max || input.min) {
         value = parseInt(value);
 
-        if(value !== NaN) {
+        if (value !== NaN) {
 
-          if(value > input.max) {
+          if (value > input.max) {
             this.translate.get('User.InputMaxError', { data1: input.name, data2: input.max })
               .subscribe(val => this.notifService.danger(val));
             return;
           }
-          if(value < input.min) {
+          if (value < input.min) {
             this.translate.get('User.InputMinError', { data1: input.name, data2: input.max })
               .subscribe(val => this.notifService.danger(val));
             return;
@@ -620,25 +615,25 @@ export class AddUserComponent implements OnInit {
       }
 
 
-    })
+    });
 
-    if(!proSituation) {
+    if (!proSituation) {
       this.translate.get('User.InputRequiredError', { data: 'situation professionnelle' })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-    if(this.publicInfoForm.valid) {
+    if (this.publicInfoForm.valid) {
       this.isSubmitted = false;
     }
-    
+
   }
 
   public computeDataToSend() {
 
     Object.keys(this.personnalInfo).map(key => {
 
-      if(this.data_tmp1[key]) {
+      if (this.data_tmp1[key]) {
         this.data.append(key, this.data_tmp1[key]);
       } else {
         this.data.append(key, this.personnalInfo[key].value);
@@ -648,7 +643,7 @@ export class AddUserComponent implements OnInit {
     });
 
     Object.keys(this.publicInfo).map(key => {
-      if(this.data_tmp2[key]) {
+      if (this.data_tmp2[key]) {
         this.data.append(key, this.data_tmp2[key]);
       } else {
         this.data.append(key, this.publicInfo[key].value);
@@ -666,7 +661,7 @@ export class AddUserComponent implements OnInit {
     this.data_tmp1.roles = this.selected_roles;
     this.data_tmp1.permissions = this.selected_permissions;
 
-    let result: any = {};
+    const result: any = {};
     result.personnalInfo = this.data_tmp1;
     result.publicInfo = this.data_tmp2;
     console.log(result);
@@ -676,45 +671,56 @@ export class AddUserComponent implements OnInit {
   public onSubmit() {
     this.computeDataToSend();
 
-    this.loading = true
+    this.loading = true;
     this.userService.add(this.data).then(
-      response => {
-        console.log(response);
-        this.translate.get('User.CreateUserSuccess')
+      createdUser => {
+        const rolesPermissions = {
+          roles: JSON.stringify(this.selected_roles),
+          permissions: JSON.stringify(this.selected_permissions)
+        };
+        this.roleService.syncUserAbilities(createdUser.id, rolesPermissions)
+        .then(res => {
+          this.translate.get('User.CreateUserSuccess')
           .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.personnalInfoForm.reset();
-        this.publicInfoForm.reset();
-        this.selected_permissions = [];
-        this.selected_roles = [];
+          this.isSubmitted = false;
+          this.personnalInfoForm.reset();
+          this.publicInfoForm.reset();
+          this.selected_permissions = [];
+          this.selected_roles = [];
+          document.getElementById('reset-btn').click();
+        })
+        .catch(err => {
+          this.translate.get('User.CreateUserError')
+            .subscribe(val => this.notifService.danger(val));
+        });
       }
     ).catch(
       error => {
-        if(error.status && error.code) {
-          if(error.status === '400' && error.code === 'VALIDATION_ERROR') {
+        if (error.status && error.code) {
+          if (error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
-              if(error.errors[input.slug]) {
+              if (error.errors[input.slug]) {
                 error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
-                })   
+                });
               }
             });
             this.secondStepInputList.map(input => {
-              if(error.errors[input.slug]) {
+              if (error.errors[input.slug]) {
                 error.errors[input.slug].map(errorMessage => {
                   this.notifService.danger(errorMessage);
-                })   
+                });
               }
             });
-            if(error.errors.login) {
+            if (error.errors.login) {
               error.errors.login.map(errorMessage => {
                 this.notifService.danger(errorMessage);
-              })   
+              });
             }
-            if(error.errors.password) {
+            if (error.errors.password) {
               error.errors.password.map(errorMessage => {
                 this.notifService.danger(errorMessage);
-              })   
+              });
             }
           }
         }
@@ -729,35 +735,35 @@ export class AddUserComponent implements OnInit {
         this.data_tmp1 = {};
         this.data_tmp2 = {};
       }
-    )
+    );
 
   }
 
-  selectAllPermission(event: any){
+  selectAllPermission(event: any) {
     this.selected_permissions = [];
-    if(event.target.checked) {
+    if (event.target.checked) {
       this.permissions_tmp.map(
         permission => {
-          this.selected_permissions.push(permission.id)
+          this.selected_permissions.push(permission.id);
         }
-      )
+      );
     }
   }
 
-  selectAllRole(event: any){
+  selectAllRole(event: any) {
     this.selected_roles = [];
     this.selected_permissions = [];
-    if(event.target.checked) {
+    if (event.target.checked) {
       this.roles_tmp.map(
         role => {
-          this.selected_roles.push(role.id)
+          this.selected_roles.push(role.id);
         }
-      )
+      );
       this.permissions_tmp.map(
         permission => {
-          this.selected_permissions.push(permission.id)
+          this.selected_permissions.push(permission.id);
         }
-      )
+      );
     }
   }
 
@@ -772,14 +778,15 @@ export class AddUserComponent implements OnInit {
   }
 
   onCheckedRole(role, event) {
-    let permissions = role.permissions;
-    
-    if(event.target.checked) {
+    const permissions = role.permissions;
+
+    if (event.target.checked) {
 
       this.selected_roles.push(role.id);
       permissions.map(permission => {
-        if(!this.selected_permissions.includes(permission.id))
+        if (!this.selected_permissions.includes(permission.id)) {
           this.selected_permissions.push(permission.id);
+        }
       });
 
     } else {
@@ -791,20 +798,21 @@ export class AddUserComponent implements OnInit {
 
   }
 
-  onCheckedPermission(permission, event){
-    if(event.target.checked) {
-      if(!this.selected_permissions.includes(permission.id))
+  onCheckedPermission(permission, event) {
+    if (event.target.checked) {
+      if (!this.selected_permissions.includes(permission.id)) {
         this.selected_permissions.push(permission.id);
+      }
     } else {
       this.selected_permissions.splice(this.selected_permissions.indexOf(permission.id), 1);
     }
   }
 
-  isCheckedPermission(id: number){
+  isCheckedPermission(id: number) {
     return this.selected_permissions.includes(id);
   }
 
-  isCheckedRole(id: number){
+  isCheckedRole(id: number) {
     return this.selected_roles.includes(id);
   }
 
