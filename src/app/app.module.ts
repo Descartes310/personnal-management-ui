@@ -123,8 +123,8 @@ import { DetailsSettingsComponent } from './settings/details-settings/details-se
 import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
-import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
-import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
+import { CreateDiciplinaryTeamComponent } from './disciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
