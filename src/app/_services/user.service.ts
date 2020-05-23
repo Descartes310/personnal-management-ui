@@ -18,25 +18,29 @@ export class UserService {
     private http: HttpClient,
   ) { }
 
-  /**
-   * @author Arléon Zemtsop
-   * @email arleonzemtsop@gmail.com
-  */
   add(formData: FormData): Promise<User> {
-    return this.http.post<User>(Routes.USERS, formData).toPromise();
+    return this.http.post<User>(Routes.USER, formData).toPromise();
   }
 
   update(formData: FormData, id: number): Promise<User> {
-    return this.http.post<User>(`${Routes.USERS}/${id}`, formData).toPromise();
+    return this.http.post<User>(`${Routes.USER}/${id}`, formData).toPromise();
   }
+
+  // all(): Promise<any> {
+  //     return this.http.get<any>(Routes.USER).toPromise();
+  // }
+
+  find(id: number): Promise<User> {
+    return this.http.get<User>(`${Routes.USER}/${id}`).toPromise();
+  }
+
+
+
 
   all(): Promise<any> {
     return this.http.get<any>(Routes.USER).toPromise();
   }
 
-  find(id: number): Promise<User> {
-    return this.http.get<User>(`${Routes.USER}/${id}`).toPromise();
-  }
 
   delete(id: number): Promise<User[]> {
     return this.http.delete<User[]>(`${Routes.USER}/${id}`).toPromise();

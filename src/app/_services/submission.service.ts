@@ -26,10 +26,11 @@ export class SubmissionService {
     return this.http.get<Submission>(`${Routes.SUBMISSION}/${id}`).toPromise();
   }
 
+  all(): Promise<any> {
+    return this.http.get<any>(Routes.SUBMISSION).toPromise();
+  }
+
   delete(id: number): Promise<Submission[]> {
     return this.http.delete<Submission[]>(`${Routes.SUBMISSION}/${id}`).toPromise();
-}
-all(): Promise<any> {
-    return this.http.get<any>(Routes.SUBMISSION).toPromise();
-}
+  }
 }
