@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes'; 
+import * as Routes from '../Routes';
 import { Assignment } from '../_models/assignment.model';
 
 @Injectable({
