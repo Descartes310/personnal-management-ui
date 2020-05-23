@@ -20,7 +20,7 @@ export class ProfileService {
     }
 
     update(formData: FormData, id: number): Promise<Profile> {
-        return this.http.put<Profile>(`${Routes.PROFILE}/${id}`, formData).toPromise();
+        return this.http.post<Profile>(`${Routes.PROFILE}/${id}`, formData).toPromise();
     }
 
     all(): Promise<any> {

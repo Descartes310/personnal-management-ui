@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import { Super } from './super.model';
-
-export class User extends Super<User> {
-
-    public login:string;
-    public password:String;
-
-    
-}
-=======
 import { Super } from './super.model';
 
 export class User extends Super<User> {
@@ -21,4 +10,3 @@ export class User extends Super<User> {
 
     
 }
->>>>>>> cc1a41d96a434b90b49af843ecabca751037be02
