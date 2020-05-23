@@ -31,6 +31,7 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
 import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddDisciplinaryBoardsComponent,
     UpdateDisciplinaryBoardComponent,
+    AddUserNoteCriteriasComponent,
   ],
   imports: [
     BrowserModule,

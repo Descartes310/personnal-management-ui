@@ -13,6 +13,7 @@ import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
 import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
 import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'user_note_criterias', component: AddUserNoteCriteriasComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

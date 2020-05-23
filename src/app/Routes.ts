@@ -9,3 +9,4 @@ export const PERMISSION = SERVER + 'permissions';
 export const USERS = SERVER+'users';
 export const FIND_USSER = SERVER+'users';
 export const PROFILES = SERVER + 'profiles';
+export const USER_NOTE_CRITERIAS = SERVER + 'user_note_criteria';
