@@ -75,7 +75,7 @@ const routes: Routes = [
   
  
   { path: '404', component: NotfoundComponent },
-  { path: '**', redirectTo: 'login' },
+  { path: '**', redirectTo: '404' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

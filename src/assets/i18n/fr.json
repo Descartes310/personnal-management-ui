@@ -298,5 +298,9 @@
         "LICENSE_VALIDATOR":"donnees invalide",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "NotFound": {
+        "title": "Page introuvable",
+        "description": "Erreur 4O4|Page introuvable"
     }
 }
