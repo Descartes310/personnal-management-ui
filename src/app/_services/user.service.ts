@@ -1,7 +1,8 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes';
+import * as Routes from '../Routes'; 
 import { User } from '../_models/user.model';
+
 
 
 /**
@@ -14,24 +15,28 @@ import { User } from '../_models/user.model';
 export class UserService {
 
   constructor(
-    private http: HttpClient,
-  ) { }
+      private http: HttpClient,
+    ) { }
 
-  /**
-   * @author Arléon Zemtsop
-   * @email arleonzemtsop@gmail.com
-  */
-  add(formData: FormData): Promise<User> {
-    return this.http.post<User>(Routes.USERS, formData).toPromise();
-  }
+    add(formData: FormData): Promise<User> {
+        return this.http.post<User>(Routes.USER, formData).toPromise();
+    }
 
-  /**
-   * @author Arléon Zemtsop
-   * @email arleonzemtsop@gmail.com
-  */
-  update(formData: FormData, id: number): Promise<User> {
-    return this.http.post<User>(`${Routes.USERS}/${id}`, formData).toPromise();
-  }
+    update(formData: FormData, id: number): Promise<User> {
+        return this.http.post<User>(`${Routes.USER}/${id}`, formData).toPromise();
+    }
+
+    all(): Promise<any> {
+        return this.http.get<any>(Routes.USER).toPromise();
+    }
+
+    find(id: number): Promise<User> {
+        return this.http.get<User>(`${Routes.USER}/${id}`).toPromise();
+    }
+
+    delete(id: number): Promise<User[]> {
+        return this.http.delete<User[]>(`${Routes.USER}/${id}`).toPromise();
+    }
 
   /**
    * @author Arléon Zemtsop
@@ -41,4 +46,7 @@ export class UserService {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
   
+  allUser(){
+    return this.http.get<any>(`${Routes.User}`).toPromise();
+  }
 }
