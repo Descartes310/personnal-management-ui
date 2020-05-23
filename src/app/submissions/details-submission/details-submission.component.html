@@ -39,8 +39,8 @@
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">
-                                                            {{ 'Form.UserLabel' | translate }}</div>
-                                                        <div>{{ submission.user_id }}</div>
+                                                            {{ 'Form.SenderLabel' | translate }}</div>
+                                                        <div>{{ submission.sender?.last_name }}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -57,7 +57,7 @@
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.Dest_userLabel' | translate }}
                                                         </div>
-                                                        <div>{{ submission.dest_user_id}}</div>
+                                                        <div>{{ submission.receiver?.first_name}}</div>
                                                     </div>
                                                 </div>
                                             </div>

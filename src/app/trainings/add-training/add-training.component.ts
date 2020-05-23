@@ -91,8 +91,7 @@ export class AddTrainingComponent implements OnInit {
   }
 
   onChecked(event){
-    this.is_online = event.target.checked; 
-    alert(this.is_online)   
+    this.is_online = event.target.checked;    
   }
 
   onSubmit() {
