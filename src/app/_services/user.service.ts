@@ -8,7 +8,7 @@ import { User } from '../_models/user.model';
 /**
  * @author Arléon Zemtsop
  * @email arleonzemtsop@gmail.com
-*/
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -49,16 +49,16 @@ export class UserService {
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   allProfiles(): Promise<any> {
-    return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
+    return this.http.get<any>(Routes.PROFILES).toPromise();
   }
 
 
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   cities(): Promise<any> {
     return this.http.get<any>(Routes.CITIES).toPromise();
   }
@@ -66,7 +66,7 @@ export class UserService {
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   getUserInfo(id: number): Promise<any> {
     return this.http.get<any>(Routes.USERS + '/' + id).toPromise();
   }
