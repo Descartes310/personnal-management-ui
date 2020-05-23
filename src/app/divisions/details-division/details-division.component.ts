@@ -24,8 +24,15 @@ export class DetailsDivisionComponent implements OnInit {
       this.divisionService.find(division_id).then(
         data => {
           this.division = new Division(data);
-          console.log(this.division);
-  
+          if (this.division.parent_id) {
+            this.divisionService.find(this.division.parent_id).then(parent => {
+              this.division.division = new Division(parent);
+            }).catch(e => {
+              this.division.division = null;
+            });
+          } else {
+            this.division.division = null;
+          }
         }
       ).catch(
         error => {
@@ -34,13 +41,13 @@ export class DetailsDivisionComponent implements OnInit {
           this.router.navigate(['/divisions/all'])
         }
       )
-  
+
     }
 
     public checkIfParentExist() : string {
-      
+
       return (this.division.division ? this.division.division.name : '' );
     }
-    
+
 
 }
