@@ -208,11 +208,11 @@ const routes: Routes = [
   { path: 'update-password', component: UpdatePasswordComponent },
 
   { path: 'submissions/add', component: AddSubmissionComponent },
+  { path: 'submissions/all', component: AllSubmissionsComponent },
   { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
   { path: 'sanctions/add', component: AddSanctionComponent },
   //{ path: '404', component: NotfoundComponent },
 
-  { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-category/details/:id', component:DetailsComponent},
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },

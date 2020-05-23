@@ -149,30 +149,21 @@
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Dboard" | translate }}
                             </a>
-                        </li><li>
-                            <a href="index.html" class="">
+                        </li>
+                        <li>
+                            <a href="" [routerLink]="['disciplinary-teams/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Dteam" | translate }}
                             </a>
                         </li>
-                    </ul>
-                </li>
-
-                <li class="">
-                    <a href="" >
-                        <i class="metismenu-icon pe-7s-news-paper"></i>
-                        {{ "SideBar.BlogCategory" | translate }}
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
                         <li>
-                            <a href="" [routerLink]="['/BlogCategory/all']" class="">
+                            <a href="" [routerLink]="['/sanctions/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.listSanctions" | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/trainings/add']" class="">
+                            <a href="" [routerLink]="['sanctions/add']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.addSanction" | translate }}
                             </a>
@@ -200,13 +191,13 @@
                 </li>
                 
                 <li class="">
-                    <a href="index.html#">
+                    <a href="" [routerLink]="['blog-posts/all']">
                         <i class="metismenu-icon pe-7s-news-paper"></i>
                         {{ "SideBar.Actuality" | translate }}
                     </a>
                 </li>
                 <li class="">
-                    <a href="" [routerLink]="['/submissions/all']">
+                    <a href="" [routerLink]="['submissions/all']">
                         <i class="metismenu-icon pe-7s-mail"></i>
                         {{ "SideBar.Submissions" | translate }}
                     </a>

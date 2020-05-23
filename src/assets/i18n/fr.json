@@ -387,15 +387,15 @@
         "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
     },
     "Sanction": {
-        "Sanctions": "Affectations",
-        "SanctionTitle": "Gestion des affectations de l'application",
-        "AddSanction": "Ajouter une affectation",
-        "CreateSanction": "Créer une affectation",
+        "Sanctions": "Sanctions",
+        "SanctionTitle": "Gestion des sanctions de l'application",
+        "AddSanction": "Ajouter une sanction",
+        "CreateSanction": "Créer une sanction",
         "UpdateSanction": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création de l'affectation a réussie...",
-        "SANCTION_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
-        "SANCTION_ALREADY_EXISTS": "l'affection existe déjà"
+        "SubmitSuccess": "La création de la sanction a réussie...",
+        "SANCTION_NOT_FOUND": "La sanction n'a pas été retrouvée",
+        "SANCTION_ALREADY_EXISTS": "La sanction existe déjà"
     },
     "Templates": {
         "Templates": "Templates",
