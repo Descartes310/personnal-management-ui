@@ -54,7 +54,7 @@
                                                         
                                                         <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}">
 
-                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberFisrtForm($event, input)" (keyup)="checkInputNumberFisrtForm($event, input)">
+                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberFisrtForm($event, input)" (blur)="checkInputNumberFisrtForm($event, input)">
 
                                                         <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.slug" type="{{ input.type }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="processFile1($event, input.slug)">
 
@@ -65,6 +65,16 @@
                                                         </select>
 
                                                     </div>
+                                                </div>
+
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserCities' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <select matInput formControlName="city" class="form-control {{ isSubmitted && personnalInfo.city.errors ? 'is-invalid' : '' }}">
+                                                        <option *ngFor='let option of cities' value="{{ option.name }}"> {{ option.name }}</option>
+                                                    </select>
+
                                                 </div>
 
                                                 <div class="position-relative form-group">
@@ -85,7 +95,7 @@
 
                                                     <label>{{ 'User.UserPassword' | translate }} <span style="color: red;"> *</span></label>
                                                     
-                                                    <input formControlName="password" type="password" placeholder="{{ 'User.UserPasswordPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}" id="password">
+                                                    <input formControlName="password" type="password" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}" id="password">
 
                                                     <div *ngFor="let error of errorMessages.password" class="ng-container text-right">
                                                         <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
@@ -114,7 +124,7 @@
                                                         
                                                         <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}">
 
-                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberSecondForm($event, input)" (keyup)="checkInputNumberSecondForm($event, input)">
+                                                        <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberSecondForm($event, input)" (blur)="checkInputNumberSecondForm($event, input)">
 
                                                         <input *ngIf="checkIfInputIsAFile(input)" [formControlName]="input.slug" type="{{ input.type }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="processFile2($event, input.slug)">
 
@@ -125,6 +135,26 @@
                                                         </select>
 
                                                     </div>
+                                                </div>
+
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserProsituations' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <select matInput formControlName="pro_situation" class="form-control {{ isSubmitted && publicInfo.pro_situation.errors ? 'is-invalid' : '' }}">
+                                                        <option *ngFor='let option of proSituations' value="{{ option.name }}"> {{ option.name }}</option>
+                                                    </select>
+
+                                                </div>
+
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserDivisions' | translate }} <span style="color: red;"> *</span></label>
+                                                    
+                                                    <select matInput formControlName="division_id" class="form-control {{ isSubmitted && publicInfo.division_id.errors ? 'is-invalid' : '' }}">
+                                                        <option *ngFor='let option of divisions' value="{{ option.id }}"> {{ option.name }}</option>
+                                                    </select>
+
                                                 </div>
 
                                                 <div>
@@ -154,6 +184,7 @@
                                                                         <div class="col-md-12">
                                                                             <div class="main-card mb-3 card">
                                                                                 <div class="card-body">
+
                                                                                     <form class="">
                                                                                         <div class="position-relative form-group">
                                                                                             <label class="">
@@ -168,6 +199,15 @@
                                                                                             <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="searchRole($event)" class="form-control">
                                                                                         </div>
                                                                                         <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+
+                                                                                            <div *ngIf="loadingRoles && isBuild">
+                                                                                                <div class="text-center">
+                                                                                                    <div class="spinner-border spinner-sm">
+                                                                                                        <span class="sr-only">Patientez svp...</span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
                                                                                             <li class="list-group-item" *ngFor="let role of roles">
                                                                                                 <div class="todo-indicator bg-warning"></div>
                                                                                                 <div class="widget-content p-0">
@@ -210,6 +250,7 @@
                                                                         <div class="col-md-12">
                                                                             <div class="main-card mb-3 card">
                                                                                 <div class="card-body">
+
                                                                                     <form class="">
                                                                                         <div class="position-relative form-group">
                                                                                             <label class="">
@@ -224,6 +265,15 @@
                                                                                             <input placeholder="{{ 'Form.SearchText' | translate }}" type="text" (keyup)="searchPermission($event)" class="form-control">
                                                                                         </div>
                                                                                         <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+
+                                                                                            <div *ngIf="loadingPermissions && isBuild">
+                                                                                                <div class="text-center">
+                                                                                                    <div class="spinner-border spinner-sm">
+                                                                                                        <span class="sr-only">Patientez svp...</span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
                                                                                             <li class="list-group-item" *ngFor="let permission of permissions">
                                                                                                 <div class="todo-indicator bg-warning"></div>
                                                                                                 <div class="widget-content p-0">
@@ -278,7 +328,7 @@
                                                 </div>
 
                                                 <div class="results-subtitle mt-4">{{ 'User.FinishSubtitle' | translate }}</div>
-                                                <div class="results-title">Veuillez Sauvegarder</div>
+                                                <div class="results-title">{{ 'User.Save' | translate }}</div>
                                                 <div class="mt-3 mb-3"></div>
                                                 <div class="text-center">
                                                     <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary btn-md" style="width: 50%; justify-content: center; align-items: center; flex: 1;">

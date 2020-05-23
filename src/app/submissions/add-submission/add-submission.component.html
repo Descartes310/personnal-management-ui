@@ -1,0 +1,78 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-pen">
+                </i>
+            </div>
+            <div>{{ 'Submission.Submissions' | translate }}
+                <div class="page-title-subheading">{{ 'Submission.SubmissionTitle' | translate }}
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="pe-7s-pen"> </i>
+                    {{ 'Submission.Submissions' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="submissionForm" enctype="multipart/form-data">
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class="">{{ "Form.UserEmetteurLabel" | translate }} </label>
+                                            <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_send_id.errors ? 'is-invalid' : '' }}" formControlName="user_send_id">
+                                                <option [value]="user.id" *ngFor="let user of users">{{user.first_name +" "+user.last_name}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class="">{{ "Form.UserDestinationLabel" | translate }} </label>
+                                            <select class="multiselect-dropdown form-control {{ isSubmitted && form.dest_user_id.errors ? 'is-invalid' : '' }}" formControlName="dest_user_id">
+                                                <option [value]="dest.id" *ngFor="let dest of users">{{dest.login}}</option>
+                                            </select>
+                                        </div> 
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.SubjectLabel" | translate }} </label>
+                                            <input name="subject" id="exampleText" placeholder="{{ 'Form.SubjectField' | translate }}" type="text" formControlName="subject" class="form-control {{ isSubmitted && form.subject.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.MessageLabel" | translate }}</label>
+                                            
+                                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="message"></ckeditor>
+                                           
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <label for="exampleText" class="">{{ "Form.FileLabel" | translate }}</label>
+                                            <input type="file" multiple formControlName="file" (change)="detectFile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
+                                        </div>
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Submission.SendSubmission" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

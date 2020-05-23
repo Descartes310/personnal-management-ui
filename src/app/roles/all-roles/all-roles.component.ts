@@ -59,6 +59,7 @@ export class AllRolesComponent implements OnInit {
     this.loading = true;
     this.roleService.all().then(
       response => {
+        console.log(response);
         this.roles = [];
         response.data.map( role => {
           this.roles.push(new Role(role));

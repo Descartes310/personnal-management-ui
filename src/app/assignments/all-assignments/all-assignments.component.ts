@@ -15,7 +15,9 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 export class AllAssignmentsComponent implements OnInit {
 
   assignments: Assignment[] = [];
-  loading = true;
+  user : any[];
+  assignmentType : any[];
+  loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
   // SweetAlert Text
@@ -52,14 +54,32 @@ export class AllAssignmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.assignments = [];
     this.getAssignments();
   }
 
   async getAssignments() {
     this.loading = true;
-    this.assignmentService.all().then(resp => this.assignments = resp)
-    .catch(error => this.notifService.danger(error.error.message))
-    .finally(() => this.loading = false);
+    this.assignmentService.all().then(
+      response => {
+        console.log(response)
+        // this.assignments = response
+        this.assignments = [];
+        response.map(assignment => {
+          this.assignments.push(new Assignment(assignment));
+        });
+       
+      }
+      
+    ).catch(
+      error => {
+        this.notifService.danger(error.error.message)
+      }
+    ).finally(
+      () => {
+        this.loading = false;
+      }
+    )
   }
 
   editAssignment(assignment: Assignment) {
@@ -88,14 +108,14 @@ export class AllAssignmentsComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            );
-            this.getAssignments();
+            )
+            this.ngOnInit();
           }
         ).catch(
           error => {
             console.log(error);
             this.blockUI.stop();
-            this.translate.get('Assignment.' + error.error.code)
+            this.translate.get('Assignments' + error.error.code)
               .subscribe(val => this.notifService.danger(val));
           }
         );
