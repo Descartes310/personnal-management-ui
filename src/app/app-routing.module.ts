@@ -35,8 +35,11 @@ import { UpdateDivisionComponent } from './divisions/update-division/update-divi
 
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
+import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
+import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
+import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
 
 
 //const routes: Routes = [];
@@ -60,7 +63,7 @@ const routes: Routes = [
   { path: 'roles/details/:id', component: DetailsRoleComponent },
   { path: 'assignments/all', component: AllAssignmentsComponent },
   { path: 'assignments/add', component: AddAssignmentComponent },
-  { path: 'assignments/update/:id', component: UpdateAssignment },
+  { path: 'assignments/update/:id', component: UpdateAssignmentComponent },
   { path: 'assignments/details/:id', component: DetailsAssignmentComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
@@ -74,6 +77,9 @@ const routes: Routes = [
   { path: 'contacts/add',component:AddContactComponent},
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
   { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+  { path: 'submissions/add', component: AddSubmissionComponent },
+  { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
+  { path: 'sanctions/add', component: AddSanctionComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

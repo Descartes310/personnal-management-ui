@@ -5,8 +5,8 @@
                 <i class="pe-7s-plane icon-gradient bg-tempting-azure">
                 </i>
             </div>
-            <div>{{ 'Assignment.Assignments' | translate }}
-                <div class="page-title-subheading">{{ 'Assignment.AssignmentTitle' | translate }}
+            <div>{{ 'Sanction.Sanctions' | translate }}
+                <div class="page-title-subheading">{{ 'Sanction.SanctionTitle' | translate }}
                 </div>
             </div>
         </div>   
@@ -19,71 +19,56 @@
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     <i class="pe-7s-plane icon-gradient bg-tempting-azure"> </i>
-                    {{ 'Assignment.Assignments' | translate }}
+                    {{ 'Sanction.Sanctions' | translate }}
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
-                                    <form (submit)="onSubmit()" [formGroup]="assignmentForm">
+                                    <form (submit)="onSubmit()" [formGroup]="sanctionForm">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 -col-xs-6">
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail">{{ "Form.UserLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_assignment.errors ? 'is-invalid' : '' }}" formControlName="user_assignment" >
+                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_sanction.errors ? 'is-invalid' : '' }}" formControlName="user_sanction" >
                                                         <option [value]="user.id"  *ngFor="let user of users">{{user.first_name +" "+user.last_name}}</option>
                                                     </select>
                                                 </div> 
-                                                <div class="position-relative form-group">
-                                                    <label for="exampleEmail" class="">{{ "Form.TypeAssignmentLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.type_assignment.errors ? 'is-invalid' : '' }}" formControlName="type_assignment">
-                                                        <option [value]="type.id" *ngFor="let type of type_assignment">{{type.name}}</option>
-                                                    </select>
+                                                 <div class="position-relative form-group">
+                                                    <label for="exampleEmail" class="">{{ "Form.SubjectLabel" | translate }} </label>
+                                                    <input name="subject" id="exampleEmail" placeholder="{{ 'Form.SubjectField' | translate }}" type="text" formControlName="subject" class="form-control {{ isSubmitted && form.subject.errors ? 'is-invalid' : '' }}">
                                                 </div>
-                                                <div class="position-relative form-group">
-                                                    <label for="exampleEmail" class="">{{ "Form.DestinationLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}" formControlName="destination">
-                                                        <option [value]="city.id" *ngFor="let city of cities">{{city.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </div> 
-                                            <div class="col-md-6 col-sm-6 -col-xs-6">
-                                                
-                                                <div class="position-relative form-group">
-                                                    <label for="exampleEmail" class="">{{ "Form.SignatureDateLabel" | translate }} </label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend datepicker-trigger">
-                                                            <div class="input-group-text">
-                                                                <i class="fa fa-calendar-alt"></i>
-                                                            </div>
-                                                        </div>
-                                                        <input type="date" class="form-control"  placeholder="{{ 'Form.SignatureDateField' | translate }}" formControlName="signature_date" class="form-control {{ isSubmitted && form.signature_date.errors ? 'is-invalid' : '' }}"/>
-                                                    </div>
-                                                </div>
-                                                <div class="position-relative form-group">
-                                                    <label for="exampleEmail" class="">{{ "Form.InstallationDateLabel" | translate }} </label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend datepicker-trigger">
-                                                            <div class="input-group-text">
-                                                                <i class="fa fa-calendar-alt"></i>
-                                                            </div>
-                                                        </div>
-                                                        <input type="date" class="form-control"  placeholder="{{ 'Form.InstallationDateField' | translate }}"  formControlName="installation_date" class="form-control {{ isSubmitted && form.installation_date.errors ? 'is-invalid' : '' }}"/>
-                                                    </div>
-                                                </div>
-                                                <div class="position-relative form-group">
+                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="">{{ "Form.RaisonLabel" | translate }} </label>
                                                     <input name="raison" id="exampleEmail" placeholder="{{ 'Form.RaisonField' | translate }}" type="text" formControlName="raison" class="form-control {{ isSubmitted && form.raison.errors ? 'is-invalid' : '' }}">
+                                                </div> 
+                                            </div> 
+                                            <div class="col-md-6 col-sm-6 -col-xs-6">
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleEmail" class="">{{ "Form.StartDateLabel" | translate }} </label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend datepicker-trigger">
+                                                            <div class="input-group-text">
+                                                                <i class="fa fa-calendar-alt"></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="date" placeholder="{{ 'Form.StartDateField' | translate }}" formControlName="start_date" class="form-control {{ isSubmitted && form.start_date.errors ? 'is-invalid' : '' }}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="position-relative form-group">
+                                                    <label for="exampleEmail" class="">{{ "Form.DaysLabel" | translate }} </label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend datepicker-trigger">
+                                                            <div class="input-group-text">
+                                                                <i class="fa fa-calendar-alt"></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="number"  placeholder="{{ 'Form.DaysField' | translate }}"  formControlName="days" class="form-control {{ isSubmitted && form.days.errors ? 'is-invalid' : '' }}"/>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-sm-12 -col-xs-12">
-                                                <div class="position-relative form-group">
-                                                    <label for="exampleText" class="">{{ "Form.DescriptionLabel" | translate }}</label>
-                                                    <textarea name="text" id="exampleText" class="form-control" formControlName="description" class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}">
-
-                                                    </textarea>
-                                                </div>
                                                 <div class="d-flex align-items-center" style="width: 100%;">
                                                     <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
                                                         <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Assignment.CreateAssignment" | translate }}</p>
@@ -107,5 +92,4 @@
             </div>
         </div>
     </div>
-  
 </div>

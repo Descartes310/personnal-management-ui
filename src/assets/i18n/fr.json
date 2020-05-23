@@ -27,6 +27,7 @@
     },
     "Form": {
         "StartDateError": "veuillez entrez une date valide",
+        "DaysError": "le nombre de jouir est invalide",
         "NameLabel": "Nom",
         "NameField": "Veuillez entrer le nom...",
         "TypeLabel": "Type",
@@ -89,7 +90,7 @@
         "templateContent": "contenu",
     
         "DescriptionLabel": "Description",
-       
+        
         "DestinationLabel": "Destination",
         "DestinationField": "Destination",
         "RaisonField": "Raison",
@@ -99,7 +100,12 @@
         "SignatureDateLabel" : "Date de signature",
         "SignatureDateField" : "Date de signature ",
         "InstallationDateLabel" : "Date d'intallation" ,
-        "InstallationDateField" : "Date d'installation"
+        "InstallationDateField" : "Date d'installation",
+        "UserEmetteurLabel": "Emetteur",
+        "UserDestinationLabel" : "Destinataire",
+        "SubjectLabel" : "Objet",
+        "SubjectField" : "Objet",
+        "MessageLabel" : "Message"
 
     },
     "SideBar": {
@@ -155,7 +161,9 @@
         "CreateAssignment": "Créer une affectation",
         "UpdateAssignment": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitSuccess": "La création de l'affectation a réussie..." 
+        "SubmitSuccess": "La création de l'affectation a réussie..." ,
+        "ASSIGNMENT_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
+        "ASSIGMENT_ALREADY_EXISTS": "l'affection existe déjà"
     } ,         
 
     "AssignmentType": {
@@ -170,6 +178,18 @@
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
         "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
     },
+    "Sanction": {
+        "Sanctions": "Affectations",
+        "SanctionTitle": "Gestion des affectations de l'application",
+        "AddSanction": "Ajouter une affectation",
+        "CreateSanction": "Créer une affectation",
+        "UpdateSanction": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie...",
+        "SANCTION_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
+        "SANCTION_ALREADY_EXISTS": "l'affection existe déjà"
+    },
+    
     "Templates": {
         "Templates": "Templates",
         "TemplateTitle": "Gestion des Templates ",
@@ -302,5 +322,18 @@
         "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+    },
+    "Submission": {
+        "Submissions": "demandes",
+        "SubmissionTitle": "Gestion des Demandes",
+        "AddSubmission": "demande",
+        "SendSubmission": "Envoyer",
+        "UpdateSubmission": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de la permission a réussie...",
+        "SubmitUpdateSuccess": "La mise a jour de la demande a réussie...",
+        "SubmitErrorSubmission": "echec de la creation verifier vos donnees ",
+        "Submission_NOT_FOUND": "La demande n'a pas été retrouvé",
+        "Submission_ALREADY_EXISTS": "Cette demande existe déjà"
     }
 }

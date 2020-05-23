@@ -53,8 +53,14 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
-import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
+import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
+import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
+
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -81,7 +87,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsRoleComponent,
     AddAssignmentComponent,
     AllAssignmentsComponent,
-    UpdateAssignment,
+    UpdateAssignmentComponent,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -101,6 +107,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateUpdateComponent,
     DetailsProSituationComponent,
     DetailsAssignmentComponent,
+    AddSubmissionComponent,
+    UpdateSubmissionComponent,
+    AddSanctionComponent,
   ],
   imports: [
     MatStepperModule,
@@ -113,6 +122,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
+    CKEditorModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
