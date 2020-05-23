@@ -109,6 +109,7 @@ import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 //import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 //import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -208,6 +209,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateCareerComponent,
   //  AddProfileComponent,
     //UpdateProfileComponent,
+    DecisionVacationComponent,
+    AllVacationComponent,
   ],
 
   imports: [

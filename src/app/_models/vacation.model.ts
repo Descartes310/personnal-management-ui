@@ -14,5 +14,6 @@ export class Vacation extends Super<Vacation> {
     public accorded_start_date: number;
     public accorded_days: Date ;
     public vacations: any[];
+    public created_at: Date;
     
 }

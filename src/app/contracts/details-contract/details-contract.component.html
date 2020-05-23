@@ -14,7 +14,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
@@ -88,6 +88,14 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <li>
+                                            <div class="page-title-actions">
+                                                <a type="button"  data-toggle="tooltip" title="{{ 'Contract.DownloadContract' | translate }}" (click)="downloadFile()" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                                                    <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
+                                                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Contract.AddContract' | translate }}</p>
+                                                </a>
+                                            </div>
+                                        </li>
 
                                     </ul>
                                 </div>
@@ -97,6 +105,7 @@
                                         <p style="font-size: 1.2em; margin-top: 7%;">telecharger</p>
                                     </a>
                                 </div>
+                               
                             </div>
                         </div>
                     </div>
