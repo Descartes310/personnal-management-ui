@@ -83,6 +83,8 @@ import { DetailsDivisionComponent } from './divisions/details-division/details-d
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
 import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
+import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
@@ -187,6 +189,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AllDisciplinaryTeamsComponent,
+    DetailsDisciplinaryTeamComponent,
     AllSubmissionsComponent,
     DetailsSubmissionComponent,
     AllProfileComponent,

@@ -59,6 +59,9 @@ import { AllProSituationComponent } from './pro_situations/all-pro-situation/all
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { DisciplinaryTeam } from './_models/disciplinary-team.model';
+import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
+import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
@@ -169,6 +172,8 @@ const routes: Routes = [
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
+  { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
+  { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
   { path: 'blog-category/add', component: AddBlogCategoryComponent },
   { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
   //routes pour l'affichage des formations

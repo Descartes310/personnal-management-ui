@@ -25,6 +25,7 @@ export const BLOGCATEGORY = SERVER + 'blog_categories';
 export const BLOGPOST = SERVER + 'blog_posts';
 export const TRAINING = SERVER + 'trainings';
 export const Setting = SERVER + 'settings';
+export const DISCIPLINARYTEAM = SERVER + 'disciplinary_teams';
 export const SUBMISSION = SERVER + 'submissions';
 export const VACATION= SERVER + 'vacations';
 export const CITIES = SERVER + 'cities';
