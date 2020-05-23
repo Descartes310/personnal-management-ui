@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DiciplinaryTeam } from 'src/app/_models/diciplinary-team.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-update-diciplinary-team',
@@ -21,9 +22,16 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
   isSuccess = false;
   isSubmitted = false;
   id;
+
+  users: any[] = [];
+  users_tmp: any[] = [];
+  selected_users: number[] = [];
+
   assign: DiciplinaryTeam = new DiciplinaryTeam();
+
   constructor(
     private templateService: DiciplinaryTeamService,
+    private userService: UserService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
@@ -33,19 +41,21 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
 
   async ngOnInit() {
     this.initForm();
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.id=id;
-    this.templateService.find(id)
-    .then(
+    this.getusers();
+    const diciplinaryTeam_id = +this.route.snapshot.paramMap.get("id");
+
+          this.id=diciplinaryTeam_id;
+    this.templateService.find(diciplinaryTeam_id).then(
       data => {
         this.assign = data;
-        //this.assign.slug="";
         this.initForm(true);
+        this.assign.users.map( user => {
+          this.selected_users.push(user.id)
+        })
       }
     ).catch(
       error => {
-        console.log(error)
-        this.translate.get('NOT_FOUND_ASSIGNMENT_ID')
+        this.translate.get('Role.'+error.error.code)
         .subscribe(val => this.notifService.danger(val));
         //this.router.navigate([''])
       }
@@ -53,23 +63,63 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
 
   }
 
-  initForm(withRole = false) {
-    if(withRole) {
-      this.diciplinaryTeamForm = this.formBuilder.group({
-        label: [this.assign.name, [Validators.required]],
-      });
-    }else {
-      this.diciplinaryTeamForm = this.formBuilder.group({
-        label: ['', [Validators.required]],
-      });
+   selectAllUsers(event: any){
+    this.selected_users = [];
+    if(event.target.checked) {
+      this.users_tmp.map(
+        user => {
+          this.selected_users.push(user.id)
+        }
+      )
     }
   }
 
+   initForm(withRole = false) {
+    if(withRole) {
+      this.diciplinaryTeamForm = this.formBuilder.group({
+        label: [this.assign.name, [Validators.required]]
+      });
+    }else {
+      this.diciplinaryTeamForm = this.formBuilder.group({
+        label: ['', [Validators.required]]
+      });
+    }
+  }
 
   get form() {
     return this.diciplinaryTeamForm.controls;
   }
 
+  getusers() {
+    this.userService.allUsers().then(
+      response => {
+        this.users = response;
+        this.users_tmp = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("Une erreur s'est produite");
+      }
+    )
+  }
+
+
+  search(event) {
+    this.users = this.users_tmp;
+    this.users = this.users_tmp.filter( user => user.name.toLowerCase().includes(event.target.value.toLowerCase()));
+  }
+
+  onChecked(user, event){
+    if(event.target.checked) {
+      this.selected_users.push(user.id);
+    } else {
+      this.selected_users.splice(this.selected_users.indexOf(user.id), 1);
+    }
+  }
+
+  isChecked(id: number){
+    return this.selected_users.includes(id);
+  }
 
 
   onSubmit() {
@@ -83,9 +133,24 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
+
+    if(this.selected_users.length <= 0) {
+      this.translate.get('diciplinaryTeam.SubmitUsersError')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+
+
     this.isLoading = true;
     const formData = new FormData();
+
+
     formData.append('name', '' + this.form.label.value);
+    this.selected_users.forEach( elt => {
+      formData.append('users[]', JSON.stringify(elt));
+    });
+    
+    console.log("id:"+this.id);
     this.templateService.update(formData,this.id)
       .then(resp => {
         this.translate.get('diciplinaryTeam.UpdateSuccess')
@@ -101,9 +166,5 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
 
+  }
 }
-
-}
-
-
-

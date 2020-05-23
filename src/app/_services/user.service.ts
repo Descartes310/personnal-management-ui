@@ -40,5 +40,13 @@ export class UserService {
   allProfiles(): Promise<any> {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
+
+  allUsers(): Promise<any> {
+        return this.http.get<any>(Routes.USERS+'/profiles').toPromise();
+    }
+
+  find(id: number): Promise<User> {
+        return this.http.get<User>(`${Routes.ROLE}/${id}`).toPromise();
+    }
   
 }

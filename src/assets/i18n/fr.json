@@ -251,6 +251,7 @@
     },
     "diciplinaryTeam": {
         "dt": "Conseil de decision",
+        "dtm": "Membres du conseil de decision",
         "dtTitle": "Gestion des sonseils de decision ",
         "Adddt": "Ajouter un conseil de decision",
         "Update": "Mettre à jour",
@@ -259,7 +260,8 @@
         "UpdateSuccess":"Le conseil de decision a ete mis a jour",
         "NOT_FOUND_ASSIGNMENT_ID": "Le conseil de decision n'a pas été trouvé",
         "DT_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
-        "ASSIGNMENT_NOT_EXIST": "le conseil de decision n'exixte pas!!!"
+        "ASSIGNMENT_NOT_EXIST": "le conseil de decision n'exixte pas!!!",
+        "SubmitUsersError":"Veuillez selectionner les participant"
     },
     "VacationType": {
         "VacationTypes": "Types de congés",
