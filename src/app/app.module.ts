@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor'
-import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper'
+import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor';
+import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from './_guards/auth.guard'
+import { AuthGuardService } from './_guards/auth.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BlockUIModule } from 'ng-block-ui';
@@ -41,14 +41,15 @@ import { UpdateTrainingComponent } from './trainings/update-training/update-trai
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { AllBlogCategoryComponent } from './blog_category/all-blog-category/all-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
-
-//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+// import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
 import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
 import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -77,10 +78,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import {MatStepperModule, MatInputModule, MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
 import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
@@ -106,7 +108,7 @@ import { DetailsTemplatesComponent } from './templates/details-templates/details
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 
-
+//import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -127,6 +129,12 @@ import { UpdateCareerComponent } from './careers/update-career/update-career.com
 //import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 //import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 //import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
+import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
+import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
+import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
+
+import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -158,6 +166,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllBlogCategoryComponent,
     AllTrainingsComponent,
     FindTrainingsComponent,
+    AddAssignmentComponent,
+    AllAssignmentsComponent,
+    UpdateAssignmentComponent,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -251,6 +262,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllBlogCategoryComponent,
     AllDemandesVacationComponent,
 
+    DetailsAssignmentComponent,
+    AddSubmissionComponent,
+    UpdateSubmissionComponent,
+    AddSanctionComponent,
   ],
 
   imports: [
@@ -267,6 +282,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
+    CKEditorModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

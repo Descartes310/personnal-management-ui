@@ -25,6 +25,7 @@
     "Home": {
         "Title": "Page d'accueil"
     },
+
     "SideBar": {
         "SystemConfig": "Paramètres du système",
         "Users": "Employés",
@@ -112,7 +113,17 @@
         "DetailsSubmission": "Détails du courriel",
         "myAccount": "Mon compte",
         "inbox": "Reçu(s)",
-        "sent": "Envoyés(s)"
+        "sent": "Envoyés(s)",
+        "SubmissionTitle": "Gestion des Demandes",
+        "AddSubmission": "demande",
+        "SendSubmission": "Envoyer",
+        "UpdateSubmission": "Mettre à jour",
+        "SubmitUpdateSuccess": "La mise a jour de la demande a réussie...",
+        "SubmitErrorSubmission": "echec de la creation verifier vos donnees ",
+        "Submission_NOT_FOUND": "La demande n'a pas été retrouvé",
+        "Submission_ALREADY_EXISTS": "Cette demande existe déjà",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
     "UpdatePassword": {
         "UpdatePassword": "Changer le mot de passe",
@@ -256,8 +267,53 @@
         "NewPasswordLabel": "Nouveau mot de passe",
         "NewPasswordField": "Veuillez entrer votre nouveau mot de passe...",
         "ConfirmPasswordLabel": "Confirmation du mot de passe",
-        "ConfirmPasswordField": "Veuillez confirmer votre mot de passe..."
+        "ConfirmPasswordField": "Veuillez confirmer votre mot de passe...",
+        
+        "DestinationLabel": "Destination",
+        "DestinationField": "Destination",
+        "TypeAssignmentLabel" : "Type d'affectation ",
+        "SignatureDateLabel" : "Date de signature",
+        "SignatureDateField" : "Date de signature ",
+        "InstallationDateLabel" : "Date d'intallation" ,
+        "InstallationDateField" : "Date d'installation",
+        "UserEmetteurLabel": "Emetteur",
+        "UserDestinationLabel" : "Destinataire",
+        "StatusMention": " le status de la demande",
+        "StartDateProposal": " date de début souhaitée",
+        "StartDateAccord": " date de début accordée",
+        "RequireDays": " nombre de jours de congés souhaités",
+        "AccordDays": " nombre de jours accordés",
+        "SlugLabel": "Slug",
+        "NameTrainer": "Nom du formateur",
+        "StartDate": "Date de bebut",
+        "LocationName": "Lieu",
+        "Duration": "Durée[1-100] heure(s)",
+        "DurationField": "Durée",
+        "UserName": "Utilisateur",
+        "LicenseType": "Type de Permission",
+        "Raison": "Raison",
+        "File": "Fichier associé",
+        "Requested_start_date": "Date de début requis",
+        "Requested_days": "Nombre de jours requis",
+        "Status": "Status",
+        "Key": "Clé",
+        "Value": "Valeur",
+        "KeyField": "Entrer une clé",
+        "ValueField": "Entrer une valeur"
     },
+
+    "Assignment": {
+        "Assignments": "Affectations",
+        "AssignmentTitle": "Gestion des affectations de l'application",
+        "AddAssignment": "Ajouter une affectation",
+        "CreateAssignment": "Créer une affectation",
+        "UpdateAssignment": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie..." ,
+        "ASSIGNMENT_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
+        "ASSIGMENT_ALREADY_EXISTS": "l'affection existe déjà"
+    } ,
+
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",
@@ -270,6 +326,19 @@
         "ASSIGNMENT_SLUG_ALREADY_EXIST": "Le nom du type d'affectation existe déjà !!!",
         "ASSIGNMENT_NOT_EXIST": "le type d'affectation n'exixte pas!!!"
     },
+    "Sanction": {
+        "Sanctions": "Affectations",
+        "SanctionTitle": "Gestion des affectations de l'application",
+        "AddSanction": "Ajouter une affectation",
+        "CreateSanction": "Créer une affectation",
+        "UpdateSanction": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie...",
+        "SANCTION_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
+        "SANCTION_ALREADY_EXISTS": "l'affection existe déjà"
+
+    },
+    
     "Templates": {
         "Templates": "Templates",
         "TemplateTitle": "Gestion des Templates ",
@@ -552,14 +621,20 @@
         "Vacations": "congés",
         "VacationTitle": "Gestion des Demandes des congés de l'application",
         "AddVacation": "demande d'un congé",
-        "CreateVacation": "Envoyer",
         "UpdateVacation": "Modifier",
-        "SubmitError": "Veuillez remplir tous les champs obligatoires",
         "SubmitSuccess": "La création de demande de congé a réussie...",
         "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
         "SubmitErrorVacation_type": "Veuillez selectionner un type de congé",
         "SubmitErrorVacation": "erreur de la creation!! veuillez verifier vos donnees ",
         "VACATION_NOT_FOUND": "ce congé n'a pas été retrouvé",
-        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà"
+        "VACATION_ALREADY_EXISTS": "Ce congé existe déjà",
+        "VacationAdd": " Nouveau type de congés",
+        "VacationUpdate": "Mise à jour d'un type de congés",
+        "CreateVacation": "Enregistrer",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
+        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
+        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
     }
 }
