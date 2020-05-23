@@ -278,11 +278,13 @@
         "AddTemplate": "Add a new template",
         "CreateTraing": "Create the training",
         "UpdateTemplate": "Update the training",
+        "contentError": "Please fill in the content field",
         "SubmitError": "Entries are necessary",
         "UpdateSuccess": "The template's update has been made successfully",
         "SubmitSuccess": "The template has been created successfully",
         "NOT_FOUND_ASSIGNMENT_ID": "Template not found",
-        "TEMPLATE_ALREADY_EXIST": "Template already existing !!!"
+        "TEMPLATE_ALREADY_EXIST": "Template already existing !!!",
+        "ASSIGNMENT_NOT_EXIST": "the template don't exist!!!"
     },
 
     "SideBar": {
@@ -448,6 +450,102 @@
             "SubmitSuccess": "Contact creation successful...",
             "ErrorSubmit": "Failed to create contact",
             "UpdateErrorSubmit": "Failed to Edit contact"
+        },
+        "Assignment": {
+            "Assignments": "Assignments",
+            "AssignmentTitle": "Assignments management",
+            "AddAssignment": "Add an assignment",
+            "CreateAssignment": "Create an assignment",
+            "UpdateAssignment": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The cration of the assignment was successful..." ,
+            "ASSIGNMENT_NOT_FOUND": "The assignment was not found",
+            "ASSIGMENT_ALREADY_EXISTS": "The assignment does not exist"
+        } ,
+    
+        "AssignmentType": {
+            "AssignmentType": "Assignment type",
+            "AssignmentTypeTitle": "Assignment type management ",
+            "AddAssignmentType": "Add an assignment type",
+            "CreateAssignmentType": "Create an assignment type",
+            "UpdateAssignmentType": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the assigment type was successful...",
+            "NOT_FOUND_ASSIGNMENT_ID": "The assignment type was not found",
+            "ASSIGNMENT_SLUG_ALREADY_EXIST": "The name of the assignment type already exist!!!",
+            "ASSIGNMENT_NOT_EXIST": "The assignment type does not exist!!!"
+        },
+        "Sanction": {
+            "Sanctions": "Sanctions",
+            "SanctionTitle": "Application's sanctions managment",
+            "AddSanction": "Add a sanction",
+            "CreateSanction": "Create a sanction",
+            "UpdateSanction": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the sanction was successful...",
+            "SANCTION_NOT_FOUND": "The sanction was not found",
+            "SANCTION_ALREADY_EXISTS": "The sanction does not exist"
+    
+        },
+        
+     
+        "VacationType": {
+            "VacationTypes": "Vacation type",
+            "VacationTypesAdd": " New Vacation type",
+            "VacationTypesUpdate": "Vacation type update",
+            "VacationTypeTitle": "Vacation type management",
+            "CreateVacationType": "Save",
+            "UpdateVacationType": "Update the type",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the vacation type was successful...",
+            "UpdateSuccess": "The update of the vacation type was successful...",
+            "VACATION_TYPE_ALREADY_EXISTS": "The vacation type already exist"
+        },
+       
+        "Licensetype": {
+            "Licensetypes": " License type",
+            "LicensetypesTitle": "License type management",
+            "CreateLicense": "Create a license type",
+            "UpdateLicensetype": "Update a license type",
+            "NoUpdateLicensetype": "License type update failed",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitErrortype": "At least one of the fields in red must be filled",
+            "SubmitSuccess": "The license type was successfully created...",
+            "LICENSETYPE_ALREADY_EXISTS": "The license type already exist",
+            "UpdateSuccess": "The update of the vacation type was successful...",
+            "VACATION_TYPE_ALREADY_EXISTS": "The vacation type already exist"
+        },
+        "Division": {
+            "Divisions1": " Divisions update",
+            "AddDivision": "Add a new division",
+            "CreateDivision": "Create the division",
+            "UpdateDivision": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the division was done successfully...",
+            "SubmitSuccess1": "The update of the division was done successfully...",
+            "Divisions": "Divisions",
+            "DivisionTitle": "Application's divisions management",
+            "DetailsDivision": "Division's detail",
+            "SubmitErrorDivisions": "Please choose at least one division",
+            "DIVISION_NOT_FOUND": "The division was not found",
+            "DIVISION_ALREADY_EXISTS": "The division already exist"
+        },
+        "Profile": {
+            "AddProfile": "Add a new profile",
+            "SubmitError": "Fields in red are compulsory",
+            "Profiles": "Profils",
+            "ProfileTitle": "Application's profile management",
+            "DetailsProfile": "Profile details"
+        },
+        "Notecriterias": {
+            "Notecriteria": " Type of Rating Criteria",
+            "NotecriteriaTitle": " Management of rating criteria types",
+            "Addnoteciteria": "Add a rating criterion "
+        },
+        "Assignmenttype": {
+            "Assignmenttypes": " Assignment type",
+            "AssignmenttypesTitle": "Assignment type management",
+            "AddAssignmenttypes": "Add an assignment type"
         }
        
 
