@@ -53,17 +53,21 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
 import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
 import { AllSubmissionsComponent } from './submissions/all-submissions/all-submissions.component';
 import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.component';
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
@@ -87,6 +91,23 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { AllContractComponent } from './contracts/all-contract/all-contract.component';
+import { UpdateContractComponent } from './contracts/update-contract/update-contract.component';
+import { FindContractComponent } from './contracts/find-contract/find-contract.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
+import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { ValeursClefsComponent } from './statistics/valeurs-clefs/valeurs-clefs.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
+
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
 import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 export function HttpLoaderFactory(http: HttpClient) {
@@ -132,6 +153,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateLicenseComponent,
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
+    AllLicensetypesComponent,
+    DetailsLycensetypeComponent,
     AllDivisionComponent,
     DetailsDivisionComponent,
     AllNotecriteriasComponent,
@@ -145,6 +168,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     TemplateCreateComponent,
     TemplateUpdateComponent,
     DetailsProSituationComponent,
+    AddContractComponent,
+    AllContractComponent,
+    UpdateContractComponent,
+    FindContractComponent,
+    DetailsContractComponent,
+    AllBlogCategoryComponent,
+    UpdateBlogCategoryComponent,
+    AddBlogPostComponent,
+    UpdateBlogPostComponent,
     AllSubmissionsComponent,
     AddVacationComponent,
     UpdateVacationComponent,
@@ -165,6 +197,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllTemplatesComponent,
     DetailsTemplatesComponent,
     FindTemplatesComponent,
+    UserProfileComponent,
+    ValeursClefsComponent,
+    AllLicensesComponent,
+    DetailsLicensesComponent,
+    AllSettingsComponent,
+    AddSettingsComponent,
+    DetailsSettingsComponent,
+    FindSettingsComponent,
+    UpdateSettingsComponent,
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
   ],
@@ -176,6 +217,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatInputModule,
     BrowserModule,
+    CKEditorModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

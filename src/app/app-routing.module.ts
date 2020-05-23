@@ -19,6 +19,7 @@ import { UpdateProSituationComponent } from './pro_situations/update-pro-situati
 import { ChatComponent } from './chat/chat.component'
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
 import { TemplateCreateComponent } from './templates/template-create/template-create.component';
 import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
@@ -67,6 +68,19 @@ import { DetailsTrainingsComponent } from './trainings/details-trainings/details
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
+import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
+import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
+import { AddBlogPostComponent } from './blogPosts/add-blog-post/add-blog-post.component';
+import { UpdateBlogPostComponent } from './blogPosts/update-blog-post/update-blog-post.component';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
+import { AllLicensesComponent } from './licenses/all-licenses/all-licenses.component';
+import { DetailsLicensesComponent } from './licenses/details-licenses/details-licenses.component';
+import { AllSettingsComponent } from './settings/all-settings/all-settings.component';
+import { AddSettingsComponent } from './settings/add-settings/add-settings.component';
+import { DetailsSettingsComponent } from './settings/details-settings/details-settings.component';
+import { FindSettingsComponent } from './settings/find-settings/find-settings.component';
+import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 
 
@@ -89,6 +103,8 @@ const routes: Routes = [
   { path: 'profiles/details/:id', component: DetailsProfileComponent },
   { path: 'licensetypes/add', component: AddLicensetypesComponent },
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
+  { path: 'licensetypes/all', component: AllLicensetypesComponent },
+  { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
@@ -111,8 +127,18 @@ const routes: Routes = [
   { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+
   { path: 'licenses/add', component: AddLicenseComponent },
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'licenses/all', component: AllLicensesComponent },
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+//path to settings
+  { path: 'settings/add', component: AddSettingsComponent},
+  { path: 'settings/update/:id', component: UpdateSettingsComponent },
+  { path: 'settings/all', component: AllSettingsComponent },
+  { path: 'settings/details/:id', component: DetailsSettingsComponent },
+
+
   { path: 'divisions/add', component: AddDivisionComponent },
   { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'divisions/all', component: AllDivisionComponent },
@@ -140,7 +166,10 @@ const routes: Routes = [
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-posts/add', component: AddBlogPostComponent },
+  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
   { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
+  { path: 'profile', component:UserProfileComponent},
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
   //{ path: '404', component: NotfoundComponent },
