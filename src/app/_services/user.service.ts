@@ -26,17 +26,17 @@ export class UserService {
         return this.http.post<User>(`${Routes.USER}/${id}`, formData).toPromise();
     }
 
-    all(): Promise<any> {
-        return this.http.get<any>(Routes.USER).toPromise();
-    }
+    // all(): Promise<any> {
+    //     return this.http.get<any>(Routes.USER).toPromise();
+    // }
 
     find(id: number): Promise<User> {
         return this.http.get<User>(`${Routes.USER}/${id}`).toPromise();
     }
 
-    delete(id: number): Promise<User[]> {
-        return this.http.delete<User[]>(`${Routes.USER}/${id}`).toPromise();
-    }
+    // delete(id: number): Promise<User[]> {
+    //     return this.http.delete<User[]>(`${Routes.USER}/${id}`).toPromise();
+    // }
 
   /**
    * @author Arléon Zemtsop

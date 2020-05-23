@@ -651,14 +651,17 @@ export class AddUserComponent implements OnInit {
       }
     });
 
-    this.selected_permissions.forEach( elt => {
-      this.data.append('permissions[]', JSON.stringify(elt));
-    });
+    // this.selected_permissions.forEach( elt => {
+    //   this.data.append('permissions[]', JSON.stringify(elt));
+    // });
 
-    this.selected_roles.forEach( elt => {
-      this.data.append('roles[]', JSON.stringify(elt));
-    });
-
+    // this.selected_roles.forEach( elt => {
+    //   this.data.append('roles[]', JSON.stringify(elt));
+    // });
+    // armel
+    this.data.append('permissions', JSON.stringify(this.selected_permissions));
+    this.data.append('roles', JSON.stringify(this.roles));
+    //armel
     this.data_tmp1.roles = this.selected_roles;
     this.data_tmp1.permissions = this.selected_permissions;
 
