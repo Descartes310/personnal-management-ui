@@ -140,6 +140,8 @@ import { AddVacationComponent } from './vacations/add-vacation/add-vacation.comp
 import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
 import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -278,6 +280,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddSubmissionComponent,
     UpdateSubmissionComponent,
     AddSanctionComponent,
+    AllDisciplinaryComponent,
+    DetailsDisciplinaryComponent,
   ],
 
   imports: [

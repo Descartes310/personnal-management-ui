@@ -72,6 +72,8 @@ import { CreateDiciplinaryTeamComponent } from './disciplinary-teams/create-dici
 import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
 import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
@@ -126,6 +128,8 @@ const routes: Routes = [
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'licensetypes/all', component: AllLicensetypesComponent },
   { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
+  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
+  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },

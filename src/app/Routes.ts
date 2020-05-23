@@ -42,3 +42,4 @@ export const DiciplinaryTeam = SERVER + 'disciplinary_teams';
 export const CAREER = SERVER + 'careers'; 
 export const NOTECRITERIAS = SERVER +'note_criterias';
 export const ASSIGNMENTTYPE = SERVER +'assignment_types';
+export const dISCIPLINARYBOARD = SERVER + 'disciplinary_boards';
