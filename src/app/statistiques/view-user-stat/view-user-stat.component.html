@@ -40,7 +40,7 @@
                     <tr *ngFor="let career of usersCareers,let i = index" id="tr{{ career.id }}">
                         <td>{{ i+1 }}</td>
                         <td style="width: 30%">{{ career.effective_date | date: 'dd-MMM-yyy'}}</td>
-                        <td style="width: 30%">{{ career.effective_date | date: 'dd-MMM-yyy'}}</td>
+                        <td style="width: 30%">{{ usersCareers[i+1].effective_date | date: 'dd-MMM-yyy'}}</td>
                         <td style="width: 50%">{{ getOneProSituation(career.pro_situation_id).name }}</td>
 
                     </tr>
