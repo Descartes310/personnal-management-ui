@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Routes from '../Routes'; 
@@ -22,4 +23,38 @@ export class LicensetypeService {
     find(id: number): Promise<Licensetype> {
         return this.http.get<Licensetype>(`${Routes.LICENSETYPE}/${id}`).toPromise();
     }
+=======
+import { Injectable} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import * as Routes from '../Routes'; 
+import { Licensetype } from '../_models/licensetype.model';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class LicensetypeService {
+
+  constructor(
+      private http: HttpClient,
+    ) { }
+
+    add(formData: FormData): Promise<Licensetype> {
+        return this.http.post<Licensetype>(Routes.LICENSETYPE, formData).toPromise();
+    }
+
+    update(formData: FormData, id: number): Promise<Licensetype> {
+        return this.http.post<Licensetype>(`${Routes.LICENSETYPE}/${id}`, formData).toPromise();
+    }
+    find(id: number): Promise<Licensetype> {
+        return this.http.get<Licensetype>(`${Routes.LICENSETYPE}/${id}`).toPromise();
+    }
+    
+    all(): Promise<any> {
+      return this.http.get<any>(Routes.LICENSE_TYPE).toPromise();
+    }
+
+    delete(id: number): Promise<Licensetype[]> {
+      return this.http.delete<Licensetype[]>(`${Routes.LICENSE_TYPE}/${id}`).toPromise();
+     }
+>>>>>>> cc1a41d96a434b90b49af843ecabca751037be02
 }
