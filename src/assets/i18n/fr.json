@@ -346,6 +346,7 @@
         "RequireDays": " nombre de jours de congés souhaités",
         "AccordDays": " nombre de jours accordés",
         "SlugLabel": "Slug",
+        "Options": "Opérations",
         "NameTrainer": "Nom du formateur",
         "StartDate": "Date de bebut",
         "LocationName": "Lieu",

@@ -183,7 +183,7 @@ const routes: Routes = [
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
-  { path: 'user_note_criterias', component: AddUserNoteCriteriasComponent },
+  { path: 'professional-score', component: AddUserNoteCriteriasComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
@@ -230,7 +230,7 @@ const routes: Routes = [
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
 
-  { path: 'career/add', component: AddCareerComponent },
+  { path: 'promotions', component: AddCareerComponent },
   { path: 'career/update/:id', component:UpdateCareerComponent},
 
   //{ path: '404', component: NotfoundComponent },
