@@ -55,15 +55,14 @@ export class UpdateAssignmentComponent implements OnInit {
 
   initForm(withAssignment = false) {
     if (withAssignment) {
-      //console.log(this.role)
       this.assignmentForm = this.formBuilder.group({
-        user_assignment: ['', Validators.required],
-        type_assignment: ['', Validators.required],
-        destination: ['', Validators.required],
-        signature_date: ['', Validators.required],
-        installation_date: ['', Validators.required],
-        raison: ['', Validators.required],
-        description: ['']
+        user_assignment: [this.assignment.user_id, Validators.required],
+        type_assignment: [this.assignment.assignment_type_id, Validators.required],
+        destination: [this.assignment.destination, Validators.required],
+        signature_date: [this.assignment.signature_date, Validators.required],
+        installation_date: [this.assignment.installation_date, Validators.required],
+        raison: [this.assignment.raison, Validators.required],
+        description: [this.assignment.description]
       });
     } else {
       this.assignmentForm = this.formBuilder.group({
@@ -133,7 +132,7 @@ export class UpdateAssignmentComponent implements OnInit {
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentForm.reset();
-        this.router.navigate(['/assignment/all']);
+        this.router.navigate(['/assignments/all']);
       })
       .catch(err => {
         console.log(err)

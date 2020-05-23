@@ -1,0 +1,108 @@
+<div class="col-md-12 col-lg-12 col-xl-12">
+    <div class="card-shadow-primary card-border mb-3 card">
+        <div class="dropdown-menu-header">
+            <div class="dropdown-menu-header-inner bg-dark">
+                <div class="menu-header-content">
+                    <div class="avatar-icon-wrapper mb-3 avatar-icon-xl">
+                        <div class="avatar-icon" style="width: 100px;height: 100px;">
+                            <img src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="pic" >
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="menu-header-title" *ngIf="profile">{{profile.name}}</h5>
+                        <h6 class="menu-header-subtitle" *ngIf="profile"><i>{{profile.poste}}</i> </h6>
+                    </div>
+                    <div class="menu-header-btn-pane pt-2">
+                        <div role="group" class="btn-group text-center">
+                            <div class="nav">
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileUpdate' | translate }}
+                                </button>                            
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.PasswordUpdate' | translate }}
+                                </button>
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileStatistique' | translate }}
+                                </button> 
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfilePromotion' | translate }}
+                                </button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+ <div class="row">
+    <div class="col-md-8">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header font-icon-wrapper">
+                    <i class="pe-7s-user"> </i>
+                    {{ 'Profile.ProfileInfos' | translate }}
+                </div>
+                
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group list-group-flush" *ngFor="let attribute of profile | keyvalue">
+                                       
+                                <li class="list-group-item"  *ngIf="attribute.key!='id' && attribute.key!='avatar' && attribute.key!='created_at' && attribute.key!='last_login' && attribute.key!='updated_at'" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{attribute.key}}  </div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{attribute.value}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                             
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    {{ 'Profile.ProfilePermissions' | translate }}
+
+                </div>
+                
+                <div class="card-body">
+                    <ul class="todo-list-wrapper list-group list-group-flush" style="overflow-y: auto; max-height: 250px;">
+                        <li class="list-group-item" *ngFor="let permission of permissions">
+                            <div class="todo-indicator bg-warning"></div>
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-2">
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading" *ngIf="permission" style="color: #0e0d0d;">{{ permission.display_name }}</div>
+                                        <div class="widget-heading" *ngIf="permission" style="color: #c5bfbf;"><i>{{ permission.description }}</i></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                  
+               
+            </div>
+        </div>
+    </div>
+   </div>          
+  </div>
+ </div>
+</div>
+

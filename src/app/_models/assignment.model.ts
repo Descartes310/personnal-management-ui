@@ -1,4 +1,5 @@
 import { Super } from './super.model';
+import { AssignmentType } from './assignment-type.model';
 
 export class Assignment extends Super<Assignment> {
 

@@ -13,16 +13,16 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
   styleUrls: ['./all-assignments.component.scss']
 })
 export class AllAssignmentsComponent implements OnInit {
-  
+
   assignments: Assignment[] = [];
   user : any[];
   assignmentType : any[];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
@@ -58,7 +58,7 @@ export class AllAssignmentsComponent implements OnInit {
     this.getAssignments();
   }
 
-  getAssignments() {
+  async getAssignments() {
     this.loading = true;
     this.assignmentService.all().then(
       response => {
@@ -83,11 +83,11 @@ export class AllAssignmentsComponent implements OnInit {
   }
 
   editAssignment(assignment: Assignment) {
-    this.router.navigate(['/assignments/update/' + assignment.id])
+    this.router.navigate(['/assignments/update/' + assignment.id]);
   }
 
   detailsAssignment(assignment: Assignment) {
-    this.router.navigate(['/assignments/details/' + assignment.id])
+    this.router.navigate(['/assignments/details/' + assignment.id]);
   }
 
   deleteAssignment(assignment: Assignment) {
@@ -113,19 +113,19 @@ export class AllAssignmentsComponent implements OnInit {
           }
         ).catch(
           error => {
-            console.log(error)
+            console.log(error);
             this.blockUI.stop();
             this.translate.get('Assignments' + error.error.code)
               .subscribe(val => this.notifService.danger(val));
           }
-        )
+        );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
 }
