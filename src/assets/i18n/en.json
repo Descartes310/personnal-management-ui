@@ -12,45 +12,179 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+
     "NavBar": {
         "Language": "Choose Language",
-        "Profile": "Mon compte",
-        "Message": "Messages privés"
+        "Profile": "My Account",
+        "Message": "Private Messages",
+        "QuickAccess": "Quick access",
+        "Notif": "Notifications",
+        "NotifViewAll": "View all notifications",
+        "NotifText": "You have {{unread}} new notifications",
+        "QuickAccessText": "Quickly and efficiently access all primary system functionality"
     },
     "Home": {
         "Title": "Home page"
     },
     "Form": {
-        "NameSelect": "Choisir votre structure parent ",
-        "NameLabel": "Name",
-        "NameField": "Please type a name...",
-        "DescriptionLabel": "Description",
-        "DescriptionField": "Please type a description",
+        "NamesLabel": "Name",
+        "LabelsLabel": "Label",
+        "DescriptionsLabel": "Description",
+
+        "MaxsLabel":"Maximum Score",
         "WeightLabel": "Index",
+        "MinsLabel":"Minimum Score",
+        "TypeLabel": "Type",
+        "NameLabel": "Name",
+        "start_dateLabel": "Start Date",
+        "end_dateLabel": "End Date",
+        "free_daysLabel": "Free days",
+        "NameField": "Please enter the name...",
+        "LabelLabel": "Label",
+        "LabelField": "Please enter the label...",
+        "LabelType": "Please enter the type...",
+        "LabelTitle": "Please enter the title...",
+        "LabelDays": "Please enter the number of days...",
+        "DescriptionLabel": "Description",
+        "DescriptionField": "Please enter a description",
+        "EndDateError": "Please enter a valid End Date",
+        "CreatedAtLabel": "Creation date",
+        "CreatedAtField": "Creation date",
         "WeightField": "Select an index",
-        "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
-        "DaysLabel": "Number of Days",
-        "TitleLabel": "Title",
-        "TitleField": "Please type a title...",
-        "Trainer": "Trainer",
-        "duration": "Duration (in hours)",
-        "start_date": "Start date",
-        "location": "Location",
+        "SearchLabel": "Search",
+        "SearchText": "Perform a search...",
+        "NameSelect":"Choose your structure",
+        "UserLabel": "User",
+        "Dest_userLabel": "Recipient",
+        "SubjectLabel": "Subject",
+        "MessageLabel": "Subject",
+        "TypeField": "please enter the type...",
+        "NatureLabel": "Nature",
+        "NaturetField": "Select a nature...",
+        "GenderLabel": "Sexe",
+        "GenderField": "Select your sex...",
+        "Parent_idLabel":"Higher Hierarchy",
+        "DaysLabel": "Number of days",
+        "DaysField": "Please enter the number of days...",
+        "ImageLabel": "Picture",
+        "ImageField":"Choose a picture",
+        "EmailLabel": "Email",
+        "EmailField": "please enter an email...",
+        "FaxLabel": "Fax",
+        "FaxField": "Please enter the fax...",
+        "BpLabel": "P.O. Box",
+        "BpField": "Please enter the P.O. Box...",
+        "Phone1Label": "Phone 1",
+        "Phone1Field": "First number...",
+        "Phone2Label": "Phone 2",
+        "Phone2Field": "Second number...",
+        "Phone3Label": "Phone 3",
+        "Phone3Field": "Third number...",
+
+        "FacebookField": "Facebook account...",
+        "TwitterField": "Twitter account...",
+        "WhatsappField": "Whatsapp account...",
+        "LinkedinField": "Linkedin account...",
+
+        "NextLabel":"Next",
+        "PreviousLabel":"Previous",
+
+        "HeadPrincipalLabel": "Main Information",
+        "HeadAddresLabel": "Address",
+        "HeadSocialLabel": "Social information",
+        "HeadFinishLabel": "Termine",
+        "AssignmentNameField": "Please fill in the label field...",
+        "UpdatedAtLabel": "Date of update",
+        "WeightLabelProSituation": "Index (please enter a number between 1 and 100)",
+        "AssignmentAddDescription":"please make a description",
+        "StatusMention":" the status of the application",
+        "StartDateProposal":" desired start date",
+        "StartDateAccord":" start date given",
+        "RequireDays":" desired number of days off",
+        "AccordDays": " number of days allowed",
+
+        "ReasonLabel": "Reason",
+        "ReasonField":"Please enter the reason for your request",
+        "StartDateLabel":"Beginning of permission",
+        "StartDateField":"Beginning of permission",
+        "LicenseTypeLabel":"Type of permission",
+        "LicenseTypeField":"Choose a type of permission",
+        "StartDateError":"please enter a valid date",
+        "SlugLabel": "Slug",
+        "NameTrainer": "Trainer's name",
+        "StartDate": "Start date",
+        "LocationName": "Location",
+        "Duration": "Duration [1-100] hour(s)",
+        "DurationField": "Duration",
+        "RaisonLabel": "Reason",
+        "RaisonField": "Please enter the reason for your request",
+        "RequestedStartDateLabel": "Starting date of leave",
+        "RequestedStartDateField": "Beginning of the leave",
+        "RequestedDaysLabel": "Number of days of leave",
+        "RequestedDaysField": "Please enter the number of days",
+        "VacationTypeLabel": "Type of leave",
+        "VacationTypeField": "Choose a type of leave",
+        "FileLabel": "joint files",
+        "FileField": "Browse",
+        "Yes":"Yes",
+        "No":"No",
+        "PlaceholderLabel":"Placeholder",
+        "Is_requiredLabel":"Compulsory",
+        "Is_updatableLabel":"Editable",
+        "Is_uniqueLabel":"Unique",
+        "MinLabel":"Min",
+        "MaxLabel":"Max",
+        "StepLabel":"Stage",
+        "DefaultLabel":"Default value",
+
+        "templateTitle":"Title",
+        "templateTypeHolder":"Please enter the model type",
+        "templateTitleHolder":"Please enter the title of the model",
+        "templateContentHolder":"Please enter the content of the design",
+
         "templateType":"Type",
         "templateContent":"Content",
 
-        "UserName": "User's name",
-        "LicenseType": "License's type",
+        "TitleLabel": "Title",
+        "TitleField": "Please enter a title",
+        "dtTitleHolder":"Enter the name",
+        "dtTitle":"name",
+        "Notemax":"Maximum score",
+        "Notemin":"Minimum score",
+
+        "Trainer": "Trainer",
+        "duration": "Duration (in hours)",
+        "start_date": "Start Date",
+        "location": "Location",
+        "imageLabel":"Add a picture",
+        "imageField":"Please choose a picture",
+        "BlogCategoryLabel":"blog category",
+        "BlogCategoryField":"choose a blog category",
+        "ContentLabel":"Content",
+        "ContentField":"Please enter a Content",
+
+
+        "UserName": "User",
+        "LicenseType": "Permission type",
         "Raison": "Reason",
-        "File": "File",
-        "Requested_start_date": "Requested start date",
-        "Requested_days": "Requested_days",
+        "File": "Associated file",
+        "Requested_start_date": "Required starting date",
+        "Requested_days": "Number of days needed",
         "Status": "Status",
         "Key": "Key",
         "Value": "Value",
         "KeyField": "Enter a key",
-        "ValueField": "Enter a value"
+        "ValueField": "Enter a value",
+
+        "DestinationLabel": "Destination",
+        "DestinationField": "Destination",
+        "TypeAssignmentLabel": "Type of assignment ",
+        "SignatureDateLabel": "Signature date",
+        "SignatureDateField": "Signature date",
+        "InstallationDateLabel": "Installation date",
+        "InstallationDateField": "Installation date"
     },
+
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "The document size must not be greater than ",
         "FILE_TYPE_ERR": "The document you have choose is not a pdf, choose a pdf document please",
@@ -65,7 +199,19 @@
             "Name": "The pro situation with name {{ data }} already exist please change the name",
             "Weight": "The index of a pro situation must be a number between 1 and 100"
         },
-        "UpdateProSituation": "Update"
+        "UpdateProSituation": "Update",
+        "WeightLabel":"Weight",
+        "AreYouSurePro": "Are you sure you want to delete this situation ?",
+        "RoleTitle": "Management of the professional situations of the application",
+        "AddProSituations": "Add a new Professional situation",
+        "CreateRole": "Create a Professional Situations",
+        "UpdateRole": "Update",
+        "SubmitErrorPermissios": "Please select at least one permission",
+        "ROLE_NOT_FOUND": "The role was not found",
+        "ROLE_ALREADY_EXISTS": "Role already exists",
+        "ProSituations": "Professional situations",
+        "ProSituationTitle": "Management of the professional situations of the application",
+        "SubmitError": "Fields in red are required"
     },
 
     "BlogCat": {
@@ -89,20 +235,43 @@
         "SubmitError": "Entries are necessary",
         "UpdateSuccess": "The training's update has been made successfully",
         "SubmitSuccess": "The training has been created successfully",
-        "Training_NOT_FOUND": "Undefined training"
+        "Training_NOT_FOUND": "Undefined training",
+        "Trainings": "Trainings",
+        "TrainingTitle": "Application's Training Management",
+        "AddTraining": "Add a training",
+        "CreateTraining": "Create training",
+        "TRAINING_NOT_FOUND": "This training don't exist",
+        "Error": "Invalid data",
+        "SubmitSuccess1" : "Updating of the training successfully completed",
+        "ErrorMessages": {
+            "Duration": [
+                "the duration is compulsory and must be a number between 1 and 100",
+                "the duration must be strictly greater than 0",
+                "the duration must be less than or equal to 100"
+            ]
+        },
+        "IsOnline": "Is this training online?",
+        "SubmitUpdateSuccess": "Permission update successful ...",
+        "SubmitErrorLicense_type": "Please select a permission type",
+        "SubmitErrorLicense": "creation failure. Please check your data ",
+        "LICENSE_NOT_FOUND": "Permission has not been found",
+        "LICENSE_ALREADY_EXISTS": "This permission already exists"
     },
 
     "SweetAlert": {
-        "AreYouSure": "Are you sure you want to suppress this element ?",
-        "AreYouSurePro": "Sure you want to delete this situation?",
-        "Warning": "It's an irreversible's action !",
-        "Yes": "Yes, delete",
-        "No": "No, Cancel",
-        "Deleted": "Deleted",
-        "DeletedMessage": "Element deleted succesfully",
-        "Cancelled": "Cancelled",
-        "CancelledMessage": "Element still in the box"
+        "AreYouSure": "Are you sure you want to delete this {{ data }} ?",
+        "AreYouSureNotecriterias": "Are you sure you want to delete {{ data }} ?",
+        "AreYouSureAssigmenttype":"Are you sure you want to delete this type of assignment?{{ data }} ?",
+        "AreYouSurePro": "Are you sure you want to delete this situation?",
+        "Warning": "This action is irreversible !",
+        "Yes": "Yes, deleter",
+        "No": "No, cancel",
+        "Deleted": "Delete",
+        "DeletedMessage": "Element successfully deleted",
+        "Cancelled": "Cancel",
+        "CancelledMessage": "Element preserved"
     },
+   
     "Templates": {
         "Templates": "Templates",
         "TemplateTitle": "Template's Management",
@@ -145,12 +314,17 @@
         "ProfileUpdate": "Update profile",
         "Permissions":"Licenses",
         "Conges":"Vacations"
+        
     },
 
     "Licenses":{
         "Licenses_Title": "Licenses",
         "Licenses_Name": "Licenses's management",
-        "Add_Licenses": "Add a new license"
+        "Add_Licenses": "Add a new license",
+
+        "Licenses_Title": "Permissions",
+        "Licenses_Name": "Application permissions management",
+        "Add_Licenses": "Add a new permission"
     },
 
     "Settings":{
@@ -163,5 +337,119 @@
         "SubmitSuccess": "The settings has been created successfully",
         "NotFound": "Undefined settings",
         "undefined": "the key is already existing"
-    }
+    },
+
+  
+    "User": {
+        "Users": "Creation of employees",
+        "UserTitle": "Create a new employee",
+        "UserFormFirstStepName": "Personal informations",
+        "UserFormSecondStepName": "Professional information",
+        "SubmitError": "Please fill in the fields of the form (fill in the required fields)",
+        "LoadingError": "Error please check your internet connection",
+        "FinishTitle": "Last step",
+        "FinishSubtitle": "click on the button to complete the creation",
+        "CreateUser": "Create user",
+        "CreateUserError": "User creation failed, please fill in the form and try again.",
+        "UserLogin": "login",
+        "UserPassword": "Password",
+        "UserLoginPlaceHolder": "Enter a login",
+        "UserPasswordPlaceHolder": "****************",
+        "ErrorMessages": {
+            "Login": [
+                "login is required",
+                "the login must not be less than 6 characters long"
+            ],
+            "Password": [
+                "the password is obligatory",
+                "the password must not be less than 6 characters long"
+            ]
+        },
+        "UserFormThirdStepName": "Roles and permissions",
+        "InputRequiredError": "The field {{ data }} is obligatory",
+        "InputMaxError": "The value in the field {{ data1 }} must be less than in {{ data2 }}.",
+        "InputMinError": "The value in the field {{ data1 }} must be greater than in {{ data2 }}.",
+        "InputMinLengthError": "The value of the field {{ data1 }}} must not be less than {{ data2 }} characters.",
+        "InputMaxLengthError": "The value of the field {{ data1 }}} must not be greater than {{ data2 }} characters.",
+        "CreateUserSuccess": "The user has been successfully created"
+    },
+    "Vacation": {
+        "VACATION": "VACATION",
+        "Vacations": "Vacations",
+        "VacationTitle": "Management of Application's leave requests",
+        "AddVacation": "leave application",
+        "UpdateVacation": "Edit",
+        "SubmitSuccess": "The creation of the leave request was successful...",
+        "SubmitUpdateSuccess": "The modification was successfully completed...",
+        "SubmitErrorVacation_type": "Please select a type of leave",
+        "SubmitErrorVacation":"creation error!! please check your data ",
+        "VACATION_NOT_FOUND": "this leave has not been found",
+        "VACATION_ALREADY_EXISTS": "This leave already exists",
+        "VacationAdd": " New type of leave",
+        "VacationUpdate": "Update a leave type",
+        "CreateVacation": "Save",
+        "SubmitError": "Fields in red are compulsory",
+        "UpdateSuccess": "The update of the leave type was successful...",
+        "VACATION_TYPE_ALREADY_EXISTS": "The leave type already exists"
+    },
+      
+        
+  
+        "Role": {
+            "RoleName": "Role",
+            "PermissionName": "Permissions",
+            "Roles": "Roles and permissions",
+            "RoleTitle": "Management application roles and permissions",
+            "AddRole": "Ajouter un nouveau rôle",
+            "CreateRole": "Add a new role",
+            "UpdateRole": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the role was successful...",
+            "SubmitErrorPermissions": "Please select at least one permission",
+            "ROLE_NOT_FOUND": "The role was not found",
+            "ROLE_ALREADY_EXISTS": "The role already exists"
+        },
+        "BlogPost": {
+            "BlogPosts": "Blog Post",
+            "BlogPostTitle": "Management of Application Blog Post",
+            "AddBlogPost": "Add a blog post",
+            "UpdateBlogPost":"Update a blog poste",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "The creation of the blog post was successful...",
+            "UpdateSubmitSuccess": "The update of the article was successful...",
+            "ErrorSubmit": "failure to add the article",
+            "UpdateErrorSubmit": "failure to update the article"
+    
+        },
+        "BlogComment": {
+            "BlogPosts": "Blog comments",
+            "blogPostTitle": "Management of application blog comment",
+            "AddBlogComment": "Add a new blog comment",
+            "SubmitSuccess": "The creation of the blog comment was done successfully"
+    
+        },
+    
+        "Submission": {
+            "Submissions": "The applications",
+            "SubmissionTitle": "Application management",
+            "AddSubmission": "Add a new application",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "Application creation was successful",
+            "DetailsSubmission": "Application Details"
+        },
+    
+        "Contact": {
+            "Contacts": "Contacts",
+            "ContactTitle": "Contact management",
+            "AddContact": "Add a contact",
+            "CreateContact": "create a contact",
+            "UpdateContact": "Update",
+            "SubmitError": "Fields in red are compulsory",
+            "SubmitSuccess": "Contact creation successful...",
+            "ErrorSubmit": "Failed to create contact",
+            "UpdateErrorSubmit": "Failed to Edit contact"
+        }
+       
+
 }
+
