@@ -695,9 +695,9 @@
         "UserCities": "Choisir votre ville",
         "UserProsituations": "Choisir votre situation professionnelle",
         "Save": "Veuillez sauvegarder",
-        "UsersList": "Liste de membres du personnel",
+        "UsersList": "Liste du personnel",
         "UserListTiltle": "Gestion du personnel et des utilisateurs",
-        "AddUser": "Ajouter membre du personnel",
+        "AddUser": "Ajouter membre",
         "UserDivisions": "Division de travail"
     },
     "Vacation": {
