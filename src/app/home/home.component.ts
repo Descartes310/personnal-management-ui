@@ -3,6 +3,7 @@ import { AuthService } from '../_services/auth.service';
 import { ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 import { StatisticService } from '../_services/statistic.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   listOfAssignment: any[] = [];
   constructor(
     private authService: AuthService,
-    private statistiqueServive: StatisticService
+    private statistiqueServive: StatisticService,
+    private router:Router
   ) {
     this.lineChartData = [
       { data: this.listofAssignmentnumber, label: "Nombre de demande de Conge par mois" }
@@ -57,9 +59,10 @@ export class HomeComponent implements OnInit {
     this.user = this.authService.getUser();
     this.getAssignmentByMonth();
   }
+ 
 
-  alert() {
-    alert('Bonjour le monde')
+  listSantion(){
+    this.router.navigate(['/vacations/all'])
   }
 
   //recuperation des affectations groupes par mois

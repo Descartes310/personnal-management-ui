@@ -45,6 +45,7 @@ export class ProSituationService {
   }
   delete(id: number) {
     return this.http.delete(`${Routes.PRO_SITUATION}/${id}`).toPromise();
+  
   }
 
 }

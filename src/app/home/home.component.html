@@ -81,50 +81,42 @@
                             <div class="widget-chart widget-chart-hover">
                                 <div class="icon-wrapper rounded-circle">
                                     <div class="icon-wrapper-bg bg-primary"></div>
-                                    <i class="lnr-cog text-primary"></i></div>
-                                <div class="widget-numbers">45.8k</div>
-                                <div class="widget-subheading">Total Views</div>
-                                <div class="widget-description text-success">
-                                    <i class="fa fa-angle-up"></i>
-                                    <span class="pl-1">175.5%</span></div>
+                                    <i class="pe-7s-user"></i></div>
+                                <div class="widget-numbers">{{nbAllUsers}}</div>
+                                <div class="widget-subheading">Total Des Utilisateurs</div>
+                                
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="widget-chart widget-chart-hover">
                                 <div class="icon-wrapper rounded-circle">
                                     <div class="icon-wrapper-bg bg-info"></div>
-                                    <i class="lnr-graduation-hat text-info"></i>
+                                    <i class="pe-7s-hammer"></i>
                                 </div>
-                                <div class="widget-numbers">63.2k</div>
-                                <div class="widget-subheading">Bugs Fixed</div>
-                                <div class="widget-description text-info">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <span class="pl-1">175.5%</span></div>
+                                <div class="widget-numbers">{{this.nbSanctionPending}}</div>
+                                <div class="widget-subheading">Sanctions Du Jour</div>
+                                
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" (click)="listSantion();">  
                             <div class="widget-chart widget-chart-hover">
                                 <div class="icon-wrapper rounded-circle">
                                     <div class="icon-wrapper-bg bg-danger"></div>
-                                    <i class="lnr-laptop-phone text-danger"></i>
+                                    <i class="pe-7s-hourglass"></i>
                                 </div>
-                                <div class="widget-numbers">5.82k</div>
-                                <div class="widget-subheading">Reports Submitted</div>
-                                <div class="widget-description text-primary"><span class="pr-1">54.1%</span>
-                                    <i class="fa fa-angle-up"></i>
-                                </div>
+                                <div class="widget-numbers">{{this.nbVacationPending}}</div>
+                                <div class="widget-subheading">Conges en Cours</div>
+                                
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" (click)="listSantion();">
                             <div class="widget-chart widget-chart-hover br-br">
                                 <div class="icon-wrapper rounded-circle">
                                     <div class="icon-wrapper-bg bg-success"></div>
-                                    <i class="lnr-screen"></i></div>
-                                <div class="widget-numbers">17.2k</div>
-                                <div class="widget-subheading">Profiles</div>
-                                <div class="widget-description text-warning"><span class="pr-1">175.5%</span>
-                                    <i class="fa fa-arrow-left"></i>
-                                </div>
+                                    <i class="pe-7s-paper-plane"></i></div>
+                                <div class="widget-numbers">{{nbVacationApproved}}</div>
+                                <div class="widget-subheading">Conges Approves</div>
+                                
                             </div>
                         </div>
                     </div>

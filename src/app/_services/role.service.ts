@@ -1,6 +1,6 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes'; 
+import * as Routes from '../Routes';
 import { Role } from '../_models/role.model';
 
 @Injectable({
@@ -24,6 +24,10 @@ export class RoleService {
         return this.http.get<any>(Routes.ROLE).toPromise();
     }
 
+    getRolesWithPermissions(): Promise<any> {
+        return this.http.get<any>(Routes.ROLE + '/' + 'getRolesWithPermissions').toPromise();
+    }
+
     permissions(): Promise<any> {
         return this.http.get<any>(Routes.PERMISSION).toPromise();
     }
@@ -36,4 +40,7 @@ export class RoleService {
         return this.http.delete<Role[]>(`${Routes.ROLE}/${id}`).toPromise();
     }
 
+    syncUserAbilities(id: number, data: {roles: string, permissions: string}) {
+      return this.http.post(Routes.SYNC_USER_ABILITIES.replace('{user_id}', `${id}`), data).toPromise();
+    }
 }
