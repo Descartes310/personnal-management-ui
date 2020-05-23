@@ -264,8 +264,26 @@
         "Key": "Clé",
         "Value": "Valeur",
         "KeyField": "Entrer une clé",
-        "ValueField": "Entrer une valeur"
+        "ValueField": "Entrer une valeur",
+
+        "DestinationLabel": "Destination",
+        "DestinationField": "Destination",
+        "TypeAssignmentLabel": "Type d'affectation ",
+        "SignatureDateLabel": "Date de signature",
+        "SignatureDateField": "Date de signature ",
+        "InstallationDateLabel": "Date d'intallation",
+        "InstallationDateField": "Date d'installation"
     },
+
+    "Assignment": {
+        "Assignments": "Affectations",
+        "AssignmentTitle": "Gestion des affectations de l'application",
+        "AddAssignment": "Ajouter une affectation",
+        "CreateAssignment": "Créer une affectation",
+        "UpdateAssignment": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie..."
+    } ,
 
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
