@@ -68,8 +68,8 @@ import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-d
 import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { DetailVacationComponent } from './vacations/detail-vacation/detail-vacation.component';
-import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
-import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
+import { CreateDiciplinaryTeamComponent } from './disciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
+import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
 import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
 
