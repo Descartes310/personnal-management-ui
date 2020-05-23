@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'BlogCat.BC_Name' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="tabs-animation">
     <div class="row">
@@ -26,11 +26,11 @@
                             <label for="exampleTitle" class="">{{ 'Form.TitleLabel' | translate }} </label>
                             <input name="title" id="exampleTitle" placeholder="{{ 'Form.TitleField' | translate }}" type="text"  formControlName="title" value="{{ blogcat.title }}" class="form-control {{ isSubmitted && form.title.errors ? 'is-invalid' : '' }}">
                         </div>
-                        
+
                         <div class="position-relative form-group">
                             <label for="exampleText" class="">{{ 'Form.DescriptionLabel' | translate }}</label>
                             <textarea name="text" id="exampleText" class="form-control" formControlName="description">
-                                {{ 'Form.DescriptionField' | translate }}
+                                {{ blogcat.description }}
                             </textarea>
                         </div>
 
@@ -46,9 +46,9 @@
                                 </div>
                             </button>
                         </div>
-                        
+
                     </form>
-                    
+
                 </div>
             </div>
         </div>
