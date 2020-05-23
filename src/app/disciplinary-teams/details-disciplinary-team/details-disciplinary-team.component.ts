@@ -15,6 +15,7 @@ export class DetailsDisciplinaryTeamComponent implements OnInit {
   //disciplinaryteam: Disciplinary
   disciplinaryteams: DisciplinaryTeam[] = [];
   loading: boolean = true;
+  disciplinary_id;
   constructor(
     private disciplinaryteamService : DisciplinaryTeamService,
     private notifService: NotifService,
@@ -23,8 +24,8 @@ export class DetailsDisciplinaryTeamComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const disciplinary_id = +this.route.snapshot.paramMap.get("id");
-    this.getOneDisciplinary_Team(1);
+    this.disciplinary_id = +this.route.snapshot.paramMap.get("id");
+    this.getDisciplinaryTeams();
 
   }
 
@@ -32,24 +33,22 @@ export class DetailsDisciplinaryTeamComponent implements OnInit {
     this.loading = true;
     this.disciplinaryteamService.getDisciplinaryTeamWithUsers().then(response => {
         this.disciplinaryteams= response;
-        /*response.map( disciplinaryteam => {
-          this.disciplinaryteams.push(new DisciplinaryTeam(disciplinaryteam));
-        });*/
-        console.log(response);
+        this.getOneDisciplinary_Team(this.disciplinary_id);
+        //console.log(this.disciplinary)
+        //console.log(response);
     }).catch(error => {
         this.notifService.danger(error.error.message)
     }).finally( () => {
         this.loading = false;
     });
   }
-  //ecrire une methode 
+ 
   getOneDisciplinary_Team(id){
     this.disciplinary = this.disciplinaryteams.find(
       (disciplinaryObject)=>{
         return disciplinaryObject.id===id;
       }
     );
-    console.log(this.disciplinary)
-   // return disciplinary;
+    //console.log(this.disciplinary)
   }
 }
