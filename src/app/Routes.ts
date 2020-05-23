@@ -30,6 +30,7 @@ export const TRAINING = SERVER + 'trainings';
 export const Setting = SERVER + 'settings';
 export const VACATION = SERVER + 'vacations';
 export const VACATION_TYPE = SERVER + 'vacation_types';
+export const CITIES = SERVER + 'cities';
 export const BlogPost = SERVER + 'blog_posts';
 export const BlogCategorie = SERVER + 'blog_categories';
 export const User = SERVER + 'users';

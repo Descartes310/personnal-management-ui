@@ -45,6 +45,38 @@ export class UserService {
   allProfiles(): Promise<any> {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  all(): Promise<any> {
+    return this.http.get<any>(Routes.USERS).toPromise();
+  }
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  delete(id: number): Promise<any> {
+    return this.http.delete<any>(Routes.USERS + '/' + id).toPromise();
+  }
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  cities(): Promise<any> {
+    return this.http.get<any>(Routes.CITIES).toPromise();
+  }
+
+  /**
+   * @author Arléon Zemtsop
+   * @email arleonzemtsop@gmail.com
+  */
+  getUserInfo(id: number): Promise<any> {
+    return this.http.get<any>(Routes.USERS + '/' + id).toPromise();
+  }
   
   allUser(){
     return this.http.get<any>(`${Routes.User}`).toPromise();

@@ -28,6 +28,7 @@ import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-ty
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { AllUsersComponent } from './users/all-users/all-users.component';
 
 // import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 // import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -115,6 +116,7 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
+  { path: 'users/all', component: AllUsersComponent }, 
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },

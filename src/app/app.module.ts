@@ -50,6 +50,7 @@ import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-ty
 import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { AllUsersComponent } from './users/all-users/all-users.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
 import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
@@ -192,6 +193,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllSubmissionsComponent,
     AddVacationComponent,
     UpdateVacationComponent,
+    AllUsersComponent,
     AllBlogPostComponent,
     DetailBlogPostComponent,
     AllContactComponent,
