@@ -84,11 +84,7 @@
         "SubmitSuccess": "La création de l'article a réussie...",
         "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
         "ErrorSubmit": "echec d'ajout de l'article",
-        "UpdateErrorSubmit": "echec de la mise a jour de l'article",
-        "BlogPosts": "blogs Articles",
-        "BlogPostTitle": "Gestion des articles de l'application",
-        "SubmitSuccess": "La création du role a réussie...",
-        "AddBlogPost": "Ajouter un article"
+        "UpdateErrorSubmit": "echec de la mise a jour de l'article"
 
     },
     "BlogComment": {
@@ -139,7 +135,6 @@
         "TypeFields":"selectionner un champ",
         "TypeLabel": "Type",
         "NameLabel": "Nom",
-        "TitleLabel": "Titre",
         "start_dateLabel": "Date de debut",
         "end_dateLabel": "Date de fin",
         "free_daysLabel": "Jours libres",
@@ -154,7 +149,6 @@
         "EndDateError": "veuillez entrer une date de fin valide",
         "CreatedAtLabel": "Date de création",
         "CreatedAtField": "Date de création",
-        "WeightLabel": "Indice",
         "WeightField": "Selectionnez un indice",
         "SearchLabel": "Rechercher",
         "SearchText": "Effectuez une recherche...",
@@ -247,12 +241,7 @@
         "templateTypeHolder":"Veuillez entrer le type de la maquette",
         "templateTitleHolder":"Veuillez entrer le titre de la maquette",
         "templateContentHolder":"Veuillez entrer le contenu de la maquette",
-        "templateType":"type",
-        "templateContent":"contenu",
-        "dtTitleHolder":"Entrez le nom",
-        "dtTitle":"nom",
 
-        "TitleField": "Veuillez entrer un titre",
         "templateType":"Type",
         "templateContent":"Contenu",
 
@@ -260,6 +249,8 @@
         "TitleField": "Veuillez entrer un titre",
         "dtTitleHolder":"Entrez le nom",
         "dtTitle":"nom",
+        "Notemax":"note maximale",
+        "Notemin":"note minimale",
 
         "Trainer": "Formateur",
         "duration": "Durée (en heures)",
@@ -271,7 +262,7 @@
         "BlogCategoryField":"Choisir une categorie de blog",
         "ContentLabel":"Contenu",
         "ContentField":"Veuillez entrez un contenu",
-        
+
 
         "UserName": "Utilisateur",
         "LicenseType": "Type de Permission",
@@ -283,8 +274,26 @@
         "Key": "Clé",
         "Value": "Valeur",
         "KeyField": "Entrer une clé",
-        "ValueField": "Entrer une valeur"
+        "ValueField": "Entrer une valeur",
+
+        "DestinationLabel": "Destination",
+        "DestinationField": "Destination",
+        "TypeAssignmentLabel": "Type d'affectation ",
+        "SignatureDateLabel": "Date de signature",
+        "SignatureDateField": "Date de signature ",
+        "InstallationDateLabel": "Date d'intallation",
+        "InstallationDateField": "Date d'installation"
     },
+
+    "Assignment": {
+        "Assignments": "Affectations",
+        "AssignmentTitle": "Gestion des affectations de l'application",
+        "AddAssignment": "Ajouter une affectation",
+        "CreateAssignment": "Créer une affectation",
+        "UpdateAssignment": "Mettre à jour",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "SubmitSuccess": "La création de l'affectation a réussie..."
+    } ,
 
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
@@ -394,8 +403,20 @@
         "addOption":"Ajouter une option",
         "deleteOption":"Supprimer"
     },
+    "Notecriterias":{
+        "Notecriteria":" Type de Critère de notation",
+        "NotecriteriaTitle":"Gestion des types de criteres de notations",
+        "Addnoteciteria": "Ajouter un critere de notation "
+    },
+    "Assignmenttype":{
+        "Assignmenttypes":" Type d'affectation",
+        "AssignmenttypesTitle":"Gestion des types d'affectation'",
+        "AddAssignmenttypes": "Ajouter un type d'affectation "
+    },
     "SweetAlert": {
-        "AreYouSure": "Etes-vous sure de vouloir supprimer cet élément ?",
+        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
+        "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
+        "AreYouSureAssigmenttype":"Etes-vous sure de vouloir supprimer  ce type d'affectation{{ data }} ?",
         "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
@@ -461,44 +482,12 @@
         "ProSituationTitle": "Gestion des situations professionelles de l'application",
         "SubmitError": "Les champs en rouges sont obligatoires"
     },
-   
-   "Training": {
-    "Trainings": "Formations",
-    "TrainingTitle": "Gestion des formations de l'application",
-    "AddTraining": "Ajouter une formation",
-    "CreateTraining": "Créer la formation",
-    "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
-    "Error": "donnees inalide",
-    "SubmitSuccess":"Ajout de la formation effectuer avec succes",
-    "SubmitSuccess1" : "Mise a jour de la formation effectuer avec succes",
-    "ErrorMessages": {
-        "Duration": [
-            "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
-            "la durée doit être strictement supérieur à 0",
-            "la durée doit être inférieur ou égal à 100"
-        ]
-    },
-    "IsOnline": "Cette formation est elle en ligne?",
-        "Training_Title": "Formations",
-        "Training_Name": "Gestion des formations de l'application",
-        "Add_Training": "Ajouter une nouvelle formation",
-        "CreateTraing": "Créer la formation",
-        "UpdateTraining": "Mettre à jour",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "SubmitUpdateSuccess": "La mise a jour de la permission a réussie...",
-        "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
-        "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
-        "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
-        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
-        "UpdateSuccess": "La mise à jour de la formation a été un succès",
-        "Training_NOT_FOUND": "La formation n'a pas été retrouvée"
-    },
 
     "Licenses":{
         "Licenses_Title": "Permissions",
         "Licenses_Name": "Gestion des permissions de l'application",
         "Add_Licenses": "Ajouter une nouvelle permission"
-       
+
     },
 
     "Settings":{

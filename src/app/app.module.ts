@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor'
-import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper'
+import { AddTokenInterceptor } from './_http-interceptors/add-token.interceptor';
+import { ErrorInterceptor } from './_http-interceptors/error-interceptor.helper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from './_guards/auth.guard'
+import { AuthGuardService } from './_guards/auth.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +34,15 @@ import { AddTrainingComponent } from './trainings/add-training/add-training.comp
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
+// import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -46,7 +55,6 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllLicensetypesComponent } from './licensetypes/all-licensetypes/all-licensetypes.component';
 import { DetailsLycensetypeComponent } from './licensetypes/details-lycensetype/details-lycensetype.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
@@ -56,7 +64,7 @@ import { TemplateUpdateComponent } from './templates/template-update/template-up
 
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import {MatStepperModule, MatInputModule, MatFormFieldModule} from '@angular/material';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
@@ -106,6 +114,8 @@ import { UpdateSettingsComponent } from './settings/update-settings/update-setti
 
 import { CreateDiciplinaryTeamComponent } from './diciplinary-teams/create-diciplinary-team/create-diciplinary-team.component';
 import { UpdateDiciplinaryTeamComponent } from './diciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
+import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -136,6 +146,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateBlogCategoryComponent,
     AllTrainingsComponent,
     FindTrainingsComponent,
+    AddAssignmentComponent,
+    AllAssignmentsComponent,
+    UpdateAssignment,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -153,6 +166,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsLycensetypeComponent,
     AllDivisionComponent,
     DetailsDivisionComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
     AddDivisionComponent,
     UpdateDivisionComponent,
     AddCongeComponent,
@@ -201,6 +219,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateSettingsComponent,
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
+    DetailsAssignmentComponent,
   ],
 
   imports: [

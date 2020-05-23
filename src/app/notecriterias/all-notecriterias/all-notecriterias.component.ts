@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Division } from 'src/app/_models/division.model';
-import Swal from 'sweetalert2';
-import { BlockUI, NgBlockUI } from 'ng-block-ui';
-import { DivisionService } from 'src/app/_services/division.service';
+import { Notecriterias } from 'src/app/_models/notecriterias.model';
+import { NotecriteriasService } from 'src/app/_services/notecriterias.service';
 import { NotifService } from 'src/app/_services/notif.service';
+import Swal from 'sweetalert2'
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-all-division',
-  templateUrl: './all-division.component.html',
-  styleUrls: ['./all-division.component.scss']
+  selector: 'app-all-notecriterias',
+  templateUrl: './all-notecriterias.component.html',
+  styleUrls: ['./all-notecriterias.component.scss']
 })
-export class AllDivisionComponent implements OnInit {
-  divisions: Division[] = [];
+export class AllNotecriteriasComponent implements OnInit {
+  
+
+  notecriterias: Notecriterias[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
@@ -25,20 +28,21 @@ export class AllDivisionComponent implements OnInit {
   deleted = '';
   deletedMessage = '';
   cancelled = '';
-  cancelledMessage = ''
+  cancelledMessage = '';
+
 
   constructor(
-    private divisionService: DivisionService,
+    private notecriteriasService: NotecriteriasService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
 
       this.translate.get(
-        ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-        { data: 'division' })
+        ['SweetAlert.AreYouSureNotecriterias', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        { data: ' ce critère de notation' })
         .subscribe(val => {
-          this.areYouSure = val['SweetAlert.AreYouSure'];
+          this.areYouSure = val['SweetAlert.AreYouSureNotecriterias'];
           this.warning = val['SweetAlert.Warning'];
           this.yes = val['SweetAlert.Yes'];
           this.no = val['SweetAlert.No'];
@@ -49,53 +53,38 @@ export class AllDivisionComponent implements OnInit {
         });
    }
 
-   ngOnInit() {
-    this.getDivisions();
+  ngOnInit() {
+    this.getNotecriterias();
   }
 
-  getDivisions() {
+  getNotecriterias() {
     this.loading = true;
-    this.divisionService.all().then(
+    this.notecriteriasService.all().then(
       response => {
-        this.divisions = [];
-        //console.log(response);
-        response.map( division => {
-          this.divisions.push(new Division(division));
+        this.notecriterias = [];
+        response.map( notecriterias => {
+          this.notecriterias.push(new Notecriterias(notecriterias));
         });
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message);
+        this.notifService.danger(error.error.message)
       }
     ).finally(
       () => {
-        if (this.divisions && this.divisions.length) {
-          this.divisions.forEach(div => {
-            if (div.parent_id != null) {
-              this.divisions.forEach(parent => {
-                if (parent.id == div.parent_id) {
-                  div.division = parent;
-                }
-              });
-            } else {
-              div.division = null;
-            }
-          });
-        }
         this.loading = false;
       }
     )
   }
-
-  editDivision(division: Division) {
-    this.router.navigate(['/divisions/update/'+division.id])
+  editNotecriterias(notecriterias: Notecriterias) {
+    this.router.navigate(['/notecriterias/update/'+notecriterias.id])
   }
 
-  detailsDivision(division: Division) {
-    this.router.navigate(['/divisions/details/'+division.id])
+  detailsNotecriterias(notecriterias: Notecriterias) {
+    this.router.navigate(['/notecriterias/details/'+notecriterias.id])
   }
 
-  deleteDivision(division: Division) {
+  deleteNotecriterias(notecriterias: Notecriterias) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -106,7 +95,7 @@ export class AllDivisionComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.divisionService.delete(division.id).then(
+        this.notecriteriasService.delete(notecriterias.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
@@ -114,17 +103,17 @@ export class AllDivisionComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getDivisions();
+            this.getNotecriterias();
           }
         ).catch(
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Division.'+error.error.code)
+            this.translate.get('Notecriterias.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
-
+        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
@@ -134,5 +123,4 @@ export class AllDivisionComponent implements OnInit {
       }
     })
   }
-
 }

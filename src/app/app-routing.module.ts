@@ -1,12 +1,12 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
-import { AuthGuardService as AuthGuard } from './_guards/auth.guard'
+import { AuthGuardService as AuthGuard } from './_guards/auth.guard';
 
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { AddProSituationComponent } from './pro_situations/add-pro-situation/add-pro-situation.component'
+import { AddProSituationComponent } from './pro_situations/add-pro-situation/add-pro-situation.component';
 import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
@@ -15,8 +15,10 @@ import { AddTrainingComponent } from './trainings/add-training/add-training.comp
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
 import { UpdateBlogCategoryComponent } from './blog_category/update-blog-category/update-blog-category.component';
+import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
 import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
-import { ChatComponent } from './chat/chat.component'
+import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
@@ -27,8 +29,8 @@ import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignm
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 
-//import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-//import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+// import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+// import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 import { DetailsProfileComponent } from './profiles/details-profile/details-profile.component';
 import { AllProfileComponent } from './profiles/all-profile/all-profile.component';
 import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
@@ -36,6 +38,12 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+// import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+
 import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
 import { AllDivisionComponent } from './divisions/all-division/all-division.component';
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
@@ -79,7 +87,12 @@ import { FindSettingsComponent } from './settings/find-settings/find-settings.co
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 
-//const routes: Routes = [];
+import { UpdateAssignment } from './assignments/update-assignment/update-assignment.component';
+import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
+
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -90,8 +103,8 @@ const routes: Routes = [
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
   { path: 'pro-situations/all', component: AllProSituationComponent },
   { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
-  //{ path: 'profiles/add', component: AddProfileComponent },
-  //{ path: 'profiles/update/:id', component: UpdateProfileComponent },
+  // { path: 'profiles/add', component: AddProfileComponent },
+  // { path: 'profiles/update/:id', component: UpdateProfileComponent },
   { path: 'profiles/all', component: AllProfileComponent },
   { path: 'profiles/details/:id', component: DetailsProfileComponent },
   { path: 'profiles/add', component: AddProfileComponent },
@@ -114,6 +127,16 @@ const routes: Routes = [
   { path: 'vacations/add', component: AddVacationComponent },
   { path: 'vacations/update/:id', component: UpdateVacationComponent },
   { path: 'vacations/details/:id', component: DetailVacationComponent },
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
+  { path: 'assignments/all', component: AllAssignmentsComponent },
+  { path: 'assignments/add', component: AddAssignmentComponent },
+  { path: 'assignments/update/:id', component: UpdateAssignment },
+  { path: 'assignments/details/:id', component: DetailsAssignmentComponent },
   { path: 'vacation-types/add', component: AddVacationTypeComponent },
   { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
 
@@ -121,7 +144,7 @@ const routes: Routes = [
   { path: 'licenses/update/:id', component: UpdateLicenseComponent },
   { path: 'licenses/all', component: AllLicensesComponent },
   { path: 'licenses/details/:id', component: DetailsLicensesComponent },
-//path to settings
+// path to settings
   { path: 'settings/add', component: AddSettingsComponent},
   { path: 'settings/update/:id', component: UpdateSettingsComponent },
   { path: 'settings/all', component: AllSettingsComponent },
@@ -139,14 +162,14 @@ const routes: Routes = [
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   { path: 'blog-category/add', component: AddBlogCategoryComponent },
   { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
-  //routes pour l'affichage des formations
+  // routes pour l'affichage des formations
   { path: 'trainings/all',  component: AllTrainingsComponent},
   { path: 'trainings/details/:id', component: DetailsTrainingsComponent },
-  //routes pour ajout et update des contacts
-  { path: 'contacts/update/:id', component:UpdateContactComponent},
-  { path: 'contacts/add',component:AddContactComponent},
+  // routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component: UpdateContactComponent},
+  { path: 'contacts/add', component: AddContactComponent},
   { path: 'contacts/all', component: AllContactComponent },
-  { path: 'contacts/details/:id', component:DetailContactComponent},
+  { path: 'contacts/details/:id', component: DetailContactComponent},
   { path: 'contacts/update/:id', component: UpdateContactComponent },
   { path: 'contacts/add', component: AddContactComponent },
   { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
@@ -157,11 +180,11 @@ const routes: Routes = [
   { path: 'blog-posts/all', component: AllBlogPostComponent },
   { path: 'blog-posts/add', component: AddBlogPostComponent },
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
-  { path: 'blog-posts/details/:id', component:DetailBlogPostComponent},
-  { path: 'profile', component:UserProfileComponent},
+  { path: 'blog-posts/details/:id', component: DetailBlogPostComponent},
+  { path: 'profile', component: UserProfileComponent},
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
-  //{ path: '404', component: NotfoundComponent },
+  // { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
 @NgModule({
