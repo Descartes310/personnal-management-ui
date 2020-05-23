@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { AuthGuardService as AuthGuard } from './_guards/auth.guard'
 
@@ -16,20 +16,79 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
+import { UpdateProSituationComponent } from './pro_situations/update-pro-situation/update-pro-situation.component';
+import { ChatComponent } from './chat/chat.component'
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
 
-//const routes: Routes = [];
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+
+import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
+
+
+
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'pro-situation/add', component: AddProSituationComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: 'pro-situations/add', component: AddProSituationComponent },
+  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent},
+  { path: 'pro-situations/all',  component: AllProSituationComponent},
+  { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
+  { path: 'profiles/add', component: AddProfileComponent },
+  { path: 'profiles/update/:id', component: UpdateProfileComponent },
+  { path: 'licensetypes/add', component: AddLicensetypesComponent },
+  { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'disciplinary_boards/add', component: AddDisciplinaryBoardsComponent },
   { path: 'disciplinary_boards/update/:id', component: UpdateDisciplinaryBoardComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
+  { path: 'templates/create', component: TemplateCreateComponent },
+  { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'roles/details/:id', component: DetailsRoleComponent },
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
+  { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
+  { path: 'vacation-types/add', component: AddVacationTypeComponent },
+  { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+  { path: 'licenses/add', component: AddLicenseComponent },
+  { path: 'licenses/update/:id', component: UpdateLicenseComponent },
+  { path: 'divisions/add', component: AddDivisionComponent },
+  { path: 'divisions/update/:id', component: UpdateDivisionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'user_note_criterias', component: AddUserNoteCriteriasComponent },
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
+  { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
+  { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
   //{ path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

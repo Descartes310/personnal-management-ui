@@ -34,6 +34,33 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
+import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
+import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
+import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
+import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+import { ChatComponent } from './chat/chat.component';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
+import { AddAssignmentTypeComponent } from './assignment-types/add-assignment-type/add-assignment-type.component';
+import { UpdateAssignmentTypeComponent } from './assignment-types/update-assignment-type/update-assignment-type.component';
+import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+import { AddVacationTypeComponent } from './vacation_types/add-vacation-type/add-vacation-type.component';
+import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-type/update-vacation-type.component';
+import { AddLicenseComponent } from './licenses/add-license/add-license.component';
+import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
+import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+//import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component';
+import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { UpdateDivisionComponent } from './divisions/update-division/update-division.component';
+import { TemplateCreateComponent } from './templates/template-create/template-create.component';
+import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import {MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
+import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -61,12 +88,39 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddDisciplinaryBoardsComponent,
     UpdateDisciplinaryBoardComponent,
     AddUserNoteCriteriasComponent,
+    ChatComponent,
+    AddContactComponent,
+    UpdateContactComponent,
+    AddAssignmentTypeComponent,
+    UpdateAssignmentTypeComponent,
+    AddProfileComponent,
+    UpdateProfileComponent,
+    AddVacationTypeComponent,
+    UpdateVacationTypeComponent,
+    AddLicenseComponent,
+    UpdateLicenseComponent,
+    AddLicensetypesComponent,
+    UpdateLicensetypesComponent,
+    AllNotecriteriasComponent,
+    DetailsNotecriteriasComponent,
+    DeleteNotecriteriasComponent,
+    AllAssignmenttypeComponent,
+    DetailsAssignmenttypeComponent,
+    AddDivisionComponent,
+    UpdateDivisionComponent,
+    TemplateCreateComponent,
+    TemplateUpdateComponent,
+    DetailsProSituationComponent,
   ],
   imports: [
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularEditorModule,
     ReactiveFormsModule,
     PdfViewerModule,
     TranslateModule.forRoot({
