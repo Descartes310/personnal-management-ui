@@ -29,7 +29,7 @@
         "WeightLabel": "Index",
         "WeightField": "Select an index",
         "WeightLabelProSituation": "Type an index (the index must be a number between 1 and 100)",
-        "DaysLabel": "nombre de jour",
+        "DaysLabel": "Number of Days",
         "TitleLabel": "Title",
         "TitleField": "Please type a title...",
         "Trainer": "Trainer",

@@ -6,5 +6,5 @@ export class Submission extends Super<Submission> {
     public dest_user_id: number;
     public subject: string;
     public message: string;
-    public files: File;
+    public files :File;
 }
