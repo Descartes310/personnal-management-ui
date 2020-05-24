@@ -4,6 +4,9 @@ import { ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 import { StatisticService } from '../_services/statistic.service';
 import { Router } from '@angular/router';
+import { DoneesClefsService } from '../_services/donees-clefs.service';
+import { UserService } from '../_services/user.service';
+import { User } from '../_models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +23,16 @@ export class HomeComponent implements OnInit {
   listOfMonth: string[] = [];
   listofAssignmentnumber: number[] = [];
   listOfAssignment: any[] = [];
+
+  nbVacationPending: number;
+  nbVacationApproved: number;
+  nbSanctionPending: number;
+  nbAllUsers: number;
   constructor(
     private authService: AuthService,
     private statistiqueServive: StatisticService,
+    private doneeclefService: DoneesClefsService,
+    private userService: UserService,
     private router:Router
   ) {
     this.lineChartData = [
@@ -58,12 +68,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.getUser();
     this.getAssignmentByMonth();
+      this.getSanctionCour();
+    this.getVacationApproved()
+    this.getcountUsers();
+    this.getVacationCour();
   }
  
-
-  listSantion(){
-    this.router.navigate(['/vacations/all'])
-  }
 
   //recuperation des affectations groupes par mois
   getAssignmentByMonth() {
@@ -106,6 +116,71 @@ export class HomeComponent implements OnInit {
       case '11': return 'Nov';
       case '12': return 'Dec';
     }
+  }
+
+
+  //fonction pour la gestion des valeurs clef de la page accueil
+
+  getVacationCour() {
+    this.doneeclefService.getCongesStatus("PENDING").then(
+      response => {
+        console.log("nb de conge en cour:" + response)
+        this.nbVacationPending = response;
+      }
+    ).catch(
+      error => {
+        console.error(error)
+      }
+    )
+    
+
+  }
+  getVacationApproved() {
+    this.doneeclefService.getCongesStatus("APPROVED").then(
+      response => {
+        console.log("nb de conge en cour:" + response)
+        this.nbVacationApproved = response;
+      }
+    ).catch(
+      error => {
+        console.error(error)
+      }
+    )
+    
+
+  }
+  getSanctionCour() {
+    this.doneeclefService.getSanctionsCour().then(
+      response => {
+        console.log("nb de conge en cour:" + response)
+        this.nbSanctionPending = response;
+      }
+    ).catch(
+      error => {
+        console.error(error)
+      }
+    )
+    
+
+  }
+
+  getcountUsers() {
+    this.userService.all().then(
+      response => {
+        const listUsers: User[] = response;
+        this.nbAllUsers=listUsers.length;
+      }
+    ).catch(
+      error => {
+        console.error(error)
+      }
+    )
+
+  }
+ 
+
+  listSantion(){
+    this.router.navigate(['/vacations/all'])
   }
 
   
