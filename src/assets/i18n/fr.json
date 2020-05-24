@@ -81,7 +81,7 @@
         "SubmitSuccess": "La création du contact a réussie...",
         "ErrorSubmit": "echec d'ajout du contact",
         "UpdateErrorSubmit": "echec de modification du contact"
-    },        
+    },
     "Form": {
         "NameLabel": "Nom",
         "NameSelect":"Choisir votre structure",
@@ -110,12 +110,12 @@
         "Phone3Label": "Telephone 3",
         "Phone3Field": "troisieme numero...",
         "DescriptionField": "Veuillez entrer une description",
-        
+
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
         "WhatsappField": "Compte whatsapp...",
         "LinkedinField": "Compte linkedin...",
-        
+
         "NextLabel":"Suivant",
         "PreviousLabel":"Precedent",
         "WeightLabel": "Indice",
@@ -157,7 +157,7 @@
         "StartDateError":"veuillez entrez une date valide"
 
     },
-       
+
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
         "AssignmentTypeTitle": "Gestion des types d'affectation ",
@@ -197,7 +197,7 @@
     },
     "Vacation": {
         "Vacations": "Listes des congés",
-        "VacationAdd": " Nouveau type de congés",
+        "VacationAdd": " Nouveau congés",
         "VacationUpdate": "Mise à jour d'un type de congés",
         "VacationTitle": "Gestion des types de congés de l'application",
         "CreateVacation": "Enregistrer",

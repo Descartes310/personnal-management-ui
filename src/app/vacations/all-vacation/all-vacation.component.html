@@ -15,9 +15,9 @@
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Vacation.VacationAdd' | translate }}</p>
                 </a>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="tabs-animation">
     <div class="main-card mb-3 card">
@@ -26,35 +26,38 @@
             {{ 'Vacation.Vacations' | translate }}
         </div>
         <div class="card-body">
-            
+
             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ 'Form."CreatedAtField' | translate }}</th>
-                        <th>{{ 'Form."StatusMention' | translate }}</th>
+                        <th>{{ 'Form.NameLabel' | translate }}</th>
+                        <th>{{ 'Form.TypeLabel' | translate }}</th>
+                        <th>{{ 'Form.StatusMention' | translate }}</th>
                         <th>{{ 'Form.StartDateProposal' | translate }}</th>
-                        <th>{{ 'Form.StartDateAccord' | translate }}</th>
-                        <th>{{ 'Form.RequireDaysl' | translate }}</th>
-                        <th>{{ 'Form.AccordDays' | translate }}</th>
-                        <th>{{ 'Form.DescriptionLabel' | translate }}</th>
-                        <th>{{ 'Form."ReasonLabel"' | translate }}</th>
-                        
+                        <th>{{ 'Form.RequireDays' | translate }}</th>
+                        <th>{{ 'Form.ReasonLabel' | translate }}</th>
+                        <th>{{ 'Form.FileLabel' | translate }}</th>
+                        <th>{{ 'Form.CreatedAtField' | translate }}</th>
+
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let vacation of vacations,let i = index" id="tr{{ vacation.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 20%">{{ vacation.file }}</td>
-                        <td style="width: 20%">{{ vacation.status }}</td>
-                        <td style="width: 20%">{{ vacation.requested_start_date }}</td>
-                        <td style="width: 20%">{{ vacation.accorded_start_date }}</td>
-                        <td style="width: 20%">{{ vacation.requested_days }}</td>
-                        <td style="width: 20%">{{ vacation.accorded_days }}</td>
-                        <td style="width: 25%">{{ vacation.description }}</td>
-                        
+                        <td style="width: 10%">{{ vacation.user?.name }}</td>
+                        <td style="width: 10%">{{ vacation.vacation_type?.name }}</td>
+                        <td style="width: 10%">{{ vacation.status }}</td>
+                        <td style="width: 10%">{{ vacation.requested_start_date }}</td>
+                        <td style="width: 10%">{{ vacation.requested_days }}</td>
                         <td style="width: 10%">{{ vacation.raison }}</td>
+                        <td style="width: 5%">
+                          <a *ngIf="vacation.file" target="_blank" href="{{ vacation.file }}">
+                            <i class="fa fa-file fa-2x"></i>
+                          </a>
+                        </td>
+                        <td style="width: 10%">{{ vacation.created_at }}</td>
                         <td style="width: 15%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editVacation(vacation)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsVacation(vacation)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
