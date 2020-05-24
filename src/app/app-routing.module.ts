@@ -11,6 +11,11 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
+import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
+
+
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -58,6 +63,7 @@ import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.co
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
@@ -131,6 +137,8 @@ const routes: Routes = [
   { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
   { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
+  { path: 'disciplinary_boards/add', component: AddDisciplinaryBoardsComponent },
+  { path: 'disciplinary_boards/update/:id', component: UpdateDisciplinaryBoardComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
@@ -176,6 +184,11 @@ const routes: Routes = [
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
+  { path: 'professional-score', component: AddUserNoteCriteriasComponent },
+  { path: 'statistiques/view/:id', component:ViewUserStatComponent },
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
@@ -197,6 +210,7 @@ const routes: Routes = [
   { path: 'update-password', component: UpdatePasswordComponent },
 
   { path: 'submissions/add', component: AddSubmissionComponent },
+  { path: 'submissions/all', component: AllSubmissionsComponent },
   { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
   { path: 'sanctions/add', component: AddSanctionComponent },
   // { path: '404', component: NotfoundComponent },
@@ -221,6 +235,7 @@ const routes: Routes = [
 
   { path: 'career/add', component: AddCareerComponent },
   { path: 'career/update/:id', component: UpdateCareerComponent},
+  { path: 'promotions', component: AddCareerComponent },
 
   // { path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },

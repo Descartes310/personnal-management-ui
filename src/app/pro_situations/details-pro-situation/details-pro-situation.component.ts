@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./details-pro-situation.component.scss']
 })
 export class DetailsProSituationComponent implements OnInit {
-  
+
   pro_situation: ProSituation = new ProSituation();
   constructor(
     private proSituationService: ProSituationService,
@@ -30,8 +30,8 @@ export class DetailsProSituationComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get('Role.'+error.error.code)
-        .subscribe(val => this.notifService.danger(val));
+        this.translate.get('Role.' + error.error.code)
+          .subscribe(val => this.notifService.danger(val));
         this.router.navigate(['/pro_situations/all'])
       }
     )
