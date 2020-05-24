@@ -20,7 +20,7 @@ export class UserService {
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   add(formData: FormData): Promise<User> {
     return this.http.post<User>(Routes.USERS, formData).toPromise();
   }
@@ -28,7 +28,7 @@ export class UserService {
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   update(formData: FormData, id: number): Promise<User> {
     return this.http.post<User>(`${Routes.USERS}/${id}`, formData).toPromise();
   }
@@ -36,17 +36,21 @@ export class UserService {
   /**
    * @author Arléon Zemtsop
    * @email arleonzemtsop@gmail.com
-  */
+   */
   allProfiles(): Promise<any> {
     return this.http.get<any>(Routes.PROFILES + '/getProfiles').toPromise();
   }
 
   allUsers(): Promise<any> {
-        return this.http.get<any>(Routes.USERS+'/profiles').toPromise();
-    }
+    return this.http.get<any>(Routes.USERS + '/profiles').toPromise();
+  }
+
+  all(): Promise<any> {
+    return this.http.get<any>(Routes.USERS).toPromise();
+  }
 
   find(id: number): Promise<User> {
-        return this.http.get<User>(`${Routes.ROLE}/${id}`).toPromise();
-    }
-  
+    return this.http.get<User>(`${Routes.ROLE}/${id}`).toPromise();
+  }
+
 }

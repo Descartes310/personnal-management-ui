@@ -16,7 +16,7 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class CreateDiciplinaryTeamComponent implements OnInit {
 
-  
+
   diciplinaryTeamForm: FormGroup;
   isLoading = false;
   isError = false;
@@ -48,39 +48,39 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
   }
 
   getusers() {
-    this.userService.allUsers().then(
+    this.userService.all().then(
       response => {
         this.users = response;
         this.users_tmp = response;
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.notifService.danger('Une erreur s\'est produite');
       }
-    )
+    );
   }
 
 
-  selectAllUsers(event: any){
+  selectAllUsers(event: any) {
     this.selected_users = [];
-    if(event.target.checked) {
+    if (event.target.checked) {
       this.users_tmp.map(
         user => {
-          this.selected_users.push(user.id)
+          this.selected_users.push(user.id);
         }
-      )
+      );
     }
   }
 
-  onChecked(user, event){
-    if(event.target.checked) {
+  onChecked(user, event) {
+    if (event.target.checked) {
       this.selected_users.push(user.id);
     } else {
       this.selected_users.splice(this.selected_users.indexOf(user.id), 1);
     }
   }
 
-  isChecked(id: number){
+  isChecked(id: number) {
     return this.selected_users.includes(id);
   }
 
@@ -92,7 +92,7 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.diciplinaryTeamForm.invalid) {
       this.translate.get('Role.SubmitError')
@@ -101,7 +101,7 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
     }
 
 
-    if(this.selected_users.length <= 0) {
+    if (this.selected_users.length <= 0) {
       this.translate.get('diciplinaryTeam.SubmitUsersError')
         .subscribe(val => this.notifService.danger(val));
       return;
@@ -112,19 +112,17 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
     this.isLoading = true;
     const formData = new FormData();
     formData.append('name', '' + this.form.label.value);
-    this.selected_users.forEach( elt => {
-      formData.append('users[]', JSON.stringify(elt));
-    });
+    formData.append('users', JSON.stringify(this.selected_users));
     this.templateService.add(formData)
       .then(resp => {
         this.translate.get('diciplinaryTeam.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.diciplinaryTeamForm.reset();
-        //this.router.navigate(['']);
+        // this.router.navigate(['']);
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
         this.translate.get('diciplinaryTeam.DT_ALREADY_EXIST')
         .subscribe(val => this.notifService.danger(val));
       })
