@@ -87,10 +87,7 @@ export class HomeComponent implements OnInit {
             console.log('son total est ', this.listOfAssignment[key].length);
             this.listofAssignmentnumber.push(this.listOfAssignment[key].length);
             this.listOfMonth.push(this.getLabelOfMonth(key));
-            this.listofAssignmentnumber.sort(
-              
-            )
-            
+            this.getMaxNumberAndMaxMonth(this.listOfMonth)            
 
           }
         }
@@ -183,5 +180,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/vacations/all'])
   }
 
+  //
+  getMaxNumberAndMaxMonth(listOfMonth){
+    const a=listOfMonth.slice().sort()
+    console.log(a)
+  }
   
 }
