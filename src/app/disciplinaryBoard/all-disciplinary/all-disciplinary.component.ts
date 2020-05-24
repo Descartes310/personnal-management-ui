@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { Role } from 'src/app/_models/role.model';
-import { RoleService } from 'src/app/_services/role.service';
+import { DisciplinaryBoard } from 'src/app/_models/disciplinaryBoard.model';
+import { DisciplinaryBoardService } from 'src/app/_services/disciplinaryBoard.service';
 import { NotifService } from 'src/app/_services/notif.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-all-roles',
-  templateUrl: './all-roles.component.html',
-  styleUrls: ['./all-roles.component.scss']
+  selector: 'app-all-disciplinary',
+  templateUrl: './all-disciplinary.component.html',
+  styleUrls: ['./all-disciplinary.component.scss']
 })
-export class AllRolesComponent implements OnInit {
+export class AllDisciplinaryComponent implements OnInit {
 
-  roles: Role[] = [];
+  disciplinaryBoards: DisciplinaryBoard[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
   //SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  nom = 'le nom ici';
 
 
   constructor(
-    private roleService: RoleService,
+    private disciplinaryBoardService: DisciplinaryBoardService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
@@ -38,7 +39,7 @@ export class AllRolesComponent implements OnInit {
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-        { data: 'role' })
+        { data: 'disciplinaryBoard' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -52,40 +53,39 @@ export class AllRolesComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getRoles();
+    this.getDisciplinaryBoards();
   }
 
-  getRoles() {
+  getDisciplinaryBoards() {
     this.loading = true;
-    this.roleService.all().then(
+    this.disciplinaryBoardService.all().then(
       response => {
-        console.log(response);
-        this.roles = [];
-        response.data.map( role => {
-          this.roles.push(new Role(role));
-          console.log('ok\n\nok' + response.data + 'rte\n\n');
+        this.disciplinaryBoards = [];
+        //console.log(response)
+        response.map( disciplinaryBoard => {
+          this.disciplinaryBoards.push(new DisciplinaryBoard(disciplinaryBoard));
         });
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
         this.loading = false;
-      }
-    )
+       }
+      );
   }
 
-  editRole(role: Role) {
-    this.router.navigate(['/roles/update/'+role.id])
+  editDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {
+    this.router.navigate(['/disciplinaryBoards/update/' + disciplinaryBoard.id]);
   }
 
-  detailsRole(role: Role) {
-    this.router.navigate(['/roles/details/'+role.id])
+  detailsDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {
+    this.router.navigate(['/disciplinaryBoards/details/' + disciplinaryBoard.id]);
   }
 
-  deleteRole(role: Role) {
+  deleteDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -96,32 +96,33 @@ export class AllRolesComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.roleService.delete(role.id).then(
+        this.disciplinaryBoardService.delete(disciplinaryBoard.id).then(
           data => {
             this.blockUI.stop();
             Swal.fire(
               this.deleted,
               this.deletedMessage,
               'success'
-            )
-            this.getRoles();
+            );
+            this.getDisciplinaryBoards();
           }
         ).catch(
           error => {
-            console.log(error)
+            console.log(error);
             this.blockUI.stop();
-            this.translate.get('Role.'+error.error.code)
-            .subscribe(val => this.notifService.danger(val));
+            this.translate.get('disciplinaryBoard.' + error.error.code)
+              .subscribe(val => this.notifService.danger(val));
           }
-        )
+        );
 
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
+
 }

@@ -111,7 +111,7 @@ import { DetailsTemplatesComponent } from './templates/details-templates/details
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 
-//import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
+// import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -129,9 +129,9 @@ import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-dici
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
-//import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-//import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
-//import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
+// import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
+// import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
+// import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
 import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
 import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
@@ -142,6 +142,8 @@ import { AllDivisionComponent } from './divisions/all-division/all-division.comp
 import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -259,8 +261,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateDiciplinaryTeamComponent,
     AddCareerComponent,
     UpdateCareerComponent,
-  //  AddProfileComponent,
-    //UpdateProfileComponent,
+    // AddProfileComponent,
+    // UpdateProfileComponent,
     DecisionVacationComponent,
     AllVacationComponent,
     AddVacationComponent,
@@ -276,6 +278,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddSubmissionComponent,
     UpdateSubmissionComponent,
     AddSanctionComponent,
+    AllDisciplinaryComponent,
+    DetailsDisciplinaryComponent,
   ],
 
   imports: [
