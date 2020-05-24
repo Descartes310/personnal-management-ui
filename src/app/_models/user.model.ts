@@ -2,7 +2,9 @@ import { Super } from './super.model';
 
 export class User extends Super<User> {
 
-    public login: string;
-    public password: string;
-    
+  login: string;
+  last_login: string;
+  password: string;
+  city: string;
+
 }

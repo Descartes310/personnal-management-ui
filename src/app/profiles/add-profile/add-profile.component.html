@@ -1,0 +1,212 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'Profile.Profiles' | translate }}
+                <div class="page-title-subheading">{{ 'Profile.ProfileTitle' | translate }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="from" style="margin-left: auto; margin-right: auto;">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                {{ 'Profile.Profiles' | translate }}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <form (submit)="onSubmit()" [formGroup]="profileForm">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="name">{{ "Form.NameLabel" | translate }}</label>
+                                              <input type="text" placeholder="{{ 'Form.NameField' | translate }}" id="name" (keyup)="computeName($event)" formControlName="name" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                              <label for="placeholder">{{"Form.PlaceholderLabel" | translate}}</label>
+                                              <input type="text" class="form-control" placeholder="{{ 'Form.PlaceholderField' | translate }}" id="place-holder" formControlName="placeholder" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                                <div class="form-group col-md-6" >
+                                                  <label for="step">{{ "Form.stepLabel" | translate }}</label>
+                                                  <input type="number" class="form-control"  placeholder="{{ 'Form.stepField' | translate }}" id="step" formControlName="step">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                  <label for="default">{{"Form.defaultLabel" | translate}}</label>
+                                                  <input type="text" class="form-control" placeholder="{{ 'Form.defaultField' | translate }}" id="default" formControlName="default">
+                                                </div>
+                                            </div>
+                                        <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                        <label for="min">{{ "Form.MinLabel" | translate }}</label>
+                                                        <input type="number" class="form-control" placeholder="{{ 'Form.MinField' | translate }}" id="min" formControlName="min">
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                        <label for="max">{{"Form.MaxLabel" | translate}}</label>
+                                                        <input type="number" class="form-control" placeholder="{{ 'Form.MaxField' | translate }}" id="max" formControlName="max">
+                                                </div>
+                                        </div>
+                                            
+                                            <div>
+                                            <label for="type">{{"Form.TypeLabel" | translate}}</label>
+                                            <select class="custom-select" id="type" formControlName="type" required (change)="showAction($event)">
+                                            <option selected>{{"Form.TypeFields" | translate}}</option>
+                                            <option value="number">{{"Form.TypeIntLabel" | translate}}</option>
+                                            <option value="string">{{"Form.TypeStringLabel" | translate}}</option>
+                                            <option value="boolean">{{"Form.TypeBooleanLabel" | translate}}</option>
+                                            <option value="text">{{"Form.TypeTextLabel" | translate}}</option>
+                                            <option value="date">{{"Form.TypeDateLabel" | translate}}</option>
+                                            <option value="time">{{"Form.TypeTimeLabel" | translate}}</option>
+                                            <option value="password">{{"Form.TypePasswordLabel" | translate}}</option>
+                                            <option value="email">{{"Form.TypeEmailLabel" | translate}}</option>
+                                            <option value="select">{{"Form.TypeSelectLabel" | translate}}</option>
+                                          </select>
+                                        </div> 
+                                        
+                                        <div >
+                                            <ng-container *ngIf="showTable" >
+                                             
+                                              <div class="form-row">
+                                                 <div class="form-group col-md-12" >
+                                                    <table id="example" class="table table-hover table-striped table-bordered">
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Noms des options</th>
+                                                            <th>Actions</th>           
+                                                        </tr>
+                                                        <tr *ngFor="let option of options,let i = index">
+                                                            <td>{{i+1}}</td>
+                                                            <td>                                                    
+                                                                <input type="text" placeholder="entrer les options" class="form-control" value="{{ option.value }}" (keyup)="updateOption(option.id, $event)" (change)="updateOption(option.id, $event)">
+                                                            </td>
+                                                            <td>
+                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-success" *ngIf="i == options.length-1" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
+                                                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger" *ngIf="option.value" (click)="removeOption(option.id)">{{ "Profile.deleteOption" | translate }}</button>                             
+                                                                
+                                                            </td>
+                                                        </tr>
+                                                        <tr *ngIf="options.length == 0">
+                                                            <td colspan="2">0</td>
+                                                            <td>
+                                                                <button class="btn btn-primary" (click)="addOption()">{{ "Profile.addOption" | translate }}</button>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                 </div>
+                                                  <div class="form-group col-md-5">    
+                                                  </div>
+                                                  <div class="form-group col-md-3">
+                                                  </div>
+                                              </div>
+                                             
+                                            </ng-container>
+                                        </div>                
+                                        <div class="position-relative form-group">
+                                            <label for="description"
+                                                class="">{{ "Form.DescriptionLabel" | translate }}
+                                            </label>
+                                            <textarea name="text"
+                                                placeholder="{{ 'Form.DescriptionField' | translate }}"
+                                                id="add_profile_description" class="form-control"
+                                                formControlName="description" >
+
+                                            </textarea>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4" >
+                                              <label for="slug"></label>
+                                              <input type="hidden" class="form-control"   id="slug" formControlName="slug">
+                                            </div>
+                                        </div>
+                                        
+                                        <div _ngcontent-syp-c8="" class="widget-content-wrapper">
+                                            <div _ngcontent-syp-c8="" class="widget-content-left mr-2">
+                                                <div _ngcontent-syp-c8="" class="custom-checkbox custom-control">
+                                                    <input type="checkbox" class="custom-control-input" id="is_required" (change)="isRequired($event)" formControlName="is_required">
+                                                    <label class="custom-control-label" for="is_required">{{"Form.Is_requiredLabel" | translate}}</label>
+                                               
+                                                  </div>
+                                              </div>
+                                       <div _ngcontent-syp-c8="" class="widget-content-left">
+                                           <div _ngcontent-syp-c8="" class="widget-subheading">&nbsp;
+                                          </div>
+                                          </div>
+                                      </div>   
+
+                                        <div _ngcontent-syp-c8="" class="widget-content-wrapper">
+                                            <div _ngcontent-syp-c8="" class="widget-content-left mr-2">
+                                                <div _ngcontent-syp-c8="" class="custom-checkbox custom-control">
+                                                    <input type="checkbox" class="custom-control-input" id="is_updatable" (change)="isUpdatable($event)" formControlName="is_updatable"> 
+                                                    <label class="custom-control-label" for="is_updatable">{{"Form.Is_updatableLabel" | translate}}</label>
+                                               
+                                                  </div>
+                                              </div>
+                                       <div _ngcontent-syp-c8="" class="widget-content-left">
+                                           <div _ngcontent-syp-c8="" class="widget-subheading">&nbsp;
+                                          </div>
+                                          </div>
+                                      </div>   
+
+                                          <div _ngcontent-syp-c8="" class="widget-content-wrapper">
+                                              <div _ngcontent-syp-c8="" class="widget-content-left mr-2">
+                                                  <div _ngcontent-syp-c8="" class="custom-checkbox custom-control">
+                                                    <input type="checkbox" class="custom-control-input" id="is_unique" (change)="isUnique($event)" formControlName="is_unique">
+                                                    <label class="custom-control-label" for="is_unique">{{"Form.Is_uniqueLabel" | translate}}</label>
+                                                 
+                                                    </div>
+                                                </div>
+                                         <div _ngcontent-syp-c8="" class="widget-content-left">
+                                               <div _ngcontent-syp-c8="" class="widget-subheading">&nbsp;
+                                            </div>
+                                            </div>
+                                        </div>          
+                                        <div _ngcontent-syp-c8="" class="widget-content-wrapper">
+                                            <div _ngcontent-syp-c8="" class="widget-content-left mr-2">
+                                                <div _ngcontent-syp-c8="" class="custom-checkbox custom-control">
+                                                  <input type="checkbox" class="custom-control-input" id="is_private" (change)="isPrivate($event)" formControlName="is_private">
+                                                  <label class="custom-control-label" for="is_private">{{"Form.Is_privateLabel" | translate}}</label>
+                                               
+                                                  </div>
+                                              </div>
+                                       <div _ngcontent-syp-c8="" class="widget-content-left">
+                                             <div _ngcontent-syp-c8="" class="widget-subheading">&nbsp;
+                                          </div>
+                                          </div>
+                                      </div>          
+                                      
+                                        <div class="d-flex align-items-center" style="width: 100%;">
+                                            <button [disabled]="isLoading" class="btn btn-primary btn-lg"
+                                                style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading"
+                                                    style="font-size: 1.2em; padding: 0px; margin: 5px;">
+                                                    {{ "Profile.AddProfile" | translate }}</p>
+                                                <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                                                    <div class="ball-scale-multiple">
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                        <div style="background-color: white;"></div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

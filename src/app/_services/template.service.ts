@@ -24,4 +24,12 @@ export class TemplateService {
         return this.http.get<Template>(`${Routes.Template}/${id}`).toPromise();
     }
 
+    all(): Promise<any> {
+        return this.http.get<any>(Routes.Template).toPromise();
+    }
+
+    delete(id: number): Promise<Template[]> {
+        return this.http.delete<Template[]>(`${Routes.Template}/${id}`).toPromise();
+    }
+
 }

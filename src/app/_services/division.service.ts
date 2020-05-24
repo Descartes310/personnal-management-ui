@@ -20,7 +20,8 @@ export class DivisionService {
     }
 
     update(formData: FormData, id: number): Promise<Division> {
-        return this.http.put<Division>(`${Routes.DIVISION}/${id}`, formData).toPromise();
+      console.log(formData.get('name'));
+        return this.http.post<Division>(`${Routes.DIVISION}/${id}`, formData).toPromise();
     }
 
     all(): Promise<any> {
@@ -35,7 +36,4 @@ export class DivisionService {
     delete(id: number): Promise<Division[]> {
         return this.http.delete<Division[]>(`${Routes.DIVISION}/${id}`).toPromise();
     }
-
-    
-
 }
