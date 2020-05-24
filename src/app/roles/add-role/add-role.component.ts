@@ -3,7 +3,6 @@ import { RoleService } from 'src/app/_services/role.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { Role } from 'src/app/_models/role.model';
 import { Router } from '@angular/router';
 
 @Component({
