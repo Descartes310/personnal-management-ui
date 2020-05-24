@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'Vacation.VacationTitle' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="row">
     <div class="col-md-8">
@@ -27,7 +27,59 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                       
+
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.NameLabel' | translate }}
+                                                        </div>
+                                                        <div>{{ vacation.user?.name }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.TypeLabel' | translate }}
+                                                        </div>
+                                                        <div>{{ vacation.vacation_type?.name }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.FileLabel' | translate }}
+                                                        </div>
+                                                        <div>
+                                                          <a *ngIf="vacation.file" target="_blank"
+                                                            href="{{ vacation.file }}">{{ vacation.file }}
+                                                          </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
                                         <li class="list-group-item">
                                             <div class="widget-content p-0">
                                                 <div class="widget-content-wrapper">

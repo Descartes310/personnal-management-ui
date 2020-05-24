@@ -1,0 +1,65 @@
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="page-title-icon">
+                <i class="pe-7s-hammer icon-gradient bg-ripe-malin">
+                </i>
+            </div>
+            <div>{{ 'DisciplinaryTeam.DisciplinaryTeams' | translate }}
+                <div class="page-title-subheading">{{ 'DisciplinaryTeam.DisciplinaryTeamTitle' | translate }}
+                </div>
+            </div>
+            <!-- <div class="page-title-actions">
+                <a type="button" [routerLink]="['/DisciplinaryTeam/add']" data-toggle="tooltip" title="{{ 'DisciplinaryTeam.AddDisciplinaryTeam' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'DisciplinaryTeam.AddDisciplinaryTeam' | translate }}</p>
+                </a>
+            </div> -->
+        </div>   
+    </div>
+</div>   
+
+<div class="tabs-animation md-6">
+    <div class="main-card mb-3 card">
+        <div class="card-header">
+            <i class="header-icon pe-7s-hammer icon-gradient bg-love-kiss"> </i>
+            {{ 'DisciplinaryTeam.DisciplinaryTeams' | translate }}
+        </div>
+        <div class="card-body">
+            
+            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>{{ 'Form.NameLabel' | translate }}</th>
+                        <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let disciplinaryteam of disciplinaryteams,let i = index" id="tr{{ disciplinaryteam.id }}">
+                        <td style="width: 5%;">{{ i+1 }}</td>
+                        <td style="width: 12%">{{ disciplinaryteam.name }}</td>
+                        <td style="width: 19%">{{ disciplinaryteam.created_at }}</td>
+                        <td style="width: 8%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot *ngIf="loading && (!disciplinaryteams || disciplinaryteams.length)">
+                    <td colspan="7" class="text-center">
+                        <div class="spinner-border spinner-sm">
+                            <span class="sr-only">Patientez svp...</span>
+                        </div>
+                    </td>
+                </tfoot>
+                <tfoot *ngIf="!loading && (!disciplinaryteams || !disciplinaryteams.length)">
+                    <td colspan="7" class="text-center">
+                        Liste vide
+                    </td>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

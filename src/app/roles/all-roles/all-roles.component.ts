@@ -37,7 +37,7 @@ export class AllRolesComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'role' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -59,9 +59,11 @@ export class AllRolesComponent implements OnInit {
     this.loading = true;
     this.roleService.all().then(
       response => {
+        console.log(response);
         this.roles = [];
         response.data.map( role => {
           this.roles.push(new Role(role));
+          console.log('ok\n\nok' + response.data + 'rte\n\n');
         });
       }
     ).catch(
@@ -112,7 +114,7 @@ export class AllRolesComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

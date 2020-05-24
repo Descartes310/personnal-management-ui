@@ -44,11 +44,11 @@ export class BlogPostService {
   }
 
   allPostsWithCategorieId(categories_id:number): Promise<any> {
-    return this.http.get<any>(`${Routes.BlogCategorie}/${categories_id}`).toPromise();
+    return this.http.get<any>(`${Routes.BLOGCATEGORY}/${categories_id}`).toPromise();
   }
   //recuperation de toutes les categories
   all_blog_categories(): Promise<any> {
-    return this.http.get<any>(Routes.BlogCategorie).toPromise();
+    return this.http.get<any>(Routes.BLOGCATEGORY).toPromise();
   }
   
 
