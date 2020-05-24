@@ -329,7 +329,7 @@
         "SubmitSuccess": "La création de l'affectation a réussie..." ,
         "ASSIGNMENT_NOT_FOUND": "Le l'affectation n'a pas été retrouvé",
         "ASSIGMENT_ALREADY_EXISTS": "l'affection existe déjà"
-    } ,
+    },
 
     "AssignmentType": {
         "AssignmentType": "Type d'affectation",
@@ -395,10 +395,9 @@
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
-
-    "Licensetype": {
-        "Licensetypes": " Type de permission",
-        "LicensetypesTitle": "Gestion des types de permission",
+    "Licensetype":{
+        "Licensetypes":" Type de permission",
+        "LicensetypesTitle":"Gestion des types de permission",
         "CreateLicense": "Créer la permission",
         "UpdateLicensetype": "Mettre à jour de la permission",
         "NoUpdateLicensetype": "Mettre à jour de la permission echouee",
@@ -701,6 +700,8 @@
         "SubmitErrorLicense_type": "Veuillez selectionner un type de permission",
         "SubmitErrorLicense":"echec de la creation verifier vos donnees ",
         "LICENSE_NOT_FOUND": "La permission n'a pas été retrouvé",
-        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà"
+        "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
+        "UpdateSuccess": "La mise à jour du type de congés a réussie...",
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     }
 }
