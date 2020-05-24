@@ -72,6 +72,8 @@ import { CreateDiciplinaryTeamComponent } from './disciplinary-teams/create-dici
 import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-diciplinary-team/update-diciplinary-team.component';
 import { AllTrainingsComponent } from './trainings/all-trainings/all-trainings.component';
 import { DetailsTrainingsComponent } from './trainings/details-trainings/details-trainings.component';
+import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
+import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 
 import { AllTemplatesComponent } from './templates/all-templates/all-templates.component';
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
@@ -126,11 +128,13 @@ const routes: Routes = [
   { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
   { path: 'licensetypes/all', component: AllLicensetypesComponent },
   { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
+  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
+  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
   { path: 'roles/add', component: AddRoleComponent },
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
-  { path: 'users/all', component: AllUsersComponent }, 
+  { path: 'users/all', component: AllUsersComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'vacation/demandes', component: AllDemandesVacationComponent },
 
@@ -195,10 +199,10 @@ const routes: Routes = [
   { path: 'submissions/add', component: AddSubmissionComponent },
   { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
   { path: 'sanctions/add', component: AddSanctionComponent },
-  //{ path: '404', component: NotfoundComponent },
+  // { path: '404', component: NotfoundComponent },
 
   { path: 'blog-posts/all', component: AllBlogPostComponent },
-  { path: 'blog-category/details/:id', component:DetailsComponent},
+  { path: 'blog-category/details/:id', component: DetailsComponent},
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },
   { path: 'blog-category/all', component: AllBlogCategoryComponent },
@@ -216,9 +220,9 @@ const routes: Routes = [
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
 
   { path: 'career/add', component: AddCareerComponent },
-  { path: 'career/update/:id', component:UpdateCareerComponent},
+  { path: 'career/update/:id', component: UpdateCareerComponent},
 
-  //{ path: '404', component: NotfoundComponent },
+  // { path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];

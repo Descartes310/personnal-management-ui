@@ -65,6 +65,7 @@
         "NoteCriteria": "Critères de notation",
         "Config": "Configurations",
         "RoleAndPer": "Rôles et permissions",
+        "DisciplinaryBoard": "Conseils de discipline",
         "Personnel": "Personnels",
         "Submissions": "Courriels",
         "ProfileUpdate": "Mise à jour du profile"
@@ -134,6 +135,15 @@
         "ERROR_TRY_AGAIN": "L'ancien mot de passe est incorrect. Veuillez reéssayer",
         "ERROR_NOT_MATCH": "Le mot de passe de confirmation ne correspond pas au nouveau mot de passe"
     },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Conseils de discipline",
+      "DisciplinaryBoardTitle": "Status disciplinaire",
+      "AddDisciplinaryBoard": "Ajouter un nouveau status disciplinaire",
+      "CreateDisciplinaryBoard": "Créer le status disciplinaire",
+      "UpdateDisciplinaryBoard": "Mettre à jour",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "le status disciplinaire n'a pas ete retrouvé"
+    },
     "Contact": {
         "Contacts": "Contacts",
         "ContactTitle": "Gestion des Contact de l'application",
@@ -151,6 +161,11 @@
         "DescriptionsLabel": "Description",
         "MaxsLabel": "Note maximale",
         "MinsLabel": "Note minimale",
+        "Reason": "Motif",
+        "Team": "Equipe disciplinaire",
+        "Date": "Effectif le",
+        "Location": "Localisation",
+        "Decision": "Decision",
         "NameLabel": "Nom",
         "start_dateLabel": "Date de debut",
         "end_dateLabel": "Date de fin",
@@ -191,12 +206,14 @@
         "Phone3Label": "Telephone 3",
         "Phone3Field": "troisieme numero...",
         "DescriptionField": "Veuillez entrer une description",
+
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
         "WhatsappField": "Compte whatsapp...",
         "LinkedinField": "Compte linkedin...",
         "NextLabel": "Suivant",
-        "PreviousLabel": "Precedent",
+        "PreviousLabel": "Précédent",
+
         "WeightLabel": "Indice",
         "HeadPrincipalLabel": "Information Principale",
         "HeadAddresLabel": "Addresse",

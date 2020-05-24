@@ -42,3 +42,4 @@ export const CAREER = SERVER + 'careers';
 export const NOTECRITERIAS = SERVER + 'note_criterias';
 export const ASSIGNMENTTYPE = SERVER + 'assignment_types';
 export const SYNC_USER_ABILITIES = SERVER + 'sync_user_abilities/{user_id}';
+export const dISCIPLINARYBOARD = SERVER + 'disciplinary_boards';
