@@ -16,24 +16,24 @@ import { User } from '../_models/user.model';
 export class HomeComponent implements OnInit {
 
   user;
-  smallNumber = 0;
-  bigNumber = 0;
-  smallDate = "";
-  bigDate = "";
   listOfMonth: string[] = [];
   listofAssignmentnumber: number[] = [];
   listOfAssignment: any[] = [];
-
+  //variable du petit tableau de droite
   nbVacationPending: number;
   nbVacationApproved: number;
   nbSanctionPending: number;
   nbAllUsers: number;
+  //tableau associatif
+  tabGraph: any[] = [
+    { month: "nothing", total: 0 }
+  ]
   constructor(
     private authService: AuthService,
     private statistiqueServive: StatisticService,
     private doneeclefService: DoneesClefsService,
     private userService: UserService,
-    private router:Router
+    private router: Router
   ) {
     this.lineChartData = [
       { data: this.listofAssignmentnumber, label: "Nombre de demande de Conge par mois" }
@@ -60,7 +60,6 @@ export class HomeComponent implements OnInit {
       backgroundColor: 'rgba(255,255,0,0.28)',
     },
   ];
-  labels:string[] = ['Jan','Fev','Mai','Avr','Mai','Juin','Juillet','Aout','Sept','Oct','Nov','Dec'];
   lineChartLegend = false;
   lineChartPlugins = [];
   lineChartType = 'line';
@@ -68,37 +67,36 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.getUser();
     this.getAssignmentByMonth();
-      this.getSanctionCour();
+    this.getSanctionCour();
     this.getVacationApproved()
     this.getcountUsers();
     this.getVacationCour();
   }
- 
+
 
   //recuperation des affectations groupes par mois
   getAssignmentByMonth() {
     this.statistiqueServive.getAssignmentByMonth().then(
       response => {
         this.listOfAssignment = response;
-        console.log(this.listOfAssignment)
+        this.tabGraph = [];
         for (const key in this.listOfAssignment) {
           if (this.listOfAssignment.hasOwnProperty(key)) {
-            console.log('un numero de mois est ', key);
-            console.log('son total est ', this.listOfAssignment[key].length);
             this.listofAssignmentnumber.push(this.listOfAssignment[key].length);
             this.listOfMonth.push(this.getLabelOfMonth(key));
-            this.getMaxNumberAndMaxMonth(this.listOfMonth)            
+            this.tabGraph.push({ month: this.getLabelOfMonth(key), total: this.listOfAssignment[key].length });
 
           }
         }
-        //recuperation des mois
-    
+        //tri du tableau associatif par ordre croissant du nombre total de permissiont
+        this.tabGraph.sort((a, b) => a.total - b.total)
+       
       }
     )
     console.log(this.listOfMonth)
   }
 
-  getLabelOfMonth(month:string) {
+  getLabelOfMonth(month: string) {
     switch (month) {
       case '01': return 'Jan';
       case '02': return 'Fev';
@@ -129,8 +127,6 @@ export class HomeComponent implements OnInit {
         console.error(error)
       }
     )
-    
-
   }
   getVacationApproved() {
     this.doneeclefService.getCongesStatus("APPROVED").then(
@@ -143,8 +139,6 @@ export class HomeComponent implements OnInit {
         console.error(error)
       }
     )
-    
-
   }
   getSanctionCour() {
     this.doneeclefService.getSanctionsCour().then(
@@ -157,7 +151,7 @@ export class HomeComponent implements OnInit {
         console.error(error)
       }
     )
-    
+
 
   }
 
@@ -165,7 +159,7 @@ export class HomeComponent implements OnInit {
     this.userService.all().then(
       response => {
         const listUsers: User[] = response;
-        this.nbAllUsers=listUsers.length;
+        this.nbAllUsers = listUsers.length;
       }
     ).catch(
       error => {
@@ -174,16 +168,15 @@ export class HomeComponent implements OnInit {
     )
 
   }
- 
 
-  listSantion(){
+
+  listSantion() {
     this.router.navigate(['/vacations/all'])
   }
 
   //
-  getMaxNumberAndMaxMonth(listOfMonth){
-    const a=listOfMonth.slice().sort()
+  getMaxNumberAndMaxMonth(listOfMonth) {
+    const a = listOfMonth.slice().sort()
     console.log(a)
   }
-  
 }
