@@ -15,7 +15,6 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class UpdateDiciplinaryTeamComponent implements OnInit {
 
-   
   diciplinaryTeamForm: FormGroup;
   isLoading = false;
   isError = false;
@@ -42,44 +41,43 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
   async ngOnInit() {
     this.initForm();
     this.getusers();
-    const diciplinaryTeam_id = +this.route.snapshot.paramMap.get("id");
-
-          this.id=diciplinaryTeam_id;
+    const diciplinaryTeam_id = +this.route.snapshot.paramMap.get('id');
+    this.id = diciplinaryTeam_id;
     this.templateService.find(diciplinaryTeam_id).then(
       data => {
         this.assign = data;
         this.initForm(true);
         this.assign.users.map( user => {
-          this.selected_users.push(user.id)
-        })
+          this.selected_users.push(user.id);
+        });
       }
     ).catch(
       error => {
-        this.translate.get('Role.'+error.error.code)
+        this.translate.get('Role.' + error.error.code)
         .subscribe(val => this.notifService.danger(val));
-        //this.router.navigate([''])
+        // this.router.navigate([''])
       }
-    )
+    );
 
   }
 
-   selectAllUsers(event: any){
+   selectAllUsers(event: any) {
     this.selected_users = [];
-    if(event.target.checked) {
+    if (event.target.checked) {
       this.users_tmp.map(
         user => {
-          this.selected_users.push(user.id)
+          this.selected_users.push(user.id);
         }
-      )
+      );
     }
   }
 
    initForm(withRole = false) {
-    if(withRole) {
+    if (withRole) {
       this.diciplinaryTeamForm = this.formBuilder.group({
         label: [this.assign.name, [Validators.required]]
       });
-    }else {
+    } else {
       this.diciplinaryTeamForm = this.formBuilder.group({
         label: ['', [Validators.required]]
       });
@@ -91,16 +89,16 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
   }
 
   getusers() {
-    this.userService.allUsers().then(
+    this.userService.all().then(
       response => {
         this.users = response;
         this.users_tmp = response;
       }
     ).catch(
       error => {
-        this.notifService.danger("Une erreur s'est produite");
+        this.notifService.danger('Une erreur s\'est produite');
       }
-    )
+    );
   }
 
 
@@ -109,15 +107,15 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
     this.users = this.users_tmp.filter( user => user.name.toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
-  onChecked(user, event){
-    if(event.target.checked) {
+  onChecked(user, event) {
+    if (event.target.checked) {
       this.selected_users.push(user.id);
     } else {
       this.selected_users.splice(this.selected_users.indexOf(user.id), 1);
     }
   }
 
-  isChecked(id: number){
+  isChecked(id: number) {
     return this.selected_users.includes(id);
   }
 
@@ -126,7 +124,7 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.diciplinaryTeamForm.invalid) {
       this.translate.get('Role.SubmitError')
@@ -134,7 +132,7 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
       return;
     }
 
-    if(this.selected_users.length <= 0) {
+    if (this.selected_users.length <= 0) {
       this.translate.get('diciplinaryTeam.SubmitUsersError')
         .subscribe(val => this.notifService.danger(val));
       return;
@@ -146,21 +144,17 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
 
 
     formData.append('name', '' + this.form.label.value);
-    this.selected_users.forEach( elt => {
-      formData.append('users[]', JSON.stringify(elt));
-    });
-    
-    console.log("id:"+this.id);
-    this.templateService.update(formData,this.id)
+    formData.append('users', JSON.stringify(this.selected_users));
+
+    this.templateService.update(formData, this.id)
       .then(resp => {
         this.translate.get('diciplinaryTeam.UpdateSuccess')
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
-        this.diciplinaryTeamForm.reset();
-        //this.router.navigate(['']);
+        // this.diciplinaryTeamForm.reset();
+        // this.router.navigate(['']);
       })
       .catch(err => {
-        console.log(err)
         this.translate.get('diciplinaryTeam.DT_ALREADY_EXIST')
         .subscribe(val => this.notifService.danger(val));
       })

@@ -122,7 +122,6 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
         // this.router.navigate(['']);
       })
       .catch(err => {
-        console.log(err);
         this.translate.get('diciplinaryTeam.DT_ALREADY_EXIST')
         .subscribe(val => this.notifService.danger(val));
       })
