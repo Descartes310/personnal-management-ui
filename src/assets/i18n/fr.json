@@ -165,7 +165,8 @@
         "ContactTitle": "Gestion des Contact de l'application",
         "AddContact": "Ajouter un nouveau contact",
         "CreateContact": "Créer le contact",
-        "UpdateContact": "Mettre à jour",
+        "UpdateContact": "Mettre à jour"
+    },
     "NoteCriteria": {
         "NoteCriterias": "Critère de notation",
         "NoteCriteriasAdd": " Nouveau critère de notation",

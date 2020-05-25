@@ -3,7 +3,6 @@ import { DiciplinaryTeamService } from 'src/app/_services/diciplinary-team.servi
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { DiciplinaryTeam } from 'src/app/_models/diciplinary-team.model';
 import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { UserService } from 'src/app/_services/user.service';
