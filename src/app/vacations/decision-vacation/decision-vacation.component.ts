@@ -100,7 +100,6 @@ export class DecisionVacationComponent implements OnInit {
     }
     
     this.isLoading = true;
-    this.isLoadingcancel = false;
     const formData = new FormData();
     formData.append('user_id', '' + this.vacation.user_id);
     formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
@@ -111,7 +110,7 @@ export class DecisionVacationComponent implements OnInit {
     formData.append('status', 'CANCELLED' );
     this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Demande_V.SubmitSuccess')
+        this.translate.get('Demande_V.CancelVacationNotif')
         .subscribe(val => this.notifService.success(val));
        
         this.router.navigate(['/vacation/demandes']);
@@ -141,11 +140,9 @@ export class DecisionVacationComponent implements OnInit {
     if ( !this.form.requested_days.value || currentDate >= this.form.requested_days.value) {
       this.translate.get('Form.DateError')
         .subscribe(val => this.notifService.danger(val));
-      this.isLoading = false;
       return;
     }
-    this.isLoading =false;
-    this.isLoadingvalide = true;
+    this.isLoading =true;
     const formData = new FormData();
     formData.append('user_id', '' + this.vacation.user_id);
     formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
@@ -158,7 +155,7 @@ export class DecisionVacationComponent implements OnInit {
     formData.append('status', 'APPROVED' );
     this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Vacation_V.SubmitSuccess')
+        this.translate.get('Demande_V.AcceptVacationNotif')
         .subscribe(val => this.notifService.success(val));
        
         this.router.navigate(['/vacation/demandes']);
@@ -188,8 +185,7 @@ export class DecisionVacationComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-    this.isLoading = false;
-    this.isLoadingrefuse = true;
+    this.isLoading = true;
     const formData = new FormData();
     formData.append('user_id', '' + this.vacation.user_id);
     formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
@@ -200,7 +196,7 @@ export class DecisionVacationComponent implements OnInit {
     formData.append('status', 'REJECTED' );
     this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Demande_V.SubmitSuccess')
+        this.translate.get('Demande_V.RefuseVacationNotif')
         .subscribe(val => this.notifService.success(val));
         
         this.router.navigate(['/vacation/demandes']);

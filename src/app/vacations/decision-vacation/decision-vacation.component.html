@@ -62,39 +62,18 @@
                                     <div class="col-md-4">
                                         <div class="d-flex align-items-center position-relative" style="width: 100%;">
                                             <button [disabled]="isLoading" (click)="refuseRequest()" class="mb-2 mr-2 btn-icon btn-pill btn btn-outline-danger" style ="justify-content: center; align-items: center; flex: 1;"><i *ngIf="!isLoading" class="pe-7s-close-circle btn-icon-wrapper"> </i> {{ 'Demande_V.RefuseVacation' | translate }}
-                                                <div *ngIf="isLoadingrefuse" style="padding: 15px; margin-left: 50%;">
-                                                    <div class="ball-scale-multiple">
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                    </div>
-                                                </div>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="d-flex align-items-center position-relative" style="width: 100%;">
                                             <button [disabled]="isLoading" (click)="cancelRequest()" class="mb-2 mr-2 btn-icon btn-pill btn btn-outline-secondary" style ="justify-content: center; align-items: center; flex: 1;"><i *ngIf="!isLoading" class="pe-7s-less btn-icon-wrapper"> </i> {{ 'Demande_V.CancelVacation' | translate }}
-                                                <div *ngIf="isLoadingcancel" style="padding: 15px; margin-left: 50%;">
-                                                    <div class="ball-scale-multiple">
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                    </div>
-                                                </div>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="d-flex align-items-center position-relative" style="width: 100%;">
                                             <button [disabled]="isLoading" (click)="valideRequest()" class="mb-2 mr-2 btn-icon btn-pill btn btn-outline-success" style ="justify-content: center; align-items: center; flex: 1;"><i class="pe-7s-check btn-icon-wrapper"> </i> {{ 'Demande_V.AcceptVacation' | translate }}
-                                                <div *ngIf="isLoadinvalide" style="padding: 15px; margin-left: 50%;">
-                                                    <div class="ball-scale-multiple">
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                        <div style="background-color: white;"></div>
-                                                    </div>
-                                                </div>
                                             </button>
                                       </div>
                                     </div>
