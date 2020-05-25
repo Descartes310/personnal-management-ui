@@ -31,10 +31,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th> Nom </th>
-                        <th> Ville </th>
-                        <th> Situation professionnelle </th>
-                        <th> Division </th>
+                        <th> {{ 'Form.NamesLabel' | translate }} </th>
+                        <th> {{ 'User.ProSituation' | translate }} </th>
+                        <th> {{ 'User.UserDivisions' | translate }} </th>
+                        <th> {{ 'User.Ville' | translate }} </th>
                         <th>{{ 'Form.Options' | translate }}</th>
                     </tr>
                 </thead>
@@ -54,12 +54,6 @@
                         <td *ngIf="!user.first_name && !user.last_name" style="width: 19%">
                             ----
                         </td>
-                        <td *ngIf="user.city" style="width: 19%">
-                            {{ user.city }}
-                        </td>
-                        <td *ngIf="!user.city" style="width: 19%">
-                            ----
-                        </td>
                         <td *ngIf="user.pro_situation" style="width: 19%">
                             {{ user.pro_situation }}
                         </td>
@@ -70,6 +64,12 @@
                             {{ user.division }}
                         </td>
                         <td *ngIf="!user.division" style="width: 19%">
+                            ----
+                        </td>
+                          <td *ngIf="user.city" style="width: 19%">
+                            {{ user.city }}
+                        </td>
+                         <td *ngIf="!user.city" style="width: 19%">
                             ----
                         </td>
 

@@ -13,14 +13,14 @@ export class DisciplinaryBoardService {
     ) { }
 
     all(): Promise<any> {
-        return this.http.get<any>(Routes.dISCIPLINARYBOARD).toPromise();
+        return this.http.get<any>(Routes.DISCIPLINARY_BOARD).toPromise();
     }
 
     find(id: number): Promise<DisciplinaryBoard> {
-        return this.http.get<DisciplinaryBoard>(`${Routes.dISCIPLINARYBOARD}/${id}`).toPromise();
+        return this.http.get<DisciplinaryBoard>(`${Routes.DISCIPLINARY_BOARD}/${id}`).toPromise();
     }
 
     delete(id: number): Promise<DisciplinaryBoardService[]> {
-        return this.http.delete<DisciplinaryBoardService[]>(`${Routes.dISCIPLINARYBOARD}/${id}`).toPromise();
+        return this.http.delete<DisciplinaryBoardService[]>(`${Routes.DISCIPLINARY_BOARD}/${id}`).toPromise();
     }
 }

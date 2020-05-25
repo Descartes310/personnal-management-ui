@@ -32,6 +32,7 @@ export class UpdateUserComponent implements OnInit {
   public userInputKeys: any[] = [];
   public cities: any[] = [];
   public proSituations: any[] = [];
+  public files: any = [];
 
 	public personnalInfoForm: FormGroup;
   public publicInfoForm: FormGroup;
@@ -474,15 +475,52 @@ export class UpdateUserComponent implements OnInit {
   }
 
   public processFile1(event, inputSlug) {
-    let file: File = event.target.files[0];
-    this.data.append(inputSlug, file);
+
+    if(this.files.length > 0)
+      this.removeFileIfExist(event.target.files[0], inputSlug);
+
+    const file: File = event.target.files[0];
+
+    this.files.push({
+      slug: inputSlug,
+      file: event.target.files[0]
+    })
+    
     this.data_tmp1[inputSlug] = file;
+    console.log(this.data_tmp1);
+
   }
 
   public processFile2(event, inputSlug) {
-    let file: File = event.target.files[0];
-    this.data.append(inputSlug, file);
+
+    if(this.files.length > 0)
+      this.removeFileIfExist(event.target.files[0], inputSlug);
+
+    const file: File = event.target.files[0];
+
+    this.files.push({
+      slug: inputSlug,
+      file: event.target.files[0]
+    })
+
     this.data_tmp2[inputSlug] = file;
+    console.log(this.data_tmp2);
+
+  }
+
+  public removeFileIfExist(file: File, slug) {
+ 
+    let tmp = {
+      slug: slug,
+      file: file
+    };
+
+    let files_tmp = this.files;
+    this.files = [];
+    let file_tmp: any[] = this.files.map(file => {
+      if(file.slug !== tmp.slug && file.file !== tmp.file)
+        this.files.push(tmp);
+    });
   }
 
   public validatePersonnalInfoForm() {
@@ -652,22 +690,45 @@ export class UpdateUserComponent implements OnInit {
   }
 
   public computeDataToSend() {
+
     Object.keys(this.personnalInfo).map(key => {
-      if(this.data_tmp1[key]) {
-        this.data.append(key, this.data_tmp1[key]);
+      
+      let file_tmp = null;
+
+      this.files.map(file => {
+        if(file.slug === key) {
+          file_tmp = file;
+          console.log(file_tmp);
+        }
+      });
+
+      if(file_tmp !== null) {
+        console.log(file_tmp);
+        this.data.append(key, file_tmp.file);
       } else {
         this.data.append(key, this.personnalInfo[key].value);
         this.data_tmp1[key] = this.personnalInfo[key].value;
       }
+
     });
 
     Object.keys(this.publicInfo).map(key => {
-      if(this.data_tmp2[key]) {
-        this.data.append(key, this.data_tmp2[key]);
+     
+      let file_tmp = null;
+
+      this.files.map(file => {
+        if(file.slug === key) {
+          file_tmp = file;
+        }
+      });
+
+      if(file_tmp !== null) {
+        this.data.append(key, file_tmp.file);
       } else {
         this.data.append(key, this.publicInfo[key].value);
-        this.data_tmp2[key] = this.publicInfo[key].value;
+        this.data_tmp1[key] = this.publicInfo[key].value;
       }
+     
     });
 
     this.selected_permissions.forEach( elt => {

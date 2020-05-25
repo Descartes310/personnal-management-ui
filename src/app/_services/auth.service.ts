@@ -70,7 +70,11 @@ export class AuthService {
     }
 
     getToken(){
-       return  JSON.parse(localStorage.getItem('token'));
+        try {
+            return  JSON.parse(localStorage.getItem('token'));
+        } catch(error) {
+            return null;
+        }
     }
 
     saveRoles(roles: any) {
@@ -78,15 +82,23 @@ export class AuthService {
     }
 
     getRoles(){
-       return  JSON.parse(localStorage.getItem('roles'));
+        try {
+            return  JSON.parse(localStorage.getItem('roles'));
+        } catch(error) {
+            return null;
+        }
     }
 
     savePermissions(permissions: any) {
         localStorage.setItem('permissions', JSON.stringify(permissions));
     }
 
-    getPermissions(){
-       return  JSON.parse(localStorage.getItem('permissions'));
+    getPermissions() {
+        try {
+            return  JSON.parse(localStorage.getItem('permissions'));
+        } catch(error) {
+            return null;
+        }
     }
 
     saveUser(user: any) {
@@ -94,7 +106,11 @@ export class AuthService {
     }
 
     getUser(){
-       return  JSON.parse(localStorage.getItem('user'));
+        try {
+            return  JSON.parse(localStorage.getItem('user'));
+        } catch(error) {
+            return null;
+        }
     }
 
     hasPermission(permissions: string[]): boolean {

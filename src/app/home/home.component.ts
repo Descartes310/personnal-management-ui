@@ -13,10 +13,10 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   user;
-  nbVacationPending: number;
-  nbVacationApproved: number;
-  nbSanctionPending: number;
-  nbAllUsers: number;
+  nbVacationPending: number = 0;
+  nbVacationApproved: number = 0;
+  nbSanctionPending: number = 0;
+  nbAllUsers: number = 0;
   constructor(
     private authService: AuthService,
     private userService: UserService,
@@ -25,12 +25,18 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this.authService.getUser();
+    this.initUser();
     this.getSanctionCour();
     this.getVacationApproved()
     this.getcountUsers();
     this.getVacationCour();
 
+  }
+
+  public initUser() {
+    let user_tmp = this.authService.getUser();
+    if(user_tmp)
+      this.user = user_tmp;
   }
 
   getVacationCour() {

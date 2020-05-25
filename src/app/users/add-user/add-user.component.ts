@@ -33,6 +33,7 @@ export class AddUserComponent implements OnInit {
   cities: any[] = [];
   divisions: any[] = [];
   proSituations: any[] = [];
+  public files: any = [];
 
   personnalInfoForm: FormGroup;
   publicInfoForm: FormGroup;
@@ -441,15 +442,52 @@ export class AddUserComponent implements OnInit {
   }
 
   public processFile1(event, inputSlug) {
+
+    if(this.files.length > 0)
+      this.removeFileIfExist(event.target.files[0], inputSlug);
+
     const file: File = event.target.files[0];
-    this.data.append(inputSlug, file);
+
+    this.files.push({
+      slug: inputSlug,
+      file: event.target.files[0]
+    })
+    
     this.data_tmp1[inputSlug] = file;
+    console.log(this.data_tmp1);
+
   }
 
   public processFile2(event, inputSlug) {
+
+    if(this.files.length > 0)
+      this.removeFileIfExist(event.target.files[0], inputSlug);
+
     const file: File = event.target.files[0];
-    this.data.append(inputSlug, file);
+
+    this.files.push({
+      slug: inputSlug,
+      file: event.target.files[0]
+    })
+
     this.data_tmp2[inputSlug] = file;
+    console.log(this.data_tmp2);
+
+  }
+
+  public removeFileIfExist(file: File, slug) {
+ 
+    let tmp = {
+      slug: slug,
+      file: file
+    };
+
+    let files_tmp = this.files;
+    this.files = [];
+    let file_tmp: any[] = this.files.map(file => {
+      if(file.slug !== tmp.slug && file.file !== tmp.file)
+        this.files.push(tmp);
+    });
   }
 
   public validatePersonnalInfoForm() {
@@ -633,22 +671,42 @@ export class AddUserComponent implements OnInit {
 
     Object.keys(this.personnalInfo).map(key => {
 
-      if (this.data_tmp1[key]) {
-        this.data.append(key, this.data_tmp1[key]);
+      let file_tmp = null;
+
+      this.files.map(file => {
+        if(file.slug === key) {
+          file_tmp = file;
+          console.log(file_tmp);
+        }
+      });
+
+      if(file_tmp !== null) {
+        console.log(file_tmp);
+        this.data.append(key, file_tmp.file);
       } else {
         this.data.append(key, this.personnalInfo[key].value);
         this.data_tmp1[key] = this.personnalInfo[key].value;
-      }
+      } 
 
     });
 
     Object.keys(this.publicInfo).map(key => {
-      if (this.data_tmp2[key]) {
-        this.data.append(key, this.data_tmp2[key]);
+
+      let file_tmp = null;
+
+      this.files.map(file => {
+        if(file.slug === key) {
+          file_tmp = file;
+        }
+      });
+
+      if(file_tmp !== null) {
+        this.data.append(key, file_tmp.file);
       } else {
         this.data.append(key, this.publicInfo[key].value);
-        this.data_tmp2[key] = this.publicInfo[key].value;
+        this.data_tmp1[key] = this.publicInfo[key].value;
       }
+
     });
 
     // this.selected_permissions.forEach( elt => {
@@ -684,6 +742,7 @@ export class AddUserComponent implements OnInit {
         };
         this.roleService.syncUserAbilities(createdUser.id, rolesPermissions)
         .then(res => {
+          console.log(res);
           this.translate.get('User.CreateUserSuccess')
           .subscribe(val => this.notifService.success(val));
           this.isSubmitted = false;
@@ -694,6 +753,7 @@ export class AddUserComponent implements OnInit {
           document.getElementById('reset-btn').click();
         })
         .catch(err => {
+          console.log(err);
           this.translate.get('User.CreateUserError')
             .subscribe(val => this.notifService.danger(val));
         });

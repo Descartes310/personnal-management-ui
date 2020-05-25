@@ -82,10 +82,10 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     this.authService.login(this.form.login.value, this.form.password.value, this.keepMeLoggedIn)
       .then(resp => {
+        this.authService.saveUser(resp.user);
+        this.authService.saveToken(resp.token);
         this.authService.savePermissions(resp.permissions);
         this.authService.saveRoles(resp.roles);
-        this.authService.saveToken(resp.token);
-        this.authService.saveUser(resp.user);
         this.notifService.success('La connexion a reussie')
         this.router.navigate(['/home']);
       })

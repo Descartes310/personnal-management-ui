@@ -215,6 +215,7 @@
         "Location": "Localisation",
         "Decision": "Decision",
         "NameLabel": "Nom",
+        "Options": "Opérations",
         "start_dateLabel": "Date de debut",
         "end_dateLabel": "Date de fin",
         "free_daysLabel": "Jours libres",
@@ -698,7 +699,9 @@
         "UsersList": "Liste du personnel",
         "UserListTiltle": "Gestion du personnel et des utilisateurs",
         "AddUser": "Ajouter membre",
-        "UserDivisions": "Division de travail"
+        "UserDivisions": "Division de travail",
+        "Ville": "Ville",
+        "ProSituation": "Situation professionnelle"
     },
     "Vacation": {
         "VACATION": "CONGE",
