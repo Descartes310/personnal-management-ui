@@ -45,9 +45,9 @@
                 <tbody *ngIf="!loading">
                     <tr *ngFor="let assignment of assignments, let i = index" id="tr{{ assignment.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 10%" >{{ assignment.user.fisrt_name+" "+assignment.user?.fisrt_name }}</td>
-                        <td style="width: 10%" >{{ assignment.assignment_type?.name }}</td>
-                        <td style="width: 10%" >{{ assignment.destination }}</td>
+                        <td style="width: 10%" >{{assignment.user.first_name +" "+assignment.user.last_name}}</td>
+                        <td style="width: 10%" >{{ assignment.assignment_type.name }}</td>
+                        <td style="width: 10%" >{{ assignment.user.city }}</td>
                         <td style="width: 10%" >{{ assignment.signature_date}}</td>
                         <td style="width: 10%" >{{ assignment.installation_date}}</td>
                         <td style="width: 10%" >{{ assignment.raison }}</td>

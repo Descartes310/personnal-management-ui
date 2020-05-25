@@ -690,12 +690,15 @@ export class AddUserComponent implements OnInit {
           document.getElementById('reset-btn').click();
         })
         .catch(err => {
+          console.log(err);
           this.translate.get('User.CreateUserError')
             .subscribe(val => this.notifService.danger(val));
         });
       }
     ).catch(
       error => {
+        console.log(error);
+        
         if (error.status && error.code) {
           if (error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
