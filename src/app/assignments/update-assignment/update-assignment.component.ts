@@ -128,7 +128,7 @@ export class UpdateAssignmentComponent implements OnInit {
 
     this.assignmentService.update(formData, this.assignment.id)
       .then(resp => {
-        this.translate.get('Assignment.SubmitSuccess')
+        this.translate.get('Assignment.UpdateSuccess')
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentForm.reset();

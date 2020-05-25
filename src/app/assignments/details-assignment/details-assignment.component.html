@@ -5,8 +5,8 @@
                 <i class="pe-7s-shield icon-gradient bg-ripe-malin">
                 </i>
             </div>
-            <div>{{ 'Assignement.Assignements' | translate }}
-                <div class="page-title-subheading">{{ 'Assignement.AssignementTitle' | translate }}
+            <div>{{ 'Assignment.AssignmentDetails' | translate }}
+                <div class="page-title-subheading">{{ 'Assignment.AssignmentTitle' | translate }}
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-                    {{ 'Assignement.Assignements' | translate }}
+                    {{ 'Assignment.Assignments' | translate }}
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -39,7 +39,7 @@
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.UserLabel' | translate }}</div>
                                                         <div>
-                                                          <a [routerLink]="['/users/details/' + assignment.user_id]">{{ assignment.user?.login }}</a>
+                                                          <a [routerLink]="['/users/details/' + assignment.user_id]">{{ assignment.user?.first_name+" "+assignment.user?.last_name}}</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -92,7 +92,7 @@
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">
                                                           {{ 'Form.DestinationLabel' | translate }}</div>
-                                                        <div>{{ assignment.destination }}</div>
+                                                        <div>{{ assignment?.destination }}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -109,7 +109,7 @@
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.SignatureDateLabel' | translate }}</div>
-                                                        <div>{{ assignment.signature_date }}</div>
+                                                        <div>{{ assignment?.signature_date }}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +124,7 @@
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.InstallationDateLabel' | translate }}</div>
-                                                        <div>{{ assignment.installation_date }}</div>
+                                                        <div>{{ assignment?.installation_date }}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,7 +139,7 @@
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.DescriptionLabel' | translate }}</div>
-                                                        <div>{{ assignment.description }}</div>
+                                                        <div>{{ assignment?.description }}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,7 +154,7 @@
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.CreatedAtLabel' | translate }}</div>
-                                                        <div>{{ assignment.created_at }}</div>
+                                                        <div>{{ assignment?.created_at }}</div>
                                                     </div>
                                                 </div>
                                             </div>

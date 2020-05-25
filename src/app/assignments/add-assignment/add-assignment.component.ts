@@ -105,14 +105,13 @@ export class AddAssignmentComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    
-    formData.append('user_id', '' + this.form.user_assignment.value);
-    formData.append('assignment_type_id', '' + this.form.type_assignment.value);
-    formData.append('destination', '' + this.form.destination.value);
     if (this.currentDate >= this.form.signature_date.value || this.currentDate >= this.form.installation_date.value) {
       this.translate.get('Form.StartDateError')
         .subscribe(val => this.notifService.danger(val));
     }
+    formData.append('user_id', '' + this.form.user_assignment.value);
+    formData.append('assignment_type_id', '' + this.form.type_assignment.value);
+    formData.append('destination', '' + this.form.destination.value);
     formData.append('signature_date', '' + this.form.signature_date.value);
     formData.append('installation_date', '' + this.form.installation_date.value);
     formData.append('raison', '' + this.form.raison.value);
@@ -126,7 +125,7 @@ export class AddAssignmentComponent implements OnInit {
         this.assignmentForm.reset();
       })
       .catch(err => {
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('Assignment.SendError')
           .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
