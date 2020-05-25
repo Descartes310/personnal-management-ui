@@ -6,7 +6,7 @@
                 </i>
             </div>
             <div>{{ 'Contract.Contracts' | translate }}
-                <div class="page-title-subheading">{{ 'ContractTitle' | translate }}
+                <div class="page-title-subheading">{{ 'Contract.ContractTitle' | translate }}
                 </div>
             </div>
         </div>
@@ -134,15 +134,18 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                                
-                                    <div class="page-title-actions">
-                                        <a type="button" href="{{downloadFile}}" target="_blank" data-toggle="tooltip" title="{{ 'Contract.DownloadContract' | translate }}" (click)="download()" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
-                                            <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                                            <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Contract.AddContract' | translate }}</p>
-                                        </a>
+                                </div>                            
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="d-flex align-items-center" style="width: 100%;">
+                                                 <a type="button"  href="{{downloadFile}}" target="_blank" (click)="download()" data-toggle="tooltip" title="{{ 'Contract.Download' | translate }}"  data-placement="bottom"  class="mb-2 mr-2 btn-icon btn btn-info" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'Contract.DownloadContract' | translate }}</p>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                               
+                                </div>   
                             </div>
                         </div>
                     </div>

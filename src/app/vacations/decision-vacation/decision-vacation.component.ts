@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Vacation } from 'src/app/_models/vacation.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-decision-vacation',
@@ -18,7 +19,9 @@ export class DecisionVacationComponent implements OnInit {
   isLoading = false;
   isError = false;
   isSuccess = false;
-  isSubmitted = false;
+  isLoadingcancel = false;
+  isLoadingrefuse = false;
+  isLoadingvalide = false;
   vacation: Vacation = new Vacation();
 
   constructor(
@@ -56,9 +59,7 @@ export class DecisionVacationComponent implements OnInit {
         raison: [this.vacation.raison],
         description: [this.vacation.description],
         requested_start_date: [this.vacation.requested_start_date, [Validators.required]],
-        accorded_start_date: [this.vacation.accorded_start_date],
         requested_days: [this.vacation.requested_days, [Validators.required]],
-        accorded_days: [this.vacation.accorded_days],
         created_at: [this.vacation.created_at, [Validators.required]],
       });
     }else {
@@ -66,9 +67,7 @@ export class DecisionVacationComponent implements OnInit {
         raison: [''],
         description: [''],
         requested_start_date: ['', [Validators.required]],
-        accorded_start_date: [''],
         requested_days: ['', [Validators.required]],
-        accorded_days: [''],
         created_at: [''],
       });
     }
@@ -80,36 +79,42 @@ export class DecisionVacationComponent implements OnInit {
 
   
   
-  cancelRequest(vacation: Vacation) {
-    this.isSubmitted = true;
+  cancelRequest() {
+ 
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false;
-    
-    // Si la validation a echoué, on arrete l'execution de la fonction
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
-    if (!vacation) {
-      this.translate.get('Vacation.SubmitError')
+    if (this.vacation.requested_days <= 0) {
+      this.translate.get('Form.DaysError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
+    if (!this.form.requested_days.value || currentDate >= this.form.requested_days.value) {
+      this.translate.get('Form.DateError')
+        .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
+    
+    this.isLoading = true;
+    this.isLoadingcancel = false;
     const formData = new FormData();
-    formData.append('user_id', '' + vacation.user_id);
-    formData.append('vacation_type_id', '' + vacation.vacation_type_id);
-    formData.append('raison', '' + vacation.raison);
-    formData.append('description', '' + vacation.description);
-    formData.append('requested_start_date', '' + vacation.requested_start_date);
-    formData.append('accorded_start_date', '' + vacation.accorded_start_date);
-    formData.append('requested_days', '' + vacation.requested_days);
-    formData.append('accorded_days', '' + vacation.accorded_days);
+    formData.append('user_id', '' + this.vacation.user_id);
+    formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
+    formData.append('raison', '' + this.vacation.raison);
+    formData.append('description', '' + this.vacation.description);
+    formData.append('requested_start_date', '' + this.vacation.requested_start_date);
+    formData.append('requested_days', '' + this.vacation.requested_days);
     formData.append('status', 'CANCELLED' );
-    this.vacationService.update(formData, vacation.id)
+    this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Role.SubmitSuccess')
+        this.translate.get('Demande_V.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.router.navigate(['/vacation/all']);
+       
+        this.router.navigate(['/vacation/demandes']);
       })
       .catch(err => {
         console.log(err)
@@ -120,35 +125,43 @@ export class DecisionVacationComponent implements OnInit {
   }
     
 
-  valideRequest(vacation: Vacation) {
-    this.isSubmitted = true;
+  valideRequest() {
+
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
-    // Si la validation a echoué, on arrete l'execution de la fonction
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
-    if (!vacation) {
-      this.translate.get('Role.SubmitError')
+    if (this.vacation.requested_days <= 0) {
+      this.translate.get('Form.DaysError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
+    if ( !this.form.requested_days.value || currentDate >= this.form.requested_days.value) {
+      this.translate.get('Form.DateError')
+        .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
+    this.isLoading =false;
+    this.isLoadingvalide = true;
     const formData = new FormData();
-    formData.append('user_id', '' + vacation.user_id);
-    formData.append('vacation_type_id', '' + vacation.vacation_type_id);
-    formData.append('raison', '' + vacation.raison);
-    formData.append('description', '' + vacation.description);
-    formData.append('requested_start_date', '' + vacation.requested_start_date);
-    formData.append('accorded_start_date', '' + vacation.accorded_start_date);
-    formData.append('requested_days', '' + vacation.requested_days);
-    formData.append('accorded_days', '' + vacation.accorded_days);
+    formData.append('user_id', '' + this.vacation.user_id);
+    formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
+    formData.append('raison', '' + this.vacation.raison);
+    formData.append('description', '' + this.vacation.description);
+    formData.append('requested_start_date', '' + this.vacation.requested_start_date);
+    formData.append('accorded_start_date', '' + this.form.requested_start_date.value);
+    formData.append('requested_days', '' + this.vacation.requested_days);
+    formData.append('accorded_days', '' + this.form.requested_days.value);
     formData.append('status', 'APPROVED' );
-    this.vacationService.update(formData, vacation.id)
+    this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Role.SubmitSuccess')
+        this.translate.get('Vacation_V.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.router.navigate(['/vacation/all']);
+       
+        this.router.navigate(['/vacation/demandes']);
       })
       .catch(err => {
         console.log(err)
@@ -158,35 +171,39 @@ export class DecisionVacationComponent implements OnInit {
       .finally(() => this.isLoading = false);
   }
 
-  refuseRequest(vacation: Vacation) {
-    this.isSubmitted = true;
+  refuseRequest() {
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
-    // Si la validation a echoué, on arrete l'execution de la fonction
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
-    if (!vacation) {
-      this.translate.get('Role.SubmitError')
+    if (this.vacation.requested_days <= 0) {
+      this.translate.get('Form.DaysError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
+    if (!this.form.requested_days.value || currentDate >= this.form.requested_days.value) {
+      this.translate.get('Form.DateError')
+        .subscribe(val => this.notifService.danger(val));
+      return;
+    }
+    this.isLoading = false;
+    this.isLoadingrefuse = true;
     const formData = new FormData();
-    formData.append('user_id', '' + vacation.user_id);
-    formData.append('vacation_type_id', '' + vacation.vacation_type_id);
-    formData.append('raison', '' + vacation.raison);
-    formData.append('description', '' + vacation.description);
-    formData.append('requested_start_date', '' + vacation.requested_start_date);
-    formData.append('accorded_start_date', '' + vacation.accorded_start_date);
-    formData.append('requested_days', '' + vacation.requested_days);
-    formData.append('accorded_days', '' + vacation.accorded_days);
+    formData.append('user_id', '' + this.vacation.user_id);
+    formData.append('vacation_type_id', '' + this.vacation.vacation_type_id);
+    formData.append('raison', '' + this.vacation.raison);
+    formData.append('description', '' + this.vacation.description);
+    formData.append('requested_start_date', '' + this.vacation.requested_start_date);
+    formData.append('requested_days', '' + this.vacation.requested_days);
     formData.append('status', 'REJECTED' );
-    this.vacationService.update(formData, vacation.id)
+    this.vacationService.update(formData, this.vacation.id)
       .then(resp => {
-        this.translate.get('Role.SubmitSuccess')
+        this.translate.get('Demande_V.SubmitSuccess')
         .subscribe(val => this.notifService.success(val));
-        this.isSubmitted = false;
-        this.router.navigate(['/vacation/all']);
+        
+        this.router.navigate(['/vacation/demandes']);
       })
       .catch(err => {
         console.log(err)
@@ -195,40 +212,6 @@ export class DecisionVacationComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
   }
-
-
-  // onSubmit() {
-  //   this.isSubmitted = true;
-  //   this.isError = false;
-  //   this.isSuccess = false;
-  //   this.isLoading = false
-  //   // Si la validation a echoué, on arrete l'execution de la fonction
-  //   if (this.vacationForm.invalid) {
-  //     this.translate.get('Vacation.SubmitError')
-  //       .subscribe(val => this.notifService.danger(val));
-  //     return;
-  //   }
-
-
-  //   this.isLoading = true;
-  //   const formData = new FormData();
-  //   formData.append('display_name', '' + this.form.label.value);
-  //   formData.append('name', '' + this.form.name.value);
-  //   formData.append('description', '' + this.form.description.value);
-  //   this.vacationService.update(formData, this.vacation.id)
-  //     .then(resp => {
-  //       this.translate.get('Vacation.SubmitSuccess')
-  //       .subscribe(val => this.notifService.success(val));
-  //       this.isSubmitted = false;
-  //       this.router.navigate(['/vacations/all']);
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //       this.translate.get('Vacation.'+err.error.code)
-  //       .subscribe(val => this.notifService.danger(val));
-  //     })
-  //     .finally(() => this.isLoading = false);
-  // }
 
 }
 

@@ -482,8 +482,10 @@
     "Contract": {
         "Contracts": "Contrats",
         "ContractTitle": "Gestion des contrats de l'application",
-        "AddContract": "Ajouter un nouveau contract",
+        "AddContract": "Ajouter un nouveau contrat",
         "CreateContract": "Créer le Contrat",
+        "DownloadContract": "Télécharger le contrat",
+        "Download": "Téléchage",
         "UpdateContract": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitErrordate": "les dates entrées sont incorrectes",
