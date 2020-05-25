@@ -38,7 +38,7 @@ export class AllBlogCategoryComponent implements OnInit {
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: 'role' })
+        { data: 'cat blog' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -75,9 +75,12 @@ export class AllBlogCategoryComponent implements OnInit {
     )
   }
 
+  editblogcat(blogcat: BlogCategory) {
+    this.router.navigate(['blog-category/update/'+blogcat.id])
+  }
   
   detailsblogcat(blogcat: BlogCategory) {
-    this.router.navigate(['BlogCategory/details/'+blogcat.id])
+    this.router.navigate(['blog-category/details/'+blogcat.id])
   }
 
   deleteblogcat(blogcat: BlogCategory) {

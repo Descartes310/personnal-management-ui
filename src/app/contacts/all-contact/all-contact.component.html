@@ -58,14 +58,14 @@
                         </td>
                     </tr>
                 </tbody>
-                <tfoot *ngIf="loading && (!roles || !roles.length)">
+                <tfoot *ngIf="loading && (!contacts || !contacts.length)">
                     <td colspan="7" class="text-center">
                         <div class="spinner-border spinner-sm">
                             <span class="sr-only">Patientez svp...</span>
                         </div>
                     </td>
                 </tfoot>
-                <tfoot *ngIf="!loading && (!pro_situations || !pro_situations.length)">
+                <tfoot *ngIf="!loading && (!contacts || !contacts.length)">
                     <td colspan="7" class="text-center">
                         Liste vide
                     </td>

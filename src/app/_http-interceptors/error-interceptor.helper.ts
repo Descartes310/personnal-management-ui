@@ -30,7 +30,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         return data;
       }))
       .pipe(catchError((err) => {
-        if (err && (err.status === 0 || err.status === 401)) {
+        if (err && err.status === 401 && !request.url.includes('token')) {
             return this.logout();
         } else {
           return this.errorToMessage(err);

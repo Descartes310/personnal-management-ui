@@ -2,7 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i class="pe-7s-plane icon-gradient bg-tempting-azure">
+                <i class="metismenu-icon pe-7s-hammer">
                 </i>
             </div>
             <div>{{ 'Sanction.Sanctions' | translate }}
@@ -18,7 +18,7 @@
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
-                    <i class="pe-7s-plane icon-gradient bg-tempting-azure"> </i>
+                    <i class="metismenu-icon pe-7s-hammer"> </i>
                     {{ 'Sanction.Sanctions' | translate }}
                 </div>
                 <div class="card-body">
@@ -31,17 +31,18 @@
                                             <div class="col-md-6 col-sm-6 -col-xs-6">
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail">{{ "Form.UserLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_sanction.errors ? 'is-invalid' : '' }}" formControlName="user_sanction" >
-                                                        <option [value]="user.id"  *ngFor="let user of users">{{user.first_name +" "+user.last_name}}</option>
+                                                    <select class=" form-control {{ isSubmitted && form.user_sanction.errors ? 'is-invalid' : '' }}" name="user_sanction" formControlName="user_sanction" >
+                                                        <option *ngFor="let user of users" [value]="user.id"  >{{user.first_name +" "+user.last_name}}</option>
                                                     </select>
-                                                </div> 
+                                                </div>
+                                                 
                                                  <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="">{{ "Form.SubjectLabel" | translate }} </label>
                                                     <input name="subject" id="exampleEmail" placeholder="{{ 'Form.SubjectField' | translate }}" type="text" formControlName="subject" class="form-control {{ isSubmitted && form.subject.errors ? 'is-invalid' : '' }}">
                                                 </div>
                                                  <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="">{{ "Form.RaisonLabel" | translate }} </label>
-                                                    <input name="raison" id="exampleEmail" placeholder="{{ 'Form.RaisonField' | translate }}" type="text" formControlName="raison" class="form-control {{ isSubmitted && form.raison.errors ? 'is-invalid' : '' }}">
+                                                    <input name="raison" id="exampleEmail" type="text" formControlName="raison" class="form-control {{ isSubmitted && form.raison.errors ? 'is-invalid' : '' }}">
                                                 </div> 
                                             </div> 
                                             <div class="col-md-6 col-sm-6 -col-xs-6">
@@ -71,7 +72,7 @@
                                             <div class="col-md-12 col-sm-12 -col-xs-12">
                                                 <div class="d-flex align-items-center" style="width: 100%;">
                                                     <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                        <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Assignment.CreateAssignment" | translate }}</p>
+                                                        <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Sanction.CreateSanction" | translate }}</p>
                                                         <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                                             <div class="ball-scale-multiple">
                                                                 <div style="background-color: white;"></div>

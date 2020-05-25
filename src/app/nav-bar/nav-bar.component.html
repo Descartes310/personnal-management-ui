@@ -88,18 +88,6 @@
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
                                     <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-note2 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                        {{ "SideBar.NotesPros" | translate }}
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-display1 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                        {{ "SideBar.Career" | translate }}
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-hammer icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                         {{ "SideBar.Sanction" | translate }}
                                     </button>
@@ -212,7 +200,8 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                    <img width="42" height="42" class="rounded-circle" src="{{user ? user.avatar ? user.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}"
+                                    alt="">
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-lg dropdown-menu dropdown-menu-right" style="cursor: pointer;">
                                     <div class="dropdown-menu-header">
@@ -222,14 +211,14 @@
                                                 <div class="widget-content p-0">
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
-                                                            <img width="42" class="rounded-circle"
-                                                                    src="assets/images/avatars/1.jpg"
+                                                            <img width="42" height="42" class="rounded-circle"
+                                                            src="{{user ? user.avatar ? user.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}"
                                                                     alt="">
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">Alina Mcloughlin
+                                                            <div class="widget-heading" *ngIf="user">{{user.first_name}} {{user.last_name}}
                                                             </div>
-                                                            <div class="widget-subheading opacity-8">A short profile description
+                                                            <div class="widget-subheading opacity-8" *ngIf="user">{{user.poste}}
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right mr-2">
@@ -265,10 +254,11 @@
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
                             <div class="widget-heading">
-                                Alina Mclourd
+                               {{user.last_name == null || user.first_name == null ? 'UNKNOW' : user.first_name +" "+user.last_name}}
+                               
                             </div>
                             <div class="widget-subheading">
-                                VP People Manager
+                               
                             </div>
                         </div>
                         <i class="fa fa-angle-down ml-2 opacity-8"></i>

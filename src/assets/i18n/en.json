@@ -12,16 +12,83 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Disciplinary Board",
+      "DisciplinaryBoardTitle": "Disciplinary Statuts",
+      "AddDisciplinaryBoard": "Add a new disciplinary status",
+      "CreateDisciplinaryBoard": "Create the disciplinary status",
+      "UpdateDisciplinaryBoard": "Update",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "the disciplinary status not found"
+    },
     "NavBar": {
         "Language": "Choose Language",
         "Profile": "Mon compte",
-        "Message": "Messages privés"
+        "Message": "Messages privés",
+        "QuickAccess": "Quick access",
+        "Notif": "Notifications",
+        "NotifViewAll": "View all notifications",
+        "NotifText": "You have {{unread}} new notifications",
+        "QuickAccessText": "Quickly and efficiently access all primary system functionality"
+    
     },
     "Home": {
         "Title": "Home page"
     },
+    
+    
+    "SideBar": {
+        "SystemConfig": "System's Setting",
+        "Users": "Employees",
+        "addUser": "Add employee",
+        "listUsers": "List employees",
+        "Contracts": "Employment contracts",
+        "addContracts": "Add contract",
+        "listContracts": "List contracts",
+        "LicensesVacations": "Licenses and Vacations",
+        "Licenses": "Licenses",
+        "Vacations": "Vacations",
+        "NotesPros": "Professional Notes",
+        "Career": "Promotions et parcours",
+        "Assignment": "Assignment",
+        "addAssignment": "New Assignment",
+        "listAssignment": "List Assignments",
+        "Training": "Training",
+        "addTraining": "Add a course",
+        "listTraining": "List of courses",
+        "listSanctions": "Sanctions List",
+        "addSanction": "Add a penalty",
+        "Sanction": "Sanctions",
+        "Dboard": "Disciplinary Board",
+        "Dteam": "Decision Council",
+        "Actuality": "News",
+        "Blog": "News",
+        "Contact": "Contacts",
+        "ProSituations": "Professional situation",
+        "Division": "Divisions",
+        "AssignmentType": "Type of assignments",
+        "ProfileElement": "Profile element",
+        "TypeConges": "Type of leave",
+        "PermissionType": "Permission Type",
+        "Template": "Document template",
+        "BlogCategory": "Blog categories",
+        "DiscCouncil": "Disciplinary Board",
+        "NoteCriteria": "Rating Criteria",
+        "Config": "Configurations",
+        "RoleAndPer": "Roles and Permissions",
+        "Personnel": "Staff",
+        "Submissions": "Written requests",
+        "ProfileUpdate": "Update profile"
+    },
+
+   
     "Form": {
         "NameSelect": "Choisir votre structure parent ",
+        "Reason": "Reason",
+        "Team": "disciplinary team",
+        "Date": "Effective date",
+        "Location": "Location",
+        "Decision": "Decision",
         "NameLabel": "Name",
         "NameField": "Please type a name...",
         "DescriptionLabel": "Description",
@@ -114,37 +181,6 @@
         "SubmitSuccess": "The template has been created successfully",
         "NOT_FOUND_ASSIGNMENT_ID": "Template not found",
         "TEMPLATE_ALREADY_EXIST": "Template already existing !!!"
-    },
-
-    "SideBar": {
-        "SystemConfig": "System's Setting",
-        "Users": "Employees",
-        "Contracts": "Contrats de travail",
-        "PermissionEtConges": "Licenses and Vacations",
-        "NotesPros": "Notes proféssionnelles",
-        "Career": "Promotions et parcours",
-        "Assignment": "Affectations",
-        "Training": "Formations",
-        "Sanction": "Sanctions",
-        "Blog": "Actualités",
-        "Contact": "Contacts",
-        "ProSituation": "Situation proféssionnelle",
-        "Division": "Divisions",
-        "AssignmentType": "Type d'affectations",
-        "ProfileElement": "Element du profile",
-        "TypeConges": "Type de congés",
-        "PermissionType": "Type de permission",
-        "Template": "Modèle de document",
-        "BlogCat": "Blog Category",
-        "DiscCouncil": "Conseil de discipline",
-        "NoteCriteria": "Critère de notation",
-        "Config": "Configurations",
-        "RoleAndPer": "Rôles et permissions",
-        "Personnel": "Personnels",
-        "Submission": "Demandes écrites",
-        "ProfileUpdate": "Update profile",
-        "Permissions":"Licenses",
-        "Conges":"Vacations"
     },
 
     "Licenses":{

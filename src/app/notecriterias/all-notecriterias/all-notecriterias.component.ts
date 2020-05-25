@@ -77,7 +77,7 @@ export class AllNotecriteriasComponent implements OnInit {
     )
   }
   editNotecriterias(notecriterias: Notecriterias) {
-    this.router.navigate(['/notecriterias/update/'+notecriterias.id])
+    this.router.navigate(['/note-criterias/update/'+notecriterias.id])
   }
 
   detailsNotecriterias(notecriterias: Notecriterias) {

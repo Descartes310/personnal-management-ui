@@ -63,7 +63,7 @@ export class AddBlogCategoryComponent implements OnInit {
         })
         .catch(err => {
           console.log(err)
-          this.translate.get('BlogCat.SubmitError')
+          this.translate.get('BlogCat.BLOG_CAT_ALREADY_EXISTS')
           .subscribe(val => this.notifService.danger(val));
         })
         .finally(() => this.isLoading = false);

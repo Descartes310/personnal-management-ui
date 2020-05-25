@@ -9,19 +9,19 @@
                         </div>
                     </div>
                     <div>
-                        <h5 class="menu-header-title" *ngIf="profile">{{profile.name}}</h5>
+                        <h5 class="menu-header-title" *ngIf="profile">{{profile.first_name}} {{profile.last_name}}</h5>
                         <h6 class="menu-header-subtitle" *ngIf="profile"><i>{{profile.poste}}</i> </h6>
                     </div>
                     <div class="menu-header-btn-pane pt-2">
                         <div role="group" class="btn-group text-center">
                             <div class="nav">
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileUpdate' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/update-user']">{{ 'Profile.ProfileUpdate' | translate }}
                                 </button>                            
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.PasswordUpdate' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/update-password']">{{ 'Profile.PasswordUpdate' | translate }}
                                 </button>
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfileStatistique' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/statistiques']">{{ 'Profile.ProfileStatistique' | translate }}
                                 </button> 
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary">{{ 'Profile.ProfilePromotion' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/assignments/add']">{{ 'Profile.ProfilePromotion' | translate }}
                                 </button> 
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <ul class="list-group list-group-flush" *ngFor="let attribute of profile | keyvalue">
                                        
-                                <li class="list-group-item"  *ngIf="attribute.key!='id' && attribute.key!='avatar' && attribute.key!='created_at' && attribute.key!='last_login' && attribute.key!='updated_at'" >
+                                <li class="list-group-item"  *ngIf="attribute.key!='id' && attribute.key!='avatar' && attribute.key!='created_at' && attribute.key!='last_login' && attribute.key!='updated_at' && attribute.key!='permissions' && attribute.key!='roles'" >
                                     <div >
                                     <div class="widget-content p-0"  >
                                         <div class="widget-content-wrapper">

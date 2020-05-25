@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Vacation } from 'src/app/_models/vacation.model';
 import { VacationService } from 'src/app/_services/vacation.service';
 import { NotifService } from 'src/app/_services/notif.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import * as Routes from '../../Routes';
 
 @Component({
   selector: 'app-all-vacation',
@@ -15,12 +16,12 @@ import { Router } from '@angular/router';
 export class AllVacationComponent implements OnInit {
 
   vacations: Vacation[] = [];
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
@@ -37,7 +38,7 @@ export class AllVacationComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'vacation' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -60,27 +61,33 @@ export class AllVacationComponent implements OnInit {
     this.vacationService.all().then(
       response => {
         this.vacations = [];
+        console.log(response)
         response.map( vacation => {
-          this.vacations.push(new Vacation(vacation));
+          const v = new Vacation(vacation);
+          if (v.file) {
+            v.file = Routes.SERVER + v.file;
+          }
+          this.vacations.push(v);
         });
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        console.log(error)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
         this.loading = false;
       }
-    )
+    );
   }
 
   editVacation(vacation: Vacation) {
-    this.router.navigate(['/vacations/update/'+vacation.id])
+    this.router.navigate(['/vacations/update/' + vacation.id]);
   }
 
   detailsVacation(vacation: Vacation) {
-    this.router.navigate(['/vacations/details/'+vacation.id])
+    this.router.navigate(['/vacations/details/' + vacation.id]);
   }
 
   deleteVacation(vacation: Vacation) {
@@ -101,26 +108,24 @@ export class AllVacationComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            )
+            );
             this.getVacations();
           }
         ).catch(
           error => {
-            console.log(error)
             this.blockUI.stop();
-            this.translate.get('Vacation.'+error.error.code)
+            this.translate.get('Vacation.' + error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
-        )
-        
+        );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
 
 }

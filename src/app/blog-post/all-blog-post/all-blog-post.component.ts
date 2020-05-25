@@ -73,11 +73,7 @@ export class AllBlogPostComponent implements OnInit {
     this.getallBlogCategories();
     //this.getAllPostWithCategorie(1);
     this.getUsersPost(1);
-
     this.getAllUsers();
-  
-
-
   }
 
   //recuperation de la liste des categories
@@ -85,7 +81,8 @@ export class AllBlogPostComponent implements OnInit {
     //this.loading = true;
     this.blogpostservice.all_blog_categories().then(
       response => {
-        this.listBlogCategories = response;
+        this.listBlogCategories = response.data;
+        console.log(this.listBlogCategories)
       }
     ).catch(
       
@@ -99,10 +96,12 @@ export class AllBlogPostComponent implements OnInit {
   getAllPostWithCategorie(blog_categorie_id: number) {
     this.blogpostservice.allPostsWithCategorieId(blog_categorie_id).then(
       response => {
+        console.log('dfdfdfdfd')
+        console.log(response)
         this.listBlog_posts = [];
         this.listBlog_posts = response.blog_categorie.blog_posts;
         this.listBlogCategories_tmp = response.blog_categorie.blog_posts;
-        //console.log(this.listBlog_posts)
+        console.log(this.listBlog_posts)
       }
     ).catch(
       error => {
@@ -205,7 +204,7 @@ export class AllBlogPostComponent implements OnInit {
               this.deletedMessage,
               'success'
             )
-            this.getAllPostWithCategorie(2);
+            this.getAllBlogPost();
           }
         ).catch(
           error => {
@@ -233,6 +232,7 @@ export class AllBlogPostComponent implements OnInit {
     }
     else{
       const blogCategorie: BlogCategorie = this.getOneBlogCategorie(titleSelected);
+      console.log('title:'+blogCategorie.id)
       this.getAllPostWithCategorie(blogCategorie.id)
     }
     
@@ -254,7 +254,7 @@ export class AllBlogPostComponent implements OnInit {
   //function de rech erche d'un blog
   search(event){
    
-   this.listBlog_posts = this.listBlogCategories_tmp;
+    this.listBlog_posts = this.listBlogCategories_tmp;
     this.listBlog_posts = this.listBlog_posts.filter( blogPost => blogPost.title.toLowerCase().includes(event.target.value.toLowerCase()));
     console.log(this.listBlog_posts)
   }

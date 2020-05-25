@@ -52,8 +52,6 @@ export class AllLicensetypesComponent implements OnInit {
    }
   ngOnInit() {
     this.getLicenseTypes();
-    console.log(    this.getLicenseTypes()
-    )
   }
 
   computeDescription(description: string): string {
@@ -65,6 +63,7 @@ export class AllLicensetypesComponent implements OnInit {
     this.licensetypeService.all().then(
       response => {
         this.licensetypes = [];
+        console.log(response)
         response.map( licensetype => {
           this.licensetypes.push(new Licensetype(licensetype));
         });
