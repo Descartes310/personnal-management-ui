@@ -13,7 +13,7 @@ export class SanctionService {
     return this.http.post<Sanction>(Routes.SANCTION, formData).toPromise();
   }
 
- users() : Promise<any> {
+  users() : Promise<any> {
     return this.http.get<any>(Routes.USERS).toPromise();
   }
 }

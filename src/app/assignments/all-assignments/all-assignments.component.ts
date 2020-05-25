@@ -38,11 +38,11 @@ export class AllAssignmentsComponent implements OnInit {
     private router: Router) {
 
     this.translate.get(
-      ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+      ['SweetAlert.AreYouSureAssignment', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: 'assignment' })
       .subscribe(val => {
-        this.areYouSure = val['SweetAlert.AreYouSure'];
+        this.areYouSure = val['SweetAlert.AreYouSureAssignment'];
         this.warning = val['SweetAlert.Warning'];
         this.yes = val['SweetAlert.Yes'];
         this.no = val['SweetAlert.No'];

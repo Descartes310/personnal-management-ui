@@ -118,7 +118,7 @@ export class UpdateSubmissionComponent implements OnInit {
   
     this.submissionService.update(formData, this.submission.id)
       .then(resp => {
-        this.translate.get('Submission.SubmitSuccess')
+        this.translate.get('Submission.SubmitUpdateSuccess')
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.submissionForm.reset();
