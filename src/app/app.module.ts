@@ -42,6 +42,8 @@ import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-use
 
 
 //import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -180,7 +182,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddDisciplinaryBoardsComponent,
     UpdateDisciplinaryBoardComponent,
     AddUserNoteCriteriasComponent,
-
+    AddNoteCriteriasComponent,
+    UpdateNoteCriteriasComponent,
     AddTrainingComponent,
     UpdateTrainingComponent,
     AddBlogCategoryComponent,
@@ -192,10 +195,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddAssignmentComponent,
     AllAssignmentsComponent,
     UpdateAssignmentComponent,
-
     AddNoteCriteriasComponent,
     UpdateNoteCriteriasComponent,
-
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -210,13 +211,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
     AllDivisionComponent,
-    DetailsDivisionComponent,
-    
+    DetailsDivisionComponent,    
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
-   
     AllNotecriteriasComponent,
     DetailsNotecriteriasComponent,
     DeleteNotecriteriasComponent,
@@ -282,7 +281,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     // UpdateProfileComponent,
     DecisionVacationComponent,
     AllVacationComponent,
-    AddVacationComponent,
+    //AddVacationComponent,
     AddContractComponent,
     AllContractComponent,
     UpdateContractComponent,
@@ -290,7 +289,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
     AllBlogCategoryComponent,
     AllDemandesVacationComponent,
-
     DetailsAssignmentComponent,
     AddSubmissionComponent,
     UpdateSubmissionComponent,

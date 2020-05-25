@@ -16,6 +16,9 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
+
+import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
+import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -189,6 +192,14 @@ const routes: Routes = [
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
+
+  { path: 'note-criterias/add', component: AddNoteCriteriasComponent },
+  { path: 'note-criterias/update/:id', component: UpdateNoteCriteriasComponent },
+
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
+
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},

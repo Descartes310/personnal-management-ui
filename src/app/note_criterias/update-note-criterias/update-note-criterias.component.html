@@ -41,14 +41,14 @@
                                                 class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}" id="note_criteria_slug">
                                         </div> 
                                         <div class="position-relative form-group">
-                                            <label for="max" class="">{{ "Form.MaxRateLabel" | translate }}</label>
-                                            <input  placeholder="{{ 'Form.MaxRateField' | translate }}" min="0" type="number"
+                                            <label for="max" class="">{{ "Form.MaxsLabel" | translate }}</label>
+                                            <input  placeholder="{{ 'Form.MaxsField' | translate }}" min="0" type="number"
                                                 formControlName="max" (keyup)="checkNoteMax($event)"
                                                 class="form-control {{ isSubmitted && form.max.errors ? 'is-invalid' : '' }}" id="note_criteria_max">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="min" class="">{{ "Form.MinRateLabel" | translate }}</label>
-                                            <input placeholder="{{ 'Form.MinRateField' | translate }}" min="0" type="number"
+                                            <label for="min" class="">{{ "Form.MinsLabel" | translate }}</label>
+                                            <input placeholder="{{ 'Form.MinsField' | translate }}" min="0" type="number"
                                                 formControlName="min" (keyup)="checkNoteMin($event)"
                                                 class="form-control {{ isSubmitted && form.min.errors ? 'is-invalid' : '' }}"id="note_criteria_min">
                                         </div>

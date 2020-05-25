@@ -50,4 +50,4 @@ export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
 export const StatCareer = SERVER + 'statistics/career';
 export const StatAssignment = SERVER + 'statistics/assignment_by_month';
-export const SYNC_USER_ABILITIES= SERVER+ 'sync_user_abilities/{user_id}'
+export const SYNC_USER_ABILITIES= SERVER+ 'sync_user_abilities/{user_id}';
