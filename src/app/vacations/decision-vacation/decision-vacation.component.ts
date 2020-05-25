@@ -133,7 +133,7 @@ export class DecisionVacationComponent implements OnInit {
     let currentDate = pipe.transform(date, 'yyyy-MM-dd');
 
     if (this.vacation.requested_days <= 0) {
-      this.translate.get('Form.DaysError')
+      this.translate.get('Form.FreeDaysError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }

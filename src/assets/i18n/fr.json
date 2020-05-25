@@ -257,6 +257,7 @@
         "LabelDays": "Veuillez entrer le nombre de jours...",
         "EndDateError": "veuillez entrer une date de fin valide",
         "FreeDaysError": "veuillez entrer un nombre de jours valide",
+        "DateError": "Entrer une date valide",
         "NameSelect": "Choisir votre structure",
         "UserLabel": "Utilisateur",
         "SenderLabel": "Emetteur",
