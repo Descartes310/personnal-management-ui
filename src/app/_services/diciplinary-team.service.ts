@@ -13,15 +13,15 @@ export class DiciplinaryTeamService {
     ) { }
 
     add(formData: FormData): Promise<DiciplinaryTeam> {
-        return this.http.post<DiciplinaryTeam>(Routes.DiciplinaryTeam, formData).toPromise();
+        return this.http.post<DiciplinaryTeam>(Routes.DISCIPLINARYTEAM, formData).toPromise();
     }
 
     update(formData: FormData, id: number): Promise<DiciplinaryTeam> {
-        return this.http.post<DiciplinaryTeam>(`${Routes.DiciplinaryTeam}/${id}`, formData).toPromise();
+        return this.http.post<DiciplinaryTeam>(`${Routes.DISCIPLINARYTEAM}/${id}`, formData).toPromise();
     }
 
     find(id: number): Promise<DiciplinaryTeam> {
-        return this.http.get<DiciplinaryTeam>(`${Routes.DiciplinaryTeam}/${id}`).toPromise();
+        return this.http.get<DiciplinaryTeam>(`${Routes.DISCIPLINARYTEAM}/${id}`).toPromise();
     }
 
 }

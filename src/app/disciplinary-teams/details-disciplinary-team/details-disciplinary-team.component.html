@@ -19,7 +19,10 @@
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     <i class="header-icon pe-7s-hammer icon-gradient bg-love-kiss"> </i>
-                    {{ 'DisciplinaryTeam.DisciplinaryTeams' | translate }}
+                    {{ 'DisciplinaryTeam.Description' | translate }} {{disciplinary.name}}
+                    
+                </div>
+                <div class="page-title-subheading">{{ 'DisciplinaryTeam.DisciplinaryTeamList' | translate }}
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -27,18 +30,12 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                       
-                                        <li class="list-group-item">
+                                        <li *ngFor="let user of disciplinary.users" class="list-group-item">
                                             <div class="widget-content p-0">
                                                 <div class="widget-content-wrapper">
-                                                    <div class="widget-content-left mr-3">
-                                                        <div class="icon-wrapper border-light rounded m-0">
-                                                            <div class="icon-wrapper-bg bg-light"></div>
-                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
-                                                    </div>
                                                     <div class="widget-content-left">
-                                                        <div class="widget-heading">{{ 'Form.LabelLabel' | translate }}</div>
-                                                        <div>{{ disciplinary.id }}</div>
+                                                        <div class="widget-heading">{{ 'Form.NameLabel' | translate }}</div>
+                                                        <div>{{ user.login }}</div>
                                                     </div>
                                                 </div>
                                             </div>

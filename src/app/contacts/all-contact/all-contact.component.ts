@@ -51,7 +51,7 @@ export class AllContactComponent implements OnInit {
   ngOnInit() {
     this.getContacts();
   }
-
+ 
   getContacts() {
     this.loading = true;
     this.contactService.all().then(
