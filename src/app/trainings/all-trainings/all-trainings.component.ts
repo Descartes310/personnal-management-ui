@@ -37,7 +37,7 @@ export class AllTrainingsComponent implements OnInit {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
       'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-      { data: 'role' })
+      { data: 'Training' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
@@ -107,7 +107,7 @@ export class AllTrainingsComponent implements OnInit {
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Role.'+error.error.code)
+            this.translate.get('Training.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
