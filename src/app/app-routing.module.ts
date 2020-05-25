@@ -62,7 +62,6 @@ import { AllProSituationComponent } from './pro_situations/all-pro-situation/all
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
-import { DisciplinaryTeam } from './_models/disciplinary-team.model';
 import { AllDisciplinaryTeamsComponent } from './disciplinary-teams/all-disciplinary-teams/all-disciplinary-teams.component';
 import { DetailsDisciplinaryTeamComponent } from './disciplinary-teams/details-disciplinary-team/details-disciplinary-team.component';
 import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';

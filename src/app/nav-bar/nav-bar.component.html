@@ -212,7 +212,8 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                    <img width="42" class="rounded-circle"                                                             src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}"
+                                    alt="">
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-lg dropdown-menu dropdown-menu-right" style="cursor: pointer;">
                                     <div class="dropdown-menu-header">
@@ -223,13 +224,13 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
                                                             <img width="42" class="rounded-circle"
-                                                                    src="assets/images/avatars/1.jpg"
+                                                            src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}"
                                                                     alt="">
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">Alina Mcloughlin
+                                                            <div class="widget-heading" *ngIf="profile">{{profile.first_name}} {{profile.last_name}}
                                                             </div>
-                                                            <div class="widget-subheading opacity-8">A short profile description
+                                                            <div class="widget-subheading opacity-8" *ngIf="profile">{{profile.description}}
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right mr-2">

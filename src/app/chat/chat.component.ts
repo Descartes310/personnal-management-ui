@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { NotifService } from '../_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-chat',
@@ -27,6 +28,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   discussion: number = null;
   messages: Message[] = [];
   user_id: number = null;
+  profile;
 
   //SweetAlert Text
   areYouSure = '';
@@ -48,7 +50,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     private chatService: ChatService,
     private authService: AuthService,
     private notifService: NotifService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private userService:UserService
   ) { 
 
     this.translate.get(
@@ -80,8 +83,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
-
     this.user_id = this.authService.getUser().id;
+    this.userService.find(this.user_id).then(
+      response => {
+        this.profile = response;
+        console.log(this.profile)
+      }
+    );
     this.chatService.getEmittedValue().subscribe(value => {
       this.current_user = value[0].filter(user => user.id == value[1])[0] // value[0] contains a list of user and value[1] contains id of selected user from drawer
       this.users = value[0];
