@@ -9,9 +9,9 @@
                 <div class="page-title-subheading">{{ 'User.UserTitle' | translate }}
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="row">
     <div class="col-md-12">
@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="main-card mb-3 card">
-                               
+
                                 <div *ngIf="isBuild" class="card-body">
 
                                     <mat-horizontal-stepper linear #stepper>
@@ -51,7 +51,7 @@
                                                     <div class="position-relative form-group">
 
                                                         <label>{{ input.name }} <span *ngIf="input.is_required" style="color: red;"> *</span></label>
-                                                        
+
                                                         <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}">
 
                                                         <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && personnalInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberFisrtForm($event, input)" (blur)="checkInputNumberFisrtForm($event, input)">
@@ -70,7 +70,7 @@
                                                 <div class="position-relative form-group">
 
                                                     <label>{{ 'User.UserCities' | translate }} <span style="color: red;"> *</span></label>
-                                                    
+
                                                     <select matInput formControlName="city" class="form-control {{ isSubmitted && personnalInfo.city.errors ? 'is-invalid' : '' }}">
                                                         <option *ngFor='let option of cities' value="{{ option.name }}"> {{ option.name }}</option>
                                                     </select>
@@ -80,13 +80,13 @@
                                                 <div class="position-relative form-group">
 
                                                     <label>{{ 'User.UserLogin' | translate }} <span style="color: red;"> *</span></label>
-                                                    
+
                                                     <input formControlName="login" type="text" placeholder="{{ 'User.UserLoginPlaceHolder' | translate }}" class="form-control {{ isSubmitted && personnalInfo.login.errors ? 'is-invalid' : '' }}" id="login">
 
                                                     <div *ngFor="let error of errorMessages.login" class="ng-container text-right">
                                                         <ng-container *ngIf="login.hasError(error.type) && (login.dirty || login.touched)">
                                                             <small class="error-message">{{ error.message }}</small>
-                                                        </ng-container> 
+                                                        </ng-container>
                                                     </div>
 
                                                 </div>
@@ -94,13 +94,13 @@
                                                 <div class="position-relative form-group">
 
                                                     <label>{{ 'User.UserPassword' | translate }} <span style="color: red;"> *</span></label>
-                                                    
+
                                                     <input formControlName="password" type="password" class="form-control {{ isSubmitted && personnalInfo.password.errors ? 'is-invalid' : '' }}" id="password">
 
                                                     <div *ngFor="let error of errorMessages.password" class="ng-container text-right">
                                                         <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
                                                             <small class="error-message">{{ error.message }}</small>
-                                                        </ng-container> 
+                                                        </ng-container>
                                                     </div>
 
                                                 </div>
@@ -121,7 +121,7 @@
                                                     <div class="position-relative form-group">
 
                                                         <label>{{ input.name }}: <span *ngIf="input.is_required" style="color: red;"> *</span></label>
-                                                        
+
                                                         <input *ngIf="checkIfInputIsAText(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}">
 
                                                         <input *ngIf="checkIfInputIsANumber(input)" [formControlName]="input.slug" type="{{ input.type }}" placeholder="{{ input.placeholder }}" min="{{ input.min }}" max="{{ input.max }}" step="{{ input.step }}" value="{{ input.default }}" class="form-control {{ isSubmitted && publicInfo[input.slug].errors ? 'is-invalid' : '' }}" (change)="checkInputNumberSecondForm($event, input)" (blur)="checkInputNumberSecondForm($event, input)">
@@ -140,7 +140,7 @@
                                                 <div class="position-relative form-group">
 
                                                     <label>{{ 'User.UserProsituations' | translate }} <span style="color: red;"> *</span></label>
-                                                    
+
                                                     <select matInput formControlName="pro_situation" class="form-control {{ isSubmitted && publicInfo.pro_situation.errors ? 'is-invalid' : '' }}">
                                                         <option *ngFor='let option of proSituations' value="{{ option.name }}"> {{ option.name }}</option>
                                                     </select>
@@ -150,7 +150,7 @@
                                                 <div class="position-relative form-group">
 
                                                     <label>{{ 'User.UserDivisions' | translate }} <span style="color: red;"> *</span></label>
-                                                    
+
                                                     <select matInput formControlName="division_id" class="form-control {{ isSubmitted && publicInfo.division_id.errors ? 'is-invalid' : '' }}">
                                                         <option *ngFor='let option of divisions' value="{{ option.id }}"> {{ option.name }}</option>
                                                     </select>
@@ -346,7 +346,7 @@
 
                                             <div>
                                                 <button class="btn btn-primary btn-lg m-2" mat-button matStepperPrevious>Back</button>
-                                                <button class="btn btn-primary btn-lg m-2" mat-button (click)="stepper.reset()">Reset</button>
+                                                <button id="reset-btn" class="btn btn-primary btn-lg m-2" mat-button (click)="stepper.reset()">Reset</button>
                                             </div>
 
                                         </mat-step>

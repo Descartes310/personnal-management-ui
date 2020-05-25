@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun May 24 2020 14:50:24 GMT+0200 (heure d’été d’Europe centrale)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+
+
+Created files:
+* .autogit/autogit.json
+
+
+Deleted files:
+
+
+Renamed files:

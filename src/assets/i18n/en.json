@@ -12,6 +12,15 @@
         "AUTH_LOGIN": "Login or password is invalid",
         "AUTH_LOGIN_FORM": "Login and password are required"
     },
+    "DisciplinaryBoard":{
+      "DisciplinaryBoards": "Disciplinary Board",
+      "DisciplinaryBoardTitle": "Disciplinary Statuts",
+      "AddDisciplinaryBoard": "Add a new disciplinary status",
+      "CreateDisciplinaryBoard": "Create the disciplinary status",
+      "UpdateDisciplinaryBoard": "Update",
+      "DisciplinaryBoard_ALREADY_EXISTS": "Le status disciplinaire déjà",
+      "DisciplinaryBoard_NOT_FOUND": "the disciplinary status not found"
+    },
     "NavBar": {
         "Language": "Choose Language",
         "Profile": "Mon compte",
@@ -26,6 +35,8 @@
     "Home": {
         "Title": "Home page"
     },
+    
+    
     "SideBar": {
         "SystemConfig": "System's Setting",
         "Users": "Employees",
@@ -73,6 +84,11 @@
    
     "Form": {
         "NameSelect": "Choisir votre structure parent ",
+        "Reason": "Reason",
+        "Team": "disciplinary team",
+        "Date": "Effective date",
+        "Location": "Location",
+        "Decision": "Decision",
         "NameLabel": "Name",
         "NameField": "Please type a name...",
         "DescriptionLabel": "Description",
@@ -166,8 +182,6 @@
         "NOT_FOUND_ASSIGNMENT_ID": "Template not found",
         "TEMPLATE_ALREADY_EXIST": "Template already existing !!!"
     },
-
-    
 
     "Licenses":{
         "Licenses_Title": "Licenses",

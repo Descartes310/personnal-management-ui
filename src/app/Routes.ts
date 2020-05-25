@@ -1,9 +1,9 @@
 export const SERVER = 'http://localhost:8000/api/';
 
-export const LOGIN = SERVER+'auth/token';
-export const UPDATE_PASSWORD = SERVER+'auth/updatepassword';
-export const USERS = SERVER+'users';
-export const CHAT = SERVER+'chats';
+export const LOGIN = SERVER + 'auth/token';
+export const UPDATE_PASSWORD = SERVER + 'auth/updatepassword';
+export const USERS = SERVER + 'users';
+export const CHAT = SERVER + 'chats';
 export const DOCUMENT = SERVER + 'documents';
 export const ROLE = SERVER + 'roles';
 export const Template = SERVER + 'templates';
@@ -38,6 +38,8 @@ export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
 export const PROFILE = SERVER + 'profiles';
 export const DiciplinaryTeam = SERVER + 'disciplinary_teams';
-export const CAREER = SERVER + 'careers'; 
-export const NOTECRITERIAS = SERVER +'note_criterias';
-export const ASSIGNMENTTYPE = SERVER +'assignment_types';
+export const CAREER = SERVER + 'careers';
+export const NOTECRITERIAS = SERVER + 'note_criterias';
+export const ASSIGNMENTTYPE = SERVER + 'assignment_types';
+export const SYNC_USER_ABILITIES = SERVER + 'sync_user_abilities/{user_id}';
+export const dISCIPLINARYBOARD = SERVER + 'disciplinary_boards';
