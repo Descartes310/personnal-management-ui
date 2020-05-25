@@ -49,6 +49,7 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
   getusers() {
     this.userService.all().then(
       response => {
+        console.log(response)
         this.users = response;
         this.users_tmp = response;
       }
@@ -118,6 +119,7 @@ export class CreateDiciplinaryTeamComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.diciplinaryTeamForm.reset();
+        this.selected_users = []
         // this.router.navigate(['']);
       })
       .catch(err => {

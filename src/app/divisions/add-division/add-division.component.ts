@@ -97,10 +97,11 @@ export class AddDivisionComponent implements OnInit {
   
       this.isLoading = true;
       const formData = new FormData();
-      formData.append('display_name', '' + this.form.label.value);
-      formData.append('name', '' + this.form.name.value);
+      formData.append('name', '' + this.form.label.value);
+      formData.append('slug', '' + this.form.name.value);
       formData.append('description', '' + this.form.description.value);
-      formData.append('parent_id', '' + this.form.parent_id.value);
+      if(this.form.parent_id.value)
+        formData.append('parent_id', '' + this.form.parent_id.value);
 
       /* this.selected_divisions.forEach( elt => {
         formData.append('divisions[]', JSON.stringify(elt));

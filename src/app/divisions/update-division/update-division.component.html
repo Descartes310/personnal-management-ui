@@ -29,7 +29,7 @@
                                     <form (submit)="onSubmit()" [formGroup]="divisionForm">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ "Form.LabelLabel" | translate }} </label>
-                                            <input name="email" id="exampleEmail" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
+                                            <input name="text" id="exampleEmail" placeholder="{{ 'Form.LabelField' | translate }}" type="text" formControlName="label" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.label.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="name" class="">{{ "Form.NameLabel" | translate }}</label>
@@ -44,7 +44,7 @@
                                         <div class="position-relative form-group">
                                             <label for ="select" class="">{{"Form.NameSelect" | translate }}</label>
                                             <select name="divisions" formControlName="parent_id" class="form-control" >
-                                                
+                                                <option value=""></option>
                                                 <option *ngFor="let division of divisions" [value]="division.id">{{division.name}}</option>
                                             </select>
                                     </div>

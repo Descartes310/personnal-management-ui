@@ -62,6 +62,7 @@ export class AllLicensesComponent implements OnInit {
     this.license_service.all().then(
       response => {
         this.licenses=response;
+        console.log(response)
         this.licenses.forEach(license => {
           if(license['file'] != null ){
             this.file_existing[license.id] = true;

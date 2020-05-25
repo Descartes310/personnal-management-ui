@@ -102,7 +102,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentTypeForm.reset();
-        this.router.navigate(['']);
+        this.router.navigate(['/assignmenttype/all']);
       })
       .catch(err => {
         this.translate.get('AssignmentType.'+err.error.code)

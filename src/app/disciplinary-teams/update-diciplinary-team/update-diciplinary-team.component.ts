@@ -152,7 +152,7 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         // this.diciplinaryTeamForm.reset();
-        // this.router.navigate(['']);
+        this.router.navigate(['/disciplinary-teams/all']);
       })
       .catch(err => {
         this.translate.get('diciplinaryTeam.DT_ALREADY_EXIST')

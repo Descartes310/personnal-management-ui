@@ -95,9 +95,9 @@ export class UpdateDisciplinaryBoardComponent implements OnInit {
         )
       }
     )
-      .catch(error => {
-        this.notifService.danger("Une erreur s'est produite");
-      });
+    .catch(error => {
+      this.notifService.danger("Une erreur s'est produite");
+    });
   }
 
   getUsers() {
@@ -141,7 +141,7 @@ export class UpdateDisciplinaryBoardComponent implements OnInit {
         this.isLoading = false;
         this.formGroup.reset();
         this.isSubmitted = false;
-        // this.router.navigate(['/roles/all']);
+        this.router.navigate(['/disciplinaryBoards/all']);
       })
       .catch(error => {
         console.log(error)

@@ -57,10 +57,10 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
   getDisciplinaryTeams() {
     this.loading = true;
     this.disciplinaryteamService.getDisciplinaryTeamWithUsers().then(response => {
-        this.disciplinaryteams= response;
-        /*response.map( disciplinaryteam => {
+        this.disciplinaryteams = [];
+        response.map( disciplinaryteam => {
           this.disciplinaryteams.push(new DisciplinaryTeam(disciplinaryteam));
-        });*/
+        });
         console.log(response);
     }).catch(error => {
         this.notifService.danger(error.error.message)
@@ -70,7 +70,7 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
   }
 
   editDisciplinaryTeam(disciplinaryteam: DisciplinaryTeam) {
-    this.router.navigate(['/disciplinary-teams/update/'+disciplinaryteam.id])
+    this.router.navigate(['/diciplinary-team/update/'+disciplinaryteam.id])
   }
 
   detailsDisciplinaryTeam(disciplinaryteam: DisciplinaryTeam) {
