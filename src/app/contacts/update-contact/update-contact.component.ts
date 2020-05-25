@@ -177,9 +177,7 @@ export class UpdateContactComponent implements OnInit {
 
     //recuperation  de image
     formData.append('picture', this.image);
-
-
-    this.contactservice.update(formData, 1)
+    this.contactservice.update(formData, this.contact.id)
       .then(resp => {
         this.translate.get('Contact .SubmitSuccess')
           .subscribe(val => this.notifService.success(val));
@@ -199,6 +197,7 @@ export class UpdateContactComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
   }
+
   detectimage(event) {
     this.image = event.target.files[0];
     console.log(this.image)

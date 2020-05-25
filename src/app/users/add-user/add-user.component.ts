@@ -709,17 +709,13 @@ export class AddUserComponent implements OnInit {
 
     });
 
-    // this.selected_permissions.forEach( elt => {
-    //   this.data.append('permissions[]', JSON.stringify(elt));
-    // });
+    this.selected_permissions.forEach( elt => {
+      this.data.append('permissions[]', JSON.stringify(elt));
+    });
 
-    // this.selected_roles.forEach( elt => {
-    //   this.data.append('roles[]', JSON.stringify(elt));
-    // });
-    // armel
-    this.data.append('permissions', JSON.stringify(this.selected_permissions));
-    this.data.append('roles', JSON.stringify(this.roles));
-    // armel
+    this.selected_roles.forEach( elt => {
+      this.data.append('roles[]', JSON.stringify(elt));
+    });
     this.data_tmp1.roles = this.selected_roles;
     this.data_tmp1.permissions = this.selected_permissions;
 
@@ -760,6 +756,8 @@ export class AddUserComponent implements OnInit {
       }
     ).catch(
       error => {
+        console.log(error);
+        
         if (error.status && error.code) {
           if (error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {

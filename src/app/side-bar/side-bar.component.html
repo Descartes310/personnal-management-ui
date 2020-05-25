@@ -35,7 +35,7 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li class="">
-                    <a href="" [routerLink]="['/users/all']">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-users"></i>
                         {{ "SideBar.Users" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -56,7 +56,7 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="" [routerLink]="['/contracts/all']" class="">
+                    <a href="#"  class="">
                         <i class="metismenu-icon pe-7s-note2"></i>
                         {{ "SideBar.Contracts" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -69,7 +69,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['/contracts/add']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.addContracts" | translate }}
                             </a>
@@ -83,33 +83,33 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="" [routerLink]="['professional-score']">
                         <i class="metismenu-icon pe-7s-id"></i>
                         {{ "SideBar.NotesPros" | translate }}
                     </a>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="" [routerLink]="['promotions']">
                         <i class="metismenu-icon pe-7s-display1"></i>
                         {{ "SideBar.Career" | translate }}
                     </a>
                 </li>
-                
+
                 <li class="">
-                    <a href="index.html#">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-study"></i>
                         {{ "SideBar.Training" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['trainings/all']" class="">
                                 <i class="metismenu-icon"></i>
                                 {{ "SideBar.listTraining" | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a [routerLink]="['trainings/add']" class="">
                                 <i class="metismenu-icon"></i>
                                 {{ "SideBar.addTraining" | translate }}
                             </a>
@@ -117,20 +117,20 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-shuffle"></i>
                         {{ "SideBar.Assignment" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['assignments/all']" class="">
                                 <i class="metismenu-icon"></i>
                                 {{ "SideBar.listAssignment" | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" class="">
+                            <a href="" [routerLink]="['assignments/add']" class="">
                                 <i class="metismenu-icon"></i>
                                 {{ "SideBar.addAssignment" | translate }}
                             </a>
@@ -138,7 +138,7 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-hammer"></i>
                         {{ "SideBar.Sanctions" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -171,7 +171,7 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-plane"></i>
                         {{ "SideBar.LicensesVacations" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -186,10 +186,14 @@
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Vacations" | translate }}
                             </a>
+                            <a href="" [routerLink]="['/disciplinaryBoards/all']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.DisciplinaryBoard" | translate }}
+                            </a>
                         </li>
                     </ul>
                 </li>
-                
+
                 <li class="">
                     <a href="" [routerLink]="['blog-posts/all']">
                         <i class="metismenu-icon pe-7s-news-paper"></i>
@@ -203,13 +207,13 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="" [routerLink]="['/contacts/all']">
                         <i class="metismenu-icon pe-7s-call"></i>
                         {{ "SideBar.Contact" | translate }}
                     </a>
                 </li>
                 <li class="">
-                    <a href="index.html#">
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-config"></i>
                         {{ "SideBar.SystemConfig" | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>

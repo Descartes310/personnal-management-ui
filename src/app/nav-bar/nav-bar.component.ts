@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
   lan;
-
+  user;
   constructor(
     private authService: AuthService,
     private translateService: TranslateService,
@@ -22,7 +22,8 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
     this.lan = this.translateService.currentLang;
-    console.log('La langue courante est: ', this.translateService.currentLang)
+    console.log('La langue courante est: ', this.translateService.currentLang);
+    this.user = this.authService.getUser();
   }
 
   logout() {

@@ -158,7 +158,8 @@
         "Submission": "Demandes écrites",
         "ProfileUpdate": "Update profile",
         "Permissions":"Licenses",
-        "Conges":"Vacations"
+        "Conges":"Vacations",
+        "DisciplinaryBoard": "Disciplinary Board"
     },
 
     "Licenses":{

@@ -16,6 +16,9 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
+
+import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
+import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -63,6 +66,7 @@ import { AllBlogPostComponent } from './blog-post/all-blog-post/all-blog-post.co
 import { DetailBlogPostComponent } from './blog-post/detail-blog-post/detail-blog-post.component';
 import { AllContactComponent } from './contacts/all-contact/all-contact.component';
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
+import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
 import { AllProSituationComponent } from './pro_situations/all-pro-situation/all-pro-situation.component';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { DetailsSubmissionComponent } from './submissions/details-submission/details-submission.component';
@@ -141,7 +145,7 @@ const routes: Routes = [
   { path: 'roles/all', component: AllRolesComponent },
   { path: 'users/add', component: AddUserComponent },
   { path: 'users/update/:id', component: UpdateUserComponent },
-  { path: 'users/all', component: AllUsersComponent }, 
+  { path: 'users/all', component: AllUsersComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'vacation/demandes', component: AllDemandesVacationComponent },
 
@@ -183,10 +187,19 @@ const routes: Routes = [
   { path: 'divisions/details/:id', component: DetailsDivisionComponent },
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
-  { path: 'user_note_criterias', component: AddUserNoteCriteriasComponent },
+  { path: 'professional-score', component: AddUserNoteCriteriasComponent },
+  { path: 'statistiques/view/:id', component:ViewUserStatComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
+
+  { path: 'note-criterias/add', component: AddNoteCriteriasComponent },
+  { path: 'note-criterias/update/:id', component: UpdateNoteCriteriasComponent },
+
+  //routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component:UpdateContactComponent},
+  { path: 'contacts/add',component:AddContactComponent},
+
   { path: 'trainings/add', component: AddTrainingComponent},
   { path: 'trainings/update/:id', component: UpdateTrainingComponent},
   { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
@@ -211,9 +224,10 @@ const routes: Routes = [
   { path: 'submissions/all', component: AllSubmissionsComponent },
   { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
   { path: 'sanctions/add', component: AddSanctionComponent },
-  //{ path: '404', component: NotfoundComponent },
+  // { path: '404', component: NotfoundComponent },
 
-  { path: 'blog-category/details/:id', component:DetailsComponent},
+  { path: 'blog-posts/all', component: AllBlogPostComponent },
+  { path: 'blog-category/details/:id', component: DetailsComponent},
   { path: 'contracts/add', component: AddContractComponent },
   { path: 'contracts/all', component: AllContractComponent },
   { path: 'blog-category/all', component: AllBlogCategoryComponent },
@@ -231,9 +245,10 @@ const routes: Routes = [
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
 
   { path: 'career/add', component: AddCareerComponent },
-  { path: 'career/update/:id', component:UpdateCareerComponent},
+  { path: 'career/update/:id', component: UpdateCareerComponent},
+  { path: 'promotions', component: AddCareerComponent },
 
-  //{ path: '404', component: NotfoundComponent },
+  // { path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: 'login' },
 ];
