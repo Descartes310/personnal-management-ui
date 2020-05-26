@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmenttypeService } from 'src/app/_services/assignmenttype.service';
+import { AssignmentTypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { Assignmenttype } from 'src/app/_models/assignmenttype.model';
+import { AssignmentType } from 'src/app/_models/assignmenttype.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class AddAssignmentTypeComponent implements OnInit {
   role_name = '';
 
   constructor(
-    private assignmentTypeServie: AssignmenttypeService,
+    private assignmentTypeServie: AssignmentTypeService,
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
