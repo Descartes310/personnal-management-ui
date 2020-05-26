@@ -35,8 +35,8 @@
                                         <div class="col-md-4">
                                             <div class="position-relative form-group">
                                                 <label for="exampleType" class="">{{ "Form.TypeLabel" | translate }} </label>
-                                                <select name="type" id="exampleType" formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}">
-                                                    <option value="{{contract.type}}"  *ngFor="let typecontract of TypeContracts"> {{typecontract}}</option>
+                                                <select name="type" id="exampleType"  formControlName="type"  class="form-control {{ isSubmitted && form.type.errors ? 'is-invalid' : '' }}">
+                                                    <option  [value]="typecontract"  *ngFor="let typecontract of TypeContracts"> {{typecontract}}</option>
                                                 </select>
                                             </div>
                                             <div class="position-relative form-group">
@@ -105,13 +105,6 @@
                                     <div class="col-md-12" >
                                         <ckeditor [editor]="Editor" data="{{ contract.terms == null ? contract.terms : '' }}" formControlName="terms" name="content" id="editor">
                                         </ckeditor>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input name="file" value="{{contract.file}}" placeholder="{{ 'Form.LabelFile' | translate }}" type="file" formControlName="file" (change)="detectfile($event)" class="form-control {{ isSubmitted && form.file.errors ? 'is-invalid' : '' }}">
                                     </div>
                                 </div>
                             </div>

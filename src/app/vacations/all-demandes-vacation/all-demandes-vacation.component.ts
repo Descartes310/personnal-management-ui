@@ -67,7 +67,7 @@ export class AllDemandesVacationComponent implements OnInit {
     this.vacationService.all().then(
       response => {
         this.vacations = [];
-        response.data.map( vacation => {
+        response.map( vacation => {
           (vacation.status == "PENDING") ? this.vacations.push(new Vacation(vacation)): null;
         });
       }
@@ -84,7 +84,7 @@ export class AllDemandesVacationComponent implements OnInit {
   }
 
   detailsRequest(vacation: Vacation) {
-    this.router.navigate(['/vacation/updateD/'+vacation.id]);
+    this.router.navigate(['/vacation/demandes/'+vacation.id]);
   }
 
 }
