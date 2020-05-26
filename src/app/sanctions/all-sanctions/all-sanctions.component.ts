@@ -80,7 +80,7 @@ export class AllSanctionsComponent implements OnInit {
   }
 
   detailsSanction(sanction: Sanction) {
-    this.router.navigate(['/sanction/details/'+sanction.id])
+    this.router.navigate(['/sanctions/details/'+sanction.id])
   }
 
   deleteSanction(sanction: Sanction) {

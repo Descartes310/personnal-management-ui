@@ -23,7 +23,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
                                     <form (submit)="onSubmit()" [formGroup]="trainingForm">
@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="position-relative form-group">
                                             <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="is_online"  class="custom-control-input" (change)="onChecked($event)">
+                                                <input type="checkbox" id="is_online"  [checked]="is_online" class="custom-control-input" (change)="onChecked($event)">
                                                 <label class="custom-control-label" for="is_online">&nbsp;{{"Training.IsOnline" | translate}}</label>
                                             </div>
                                         </div>
