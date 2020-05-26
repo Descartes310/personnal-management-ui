@@ -145,7 +145,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
 
   search(event) {
     this.user = this.user_tmp;
-    this.user = this.user_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.user = this.user_tmp.filter(user => (user.first_name+' '+user.last_name).toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
   onChecked(user, event) {

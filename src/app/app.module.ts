@@ -157,6 +157,7 @@ import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-crite
 
 import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
 import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
+import { UserDetailsComponent } from './users/details-user/user-details.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -278,6 +279,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
     AddCareerComponent,
+    UserDetailsComponent,
     UpdateCareerComponent,
     // AddProfileComponent,
     // UpdateProfileComponent,

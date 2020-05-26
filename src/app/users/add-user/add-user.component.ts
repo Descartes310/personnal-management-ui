@@ -688,6 +688,9 @@ export class AddUserComponent implements OnInit {
           this.selected_permissions = [];
           this.selected_roles = [];
           document.getElementById('reset-btn').click();
+          this.data = new FormData();
+          this.data_tmp1 = {};
+          this.data_tmp2 = {};
         })
         .catch(err => {
           console.log(err);
@@ -734,9 +737,6 @@ export class AddUserComponent implements OnInit {
     ).finally(
       () => {
         this.loading = false;
-        this.data = new FormData();
-        this.data_tmp1 = {};
-        this.data_tmp2 = {};
       }
     );
 

@@ -64,7 +64,8 @@ export class AllUsersComponent implements OnInit {
 
 	    this.userService.all().then(
 	      data => {
-	        this.users = data;
+			this.users = data;
+			console.log(data)
 	        this.users.map(user => {
 	        	this.computeDate(user);
 	        });

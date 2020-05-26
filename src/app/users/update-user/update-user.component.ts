@@ -118,7 +118,7 @@ export class UpdateUserComponent implements OnInit {
           this.router.navigate(['/users/all']);
         }
       }
-    )
+    ).finally( () => this.loading = false)
     
   }
 
@@ -278,7 +278,7 @@ export class UpdateUserComponent implements OnInit {
     this.userService.cities().then(
       response => {
         this.cities = response;
-        this.initProSituations();
+        //this.initProSituations();
       }
     ).catch(
       error => {
@@ -289,23 +289,23 @@ export class UpdateUserComponent implements OnInit {
 
   }
 
-  public initProSituations() {
+  // public initProSituations() {
 
-    this.proSituationService.all().then(
-      response => {
-        this.proSituations = response;
-      }
-    ).catch(
-      error => {
-        this.translate.get('User.LoadingError')
-          .subscribe(val => this.notifService.danger(val));
-      }
-    ).finally(
-      () => {
-        this.loading = false;
-      }
-    )
-  }
+  //   this.proSituationService.all().then(
+  //     response => {
+  //       this.proSituations = response;
+  //     }
+  //   ).catch(
+  //     error => {
+  //       this.translate.get('User.LoadingError')
+  //         .subscribe(val => this.notifService.danger(val));
+  //     }
+  //   ).finally(
+  //     () => {
+  //       this.loading = false;
+  //     }
+  //   )
+  // }
 
   public initErrorMessages() {
 
@@ -331,21 +331,21 @@ export class UpdateUserComponent implements OnInit {
     if(withProfile) {
       let parametter: any = {}; 
       
-      if(this.user.pro_situation) {
-        parametter['pro_situation'] = [
-          this.user.pro_situation,
-          [
-            Validators.required,
-          ]
-        ];
-      } else {
-        parametter['pro_situation'] = [
-          '',
-          [
-            Validators.required,
-          ]
-        ];
-      }
+      // if(this.user.pro_situation) {
+      //   parametter['pro_situation'] = [
+      //     this.user.pro_situation,
+      //     [
+      //       Validators.required,
+      //     ]
+      //   ];
+      // } else {
+      //   parametter['pro_situation'] = [
+      //     '',
+      //     [
+      //       Validators.required,
+      //     ]
+      //   ];
+      // }
 
       this.secondStepInputList.map(input => {
 
@@ -639,11 +639,11 @@ export class UpdateUserComponent implements OnInit {
       }
     })
 
-    if(!proSituation) {
-      this.translate.get('User.InputRequiredError', { data: 'situation professionnelle' })
-        .subscribe(val => this.notifService.danger(val));
-      return;
-    }
+    // if(!proSituation) {
+    //   this.translate.get('User.InputRequiredError', { data: 'situation professionnelle' })
+    //     .subscribe(val => this.notifService.danger(val));
+    //   return;
+    // }
 
     if(this.publicInfoForm.valid) {
       this.isSubmitted = false;

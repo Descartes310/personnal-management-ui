@@ -120,6 +120,7 @@ import { DetailsSanctionComponent } from './sanctions/details-sanction/details-s
 
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { UserDetailsComponent } from './users/details-user/user-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -191,6 +192,8 @@ const routes: Routes = [
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'professional-score', component: AddUserNoteCriteriasComponent },
   { path: 'statistiques/view/:id', component:ViewUserStatComponent },
+
+  { path: 'users/details/:id', component:UserDetailsComponent },
   //routes pour ajout et update des contacts
   { path: 'contacts/update/:id', component:UpdateContactComponent},
   { path: 'contacts/add',component:AddContactComponent},
