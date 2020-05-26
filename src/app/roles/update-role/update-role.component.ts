@@ -95,6 +95,10 @@ export class UpdateRoleComponent implements OnInit {
     this.role_name = event.target.value.replace(/[^A-Z0-9]/ig, "_");
   }
 
+  computeNameFromString(event: string): string{
+    return event.replace(/[^A-Z0-9]/ig, "_");
+  }
+
   search(event) {
     this.permissions = this.permissions_tmp;
     this.permissions = this.permissions_tmp.filter( permission => permission.display_name.toLowerCase().includes(event.target.value.toLowerCase()));
@@ -118,7 +122,7 @@ export class UpdateRoleComponent implements OnInit {
     this.isSuccess = false;
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.form.name.setValue(this.role_name);
+    this.form.name.value.length <= 0 ? this.form.name.setValue(this.computeNameFromString(this.form.label.value)) : null;
     if (this.roleForm.invalid) {
       this.translate.get('Role.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -150,7 +154,7 @@ export class UpdateRoleComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Role.'+err.error.code)
+        this.translate.get('Role.'+err.code)
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

@@ -38,10 +38,10 @@
                                         <div class="position-relative form-group">
                                             <label> {{ 'DisciplinaryBoards.Name' | translate }} <span
                                                     style="color: red;">*</span> </label>
-                                            <input type="text" readonly class="form-control" value="{{ selected_user ? selected_user.login : '' }}">
+                                            <input type="text" readonly class="form-control" value="{{ selected_user ? selected_user.first_name +' '+ selected_user.last_name : '' }}">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="effective_date" class="">{{ 'Form.NameLabel' | translate }} &nbsp;
+                                            <label for="effective_date" class="">{{ 'Form.Date' | translate }} &nbsp;
                                                 <span style="color: red;">*</span> </label>
                                             <input required="required" id="effective_date"
                                                 placeholder="{{ 'Form.NameLabel' | translate }}" type="date"
@@ -125,7 +125,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">{{ us.login }}
+                                                            <div class="widget-heading">{{ us.first_name }} {{ us.last_name }}
                                                             </div>
                                                         </div>
                                                     </div>

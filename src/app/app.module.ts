@@ -281,7 +281,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     // UpdateProfileComponent,
     DecisionVacationComponent,
     AllVacationComponent,
-    //AddVacationComponent,
+    AddVacationComponent,
     AddContractComponent,
     AllContractComponent,
     UpdateContractComponent,

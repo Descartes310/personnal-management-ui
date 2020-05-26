@@ -73,11 +73,7 @@ export class AllBlogPostComponent implements OnInit {
     this.getallBlogCategories();
     //this.getAllPostWithCategorie(1);
     this.getUsersPost(1);
-
     this.getAllUsers();
-  
-
-
   }
 
   //recuperation de la liste des categories

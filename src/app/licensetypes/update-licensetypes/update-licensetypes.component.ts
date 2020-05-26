@@ -101,12 +101,12 @@ export class UpdateLicensetypesComponent implements OnInit {
       .then(resp => {
         this.translate.get('Licensetype.UpdateLicensetype')
         .subscribe(val => this.notifService.success(val));
-        this.router.navigate(['/licensetypes'])
+        this.router.navigate(['licensetypes/all'])
 
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Licensetype.NoUpdateLicensetype')
+        this.translate.get('Licensetype.'+err.code)
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

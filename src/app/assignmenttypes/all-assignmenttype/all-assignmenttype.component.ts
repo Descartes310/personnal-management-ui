@@ -61,6 +61,7 @@ export class AllAssignmenttypeComponent implements OnInit {
     this.assignmenttypeService.all().then(
       response => {
         this.assignmenttypes = [];
+        console.log(response)
         response.map( assignmenttype => {
           this.assignmenttypes.push(new Assignmenttype(assignmenttype));
         });
@@ -77,7 +78,7 @@ export class AllAssignmenttypeComponent implements OnInit {
   }
 
   editAssignmenttype(assignmenttype: Assignmenttype) {
-    this.router.navigate(['/assignmenttype/update/'+assignmenttype.id])
+    this.router.navigate(['assignment-types/update/'+assignmenttype.id])
   }
 
   detailsAssignmenttype(assignmenttype: Assignmenttype) {

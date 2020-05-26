@@ -5,6 +5,7 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-add-submission',
@@ -27,6 +28,7 @@ export class AddSubmissionComponent implements OnInit {
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
+    private authService: AuthService,
     private router: Router,
   ) { }
 
@@ -34,7 +36,7 @@ export class AddSubmissionComponent implements OnInit {
     this.getUsers();
 
     this.submissionForm = this.formBuilder.group({
-      user_send_id: ['', Validators.required],
+      //user_send_id: ['', Validators.required],
       dest_user_id: ['', Validators.required],
       subject: [''],
       message: ['', Validators.required],
@@ -76,7 +78,7 @@ export class AddSubmissionComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('user_id', '' + this.form.user_send_id.value);
+    formData.append('user_id', '' + this.authService.getUser().id);
     formData.append('dest_user_id', '' + this.form.dest_user_id.value);
     formData.append('subject', '' + this.form.subject.value);
     formData.append('message', '' + this.form.message.value);
