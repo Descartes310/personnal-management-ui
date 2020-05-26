@@ -149,6 +149,8 @@ import { AddSubmissionComponent } from './submissions/add-submission/add-submiss
 import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
 import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
@@ -289,6 +291,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
     AllBlogCategoryComponent,
     AllDemandesVacationComponent,
+    AllSanctionsComponent,
+    DetailsSanctionComponent,
+
     DetailsAssignmentComponent,
     AddSubmissionComponent,
     UpdateSubmissionComponent,
