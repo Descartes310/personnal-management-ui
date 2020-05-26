@@ -105,6 +105,11 @@ import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.comp
 
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+
+
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
+
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 
@@ -216,6 +221,9 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent},
   { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
   { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
+
+  { path: 'sanctions/all', component: AllSanctionsComponent },
+  { path: 'sanctions/details/:id', component:DetailsSanctionComponent},
 
   { path: 'career/add', component: AddCareerComponent },
   { path: 'career/update/:id', component:UpdateCareerComponent},
