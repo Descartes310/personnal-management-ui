@@ -31,6 +31,8 @@ import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 import { DecisionVacationComponent } from './vacations/decision-vacation/decision-vacation.component';
+import { AllDemandesLicenseComponent } from './licenses/all-demandes-license/all-demandes-license.component';
+import { DecisionLicenseComponent } from './licenses/decision-license/decision-license.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
@@ -154,8 +156,9 @@ const routes: Routes = [
   { path: 'users/all', component: AllUsersComponent },
   { path: 'roles/update/:id', component: UpdateRoleComponent },
   { path: 'vacation/demandes', component: AllDemandesVacationComponent },
-
   { path: 'vacation/demandes/:id', component: DecisionVacationComponent },
+  { path: 'license/demandes', component: AllDemandesLicenseComponent },
+  { path: 'license/demandes/:id', component: DecisionLicenseComponent },
   { path: 'templates/create', component: TemplateCreateComponent },
   { path: 'templates/update/:id', component: TemplateUpdateComponent },
   { path: 'templates/all', component: AllTemplatesComponent },
