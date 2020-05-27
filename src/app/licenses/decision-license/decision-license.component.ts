@@ -101,10 +101,11 @@ export class DecisionLicenseComponent implements OnInit {
     
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('user_id', '' + this.license.user_id);
-    formData.append('vacation_type_id', '' + this.license.license_type_id);
+    formData.append('user_id', '' + this.license.user_id.id);
+    formData.append('license_type_id', '' + this.license.license_type_id.id);
     formData.append('raison', '' + this.license.raison);
     formData.append('description', '' + this.license.description);
+    formData.append('is_active', '' + 1);
     formData.append('requested_start_date', '' + this.license.requested_start_date);
     formData.append('requested_days', '' + this.license.requested_days);
     formData.append('status', 'CANCELLED' );
@@ -144,13 +145,14 @@ export class DecisionLicenseComponent implements OnInit {
     }
     this.isLoading =true;
     const formData = new FormData();
-    formData.append('user_id', '' + this.license.user_id);
-    formData.append('vacation_type_id', '' + this.license.license_type_id);
+    formData.append('user_id', '' + this.license.user_id.id);
+    formData.append('license_type_id', '' + this.license.license_type_id.id);
     formData.append('raison', '' + this.license.raison);
     formData.append('description', '' + this.license.description);
     formData.append('requested_start_date', '' + this.license.requested_start_date);
     formData.append('accorded_start_date', '' + this.form.requested_start_date.value);
     formData.append('requested_days', '' + this.license.requested_days);
+    formData.append('is_active', '' + 1);
     formData.append('accorded_days', '' + this.form.requested_days.value);
     formData.append('status', 'APPROVED' );
     this.licenseService.update(formData, this.license.id)
@@ -187,9 +189,10 @@ export class DecisionLicenseComponent implements OnInit {
     }
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('user_id', '' + this.license.user_id);
-    formData.append('vacation_type_id', '' + this.license.license_type_id);
+    formData.append('user_id', '' + this.license.user_id.id);
+    formData.append('license_type_id', '' + this.license.license_type_id.id);
     formData.append('raison', '' + this.license.raison);
+    formData.append('is_active', '' + 1);
     formData.append('description', '' + this.license.description);
     formData.append('requested_start_date', '' + this.license.requested_start_date);
     formData.append('requested_days', '' + this.license.requested_days);

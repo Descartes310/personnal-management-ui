@@ -1,7 +1,7 @@
 import { Super } from './super.model';
 
 export class License extends Super<License> {
-    public user_id:number;
+    public user_id: any;
     public license_type_id: any;
     public raison: string;
     public description: string;

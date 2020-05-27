@@ -69,7 +69,8 @@
         "DisciplinaryBoard": "Conseils de discipline",
         "Personnel": "Personnels",
         "Submissions": "Courriels",
-        "ProfileUpdate": "Mise à jour du profile"
+        "ProfileUpdate": "Mise à jour du profile",
+        "DemandeLicense": "Demandes de permissions"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
