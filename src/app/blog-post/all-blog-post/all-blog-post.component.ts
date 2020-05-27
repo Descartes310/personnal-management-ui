@@ -92,27 +92,7 @@ export class AllBlogPostComponent implements OnInit {
       }
     )
   }
-  //recuperation de tout les posts d'une categorie
-  getAllPostWithCategorie(blog_categorie_id: number) {
-    this.blogpostservice.allPostsWithCategorieId(blog_categorie_id).then(
-      response => {
-        console.log('dfdfdfdfd')
-        console.log(response)
-        this.listBlog_posts = [];
-        this.listBlog_posts = response.blog_categorie.blog_posts;
-        this.listBlogCategories_tmp = response.blog_categorie.blog_posts;
-        console.log(this.listBlog_posts)
-      }
-    ).catch(
-      error => {
-        this.notifService.danger(error.error.message)
-      }
-    ).finally(
-      () => {
-        //this.loading = false;
-      }
-    )
-  }
+
 
   //recuperatio de tous les blogs post de la page 
   getAllBlogPost(){
@@ -233,7 +213,7 @@ export class AllBlogPostComponent implements OnInit {
     else{
       const blogCategorie: BlogCategorie = this.getOneBlogCategorie(titleSelected);
       console.log('title:'+blogCategorie.id)
-      this.getAllPostWithCategorie(blogCategorie.id)
+      //this.getAllPostWithCategorie(blogCategorie.id)
     }
     
   }
