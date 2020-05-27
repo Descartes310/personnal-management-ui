@@ -143,8 +143,19 @@ export class AddContactComponent implements OnInit {
     this.image = event.target.files[0];
     console.log(this.image)
   }
-  //validation de chaque etape
-  validStep1() {
+
+  previous1() {
+    this.stepIndexSelected = 0;
+  }
+  previous2() {
+    this.stepIndexSelected = 1;
+  }
+  previous3() {
+    this.stepIndexSelected = 2;
+  }
+
+   //validation de chaque etape
+   validStep1() {
     if (this.firstFormGroup.invalid) {
       this.stepIndexSelected = 0;
       this.isSubmitted = true;
@@ -155,16 +166,6 @@ export class AddContactComponent implements OnInit {
       this.isSubmitted = false;
       this.stepIndexSelected = 1;
     }
-  }
-
-  previous1() {
-    this.stepIndexSelected = 0;
-  }
-  previous2() {
-    this.stepIndexSelected = 1;
-  }
-  previous3() {
-    this.stepIndexSelected = 2;
   }
   //step 2
   validStep2() {

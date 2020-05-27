@@ -21,16 +21,16 @@ export class DetailBlogPostComponent implements OnInit {
   listBlogComment: BlogComment[] = [];
   //recuperation du dit blog
   BlogPost: BlogPost;
-  blog_post_id:number;
-  userPost:User;
-  UserComments:User[]=[];
-  UserAuth:User;
-  newCommentValue:string;
+  blog_post_id: number;
+  userPost: User;
+  UserComments: User[] = [];
+  UserAuth: User;
+  newCommentValue: string = "";
 
   panelOpenState = false;
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
-  
+
 
   //SweetAlert Text
   areYouSure = '';
@@ -46,9 +46,9 @@ export class DetailBlogPostComponent implements OnInit {
     private translate: TranslateService,
     private route: ActivatedRoute,
     private router: Router,
-    private blogservice:BlogPostService,
-    private authService:AuthService
-  ) { 
+    private blogservice: BlogPostService,
+    private authService: AuthService
+  ) {
 
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
@@ -65,25 +65,25 @@ export class DetailBlogPostComponent implements OnInit {
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
 
-      //recuperation de utilisateur authentifié
-      this.UserAuth=this.authService.getUser();
+    //recuperation de utilisateur authentifié
+    this.UserAuth = this.authService.getUser();
   }
 
   ngOnInit() {
     //recuperation de utilisateur connecté
-    this.UserAuth=this.authService.getUser();
+    this.UserAuth = this.authService.getUser();
     this.blog_post_id = +this.route.snapshot.paramMap.get("id");
     this.findPost(this.blog_post_id);
     this.getAllUsers()
   }
   //recuperation du post
-  findPost(idpost:number){
+  findPost(idpost: number) {
     this.blogservice.find(idpost).then(
       response => {
         console.log(response.blog_post)
-        this.BlogPost=response.blog_post;
-        this.userPost=response.blog_post.user_post;
-        this.listBlogComment=response.blog_post.bog_comments;
+        this.BlogPost = response.blog_post;
+        this.userPost = response.blog_post.user_post;
+        this.listBlogComment = response.blog_post.bog_comments;
         console.log(this.listBlogComment)
       }
     ).catch(
@@ -99,10 +99,10 @@ export class DetailBlogPostComponent implements OnInit {
 
   //recuperation de utilisateur qui a commente un post donnee 
 
-  getAllUsers(){
+  getAllUsers() {
     this.blogservice.allUser().then(
       response => {
-        this.UserComments=response
+        this.UserComments = response
 
       }
     ).catch(
@@ -115,38 +115,37 @@ export class DetailBlogPostComponent implements OnInit {
       }
     )
   }
-  getOneUserComment(user_id:number):User{
-    const usercomment:User=this.UserComments.find(
-      (usercommentObject)=>{
-        return usercommentObject.id===user_id;
+  getOneUserComment(user_id: number): User {
+    const usercomment: User = this.UserComments.find(
+      (usercommentObject) => {
+        return usercommentObject.id === user_id;
       }
     )
     return usercomment;
   }
-  
-  addNewComment(blog_post_id:number){
-    const blogComment=new BlogComment();
-        blogComment.user_id=this.UserAuth.id;
-        blogComment.blog_post_id=blog_post_id;
-        blogComment.comment=this.newCommentValue;
-        blogComment.created_at=new Date();
-        blogComment.updated_at=new Date();
-        console.log(blogComment)
+
+  addNewComment(blog_post_id: number) {
+    const blogComment = new BlogComment();
+    blogComment.user_id = this.UserAuth.id;
+    blogComment.blog_post_id = blog_post_id;
+    blogComment.comment = this.newCommentValue;
+    blogComment.created_at = new Date();
+    blogComment.updated_at = new Date();
+    console.log(blogComment)
+    this.blogservice.addComment(blogComment).then(
+
+      response => {
+        this.translate.get('BlogPost.CommentSuccess')
+          .subscribe(val => this.notifService.success(val));
         this.listBlogComment.push(blogComment)
-        this.newCommentValue="";
-
-        this.blogservice.addComment(blogComment).then(
-
-          response=>{
-            this.translate.get('BlogPost.SubmitSuccess')
-            .subscribe(val => this.notifService.success(val));
-          }
-        ).catch(
-          error => {
-            console.log(error)
-            this.notifService.danger(error.error.message)
-          }
-        )
+        this.newCommentValue = "";
+      }
+    ).catch(
+      error => {
+        console.log(error)
+        this.notifService.danger(error.error.message)
+      }
+    )
   }
 
   //supprimer un post par celui qui a posté
@@ -170,13 +169,13 @@ export class DetailBlogPostComponent implements OnInit {
               'success'
             )
             //on enleve le commentaire du tableau
-            const index=this.listBlogComment.findIndex(
+            const index = this.listBlogComment.findIndex(
               (commentObject) => {
-                return commentObject.id==blogComment.id;
+                return commentObject.id == blogComment.id;
               }
             )
-            console.log("index"+index)
-            this.listBlogComment.splice(index,1);
+            console.log("index" + index)
+            this.listBlogComment.splice(index, 1);
           }
         ).catch(
           error => {
