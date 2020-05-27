@@ -155,6 +155,8 @@ import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-crite
 
 import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
 import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
+import { AllDemandesLicenseComponent } from './licenses/all-demandes-license/all-demandes-license.component';
+import { DecisionLicenseComponent } from './licenses/decision-license/decision-license.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -295,6 +297,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddSanctionComponent,
     AllDisciplinaryComponent,
     DetailsDisciplinaryComponent,
+    AllDemandesLicenseComponent,
+    DecisionLicenseComponent,
   ],
 
   imports: [

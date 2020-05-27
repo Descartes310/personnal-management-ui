@@ -105,20 +105,7 @@
         "SelectMember": "Veuillez selectionner un membre",
         "Created_Error": "Echec de cretion dy conseil"
     },
-    "NoteCriteria": {
-        "NoteCriterias": "Critère de notation",
-        "NoteCriteriasAdd": " Nouveau critère de notation",
-        "NoteCriteriasUpdate": "Mise à jour d'un critère de notation",
-        "NoteCriteriaTitle": "Gestion des critères de notation de l'application",
-        "CreateNoteCriteria": "Enregistrer",
-        "UpdateNoteCriteria": "Mettre à jour le critère de notation",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "NOTECRITERIA_NOT_FOUND": "ce critere n'existe pas",
-        "noteMinsup": "La note minimale doit etre inferieur à la note maximale",
-        "SubmitSuccess": "La création du critère de notation a réussie...",
-        "UpdateSuccess": "La mise à jour du critère de notation a réussie...",
-        "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
-    },
+  
     "BlogPost": {
         "BlogPosts": "Actualites",
         "BlogPostTitle": "Gestion des Actualites de l'application",
@@ -600,6 +587,31 @@
         "created_at": "Creer le ",
         "CreatedAtLabel": "Date de dépôt"
     },
+    "Demande_L": {
+        "LicenseAsk": "Demandes de congés",
+        "LicenseAttent": "Gestion des demandes de congés en attente",
+        "Licenses": "Liste des demandes de congés",
+        "LicenseTitle": "Gestion des demandes de congés de l'application",
+        "AcceptLicense": "Accepter",
+        "SubmitSuccess": "Traitement de la demande reussie",
+        "CancelLicense": "Annuler",
+        "RefuseLicense": "Refuser",
+        "AcceptLicenseNotif": "Vous avez accepté la demande",
+        "CancelLicenseNotif": "Vous avez annulé la demande",
+        "RefuseLicenseNotif": "Vous avez refusé la demande",
+        "SubmitError": " Ne retrouve pas la demande",
+        "DEMANDE_V_NOT_FOUND": "La demande n'a pas été retrouvé",
+        "DEMANDE_V_ALREADY_EXISTS": "La demande a déjà été traité",
+        "raison": "Raison de la demande",
+        "description": "Description de la demande",
+        "requested_start_date": "Date de depart proposée",
+        "accorded_start_date": "Voulez vous modifier la date proposée ?",
+        "requested_days": "Nombre de jours poposés",
+        "accorded_days": "Voulez vous modifier le nombre de jours ?",
+        "created_at": "Creer le ",
+        "CreatedAtLabel": "Date de dépôt"
+    },
+
     "Contract": {
         "Contracts": "Contrats",
         "ContractTitle": "Gestion des contrats de l'application",
