@@ -33,9 +33,18 @@
                                                     <label for="exampleName" class="">{{ "Form.LabelLabel" | translate }} </label>
                                                     <input name="name" id="exampleName" placeholder="{{ 'Form.NameField' | translate }}" type="text" formControlName="name" (keyup)="computeName($event)" class="form-control {{ isSubmitted && form.name.errors ? 'is-invalid' : '' }}">
                                                 </div>
-                                                <div class="position-relative form-group">
+                                                <!-- <div class="position-relative form-group">
                                                     <label for="exampleSlug" class="">{{ "Form.SlugLabel" | translate }}</label>
                                                     <input name="slug"  disabled type="text" value="{{ training_name }}" class="form-control">
+                                                </div> -->
+                                                <div class="position-relative form-group">
+
+                                                    <label>{{ 'User.UserDivisions' | translate }}</label>
+
+                                                    <select matInput formControlName="division_id" class="form-control {{ isSubmitted && publicInfo.division_id.errors ? 'is-invalid' : '' }}">
+                                                        <option *ngFor='let option of divisions' value="{{ option.id }}"> {{ option.name }}</option>
+                                                    </select>
+
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label for="exampleTrainer" class="">{{ "Form.NameTrainer" | translate }} </label>

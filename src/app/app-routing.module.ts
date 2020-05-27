@@ -104,6 +104,7 @@ import { FindSettingsComponent } from './settings/find-settings/find-settings.co
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { AddCareerUserComponent } from './careers/add-career-user/add-career-user.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
@@ -121,6 +122,8 @@ import { DetailsSanctionComponent } from './sanctions/details-sanction/details-s
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
 import { UserDetailsComponent } from './users/details-user/user-details.component';
+import { UserNoteComponent } from './user-note/user-note.component';
+import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all-vacationtypes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -191,7 +194,9 @@ const routes: Routes = [
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
   { path: 'document-viewer', component: DocumentViewerComponent },
   { path: 'professional-score', component: AddUserNoteCriteriasComponent },
+  { path: 'professional-score/all', component: UserNoteComponent },
   { path: 'statistiques/view/:id', component:ViewUserStatComponent },
+  { path: 'vacationtypes/all', component:AllVacationTypeComponent },
 
   { path: 'users/details/:id', component:UserDetailsComponent },
   //routes pour ajout et update des contacts
@@ -255,6 +260,7 @@ const routes: Routes = [
   { path: 'career/add', component: AddCareerComponent },
   { path: 'career/update/:id', component: UpdateCareerComponent},
   { path: 'promotions', component: AddCareerComponent },
+  { path: 'promotions/user/:id', component: AddCareerUserComponent },
 
   // { path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },

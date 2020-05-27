@@ -15,13 +15,13 @@
                     <div class="menu-header-btn-pane pt-2">
                         <div role="group" class="btn-group text-center">
                             <div class="nav">
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/update-user']">{{ 'Profile.ProfileUpdate' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/users/update/'+profile.id]">{{ 'Profile.ProfileUpdate' | translate }}
                                 </button>                            
                                 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/update-password']">{{ 'Profile.PasswordUpdate' | translate }}
                                 </button>
                                 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/statistiques/view/'+profile.id]">{{ 'Profile.ProfileStatistique' | translate }}
                                 </button> 
-                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/assignments/add']">{{ 'Profile.ProfilePromotion' | translate }}
+                                <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-secondary" [routerLink]="['/promotions/user/'+profile.id]">{{ 'Profile.ProfilePromotion' | translate }}
                                 </button> 
                             </div>
                         </div>

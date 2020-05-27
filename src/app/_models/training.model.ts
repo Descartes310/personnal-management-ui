@@ -11,4 +11,5 @@ export class Training extends Super<Training> {
     public duration : number;
     public location: string;
     public is_online: number;
+    public division: any;
 }

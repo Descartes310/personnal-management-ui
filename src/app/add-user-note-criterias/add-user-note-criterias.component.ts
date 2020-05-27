@@ -133,7 +133,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
         this.isSubmitted = false;
         this.isLoading = false;
         this.selected_user = null;
-        // this.router.navigate(['/roles/all']);
+        this.router.navigate(['/roles/all']);
       })
       .catch(error => {
         console.log(error)
@@ -187,7 +187,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
         this.isSubmitted = false;
         this.isLoading = false;
         this.selected_user = null;
-        // this.router.navigate(['/roles/all']);
+        this.router.navigate(['/roles/all']);
       })
       .catch(error => {
         console.log(error)
@@ -199,11 +199,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
   }
 
   setNote(event) {
-    for (let not of this.list_note) {
-      if (not.id == event.target.value) {
-        this.selected_note = not;
-      }
-    }
+    this.selected_note = this.list_note.filter(note => note.id == event.target.value)[0];
     if (this.form.score.value != "")
       this.verify();
     
@@ -268,6 +264,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
   vider(){
     this.isUpdate = false;
     this.selected_user = null;
+    this.isLoading = false;
     this.form.score.setValue(0);
     this.form.appreciation.setValue('');
     this.form.description.setValue('');

@@ -158,6 +158,9 @@ import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-crite
 import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
 import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
 import { UserDetailsComponent } from './users/details-user/user-details.component';
+import { AddCareerUserComponent } from './careers/add-career-user/add-career-user.component';
+import { UserNoteComponent } from './user-note/user-note.component';
+import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all-vacationtypes.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -278,8 +281,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateSettingsComponent,
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
+    AllVacationTypeComponent,
     AddCareerComponent,
     UserDetailsComponent,
+    AddCareerUserComponent,
     UpdateCareerComponent,
     // AddProfileComponent,
     // UpdateProfileComponent,
@@ -302,6 +307,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddSanctionComponent,
     AllDisciplinaryComponent,
     DetailsDisciplinaryComponent,
+    UserNoteComponent,
   ],
 
   imports: [

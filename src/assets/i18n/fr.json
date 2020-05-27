@@ -38,6 +38,7 @@
         "Vacations": "Congés",
         "NotesPros": "Notes professionnelles",
         "Career": "Promotions et parcours",
+        "DemandeVacation": "Demandes de congés",
         "Assignment": "Affectations",
         "addAssignment": "Nouvelle affectation",
         "listAssignment": "Liste des affectations",
@@ -205,7 +206,8 @@
         "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
     },
     "UserNoteCriteria": {
-        "Title": "Gestion des Criteres de notation",
+        "Title": "Gestion des de notation",
+        "Name": "Notation",
         "Error": "Echec de l'action",
         "Success": "Action effectué avec success",
         "Select_note": "Selectionner un critaire de note",
