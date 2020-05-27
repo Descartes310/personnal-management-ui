@@ -285,7 +285,7 @@
                                           <div class="card-body">
                                             
                                             <mat-horizontal-stepper [linear]="isLinear" [selectedIndex]="this.stepIndexSelected" #stepper>
-                                              <mat-step >
+                                              <mat-step>
                                                 <form [formGroup]="firstFormGroup">
                                                     <ng-template matStepLabel>{{ 'Form.HeadPrincipalLabel' | translate }}</ng-template>
                                                     
@@ -339,9 +339,6 @@
                                                             </button>
                                                             </div>
                                                     </form>
-
-                                                    
-                                                
                                               </mat-step>
                                               <mat-step [stepControl]="secondFormGroup">
                                                 <form [formGroup]="secondFormGroup">
@@ -370,7 +367,6 @@
                                                           </div>
                                                       </div>  
                                                         <div>
-                                                            
                                                             <button type="button" mat-button matStepperPrevious (click)="previous1()"    class="btn btn-primary btn-sm m-2" style="width:11%; justify-content: center; align-items: center; flex: 1;float: left;">
                                                                 <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 3px;">{{ 'Form.PreviousLabel' | translate }}</p>
                                                                 <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
@@ -394,7 +390,7 @@
                                                             </button>
                                                          
                                                         </div>
-                                                </form>
+                                                    </form>
                                               </mat-step>
 
                                               <mat-step [stepControl]="thirdFormGroup">

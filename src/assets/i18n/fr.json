@@ -126,6 +126,7 @@
         "AddBlogPost": "Ajouter un article",
         "UpdateBlogPost": "Mettre a jour un article",
         "SubmitError": "Les champs en rouges sont obligatoires",
+        "CommentSuccess": "La création du commentaire a réussie...",
         "SubmitSuccess": "La création de l'article a réussie...",
         "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
         "ErrorSubmit": "echec d'ajout de l'article",
