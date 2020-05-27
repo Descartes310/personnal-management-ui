@@ -60,16 +60,16 @@ export class UpdateDivisionComponent implements OnInit {
     if(withDivision) {
       console.log(this.division)
       this.divisionForm = this.formBuilder.group({
-        name: [this.division.name, [Validators.required]],
-        label: [this.division.slug, [Validators.required]],
-        parent_id: '',
+        name: [this.division.slug, [Validators.required]],
+        label: [this.division.name, [Validators.required]],
+        parent_id: [this.division.parent_id],
         description: [this.division.description]
       });
     }else {
       this.divisionForm = this.formBuilder.group({
         name: ['', [Validators.required]],
         label: ['', [Validators.required]],
-        parent_id: '',
+        parent_id: [''],
         description: ['']
       });
     }
@@ -81,32 +81,16 @@ export class UpdateDivisionComponent implements OnInit {
 
   computeName(event){
     this.division_name = event.target.value.replace(/[^A-Z0-9]/ig, "_");
+    this.form.name.setValue(this.division_name)
   }
 
-  search(event) {
-    this.Division = this.Division_tmp;
-    this.Division = this.Division_tmp.filter( division => division.slug.toLowerCase().includes(event.target.value.toLowerCase()));
-  }
-
- /*  onChecked(division, event){
-    if(event.target.checked) {
-      this.selected_divisions.push(division.id);
-    } else {
-      this.selected_divisions.splice(this.selected_divisions.indexOf(division.id), 1);
-    }
-  }
-
-  isChecked(id: number){
-    return this.selected_divisions.includes(id);
-  }
- */
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
-    this.division_name != null ? this.form.name.setValue(this.division_name) : null;
+    //this.division_name != null ? this.form.name.setValue(this.division_name) : null;
     if (this.divisionForm.invalid) {
       this.translate.get('Division.SubmitError')
         .subscribe(val => this.notifService.danger(val));
@@ -115,13 +99,11 @@ export class UpdateDivisionComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('slug', '' + this.form.label.value);
-    formData.append('name', '' + this.form.name.value);
+    formData.append('slug', '' + this.form.name.value);
+    formData.append('name', '' + this.form.label.value);
     formData.append('description', '' + this.form.description.value);
-    formData.append('parent_id', '' + this.form.parent_id.value);
-    /* this.selected_divisions.forEach( elt => {
-      formData.append('divisions[]', JSON.stringify(elt));
-    }); */
+    if(this.form.parent_id.value)
+      formData.append('parent_id', '' + this.form.parent_id.value);
     this.divisionService.update(formData, this.division.id)
       .then(resp => {
         console.log(resp)
@@ -139,6 +121,7 @@ export class UpdateDivisionComponent implements OnInit {
       })
       .finally(() => this.isLoading = false);
   }
+
   getDivions() {
     this.divisionService.divisions().then(
       response => {

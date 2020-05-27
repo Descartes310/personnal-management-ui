@@ -15,7 +15,7 @@
                             </div>
                             <div class="card-body">
                                 <div>
-                                        <img *ngIf="BlogPost.image==null"style="width: 400px; height: auto;" style="float: left;" src="assets/images/avatars/7.jpg" alt="" class="d-block ui-w-40 rounded-circle">
+                                        <img *ngIf="BlogPost.image==null" style="width: 400px; height: auto;" style="float: left;" src="{{BlogPost.image}}" alt="" class="d-block ui-w-40 rounded-circle">
                                         <p [innerHTML]="BlogPost.content">le
                                             
                                          </p>
@@ -54,8 +54,8 @@
             
                         <div class="card mb-3" *ngFor="let blogComment of listBlogComment">
                             <div class="card-body">
-                                <div class="media">
-                                    <img style="width: 40px; height: auto;" src="assets/images/avatars/7.jpg" alt="" class="d-block ui-w-40 rounded-circle">
+                                <div class="media" *ngIf="profile">
+                                    <img style="width: 40px; height: auto;" src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="" class="d-block ui-w-40 rounded-circle">
                                     <div class="media-body ml-4">
                                         <div class="float-right text-muted small"><em *ngIf="blogComment.updated_at"style="color: blue;">Publié le: </em>{{blogComment.updated_at|date:'dd/MMM/yyy'}}</div>
                                         <a href="javascript:void(0)">{{getOneUserComment(blogComment.user_id).login}}</a>
@@ -68,10 +68,7 @@
                                         </div>
                                         <div class="small mt-2">
                                             <a *ngIf="this.UserAuth.id==blogComment.user_id" href="javascript:void(0)" (click)="deleteBlogComment(blogComment)" class="text-muted" style="font-size:small;">Supprimer</a>
-                                            <a href="javascript:void(0)" class="text-muted ml-3">
-                                                <i class="lnr-thumbs-up"></i> 15</a>
-                                            <a href="javascript:void(0)" class="text-muted ml-3">
-                                                <i class="lnr-thumbs-down"></i> 3</a>
+                                           
                                         </div>
                                     </div>
                                 </div>

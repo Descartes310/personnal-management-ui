@@ -128,7 +128,7 @@ export class AddRoleComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
-        this.translate.get('Login.AUTH_LOGIN')
+        this.translate.get('Role.Error')
         .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);

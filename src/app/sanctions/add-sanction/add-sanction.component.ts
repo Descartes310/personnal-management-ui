@@ -45,6 +45,7 @@ export class AddSanctionComponent implements OnInit {
   get form() {
     return this.sanctionForm.controls;
   }
+
   getUsers() {
     this.sanctionService.users().then(
       response => {
@@ -59,6 +60,7 @@ export class AddSanctionComponent implements OnInit {
       }
     )
   }
+
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
@@ -74,18 +76,18 @@ export class AddSanctionComponent implements OnInit {
     this.isLoading = true;
     const formData = new FormData();
 
+    formData.append('user_id', '' + this.form.user_sanction.value);
+    formData.append('subject_id', '');
     formData.append('subject', '' + this.form.subject.value);
     formData.append('raison', '' + this.form.raison.value);
     formData.append('decision', '' + this.form.decision.value);
-    if (this.currentDate >= this.form.start_date.value || this.form.days.value <= 0) {
-      this.translate.get('Form.StartDateError')
-        .subscribe(val => this.notifService.danger(val));
+    if (this.form.days.value <= 0) {
       this.translate.get('Form.DaysError')
         .subscribe(val => this.notifService.danger(val));
     }
     formData.append('start_date', '' + this.form.start_date.value);
     formData.append('days', '' + this.form.days.value);
-
+   
     this.sanctionService.add(formData)
       .then(resp => {
         console.log(resp);

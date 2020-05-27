@@ -36,6 +36,14 @@ import { AddRoleComponent } from './roles/add-role/add-role.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { UpdateRoleComponent } from './roles/update-role/update-role.component';
 import { DetailsRoleComponent } from './roles/details-role/details-role.component';
+import { AddDisciplinaryBoardsComponent } from './disciplinary_boards/add-disciplinary-boards/add-disciplinary-boards.component';
+import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-disciplinary-boards/update-disciplinary-boards.component';
+import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
+
+
+//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+
+
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
 import { UpdateTrainingComponent } from './trainings/update-training/update-training.component';
 import { AddBlogCategoryComponent } from './blog_category/add-blog-category/add-blog-category.component';
@@ -51,6 +59,7 @@ import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { AllAssignmentsComponent } from './assignments/all-assignments/all-assignments.component';
+
 import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
@@ -77,8 +86,11 @@ import { FindContractComponent } from './contracts/find-contract/find-contract.c
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import {MatStepperModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import { AllDivisionComponent } from './divisions/all-division/all-division.component';
+import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
 
-import { MatStepperModule, MatInputModule,MatFormFieldModule} from '@angular/material';
 import { DetailsProSituationComponent } from './pro_situations/details-pro-situation/details-pro-situation.component';
 import { UpdateAssignmentComponent } from './assignments/update-assignment/update-assignment.component';
 import { AddBlogPostComponent } from './blog-post/add-blog-post/add-blog-post.component';
@@ -137,13 +149,15 @@ import { AddSubmissionComponent } from './submissions/add-submission/add-submiss
 import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
-import { AllDivisionComponent } from './divisions/all-division/all-division.component';
-import { DetailsDivisionComponent } from './divisions/details-division/details-division.component';
-import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
+import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
 import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
 import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
+import { UserDetailsComponent } from './users/details-user/user-details.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -168,6 +182,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllRolesComponent,
     UpdateRoleComponent,
     DetailsRoleComponent,
+    AddDisciplinaryBoardsComponent,
+    UpdateDisciplinaryBoardComponent,
+    AddUserNoteCriteriasComponent,
+    AddNoteCriteriasComponent,
+    UpdateNoteCriteriasComponent,
     AddTrainingComponent,
     UpdateTrainingComponent,
     AddBlogCategoryComponent,
@@ -179,6 +198,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddAssignmentComponent,
     AllAssignmentsComponent,
     UpdateAssignmentComponent,
+    AddNoteCriteriasComponent,
+    UpdateNoteCriteriasComponent,
     ChatComponent,
     AddContactComponent,
     UpdateContactComponent,
@@ -193,13 +214,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
     AllDivisionComponent,
-    DetailsDivisionComponent,
-    
+    DetailsDivisionComponent,    
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
-   
     AllNotecriteriasComponent,
     DetailsNotecriteriasComponent,
     DeleteNotecriteriasComponent,
@@ -260,6 +279,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
     AddCareerComponent,
+    UserDetailsComponent,
     UpdateCareerComponent,
     // AddProfileComponent,
     // UpdateProfileComponent,
@@ -273,6 +293,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
     AllBlogCategoryComponent,
     AllDemandesVacationComponent,
+    AllSanctionsComponent,
+    DetailsSanctionComponent,
 
     DetailsAssignmentComponent,
     AddSubmissionComponent,
@@ -309,7 +331,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastrModule.forRoot(),
     BlockUIModule.forRoot(),
     BrowserAnimationsModule
-  ],
+  ], 
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },

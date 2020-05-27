@@ -53,6 +53,8 @@ export class UpdateTrainingComponent implements OnInit {
   initForm(withTraining = false) {
     if(withTraining) {
       console.log(this.training)
+      this.training_name = this.training.slug;
+      this.is_online = this.training.is_online ? true : false;
       this.trainingForm = this.formBuilder.group({
         name: [this.training.name, [Validators.required]],
         slug: [this.training.slug, [Validators.required]],
@@ -138,7 +140,7 @@ export class UpdateTrainingComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.trainingForm.reset();
-        //this.router.navigate(['/trainings/all']);
+        this.router.navigate(['/trainings/all']);
       })
       .catch(err => {
         console.log(err)

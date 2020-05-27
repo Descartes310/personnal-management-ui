@@ -13,9 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailsAssignmentComponent implements OnInit {
 
   users: any[] = [];
-
   assignment: Assignment = new Assignment();
-
 
   constructor(
     private assignmentService: AssignmentService,
@@ -28,9 +26,10 @@ export class DetailsAssignmentComponent implements OnInit {
   async ngOnInit() {
     const assignment_id = +this.route.snapshot.paramMap.get("id");
     this.assignmentService.find(assignment_id).then(
-      data => {
-        this.assignment = new Assignment(data);
-      }
+        response => {
+          this.assignment = new Assignment(response);
+          console.log(this.assignment);
+        }
     ).catch(
       error => {
         this.translate.get('Assignment.'+error.error.code)
@@ -39,5 +38,4 @@ export class DetailsAssignmentComponent implements OnInit {
       }
     )
   }
-
 }

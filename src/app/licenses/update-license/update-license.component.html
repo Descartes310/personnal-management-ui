@@ -30,7 +30,7 @@
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.LicenseTypeLabel" | translate }}</label>
                                             <select formControlName="license_type_id" class="form-control {{ isSubmitted && form.license_type_id.errors ? 'is-invalid' : '' }}">
-                                                <option value="" disabled selected hidden>{{ 'Form.LicenseTypeField'| translate }}</option>
+                                                <option value="" disabled hidden>{{ 'Form.LicenseTypeField'| translate }}</option>
                                                 <option *ngFor="let license_type of license_types"  value="{{license_type.id}}">{{license_type.name}} </option>
                                             </select>
                                         </div>

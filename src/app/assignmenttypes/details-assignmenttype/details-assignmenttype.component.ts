@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmenttypeService } from 'src/app/_services/assignmenttype.service';
+import { AssignmentTypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Assignmenttype } from 'src/app/_models/assignmenttype.model';
+import { AssignmentType } from 'src/app/_models/assignmenttype.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
@@ -14,10 +14,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailsAssignmenttypeComponent implements OnInit {
 
 
-  assignmenttype:Assignmenttype = new Assignmenttype();
+  assignmenttype:AssignmentType = new AssignmentType();
 
   constructor(
-    private assignmenttypeService: AssignmenttypeService,
+    private assignmenttypeService: AssignmentTypeService,
     private notifService: NotifService,
     private translate: TranslateService,
     private route: ActivatedRoute,
@@ -28,7 +28,7 @@ export class DetailsAssignmenttypeComponent implements OnInit {
     const assignmenttype_id = +this.route.snapshot.paramMap.get("id");
     this.assignmenttypeService.find(assignmenttype_id).then(
       data => {
-        this.assignmenttype = new Assignmenttype(data);
+        this.assignmenttype = new AssignmentType(data);
       }
     ).catch(
       error => {

@@ -61,6 +61,7 @@ export class AllVacationComponent implements OnInit {
     this.vacationService.all().then(
       response => {
         this.vacations = [];
+        console.log(response)
         response.map( vacation => {
           const v = new Vacation(vacation);
           if (v.file) {
@@ -71,6 +72,7 @@ export class AllVacationComponent implements OnInit {
       }
     ).catch(
       error => {
+        console.log(error)
         this.notifService.danger(error.error.message);
       }
     ).finally(

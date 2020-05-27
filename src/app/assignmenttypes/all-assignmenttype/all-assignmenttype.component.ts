@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Assignmenttype } from 'src/app/_models/assignmenttype.model';
-import { AssignmenttypeService } from 'src/app/_services/assignmenttype.service';
+import { AssignmentType } from 'src/app/_models/assignmenttype.model';
+import { AssignmentTypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class AllAssignmenttypeComponent implements OnInit {
 
-  assignmenttypes: Assignmenttype[] = [];
+  assignmenttypes: AssignmentType[] = [];
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
@@ -31,7 +31,7 @@ export class AllAssignmenttypeComponent implements OnInit {
 
 
   constructor(
-    private assignmenttypeService: AssignmenttypeService,
+    private assignmenttypeService: AssignmentTypeService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router) {
@@ -61,8 +61,9 @@ export class AllAssignmenttypeComponent implements OnInit {
     this.assignmenttypeService.all().then(
       response => {
         this.assignmenttypes = [];
+        console.log(response)
         response.map( assignmenttype => {
-          this.assignmenttypes.push(new Assignmenttype(assignmenttype));
+          this.assignmenttypes.push(new AssignmentType(assignmenttype));
         });
       }
     ).catch(
@@ -76,15 +77,15 @@ export class AllAssignmenttypeComponent implements OnInit {
     )
   }
 
-  editAssignmenttype(assignmenttype: Assignmenttype) {
-    this.router.navigate(['/assignmenttype/update/'+assignmenttype.id])
+  editAssignmenttype(assignmenttype: AssignmentType) {
+    this.router.navigate(['assignment-types/update/'+assignmenttype.id])
   }
 
-  detailsAssignmenttype(assignmenttype: Assignmenttype) {
+  detailsAssignmenttype(assignmenttype: AssignmentType) {
     this.router.navigate(['/assignmenttype/details/'+assignmenttype.id])
   }
 
-  deleteAssignmenttype(assignmenttype: Assignmenttype) {
+  deleteAssignmenttype(assignmenttype: AssignmentType) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,

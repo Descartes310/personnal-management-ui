@@ -9,6 +9,7 @@ import { User } from 'src/app/_models/user.model';
 import { AuthService } from 'src/app/_services/auth.service';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-detail-blog-post',
@@ -31,6 +32,8 @@ export class DetailBlogPostComponent implements OnInit {
   loading: boolean = true;
   @BlockUI() blockUI: NgBlockUI;
 
+  profile;
+  
 
   //SweetAlert Text
   areYouSure = '';
@@ -47,7 +50,8 @@ export class DetailBlogPostComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private blogservice: BlogPostService,
-    private authService: AuthService
+    private authService: AuthService,
+    private userService:UserService
   ) {
 
     this.translate.get(
@@ -72,6 +76,13 @@ export class DetailBlogPostComponent implements OnInit {
   ngOnInit() {
     //recuperation de utilisateur connecté
     this.UserAuth = this.authService.getUser();
+    this.userService.find(this.UserAuth.id).then(
+      response => {
+        this.profile = response;
+        console.log(response)
+      }
+    );   
+    this.UserAuth=this.authService.getUser();
     this.blog_post_id = +this.route.snapshot.paramMap.get("id");
     this.findPost(this.blog_post_id);
     this.getAllUsers()

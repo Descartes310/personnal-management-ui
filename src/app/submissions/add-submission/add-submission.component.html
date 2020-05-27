@@ -27,16 +27,16 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
                                     <form (submit)="onSubmit()" [formGroup]="submissionForm" enctype="multipart/form-data">
-                                        <div class="position-relative form-group">
+                                        <!-- <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ "Form.UserEmetteurLabel" | translate }} </label>
-                                            <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_send_id.errors ? 'is-invalid' : '' }}" formControlName="user_send_id">
-                                                <option [value]="user.id" *ngFor="let user of users">{{user.first_name +" "+user.last_name}}</option>
+                                            <select class="form-control {{ isSubmitted && form.user_send_id.errors ? 'is-invalid' : '' }}" formControlName="user_send_id">
+                                                <option *ngFor="let user of users" [value]="user.id" >{{user.first_name +" "+user.last_name}}</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ "Form.UserDestinationLabel" | translate }} </label>
-                                            <select class="multiselect-dropdown form-control {{ isSubmitted && form.dest_user_id.errors ? 'is-invalid' : '' }}" formControlName="dest_user_id">
-                                                <option [value]="dest.id" *ngFor="let dest of users">{{dest.login}}</option>
+                                            <select class="form-control {{ isSubmitted && form.dest_user_id.errors ? 'is-invalid' : '' }}" formControlName="dest_user_id">
+                                                <option  *ngFor="let dest of users" [value]="dest.id">{{dest.first_name +" "+dest.last_name}}</option>
                                             </select>
                                         </div> 
                                         <div class="position-relative form-group">

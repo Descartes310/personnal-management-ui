@@ -5,14 +5,14 @@
                 <i class="pe-7s-shield icon-gradient bg-ripe-malin">
                 </i>
             </div>
-            <div>{{ 'Training.Training_Title' | translate }}
-                <div class="page-title-subheading">{{ 'Training.Training_Name' | translate }}
+            <div>{{ 'Training.Trainings' | translate }}
+                <div class="page-title-subheading">{{ 'Training.TrainingTitle' | translate }}
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" [routerLink]="['/trainings/add']" data-toggle="tooltip" title="{{ 'Training.Add_Training' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a type="button" [routerLink]="['/trainings/add']" data-toggle="tooltip" title="{{ 'Training.AddTraining' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Training.Add_Training' | translate }}</p>
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Training.AddTraining' | translate }}</p>
                 </a>
             </div>
         </div>
@@ -23,7 +23,7 @@
     <div class="main-card mb-3 card">
         <div class="card-header">
             <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-            {{ 'Training.Training_Title' | translate }}
+            {{ 'Training.Trainings' | translate }}
         </div>
         <div class="card-body">
 
@@ -45,9 +45,9 @@
                         <td style="width: 19%">{{ training.name }}</td>
                         <td style="width: 19%">{{ training.trainer }}</td>
                         <td style="width: 12%">{{ training.start_date }}</td>
-                        <td style="width: 25%">{{ training.duration }}</td>
+                        <td style="width: 15%">{{ training.duration }}</td>
                         <td style="width: 12%">{{ training.location }}</td>
-                        <td style="width: 20%">
+                        <td style="width: 30%">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editTrainings(training)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)=" detailsTrainings(training)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteTrainings(training)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>

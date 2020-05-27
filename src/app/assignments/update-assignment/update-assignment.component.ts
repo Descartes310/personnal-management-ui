@@ -16,7 +16,7 @@ export class UpdateAssignmentComponent implements OnInit {
 
   type_assignment: any[] = [];
   users: any[] = [];
-
+  cities: any[] = [];
   assignmentForm: FormGroup;
   isLoading = false;
   isError = false;
@@ -36,6 +36,7 @@ export class UpdateAssignmentComponent implements OnInit {
 
   async ngOnInit() {
     this.initForm();
+    this.getCities();
     this.getUsers();
     this.getTypeAssignment();
     const assignment_id = +this.route.snapshot.paramMap.get("id");
@@ -103,7 +104,17 @@ export class UpdateAssignmentComponent implements OnInit {
       }
     )
   }
-
+  getCities(){
+    this.assignmentService.cities().then(
+      response => {
+        this.cities = response;
+      }
+    ).catch(
+      error => {
+        this.notifService.danger("aucune ville existante");
+      }
+    )
+  }
   onSubmit() {
     this.isSubmitted = true;
     this.isError = false;
@@ -128,7 +139,7 @@ export class UpdateAssignmentComponent implements OnInit {
 
     this.assignmentService.update(formData, this.assignment.id)
       .then(resp => {
-        this.translate.get('Assignment.SubmitSuccess')
+        this.translate.get('Assignment.UpdateSuccess')
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentForm.reset();

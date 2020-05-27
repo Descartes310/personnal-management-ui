@@ -6,7 +6,7 @@
                 </i>
             </div>
             <div>{{ 'Contract.Contracts' | translate }}
-                <div class="page-title-subheading">{{ 'ContractTitle' | translate }}
+                <div class="page-title-subheading">{{ 'Contract.ContractTitle' | translate }}
                 </div>
             </div>
         </div>
@@ -82,24 +82,70 @@
                                                             <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
                                                     </div>
                                                     <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.free_daysLabel' | translate }}</div>
+                                                        <div>{{ contract.free_days }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.start_dateLabel' | translate }}</div>
+                                                        <div>{{ contract.start_date }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">{{ 'Form.end_dateLabel' | translate }}</div>
+                                                        <div>{{ contract.end_date }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.CreatedAtLabel' | translate }}</div>
                                                         <div>{{ contract.created_at }}</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="page-title-actions">
-                                                <a type="button"  data-toggle="tooltip" title="{{ 'Contract.DownloadContract' | translate }}" (click)="downloadFile()" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
-                                                    <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                                                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Contract.AddContract' | translate }}</p>
+                                    </ul>
+                                </div>                            
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="d-flex align-items-center" style="width: 100%;">
+                                                 <a type="button"  href="{{downloadFile}}" target="_blank" (click)="download()" data-toggle="tooltip" title="{{ 'Contract.Download' | translate }}"  data-placement="bottom"  class="mb-2 mr-2 btn-icon btn btn-info" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ 'Contract.DownloadContract' | translate }}</p>
                                                 </a>
                                             </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                               
+                                        </div>
+                                    </div>
+                                </div>   
                             </div>
                         </div>
                     </div>

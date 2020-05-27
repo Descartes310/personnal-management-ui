@@ -44,12 +44,12 @@ export class UpdateLicenseComponent implements OnInit {
 
   async ngOnInit() {
     this.user = this.authService.getUser();
-    console.log(this.user);
     this.initForm();
     this.getLicense_Type();
     const license_id = +this.route.snapshot.paramMap.get("id");
     this.licenseService.find(license_id).then(
       data => {
+        console.log(data)
         this.license = data;
         this.initForm(true);
       }
@@ -67,7 +67,7 @@ export class UpdateLicenseComponent implements OnInit {
     if(withLicense) {
       this.licenseForm = this.formBuilder.group({
         user_id: [this.license.user_id, [Validators.required]],
-        license_type_id: [this.license.license_type_id, [Validators.required]],
+        license_type_id: [this.license.license_type_id.id, [Validators.required]],
         reason:[this.license.raison],
         description: [this.license.description],
         file:[],
@@ -144,6 +144,7 @@ export class UpdateLicenseComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.licenseForm.reset();
+        this.router.navigate(['licenses/all']);
       })
       .catch(err => {
         console.log(err)

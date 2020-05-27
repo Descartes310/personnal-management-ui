@@ -4,6 +4,7 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Vacation } from 'src/app/_models/vacation.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import * as Route from '../../Routes'
 
 
 @Component({
@@ -18,6 +19,7 @@ export class DetailVacationComponent implements OnInit {
 
   vacation: Vacation = new Vacation();
 
+  server = Route.ROOT;
 
   constructor(
     private vacationService: VacationService,
@@ -32,6 +34,7 @@ export class DetailVacationComponent implements OnInit {
     this.vacationService.find(vacation_id).then(
       data => {
         this.vacation = new Vacation(data);
+        console.log(this.vacation)
      /*     this.vacations = this.vacation.vacationss;
         this.vacations_tmp = this.vacation.vacationss;  */
       }

@@ -651,17 +651,13 @@ export class AddUserComponent implements OnInit {
       }
     });
 
-    // this.selected_permissions.forEach( elt => {
-    //   this.data.append('permissions[]', JSON.stringify(elt));
-    // });
+    this.selected_permissions.forEach( elt => {
+      this.data.append('permissions[]', JSON.stringify(elt));
+    });
 
-    // this.selected_roles.forEach( elt => {
-    //   this.data.append('roles[]', JSON.stringify(elt));
-    // });
-    // armel
-    this.data.append('permissions', JSON.stringify(this.selected_permissions));
-    this.data.append('roles', JSON.stringify(this.roles));
-    // armel
+    this.selected_roles.forEach( elt => {
+      this.data.append('roles[]', JSON.stringify(elt));
+    });
     this.data_tmp1.roles = this.selected_roles;
     this.data_tmp1.permissions = this.selected_permissions;
 
@@ -692,14 +688,20 @@ export class AddUserComponent implements OnInit {
           this.selected_permissions = [];
           this.selected_roles = [];
           document.getElementById('reset-btn').click();
+          this.data = new FormData();
+          this.data_tmp1 = {};
+          this.data_tmp2 = {};
         })
         .catch(err => {
+          console.log(err);
           this.translate.get('User.CreateUserError')
             .subscribe(val => this.notifService.danger(val));
         });
       }
     ).catch(
       error => {
+        console.log(error);
+        
         if (error.status && error.code) {
           if (error.status === '400' && error.code === 'VALIDATION_ERROR') {
             this.firstStepInputList.map(input => {
@@ -735,9 +737,6 @@ export class AddUserComponent implements OnInit {
     ).finally(
       () => {
         this.loading = false;
-        this.data = new FormData();
-        this.data_tmp1 = {};
-        this.data_tmp2 = {};
       }
     );
 

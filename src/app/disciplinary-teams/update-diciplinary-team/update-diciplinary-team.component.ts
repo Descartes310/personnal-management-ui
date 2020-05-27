@@ -3,7 +3,7 @@ import { DiciplinaryTeamService } from 'src/app/_services/diciplinary-team.servi
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { DiciplinaryTeam } from 'src/app/_models/diciplinary-team.model';
+import { DisciplinaryTeam } from 'src/app/_models/disciplinary-team.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { UserService } from 'src/app/_services/user.service';
@@ -26,7 +26,7 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
   users_tmp: any[] = [];
   selected_users: number[] = [];
 
-  assign: DiciplinaryTeam = new DiciplinaryTeam();
+  assign: DisciplinaryTeam = new DisciplinaryTeam();
 
   constructor(
     private templateService: DiciplinaryTeamService,
@@ -152,7 +152,7 @@ export class UpdateDiciplinaryTeamComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         // this.diciplinaryTeamForm.reset();
-        // this.router.navigate(['']);
+        this.router.navigate(['/disciplinary-teams/all']);
       })
       .catch(err => {
         this.translate.get('diciplinaryTeam.DT_ALREADY_EXIST')

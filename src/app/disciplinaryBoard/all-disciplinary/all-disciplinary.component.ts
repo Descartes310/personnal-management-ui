@@ -78,7 +78,7 @@ export class AllDisciplinaryComponent implements OnInit {
   }
 
   editDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {
-    this.router.navigate(['/disciplinaryBoards/update/' + disciplinaryBoard.id]);
+    this.router.navigate(['/disciplinary_boards/update/' + disciplinaryBoard.id]);
   }
 
   detailsDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {

@@ -40,7 +40,7 @@ export class AllLicensesComponent implements OnInit {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
       'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-      { data: 'role' })
+      { data: 'Permission' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
@@ -62,6 +62,7 @@ export class AllLicensesComponent implements OnInit {
     this.license_service.all().then(
       response => {
         this.licenses=response;
+        console.log(response)
         this.licenses.forEach(license => {
           if(license['file'] != null ){
             this.file_existing[license.id] = true;
@@ -113,7 +114,7 @@ export class AllLicensesComponent implements OnInit {
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Role.'+error.error.code)
+            this.translate.get('Permission.'+error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
         )
