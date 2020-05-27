@@ -46,7 +46,9 @@
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="">{{ "Form.DestinationLabel" | translate }} </label>
-                                                    <input name="destination" id="exampleEmail" value="{{assignment.destination}}" placeholder="{{ 'Form.DestinationField' | translate }}" type="text" formControlName="destination" class="form-control {{ isSubmitted && form.destination.errors ? 'is-invalid' : '' }}">
+                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.destination.errors ? 'is-invalid' : '' }}" formControlName="destination">
+                                                        <option [value]="city.id" *ngFor="let city of cities">{{city.name}}</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-6 -col-xs-6">

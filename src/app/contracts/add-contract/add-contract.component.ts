@@ -180,7 +180,7 @@ export class AddContractComponent implements OnInit {
 
   search(event) {
     this.users = this.users_tmp;
-    this.users = this.users_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.users = this.users_tmp.filter(user => (user.first_name+' '+user.last_name).toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
 }
