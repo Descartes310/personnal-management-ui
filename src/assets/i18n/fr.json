@@ -107,7 +107,7 @@
         "SelectMember": "Veuillez selectionner un membre",
         "Created_Error": "Echec de cretion dy conseil"
     },
-  
+
     "BlogPost": {
         "BlogPosts": "Actualites",
         "BlogPostTitle": "Gestion des Actualites de l'application",
@@ -840,5 +840,10 @@
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+
+    "HTTP_ERROR_MSG": {
+      "403": "Accès refusé !",
+      "401": "Votre session est arrivée à expiration !"
     }
 }
