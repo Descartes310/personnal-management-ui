@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, CanActivate, ActivatedRouteSnapshot } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { NotifService } from '../_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -30,17 +30,11 @@ export class AuthGuardService implements CanActivate {
       this.router.navigate(['home']);
     }
 
-    if (permissions) {
-      const hasPermission = this.authService.hasPermission(permissions);
-      if (hasPermission) {
-        return true;
-      } else {
-        this.translate.get('HTTP_ERROR_MSG.403').subscribe(val => this.notifService.warning(val));
-        // this.router.navigate(['home']);
-        return false;
-      }
-    } else {
-      return true;
+    if (permissions && !this.authService.hasPermission(permissions)) {
+      this.translate.get('HTTP_ERROR_MSG.403').subscribe(val => this.notifService.warning(val));
+      return false;
     }
+
+    return true;
   }
 }
