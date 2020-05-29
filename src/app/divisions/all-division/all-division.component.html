@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" [routerLink]="['/divisions/add']" data-toggle="tooltip" title="{{ 'Division.AddDivision' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a *ngIf="canCreate" type="button" [routerLink]="['/divisions/add']" data-toggle="tooltip" title="{{ 'Division.AddDivision' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Division.AddDivision' | translate }}</p>
                 </a>
             </div>
@@ -43,9 +43,9 @@
                         <td style="width: 22%">{{ division.division?.name}}</td>
                         <td style="width: 26%">{{ division.description }}</td>
                         <td style="width: 15%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDivision(division)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canUpdate" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDivision(division)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsDivision(division)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteDivision(division)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canDelete" class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteDivision(division)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>

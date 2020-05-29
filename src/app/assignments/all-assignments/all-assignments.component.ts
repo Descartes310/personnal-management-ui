@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Assignment } from 'src/app/_models/assignment.model';
 import Swal from 'sweetalert2';
 import { NgBlockUI, BlockUI } from 'ng-block-ui';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-assignments',
@@ -15,9 +16,9 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 export class AllAssignmentsComponent implements OnInit {
 
   assignments: Assignment[] = [];
-  user : any[];
-  assignmentType : any[];
-  loading: boolean = true;
+  user: any[];
+  assignmentType: any[];
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
   // SweetAlert Text
@@ -29,9 +30,13 @@ export class AllAssignmentsComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private assignmentService: AssignmentService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -56,6 +61,10 @@ export class AllAssignmentsComponent implements OnInit {
   ngOnInit() {
     this.assignments = [];
     this.getAssignments();
+    const permissionSuffix = 'assignments';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   async getAssignments() {
@@ -68,9 +77,9 @@ export class AllAssignmentsComponent implements OnInit {
         response.map(assignment => {
           this.assignments.push(new Assignment(assignment));
         });
-       
+
       }
-      
+
     ).catch(
       error => {
         this.notifService.danger(error.error.message)

@@ -25,18 +25,20 @@ export class AllBlogPostComponent implements OnInit {
   UserAuth: User;
   UserBlogPosts: User[] = [];
   panelOpenState = false;
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+
   constructor(
     private blogpostservice: BlogPostService,
     private notifService: NotifService,
@@ -62,82 +64,80 @@ export class AllBlogPostComponent implements OnInit {
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
 
-    //recuperation de utilisateur authentifié
+    // recuperation de utilisateur authentifié
     this.UserAuth = this.authService.getUser();
   }
 
 
   ngOnInit() {
-
-    this.getAllBlogPost()
+    this.canCreate = this.authService.hasPermission('create-blog-posts');
+    this.getAllBlogPost();
     this.getallBlogCategories();
-    //this.getAllPostWithCategorie(1);
+    // this.getAllPostWithCategorie(1);
     this.getUsersPost(1);
     this.getAllUsers();
   }
 
-  //recuperation de la liste des categories
+  // recuperation de la liste des categories
   getallBlogCategories() {
-    //this.loading = true;
+    // this.loading = true;
     this.blogpostservice.all_blog_categories().then(
       response => {
         this.listBlogCategories = response.data;
-        console.log(this.listBlogCategories)
+        console.log(this.listBlogCategories);
       }
     ).catch(
-      
+
     ).finally(
       () => {
-        //this.loading = false;
+        // this.loading = false;
       }
-    )
+    );
   }
 
 
-  //recuperatio de tous les blogs post de la page 
-  getAllBlogPost(){
+  // recuperatio de tous les blogs post de la page
+  getAllBlogPost() {
     this.blogpostservice.all_posts().then(
       response => {
         this.listBlog_posts = [];
         this.listBlog_posts = response;
-        this.listBlogCategories_tmp=response;
-        console.log(this.listBlog_posts)
-        
+        this.listBlogCategories_tmp = response;
+
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
-        //this.loading = false;
+        // this.loading = false;
       }
-    )
+    );
   }
-  //recuperation de utilisateur qui a commente un post donnee 
+  // recuperation de utilisateur qui a commente un post donnee
 
   getAllUsers() {
     this.blogpostservice.allUser().then(
       response => {
         this.UserBlogPosts = response;
-        console.log(this.UserBlogPosts)
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
-        //this.loading = false;
+        // this.loading = false;
       }
-    )
+    );
   }
   getOneUserPost(user_id: number): User {
     const userblogPost: User = this.UserBlogPosts.find(
       (userObject) => {
         return userObject.id === user_id;
       }
-    )
+    );
 
     return userblogPost;
   }
@@ -145,26 +145,23 @@ export class AllBlogPostComponent implements OnInit {
   getUsersPost(user_id: number) {
     this.blogpostservice.findUser(user_id).then(
       response => {
-        console.log(response)
-        this.UserPost = response
-
-
+        this.UserPost = response;
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
-        //this.loading = false;
+        // this.loading = false;
       }
-    )
+    );
   }
 
   detailBlogPost(blog_post_id: number) {
-    this.router.navigate(['/blog-posts/details/' + blog_post_id])
+    this.router.navigate(['/blog-posts/details/' + blog_post_id]);
   }
-  //supprimer un post par celui qui a posté
+  // supprimer un post par celui qui a posté
   deleteBlogPost(blogPost: BlogPost) {
     Swal.fire({
       title: this.areYouSure,
@@ -200,43 +197,40 @@ export class AllBlogPostComponent implements OnInit {
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
-  //changement de la categorie
+  // changement de la categorie
   changeBlogCategorie(event) {
     const titleSelected = event.tab.textLabel;
-    if(titleSelected=="tous"){
-      this.getAllBlogPost()
+    if(titleSelected=="tous") {
+      this.getAllBlogPost();
     }
-    else{
+    else {
       const blogCategorie: BlogCategorie = this.getOneBlogCategorie(titleSelected);
-      console.log('title:'+blogCategorie.id)
-      //this.getAllPostWithCategorie(blogCategorie.id)
+      // this.getAllPostWithCategorie(blogCategorie.id)
     }
-    
+
   }
-  //recuperation d'un Blogcategorie
+  // recuperation d'un Blogcategorie
   getOneBlogCategorie(title: string) {
     const blogCat: BlogCategorie = this.listBlogCategories.find(
       (blogCatObject) => {
         return blogCatObject.title == title;
       }
-    )
+    );
     return blogCat;
   }
 
-  getPartOfcontent(content:string){
-    return content.substring(1,250)+"...";
+  getPartOfcontent(content: string) {
+    return content.substring(1, 250) + '...';
   }
 
-  //function de rech erche d'un blog
-  search(event){
-   
+  // function de rech erche d'un blog
+  search(event) {
     this.listBlog_posts = this.listBlogCategories_tmp;
     this.listBlog_posts = this.listBlog_posts.filter( blogPost => blogPost.title.toLowerCase().includes(event.target.value.toLowerCase()));
-    console.log(this.listBlog_posts)
   }
 
 }

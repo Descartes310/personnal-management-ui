@@ -6,6 +6,7 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2';
 import { TemplateService } from 'src/app/_services/template.service';
 import { Template } from 'src/app/_models/template.model';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -16,28 +17,32 @@ import { Template } from 'src/app/_models/template.model';
 export class AllTemplatesComponent implements OnInit {
 
   templates: Template[] = [];
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
-    //SweetAlert Text
+    // SweetAlert Text
     areYouSure = '';
-    warning = ''
+    warning = '';
     yes = '';
     no = '';
     deleted = '';
     deletedMessage = '';
     cancelled = '';
     cancelledMessage = '';
-  
+    canCreate = false;
+    canUpdate = false;
+    canDelete = false;
+
   constructor(
-    private template_service:TemplateService,
+    private authService: AuthService,
+    private template_service: TemplateService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router
-  ) { 
+  ) {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: 'modèle de document' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -50,40 +55,42 @@ export class AllTemplatesComponent implements OnInit {
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
    }
-  
+
   ngOnInit() {
     this.getTemplates();
+    const permissionSuffix = 'templates';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getTemplates() {
     this.loading = true;
     this.template_service.all().then(
       response => {
-        console.log(response)
         this.templates = [];
-        this.templates=response
+        this.templates = response;
       }
     ).catch(
       error => {
-        console.log(error)
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
         this.loading = false;
       }
-    )
+    );
   }
 
-  editTemplates(template:Template) {
-    this.router.navigate(['/templates/update/'+template.id])
+  editTemplates(template: Template) {
+    this.router.navigate(['/templates/update/' + template.id]);
   }
 
   detailsTemplates(template: Template) {
-    this.router.navigate(['/templates/details/'+template.id])
+    this.router.navigate(['/templates/details/' + template.id]);
   }
 
-  deleteTemplates(template:Template) {
+  deleteTemplates(template: Template) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -101,27 +108,23 @@ export class AllTemplatesComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            )
+            );
             this.getTemplates();
           }
         ).catch(
           error => {
-            console.log(error)
             this.blockUI.stop();
-            this.translate.get('Role.'+error.error.code)
+            this.translate.get('Role.' + error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
-        )
-        
+        );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
-
-
 }

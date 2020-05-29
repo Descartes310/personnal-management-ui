@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-demandes-vacation',
@@ -44,7 +45,7 @@ export class AllDemandesVacationComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'vacation' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -60,6 +61,7 @@ export class AllDemandesVacationComponent implements OnInit {
 
   ngOnInit() {
     this.getVacations();
+    const permissionSuffix = 'vacations';
   }
 
   getVacations() {

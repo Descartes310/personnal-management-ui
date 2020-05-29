@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BlogCategory } from 'src/app/_models/blog.category.model';
 import { BlogCategoryService } from 'src/app/_services/blog-category.service';
 import { NotifService } from 'src/app/_services/notif.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-blog-category',
@@ -15,21 +16,25 @@ import { Router } from '@angular/router';
 export class AllBlogCategoryComponent implements OnInit {
 
   blogcats: BlogCategory[] = [];
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private blogCategoryService: BlogCategoryService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -37,7 +42,7 @@ export class AllBlogCategoryComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'cat blog' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -52,7 +57,11 @@ export class AllBlogCategoryComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.getBlogCategories();
+     this.getBlogCategories();
+     const permissionSuffix = 'blog-categories';
+     this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+     this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+     this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getBlogCategories() {
@@ -66,21 +75,21 @@ export class AllBlogCategoryComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.notifService.danger(error.error.message)
+        this.notifService.danger(error.error.message);
       }
     ).finally(
       () => {
         this.loading = false;
       }
-    )
+    );
   }
 
   editblogcat(blogcat: BlogCategory) {
-    this.router.navigate(['blog-category/update/'+blogcat.id])
+    this.router.navigate(['blog-category/update/' + blogcat.id]);
   }
-  
+
   detailsblogcat(blogcat: BlogCategory) {
-    this.router.navigate(['blog-category/details/'+blogcat.id])
+    this.router.navigate(['blog-category/details/' + blogcat.id]);
   }
 
   deleteblogcat(blogcat: BlogCategory) {
@@ -101,26 +110,25 @@ export class AllBlogCategoryComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            )
+            );
             this.getBlogCategories();
           }
         ).catch(
           error => {
-            console.log(error)
             this.blockUI.stop();
-            this.translate.get('BlogCategory.'+error.error.code)
+            this.translate.get('BlogCategory.' + error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
-        )
-        
+        );
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
 
 }

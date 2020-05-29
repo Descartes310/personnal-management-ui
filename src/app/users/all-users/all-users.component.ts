@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 /**
  * @author Arléon Zemtsop
@@ -30,10 +31,14 @@ export class AllUsersComponent implements OnInit {
 	public deleted = '';
 	public deletedMessage = '';
 	public cancelled = '';
-	public cancelledMessage = '';
+  public cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
-  	constructor(
+  constructor(
+    private authService: AuthService,
 	    private userService: UserService,
 	    private notifService: NotifService,
 	    private translate: TranslateService,
@@ -42,7 +47,7 @@ export class AllUsersComponent implements OnInit {
 
 	    this.translate.get(
 	        ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-	        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+	        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
 	        { data: 'role' })
 	        .subscribe(val => {
 	          this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -57,7 +62,11 @@ export class AllUsersComponent implements OnInit {
    }
 
 	ngOnInit() {
-		this.getUsers();
+    this.getUsers();
+    const permissionSuffix = 'users';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
 	}
 
 	public getUsers() {
@@ -79,7 +88,7 @@ export class AllUsersComponent implements OnInit {
 		    this.loading = false;
 		  }
 		)
-    
+
     }
 
 	editUser(user: any) {
@@ -120,7 +129,7 @@ export class AllUsersComponent implements OnInit {
 		            .subscribe(val => this.notifService.danger(val));
 		          }
 		        )
-	        
+
 	      	} else if (result.dismiss === Swal.DismissReason.cancel) {
 		        Swal.fire(
 		          this.cancelled,

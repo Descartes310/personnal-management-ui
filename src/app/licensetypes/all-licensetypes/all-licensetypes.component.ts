@@ -6,6 +6,7 @@ import { LicensetypeService } from 'src/app/_services/licensetype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -28,8 +29,12 @@ export class AllLicensetypesComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private licensetypeService: LicensetypeService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -52,6 +57,10 @@ export class AllLicensetypesComponent implements OnInit {
    }
   ngOnInit() {
     this.getLicenseTypes();
+    const permissionSuffix = 'license-types';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   computeDescription(description: string): string {

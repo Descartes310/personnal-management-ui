@@ -41,7 +41,7 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
-//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+// import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 
 
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
@@ -106,7 +106,7 @@ import { AllContactComponent } from './contacts/all-contact/all-contact.componen
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
 
-//statistiques
+// statistiques
 import { ChartsModule } from 'ng2-charts';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
@@ -158,6 +158,7 @@ import { UserDetailsComponent } from './users/details-user/user-details.componen
 import { AddCareerUserComponent } from './careers/add-career-user/add-career-user.component';
 import { UserNoteComponent } from './user-note/user-note.component';
 import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all-vacationtypes.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -214,7 +215,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
     AllDivisionComponent,
-    DetailsDivisionComponent,    
+    DetailsDivisionComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllLicensetypesComponent,
@@ -336,7 +337,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastrModule.forRoot(),
     BlockUIModule.forRoot(),
     BrowserAnimationsModule
-  ], 
+  ],
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },

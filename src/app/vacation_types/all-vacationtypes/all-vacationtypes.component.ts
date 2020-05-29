@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { VacationType } from 'src/app/_models/vacation-type.model';
 import { VacationTypeService } from 'src/app/_services/vacation-type.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -29,8 +30,12 @@ export class AllVacationTypeComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private vacationTypeService: VacationTypeService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -53,6 +58,10 @@ export class AllVacationTypeComponent implements OnInit {
    }
   ngOnInit() {
     this.getLicenseTypes();
+    const permissionSuffix = 'vacation-types';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   computeDescription(description: string): string {

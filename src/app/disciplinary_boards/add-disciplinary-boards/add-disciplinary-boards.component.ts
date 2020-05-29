@@ -148,7 +148,7 @@ export class AddDisciplinaryBoardsComponent implements OnInit {
  getTeam(team){
   this.selected_team = team;
   console.log(team);
- } 
+ }
 
 
 }

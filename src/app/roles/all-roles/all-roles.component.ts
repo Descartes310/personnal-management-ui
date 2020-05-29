@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-roles',
@@ -27,9 +28,14 @@ export class AllRolesComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
+
 
 
   constructor(
+    private authService: AuthService,
     private roleService: RoleService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -53,6 +59,10 @@ export class AllRolesComponent implements OnInit {
 
   ngOnInit() {
     this.getRoles();
+    const permissionSuffix = 'roles';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getRoles() {

@@ -6,6 +6,7 @@ import { DivisionService } from 'src/app/_services/division.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-division',
@@ -14,20 +15,24 @@ import { Router } from '@angular/router';
 })
 export class AllDivisionComponent implements OnInit {
   divisions: Division[] = [];
-  loading: boolean = true;
+  loading = true;
   @BlockUI() blockUI: NgBlockUI;
 
-  //SweetAlert Text
+  // SweetAlert Text
   areYouSure = '';
-  warning = ''
+  warning = '';
   yes = '';
   no = '';
   deleted = '';
   deletedMessage = '';
   cancelled = '';
-  cancelledMessage = ''
+  cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private divisionService: DivisionService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -50,7 +55,11 @@ export class AllDivisionComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.getDivisions();
+     this.getDivisions();
+     const permissionSuffix = 'divisions';
+     this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+     this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+     this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getDivisions() {
@@ -58,7 +67,6 @@ export class AllDivisionComponent implements OnInit {
     this.divisionService.all().then(
       response => {
         this.divisions = [];
-        //console.log(response);
         response.map( division => {
           this.divisions.push(new Division(division));
         });
@@ -84,15 +92,15 @@ export class AllDivisionComponent implements OnInit {
         }
         this.loading = false;
       }
-    )
+    );
   }
 
   editDivision(division: Division) {
-    this.router.navigate(['/divisions/update/'+division.id])
+    this.router.navigate(['/divisions/update/' + division.id]);
   }
 
   detailsDivision(division: Division) {
-    this.router.navigate(['/divisions/details/'+division.id])
+    this.router.navigate(['/divisions/details/' + division.id]);
   }
 
   deleteDivision(division: Division) {
@@ -113,26 +121,25 @@ export class AllDivisionComponent implements OnInit {
               this.deleted,
               this.deletedMessage,
               'success'
-            )
+            );
             this.getDivisions();
           }
         ).catch(
           error => {
-            console.log(error)
             this.blockUI.stop();
-            this.translate.get('Division.'+error.error.code)
+            this.translate.get('Division.' + error.error.code)
             .subscribe(val => this.notifService.danger(val));
           }
-        )
+        );
 
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
           this.cancelledMessage,
           'error'
-        )
+        );
       }
-    })
+    });
   }
 
 }

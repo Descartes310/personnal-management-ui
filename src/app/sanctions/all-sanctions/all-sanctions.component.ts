@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-sanctions',
@@ -27,9 +28,13 @@ export class AllSanctionsComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private sanctionService: SanctionService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -37,7 +42,7 @@ export class AllSanctionsComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSureSanction', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'cette sanction' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSureSanction'];
@@ -53,6 +58,10 @@ export class AllSanctionsComponent implements OnInit {
 
   ngOnInit() {
     this.getSanctions();
+    const permissionSuffix = 'sanctions';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getSanctions() {
@@ -112,7 +121,7 @@ export class AllSanctionsComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,
