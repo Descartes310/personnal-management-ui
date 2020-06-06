@@ -9,12 +9,12 @@
                 <div class="page-title-subheading">{{ 'Vacation.VacationTitle' | translate }}
                 </div>
             </div>
-            <div class="page-title-actions">
+            <!-- <div class="page-title-actions">
                 <a type="button"  data-toggle="tooltip" title="{{ 'Role.AddRole' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
-                    <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
+                     <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i>
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Vacation.AddVacation' | translate }}</p>
                 </a>
-            </div>
+            </div> -->
         </div>   
     </div>
 </div>   
@@ -35,18 +35,18 @@
                         <th>{{ 'Form.CreatedAtLabel' | translate }}</th>
                         <th>{{ 'Form.DescriptionLabel' | translate }}</th>
                         <th>{{ 'Form.RequestedDaysLabel' | translate }}</th>
-                        <th>{{ 'Form.RequestedStartDate' | translate }}</th>
+                        <th>{{ 'Form.RequestedStartDateLabel' | translate }}</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let vacation of vacations,let i = index" id="{{ vacation.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 19%">{{ Demande_V.raison }}</td>
-                        <td style="width: 25%">{{ Demande_V.description }}</td>
-                        <td style="width: 12%">{{ Demande_V.requested_start_date }}</td>
-                        <td style="width: 12%">{{ Demande_V.requested_days }}</td>
-                        <td style="width: 12%">{{ Demande_V.created_at }}</td>
+                        <td style="width: 19%">{{ vacation.raison }}</td>
+                        <td style="width: 25%">{{ vacation.description }}</td>
+                        <td style="width: 12%">{{ vacation.requested_start_date }}</td>
+                        <td style="width: 12%">{{ vacation.requested_days }}</td>
+                        <td style="width: 12%">{{ vacation.created_at }}</td>
                         <td style="width: 15%"><button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="detailsRequest(vacation)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>

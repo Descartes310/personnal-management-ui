@@ -106,7 +106,7 @@ export class TemplateUpdateComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentTypeForm.reset();
-        //this.router.navigate(['']);
+        this.router.navigate(['/templates/all']);
       })
       .catch(err => {
         this.translate.get('Templates.ASSIGNMENT_NOT_EXIST')

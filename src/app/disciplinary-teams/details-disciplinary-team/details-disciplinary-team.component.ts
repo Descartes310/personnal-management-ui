@@ -12,8 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DetailsDisciplinaryTeamComponent implements OnInit {
   disciplinary:any;
-  //disciplinaryteam: Disciplinary
-  disciplinaryteams: DisciplinaryTeam[] = [];
+  disciplinaryteam: any;
   loading: boolean = true;
   disciplinary_id;
   constructor(
@@ -31,24 +30,13 @@ export class DetailsDisciplinaryTeamComponent implements OnInit {
 
   getDisciplinaryTeams() {
     this.loading = true;
-    this.disciplinaryteamService.getDisciplinaryTeamWithUsers().then(response => {
-        this.disciplinaryteams= response;
-        this.getOneDisciplinary_Team(this.disciplinary_id);
-        //console.log(this.disciplinary)
-        //console.log(response);
+    this.disciplinaryteamService.find(this.disciplinary_id).then(response => {
+        this.disciplinaryteam = response;
+        console.log(response);
     }).catch(error => {
         this.notifService.danger(error.error.message)
     }).finally( () => {
         this.loading = false;
     });
-  }
- 
-  getOneDisciplinary_Team(id){
-    this.disciplinary = this.disciplinaryteams.find(
-      (disciplinaryObject)=>{
-        return disciplinaryObject.id===id;
-      }
-    );
-    //console.log(this.disciplinary)
   }
 }

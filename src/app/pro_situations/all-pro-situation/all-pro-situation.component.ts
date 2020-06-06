@@ -9,6 +9,7 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2'
 import { ProSituationService } from 'src/app/_services/pro_situation.service';
 import { ProSituation } from 'src/app/_models/pro_situation.model';
+import { AuthService } from 'src/app/_services/auth.service';
 @Component({
   selector: 'app-all-pro-situation',
   templateUrl: './all-pro-situation.component.html',
@@ -29,9 +30,13 @@ export class AllProSituationComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private prosituation_service:ProSituationService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -39,7 +44,7 @@ export class AllProSituationComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSurePro', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: 'role' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSurePro'];
@@ -55,6 +60,10 @@ export class AllProSituationComponent implements OnInit {
 
   ngOnInit() {
     this.getProsituations();
+    const permissionSuffix = 'pro-situations';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getProsituations() {
@@ -117,7 +126,7 @@ export class AllProSituationComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

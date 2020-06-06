@@ -31,13 +31,13 @@
                                             <div class="col-md-6 col-sm-6 -col-xs-6">
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail">{{ "Form.UserLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.user_assignment.errors ? 'is-invalid' : '' }}" formControlName="user_assignment" >
+                                                    <select class="form-control {{ isSubmitted && form.user_assignment.errors ? 'is-invalid' : '' }}" formControlName="user_assignment" >
                                                         <option [value]="user.id"  *ngFor="let user of users">{{user.first_name +" "+user.last_name}}</option>
                                                     </select>
                                                 </div> 
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="">{{ "Form.TypeAssignmentLabel" | translate }} </label>
-                                                    <select class="multiselect-dropdown form-control {{ isSubmitted && form.type_assignment.errors ? 'is-invalid' : '' }}" formControlName="type_assignment">
+                                                    <select class="form-control {{ isSubmitted && form.type_assignment.errors ? 'is-invalid' : '' }}" formControlName="type_assignment">
                                                         <option [value]="type.id" *ngFor="let type of type_assignment">{{type.name}}</option>
                                                     </select>
                                                 </div>

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-disciplinary',
@@ -28,9 +29,13 @@ export class AllDisciplinaryComponent implements OnInit {
   cancelled = '';
   cancelledMessage = '';
   nom = 'le nom ici';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private disciplinaryBoardService: DisciplinaryBoardService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -54,6 +59,10 @@ export class AllDisciplinaryComponent implements OnInit {
 
   ngOnInit() {
     this.getDisciplinaryBoards();
+    const permissionSuffix = 'disciplinary-boards';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getDisciplinaryBoards() {
@@ -78,7 +87,7 @@ export class AllDisciplinaryComponent implements OnInit {
   }
 
   editDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {
-    this.router.navigate(['/disciplinaryBoards/update/' + disciplinaryBoard.id]);
+    this.router.navigate(['/disciplinary_boards/update/' + disciplinaryBoard.id]);
   }
 
   detailsDisciplinaryBoard(disciplinaryBoard: DisciplinaryBoard) {

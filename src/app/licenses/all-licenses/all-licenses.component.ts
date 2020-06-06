@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { License } from 'src/app/_models/license.model';
 import { LicenseService } from 'src/app/_services/license.service';
 import * as Routes from '../../Routes';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-licenses',
@@ -30,8 +31,12 @@ export class AllLicensesComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private license_service:LicenseService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -55,6 +60,10 @@ export class AllLicensesComponent implements OnInit {
 
   ngOnInit() {
     this.getLicenses();
+    const permissionSuffix = 'licenses';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getLicenses() {
@@ -62,6 +71,7 @@ export class AllLicensesComponent implements OnInit {
     this.license_service.all().then(
       response => {
         this.licenses=response;
+        console.log(response)
         this.licenses.forEach(license => {
           if(license['file'] != null ){
             this.file_existing[license.id] = true;

@@ -135,7 +135,7 @@ export class UpdateNoteCriteriasComponent implements OnInit {
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.noteCriteriaForm.reset();
-        this.router.navigate(['']);
+        this.router.navigate(['/notecriterias/all']);
       })
       .catch(err => {
         this.translate.get('NoteCriteria.' + err.error.code)

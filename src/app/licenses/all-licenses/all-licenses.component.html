@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" [routerLink]="['/licenses/add']" data-toggle="tooltip" title="{{ 'Licenses.Add_Licenses' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a *ngIf="canCreate" type="button" [routerLink]="['/licenses/add']" data-toggle="tooltip" title="{{ 'Licenses.Add_Licenses' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Licenses.Add_Licenses' | translate }}</p>
                 </a>
@@ -34,10 +34,7 @@
                         <th>{{ 'Form.UserName' | translate }}</th>
                         <th>{{ 'Form.LicenseType' | translate }}</th>
                         <th>{{ 'Form.Raison' | translate }}</th>
-                        <th>{{ 'Form.DescriptionLabel' | translate }}</th>
-                        <th>{{ 'Form.File' | translate }}</th>
                         <th>{{ 'Form.Requested_start_date' | translate }}</th>
-                        <th>{{ 'Form.Requested_days' | translate }}</th>
                         <th>{{ 'Form.Status' | translate }}</th>
                         <th>Actions</th>
                     </tr>
@@ -45,20 +42,18 @@
                 <tbody>
                     <tr *ngFor="let license of licenses,let i = index" id="tr{{ license.id }}">
                         <td style="width: 5%">{{ i+1 }}</td>
-                        <td style="width: 19%" >{{ license.user.login}}</td>
-                        <td style="width: 19%">{{ license.license_type.name}}</td>
+                        <td style="width: 19%" >{{ license.user.first_name }} {{ license.user.last_name }}</td>
+                        <td style="width: 10%">{{ license.license_type.name}}</td>
                         <td style="width: 25%">{{ license.raison }}</td>
-                        <td style="width: 12%">{{ license.description | slice:0:15}}...</td>
-                        <td style="width: 25%" *ngIf="!file_existing[license.id]"> </td>
-                        <td style="width: 25%" *ngIf="file_existing[license.id]"> <a href='{{ server + license.file}}'
-                            target="_blank"><img src="/assets/images/doc.png" alt="Télécharger..."></a></td>
-                        <td style="width: 12%">{{ license.requested_start_date }}</td>
-                        <td style="width: 12%">{{ license.requested_days }}</td>
-                        <td style="width: 25%">{{ license.status }}</td>
-                        <td style="width: 20%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editLicenses(license)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <!-- <td style="width: 25%" *ngIf="!file_existing[license.id]"> </td> -->
+                        <!-- <td style="width: 25%" *ngIf="file_existing[license.id]"> <a href='{{ server + license.file}}'
+                            target="_blank"><img src="/assets/images/doc.png" alt="Télécharger..."></a></td> -->
+                        <td style="width: 17%">{{ license.requested_start_date }}</td>
+                        <td style="width: 10%">{{ license.status }}</td>
+                        <td style="width: 30%">
+                            <button *ngIf="canUpdate" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editLicenses(license)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)=" detailsLicenses(license)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteLicenses(license)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canDelete" class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteLicenses(license)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>

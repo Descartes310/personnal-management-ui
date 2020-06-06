@@ -29,33 +29,33 @@
                                     <!-- jiozangtheophane@gmail.com -->
                                     <form (submit)="onSubmit()" [formGroup]="careersForm">
                                         <div class="position-relative form-group">
-                                            <label for="examplePassword" class="">{{ "Form.UsersLabel" | translate }}</label>
+                                            <label for="examplePassword" class="">{{ "Form.UserLabel" | translate }}</label>
                                             <select formControlName="user_id" class="form-control {{ isSubmitted && form.user_id.errors ? 'is-invalid' : '' }}">
-                                                <option value="" disabled selected hidden>{{ 'Form.UsersField'| translate }}</option>
-                                                <option *ngFor="let user of users"  value="{{user.id}}">{{user.login}} </option>
+                                                <option value="" disabled selected hidden>{{ 'Form.UserLabel'| translate }}</option>
+                                                <option *ngFor="let user of users"  value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
                                             </select>
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.Pro_situationsLabel" | translate }}</label>
                                             <select formControlName="pro_situation_id" class="form-control {{ isSubmitted && form.pro_situation_id.errors ? 'is-invalid' : '' }}">
-                                                <option value="" disabled selected hidden>{{ 'Form.Pro_situationsField'| translate }}</option>
+                                                <option value="" disabled selected hidden>{{ 'Form.Pro_situationsLabel'| translate }}</option>
                                                 <option *ngFor="let pro_situation of pro_situations"  value="{{pro_situation.id}}">{{pro_situation.name}} </option>
                                             </select>
                                         </div>
                                         <div class="position-relative form-group">
                                             <label for="examplePassword" class="">{{ "Form.DivisionsLabel" | translate }}</label>
                                             <select formControlName="division_id" class="form-control {{ isSubmitted && form.division_id.errors ? 'is-invalid' : '' }}">
-                                                <option value="" disabled selected hidden>{{ 'Form.DivisionsField'| translate }}</option>
+                                                <option value="" disabled selected hidden>{{ 'Form.DivisionsLabel'| translate }}</option>
                                                 <option *ngFor="let division of divisions"  value="{{division.id}}">{{division.name}} </option>
                                             </select>
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="exampleText" class="">{{ "Form.EffectiveDateLabel" | translate }} </label>
-                                            <input name="date" id="exampleText" placeholder="{{ 'Form.EffectiveDateField' | translate }}" type="date" formControlName="effective_date"  class="form-control">
+                                            <label for="exampleText" class="">{{ "Form.Date" | translate }} </label>
+                                            <input name="date" id="exampleText" placeholder="{{ 'Form.Date' | translate }}" type="date" formControlName="effective_date"  class="form-control">
                                         </div>
                                         <div class="d-flex align-items-center" style="width: 100%;">
                                             <button  [disabled]="isLoading" class="btn btn-primary btn-lg" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Career.CreateCareer" | translate }}</p>
+                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "Form.CreateCareer" | translate }}</p>
                                                 <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                                     <div class="ball-scale-multiple">
                                                         <div style="background-color: white;"></div>

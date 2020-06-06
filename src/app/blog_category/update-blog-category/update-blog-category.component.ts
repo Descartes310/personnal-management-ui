@@ -91,7 +91,7 @@ export class UpdateBlogCategoryComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.blogcatForm.reset();
-        this.router.navigate(['/blog-category/add']);
+        this.router.navigate(['/blog-category/all']);
       })
       .catch(err => {
         console.log(err)

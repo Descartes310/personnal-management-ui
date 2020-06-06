@@ -1,4 +1,5 @@
-export const SERVER = 'http://localhost:8000/api/';
+export const ROOT = 'http://localhost:8000/';
+export const SERVER = ROOT + 'api/';
 
 export const LOGIN = SERVER + 'auth/token';
 export const UPDATE_PASSWORD = SERVER + 'auth/updatepassword';
@@ -48,13 +49,6 @@ export const VACATION = SERVER + 'vacations';
 export const BlogPost = SERVER + 'blog_posts';
 export const User = SERVER + 'users';
 export const blogComment = SERVER + 'blog_comments';
-export const PROFILE = SERVER + 'profiles';
-export const DiciplinaryTeam = SERVER + 'disciplinary_teams';
-export const CAREER = SERVER + 'careers';
-export const NOTECRITERIAS = SERVER + 'note_criterias';
-export const ASSIGNMENTTYPE = SERVER + 'assignment_types';
-export const SYNC_USER_ABILITIES = SERVER + 'sync_user_abilities/{user_id}';
-export const dISCIPLINARYBOARD = SERVER + 'disciplinary_boards';
 export const StatCareer = SERVER + 'statistics/career';
 export const StatAssignment = SERVER + 'statistics/assignment_by_month';
-export const SYNC_USER_ABILITIES= SERVER+ 'sync_user_abilities/{user_id}'
+export const SYNC_USER_ABILITIES= SERVER+ 'sync_user_abilities/{user_id}';

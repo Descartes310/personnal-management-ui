@@ -132,9 +132,11 @@ export class AddUserNoteCriteriasComponent implements OnInit {
         this.formGroup.reset();
         this.isSubmitted = false;
         this.isLoading = false;
-        // this.router.navigate(['/roles/all']);
+        this.selected_user = null;
+        this.router.navigate(['/roles/all']);
       })
       .catch(error => {
+        console.log(error)
         this.translate.get('UserNoteCriteria.Error')
           .subscribe(val => this.notifService.danger(val));
       })
@@ -143,7 +145,7 @@ export class AddUserNoteCriteriasComponent implements OnInit {
 
   search(event) {
     this.user = this.user_tmp;
-    this.user = this.user_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.user = this.user_tmp.filter(user => (user.first_name+' '+user.last_name).toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
   onChecked(user, event) {
@@ -158,7 +160,6 @@ export class AddUserNoteCriteriasComponent implements OnInit {
   }
 
   updateUser(){
-    this.isUpdate = false;
     this.isSubmitted = true;
     this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
@@ -185,21 +186,20 @@ export class AddUserNoteCriteriasComponent implements OnInit {
         this.formGroup.reset();
         this.isSubmitted = false;
         this.isLoading = false;
-        // this.router.navigate(['/roles/all']);
+        this.selected_user = null;
+        this.router.navigate(['/roles/all']);
       })
       .catch(error => {
+        console.log(error)
         this.translate.get('UserNoteCriteria.Error')
           .subscribe(val => this.notifService.danger(val));
       })
       .finally(() => this.isLoading = false);
+      this.isUpdate = false;
   }
 
   setNote(event) {
-    for (let not of this.list_note) {
-      if (not.id == event.target.value) {
-        this.selected_note = not;
-      }
-    }
+    this.selected_note = this.list_note.filter(note => note.id == event.target.value)[0];
     if (this.form.score.value != "")
       this.verify();
     
@@ -253,15 +253,18 @@ export class AddUserNoteCriteriasComponent implements OnInit {
     )
     .catch(
       error => {
+        console.log(error)
         this.vider();
         this.isLoading = false;
       }
     );
-    
+    this.isLoading = false;
   }
 
   vider(){
     this.isUpdate = false;
+    this.selected_user = null;
+    this.isLoading = false;
     this.form.score.setValue(0);
     this.form.appreciation.setValue('');
     this.form.description.setValue('');

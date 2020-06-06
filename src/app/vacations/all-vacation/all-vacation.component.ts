@@ -7,6 +7,7 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import * as Routes from '../../Routes';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-vacation',
@@ -28,9 +29,13 @@ export class AllVacationComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private vacationService: VacationService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -54,6 +59,10 @@ export class AllVacationComponent implements OnInit {
 
   ngOnInit() {
     this.getVacations();
+    const permissionSuffix = 'vacations';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getVacations() {
@@ -61,6 +70,7 @@ export class AllVacationComponent implements OnInit {
     this.vacationService.all().then(
       response => {
         this.vacations = [];
+        console.log(response)
         response.map( vacation => {
           const v = new Vacation(vacation);
           if (v.file) {
@@ -71,6 +81,7 @@ export class AllVacationComponent implements OnInit {
       }
     ).catch(
       error => {
+        console.log(error)
         this.notifService.danger(error.error.message);
       }
     ).finally(

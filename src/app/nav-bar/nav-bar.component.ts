@@ -26,13 +26,14 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUser();
+    console.log(this.user)
     this.lan = this.translateService.currentLang;
-    console.log('La langue courante est: ', this.translateService.currentLang);
-    this.userService.find(this.user.id).then(
-      response => {
-        this.profile = response;
-      }
-    );
+    // this.userService.find(this.user.id).then(
+    //   response => {
+    //     this.profile = response;
+    //     console.log(response)
+    //   }
+    // );
   }
 
   logout() {

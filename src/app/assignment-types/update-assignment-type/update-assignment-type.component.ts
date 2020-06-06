@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmentTypeService } from 'src/app/_services/assignment-type.service';
+import { AssignmentTypeService } from 'src/app/_services/assignmenttype.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { AssignmentType } from 'src/app/_models/assignment-type.model';
+import { AssignmentType } from 'src/app/_models/assignmenttype.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -102,7 +102,7 @@ export class UpdateAssignmentTypeComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.assignmentTypeForm.reset();
-        this.router.navigate(['']);
+        this.router.navigate(['/assignmenttype/all']);
       })
       .catch(err => {
         this.translate.get('AssignmentType.'+err.error.code)

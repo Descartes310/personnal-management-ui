@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-contract',
@@ -28,8 +29,12 @@ export class AllContractComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private contractService: ContractService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -37,8 +42,8 @@ export class AllContractComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-        { data: 'contract' }) 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+        { data: 'contract' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];
@@ -50,10 +55,14 @@ export class AllContractComponent implements OnInit {
           this.cancelledMessage = val['SweetAlert.CancelledMessage'];
         });
    }
-   
+
 
    ngOnInit() {
-    this.getContracts();
+     this.getContracts();
+     const permissionSuffix = 'contracts';
+     this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+     this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+     this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getContracts() {
@@ -78,7 +87,7 @@ export class AllContractComponent implements OnInit {
       }
     )
   }
-  
+
 
   editContract(contract: Contract) {
     this.router.navigate(['/contracts/update/'+contract.id])
@@ -87,7 +96,7 @@ export class AllContractComponent implements OnInit {
   detailsContract(contract: Contract) {
     this.router.navigate(['/contracts/details/'+contract.id])
   }
-  
+
 
   deleteContract(contract: Contract) {
     Swal.fire({
@@ -118,7 +127,7 @@ export class AllContractComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

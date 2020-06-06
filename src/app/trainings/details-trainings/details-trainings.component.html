@@ -5,8 +5,8 @@
                 <i class="pe-7s-shield icon-gradient bg-ripe-malin">
                 </i>
             </div>
-            <div>{{ 'Training.Training_Title' | translate }}
-                <div class="page-title-subheading">{{ 'Training.Training_Name' | translate }}
+            <div>{{ 'Training.Trainings' | translate }}
+                <div class="page-title-subheading">{{ 'Training.TrainingTitle' | translate }}
                 </div>
             </div>
         </div>   
@@ -19,7 +19,7 @@
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-                    {{ 'Training.Training_Title' | translate }}
+                    {{ 'Training.Trainings' | translate }}
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -116,6 +116,38 @@
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">{{ 'Form.location' | translate }}</div>
                                                         <div>{{ training.location }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">Division</div>
+                                                        <div>{{ training.division.name }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="icon-wrapper border-light rounded m-0">
+                                                            <div class="icon-wrapper-bg bg-light"></div>
+                                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">Online</div>
+                                                        <div>{{ training.is_online ? 'Oui' : 'Non' }}</div>
                                                     </div>
                                                 </div>
                                             </div>

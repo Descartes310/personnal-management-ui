@@ -1,36 +1,37 @@
-<div class="container">
-    <div class="app-page-title">
-        <div class="page-title-wrapper">
-            <div class="page-title-heading" style="width: 100%;">
-                <div class="font-icon-wrapper"><i class="pe-7s-news-paper"> </i>
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading" style="width: 100%;">
+            <div class="font-icon-wrapper"><i class="pe-7s-news-paper"> </i>
+            </div>
+            <div>{{ 'BlogPost.BlogPosts' | translate }}
+                <div class="page-title-subheading">{{ 'BlogPost.BlogPostTitle' | translate }}
                 </div>
-                <div>{{ 'BlogPost.BlogPosts' | translate }}
-                    <div class="page-title-subheading">{{ 'BlogPost.BlogPostTitle' | translate }}
-                    </div>
-                </div>
-                <div class="page-title-actions">
-                    <a type="button" [routerLink]="['/blog-posts/add']" data-toggle="tooltip"
-                        title="{{ 'ProSituation.AddProSituations' | translate }}" data-placement="bottom"
-                        class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary"
-                        style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
-                        <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
-                        <p style="font-size: 1.2em; margin-top: 7%;">{{ 'BlogPost.AddBlogPost' | translate }}
-                        </p>
-                    </a>
-                </div>
+            </div>
+            <div class="page-title-actions">
+                <a *ngIf="canCreate" type="button" [routerLink]="['/blog-posts/add']" data-toggle="tooltip"
+                    title="{{ 'ProSituation.AddProSituations' | translate }}" data-placement="bottom"
+                    class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary"
+                    style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                    <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'BlogPost.AddBlogPost' | translate }}
+                    </p>
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="tabs-animation">
-        <div class="main-card mb-3 card">
-            <div class="card-header">
-                <i class="pe-7s-news-paper">&nbsp; </i>
-                {{ 'BlogPost.BlogPosts' | translate }}
-            </div>
-            <div class="card-body ">
-                <mat-tab-group dynamicHeight  (selectedTabChange)="changeBlogCategorie($event)">
-                    <mat-tab label="tous">
+<div class="row">
+    <div class="col-md-12" style="margin-left:auto ; margin-right: auto; ">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <i class="pe-7s-news-paper">&nbsp; </i>
+                    {{ 'BlogPost.BlogPosts' | translate }}
+                </div>
+                <div class="card-body ">
+                    <mat-tab-group dynamicHeight  (selectedTabChange)="changeBlogCategorie($event)">
+                        <mat-tab label="tous">
                             <br>
                             <h4 class="d-flex flex-wrap justify-content-between align-items-center pt-0 mb-2 col-md-4">
                                 <div class="col-12 col-md-12 p-0 mb-3">
@@ -38,113 +39,88 @@
                                 </div>
                             </h4>
                             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                                    <div class="row">                               
-                                            <div class="card-body col-md-4" *ngFor="let blog_post of listBlog_posts">
-                                                <h5 class="card-title">{{blog_post.title}}</h5>
-                                                
-                                                        <div class="card mb-4 " >
-                                                                <div class="card-header">
-                                                                    <div class="media flex-wrap w-80 align-items-center align">
-                                                                        <img style="width: 40px; height: auto;"
-                                                                            src="assets/images/avatars/3.jpg"
-                                                                            class="d-block ui-w-40 rounded-circle align" alt="" >
-                                                                        
-                                                                        <div class="media-body ml-3 "  >
-                                                                            <a href="javascript:void(0)" style="margin-bottom: 10px;">{{getOneUserPost(blog_post.user_id).login}}</a>
-                                                                            <div class="text-muted small">publié le:{{blog_post.updated_at|date:'dd/MMM/yyy'}}</div>
-                                                                            <div class="text-muted small">Membre depuis le {{getOneUserPost(blog_post.user_id).updated_at|date:'dd/MMM/yyy'}}</div>
-
-                                                                        </div>
-                                                                       
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <p [innerHTML]="getPartOfcontent(blog_post.content)">
-                                                                      
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                                                    <div class="px-4 pt-3">
-                                                                        
-                                                                        <span
-                                                                            class="text-muted d-inline-flex align-items-center  ml-4">
-                                                                            <i class="ion ion-ios-eye text-muted fsize-3"></i>&nbsp;
-                                                                            <span class="align-middle">{{blog_post.views}} </span>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="px-4 pt-3">
-                                                                        <button *ngIf="UserAuth.id==blog_post.user_id"  class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteBlogPost(blog_post)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-        
-                                                                        <button type="button" class="btn btn-primary" (click)="detailBlogPost(blog_post.id)"><i
-                                                                                class="ion ion-md-create"></i>&nbsp;Detail</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div> 
-                                                    </div>     
-                                        </div>
-                    </mat-tab>
-                    <mat-tab *ngFor="let blog_cat of listBlogCategories" 
-                        [label]="blog_cat.title">
-                        <br>
-                        <h4 class="d-flex flex-wrap justify-content-between align-items-center pt-0 mb-2 col-md-4">
-                            <div class="col-12 col-md-12 p-0 mb-3">
-                                <input type="text" class="form-control" placeholder="Search..." (keyup)="search($event)">
-                            </div>
-                        </h4>
-                        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                            <div class="row">                               
+                                <div class="row">
                                     <div class="card-body col-md-4" *ngFor="let blog_post of listBlog_posts">
-                                        <h5 class="card-title">{{blog_cat.title}}</h5>
-                                                <div class="card mb-4 " >
-                                                        <div class="card-header">
-                                                            <div class="media flex-wrap w-100 align-items-center">
-                                                                <img style="width: 40px; height: auto;"
-                                                                    src="assets/images/avatars/3.jpg"
-                                                                    class="d-block ui-w-40 rounded-circle align" alt="" >
-                                                                
-                                                                <div class="media-body ml-3" >
-                                                                    <a href="javascript:void(0)">{{getOneUserPost(blog_post.user_id).login}}</a>
-                                                                    <div class="text-muted small">publié le:{{blog_post.updated_at|date:'dd/MMM/yyy'}}</div>
-                                                                </div>
-                                                                
-                                                                <div class="text-muted small ml-3">
-                                                                    <div>Membre depuis le {{getOneUserPost(blog_post.user_id).updated_at|date:'dd/MMM/yyy'}}</div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <p>
-                                                               {{getPartOfcontent(blog_post.content)}}
-                                                            </p>
-                                                        </div>
-                                                        <div
-                                                            class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                                                            <div class="px-4 pt-3">
-                                                                
-                                                                <span
-                                                                    class="text-muted d-inline-flex align-items-center  ml-4">
-                                                                    <i class="ion ion-ios-eye text-muted fsize-3"></i>&nbsp;
-                                                                    <span class="align-middle">{{blog_post.views}} </span>
-                                                                </span>
-                                                            </div>
-                                                            <div class="px-4 pt-3">
-                                                                <button *ngIf="UserAuth.id==blog_post.user_id"  class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteBlogPost(blog_post)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-
-                                                                <button type="button" class="btn btn-primary" (click)="detailBlogPost(blog_post.id)"><i
-                                                                        class="ion ion-md-create"></i>&nbsp;Detail</button>
-                                                            </div>
-                                                        </div>
+                                        <div class="card mb-4 " >
+                                            <div class="card-header">
+                                                <h5 class="card-title">{{blog_post.title}}</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="media flex-wrap w-80 align-items-center align">
+                                                    <img width="42" height="42" src="{{getOneUserPost(blog_post.user_id) ? getOneUserPost(blog_post.user_id).avatar ? getOneUserPost(blog_post.user_id).avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" class="d-block ui-w-40 rounded-circle align" alt="" >
+                                                    <div class="media-body ml-3">
+                                                        <a href="javascript:void(0)" style="margin-bottom: 30px;">{{getOneUserPost(blog_post.user_id).first_name}} {{getOneUserPost(blog_post.user_id).last_name}}</a>
+                                                        <div class="text-muted small">publié le:{{blog_post.updated_at|date:'dd/MMM/yyy'}}</div>
+                                                        <div class="text-muted small">Membre depuis le {{getOneUserPost(blog_post.user_id).updated_at|date:'dd/MMM/yyy'}}</div>
                                                     </div>
-                                                    
+                                                </div>
+                                            </div>
+                                                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                                <div class="px-4 pt-3">
+                                                    <span
+                                                        class="text-muted d-inline-flex align-items-center  ml-4">
+                                                        <i class="ion ion-ios-eye text-muted fsize-3"></i>&nbsp;
+                                                        <span class="align-middle">{{blog_post.views}} </span>
+                                                    </span>
+                                                </div>
+                                                <div class="px-4 pt-3">
+                                                    <button *ngIf="UserAuth.id==blog_post.user_id"  class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteBlogPost(blog_post)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                                    <button type="button" class="btn btn-primary" (click)="detailBlogPost(blog_post.id)"><i class="ion ion-md-create"></i>&nbsp;Detail</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </mat-tab>
-                    
-                </mat-tab-group>
+                        </mat-tab>
+                        <mat-tab *ngFor="let blog_cat of listBlogCategories" [label]="blog_cat.title">
+                            <br>
+                            <h4 class="d-flex flex-wrap justify-content-between align-items-center pt-0 mb-2 col-md-4">
+                                <div class="col-12 col-md-12 p-0 mb-3">
+                                    <input type="text" class="form-control" placeholder="Search..." (keyup)="search($event)">
+                                </div>
+                            </h4>
+                            <div class="tab-pane tabs-animation" id="tab-content-0" role="tabpanel">
+                                <div class="row">
+                                    <div class="card-body col-md-4" *ngFor="let blog_post of listBlog_posts">
+                                        <ng-container *ngIf="blog_post.blog_category_id == blog_cat.id">
+                                            <div class="card mb-4 " >
+                                                <div class="card-header">
+                                                    <h5 class="card-title">{{blog_post.title}}</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="media flex-wrap w-100 align-items-center">
+                                                        <img  width="42" height="42" src="{{getOneUserPost(blog_post.user_id) ? getOneUserPost(blog_post.user_id).avatar ? getOneUserPost(blog_post.user_id).avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" class="d-block ui-w-40 rounded-circle align" alt="" >
+                                                        <div class="media-body ml-3" >
+                                                            <a href="javascript:void(0)">{{getOneUserPost(blog_post.user_id).first_name}} {{getOneUserPost(blog_post.user_id).last_name}}</a>
+                                                            <div class="text-muted small">publié le:{{blog_post.updated_at|date:'dd/MMM/yyy'}}</div>
+                                                        </div>
+                                                        <div class="text-muted small ml-3">
+                                                            <div>Membre depuis le {{getOneUserPost(blog_post.user_id).updated_at|date:'dd/MMM/yyy'}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                                                    <div class="px-4 pt-3">
+                                                        <span
+                                                            class="text-muted d-inline-flex align-items-center  ml-4">
+                                                            <i class="ion ion-ios-eye text-muted fsize-3"></i>&nbsp;
+                                                            <span class="align-middle">{{blog_post.views}} </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="px-4 pt-3">
+                                                        <button *ngIf="UserAuth.id==blog_post.user_id"  class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteBlogPost(blog_post)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                                        <button type="button" class="btn btn-primary" (click)="detailBlogPost(blog_post.id)"><i class="ion ion-md-create"></i>&nbsp;Detail</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
             </div>
         </div>
     </div>

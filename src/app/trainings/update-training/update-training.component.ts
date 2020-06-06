@@ -6,6 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Training } from 'src/app/_models/training.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { DivisionService } from 'src/app/_services/division.service';
+
 @Component({
   selector: 'app-update-training',
   templateUrl: './update-training.component.html',
@@ -17,6 +19,7 @@ export class UpdateTrainingComponent implements OnInit {
   isLoading = false;
   isError = false;
   isSuccess = false;
+  divisions: any[];
   isSubmitted = false;
   training_name = '';
   is_online = false;
@@ -26,12 +29,14 @@ export class UpdateTrainingComponent implements OnInit {
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
+    private divisionService: DivisionService,
     private route: ActivatedRoute,
     private router: Router,
   ) { }
 
   async ngOnInit() {
     this.initForm();
+    this.getDivision();
     const training_id = +this.route.snapshot.paramMap.get("id");
     this.trainingService.find(training_id).then(
       data => {
@@ -53,9 +58,12 @@ export class UpdateTrainingComponent implements OnInit {
   initForm(withTraining = false) {
     if(withTraining) {
       console.log(this.training)
+      this.training_name = this.training.slug;
+      this.is_online = this.training.is_online ? true : false;
       this.trainingForm = this.formBuilder.group({
         name: [this.training.name, [Validators.required]],
         slug: [this.training.slug, [Validators.required]],
+        division_id: [this.training.division.id, [ Validators.required]],
         trainer: [this.training.trainer, [Validators.required]],
         start_date: [this.training.start_date, [Validators.required]],
         location: [this.training.location, [Validators.required]],
@@ -65,6 +73,7 @@ export class UpdateTrainingComponent implements OnInit {
     }else {
       this.trainingForm = this.formBuilder.group({
         name: ['', [Validators.required]],
+        division_id: ['', [Validators.required]],
         slug: ['', [Validators.required]],
         trainer: ['', [Validators.required]],
         start_date: ['', [Validators.required]],
@@ -99,6 +108,19 @@ export class UpdateTrainingComponent implements OnInit {
 
   onChecked(event){
     this.is_online = event.target.checked;    
+  }
+
+  public getDivision() {
+    this.divisionService.all().then(
+      response => {
+        this.divisions = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    );
   }
 
   onSubmit() {
@@ -138,7 +160,7 @@ export class UpdateTrainingComponent implements OnInit {
         .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.trainingForm.reset();
-        //this.router.navigate(['/trainings/all']);
+        this.router.navigate(['/trainings/all']);
       })
       .catch(err => {
         console.log(err)

@@ -6,6 +6,7 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2';
 import { Setting } from 'src/app/_models/setting.model';
 import { SettingService } from 'src/app/_services/setting.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -29,8 +30,12 @@ export class AllSettingsComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
   constructor(
+    private authService: AuthService,
     private setting_service:SettingService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -38,8 +43,8 @@ export class AllSettingsComponent implements OnInit {
   ) {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
-      { data: 'role' })
+      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+      { data: 'paramètre' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
@@ -53,10 +58,14 @@ export class AllSettingsComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.getSettings();
+     this.getSettings();
+     const permissionSuffix = 'settings';
+     this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+     this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+     this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
-   
+
   getSettings() {
     this.loading = true;
     this.setting_service.all().then(
@@ -114,7 +123,7 @@ export class AllSettingsComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

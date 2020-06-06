@@ -9,14 +9,14 @@
                 <div class="page-title-subheading">{{ 'DisciplinaryTeam.DisciplinaryTeamTitle' | translate }}
                 </div>
             </div>
-            <!-- <div class="page-title-actions">
-                <a type="button" [routerLink]="['/DisciplinaryTeam/add']" data-toggle="tooltip" title="{{ 'DisciplinaryTeam.AddDisciplinaryTeam' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
-                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'DisciplinaryTeam.AddDisciplinaryTeam' | translate }}</p>
+            <div class="page-title-actions">
+                <a *ngIf="canCreate" type="button" [routerLink]="['/diciplinary-team/add']" data-toggle="tooltip" title="{{ 'diciplinaryTeam.Adddt' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                    <p style="font-size: 1.2em; margin-top: 7%;">{{ 'diciplinaryTeam.Adddt' | translate }}</p>
                 </a>
-            </div> -->
-        </div>   
+            </div>
+        </div>
     </div>
-</div>   
+</div>
 
 <div class="tabs-animation md-6">
     <div class="main-card mb-3 card">
@@ -25,7 +25,7 @@
             {{ 'DisciplinaryTeam.DisciplinaryTeams' | translate }}
         </div>
         <div class="card-body">
-            
+
             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
@@ -41,9 +41,9 @@
                         <td style="width: 12%">{{ disciplinaryteam.name }}</td>
                         <td style="width: 19%">{{ disciplinaryteam.created_at }}</td>
                         <td style="width: 8%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canUpdate" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detailsDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canDelete" class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteDisciplinaryTeam(disciplinaryteam)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>

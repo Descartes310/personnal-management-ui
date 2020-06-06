@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NotifService } from 'src/app/_services/notif.service';
 import { ProfileService } from 'src/app/_services/profile.service';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-profile',
@@ -25,9 +26,14 @@ export class AllProfileComponent implements OnInit {
   deleted = '';
   deletedMessage = '';
   cancelled = '';
-  cancelledMessage = ''
+  cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
+
 
   constructor(
+    private authService: AuthService,
     private profileService: ProfileService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -51,6 +57,10 @@ export class AllProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getProfiles();
+    const permissionSuffix = 'profiles';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getProfiles() {
@@ -82,7 +92,7 @@ export class AllProfileComponent implements OnInit {
   detailsProfile(profile: Profile) {
     this.router.navigate(['/profiles/details/' + profile.id])
   }
-  
+
   formatter(value) {
     return (value === 1) ? 'Oui' : ((value === 0) ? 'Non' : '');
   }

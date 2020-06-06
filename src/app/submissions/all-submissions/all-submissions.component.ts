@@ -30,7 +30,8 @@ export class AllSubmissionsComponent implements OnInit {
   deleted = '';
   deletedMessage = '';
   cancelled = '';
-  cancelledMessage = ''
+  cancelledMessage = '';
+  canDelete = false;
 
   constructor(
     private submissionService: SubmissionService,
@@ -42,7 +43,7 @@ export class AllSubmissionsComponent implements OnInit {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-      { data: 'submission' })
+      { data: 'courriel' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
@@ -58,6 +59,7 @@ export class AllSubmissionsComponent implements OnInit {
   ngOnInit() {
     this.user_id = this.authService.getUser().id;
     this.getSubmissions();
+    this.canDelete = this.authService.hasPermission('delete-submissions');
   }
 
   getSubmissions() {
@@ -65,13 +67,8 @@ export class AllSubmissionsComponent implements OnInit {
       data => {
         this.submissions = data;
         this.submissions_tmp = data;
-        console.log(data)
       }
-    ).catch(
-      error => {
-        console.log(error)
-      }
-    )
+    ).catch(error => {});
   }
 
   imSender(submission: any) {

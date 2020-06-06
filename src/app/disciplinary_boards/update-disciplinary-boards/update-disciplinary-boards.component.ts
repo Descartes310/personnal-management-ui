@@ -95,9 +95,9 @@ export class UpdateDisciplinaryBoardComponent implements OnInit {
         )
       }
     )
-      .catch(error => {
-        this.notifService.danger("Une erreur s'est produite");
-      });
+    .catch(error => {
+      this.notifService.danger("Une erreur s'est produite");
+    });
   }
 
   getUsers() {
@@ -141,7 +141,7 @@ export class UpdateDisciplinaryBoardComponent implements OnInit {
         this.isLoading = false;
         this.formGroup.reset();
         this.isSubmitted = false;
-        // this.router.navigate(['/roles/all']);
+        this.router.navigate(['/disciplinaryBoards/all']);
       })
       .catch(error => {
         console.log(error)
@@ -153,7 +153,7 @@ export class UpdateDisciplinaryBoardComponent implements OnInit {
 
   search(event) {
     this.user = this.user_tmp;
-    this.user = this.user_tmp.filter(user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.user = this.user_tmp.filter(user => (user.first_name+' '+user.last_name).toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
   onChecked(user, event) {

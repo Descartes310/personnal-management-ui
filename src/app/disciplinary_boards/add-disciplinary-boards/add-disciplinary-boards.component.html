@@ -38,7 +38,7 @@
                                             <label> {{ 'DisciplinaryBoards.Name' | translate }} <span
                                                     style="color: red;">*</span> </label>
                                             <input type="text" readonly class="form-control"
-                                                value="{{ selected_user.login }}">
+                                                value="{{ selected_user.first_name }} {{ selected_user.last_name }}">
                                         </div>
                                         <div class="position-relative form-group" *ngIf="!isCheck">
                                             <label> {{ 'DisciplinaryBoards.Name' | translate }} <span
@@ -46,7 +46,7 @@
                                             <input type="text" readonly class="form-control">
                                         </div>
                                         <div class="position-relative form-group">
-                                            <label for="effective_date" class="">{{ 'Form.NameLabel' | translate }}
+                                            <label for="effective_date" class="">{{ 'Form.Date' | translate }}
                                                 <span style="color: red;">*</span> </label>
                                             <input id="effective_date"
                                                 placeholder="{{ 'Form.NameLabel' | translate }}" type="date"
@@ -130,7 +130,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">{{ us.login }}
+                                                            <div class="widget-heading">{{ us.first_name }} {{ us.last_name }}
                                                             </div>
                                                         </div>
                                                     </div>

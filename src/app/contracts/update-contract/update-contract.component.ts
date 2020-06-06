@@ -85,19 +85,18 @@ export class UpdateContractComponent implements OnInit {
         free_days: [this.contract.free_days],
         start_date: [this.contract.start_date],
         end_date: [this.contract.end_date],
-        file: ['', [Validators.required]]
       });
     }else {
       this.contractForm = this.formBuilder.group({
         user_id: ['',Validators.required],
         type: ['CDD – Contrat à durée déterminée',Validators.required],
-        names: [''],
+        names: ['',Validators.required],
         title: [''],
         terms: [''],
         free_days: [0],
-        start_date: [''],
-        end_date: [''] ,
-        file: ['',Validators.required]
+        start_date: ['',Validators.required],
+        end_date: ['',Validators.required] 
+
       });
     }
   }
@@ -131,6 +130,27 @@ export class UpdateContractComponent implements OnInit {
       return;
     }
 
+    if (currentDate > this.form.start_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
+    if (this.form.start_date.value >= this.form.end_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
+
+    if (0 >= this.form.free_days.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }
+    
+
     this.isLoading = true;
     const formData = new FormData();
     formData.append('user_id', this.form.user_id.value);
@@ -139,21 +159,8 @@ export class UpdateContractComponent implements OnInit {
     formData.append('title', '' + this.form.title.value);
     formData.append('terms', '' + this.form.terms.value);
     formData.append('free_days', this.form.free_days.value);
-    if (currentDate > this.form.start_date.value) {
-      this.translate.get('Form.StartDateError')
-      .subscribe(val => this.notifService.danger(val));
-      this.isLoading = false;
-      return;
-    }
-    this.form.start_date.value ? formData.append('start_date', '' + this.form.start_date.value) : null;
-    if (this.form.start_date.value >= this.form.end_date.value) {
-      this.translate.get('Form.StartDateError')
-      .subscribe(val => this.notifService.danger(val));
-      this.isLoading = false;
-      return;
-    }
-    this.form.start_date.value ? formData.append('end_date', '' + this.form.end_date.value) : null;
-    formData.append('file', this.myfile);
+    formData.append('start_date', '' + this.form.start_date.value);  
+    formData.append('end_date', '' + this.form.end_date.value);
     this.contractService.update(formData,this.contract.id)
       .then(resp => {
         this.translate.get('Contract.SubmitSuccessUpdate')
@@ -161,18 +168,6 @@ export class UpdateContractComponent implements OnInit {
         this.isSubmitted = false;
         this.contractForm.reset();
         this.router.navigate(['/contracts/all'])
-        this.contractForm = this.formBuilder.group({
-          user_id: [],
-          type: ['CDD – Contrat à durée déterminée'],
-          names: [],
-          title: [],
-          terms: [],
-          free_days: [0],
-          start_date: [],
-          end_date: [],
-          file: []
-        });
-        //this.router.navigate(['/contracts/all']);
       })
       .catch(err => {
         console.log(err)
@@ -188,7 +183,7 @@ export class UpdateContractComponent implements OnInit {
 
   search(event) {
     this.users = this.users_tmp;
-    this.users = this.users_tmp.filter( user => user.login.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.users = this.users_tmp.filter( user => (user.first_name+' '+user.last_name).toLowerCase().includes(event.target.value.toLowerCase()));
   }
 
   public getUsers() {
