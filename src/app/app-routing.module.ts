@@ -195,7 +195,7 @@ const routes: Routes = [
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent, canActivate: [AuthGuard], data: { permissions: ['read-submissions'] }},
   { path: 'professional-score', component: AddUserNoteCriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
   { path: 'professional-score/all', component: UserNoteComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
-  { path: 'statistiques/view/:id', component: ViewUserStatComponent, canActivate: [AuthGuard], data: { permissions: ['update-statistics'] }},
+  { path: 'statistiques/view/:id', component: ViewUserStatComponent, canActivate: [AuthGuard], data: { permissions: ['read-statistics'] }},
   { path: 'vacationtypes/all', component: AllVacationTypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacation-types'] }},
 
   { path: 'users/details/:id', component: UserDetailsComponent, canActivate: [AuthGuard], data: { permissions: ['read-users'] }},
