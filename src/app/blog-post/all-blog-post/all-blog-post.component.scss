@@ -11,6 +11,10 @@
     height: 100px;
     width: 100px;
   }
+
+  .card-header {
+    margin-bottom: 20px;
+  }
   
   .example-large-box {
     height: 3500px;
@@ -21,5 +25,5 @@
     margin-top: 5px;
   }
   .card-body{
-    min-height: 200px;
+    min-height: 100px;
   }

@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Routes from '../Routes'; 
+import * as Routes from '../Routes';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -47,16 +47,16 @@ export class AuthService {
     }
 
     logout() {
-        this.http.delete(Routes.LOGIN);  
-        localStorage.removeItem('user'); 
-        localStorage.removeItem('permissions'); 
-        localStorage.removeItem('roles'); 
+        this.http.delete(Routes.LOGIN);
+        localStorage.removeItem('user');
+        localStorage.removeItem('permissions');
+        localStorage.removeItem('roles');
         localStorage.removeItem('token');
         this.setAuthenticated(false);
         this.router.navigate(['login']);
     }
     updatePassword(formData:FormData): Promise<any> {
-        
+
         return this.http.post<any>(Routes.UPDATE_PASSWORD, formData).toPromise();
     }
 
@@ -113,20 +113,24 @@ export class AuthService {
         }
     }
 
-    hasPermission(permissions: string[]): boolean {
-        let authorized = false;
-        if(permissions.length > 0) {
-            this.getPermissions().filter(permission => {
-              if(permissions.includes(permission.name))
-                authorized = true;
-            })
-            if(authorized) {
+    hasPermission(permissions: string|string[]): boolean {
+      const userPermissions: any[] = this.getPermissions();
+      if (permissions instanceof Array && permissions.length > 0) {
+        let matched = 0;
+        for (let i = 0, l = userPermissions.length, m = permissions.length; i < l; i++) {
+          if (permissions.includes(userPermissions[i].name)) {
+            if (++matched === m) {
               return true;
-            } else {
-              return false;
             }
-        } else{
-            return false;
+          }
         }
+      } else {
+        for (let i = 0, l = userPermissions.length; i < l; i++) {
+          if (permissions === userPermissions[i].name) {
+            return true;
+          }
+        }
+      }
+      return false;
     }
 }

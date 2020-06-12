@@ -1,6 +1,6 @@
 import { Super } from './super.model';
 
-export class Assignmenttype extends Super<Assignmenttype> {
+export class AssignmentType extends Super<AssignmentType> {
 
     public name: string;
     public slug: string;

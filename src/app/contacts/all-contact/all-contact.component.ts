@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { Contact } from 'src/app/_models/contact.model';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-contact',
@@ -26,7 +27,12 @@ export class AllContactComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
+
   constructor(
+    private authService: AuthService,
     private contactService:ContactService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -50,8 +56,12 @@ export class AllContactComponent implements OnInit {
 
   ngOnInit() {
     this.getContacts();
+    const permissionSuffix = 'contacts';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
- 
+
   getContacts() {
     this.loading = true;
     this.contactService.all().then(

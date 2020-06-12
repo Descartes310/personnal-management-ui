@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="page-title-actions">
-                <a type="button" [routerLink]="['/licenses/add']" data-toggle="tooltip" title="{{ 'Licenses.Add_Licenses' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <a *ngIf="canCreate" type="button" [routerLink]="['/licenses/add']" data-toggle="tooltip" title="{{ 'Licenses.Add_Licenses' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
                     <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
                     <p style="font-size: 1.2em; margin-top: 7%;">{{ 'Licenses.Add_Licenses' | translate }}</p>
                 </a>
@@ -51,9 +51,9 @@
                         <td style="width: 17%">{{ license.requested_start_date }}</td>
                         <td style="width: 10%">{{ license.status }}</td>
                         <td style="width: 30%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editLicenses(license)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canUpdate" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="editLicenses(license)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)=" detailsLicenses(license)"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteLicenses(license)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            <button *ngIf="canDelete" class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="deleteLicenses(license)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>

@@ -2,14 +2,13 @@
                     <div class="card mb-4">
                             <div class="card-header">
                                 <div class="media flex-wrap w-100 align-items-center">
-                                    <img style="width: 40px; height: auto;" src="assets/images/avatars/3.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+                                    <img style="width: 40px; height: auto;" src="{{userPost ? userPost.avatar ? userPost.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" class="d-block ui-w-40 rounded-circle" alt="">
                                     <div class="media-body ml-3">
-                                        <a href="javascript:void(0)">{{userPost.login}}</a>
+                                        <a href="javascript:void(0)">{{userPost.first_name}} {{userPost.last_name}}</a>
                                         <div class="text-muted small">publié le :{{BlogPost.updated_at|date:'dd/MMM/yyy'}}</div>
                                     </div>
                                     <div class="text-muted small ml-3">
                                         <div>Membre depuis le  <strong>{{this.userPost.updated_at|date:'dd/MMM/yyy'}}</strong></div>
-                                        <div><strong>1,234</strong> posts</div>
                                     </div>
                                 </div>
                             </div>
@@ -55,11 +54,11 @@
                         <div class="card mb-3" *ngFor="let blogComment of listBlogComment">
                             <div class="card-body">
                                 <div class="media" *ngIf="profile">
-                                    <img style="width: 40px; height: auto;" src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="" class="d-block ui-w-40 rounded-circle">
+                                    <img width="42" height="42" src="{{profile ? profile.avatar ? profile.avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="" class="d-block ui-w-40 rounded-circle">
                                     <div class="media-body ml-4">
                                         <div class="float-right text-muted small"><em *ngIf="blogComment.updated_at"style="color: blue;">Publié le: </em>{{blogComment.updated_at|date:'dd/MMM/yyy'}}</div>
-                                        <a href="javascript:void(0)">{{getOneUserComment(blogComment.user_id).login}}</a>
-                                        <div class="text-muted small">Membre depuis le {{getOneUserComment(blogComment.user_id).created_at|date:'dd/MMM/yyy'}} &nbsp;·&nbsp; 345 posts</div>
+                                        <a href="javascript:void(0)">{{getOneUserComment(blogComment.user_id).first_name}} {{getOneUserComment(blogComment.user_id).last_name}}</a>
+                                        <div class="text-muted small">Membre depuis le {{getOneUserComment(blogComment.user_id).created_at|date:'dd/MMM/yyy'}}</div>
                                         <div class="mt-2">
                                             
                                             <p>

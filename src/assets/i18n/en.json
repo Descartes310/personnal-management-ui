@@ -30,13 +30,13 @@
         "NotifViewAll": "View all notifications",
         "NotifText": "You have {{unread}} new notifications",
         "QuickAccessText": "Quickly and efficiently access all primary system functionality"
-    
+
     },
     "Home": {
         "Title": "Home page"
     },
-    
-    
+
+
     "SideBar": {
         "SystemConfig": "System's Setting",
         "Users": "Employees",
@@ -81,7 +81,7 @@
         "ProfileUpdate": "Update profile"
     },
 
-   
+
     "Form": {
         "NameSelect": "Choisir votre structure parent ",
         "Reason": "Reason",
@@ -199,5 +199,10 @@
         "SubmitSuccess": "The settings has been created successfully",
         "NotFound": "Undefined settings",
         "undefined": "the key is already existing"
+    },
+
+    "HTTP_ERROR_MSG": {
+      "403": "Access denied !",
+      "401": "Session expired !"
     }
 }

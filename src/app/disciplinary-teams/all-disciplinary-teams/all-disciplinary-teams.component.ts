@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-all-disciplinary-teams',
@@ -27,16 +28,21 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
+
   constructor(
-    private disciplinaryteamService : DisciplinaryTeamService,
+    private authService: AuthService,
+    private disciplinaryteamService: DisciplinaryTeamService,
     private notifService: NotifService,
     private translate: TranslateService,
     private router: Router,
-  ) { 
+  ) {
 
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: 'disciplinaryteam' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -52,6 +58,10 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
 
   ngOnInit() {
     this.getDisciplinaryTeams();
+    const permissionSuffix = 'disciplinary-teams';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getDisciplinaryTeams() {
@@ -107,7 +117,7 @@ export class AllDisciplinaryTeamsComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

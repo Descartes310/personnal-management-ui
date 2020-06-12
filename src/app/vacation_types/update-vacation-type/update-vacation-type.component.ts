@@ -103,7 +103,7 @@ export class UpdateVacationTypeComponent implements OnInit {
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         this.vacationTypeForm.reset();
-        this.router.navigate(['']);
+        this.router.navigate(['/vacationtypes/all']);
       })
       .catch(err => {
         this.translate.get('VacationType.' + err.error.code)

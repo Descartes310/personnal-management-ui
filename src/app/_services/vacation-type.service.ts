@@ -18,8 +18,17 @@ export class VacationTypeService {
   update(formData: FormData, id: number): Promise<VacationType> {
     return this.http.post<VacationType>(`${Routes.VACATIONTYPE}/${id}`, formData).toPromise();
   }
+
   find(id: number): Promise<VacationType> {
     return this.http.get<VacationType>(`${Routes.VACATIONTYPE}/${id}`).toPromise();
+  }
+
+  delete(id: number): Promise<any> {
+    return this.http.delete<any>(`${Routes.VACATIONTYPE}/${id}`).toPromise();
+  }
+
+  all(): Promise<VacationType[]> {
+    return this.http.get<VacationType[]>(`${Routes.VACATIONTYPE}`).toPromise();
   }
 
 }

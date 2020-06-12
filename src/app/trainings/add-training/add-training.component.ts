@@ -3,6 +3,7 @@ import { TrainingService} from 'src/app/_services/training.service';
 import { NotifService } from 'src/app/_services/notif.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { DivisionService } from 'src/app/_services/division.service';
 import { Training} from 'src/app/_models/training.model';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
@@ -18,6 +19,7 @@ export class AddTrainingComponent implements OnInit {
   isLoading = false;
   isError = false;
   isSuccess = false;
+  divisions: any[];
   isSubmitted = false;
   training_name = '';
   isvalidDate=true;
@@ -29,6 +31,7 @@ export class AddTrainingComponent implements OnInit {
     private notifService: NotifService,
     private formBuilder: FormBuilder,
     private translate: TranslateService,
+    private divisionService: DivisionService,
     private router: Router,
   ) { }
 
@@ -36,6 +39,7 @@ export class AddTrainingComponent implements OnInit {
     this.trainingForm = this.formBuilder.group({
       name: ['', Validators.required],
       trainer: ['', Validators.required],
+      division_id: ['', Validators.required],
       start_date: ['', Validators.required],
       location: ['', Validators.required],
       duration: [1,
@@ -48,6 +52,7 @@ export class AddTrainingComponent implements OnInit {
       description: [''],
       is_online: ['']
     });
+    this.getDivision();
 
     this.errorMessages = {
       duration: [
@@ -57,6 +62,19 @@ export class AddTrainingComponent implements OnInit {
       ]
     }
     this.getDurationErrorMessages();
+  }
+
+  public getDivision() {
+    this.divisionService.all().then(
+      response => {
+        this.divisions = response;
+      }
+    ).catch(
+      error => {
+        this.translate.get('User.LoadingError')
+          .subscribe(val => this.notifService.danger(val));
+      }
+    );
   }
 
   
@@ -122,6 +140,7 @@ export class AddTrainingComponent implements OnInit {
       formData.append('start_date', '' + this.form.start_date.value);
       formData.append('location', '' + this.form.location.value.trim());
       formData.append('duration', '' + this.form.duration.value);
+      formData.append('division_id', '' + this.form.division_id.value);
       formData.append('description', '' + this.form.description.value.trim());
       formData.append('is_online', this.is_online ? '1' : '0');
       this.trainingService.add(formData)

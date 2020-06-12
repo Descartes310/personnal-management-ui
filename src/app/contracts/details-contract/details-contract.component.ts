@@ -21,7 +21,7 @@ export class DetailsContractComponent implements OnInit {
           public formBuilder:FormBuilder,
           private contractService: ContractService,
           private notifService: NotifService,
-          private translate: TranslateService,
+          private translate: TranslateService, 
           private route: ActivatedRoute,
           private router: Router,
           ) {
@@ -33,7 +33,6 @@ export class DetailsContractComponent implements OnInit {
   }
   contract_id = +this.route.snapshot.paramMap.get("id");
   async ngOnInit() {
-    this.download();
     this.contractService.find(this.contract_id).then(
       data => {
         this.contract = new Contract(data);
@@ -46,6 +45,7 @@ export class DetailsContractComponent implements OnInit {
         this.router.navigate(['/contracts/all'])
       }
     )
+    this.download();
 
   }
 

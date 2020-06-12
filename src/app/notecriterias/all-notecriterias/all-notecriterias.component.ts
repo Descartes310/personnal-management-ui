@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./all-notecriterias.component.scss']
 })
 export class AllNotecriteriasComponent implements OnInit {
-  
+
 
   notecriterias: Notecriterias[] = [];
   loading: boolean = true;
@@ -29,9 +30,13 @@ export class AllNotecriteriasComponent implements OnInit {
   deletedMessage = '';
   cancelled = '';
   cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
 
 
   constructor(
+    private authService: AuthService,
     private notecriteriasService: NotecriteriasService,
     private notifService: NotifService,
     private translate: TranslateService,
@@ -39,7 +44,7 @@ export class AllNotecriteriasComponent implements OnInit {
 
       this.translate.get(
         ['SweetAlert.AreYouSureNotecriterias', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'], 
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
         { data: ' ce critère de notation' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSureNotecriterias'];
@@ -55,6 +60,10 @@ export class AllNotecriteriasComponent implements OnInit {
 
   ngOnInit() {
     this.getNotecriterias();
+    const permissionSuffix = 'note-criterias';
+    this.canCreate = this.authService.hasPermission(`create-${permissionSuffix}`);
+    this.canUpdate = this.authService.hasPermission(`update-${permissionSuffix}`);
+    this.canDelete = this.authService.hasPermission(`delete-${permissionSuffix}`);
   }
 
   getNotecriterias() {
@@ -113,7 +122,7 @@ export class AllNotecriteriasComponent implements OnInit {
             .subscribe(val => this.notifService.danger(val));
           }
         )
-        
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           this.cancelled,

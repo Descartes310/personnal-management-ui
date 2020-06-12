@@ -83,7 +83,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="" [routerLink]="['professional-score']">
+                    <a href="" [routerLink]="['professional-score/all']">
                         <i class="metismenu-icon pe-7s-id"></i>
                         {{ "SideBar.NotesPros" | translate }}
                     </a>
@@ -182,9 +182,23 @@
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Licenses" | translate }}
                             </a>
+                        </li>
+                        <li>
                             <a [routerLink]="['/vacations/all']" class="">
                                 <i class="metismenu-icon">
                                 </i>{{ "SideBar.Vacations" | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/vacation/demandes']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.DemandeVacation" | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/license/demandes']" class="">
+                                <i class="metismenu-icon">
+                                </i>{{ "SideBar.DemandeLicense" | translate }}
                             </a>
                         </li>
                     </ul>

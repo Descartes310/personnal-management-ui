@@ -38,6 +38,7 @@
         "Vacations": "Congés",
         "NotesPros": "Notes professionnelles",
         "Career": "Promotions et parcours",
+        "DemandeVacation": "Demandes de congés",
         "Assignment": "Affectations",
         "addAssignment": "Nouvelle affectation",
         "listAssignment": "Liste des affectations",
@@ -68,7 +69,8 @@
         "DisciplinaryBoard": "Conseils de discipline",
         "Personnel": "Personnels",
         "Submissions": "Courriels",
-        "ProfileUpdate": "Mise à jour du profile"
+        "ProfileUpdate": "Mise à jour du profile",
+        "DemandeLicense": "Demandes de permissions"
     },
     "DocumentViewer": {
         "MAX_FILE_SIZE_ERR": "La taille maximale du document ne doit pas excéder ",
@@ -105,26 +107,14 @@
         "SelectMember": "Veuillez selectionner un membre",
         "Created_Error": "Echec de cretion dy conseil"
     },
-    "NoteCriteria": {
-        "NoteCriterias": "Critère de notation",
-        "NoteCriteriasAdd": " Nouveau critère de notation",
-        "NoteCriteriasUpdate": "Mise à jour d'un critère de notation",
-        "NoteCriteriaTitle": "Gestion des critères de notation de l'application",
-        "CreateNoteCriteria": "Enregistrer",
-        "UpdateNoteCriteria": "Mettre à jour le critère de notation",
-        "SubmitError": "Les champs en rouges sont obligatoires",
-        "NOTECRITERIA_NOT_FOUND": "ce critere n'existe pas",
-        "noteMinsup": "La note minimale doit etre inferieur à la note maximale",
-        "SubmitSuccess": "La création du critère de notation a réussie...",
-        "UpdateSuccess": "La mise à jour du critère de notation a réussie...",
-        "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
-    },
+
     "BlogPost": {
         "BlogPosts": "Actualites",
         "BlogPostTitle": "Gestion des Actualites de l'application",
         "AddBlogPost": "Ajouter un article",
         "UpdateBlogPost": "Mettre a jour un article",
         "SubmitError": "Les champs en rouges sont obligatoires",
+        "CommentSuccess": "La création du commentaire a réussie...",
         "SubmitSuccess": "La création de l'article a réussie...",
         "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
         "ErrorSubmit": "echec d'ajout de l'article",
@@ -205,7 +195,8 @@
         "NOTE_CRITERIA_SLUG_ALREADY_EXIST": "Ce critère de notation existe déjà"
     },
     "UserNoteCriteria": {
-        "Title": "Gestion des Criteres de notation",
+        "Title": "Gestion des de notation",
+        "Name": "Notation",
         "Error": "Echec de l'action",
         "Success": "Action effectué avec success",
         "Select_note": "Selectionner un critaire de note",
@@ -220,6 +211,8 @@
         "MinField" : "entrer le minimum",
         "MaxField" : "entrer le maximum",
         "SlugField": "Slug",
+        "SubjectidLabel": "Sujet",
+        "DecisionLabel": "Décision",
         "MaxsField": "Note maximale",
         "MinsField": "Note mininale",
         "stepLabel" : "step",
@@ -257,6 +250,8 @@
         "LabelTitle": "Veuillez entrer le titre...",
         "LabelDays": "Veuillez entrer le nombre de jours...",
         "EndDateError": "veuillez entrer une date de fin valide",
+        "FreeDaysError": "veuillez entrer un nombre de jours valide",
+        "DateError": "Entrer une date valide",
         "NameSelect": "Choisir votre structure",
         "UserLabel": "Utilisateur",
         "SenderLabel": "Emetteur",
@@ -361,6 +356,9 @@
         "BlogCategoryLabel": "Categorie du blog",
         "BlogCategoryField": "Choisir une categorie de blog",
         "ContentLabel": "Contenu",
+        "Pro_situationsLabel": "Situation professionnel",
+        "DivisionsLabel": "Division",
+        "CreateCareer": "Faire la promotion",
         "ContentField": "Veuillez entrez un contenu",
         "OldPasswordLabel": "Mot de passe actuel",
         "OldPasswordField": "Veuillez entrer votre mot de passe courant...",
@@ -400,6 +398,22 @@
         "Value": "Valeur",
         "KeyField": "Entrer une clé",
         "ValueField": "Entrer une valeur"
+    },
+    "Career": {
+        "CAREER": "PROMOTION",
+        "Careers": "Promotions",
+        "CareerTitle": "Gestion des promotions de l'application",
+        "AddCareer": "Promotion",
+        "UpdateCareer": "Modifier",
+        "SubmitSuccess": "La création de la promotion a réussie...",
+        "SubmitUpdateSuccess": "La modification a été effectué avec succé...",
+        "SubmitErrorUsers": "Veuillez selectionner un utilisateur",
+        "SubmitErrorPro_situation": "Veuillez selectionner une situation professionelle",
+        "SubmitErrorCareer":"erreur de la creation!! veuillez verifier vos donnees ",
+        "CreateCareer": "Enregistrer",
+        "SubmitError": "Les champs en rouges sont obligatoires",
+        "UpdateSuccess": "La mise à jour a réussie...",
+        "USER_CONSUME_PROSITUATION": "cet utilisateur a déjà cette situation professionnel ou bien cet utilisateur appartient déjà à cette division"
     },
     "Assignment": {
         "Assignments": "Affectations",
@@ -581,13 +595,13 @@
         "Vacations": "Liste des demandes de congés",
         "VacationTitle": "Gestion des demandes de congés de l'application",
         "AcceptVacation": "Accepter",
+        "SubmitSuccess": "Traitement de la demande reussie",
         "CancelVacation": "Annuler",
         "RefuseVacation": "Refuser",
         "AcceptVacationNotif": "Vous avez accepté la demande",
         "CancelVacationNotif": "Vous avez annulé la demande",
         "RefuseVacationNotif": "Vous avez refusé la demande",
         "SubmitError": " Ne retrouve pas la demande",
-        "SubmitSuccess": "La création du vacation a réussie...",
         "DEMANDE_V_NOT_FOUND": "La demande n'a pas été retrouvé",
         "DEMANDE_V_ALREADY_EXISTS": "La demande a déjà été traité",
         "raison": "Raison de la demande",
@@ -599,11 +613,38 @@
         "created_at": "Creer le ",
         "CreatedAtLabel": "Date de dépôt"
     },
+    "Demande_L": {
+        "LicenseAsk": "Demandes de congés",
+        "LicenseAttent": "Gestion des demandes de congés en attente",
+        "Licenses": "Liste des demandes de congés",
+        "LicenseTitle": "Gestion des demandes de congés de l'application",
+        "AcceptLicense": "Accepter",
+        "SubmitSuccess": "Traitement de la demande reussie",
+        "CancelLicense": "Annuler",
+        "RefuseLicense": "Refuser",
+        "AcceptLicenseNotif": "Vous avez accepté la demande",
+        "CancelLicenseNotif": "Vous avez annulé la demande",
+        "RefuseLicenseNotif": "Vous avez refusé la demande",
+        "SubmitError": " Ne retrouve pas la demande",
+        "DEMANDE_V_NOT_FOUND": "La demande n'a pas été retrouvé",
+        "DEMANDE_V_ALREADY_EXISTS": "La demande a déjà été traité",
+        "raison": "Raison de la demande",
+        "description": "Description de la demande",
+        "requested_start_date": "Date de depart proposée",
+        "accorded_start_date": "Voulez vous modifier la date proposée ?",
+        "requested_days": "Nombre de jours poposés",
+        "accorded_days": "Voulez vous modifier le nombre de jours ?",
+        "created_at": "Creer le ",
+        "CreatedAtLabel": "Date de dépôt"
+    },
+
     "Contract": {
         "Contracts": "Contrats",
         "ContractTitle": "Gestion des contrats de l'application",
-        "AddContract": "Ajouter un nouveau contract",
+        "AddContract": "Ajouter un nouveau contrat",
         "CreateContract": "Créer le Contrat",
+        "DownloadContract": "Télécharger le contrat",
+        "Download": "Téléchage",
         "UpdateContract": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitErrordate": "les dates entrées sont incorrectes",
@@ -802,5 +843,10 @@
         "LICENSE_ALREADY_EXISTS": "Cette permission existe déjà",
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+    },
+
+    "HTTP_ERROR_MSG": {
+      "403": "Accès refusé !",
+      "401": "Votre session est arrivée à expiration !"
     }
 }

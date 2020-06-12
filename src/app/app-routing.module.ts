@@ -31,6 +31,8 @@ import { ChatComponent } from './chat/chat.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
 import { DecisionVacationComponent } from './vacations/decision-vacation/decision-vacation.component';
+import { AllDemandesLicenseComponent } from './licenses/all-demandes-license/all-demandes-license.component';
+import { DecisionLicenseComponent } from './licenses/decision-license/decision-license.component';
 import { UpdateContactComponent } from './contacts/update-contact/update-contact.component';
 import { DetailsContractComponent } from './contracts/details-contract/details-contract.component';
 import { TemplateUpdateComponent } from './templates/template-update/template-update.component';
@@ -50,8 +52,6 @@ import { UpdateVacationTypeComponent } from './vacation_types/update-vacation-ty
 import { AddLicenseComponent } from './licenses/add-license/add-license.component';
 import { UpdateLicenseComponent } from './licenses/update-license/update-license.component';
 import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
-
-// import { UpdateLicensetypesComponent } from './licensetypes/update-licensetypes/update-licensetypes.component'
 import { AllNotecriteriasComponent } from './notecriterias/all-notecriterias/all-notecriterias.component';
 import { DeleteNotecriteriasComponent } from './notecriterias/delete-notecriterias/delete-notecriterias.component';
 import { DetailsNotecriteriasComponent } from './notecriterias/details-notecriterias/details-notecriterias.component';
@@ -106,6 +106,7 @@ import { FindSettingsComponent } from './settings/find-settings/find-settings.co
 import { UpdateSettingsComponent } from './settings/update-settings/update-settings.component';
 
 import { AddCareerComponent } from './careers/add-career/add-career.component';
+import { AddCareerUserComponent } from './careers/add-career-user/add-career-user.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
 
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
@@ -115,137 +116,146 @@ import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.comp
 
 import { AllAssignmenttypeComponent } from './assignmenttypes/all-assignmenttype/all-assignmenttype.component';
 import { DetailsAssignmenttypeComponent } from './assignmenttypes/details-assignmenttype/details-assignmenttype.component';
+
+
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
+
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
+import { UserDetailsComponent } from './users/details-user/user-details.component';
+import { UserNoteComponent } from './user-note/user-note.component';
+import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all-vacationtypes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'chat', component: ChatComponent },
-  { path: 'pro-situations/add', component: AddProSituationComponent },
-  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent },
-  { path: 'pro-situations/all', component: AllProSituationComponent },
-  { path: 'pro-situations/details/:id', component: DetailsProSituationComponent },
-  { path: 'profiles/add', component: AddProfileComponent },
-  { path: 'profiles/update/:id', component: UpdateProfileComponent },
-  { path: 'profiles/all', component: AllProfileComponent },
-  { path: 'profiles/details/:id', component: DetailsProfileComponent },
-  { path: 'profiles/add', component: AddProfileComponent },
-  { path: 'profiles/update/:id', component: UpdateProfileComponent },
-  { path: 'licensetypes/add', component: AddLicensetypesComponent },
-  { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent },
-  { path: 'licensetypes/all', component: AllLicensetypesComponent },
-  { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent },
-  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent },
-  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent },
-  { path: 'roles/add', component: AddRoleComponent },
-  { path: 'disciplinary_boards/add', component: AddDisciplinaryBoardsComponent },
-  { path: 'disciplinary_boards/update/:id', component: UpdateDisciplinaryBoardComponent },
-  { path: 'roles/all', component: AllRolesComponent },
-  { path: 'users/add', component: AddUserComponent },
-  { path: 'users/update/:id', component: UpdateUserComponent },
-  { path: 'users/all', component: AllUsersComponent },
-  { path: 'roles/update/:id', component: UpdateRoleComponent },
-  { path: 'vacation/demandes', component: AllDemandesVacationComponent },
-
-  { path: 'vacation/demandes/:id', component: DecisionVacationComponent },
-  { path: 'templates/create', component: TemplateCreateComponent },
-  { path: 'templates/update/:id', component: TemplateUpdateComponent },
-  { path: 'templates/all', component: AllTemplatesComponent },
-  { path: 'templates/details/:id', component: DetailsTemplatesComponent },
-  { path: 'roles/details/:id', component: DetailsRoleComponent },
-  { path: 'vacations/all', component: AllVacationComponent },
-  { path: 'vacations/details/:id', component: DetailVacationComponent },
-  { path: 'notecriterias/all', component: AllNotecriteriasComponent },
-  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent },
-  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent },
+  { path: 'chat', component: ChatComponent, canActivate: [AuthGuard], data: { permissions: ['read-chat'] }},
+  { path: 'pro-situations/add', component: AddProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['create-pro-situations'] } },
+  { path: 'pro-situations/update/:id', component: UpdateProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['update-pro-situations'] } },
+  { path: 'pro-situations/all', component: AllProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['read-pro-situations'] }},
+  { path: 'pro-situations/details/:id', component: DetailsProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['read-pro-situations'] }},
+  { path: 'profiles/add', component: AddProfileComponent, canActivate: [AuthGuard], data: { permissions: ['create-profiles'] }},
+  { path: 'profiles/update/:id', component: UpdateProfileComponent, canActivate: [AuthGuard], data: { permissions: ['update-profiles'] }},
+  { path: 'profiles/all', component: AllProfileComponent, canActivate: [AuthGuard], data: { permissions: ['read-profiles'] }},
+  { path: 'profiles/details/:id', component: DetailsProfileComponent, canActivate: [AuthGuard], data: { permissions: ['read-profiles'] }},
+  { path: 'licensetypes/add', component: AddLicensetypesComponent, canActivate: [AuthGuard], data: { permissions: ['create-license-types'] }},
+  { path: 'licensetypes/update/:id', component: UpdateLicensetypesComponent, canActivate: [AuthGuard], data: { permissions: ['update-license-types'] }},
+  { path: 'licensetypes/all', component: AllLicensetypesComponent, canActivate: [AuthGuard], data: { permissions: ['read-license-types'] }},
+  { path: 'licensetypes/details/:id', component: DetailsLycensetypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-license-types'] }},
+  { path: 'disciplinaryBoards/all', component: AllDisciplinaryComponent, canActivate: [AuthGuard], data: { permissions: ['read-disciplinary-boards'] }},
+  { path: 'disciplinaryBoards/details/:id', component: DetailsDisciplinaryComponent, canActivate: [AuthGuard], data: { permissions: ['read-disciplinary-boards'] }},
+  { path: 'roles/add', component: AddRoleComponent, canActivate: [AuthGuard], data: { permissions: ['create-roles'] }},
+  { path: 'disciplinary_boards/add', component: AddDisciplinaryBoardsComponent, canActivate: [AuthGuard], data: { permissions: ['create-disciplinary-boards'] }},
+  { path: 'disciplinary_boards/update/:id', component: UpdateDisciplinaryBoardComponent, canActivate: [AuthGuard], data: { permissions: ['update-disciplinary-boards'] }},
+  { path: 'roles/all', component: AllRolesComponent, canActivate: [AuthGuard], data: { permissions: ['read-roles'] }},
+  { path: 'users/add', component: AddUserComponent, canActivate: [AuthGuard], data: { permissions: ['create-users'] }},
+  { path: 'users/update/:id', component: UpdateUserComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
+  { path: 'users/all', component: AllUsersComponent, canActivate: [AuthGuard], data: { permissions: ['read-users'] }},
+  { path: 'roles/update/:id', component: UpdateRoleComponent, canActivate: [AuthGuard], data: { permissions: ['update-roles'] }},
+  { path: 'vacation/demandes', component: AllDemandesVacationComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacations'] }},
+  { path: 'vacation/demandes/:id', component: DecisionVacationComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacations'] }},
+  { path: 'license/demandes', component: AllDemandesLicenseComponent, canActivate: [AuthGuard], data: { permissions: ['read-licenses'] }},
+  { path: 'license/demandes/:id', component: DecisionLicenseComponent, canActivate: [AuthGuard], data: { permissions: ['read-licenses'] }},
+  { path: 'templates/create', component: TemplateCreateComponent, canActivate: [AuthGuard], data: { permissions: ['create-templates'] }},
+  { path: 'templates/update/:id', component: TemplateUpdateComponent, canActivate: [AuthGuard], data: { permissions: ['update-templates'] }},
+  { path: 'templates/all', component: AllTemplatesComponent, canActivate: [AuthGuard], data: { permissions: ['read-templates'] }},
+  { path: 'templates/details/:id', component: DetailsTemplatesComponent, canActivate: [AuthGuard], data: { permissions: ['read-templates'] }},
+  { path: 'roles/details/:id', component: DetailsRoleComponent, canActivate: [AuthGuard], data: { permissions: ['read-roles'] }},
+  { path: 'vacations/all', component: AllVacationComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacations'] }},
+  { path: 'vacations/details/:id', component: DetailVacationComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacations'] }},
+  { path: 'notecriterias/all', component: AllNotecriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['read-note-criterias'] }},
+  { path: 'notecriterias/delete/:id', component: DeleteNotecriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['delete-note-criterias'] }},
+  { path: 'notecriterias/details/:id', component: DetailsNotecriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['read-note-criterias'] }},
   { path: 'document-viewer', component: DocumentViewerComponent },
-  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent },
-  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent },
-  { path: 'assignments/all', component: AllAssignmentsComponent },
-  { path: 'assignments/add', component: AddAssignmentComponent },
-  { path: 'assignments/update/:id', component: UpdateAssignmentComponent },
-  { path: 'assignments/details/:id', component: DetailsAssignmentComponent },
-  { path: 'vacation-types/add', component: AddVacationTypeComponent },
-  { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent },
+  { path: 'assignmenttype/details/:id', component: DetailsAssignmenttypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-assignment-types'] }},
+  { path: 'assignmenttype/all', component: AllAssignmenttypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-assignment-types'] }},
+  { path: 'assignments/all', component: AllAssignmentsComponent, canActivate: [AuthGuard], data: { permissions: ['read-assignments'] }},
+  { path: 'assignments/add', component: AddAssignmentComponent, canActivate: [AuthGuard], data: { permissions: ['create-assignments'] }},
+  { path: 'assignments/update/:id', component: UpdateAssignmentComponent, canActivate: [AuthGuard], data: { permissions: ['update-assignments'] }},
+  { path: 'assignments/details/:id', component: DetailsAssignmentComponent, canActivate: [AuthGuard], data: { permissions: ['read-assignments'] }},
+  { path: 'vacation-types/add', component: AddVacationTypeComponent, canActivate: [AuthGuard], data: { permissions: ['create-vacation-types'] }},
+  { path: 'vacation-types/update/:id', component: UpdateVacationTypeComponent, canActivate: [AuthGuard], data: { permissions: ['update-vacation-types'] }},
 
-  { path: 'licenses/add', component: AddLicenseComponent },
-  { path: 'licenses/update/:id', component: UpdateLicenseComponent },
-  { path: 'licenses/all', component: AllLicensesComponent },
-  { path: 'licenses/details/:id', component: DetailsLicensesComponent },
+  { path: 'licenses/add', component: AddLicenseComponent, canActivate: [AuthGuard], data: { permissions: ['create-licenses'] }},
+  { path: 'licenses/update/:id', component: UpdateLicenseComponent, canActivate: [AuthGuard], data: { permissions: ['update-licenses'] }},
+  { path: 'licenses/all', component: AllLicensesComponent, canActivate: [AuthGuard], data: { permissions: ['read-licenses'] }},
+  { path: 'licenses/details/:id', component: DetailsLicensesComponent, canActivate: [AuthGuard], data: { permissions: ['read-licenses'] }},
 // path to settings
-  { path: 'settings/add', component: AddSettingsComponent},
-  { path: 'settings/update/:id', component: UpdateSettingsComponent },
-  { path: 'settings/all', component: AllSettingsComponent },
-  { path: 'settings/details/:id', component: DetailsSettingsComponent },
+  { path: 'settings/add', component: AddSettingsComponent, canActivate: [AuthGuard], data: { permissions: ['create-settings'] }},
+  { path: 'settings/update/:id', component: UpdateSettingsComponent, canActivate: [AuthGuard], data: { permissions: ['update-settings'] }},
+  { path: 'settings/all', component: AllSettingsComponent, canActivate: [AuthGuard], data: { permissions: ['read-settings'] }},
+  { path: 'settings/details/:id', component: DetailsSettingsComponent, canActivate: [AuthGuard], data: { permissions: ['read-settings'] }},
 
 
-  { path: 'divisions/add', component: AddDivisionComponent },
-  { path: 'divisions/update/:id', component: UpdateDivisionComponent },
-  { path: 'divisions/all', component: AllDivisionComponent },
-  { path: 'divisions/details/:id', component: DetailsDivisionComponent },
-  { path: 'submissions/details/:id', component: DetailsSubmissionComponent },
-  { path: 'document-viewer', component: DocumentViewerComponent },
-  { path: 'professional-score', component: AddUserNoteCriteriasComponent },
-  { path: 'statistiques/view/:id', component:ViewUserStatComponent },
-  //routes pour ajout et update des contacts
-  { path: 'contacts/update/:id', component:UpdateContactComponent},
-  { path: 'contacts/add',component:AddContactComponent},
+  { path: 'divisions/add', component: AddDivisionComponent, canActivate: [AuthGuard], data: { permissions: ['create-divisions'] }},
+  { path: 'divisions/update/:id', component: UpdateDivisionComponent, canActivate: [AuthGuard], data: { permissions: ['update-divisions'] }},
+  { path: 'divisions/all', component: AllDivisionComponent, canActivate: [AuthGuard], data: { permissions: ['read-divisions'] }},
+  { path: 'divisions/details/:id', component: DetailsDivisionComponent, canActivate: [AuthGuard], data: { permissions: ['read-divisions'] }},
+  { path: 'submissions/details/:id', component: DetailsSubmissionComponent, canActivate: [AuthGuard], data: { permissions: ['read-submissions'] }},
+  { path: 'professional-score', component: AddUserNoteCriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
+  { path: 'professional-score/all', component: UserNoteComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
+  { path: 'statistiques/view/:id', component: ViewUserStatComponent, canActivate: [AuthGuard], data: { permissions: ['read-statistics'] }},
+  { path: 'vacationtypes/all', component: AllVacationTypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacation-types'] }},
 
-  { path: 'note-criterias/add', component: AddNoteCriteriasComponent },
-  { path: 'note-criterias/update/:id', component: UpdateNoteCriteriasComponent },
-
-  //routes pour ajout et update des contacts
-  { path: 'contacts/update/:id', component:UpdateContactComponent},
-  { path: 'contacts/add',component:AddContactComponent},
-
-  { path: 'trainings/add', component: AddTrainingComponent},
-  { path: 'trainings/update/:id', component: UpdateTrainingComponent},
-  { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent},
-  { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent},
-  { path: 'blog-category/add', component: AddBlogCategoryComponent },
-  { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent },
-  // routes pour l'affichage des formations
-  { path: 'trainings/all',  component: AllTrainingsComponent},
-  { path: 'trainings/details/:id', component: DetailsTrainingsComponent },
+  { path: 'users/details/:id', component: UserDetailsComponent, canActivate: [AuthGuard], data: { permissions: ['read-users'] }},
   // routes pour ajout et update des contacts
-  { path: 'contacts/update/:id', component: UpdateContactComponent},
-  { path: 'contacts/add', component: AddContactComponent},
-  { path: 'contacts/all', component: AllContactComponent },
-  { path: 'contacts/details/:id', component: DetailContactComponent},
-  { path: 'contacts/update/:id', component: UpdateContactComponent },
-  { path: 'contacts/add', component: AddContactComponent },
-  { path: 'assignment-types/add', component: AddAssignmentTypeComponent },
-  { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent },
+  { path: 'contacts/update/:id', component: UpdateContactComponent, canActivate: [AuthGuard], data: { permissions: ['update-contacts'] }},
+  { path: 'contacts/add', component: AddContactComponent, canActivate: [AuthGuard], data: { permissions: ['create-contacts'] }},
+
+  { path: 'note-criterias/add', component: AddNoteCriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['create-note-criterias'] }},
+  { path: 'note-criterias/update/:id', component: UpdateNoteCriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['update-note-criterias'] }},
+
+  { path: 'trainings/add', component: AddTrainingComponent, canActivate: [AuthGuard], data: { permissions: ['create-trainings'] }},
+  { path: 'trainings/update/:id', component: UpdateTrainingComponent, canActivate: [AuthGuard], data: { permissions: ['update-trainings'] }},
+  { path: 'disciplinary-teams/all', component: AllDisciplinaryTeamsComponent, canActivate: [AuthGuard], data: { permissions: ['read-disciplinary-teams'] }},
+  { path: 'disciplinary-teams/details/:id', component: DetailsDisciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['read-disciplinary-teams'] }},
+  { path: 'blog-category/add', component: AddBlogCategoryComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-categories'] }},
+  { path: 'blog-category/update/:id', component: UpdateBlogCategoryComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-categories'] }},
+  // routes pour l'affichage des formations
+  { path: 'trainings/all', component: AllTrainingsComponent, canActivate: [AuthGuard], data: { permissions: ['read-trainings'] }},
+  { path: 'trainings/details/:id', component: DetailsTrainingsComponent, canActivate: [AuthGuard], data: { permissions: ['read-trainings'] }},
+  // routes pour ajout et update des contacts
+  { path: 'contacts/update/:id', component: UpdateContactComponent, canActivate: [AuthGuard], data: { permissions: ['update-contacts'] }},
+  { path: 'contacts/add', component: AddContactComponent, canActivate: [AuthGuard], data: { permissions: ['create-contacts'] }},
+  { path: 'contacts/all', component: AllContactComponent, canActivate: [AuthGuard], data: { permissions: ['read-contacts'] }},
+  { path: 'contacts/details/:id', component: DetailContactComponent, canActivate: [AuthGuard], data: { permissions: ['read-contacts'] }},
+
+  { path: 'assignment-types/add', component: AddAssignmentTypeComponent, canActivate: [AuthGuard], data: { permissions: ['create-assignment-types'] }},
+  { path: 'assignment-types/update/:id', component: UpdateAssignmentTypeComponent, canActivate: [AuthGuard], data: { permissions: ['update-assignment-types'] }},
   { path: 'update-password', component: UpdatePasswordComponent },
 
-  { path: 'submissions/add', component: AddSubmissionComponent },
-  { path: 'submissions/all', component: AllSubmissionsComponent },
-  { path: 'submissions/update/:id', component: UpdateSubmissionComponent },
-  { path: 'sanctions/add', component: AddSanctionComponent },
-  // { path: '404', component: NotfoundComponent },
+  { path: 'submissions/add', component: AddSubmissionComponent, canActivate: [AuthGuard], data: { permissions: ['create-submissions'] }},
+  { path: 'submissions/all', component: AllSubmissionsComponent, canActivate: [AuthGuard], data: { permissions: ['read-submissions'] }},
+  { path: 'submissions/update/:id', component: UpdateSubmissionComponent, canActivate: [AuthGuard], data: { permissions: ['update-submissions'] }},
+  { path: 'sanctions/add', component: AddSanctionComponent, canActivate: [AuthGuard], data: { permissions: ['create-sanctions'] }},
+  // { path: '404', component: NotfoundComponent, canActivate: [AuthGuard], data: { permissions: ['read-chats'] }},
 
-  { path: 'blog-posts/all', component: AllBlogPostComponent },
-  { path: 'blog-category/details/:id', component: DetailsComponent},
-  { path: 'contracts/add', component: AddContractComponent },
-  { path: 'contracts/all', component: AllContractComponent },
-  { path: 'blog-category/all', component: AllBlogCategoryComponent },
-  { path: 'contracts/update/:id', component: UpdateContractComponent },
-  { path: 'contracts/details/:id', component: DetailsContractComponent },
-  { path: 'contracts/details', component: DetailsContractComponent },
-  { path: 'vacations/update/:id', component: UpdateVacationComponent },
-  { path: 'vacations/add', component: AddVacationComponent },
-  { path: 'blog-posts/all', component: AllBlogPostComponent },
-  { path: 'blog-posts/add', component: AddBlogPostComponent },
-  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent },
-  { path: 'blog-posts/details/:id', component: DetailBlogPostComponent},
-  { path: 'profile', component: UserProfileComponent},
-  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent },
-  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent },
+  { path: 'blog-posts/all', component: AllBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-posts'] }},
+  { path: 'blog-category/details/:id', component: DetailsComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-categories'] }},
+  { path: 'contracts/add', component: AddContractComponent, canActivate: [AuthGuard], data: { permissions: ['create-contracts'] }},
+  { path: 'contracts/all', component: AllContractComponent, canActivate: [AuthGuard], data: { permissions: ['read-contracts'] }},
+  { path: 'blog-category/all', component: AllBlogCategoryComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-categories'] }},
+  { path: 'contracts/update/:id', component: UpdateContractComponent, canActivate: [AuthGuard], data: { permissions: ['update-contracts'] }},
+  { path: 'contracts/details/:id', component: DetailsContractComponent, canActivate: [AuthGuard], data: { permissions: ['read-contracts'] }},
+  { path: 'contracts/details', component: DetailsContractComponent, canActivate: [AuthGuard], data: { permissions: ['read-contracts'] }},
+  { path: 'vacations/update/:id', component: UpdateVacationComponent, canActivate: [AuthGuard], data: { permissions: ['update-vacations'] }},
+  { path: 'vacations/add', component: AddVacationComponent, canActivate: [AuthGuard], data: { permissions: ['create-vacations'] }},
+  { path: 'blog-posts/all', component: AllBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-posts'] }},
+  { path: 'blog-posts/add', component: AddBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['create-blog-posts'] }},
+  { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['update-blog-posts'] }},
+  { path: 'blog-posts/details/:id', component: DetailBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-posts'] }},
+  { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard], data: { permissions: ['read-profile'] }},
+  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['create-disciplinary-teams'] }},
+  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['update-disciplinary-teams'] }},
 
-  { path: 'career/add', component: AddCareerComponent },
-  { path: 'career/update/:id', component: UpdateCareerComponent},
-  { path: 'promotions', component: AddCareerComponent },
+  { path: 'sanctions/all', component: AllSanctionsComponent, canActivate: [AuthGuard], data: { permissions: ['read-sanctions'] }},
+  { path: 'sanctions/details/:id', component: DetailsSanctionComponent, canActivate: [AuthGuard], data: { permissions: ['read-sanctions'] }},
+
+  { path: 'career/add', component: AddCareerComponent, canActivate: [AuthGuard], data: { permissions: ['read-careers'] }},
+  { path: 'career/update/:id', component: UpdateCareerComponent, canActivate: [AuthGuard], data: { permissions: ['read-careers'] }},
+  { path: 'promotions', component: AddCareerComponent, canActivate: [AuthGuard], data: { permissions: ['create-careers'] }},
+  { path: 'promotions/user/:id', component: AddCareerUserComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
 
   // { path: '404', component: NotfoundComponent },
   // { path: '404', component: NotfoundComponent },

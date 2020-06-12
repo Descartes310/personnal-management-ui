@@ -41,7 +41,7 @@ import { UpdateDisciplinaryBoardComponent } from './disciplinary_boards/update-d
 import { AddUserNoteCriteriasComponent } from './add-user-note-criterias/add-user-note-criterias.component';
 
 
-//import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
+// import { AddLicensetypesComponent } from './licensetypes/add-licensetypes/add-licensetypes.component';
 
 
 import { AddTrainingComponent } from './trainings/add-training/add-training.component';
@@ -106,7 +106,7 @@ import { AllContactComponent } from './contacts/all-contact/all-contact.componen
 import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 import { ViewUserStatComponent } from './statistiques/view-user-stat/view-user-stat.component';
 
-//statistiques
+// statistiques
 import { ChartsModule } from 'ng2-charts';
 import { AllVacationComponent } from './vacations/all-vacation/all-vacation.component';
 import { UpdateVacationComponent } from './vacations/update-vacation/update-vacation.component';
@@ -122,8 +122,6 @@ import { AllTemplatesComponent } from './templates/all-templates/all-templates.c
 import { DetailsTemplatesComponent } from './templates/details-templates/details-templates.component';
 import { FindTemplatesComponent } from './templates/find-templates/find-templates.component';
 import { AllDemandesVacationComponent } from './vacations/all-demandes-vacation/all-demandes-vacation.component';
-
-// import { AllBlogCategoryComponent } from './BlogCategory/all-blog-category/all-blog-category.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
 import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
@@ -141,20 +139,26 @@ import { UpdateDiciplinaryTeamComponent } from './disciplinary-teams/update-dici
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AddCareerComponent } from './careers/add-career/add-career.component';
 import { UpdateCareerComponent } from './careers/update-career/update-career.component';
-// import { AddProfileComponent } from './profiles/add-profile/add-profile.component';
-// import { UpdateProfileComponent } from './profiles/update-profile/update-profile.component';
-// import { DecisionVacationComponent } from './vacation/decision-vacation/decision-vacation.component';
 import { DetailsAssignmentComponent } from './assignments/details-assignment/details-assignment.component';
 import { AddSubmissionComponent } from './submissions/add-submission/add-submission.component';
 import { UpdateSubmissionComponent } from './submissions/update-submission/update-submission.component';
 
 import { AddSanctionComponent } from './sanctions/add-sanction/add-sanction.component';
+import { AllSanctionsComponent } from './sanctions/all-sanctions/all-sanctions.component';
+import { DetailsSanctionComponent } from './sanctions/details-sanction/details-sanction.component';
 import { AddVacationComponent } from './vacations/add-vacation/add-vacation.component';
 import { AddNoteCriteriasComponent } from './note_criterias/add-note-criterias/add-note-criterias.component';
 import { UpdateNoteCriteriasComponent } from './note_criterias/update-note-criterias/update-note-criterias.component';
 
 import { AllDisciplinaryComponent } from './disciplinaryBoard/all-disciplinary/all-disciplinary.component';
 import { DetailsDisciplinaryComponent } from './disciplinaryBoard/details-disciplinary/details-disciplinary.component';
+import { AllDemandesLicenseComponent } from './licenses/all-demandes-license/all-demandes-license.component';
+import { DecisionLicenseComponent } from './licenses/decision-license/decision-license.component';
+import { UserDetailsComponent } from './users/details-user/user-details.component';
+import { AddCareerUserComponent } from './careers/add-career-user/add-career-user.component';
+import { UserNoteComponent } from './user-note/user-note.component';
+import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all-vacationtypes.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -211,7 +215,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddLicensetypesComponent,
     UpdateLicensetypesComponent,
     AllDivisionComponent,
-    DetailsDivisionComponent,    
+    DetailsDivisionComponent,
     AllLicensetypesComponent,
     DetailsLycensetypeComponent,
     AllLicensetypesComponent,
@@ -275,7 +279,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateSettingsComponent,
     CreateDiciplinaryTeamComponent,
     UpdateDiciplinaryTeamComponent,
+    AllVacationTypeComponent,
     AddCareerComponent,
+    UserDetailsComponent,
+    AddCareerUserComponent,
     UpdateCareerComponent,
     // AddProfileComponent,
     // UpdateProfileComponent,
@@ -289,12 +296,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsContractComponent,
     AllBlogCategoryComponent,
     AllDemandesVacationComponent,
+    AllSanctionsComponent,
+    DetailsSanctionComponent,
+
     DetailsAssignmentComponent,
     AddSubmissionComponent,
     UpdateSubmissionComponent,
     AddSanctionComponent,
     AllDisciplinaryComponent,
     DetailsDisciplinaryComponent,
+    UserNoteComponent,
+    AllDemandesLicenseComponent,
+    DecisionLicenseComponent,
   ],
 
   imports: [
@@ -324,7 +337,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastrModule.forRoot(),
     BlockUIModule.forRoot(),
     BrowserAnimationsModule
-  ], 
+  ],
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
