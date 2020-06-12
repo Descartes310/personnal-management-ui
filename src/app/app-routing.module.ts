@@ -130,7 +130,7 @@ import { AllVacationTypeComponent } from './vacation_types/all-vacationtypes/all
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'chat', component: ChatComponent, canActivate: [AuthGuard], data: { permissions: ['read-chats'] }},
+  { path: 'chat', component: ChatComponent, canActivate: [AuthGuard], data: { permissions: ['read-chat'] }},
   { path: 'pro-situations/add', component: AddProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['create-pro-situations'] } },
   { path: 'pro-situations/update/:id', component: UpdateProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['update-pro-situations'] } },
   { path: 'pro-situations/all', component: AllProSituationComponent, canActivate: [AuthGuard], data: { permissions: ['read-pro-situations'] }},
@@ -195,7 +195,7 @@ const routes: Routes = [
   { path: 'submissions/details/:id', component: DetailsSubmissionComponent, canActivate: [AuthGuard], data: { permissions: ['read-submissions'] }},
   { path: 'professional-score', component: AddUserNoteCriteriasComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
   { path: 'professional-score/all', component: UserNoteComponent, canActivate: [AuthGuard], data: { permissions: ['update-users'] }},
-  { path: 'statistiques/view/:id', component: ViewUserStatComponent, canActivate: [AuthGuard], data: { permissions: ['update-statistics'] }},
+  { path: 'statistiques/view/:id', component: ViewUserStatComponent, canActivate: [AuthGuard], data: { permissions: ['read-statistics'] }},
   { path: 'vacationtypes/all', component: AllVacationTypeComponent, canActivate: [AuthGuard], data: { permissions: ['read-vacation-types'] }},
 
   { path: 'users/details/:id', component: UserDetailsComponent, canActivate: [AuthGuard], data: { permissions: ['read-users'] }},
@@ -246,8 +246,8 @@ const routes: Routes = [
   { path: 'blog-posts/update/:id', component: UpdateBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['update-blog-posts'] }},
   { path: 'blog-posts/details/:id', component: DetailBlogPostComponent, canActivate: [AuthGuard], data: { permissions: ['read-blog-posts'] }},
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard], data: { permissions: ['read-profile'] }},
-  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['create-diciplinary-teams'] }},
-  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['update-diciplinary-teams'] }},
+  { path: 'diciplinary-team/add', component: CreateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['create-disciplinary-teams'] }},
+  { path: 'diciplinary-team/update/:id', component: UpdateDiciplinaryTeamComponent, canActivate: [AuthGuard], data: { permissions: ['update-disciplinary-teams'] }},
 
   { path: 'sanctions/all', component: AllSanctionsComponent, canActivate: [AuthGuard], data: { permissions: ['read-sanctions'] }},
   { path: 'sanctions/details/:id', component: DetailsSanctionComponent, canActivate: [AuthGuard], data: { permissions: ['read-sanctions'] }},
