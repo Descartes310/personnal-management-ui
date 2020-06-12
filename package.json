@@ -22,7 +22,6 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "@ckeditor/ckeditor5-angular": "^1.2.3",
     "@ckeditor/ckeditor5-build-classic": "^19.0.0",
     "@kolkov/angular-editor": "^1.1.2",
     "@ngx-translate/core": "^9.1.1",
