@@ -47,7 +47,6 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="media flex-wrap w-80 align-items-center align">
-                                                    <img width="42" height="42" src="{{getOneUserPost(blog_post.user_id) ? getOneUserPost(blog_post.user_id).avatar ? getOneUserPost(blog_post.user_id).avatar : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" class="d-block ui-w-40 rounded-circle align" alt="" >
                                                     <div class="media-body ml-3">
                                                         <a href="javascript:void(0)" style="margin-bottom: 30px;">{{getOneUserPost(blog_post.user_id).first_name}} {{getOneUserPost(blog_post.user_id).last_name}}</a>
                                                         <div class="text-muted small">publié le:{{blog_post.updated_at|date:'dd/MMM/yyy'}}</div>
