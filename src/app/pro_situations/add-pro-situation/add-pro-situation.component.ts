@@ -36,7 +36,7 @@ export class AddProSituationComponent implements OnInit {
   ngOnInit() {
 
     this.proSituationForm = this.formBuilder.group({
-      name: [' ', Validators.required],
+      name: ['', Validators.required],
       description: [''],
       weight: [1, 
         [ 

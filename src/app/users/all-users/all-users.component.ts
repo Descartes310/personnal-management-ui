@@ -31,10 +31,10 @@ export class AllUsersComponent implements OnInit {
 	public deleted = '';
 	public deletedMessage = '';
 	public cancelled = '';
-  public cancelledMessage = '';
-  canCreate = false;
-  canUpdate = false;
-  canDelete = false;
+	public cancelledMessage = '';
+	public canCreate = false;
+	public canUpdate = false;
+	public canDelete = false;
 
 
   constructor(
@@ -46,11 +46,11 @@ export class AllUsersComponent implements OnInit {
 	) {
 
 	    this.translate.get(
-	        ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+	        ['SweetAlert.AreYouSureUser', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
 	        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-	        { data: 'role' })
+	        { data: 'utilisateur' })
 	        .subscribe(val => {
-	          this.areYouSure = val['SweetAlert.AreYouSure'];
+	          this.areYouSure = val['SweetAlert.AreYouSureUser'];
 	          this.warning = val['SweetAlert.Warning'];
 	          this.yes = val['SweetAlert.Yes'];
 	          this.no = val['SweetAlert.No'];
