@@ -258,23 +258,23 @@ export class AddProfileComponent implements OnInit {
    }
     this.isLoading = true;
     this.formData.append('name', this.form.name.value);
-    // this.formData.append('description', '' + this.form.description.value);
-    // this.formData.append('is_unique', this.unique ? '1' : '0');
-    // this.formData.append('is_required',  this.required ? '1' : '0');
-    // this.formData.append('is_private', this.private ? '1' : '0');
-    // this.formData.append('min', '' + this.form.min.value);
-    // this.formData.append('max', '' + this.form.max.value);
-    // this.formData.append('is_updatable', this.updatable ? '1' : '0');
-    // this.formData.append('type', '' + this.form.type.value);
-    // this.formData.append('placeholder', '' + this.form.placeholder.value);
-    // this.formData.append('step', '' + this.form.step.value);
-    // this.formData.append('default', '' + this.form.default.value);
-    // if(this.form.type.value == 'select') {
-    //   this.options.forEach(option => {
-    //     this.formData.append('options[]', '' + option.value);
-    //   })
-    // }
-    // console.log("test arrivée 3");
+    this.formData.append('description', '' + this.form.description.value);
+    this.formData.append('is_unique', this.unique ? '1' : '0');
+    this.formData.append('is_required',  this.required ? '1' : '0');
+    this.formData.append('is_private', this.private ? '1' : '0');
+    this.formData.append('min', '' + this.form.min.value);
+    this.formData.append('max', '' + this.form.max.value);
+    this.formData.append('is_updatable', this.updatable ? '1' : '0');
+    this.formData.append('type', '' + this.form.type.value);
+    this.formData.append('placeholder', '' + this.form.placeholder.value);
+    this.formData.append('step', '' + this.form.step.value);
+    this.formData.append('default', '' + this.form.default.value);
+    if(this.form.type.value == 'select') {
+      this.options.forEach(option => {
+        this.formData.append('options[]', '' + option.value);
+      })
+    }
+    console.log("test arrivée 3");
     
    console.log(this.formData);
     this.profileService.add(this.formData)

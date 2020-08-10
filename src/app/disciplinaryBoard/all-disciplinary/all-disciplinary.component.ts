@@ -70,7 +70,6 @@ export class AllDisciplinaryComponent implements OnInit {
     this.disciplinaryBoardService.all().then(
       response => {
         this.disciplinaryBoards = [];
-        //console.log(response)
         response.map( disciplinaryBoard => {
           this.disciplinaryBoards.push(new DisciplinaryBoard(disciplinaryBoard));
         });

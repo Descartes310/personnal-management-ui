@@ -118,6 +118,7 @@ export class AddContractComponent implements OnInit {
     formData.append('free_days', this.form.free_days.value);  
     formData.append('start_date', '' + this.form.start_date.value);  
     formData.append('end_date', '' + this.form.end_date.value);
+    console.log(formData);
     this.contractService.add(formData)
       .then(resp => {
         this.translate.get('Contract.SubmitSuccess')

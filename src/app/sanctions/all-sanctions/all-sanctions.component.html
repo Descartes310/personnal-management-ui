@@ -2,7 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
+                <i class="metismenu-icon pe-7s-hammer">
                 </i>
             </div>
             <div>{{ 'Sanction.Sanctions' | translate }}
@@ -22,7 +22,7 @@
 <div class="tabs-animation">
     <div class="main-card mb-3 card">
         <div class="card-header">
-            <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+            <i class="metismenu-icon pe-7s-hammer"> </i>
             {{ 'Sanction.Sanctions' | translate }}
         </div>
         <div class="card-body">
@@ -32,7 +32,6 @@
                     <tr>
                         <th>#</th>
                         <th>{{ 'Form.SubjectLabel' | translate }}</th>
-                        <th>{{ 'Form.SubjectidLabel' | translate }}</th>
                         <th>{{ 'Form.RaisonLabel' | translate }}</th>
                         <th>{{ 'Form.DecisionLabel' | translate }}</th>
                         <th>{{ 'Form.StartDateLabel' | translate }}</th>
@@ -44,7 +43,6 @@
                     <tr *ngFor="let sanction of sanctions,let i = index" id="tr{{ sanction.id }}">
                         <td>{{ i+1 }}</td>
                         <td style="width: 10%">{{ sanction.subject }}</td>
-                        <td style="width: 10%">{{ sanction.subject_id }}</td>
                         <td style="width: 15%">{{ sanction.raison }}</td>
                         <td style="width: 12%">{{ sanction.decision }}</td>
                         <td style="width: 15%">{{ sanction.start_date }}</td>

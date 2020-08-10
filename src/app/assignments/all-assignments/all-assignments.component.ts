@@ -72,12 +72,10 @@ export class AllAssignmentsComponent implements OnInit {
     this.assignmentService.all().then(
       response => {
         console.log(response)
-        // this.assignments = response
         this.assignments = [];
         response.map(assignment => {
           this.assignments.push(new Assignment(assignment));
         });
-        console.log(this.assignments);
       }
 
     ).catch(

@@ -34,7 +34,6 @@ export class AddSubmissionComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
-
     this.submissionForm = this.formBuilder.group({
       //user_send_id: ['', Validators.required],
       dest_user_id: ['', Validators.required],
@@ -52,10 +51,11 @@ export class AddSubmissionComponent implements OnInit {
     this.submissionService.users().then(
       response => {
         this.users = response;
+        console.log(this.users);
       }
     ).catch(
       error => {
-        this.notifService.danger("Aucune utilisateur trouvé");
+        this.notifService.danger("Aucun utilisateur trouvé");
       }
     )
   }
