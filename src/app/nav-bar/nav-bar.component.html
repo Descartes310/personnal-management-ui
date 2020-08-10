@@ -32,7 +32,7 @@
     </div>
 
     <div class="app-header__content">
-        <div class="app-header-left">
+        <!-- <div class="app-header-left">
             <div class="search-wrapper">
                 <div class="input-holder">
                     <input type="text" class="search-input" placeholder="Type to search">
@@ -40,7 +40,7 @@
                 </div>
                 <button class="close"></button>
             </div>
-        </div>
+        </div> -->
         <div class="app-header-right">
             <div class="header-dots">
                 <div class="dropdown">
@@ -63,37 +63,37 @@
                         <div class="grid-menu grid-menu-xl grid-menu-3col">
                             <div class="no-gutters row">
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['/users/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-id icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
                                         {{ "SideBar.Users" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['/contracts/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-note2 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
                                         {{ "SideBar.Contracts" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['/licenses/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-plane icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                        {{ "SideBar.PermissionEtConges" | translate }}
+                                        {{ "SideBar.Licenses" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['professional-score/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-note2 icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                         {{ "SideBar.NotesPros" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['/sanctions/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-hammer icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                        {{ "SideBar.Sanction" | translate }}
+                                        {{ "SideBar.Sanctions" | translate }}
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                    <button [routerLink]="['/settings/all']" class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
                                         <i class="pe-7s-config icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                         {{ "SideBar.SystemConfig" | translate }}
                                     </button>

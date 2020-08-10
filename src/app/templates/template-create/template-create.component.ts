@@ -50,11 +50,6 @@ export class TemplateCreateComponent implements OnInit {
     this.isLoading = false
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.templateForm.invalid) {
-      if(this.form.description.value.trim().length==0 && this.form.label.value.trim().length!=0&&this.form.name.value.trim().length!=0){
-          this.translate.get('Templates.contentError')
-        .subscribe(val => this.notifService.danger(val));
-        return;
-      }
       this.translate.get('Role.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;

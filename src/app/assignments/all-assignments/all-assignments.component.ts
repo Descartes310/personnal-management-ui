@@ -77,7 +77,7 @@ export class AllAssignmentsComponent implements OnInit {
         response.map(assignment => {
           this.assignments.push(new Assignment(assignment));
         });
-
+        console.log(this.assignments);
       }
 
     ).catch(

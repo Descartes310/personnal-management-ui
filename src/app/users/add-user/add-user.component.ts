@@ -523,13 +523,13 @@ export class AddUserComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-    if (login.length < this.loginMinLength) {
+    else if (login.length < this.loginMinLength) {
       this.translate.get('User.InputMinLengthError', { data1: 'login', data2: this.loginMinLength })
         .subscribe(val => this.notifService.danger(val));
       return;
     }
 
-    if (!password) {
+     if (!password) {
       this.translate.get('User.InputRequiredError', { data: 'password' })
         .subscribe(val => this.notifService.danger(val));
       return;

@@ -85,7 +85,7 @@ export class UpdateContactComponent implements OnInit {
     });
   }
   initform2() {
-    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{8}$";
+    let phone_patern = "^((\\+[0-9]{3}-?))?[0-9]{9}$";
     this.secondFormGroup = this.formBuilder.group({
 
       email: ['', [Validators.email, Validators.required]],

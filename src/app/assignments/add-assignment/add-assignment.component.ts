@@ -95,7 +95,9 @@ export class AddAssignmentComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
+
+  
     // Si la validation a echoué, on arrete l'execution de la fonction
     if (this.assignmentForm.invalid) {
       this.translate.get('Assignment.SubmitError')
@@ -105,15 +107,25 @@ export class AddAssignmentComponent implements OnInit {
 
     this.isLoading = true;
     const formData = new FormData();
-    if (this.currentDate >= this.form.signature_date.value || this.currentDate >= this.form.installation_date.value) {
-      this.translate.get('Form.StartDateError')
-        .subscribe(val => this.notifService.danger(val));
-    }
     formData.append('user_id', '' + this.form.user_assignment.value);
     formData.append('assignment_type_id', '' + this.form.type_assignment.value);
     formData.append('destination', '' + this.form.destination.value);
-    formData.append('signature_date', '' + this.form.signature_date.value);
-    formData.append('installation_date', '' + this.form.installation_date.value);
+    if (this.currentDate > this.form.signature_date.value) {
+      this.translate.get('Form.StartDateError1')
+        .subscribe(val => this.notifService.danger(val));
+        this.isLoading = false;
+        return;
+    }else{
+      formData.append('signature_date', '' + this.form.signature_date.value);
+    }
+    if (this.form.signature_date.value >= this.form.installation_date.value ) {
+      this.translate.get('Form.StartDateError2')
+        .subscribe(val => this.notifService.danger(val));
+        this.isLoading = false;
+        return;
+    }else{
+      formData.append('installation_date', '' + this.form.installation_date.value);
+    }
     formData.append('raison', '' + this.form.raison.value);
     formData.append('description', '' + this.form.description.value);
    

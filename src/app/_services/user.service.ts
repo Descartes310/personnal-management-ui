@@ -18,6 +18,8 @@ export class UserService {
   ) { }
 
   add(formData: FormData): Promise<User> {
+    console.log("vghv    test ramses");
+    console.log(formData);
     return this.http.post<User>(Routes.USERS, formData).toPromise();
   }
 

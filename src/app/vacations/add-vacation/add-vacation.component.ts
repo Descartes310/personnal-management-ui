@@ -5,6 +5,7 @@ import { NotifService } from 'src/app/_services/notif.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-vacation',
@@ -77,7 +78,11 @@ export class AddVacationComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
+
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
     // Si la validation a echoué, on arrete l'execution de la fonction
    
     if (this.vacationForm.invalid) {
@@ -92,8 +97,24 @@ export class AddVacationComponent implements OnInit {
     formData.append('vacation_type_id', ''+this.form.vacation_type_id.value);
     formData.append('raison', '' + this.form.raison.value);
     formData.append('description', '' + this.form.description.value);
-    formData.append('requested_start_date', '' + this.form.requested_start_date.value);
+    if (currentDate > this.form.requested_start_date.value) {
+      this.translate.get('Form.StartDateError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+    }else {
+      formData.append('requested_start_date', '' + this.form.requested_start_date.value);
+    }
+   
+   // formData.append('requested_start_date', '' + this.form.requested_start_date.value);
+   if(this.form.requested_days.value > 0){
     formData.append('requested_days', '' + this.form.requested_days.value);
+  }else{
+    this.translate.get('Form.StartDayError')
+      .subscribe(val => this.notifService.danger(val));
+      this.isLoading = false;
+      return;
+  }
     formData.append('is_active', '1');
     formData.append('status', 'PENDING');
     if(this.file != null)

@@ -2,8 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
-                </i>
+                <i _ngcontent-vhp-c2="" class="metismenu-icon pe-7s-id"></i>
             </div>
             <div>{{ 'UserNoteCriteria.Title' | translate }}
                 <div class="page-title-subheading">{{ 'UserNoteCriteria.Title' | translate }}
@@ -18,7 +17,7 @@
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
-                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    <i _ngcontent-vhp-c2="" class="metismenu-icon pe-7s-id"></i>
                     {{ 'UserNoteCriteria.Title' | translate }}
                 </div>
                 <div class="card-body">
@@ -29,7 +28,9 @@
                                     <form (submit)="add()" [formGroup]="formGroup">
                                         <div class="position-relative form-group">
                                             <label> {{  'UserNoteCriteria.Select_note' | translate }} </label>
-                                            <select formControlName="note_criteria_id" class="form-control {{ isSubmitted && form.note_criteria_id.errors ? 'is-invalid' : '' }}" (change)="setNote($event)">
+                                            <select formControlName="note_criteria_id"
+                                                class="form-control {{ isSubmitted && form.note_criteria_id.errors ? 'is-invalid' : '' }}"
+                                                (change)="setNote($event)">
                                                 <option *ngFor="let note of list_note" value="{{ note.id }}">
                                                     {{ note.name }}
                                                 </option>
@@ -39,7 +40,7 @@
                                             <label> {{ 'DisciplinaryBoards.Name' | translate }} <span
                                                     style="color: red;">*</span> </label>
                                             <input type="text" readonly class="form-control"
-                                                value="{{ selected_user.first_name }} {{ selected_user.last_name }}">
+                                                value="{{ selected_user?.first_name }} {{ selected_user?.last_name }}">
                                         </div>
                                         <div class="position-relative form-group" *ngIf="!isCheck">
                                             <label> {{ 'DisciplinaryBoards.Name' | translate }} <span
@@ -49,8 +50,7 @@
                                         <div class="position-relative form-group">
                                             <label for="score" class="">Score
                                                 <span style="color: red;">*</span> </label>
-                                            <input id="score" (keyup)="verify()"
-                                                placeholder="Score" type="number"
+                                            <input id="score" (keyup)="verify()" placeholder="Score" type="number"
                                                 formControlName="score"
                                                 class="form-control {{ (isSubmitted && form.score.errors) || score_error ? 'is-invalid' : '' }}">
                                         </div>
@@ -63,13 +63,16 @@
                                         <div class="position-relative form-group">
                                             <label for="description" class="">Description <span
                                                     style="color: red;">*</span></label>
-                                            <input placeholder="description" type="text"
-                                                formControlName="description"
+                                            <input placeholder="description" type="text" formControlName="description"
                                                 class="form-control {{ isSubmitted && form.description.errors ? 'is-invalid' : '' }}">
                                         </div>
                                         <div class="d-flex align-items-center" style="width: 100%;">
-                                            <button type="submit" [disabled]="isLoading" class="btn btn-primary btn-lg a" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "UserNoteCriteria.AddForm" | translate }}</p>
+                                            <button type="submit" *ngIf="!isUpdate" [disabled]="isLoading"
+                                                class="btn btn-primary btn-lg a"
+                                                style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading"
+                                                    style="font-size: 1.2em; padding: 0px; margin: 5px;">
+                                                    {{ "UserNoteCriteria.AddForm" | translate }}</p>
                                                 <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                                     <div class="ball-scale-multiple">
                                                         <div style="background-color: white;"></div>
@@ -78,8 +81,12 @@
                                                     </div>
                                                 </div>
                                             </button>
-                                            <!-- <button *ngIf="isUpdate" type="submit" [disabled]="isLoading" class="btn btn-primary btn-lg b" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
-                                                <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">{{ "UserNoteCriteria.UpForm" | translate }}</p>
+                                            <button type="submit" *ngIf="isUpdate" [disabled]="isLoading"
+                                                class="btn btn-primary btn-lg a"
+                                                style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+                                                <p *ngIf="!isLoading"
+                                                    style="font-size: 1.2em; padding: 0px; margin: 5px;">
+                                                    {{ "UserNoteCriteria.UpForm" | translate }}</p>
                                                 <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                                     <div class="ball-scale-multiple">
                                                         <div style="background-color: white;"></div>
@@ -87,7 +94,7 @@
                                                         <div style="background-color: white;"></div>
                                                     </div>
                                                 </div>
-                                            </button> -->
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -102,7 +109,7 @@
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
                 <div class="card-header">
-                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
+                    <i _ngcontent-vhp-c2="" class="metismenu-icon pe-7s-id"></i>
                     {{ 'UserNoteCriteria.Title' | translate }}
                 </div>
                 <div class="card-body">
@@ -134,7 +141,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">{{ us.first_name }} {{ us.last_name }}
+                                                            <div class="widget-heading">{{ us?.first_name }}
+                                                                {{ us?.last_name }}
                                                             </div>
                                                         </div>
                                                     </div>

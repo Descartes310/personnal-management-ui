@@ -312,7 +312,9 @@
         "StartDateField": "Date de début",
         "LicenseTypeLabel": "Type de Permission",
         "LicenseTypeField": "Choisir un type de permission",
-        "StartDateError": "veuillez entrez une date valide",
+        "StartDateError": "veuillez entrez une date superieur ou égale à la du jour",
+        "StartDateError1": "veuillez entrez une date de signature superieur ou égale à la du jour",
+        "StartDateError2": "veuillez entrez une date d'installation superieur à la date de signature",
         "Yes": "Oui",
         "No": "Non",
         "PlaceholderLabel": "Placeholder",
@@ -396,7 +398,8 @@
         "Key": "Clé",
         "Value": "Valeur",
         "KeyField": "Entrer une clé",
-        "ValueField": "Entrer une valeur"
+        "ValueField": "Entrer une valeur",
+        "StartDayError": "Entrez un nombre superieur à 0"
     },
     "Career": {
         "CAREER": "PROMOTION",

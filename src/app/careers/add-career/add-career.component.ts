@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { Careers } from 'src/app/_models/careers.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-career',
@@ -102,7 +103,11 @@ export class AddCareerComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
+    this.isLoading = false;
+
+    let pipe = new DatePipe('en-US');
+    let date = new Date();
+    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
     // Si la validation a echoué, on arrete l'execution de la fonction
    
     if (this.careersForm.invalid) {
@@ -116,7 +121,15 @@ export class AddCareerComponent implements OnInit {
       formData.append('user_id', '' +this.form.user_id.value);  
       formData.append('pro_situation_id', '' +this.form.pro_situation_id.value);
       formData.append('division_id', '' +this.form.division_id.value);
-      formData.append('effective_date', '' +this.form.effective_date.value);
+      if (currentDate > this.form.effective_date.value) {
+        this.translate.get('Form.StartDateError')
+        .subscribe(val => this.notifService.danger(val));
+        this.isLoading = false;
+        return;
+      }else {
+        formData.append('effective_date', '' +this.form.effective_date.value);
+      }
+      
       
 
       this.careersService.add(formData)

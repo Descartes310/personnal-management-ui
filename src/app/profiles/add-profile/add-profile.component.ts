@@ -33,11 +33,11 @@ export class AddProfileComponent implements OnInit {
   public selectedOption : any ;
   public select: any ;
   public input:any;
-  formData = new FormData();
-  required;
-  unique;
-  updatable;
-  private;
+  public formData = new FormData();
+  required: boolean = false;
+  unique: boolean = false;
+  updatable: boolean = false;
+  private: boolean = false;
  
   constructor(
     private profileService: ProfileService,
@@ -132,29 +132,25 @@ export class AddProfileComponent implements OnInit {
   }
 
   isRequired(event){
-    this.required = event.target.checked; 
-    console.log(this.required)   
+    this.required = !this.required;
   }
   
 
   isUnique(event){
     
-    this.unique = event.target.checked; 
-    console.log(this.unique)   
+    this.unique = !this.unique;  
   }
 
 
   isUpdatable(event){
     
-    this.updatable = event.target.checked; 
-    console.log(this.updatable)   
+    this.updatable = !this.updatable;  
   }
 
   
 
    isPrivate(event){
-    this.private = event.target.checked; 
-    console.log(this.private)   
+    this.private = !this.private;
   }
 
   name() {
@@ -261,24 +257,26 @@ export class AddProfileComponent implements OnInit {
       return; 
    }
     this.isLoading = true;
-    this.formData.append('name', '' + this.form.name.value);
-    this.formData.append('description', '' + this.form.description.value);
-    this.formData.append('slug', '' + this.form.slug.value);
-    this.formData.append('is_unique', this.unique ? '1' : '0');
-    this.formData.append('is_required',  this.required ? '1' : '0');
-    this.formData.append('is_private', this.private ? '1' : '0');
-    this.formData.append('min', '' + this.form.min.value);
-    this.formData.append('max', '' + this.form.max.value);
-    this.formData.append('is_updatable', this.updatable ? '1' : '0');
-    this.formData.append('type', '' + this.form.type.value);
-    this.formData.append('placeholder', '' + this.form.placeholder.value);
-    this.formData.append('step', '' + this.form.step.value);
-    this.formData.append('default', '' + this.form.default.value);
-    if(this.form.type.value == 'select') {
-      this.options.forEach(option => {
-        this.formData.append('options[]', '' + option.value);
-      })
-    }
+    this.formData.append('name', this.form.name.value);
+    // this.formData.append('description', '' + this.form.description.value);
+    // this.formData.append('is_unique', this.unique ? '1' : '0');
+    // this.formData.append('is_required',  this.required ? '1' : '0');
+    // this.formData.append('is_private', this.private ? '1' : '0');
+    // this.formData.append('min', '' + this.form.min.value);
+    // this.formData.append('max', '' + this.form.max.value);
+    // this.formData.append('is_updatable', this.updatable ? '1' : '0');
+    // this.formData.append('type', '' + this.form.type.value);
+    // this.formData.append('placeholder', '' + this.form.placeholder.value);
+    // this.formData.append('step', '' + this.form.step.value);
+    // this.formData.append('default', '' + this.form.default.value);
+    // if(this.form.type.value == 'select') {
+    //   this.options.forEach(option => {
+    //     this.formData.append('options[]', '' + option.value);
+    //   })
+    // }
+    // console.log("test arrivée 3");
+    
+   console.log(this.formData);
     this.profileService.add(this.formData)
       .then(resp => {
        console.log(resp);
