@@ -111,14 +111,7 @@
               "src/assets/css/owl.carousel.min.css",
               "src/assets/css/owl.theme.default.min.css"
             ],
-            "scripts": [
-              "src/assets/js/main.js",
-              "src/assets/js/main1.js",
-              "src/assets/js/bootstrap.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/jquery-1.11.3.min.js",
-              "src/assets/save-to-pdf/plugin.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {
