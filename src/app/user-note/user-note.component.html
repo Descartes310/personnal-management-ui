@@ -31,9 +31,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th> Employe </th>
-                        <th> Crite de notation </th>
-                        <th> Note </th>
+                        <th> {{'UserNoteCriteria.Employe'  | translate }} </th>
+                        <th> {{'UserNoteCriteria.Criterias'  | translate }} </th>
+                        <th> {{'UserNoteCriteria.Note'  | translate }} </th>
                         <th> Appreciation </th>
                         <th> Description </th>
                         <th>{{ 'Form.Options' | translate }}</th>
@@ -44,7 +44,7 @@
                         <td>{{ i+1 }}</td>
 
                     	<td *ngIf="note.user" style="width: 19%">
-                    		{{ note.user.first_name + ' ' + note.user.last_name }}
+                    		{{ note.user.login }}
                     	</td>
                         <td style="width: 15%">
                            {{ note.note_criteria.name }}

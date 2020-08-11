@@ -23,7 +23,7 @@ export class DetailsDisciplinaryTeamComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.disciplinary_id = +this.route.snapshot.paramMap.get("id");
+    this.disciplinary_id = this.route.snapshot.paramMap.get("id");
     this.getDisciplinaryTeams();
 
   }

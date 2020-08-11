@@ -103,22 +103,22 @@
         "Disciplinary_Boards_NOT_FOUND": "Le conseil n'a pas été retrouvé",
         "Disciplinary_Boards_ALREADY_EXISTS": "Le conseil existe déjà",
         "Select_Team": "Choix de l'équipe",
-        "Name": "Nom de l'employe",
+        "Name": "Nom de l'employé",
         "SelectMember": "Veuillez selectionner un membre",
-        "Created_Error": "Echec de cretion dy conseil"
+        "Created_Error": "Echec de création du conseil"
     },
 
     "BlogPost": {
-        "BlogPosts": "Actualites",
-        "BlogPostTitle": "Gestion des Actualites de l'application",
+        "BlogPosts": "Actualités",
+        "BlogPostTitle": "Gestion des Actualités de l'application",
         "AddBlogPost": "Ajouter un article",
-        "UpdateBlogPost": "Mettre a jour un article",
+        "UpdateBlogPost": "Mettre à jour un article",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "CommentSuccess": "La création du commentaire a réussie...",
         "SubmitSuccess": "La création de l'article a réussie...",
-        "UpdateSubmitSuccess": "La mise a jour de l'article a réussie...",
+        "UpdateSubmitSuccess": "La mise à jour de l'article a réussie...",
         "ErrorSubmit": "echec d'ajout de l'article",
-        "UpdateErrorSubmit": "echec de la mise a jour de l'article"
+        "UpdateErrorSubmit": "echec de la mise à jour de l'article"
     },
     "BlogComment": {
         "BlogPosts": "blogs Articles",
@@ -143,7 +143,7 @@
         "SendSubmission" : "Envoyer",
         "UpdateSubmission": "Mettre à jour",
         "SubmitUpdateSuccess": "La mise a jour de la demande a réussie...",
-        "SubmitErrorSubmission": "echec de la creation verifier vos donnees ",
+        "SubmitErrorSubmission": "echec de la creation vérifier vos données ",
         "Submission_NOT_FOUND": "La demande n'a pas été retrouvé",
         "Submission_ALREADY_EXISTS": "Cette demande existe déjà",
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
@@ -200,11 +200,14 @@
         "Error": "Echec de l'action",
         "Success": "Action effectué avec success",
         "Select_note": "Selectionner un critaire de note",
-        "Label": "Appreciation",
+        "Label": "Appréciation",
         "AddForm": "Ajouter cette nouvelle note",
         "UpForm": "Modifier Cette Note",
         "UpdateSuccess": "La mise à jour du type de congés a réussie...",
-        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
+        "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà",
+        "Employe" : "Employe",
+        "Criterias" : "Critere de notation",
+        "Note": "Note"
     },
     "Form": {
         "PlaceholderField" : "entrer l indicatif du champ",
@@ -277,12 +280,12 @@
         "FaxField": "Veuillez entrer le fax...",
         "BpLabel": "Boite Postal",
         "BpField": "Veuillez entrer la boite postale...",
-        "Phone1Label": "Telephone 1",
+        "Phone1Label": "Téléphone 1",
         "Phone1Field": "premier numero...",
-        "Phone2Label": "Telephone 2",
+        "Phone2Label": "Téléphone 2",
         "Phone2Field": "deuxieme numero...",
         "Phone3Label": "Telephone 3",
-        "Phone3Field": "troisieme numero...",
+        "Phone3Field": "troisieme numéro...",
         "DescriptionField": "Veuillez entrer une description",
         "FacebookField": "Compte facebook...",
         "TwitterField": "Compte twitter...",
@@ -294,7 +297,7 @@
         "HeadPrincipalLabel": "Information Principale",
         "HeadAddresLabel": "Addresse",
         "HeadSocialLabel": "Information Sociale",
-        "HeadFinishLabel": "Termine",
+        "HeadFinishLabel": "Terminé",
         "AssignmentNameField": "Veuillez remplir le champs label...",
         "LabelLabel": "Label",
         "LabelField": "Veuillez entrer le label...",
@@ -509,7 +512,7 @@
         "VACATION_TYPE_ALREADY_EXISTS": "Le type de congés existe déjà"
     },
     "Division": {
-        "Divisions1": " Update des divisions",
+        "Divisions1": " Modification des divisions",
         "AddDivision": "Ajouter une nouvelle division",
         "CreateDivision": "Créer la divsion",
         "UpdateDivision": "Mettre à jour",
@@ -543,7 +546,7 @@
         "SubmitSuccess": "La création du profil a reussit...",
         "PROFILE_NOT_FOUND": "Le profil n'a pas été retrouvé",
         "PROFILE_ALREADY_EXISTS": "Le profile existe déjà",
-        "Update": "Mise a jour du profile",
+        "Update": "Mise à jour du profile",
         "UpdateTitle": "Modifier des profiles de l'application",
         "Profil": "nouveau profil",
         "addOption":"Ajouter une option",
@@ -560,11 +563,11 @@
         "AddAssignmenttypes": "Ajouter un type d'affectation "
     },
     "SweetAlert": {
-        "AreYouSure": "Etes-vous sure de vouloir supprimer ce {{ data }} ?",
-        "AreYouSureNotecriterias": "Etes-vous sure de vouloir supprimer {{ data }} ?",
-        "AreYouSureAssigmenttype": "Etes-vous sure de vouloir supprimer  ce type d'affectation{{ data }} ?",
-        "AreYouSurePro": "Etes-vous sure de vouloir supprimer cette situation?",
-        "AreYouSureAssignment": "Etes-vous sure de vouloir supprimer cette affection?",
+        "AreYouSure": "Etes-vous sûr de vouloir supprimer ce {{ data }} ?",
+        "AreYouSureNotecriterias": "Etes-vous sûr de vouloir supprimer {{ data }} ?",
+        "AreYouSureAssigmenttype": "Etes-vous sûr de vouloir supprimer  ce type d'affectation{{ data }} ?",
+        "AreYouSurePro": "Etes-vous sûr de vouloir supprimer cette situation?",
+        "AreYouSureAssignment": "Etes-vous sûr de vouloir supprimer cette affection?",
         "Warning": "Cette action est irreversible !",
         "Yes": "Oui, supprimer",
         "No": "Non, annuler",
@@ -581,7 +584,7 @@
         "UpdateTraining": "Mettre à jour",
         "TRAINING_NOT_FOUND": "Cette formation n'existe pas",
         "Error": "donnees inalide",
-        "SubmitSuccess1": "Mise a jour de la formation effectuer avec succes",
+        "SubmitSuccess1": "Mise à jour de la formation effectuer avec succes",
         "ErrorMessages": {
             "Duration": [
                 "la durée est obligatoire et doit être un nombre compris entre 1 et 100",
@@ -646,7 +649,7 @@
         "AddContract": "Ajouter un nouveau contrat",
         "CreateContract": "Créer le Contrat",
         "DownloadContract": "Télécharger le contrat",
-        "Download": "Téléchage",
+        "Download": "Téléchager",
         "UpdateContract": "Mettre à jour",
         "SubmitError": "Les champs en rouges sont obligatoires",
         "SubmitErrordate": "les dates entrées sont incorrectes",
@@ -819,7 +822,9 @@
         "UsersList": "Liste du personnel",
         "UserListTiltle": "Gestion du personnel et des utilisateurs",
         "AddUser": "Ajouter membre",
-        "UserDivisions": "Division de travail"
+        "UserDivisions": "Division de travail",
+        "PermissionName": "selection des permissions",
+        "RoleName": "Selection des roles"
     },
     "Vacation": {
         "VACATION": "CONGE",

@@ -672,6 +672,7 @@ export class AddUserComponent implements OnInit {
     this.computeDataToSend();
 
     this.loading = true;
+    console.log(this.data);
     this.userService.add(this.data).then(
       createdUser => {
         const rolesPermissions = {

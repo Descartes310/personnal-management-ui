@@ -127,32 +127,27 @@ export class UpdateTrainingComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
-    let pipe = new DatePipe('en-US');
-    let date = new Date();
-    let currentDate = pipe.transform(date, 'yyyy-MM-dd');
+    this.isLoading = false;
     // Si la validation a echoué, on arrete l'execution de la fonction
+    console.log(this.trainingForm);
     if (this.trainingForm.invalid) {
       this.translate.get('Training.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
+    console.log("console log");
     this.isLoading = true;
     const formData = new FormData();
     formData.append('name', '' + this.form.name.value);
     formData.append('trainer', '' + this.form.trainer.value);
-    if (currentDate >= this.form.start_date.value) {
-      this.translate.get('Form.StartDateError')
-      .subscribe(val => this.notifService.danger(val));
-      this.isLoading = false;
-      return;
-    }
     formData.append('start_date', '' + this.form.start_date.value);
     formData.append('location', '' + this.form.location.value);
     formData.append('duration', '' + this.form.duration.value);
     formData.append('description', '' + this.form.description.value);
+    formData.append('division_id', '' + this.form.division_id.value);
     formData.append('is_online', this.is_online ? '1' : '0');
+    console.log("tet 1");
+    console.log(this.form.division_id.value);
     
     this.trainingService.update(formData, this.training.id)
       .then(resp => {

@@ -296,9 +296,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html":
 /*!**************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html ***!
   \**************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -309,9 +309,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.html":
 /*!**************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.html ***!
   \**************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -322,9 +322,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.html":
 /*!******************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.html ***!
   \******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -335,9 +335,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login/login.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login/login.component.html":
 /*!******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login/login.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login/login.component.html ***!
   \******************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -348,9 +348,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.html":
 /*!************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.html ***!
   \************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -361,9 +361,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register/register.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register/register.component.html":
 /*!************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register/register.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register/register.component.html ***!
   \************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -374,9 +374,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.html":
 /*!********************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.html ***!
   \********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -387,9 +387,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.html":
 /*!********************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.html ***!
   \********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -400,9 +400,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/footer.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/footer.component.html":
 /*!******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/footer.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/footer.component.html ***!
   \******************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -413,9 +413,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/dots/dots.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/dots/dots.component.html":
 /*!******************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/dots/dots.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/dots/dots.component.html ***!
   \******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -426,9 +426,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/drawer/drawer.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/drawer/drawer.component.html":
 /*!**********************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/drawer/drawer.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/drawer/drawer.component.html ***!
   \**********************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -439,9 +439,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html":
 /*!***************************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html ***!
   \***************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -452,9 +452,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.html":
 /*!****************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.html ***!
   \****************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -465,9 +465,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/search-box/search-box.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/search-box/search-box.component.html":
 /*!******************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/search-box/search-box.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/search-box/search-box.component.html ***!
   \******************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -478,9 +478,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/user-box/user-box.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/user-box/user-box.component.html":
 /*!**************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/user-box/user-box.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/user-box/user-box.component.html ***!
   \**************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -491,9 +491,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/header.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/header.component.html":
 /*!******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/header.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/header.component.html ***!
   \******************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -504,9 +504,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/elements/logo/logo.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.html":
 /*!*******************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/elements/logo/logo.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.html ***!
   \*******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -517,9 +517,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/sidebar.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/sidebar.component.html":
 /*!********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/sidebar.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/sidebar.component.html ***!
   \********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -530,9 +530,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/apps-layout/apps-layout.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/apps-layout/apps-layout.component.html":
 /*!*****************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/apps-layout/apps-layout.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/apps-layout/apps-layout.component.html ***!
   \*****************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -543,9 +543,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/base-layout/base-layout.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/base-layout/base-layout.component.html":
 /*!*****************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/base-layout/base-layout.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/base-layout/base-layout.component.html ***!
   \*****************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -556,9 +556,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/pages-layout/pages-layout.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/pages-layout/pages-layout.component.html":
 /*!*******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/pages-layout/pages-layout.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/pages-layout/pages-layout.component.html ***!
   \*******************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -569,9 +569,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/ThemeOptions/options-drawer/options-drawer.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../ThemeOptions/options-drawer/options-drawer.component.html":
 /*!*****************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/ThemeOptions/options-drawer/options-drawer.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../ThemeOptions/options-drawer/options-drawer.component.html ***!
   \*****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -582,9 +582,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../app.component.html":
 /*!**************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./../../../../../../app.component.html ***!
   \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -872,9 +872,9 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/Tables/dynamic/demo/sortable.directive.ts":
+/***/ "./../../../../../../DemoPages/Tables/dynamic/demo/sortable.directive.ts":
 /*!*********************************************************************!*\
-  !*** ./src/app/DemoPages/Tables/dynamic/demo/sortable.directive.ts ***!
+  !*** ./../../../../../../DemoPages/Tables/dynamic/demo/sortable.directive.ts ***!
   \*********************************************************************/
 /*! exports provided: NgbdSortableHeaderDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -925,9 +925,9 @@ var NgbdSortableHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts":
 /*!**********************************************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts ***!
   \**********************************************************************************************/
 /*! exports provided: ForgotPasswordBoxedComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -947,7 +947,7 @@ var ForgotPasswordBoxedComponent = /** @class */ (function () {
     ForgotPasswordBoxedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-forgot-password-boxed',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./forgot-password-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./forgot-password-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], ForgotPasswordBoxedComponent);
@@ -958,9 +958,9 @@ var ForgotPasswordBoxedComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.ts":
 /*!**********************************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.ts ***!
   \**********************************************************************************/
 /*! exports provided: ForgotPasswordComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -989,7 +989,7 @@ var ForgotPasswordComponent = /** @class */ (function () {
     ForgotPasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-forgot-password',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./forgot-password.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./forgot-password.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], ForgotPasswordComponent);
@@ -1000,9 +1000,9 @@ var ForgotPasswordComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.ts":
 /*!**************************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.ts ***!
   \**************************************************************************/
 /*! exports provided: LoginBoxedComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1022,7 +1022,7 @@ var LoginBoxedComponent = /** @class */ (function () {
     LoginBoxedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-login-boxed',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], LoginBoxedComponent);
@@ -1033,9 +1033,9 @@ var LoginBoxedComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/login/login.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/login/login.component.ts":
 /*!**************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/login/login.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/login/login.component.ts ***!
   \**************************************************************/
 /*! exports provided: LoginComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1064,7 +1064,7 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-login',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/login/login.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/login/login.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], LoginComponent);
@@ -1075,9 +1075,9 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.ts":
 /*!********************************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.ts ***!
   \********************************************************************************/
 /*! exports provided: RegisterBoxedComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1097,7 +1097,7 @@ var RegisterBoxedComponent = /** @class */ (function () {
     RegisterBoxedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-register-boxed',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./register-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./register-boxed.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], RegisterBoxedComponent);
@@ -1108,9 +1108,9 @@ var RegisterBoxedComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/DemoPages/UserPages/register/register.component.ts":
+/***/ "./../../../../../../DemoPages/UserPages/register/register.component.ts":
 /*!********************************************************************!*\
-  !*** ./src/app/DemoPages/UserPages/register/register.component.ts ***!
+  !*** ./../../../../../../DemoPages/UserPages/register/register.component.ts ***!
   \********************************************************************/
 /*! exports provided: RegisterComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1139,7 +1139,7 @@ var RegisterComponent = /** @class */ (function () {
     RegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-register',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./register.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/DemoPages/UserPages/register/register.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./register.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../DemoPages/UserPages/register/register.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], RegisterComponent);
@@ -1150,9 +1150,9 @@ var RegisterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.ts":
+/***/ "./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.ts":
 /*!****************************************************************************************!*\
-  !*** ./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.ts ***!
+  !*** ./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.ts ***!
   \****************************************************************************************/
 /*! exports provided: FooterDotsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1172,7 +1172,7 @@ var FooterDotsComponent = /** @class */ (function () {
     FooterDotsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-footer-dots',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer-dots.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer-dots.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], FooterDotsComponent);
@@ -1183,9 +1183,9 @@ var FooterDotsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.ts":
+/***/ "./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.ts":
 /*!****************************************************************************************!*\
-  !*** ./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.ts ***!
+  !*** ./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.ts ***!
   \****************************************************************************************/
 /*! exports provided: FooterMenuComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1205,7 +1205,7 @@ var FooterMenuComponent = /** @class */ (function () {
     FooterMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-footer-menu',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer-menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer-menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.html")).default
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], FooterMenuComponent);
@@ -1216,9 +1216,9 @@ var FooterMenuComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/footer/footer.component.ts":
+/***/ "./../../../../../../Layout/Components/footer/footer.component.ts":
 /*!**************************************************************!*\
-  !*** ./src/app/Layout/Components/footer/footer.component.ts ***!
+  !*** ./../../../../../../Layout/Components/footer/footer.component.ts ***!
   \**************************************************************/
 /*! exports provided: FooterComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1238,7 +1238,7 @@ var FooterComponent = /** @class */ (function () {
     FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-footer',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/footer/footer.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./footer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/footer/footer.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], FooterComponent);
@@ -1249,9 +1249,9 @@ var FooterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/dots/dots.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/dots/dots.component.ts":
 /*!**************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/dots/dots.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/dots/dots.component.ts ***!
   \**************************************************************************/
 /*! exports provided: DotsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1271,7 +1271,7 @@ var DotsComponent = /** @class */ (function () {
     DotsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dots',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./dots.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/dots/dots.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./dots.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/dots/dots.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], DotsComponent);
@@ -1282,9 +1282,9 @@ var DotsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/drawer/drawer.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/drawer/drawer.component.ts":
 /*!******************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/drawer/drawer.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/drawer/drawer.component.ts ***!
   \******************************************************************************/
 /*! exports provided: DrawerComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1294,7 +1294,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../theme-options */ "./../../../../../../theme-options.ts");
 
 
 
@@ -1313,7 +1313,7 @@ var DrawerComponent = /** @class */ (function () {
     DrawerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-drawer',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./drawer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/drawer/drawer.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./drawer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/drawer/drawer.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_theme_options__WEBPACK_IMPORTED_MODULE_2__["ThemeOptions"]])
     ], DrawerComponent);
@@ -1324,9 +1324,9 @@ var DrawerComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts":
 /*!***********************************************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts ***!
   \***********************************************************************************************************/
 /*! exports provided: MegapopoverComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1345,7 +1345,7 @@ var MegapopoverComponent = /** @class */ (function () {
     MegapopoverComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-megapopover',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./megapopover.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html")).default
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./megapopover.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.html")).default
         })
     ], MegapopoverComponent);
     return MegapopoverComponent;
@@ -1355,9 +1355,9 @@ var MegapopoverComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.ts":
 /*!************************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.ts ***!
   \************************************************************************************/
 /*! exports provided: MegamenuComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1381,7 +1381,7 @@ var MegamenuComponent = /** @class */ (function () {
     MegamenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-mega-menu',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./mega-menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./mega-menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], MegamenuComponent);
@@ -1392,9 +1392,9 @@ var MegamenuComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/search-box/search-box.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/search-box/search-box.component.ts":
 /*!**************************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/search-box/search-box.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/search-box/search-box.component.ts ***!
   \**************************************************************************************/
 /*! exports provided: SearchBoxComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1414,7 +1414,7 @@ var SearchBoxComponent = /** @class */ (function () {
     SearchBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-search-box',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./search-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/search-box/search-box.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./search-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/search-box/search-box.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], SearchBoxComponent);
@@ -1425,9 +1425,9 @@ var SearchBoxComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/elements/user-box/user-box.component.ts":
+/***/ "./../../../../../../Layout/Components/header/elements/user-box/user-box.component.ts":
 /*!**********************************************************************************!*\
-  !*** ./src/app/Layout/Components/header/elements/user-box/user-box.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/elements/user-box/user-box.component.ts ***!
   \**********************************************************************************/
 /*! exports provided: UserBoxComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1437,7 +1437,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserBoxComponent", function() { return UserBoxComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../theme-options */ "./../../../../../../theme-options.ts");
 
 
 
@@ -1456,7 +1456,7 @@ var UserBoxComponent = /** @class */ (function () {
     UserBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-user-box',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/elements/user-box/user-box.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/elements/user-box/user-box.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_theme_options__WEBPACK_IMPORTED_MODULE_2__["ThemeOptions"]])
     ], UserBoxComponent);
@@ -1467,9 +1467,9 @@ var UserBoxComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/header/header.component.ts":
+/***/ "./../../../../../../Layout/Components/header/header.component.ts":
 /*!**************************************************************!*\
-  !*** ./src/app/Layout/Components/header/header.component.ts ***!
+  !*** ./../../../../../../Layout/Components/header/header.component.ts ***!
   \**************************************************************/
 /*! exports provided: HeaderComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1481,7 +1481,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm5/angular-redux-store.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../theme-options */ "./../../../../../../theme-options.ts");
 
 
 
@@ -1519,7 +1519,7 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-header',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./header.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/header/header.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./header.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/header/header.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_theme_options__WEBPACK_IMPORTED_MODULE_4__["ThemeOptions"]])
     ], HeaderComponent);
@@ -1530,9 +1530,9 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/sidebar/elements/logo/logo.component.ts":
+/***/ "./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.ts":
 /*!***************************************************************************!*\
-  !*** ./src/app/Layout/Components/sidebar/elements/logo/logo.component.ts ***!
+  !*** ./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.ts ***!
   \***************************************************************************/
 /*! exports provided: LogoComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1552,7 +1552,7 @@ var LogoComponent = /** @class */ (function () {
     LogoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-logo',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./logo.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/elements/logo/logo.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./logo.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], LogoComponent);
@@ -1563,9 +1563,9 @@ var LogoComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/Components/sidebar/sidebar.component.ts":
+/***/ "./../../../../../../Layout/Components/sidebar/sidebar.component.ts":
 /*!****************************************************************!*\
-  !*** ./src/app/Layout/Components/sidebar/sidebar.component.ts ***!
+  !*** ./../../../../../../Layout/Components/sidebar/sidebar.component.ts ***!
   \****************************************************************/
 /*! exports provided: SidebarComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1575,7 +1575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../theme-options */ "./../../../../../../theme-options.ts");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm5/angular-redux-store.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
@@ -1640,7 +1640,7 @@ var SidebarComponent = /** @class */ (function () {
     SidebarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-sidebar',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./sidebar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/Components/sidebar/sidebar.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./sidebar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/Components/sidebar/sidebar.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_theme_options__WEBPACK_IMPORTED_MODULE_2__["ThemeOptions"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]])
     ], SidebarComponent);
@@ -1651,9 +1651,9 @@ var SidebarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/apps-layout/apps-layout.component.ts":
+/***/ "./../../../../../../Layout/apps-layout/apps-layout.component.ts":
 /*!*************************************************************!*\
-  !*** ./src/app/Layout/apps-layout/apps-layout.component.ts ***!
+  !*** ./../../../../../../Layout/apps-layout/apps-layout.component.ts ***!
   \*************************************************************/
 /*! exports provided: AppsLayoutComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1665,8 +1665,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm5/angular-redux-store.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ThemeOptions/store/config.actions */ "./src/app/ThemeOptions/store/config.actions.ts");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ThemeOptions/store/config.actions */ "./../../../../../../ThemeOptions/store/config.actions.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../theme-options */ "./../../../../../../theme-options.ts");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 
 
@@ -1694,7 +1694,7 @@ var AppsLayoutComponent = /** @class */ (function () {
     AppsLayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-apps-layout',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./apps-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/apps-layout/apps-layout.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./apps-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/apps-layout/apps-layout.component.html")).default,
             animations: [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('architectUIAnimation', [
                     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('* <=> *', [
@@ -1726,9 +1726,9 @@ var AppsLayoutComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/base-layout/base-layout.component.ts":
+/***/ "./../../../../../../Layout/base-layout/base-layout.component.ts":
 /*!*************************************************************!*\
-  !*** ./src/app/Layout/base-layout/base-layout.component.ts ***!
+  !*** ./../../../../../../Layout/base-layout/base-layout.component.ts ***!
   \*************************************************************/
 /*! exports provided: BaseLayoutComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1740,8 +1740,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm5/angular-redux-store.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ThemeOptions/store/config.actions */ "./src/app/ThemeOptions/store/config.actions.ts");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ThemeOptions/store/config.actions */ "./../../../../../../ThemeOptions/store/config.actions.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../theme-options */ "./../../../../../../theme-options.ts");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 
 
@@ -1769,7 +1769,7 @@ var BaseLayoutComponent = /** @class */ (function () {
     BaseLayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-base-layout',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./base-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/base-layout/base-layout.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./base-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/base-layout/base-layout.component.html")).default,
             animations: [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('architectUIAnimation', [
                     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('* <=> *', [
@@ -1801,9 +1801,9 @@ var BaseLayoutComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Layout/pages-layout/pages-layout.component.ts":
+/***/ "./../../../../../../Layout/pages-layout/pages-layout.component.ts":
 /*!***************************************************************!*\
-  !*** ./src/app/Layout/pages-layout/pages-layout.component.ts ***!
+  !*** ./../../../../../../Layout/pages-layout/pages-layout.component.ts ***!
   \***************************************************************/
 /*! exports provided: PagesLayoutComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1825,7 +1825,7 @@ var PagesLayoutComponent = /** @class */ (function () {
     PagesLayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-pages-layout',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./pages-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Layout/pages-layout/pages-layout.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./pages-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../Layout/pages-layout/pages-layout.component.html")).default,
             animations: [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('architectUIAnimation', [
                     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('* <=> *', [
@@ -1856,9 +1856,9 @@ var PagesLayoutComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/ThemeOptions/options-drawer/options-drawer.component.ts":
+/***/ "./../../../../../../ThemeOptions/options-drawer/options-drawer.component.ts":
 /*!*************************************************************************!*\
-  !*** ./src/app/ThemeOptions/options-drawer/options-drawer.component.ts ***!
+  !*** ./../../../../../../ThemeOptions/options-drawer/options-drawer.component.ts ***!
   \*************************************************************************/
 /*! exports provided: OptionsDrawerComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1868,8 +1868,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionsDrawerComponent", function() { return OptionsDrawerComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _store_config_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/config.actions */ "./src/app/ThemeOptions/store/config.actions.ts");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../theme-options */ "./src/app/theme-options.ts");
+/* harmony import */ var _store_config_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/config.actions */ "./../../../../../../ThemeOptions/store/config.actions.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../theme-options */ "./../../../../../../theme-options.ts");
 
 
 
@@ -1892,7 +1892,7 @@ var OptionsDrawerComponent = /** @class */ (function () {
     OptionsDrawerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-options-drawer',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./options-drawer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/ThemeOptions/options-drawer/options-drawer.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./options-drawer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../ThemeOptions/options-drawer/options-drawer.component.html")).default,
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_theme_options__WEBPACK_IMPORTED_MODULE_3__["ThemeOptions"],
             _store_config_actions__WEBPACK_IMPORTED_MODULE_2__["ConfigActions"]])
@@ -1904,9 +1904,9 @@ var OptionsDrawerComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/ThemeOptions/store/config.actions.ts":
+/***/ "./../../../../../../ThemeOptions/store/config.actions.ts":
 /*!******************************************************!*\
-  !*** ./src/app/ThemeOptions/store/config.actions.ts ***!
+  !*** ./../../../../../../ThemeOptions/store/config.actions.ts ***!
   \******************************************************/
 /*! exports provided: ConfigActions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1953,9 +1953,9 @@ var ConfigActions = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/ThemeOptions/store/config.reducer.ts":
+/***/ "./../../../../../../ThemeOptions/store/config.reducer.ts":
 /*!******************************************************!*\
-  !*** ./src/app/ThemeOptions/store/config.reducer.ts ***!
+  !*** ./../../../../../../ThemeOptions/store/config.reducer.ts ***!
   \******************************************************/
 /*! exports provided: ConfigReducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1964,7 +1964,7 @@ var ConfigActions = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfigReducer", function() { return ConfigReducer; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _config_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config.actions */ "./src/app/ThemeOptions/store/config.actions.ts");
+/* harmony import */ var _config_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config.actions */ "./../../../../../../ThemeOptions/store/config.actions.ts");
 
 
 var INITIAL_STATE = {
@@ -1986,9 +1986,9 @@ function ConfigReducer(state, action) {
 
 /***/ }),
 
-/***/ "./src/app/ThemeOptions/store/index.ts":
+/***/ "./../../../../../../ThemeOptions/store/index.ts":
 /*!*********************************************!*\
-  !*** ./src/app/ThemeOptions/store/index.ts ***!
+  !*** ./../../../../../../ThemeOptions/store/index.ts ***!
   \*********************************************/
 /*! exports provided: ArchitectUIState, rootReducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1999,7 +1999,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rootReducer", function() { return rootReducer; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _config_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config.reducer */ "./src/app/ThemeOptions/store/config.reducer.ts");
+/* harmony import */ var _config_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config.reducer */ "./../../../../../../ThemeOptions/store/config.reducer.ts");
 
 
 
@@ -2016,9 +2016,9 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])(
 
 /***/ }),
 
-/***/ "./src/app/app-routing.module.ts":
+/***/ "./../../../../../../app-routing.module.ts":
 /*!***************************************!*\
-  !*** ./src/app/app-routing.module.ts ***!
+  !*** ./../../../../../../app-routing.module.ts ***!
   \***************************************/
 /*! exports provided: AppRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2029,14 +2029,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _Layout_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Layout/base-layout/base-layout.component */ "./src/app/Layout/base-layout/base-layout.component.ts");
-/* harmony import */ var _Layout_pages_layout_pages_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Layout/pages-layout/pages-layout.component */ "./src/app/Layout/pages-layout/pages-layout.component.ts");
-/* harmony import */ var _DemoPages_UserPages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password/forgot-password.component */ "./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.ts");
-/* harmony import */ var _DemoPages_UserPages_forgot_password_boxed_forgot_password_boxed_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component */ "./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_login_boxed_login_boxed_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DemoPages/UserPages/login-boxed/login-boxed.component */ "./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DemoPages/UserPages/login/login.component */ "./src/app/DemoPages/UserPages/login/login.component.ts");
-/* harmony import */ var _DemoPages_UserPages_register_boxed_register_boxed_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DemoPages/UserPages/register-boxed/register-boxed.component */ "./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_register_register_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DemoPages/UserPages/register/register.component */ "./src/app/DemoPages/UserPages/register/register.component.ts");
+/* harmony import */ var _Layout_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Layout/base-layout/base-layout.component */ "./../../../../../../Layout/base-layout/base-layout.component.ts");
+/* harmony import */ var _Layout_pages_layout_pages_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Layout/pages-layout/pages-layout.component */ "./../../../../../../Layout/pages-layout/pages-layout.component.ts");
+/* harmony import */ var _DemoPages_UserPages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password/forgot-password.component */ "./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.ts");
+/* harmony import */ var _DemoPages_UserPages_forgot_password_boxed_forgot_password_boxed_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component */ "./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_login_boxed_login_boxed_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DemoPages/UserPages/login-boxed/login-boxed.component */ "./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DemoPages/UserPages/login/login.component */ "./../../../../../../DemoPages/UserPages/login/login.component.ts");
+/* harmony import */ var _DemoPages_UserPages_register_boxed_register_boxed_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DemoPages/UserPages/register-boxed/register-boxed.component */ "./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_register_register_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DemoPages/UserPages/register/register.component */ "./../../../../../../DemoPages/UserPages/register/register.component.ts");
 
 
 
@@ -2056,55 +2056,55 @@ var routes = [
         children: [
             {
                 path: 'apps',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Applications-Applications-module */ "DemoPages-Applications-Applications-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Applications/Applications.module */ "./src/app/DemoPages/Applications/Applications.module.ts")).then(function (m) { return m.ApplicationModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Applications-Applications-module */ "DemoPages-Applications-Applications-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Applications/Applications.module */ "./../../../../../../DemoPages/Applications/Applications.module.ts")).then(function (m) { return m.ApplicationModule; }); }
             },
             {
                 path: 'charts',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Charts-Charts-module */ "DemoPages-Charts-Charts-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Charts/Charts.module */ "./src/app/DemoPages/Charts/Charts.module.ts")).then(function (m) { return m.ChartModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Charts-Charts-module */ "DemoPages-Charts-Charts-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Charts/Charts.module */ "./../../../../../../DemoPages/Charts/Charts.module.ts")).then(function (m) { return m.ChartModule; }); }
             },
             {
                 path: 'components',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Components-Components-module */ "DemoPages-Components-Components-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Components/Components.module */ "./src/app/DemoPages/Components/Components.module.ts")).then(function (m) { return m.ComponentsDrawerModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Components-Components-module */ "DemoPages-Components-Components-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Components/Components.module */ "./../../../../../../DemoPages/Components/Components.module.ts")).then(function (m) { return m.ComponentsDrawerModule; }); }
             },
             {
                 path: 'dashboards',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Dashboards-Dashboards-module */ "DemoPages-Dashboards-Dashboards-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Dashboards/Dashboards.module */ "./src/app/DemoPages/Dashboards/Dashboards.module.ts")).then(function (m) { return m.DashboardsModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Dashboards-Dashboards-module */ "DemoPages-Dashboards-Dashboards-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Dashboards/Dashboards.module */ "./../../../../../../DemoPages/Dashboards/Dashboards.module.ts")).then(function (m) { return m.DashboardsModule; }); }
             },
             {
                 path: 'elements',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Elements-Elements-module */ "DemoPages-Elements-Elements-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Elements/Elements.module */ "./src/app/DemoPages/Elements/Elements.module.ts")).then(function (m) { return m.ElementsModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Elements-Elements-module */ "DemoPages-Elements-Elements-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Elements/Elements.module */ "./../../../../../../DemoPages/Elements/Elements.module.ts")).then(function (m) { return m.ElementsModule; }); }
             },
             {
                 path: 'form-elements',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Forms-Elements-form-elements-module */ "DemoPages-Forms-Elements-form-elements-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Forms/Elements/form-elements.module */ "./src/app/DemoPages/Forms/Elements/form-elements.module.ts")).then(function (m) { return m.FormElementModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Forms-Elements-form-elements-module */ "DemoPages-Forms-Elements-form-elements-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Forms/Elements/form-elements.module */ "./../../../../../../DemoPages/Forms/Elements/form-elements.module.ts")).then(function (m) { return m.FormElementModule; }); }
             },
             {
                 path: 'form-widgets',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Forms-Widgets-forms-widgets-module */ "DemoPages-Forms-Widgets-forms-widgets-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Forms/Widgets/forms-widgets.module */ "./src/app/DemoPages/Forms/Widgets/forms-widgets.module.ts")).then(function (m) { return m.FormWidgetsModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Forms-Widgets-forms-widgets-module */ "DemoPages-Forms-Widgets-forms-widgets-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Forms/Widgets/forms-widgets.module */ "./../../../../../../DemoPages/Forms/Widgets/forms-widgets.module.ts")).then(function (m) { return m.FormWidgetsModule; }); }
             },
             {
                 path: 'button-indicators',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-ButtonsIndicators-buttonsIndicators-module */ "DemoPages-Material-ButtonsIndicators-buttonsIndicators-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/ButtonsIndicators/buttonsIndicators.module */ "./src/app/DemoPages/Material/ButtonsIndicators/buttonsIndicators.module.ts")).then(function (m) { return m.MateriaButoonIndicatorslModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-ButtonsIndicators-buttonsIndicators-module */ "DemoPages-Material-ButtonsIndicators-buttonsIndicators-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/ButtonsIndicators/buttonsIndicators.module */ "./../../../../../../DemoPages/Material/ButtonsIndicators/buttonsIndicators.module.ts")).then(function (m) { return m.MateriaButoonIndicatorslModule; }); }
             },
             {
                 path: 'layout',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-Layout-layout-module */ "DemoPages-Material-Layout-layout-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/Layout/layout.module */ "./src/app/DemoPages/Material/Layout/layout.module.ts")).then(function (m) { return m.MaterialLayoutModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-Layout-layout-module */ "DemoPages-Material-Layout-layout-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/Layout/layout.module */ "./../../../../../../DemoPages/Material/Layout/layout.module.ts")).then(function (m) { return m.MaterialLayoutModule; }); }
             },
             {
                 path: 'form-controls',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-FormControls-formcontrols-module */ "DemoPages-Material-FormControls-formcontrols-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/FormControls/formcontrols.module */ "./src/app/DemoPages/Material/FormControls/formcontrols.module.ts")).then(function (m) { return m.MaterialFormControlModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-FormControls-formcontrols-module */ "DemoPages-Material-FormControls-formcontrols-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/FormControls/formcontrols.module */ "./../../../../../../DemoPages/Material/FormControls/formcontrols.module.ts")).then(function (m) { return m.MaterialFormControlModule; }); }
             },
             {
                 path: 'material',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-Material-module */ "DemoPages-Material-Material-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/Material.module */ "./src/app/DemoPages/Material/Material.module.ts")).then(function (m) { return m.MaterialModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Material-Material-module */ "DemoPages-Material-Material-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Material/Material.module */ "./../../../../../../DemoPages/Material/Material.module.ts")).then(function (m) { return m.MaterialModule; }); }
             },
             {
                 path: 'widgets',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Widgets-Widgets-module */ "DemoPages-Widgets-Widgets-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Widgets/Widgets.module */ "./src/app/DemoPages/Widgets/Widgets.module.ts")).then(function (m) { return m.WidgetsModule; }); }
+                loadChildren: function () { return __webpack_require__.e(/*! import() | DemoPages-Widgets-Widgets-module */ "DemoPages-Widgets-Widgets-module").then(__webpack_require__.bind(null, /*! ./DemoPages/Widgets/Widgets.module */ "./../../../../../../DemoPages/Widgets/Widgets.module.ts")).then(function (m) { return m.WidgetsModule; }); }
             },
             {
                 path: 'tables/bootstrap',
-                loadChildren: function () { return Promise.all(/*! import() | DemoPages-Tables-tables-main-tables-main-module */[__webpack_require__.e("default~DemoPages-Tables-tables-main-tables-main-module~advertisement-advertisement-module~analytics~6e58d895"), __webpack_require__.e("DemoPages-Tables-tables-main-tables-main-module")]).then(__webpack_require__.bind(null, /*! ./DemoPages/Tables/tables-main/tables-main.module */ "./src/app/DemoPages/Tables/tables-main/tables-main.module.ts")).then(function (m) { return m.TablesMainModule; }); }
+                loadChildren: function () { return Promise.all(/*! import() | DemoPages-Tables-tables-main-tables-main-module */[__webpack_require__.e("default~DemoPages-Tables-tables-main-tables-main-module~advertisement-advertisement-module~analytics~6e58d895"), __webpack_require__.e("DemoPages-Tables-tables-main-tables-main-module")]).then(__webpack_require__.bind(null, /*! ./DemoPages/Tables/tables-main/tables-main.module */ "./../../../../../../DemoPages/Tables/tables-main/tables-main.module.ts")).then(function (m) { return m.TablesMainModule; }); }
             },
             {
                 path: '',
@@ -2158,9 +2158,9 @@ var AppRoutingModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/app.component.ts":
+/***/ "./../../../../../../app.component.ts":
 /*!**********************************!*\
-  !*** ./src/app/app.component.ts ***!
+  !*** ./../../../../../../app.component.ts ***!
   \**********************************/
 /*! exports provided: AppComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2179,7 +2179,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./../../../../../../app.component.html")).default,
         })
     ], AppComponent);
     return AppComponent;
@@ -2189,9 +2189,9 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/app.module.ts":
+/***/ "./../../../../../../app.module.ts":
 /*!*******************************!*\
-  !*** ./src/app/app.module.ts ***!
+  !*** ./../../../../../../app.module.ts ***!
   \*******************************/
 /*! exports provided: AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2205,13 +2205,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm5/angular-redux-store.js");
-/* harmony import */ var _ThemeOptions_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemeOptions/store */ "./src/app/ThemeOptions/store/index.ts");
-/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeOptions/store/config.actions */ "./src/app/ThemeOptions/store/config.actions.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _ThemeOptions_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemeOptions/store */ "./../../../../../../ThemeOptions/store/index.ts");
+/* harmony import */ var _ThemeOptions_store_config_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeOptions/store/config.actions */ "./../../../../../../ThemeOptions/store/config.actions.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./../../../../../../app-routing.module.ts");
 /* harmony import */ var _ngx_loading_bar_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngx-loading-bar/router */ "./node_modules/@ngx-loading-bar/router/fesm5/ngx-loading-bar-router.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./../../../../../../app.component.ts");
 /* harmony import */ var angular_font_awesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! angular-font-awesome */ "./node_modules/angular-font-awesome/dist/angular-font-awesome.es5.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-perfect-scrollbar */ "./node_modules/ngx-perfect-scrollbar/dist/ngx-perfect-scrollbar.es5.js");
@@ -2243,30 +2243,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
 /* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/fesm5/ng2-charts.js");
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/esm5/checkbox.es5.js");
-/* harmony import */ var _Layout_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./Layout/base-layout/base-layout.component */ "./src/app/Layout/base-layout/base-layout.component.ts");
-/* harmony import */ var _Layout_apps_layout_apps_layout_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./Layout/apps-layout/apps-layout.component */ "./src/app/Layout/apps-layout/apps-layout.component.ts");
-/* harmony import */ var _Layout_pages_layout_pages_layout_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./Layout/pages-layout/pages-layout.component */ "./src/app/Layout/pages-layout/pages-layout.component.ts");
-/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./theme-options */ "./src/app/theme-options.ts");
-/* harmony import */ var _ThemeOptions_options_drawer_options_drawer_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./ThemeOptions/options-drawer/options-drawer.component */ "./src/app/ThemeOptions/options-drawer/options-drawer.component.ts");
-/* harmony import */ var _Layout_Components_header_header_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./Layout/Components/header/header.component */ "./src/app/Layout/Components/header/header.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_dots_dots_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./Layout/Components/header/elements/dots/dots.component */ "./src/app/Layout/Components/header/elements/dots/dots.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_search_box_search_box_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./Layout/Components/header/elements/search-box/search-box.component */ "./src/app/Layout/Components/header/elements/search-box/search-box.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_mega_menu_mega_menu_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./Layout/Components/header/elements/mega-menu/mega-menu.component */ "./src/app/Layout/Components/header/elements/mega-menu/mega-menu.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_mega_menu_elements_megapopover_megapopover_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component */ "./src/app/Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_user_box_user_box_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./Layout/Components/header/elements/user-box/user-box.component */ "./src/app/Layout/Components/header/elements/user-box/user-box.component.ts");
-/* harmony import */ var _Layout_Components_header_elements_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./Layout/Components/header/elements/drawer/drawer.component */ "./src/app/Layout/Components/header/elements/drawer/drawer.component.ts");
-/* harmony import */ var _Layout_Components_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./Layout/Components/sidebar/sidebar.component */ "./src/app/Layout/Components/sidebar/sidebar.component.ts");
-/* harmony import */ var _Layout_Components_sidebar_elements_logo_logo_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./Layout/Components/sidebar/elements/logo/logo.component */ "./src/app/Layout/Components/sidebar/elements/logo/logo.component.ts");
-/* harmony import */ var _Layout_Components_footer_footer_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./Layout/Components/footer/footer.component */ "./src/app/Layout/Components/footer/footer.component.ts");
-/* harmony import */ var _Layout_Components_footer_elements_footer_dots_footer_dots_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./Layout/Components/footer/elements/footer-dots/footer-dots.component */ "./src/app/Layout/Components/footer/elements/footer-dots/footer-dots.component.ts");
-/* harmony import */ var _Layout_Components_footer_elements_footer_menu_footer_menu_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./Layout/Components/footer/elements/footer-menu/footer-menu.component */ "./src/app/Layout/Components/footer/elements/footer-menu/footer-menu.component.ts");
-/* harmony import */ var _DemoPages_UserPages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password/forgot-password.component */ "./src/app/DemoPages/UserPages/forgot-password/forgot-password.component.ts");
-/* harmony import */ var _DemoPages_UserPages_forgot_password_boxed_forgot_password_boxed_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component */ "./src/app/DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_login_boxed_login_boxed_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./DemoPages/UserPages/login-boxed/login-boxed.component */ "./src/app/DemoPages/UserPages/login-boxed/login-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_login_login_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./DemoPages/UserPages/login/login.component */ "./src/app/DemoPages/UserPages/login/login.component.ts");
-/* harmony import */ var _DemoPages_UserPages_register_boxed_register_boxed_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./DemoPages/UserPages/register-boxed/register-boxed.component */ "./src/app/DemoPages/UserPages/register-boxed/register-boxed.component.ts");
-/* harmony import */ var _DemoPages_UserPages_register_register_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./DemoPages/UserPages/register/register.component */ "./src/app/DemoPages/UserPages/register/register.component.ts");
-/* harmony import */ var _DemoPages_Tables_dynamic_demo_sortable_directive__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./DemoPages/Tables/dynamic/demo/sortable.directive */ "./src/app/DemoPages/Tables/dynamic/demo/sortable.directive.ts");
+/* harmony import */ var _Layout_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./Layout/base-layout/base-layout.component */ "./../../../../../../Layout/base-layout/base-layout.component.ts");
+/* harmony import */ var _Layout_apps_layout_apps_layout_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./Layout/apps-layout/apps-layout.component */ "./../../../../../../Layout/apps-layout/apps-layout.component.ts");
+/* harmony import */ var _Layout_pages_layout_pages_layout_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./Layout/pages-layout/pages-layout.component */ "./../../../../../../Layout/pages-layout/pages-layout.component.ts");
+/* harmony import */ var _theme_options__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./theme-options */ "./../../../../../../theme-options.ts");
+/* harmony import */ var _ThemeOptions_options_drawer_options_drawer_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./ThemeOptions/options-drawer/options-drawer.component */ "./../../../../../../ThemeOptions/options-drawer/options-drawer.component.ts");
+/* harmony import */ var _Layout_Components_header_header_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./Layout/Components/header/header.component */ "./../../../../../../Layout/Components/header/header.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_dots_dots_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./Layout/Components/header/elements/dots/dots.component */ "./../../../../../../Layout/Components/header/elements/dots/dots.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_search_box_search_box_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./Layout/Components/header/elements/search-box/search-box.component */ "./../../../../../../Layout/Components/header/elements/search-box/search-box.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_mega_menu_mega_menu_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./Layout/Components/header/elements/mega-menu/mega-menu.component */ "./../../../../../../Layout/Components/header/elements/mega-menu/mega-menu.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_mega_menu_elements_megapopover_megapopover_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component */ "./../../../../../../Layout/Components/header/elements/mega-menu/elements/megapopover/megapopover.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_user_box_user_box_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./Layout/Components/header/elements/user-box/user-box.component */ "./../../../../../../Layout/Components/header/elements/user-box/user-box.component.ts");
+/* harmony import */ var _Layout_Components_header_elements_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./Layout/Components/header/elements/drawer/drawer.component */ "./../../../../../../Layout/Components/header/elements/drawer/drawer.component.ts");
+/* harmony import */ var _Layout_Components_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./Layout/Components/sidebar/sidebar.component */ "./../../../../../../Layout/Components/sidebar/sidebar.component.ts");
+/* harmony import */ var _Layout_Components_sidebar_elements_logo_logo_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./Layout/Components/sidebar/elements/logo/logo.component */ "./../../../../../../Layout/Components/sidebar/elements/logo/logo.component.ts");
+/* harmony import */ var _Layout_Components_footer_footer_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./Layout/Components/footer/footer.component */ "./../../../../../../Layout/Components/footer/footer.component.ts");
+/* harmony import */ var _Layout_Components_footer_elements_footer_dots_footer_dots_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./Layout/Components/footer/elements/footer-dots/footer-dots.component */ "./../../../../../../Layout/Components/footer/elements/footer-dots/footer-dots.component.ts");
+/* harmony import */ var _Layout_Components_footer_elements_footer_menu_footer_menu_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./Layout/Components/footer/elements/footer-menu/footer-menu.component */ "./../../../../../../Layout/Components/footer/elements/footer-menu/footer-menu.component.ts");
+/* harmony import */ var _DemoPages_UserPages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password/forgot-password.component */ "./../../../../../../DemoPages/UserPages/forgot-password/forgot-password.component.ts");
+/* harmony import */ var _DemoPages_UserPages_forgot_password_boxed_forgot_password_boxed_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component */ "./../../../../../../DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_login_boxed_login_boxed_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./DemoPages/UserPages/login-boxed/login-boxed.component */ "./../../../../../../DemoPages/UserPages/login-boxed/login-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_login_login_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./DemoPages/UserPages/login/login.component */ "./../../../../../../DemoPages/UserPages/login/login.component.ts");
+/* harmony import */ var _DemoPages_UserPages_register_boxed_register_boxed_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./DemoPages/UserPages/register-boxed/register-boxed.component */ "./../../../../../../DemoPages/UserPages/register-boxed/register-boxed.component.ts");
+/* harmony import */ var _DemoPages_UserPages_register_register_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./DemoPages/UserPages/register/register.component */ "./../../../../../../DemoPages/UserPages/register/register.component.ts");
+/* harmony import */ var _DemoPages_Tables_dynamic_demo_sortable_directive__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./DemoPages/Tables/dynamic/demo/sortable.directive */ "./../../../../../../DemoPages/Tables/dynamic/demo/sortable.directive.ts");
 /* harmony import */ var ng_apexcharts__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ng-apexcharts */ "./node_modules/ng-apexcharts/fesm5/ng-apexcharts.js");
 /* harmony import */ var angular_gauge__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! angular-gauge */ "./node_modules/angular-gauge/esm5/angular-gauge.js");
 /* harmony import */ var ngx_trend__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ngx-trend */ "./node_modules/ngx-trend/fesm5/ngx-trend.js");
@@ -2478,9 +2478,9 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/theme-options.ts":
+/***/ "./../../../../../../theme-options.ts":
 /*!**********************************!*\
-  !*** ./src/app/theme-options.ts ***!
+  !*** ./../../../../../../theme-options.ts ***!
   \**********************************/
 /*! exports provided: ThemeOptions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2556,7 +2556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./../../../../../../app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 

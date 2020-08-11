@@ -43,7 +43,7 @@
                 <tbody>
                     <tr *ngFor="let vacation of vacations,let i = index" id="tr{{ vacation.id }}">
                         <td>{{ i+1 }}</td>
-                        <td style="width: 20%">{{ vacation.user.first_name }} {{ vacation.user.first_name }}</td>
+                        <td style="width: 20%">{{ vacation.user.login }}</td>
                         <td style="width: 15%">{{ vacation.vacation_type?.name }}</td>
                         <td style="width: 10%">{{ vacation.status }}</td>
                         <td style="width: 10%">{{ vacation.requested_start_date }}</td>

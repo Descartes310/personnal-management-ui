@@ -42,7 +42,7 @@
                                                     <label>{{ 'User.UserDivisions' | translate }}</label>
 
                                                     <select matInput formControlName="division_id" class="form-control {{ isSubmitted && publicInfo.division_id.errors ? 'is-invalid' : '' }}">
-                                                        <option *ngFor='let option of divisions' value="{{ option.id }}"> {{ option.name }}</option>
+                                                        <option *ngFor='let divi of divisions' value="{{ divi.id }}"> {{ divi.name }}</option>
                                                     </select>
 
                                                 </div>
